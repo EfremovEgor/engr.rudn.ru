@@ -1,0 +1,20 @@
+.text_on_parallax {
+  font-size: 4em;
+  color: white;
+  font-weight: 600;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.block {
+  margin-top: 100px;
+}
+.card-img {
+  vertical-align: middle !important;
+  object-fit: fill !important;
+  height: 30vh !important;
+}
+
+.card-link:hover {
+  border-bottom: none;
+  color: black !important;
+}

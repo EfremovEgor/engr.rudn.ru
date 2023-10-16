@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  {% load static %}
+  <head>
+    <link
+      rel="icon"
+      href="{% static '/images/favicon.svg' %}"
+      type="image/svg+xml"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <title>{{title}}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/css/uikit.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit-icons.min.js"></script>
+    {% load i18n %}
+  </head>
+
+  <body>
+    <div class="uk-section-default uk-preserve-color">
+      {% include "./header.html" %} {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+.content {
+  max-width: 75%;
+}
+.heading {
+  padding-bottom: 30px;
+}
+.profile_content > p {
+  text-align: justify;
+  text-indent: 4%;
+  margin-top: -10px;
+}
+.profile_content {
+  margin-top: 100px;
+}

@@ -1,0 +1,339 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+<div
+  uk-height-viewport
+  style="
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('{% static 'images/index/background.jpeg' %}');
+  "
+  uk-parallax="media: @l; target: #body; y: 500; easing: -1;"
+  class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-background-fixed"
+  uk-img
+>
+  <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
+    <h1 class="uk-text-break uk-text-left text_on_parallax">
+      Инженерная академия РУДН
+    </h1>
+  </div>
+</div>
+<div class="card-container info-cards-container">
+  <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+    <div>
+      <div class="uk-card uk-card-hover uk-card-default">
+        <div class="uk-card-media-top">
+          <img
+            class="card-img"
+            src="{% static 'images/index/cards/education.jpg' %}"
+          />
+        </div>
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Высшее образование</h3>
+          <ul class="uk-list">
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/bachelor"
+                >Бакалавриат</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/magistrate"
+                >Магистратура</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/postgraduate"
+                >Аспирантура</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-hover uk-card-default">
+        <div class="uk-card-media-top">
+          <img
+            class="card-img"
+            src="{% static 'images/index/cards/science.jpg' %}"
+          />
+        </div>
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Наука</h3>
+          <ul class="uk-list">
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/bachelor"
+                >Бакалавриат</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/magistrate"
+                >Магистратура</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/postgraduate"
+                >Аспирантура</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-hover uk-card-default">
+        <div class="uk-card-media-top">
+          <img
+            class="card-img"
+            src="{% static 'images/index/cards/academy.jpg' %}"
+          />
+        </div>
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Академия</h3>
+          <ul class="uk-list">
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/bachelor"
+                >Бакалавриат</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/magistrate"
+                >Магистратура</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/postgraduate"
+                >Аспирантура</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="block">
+  <div
+    style="
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url('{% static 'images/index/banners/news.jpg' %}');
+      height: 30vh;
+    "
+    class="uk-background-cover uk-overflow-hidden uk-light uk-flex uk-background-fixed"
+    uk-img
+  >
+    <div
+      class="uk-width-5-6 uk-text-center uk-margin-auto uk-margin-auto-vertical"
+    >
+      <a
+        href="/news"
+        class="news-block-heading uk-link-heading uk-text-break uk-text-left text_on_parallax"
+        uk-parallax="opacity: 0,3;x:-50,0,0; y: 0,0; scale: 1,1;end: 50vh + 50%;"
+      >
+        Новости
+      </a>
+    </div>
+  </div>
+</div>
+<div class="card-container news-container block news-block">
+  <div
+    class="uk-slider-container-offset uk-position-relative uk-visible-toggle"
+    tabindex="-1"
+    uk-slider="sets: true; autoplay: true;pause-on-hover: true"
+  >
+    <div class="uk-position-relative">
+      <ul class="uk-slider-items uk-child-width-1-2@m uk-grid-match uk-grid">
+        <li>
+          <a href="#" class="uk-link-toggle">
+            <div class="uk-card uk-card-small uk-card-hover uk-card-default">
+              <div class="uk-card-media-top">
+                <img
+                  class="news-large-img"
+                  src="{% static 'images/index/open_days.jpeg' %}"
+                />
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-truncate">
+                  День открытых дверей инженерной академии РУДН
+                </h3>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="uk-link-toggle">
+            <div class="uk-card uk-card-small uk-card-hover uk-card-default">
+              <div class="uk-card-media-top">
+                <img
+                  class="news-large-img"
+                  src="{% static 'images/index/stipa.png' %}"
+                />
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-truncate">
+                  Cтарт стипендиального конкурса 2023/24 Фонда Потанина
+                </h3>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="uk-link-toggle">
+            <div class="uk-card uk-card-small uk-card-hover uk-card-default">
+              <div class="uk-card-media-top">
+                <img
+                  class="news-large-img"
+                  src="{% static 'images/index/nedra.jpg' %}"
+                />
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-truncate">Недра Земли</h3>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <ul class="uk-slider-nav uk-dotnav" style="margin-top: 20px"></ul>
+  </div>
+</div>
+<div class="block">
+  <div
+    style="
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url('{% static 'images/index/banners/contacts.jpg' %}');
+      height: 30vh;
+    "
+    class="uk-background-cover uk-overflow-hidden uk-light uk-flex uk-background-fixed"
+    uk-img
+  >
+    <div
+      class="uk-width-5-6 uk-text-center uk-margin-auto uk-margin-auto-vertical"
+    >
+      <a
+        href="/news"
+        class="news-block-heading uk-link-heading uk-text-break uk-text-left text_on_parallax"
+        uk-parallax="opacity: 0,3;x:-50,0,0; y: 0,0; scale: 1,1;end: 50vh + 50%;"
+      >
+        Контакты
+      </a>
+    </div>
+  </div>
+</div>
+<div class="contacts-container">
+  <div class="uk-child-width-1-2@l uk-grid-match" uk-grid>
+    <div>
+      <div class="uk-child-width-1-1 uk-grid-match" uk-grid>
+        {% for contact in contacts %}
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img
+                  class="uk-border-circle"
+                  width="40"
+                  height="40"
+                  src="{{contact.image.url}}"
+                />
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">
+                  {{contact.heading}}
+                </h3>
+                <p class="uk-text-meta uk-margin-remove-top uk-text-truncate">
+                  {{contact.sub_heading}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="uk-card-body">
+            <ul class="uk-list">
+              {% if contact.working_hours %}
+              <li class="uk-margin">
+                <span class="uk-link-heading card-link"
+                  ><span uk-icon="clock"></span>
+                  <span> {{contact.working_hours}}</span>
+                </span>
+              </li>
+              {% endif %} {% if contact.location %}
+              <li class="uk-margin">
+                <a
+                  href="https://yandex.ru/maps/-/CDXvMvs"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="uk-link-heading card-link"
+                  ><span uk-icon="location"></span>
+                  <span>{{contact.location}}</span>
+                </a>
+              </li>
+              {% endif %} {% for phone in contact.phone_numbers %}
+              <li class="uk-margin">
+                <a href="tel:{{phone}}" class="uk-link-heading card-link"
+                  ><span uk-icon="receiver"></span> {{phone}}
+                </a>
+              </li>
+              {% endfor %} {% for email in contact.emails %}
+              <li class="uk-margin">
+                <a href="mailto:{{email}}" class="uk-link-heading card-link"
+                  ><span uk-icon="mail"></span> {{email}}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="uk-visible@l uk-cover-container">
+      <iframe
+        class="map"
+        src="https://yandex.ru/map-widget/v1/?ll=37.603747%2C55.710702&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjY4MjU1ORJC0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINGD0LvQuNGG0LAg0J7RgNC00LbQvtC90LjQutC40LTQt9C1LCAzIgoNPWoWQhXC115C&z=17.08"
+        frameborder="0"
+        allowfullscreen="true"
+      ></iframe>
+    </div>
+  </div>
+</div>
+<a
+  style="
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: rgb(0, 121, 191);
+    margin-right: 10px;
+  "
+  class="uk-visible@m"
+  uk-scroll
+  href=""
+  uk-icon="icon:chevron-up; ratio: 3"
+>
+</a>
+{% endblock %}

@@ -1,0 +1,81 @@
+.footer-bottom {
+  background-color: black;
+  padding: 60px 0px;
+}
+.footer-bottom > .uk-container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.container {
+  align-items: flex-start;
+}
+.footer-bottom-headers {
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+}
+.footer-top-link-list-item > ul {
+  margin-top: 30px;
+  margin-left: -30px;
+  border-collapse: collapse;
+}
+.footer-top-link-list-item {
+  text-align: left;
+}
+
+.footer-top-link-list-item ul > li {
+  margin-bottom: 20px;
+  color: white;
+  text-align: left;
+}
+
+.uk-link,
+a {
+  color: #999;
+}
+
+.app-item-svg {
+  height: 32px;
+  fill: white;
+  transition: 0.5s;
+}
+
+.app-item-svg:hover {
+  height: 32px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255);
+  border-radius: 100%;
+}
+
+.vk:hover {
+  fill: black;
+}
+
+.tg:hover {
+  fill: black;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.underline {
+  text-decoration: none;
+  position: relative;
+}
+
+.underline:after {
+  position: absolute;
+  content: "";
+  height: 1px;
+
+  bottom: -10px;
+  margin: 5;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: white;
+}

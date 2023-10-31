@@ -1,0 +1,206 @@
+{% load static %}
+
+<header class="header" uk-sticky>
+  <div
+    class="uk-section-secondary uk-visible@l"
+    style="background-color: transparent"
+  >
+    <nav class="uk-navbar-container uk-navbar-transparent">
+      <div class="uk-container">
+        <div uk-navbar>
+          <div
+            class="uk-navbar-left uk-flex uk-flex-middle"
+            style="margin: 0; padding: 0; gap: 0"
+          >
+            <ul
+              class="uk-thumbnav uk-thumbnav-vertical"
+              style="margin: auto"
+              uk-margin
+            >
+              <li>
+                <a href="/"
+                  ><img
+                    src="{% static 'images/header/logo.png' %}"
+                    width="60vw"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a class="header-text header-text-main" href="/news">Новости</a>
+              </li>
+              <li>
+                <a
+                  uk-icon="chevron-down"
+                  class="header-text header-text-main navbar-main-link"
+                  href="/academy"
+                  >Академия</a
+                >
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a
+                        class="header-text navbar-sub-link"
+                        href="/academy/administration"
+                        >Дирекция</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Департаменты</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >История</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  uk-icon="chevron-down"
+                  class="header-text header-text-main navbar-main-link"
+                  href="#"
+                  >Наука</a
+                >
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Научные журналы</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Научнные лаборатории</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Конкурсы</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Научные студенченские кружки</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  uk-icon="chevron-down"
+                  class="header-text header-text-main navbar-main-link"
+                  href="#"
+                  >Абитуриентам</a
+                >
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Направления подготовки</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Стоимость обучения</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  uk-icon="chevron-down"
+                  class="header-text header-text-main navbar-main-link"
+                  href="#"
+                  >Преподавателям</a
+                >
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Ведомости</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Промежуточная аттестация</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  uk-icon="chevron-down"
+                  class="header-text header-text-main navbar-main-link"
+                  href="#"
+                  >Студентам</a
+                >
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Образцы
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Student Life</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Студенченский комитет</a
+                      >
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Волонтерское движение</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  uk-icon="chevron-down"
+                  class="header-text header-text-main navbar-main-link"
+                  href="#"
+                  >Аспирантам
+                </a>
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="#"
+                        >Тематики</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 
+    <div class="ui container">
+        <div class="{% if " /academy" in request.path %}active{% endif %} item"> Академия</div>
+        <div class="{% if " /science" in request.path %}active{% endif %} item">Наука</div>
+        <div class="{% if " /admission" in request.path %}active{% endif %} item">Абитуриентам</div>
+        <div class="{% if " /academic" in request.path %}active{% endif %} item">Преподавателям</div>
+        <div class="{% if " /students" in request.path %}active{% endif %} item">Студентам</div>
+        <div class="{% if " /postgraduates" in request.path %}active{% endif %} item">Аспирантам</div>
+
+    </div> -->

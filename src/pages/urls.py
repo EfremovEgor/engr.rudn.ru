@@ -7,5 +7,6 @@ urlpatterns = [
     path("news", views.news, name="news"),
     path("academy", views.academy, name="academy"),
     path("academy/administration", views.administration, name="administration"),
-    path("profile/<int:id>", views.profile, name="profile"),
+    path("academy/history", views.history, name="history"),
+    path("directions/<int:id>", views.directions, name="directions"),
 ]

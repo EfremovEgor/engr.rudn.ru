@@ -9,4 +9,5 @@ urlpatterns = [
     path("ckeditor/", include("ckeditor_uploader.urls")),
     path("", include("news.urls")),
     path("", include("pages.urls")),
+    path("", include("profiles.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

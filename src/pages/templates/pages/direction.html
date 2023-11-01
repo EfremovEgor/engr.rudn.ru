@@ -1,18 +1,21 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
-<link rel="stylesheet" href="{% static 'css/global.css' %}" />
+<link rel="stylesheet" href="{% static 'css/direction.css' %}" />
 
 <div class="uk-container container">
   <h2 class="heading">{{profile_data.cipher}} {{profile_data.name}}</h2>
   <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match uk-grid">
     {% if profile_data.full_time_details %}
     <div>
-
       <div class="uk-card uk-card-default uk-card-body uk-card-hover">
+        <h2>Очная форма обучения</h2>
+        {% if profile_data.full_time_details.budget_places %}
         <h4 style="margin-top: -10px">
+
           <b>Количество бюджетных мест –
             {{profile_data.full_time_details.budget_places}}</b>
         </h4>
+        {% endif %}
         <h4 style="margin-top: -10px">
           <b>Стоимость обучения по контракту:</b>
         </h4>
@@ -47,26 +50,26 @@
         </p>
 
         {% endif %}
-        <h4>Минимальные проходные баллы</h4>
+        <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
 
         {% for heading,data in profile_data.full_time_details.minimal_passing_scores.items %}
         <p><b>{{heading}}:</b></p>
         <p style="margin-top: -15px;">
-
-          {% for subject,score in data.items %}
-        <p style="margin-top: -15px"> {{subject}} – {{score}}</p>
+        {% for subject_object in data%}
+        <p style="margin-top: -15px"> {{subject_object.subject}} – {{subject_object.score}}</p>
         {% endfor%}
         </p>
         {% endfor%}
         {% if profile_data.full_time_details.program_manager %}
-        <h4>Руководитель программы:<br />{{profile_data.full_time_details.program_manager}}</h4>
+        <h4><b>Руководитель программы:</b></h4>
+        <h4 style="margin-top: -15px; margin-left:10px">{{profile_data.full_time_details.program_manager}}</h4>
         {% endif %}
 
         {% if profile_data.full_time_details.phone %}
-        <p style="margin-top: -15px;"><b>Телефон:</b> {{profile_data.full_time_details.phone}} </p>
+        <p style="margin-top: -15px; margin-left:10px"><b>Телефон:</b> {{profile_data.full_time_details.phone}} </p>
         {% endif %}
         {% if profile_data.full_time_details.email %}
-        <p style="margin-top: -15px;"><b>E-mail:</b> {{profile_data.full_time_details.email}} </p>
+        <p style="margin-top: -15px; margin-left:10px"><b>E-mail:</b> {{profile_data.full_time_details.email}} </p>
         {% endif %}
 
 
@@ -76,12 +79,15 @@
     {% endif %}
     {% if profile_data.part_time_details %}
     <div>
-
       <div class="uk-card uk-card-default uk-card-body uk-card-hover">
+        <h2>Очно-заочная форма обучения</h2>
+        {% if profile_data.part_time_details.budget_places %}
         <h4 style="margin-top: -10px">
+  
           <b>Количество бюджетных мест –
             {{profile_data.part_time_details.budget_places}}</b>
         </h4>
+        {% endif %}
         <h4 style="margin-top: -10px">
           <b>Стоимость обучения по контракту:</b>
         </h4>
@@ -89,68 +95,71 @@
         <p style="margin-top: -15px">
           1й год - {{profile_data.part_time_details.price_first_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.part_time_details.price_second_year %}
         <p style="margin-top: -15px">
           2й год - {{profile_data.part_time_details.price_second_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.part_time_details.price_third_year %}
         <p style="margin-top: -15px">
           3й год - {{profile_data.part_time_details.price_third_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.part_time_details.price_fourth_year %}
         <p style="margin-top: -15px">
           4й год - {{profile_data.part_time_details.price_fourth_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.part_time_details.price_fifth_year %}
         <p style="margin-top: -15px">
           5й год - {{profile_data.part_time_details.price_fifth_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.part_time_details.price_sixth_year %}
         <p style="margin-top: -15px">
           6й год - {{profile_data.part_time_details.price_sixth_year}} ₽
         </p>
-
+  
         {% endif %}
-        <h4>Минимальные проходные баллы</h4>
-
+        <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
+  
         {% for heading,data in profile_data.part_time_details.minimal_passing_scores.items %}
         <p><b>{{heading}}:</b></p>
         <p style="margin-top: -15px;">
-
-          {% for subject,score in data.items %}
-        <p style="margin-top: -15px"> {{subject}} – {{score}}</p>
+        {% for subject_object in data%}
+        <p style="margin-top: -15px"> {{subject_object.subject}} – {{subject_object.score}}</p>
         {% endfor%}
         </p>
         {% endfor%}
         {% if profile_data.part_time_details.program_manager %}
-        <h4>Руководитель программы:<br />{{profile_data.part_time_details.program_manager}}</h4>
+        <h4><b>Руководитель программы:</b></h4>
+        <h4 style="margin-top: -15px; margin-left:10px">{{profile_data.part_time_details.program_manager}}</h4>
         {% endif %}
-
+  
         {% if profile_data.part_time_details.phone %}
-        <p style="margin-top: -15px;"><b>Телефон:</b> {{profile_data.part_time_details.phone}} </p>
+        <p style="margin-top: -15px; margin-left:10px"><b>Телефон:</b> {{profile_data.part_time_details.phone}} </p>
         {% endif %}
         {% if profile_data.part_time_details.email %}
-        <p style="margin-top: -15px;"><b>E-mail:</b> {{profile_data.part_time_details.email}} </p>
+        <p style="margin-top: -15px; margin-left:10px"><b>E-mail:</b> {{profile_data.part_time_details.email}} </p>
         {% endif %}
-
-
+  
+  
       </div>
-
+  
     </div>
     {% endif %}
     {% if profile_data.extramural_details %}
     <div>
-
       <div class="uk-card uk-card-default uk-card-body uk-card-hover">
+        <h2>Заочная форма обучения</h2>
+        {% if profile_data.extramural_details.budget_places %}
         <h4 style="margin-top: -10px">
+  
           <b>Количество бюджетных мест –
             {{profile_data.extramural_details.budget_places}}</b>
         </h4>
+        {% endif %}
         <h4 style="margin-top: -10px">
           <b>Стоимость обучения по контракту:</b>
         </h4>
@@ -158,65 +167,64 @@
         <p style="margin-top: -15px">
           1й год - {{profile_data.extramural_details.price_first_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.extramural_details.price_second_year %}
         <p style="margin-top: -15px">
           2й год - {{profile_data.extramural_details.price_second_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.extramural_details.price_third_year %}
         <p style="margin-top: -15px">
           3й год - {{profile_data.extramural_details.price_third_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.extramural_details.price_fourth_year %}
         <p style="margin-top: -15px">
           4й год - {{profile_data.extramural_details.price_fourth_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.extramural_details.price_fifth_year %}
         <p style="margin-top: -15px">
           5й год - {{profile_data.extramural_details.price_fifth_year}} ₽
         </p>
-
+  
         {% endif %} {% if profile_data.extramural_details.price_sixth_year %}
         <p style="margin-top: -15px">
           6й год - {{profile_data.extramural_details.price_sixth_year}} ₽
         </p>
-
+  
         {% endif %}
-        <h4>Минимальные проходные баллы</h4>
-
+        <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
+  
         {% for heading,data in profile_data.extramural_details.minimal_passing_scores.items %}
         <p><b>{{heading}}:</b></p>
         <p style="margin-top: -15px;">
-
-          {% for subject,score in data.items %}
-        <p style="margin-top: -15px"> {{subject}} – {{score}}</p>
+        {% for subject_object in data%}
+        <p style="margin-top: -15px"> {{subject_object.subject}} – {{subject_object.score}}</p>
         {% endfor%}
         </p>
         {% endfor%}
         {% if profile_data.extramural_details.program_manager %}
-        <h4>Руководитель программы:<br />{{profile_data.extramural_details.program_manager}}</h4>
+        <h4><b>Руководитель программы:</b></h4>
+        <h4 style="margin-top: -15px; margin-left:10px">{{profile_data.extramural_details.program_manager}}</h4>
         {% endif %}
-
+  
         {% if profile_data.extramural_details.phone %}
-        <p style="margin-top: -15px;"><b>Телефон:</b> {{profile_data.extramural_details.phone}} </p>
+        <p style="margin-top: -15px; margin-left:10px"><b>Телефон:</b> {{profile_data.extramural_details.phone}} </p>
         {% endif %}
         {% if profile_data.extramural_details.email %}
-        <p style="margin-top: -15px;"><b>E-mail:</b> {{profile_data.extramural_details.email}} </p>
+        <p style="margin-top: -15px; margin-left:10px"><b>E-mail:</b> {{profile_data.extramural_details.email}} </p>
         {% endif %}
-
-
+  
+  
       </div>
-
+  
     </div>
     {% endif %}
   </div>
   <div class="profile_content">
 
     {{ profile_data.content|safe}}
-
 
   </div>
 </div>

@@ -1,7 +1,8 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
+from django.contrib.postgres.fields import ArrayField as postgres_array_field
 from phonenumber_field.modelfields import PhoneNumberField
 from ckeditor_uploader.fields import RichTextUploadingField
+from django_jsonform.models.fields import JSONField, ArrayField
 
 STUDY_LEVELS = [
     ("Бакалавриат", "Бакалавриат"),
@@ -18,7 +19,7 @@ class IndexContact(models.Model):
     image = models.ImageField(
         verbose_name="Фотография", upload_to="index_contacts", blank=False, null=True
     )
-    phone_numbers = ArrayField(
+    phone_numbers = postgres_array_field(
         PhoneNumberField(verbose_name="Номер телефона"),
         verbose_name="Номера телефонов",
         size=10,
@@ -70,8 +71,36 @@ class ProfileDetails(models.Model):
     price_sixth_year = models.PositiveIntegerField(
         verbose_name="Стоимость обучения по контракту(6 год)", null=True, blank=True
     )
-    minimal_passing_scores = models.JSONField(
-        verbose_name="Минимальные проходные баллы:"
+    SCORES_SCHEMA = {
+        "type": "dict",  # or 'object'
+        "keys": {  # or 'properties'
+            "Обязательные предметы": {
+                "type": "list",
+                "items": {
+                    "title": "Информация о предмете",
+                    "type": "dict",
+                    "keys": {
+                        "subject": {"type": "string", "title": "Предмет"},
+                        "score": {"type": "integer", "title": "Балл"},
+                    },
+                },
+            },
+            "Дополнительные предметы (один на выбор)": {
+                "type": "list",
+                "items": {
+                    "title": "Информация о предмете",
+                    "type": "dict",
+                    "keys": {
+                        "subject": {"type": "string", "title": "Предмет"},
+                        "score": {"type": "integer", "title": "Балл"},
+                    },
+                },
+            },
+        },
+    }
+    minimal_passing_scores = JSONField(
+        verbose_name="Минимальные проходные баллы:",
+        schema=SCORES_SCHEMA,
     )
     program_manager = models.CharField(
         verbose_name="Руководитель программы", max_length=255
@@ -144,3 +173,17 @@ class StudyDirection(models.Model):
     class Meta:
         verbose_name = "Направление подготовки"
         verbose_name_plural = "Направления подготовки"
+
+
+class AdministrationProfiles(models.Model):
+    position = models.PositiveIntegerField(verbose_name="Позиция")
+    employee = models.ForeignKey(
+        "profiles.EmployeeProfile", verbose_name="Сотрудник", on_delete=models.CASCADE
+    )
+
+    def __str__(self) -> str:
+        return f"{self.position} - {self.employee.full_name}"
+
+    class Meta:
+        verbose_name = "Профиль дирекции"
+        verbose_name_plural = "Профили дирекции"

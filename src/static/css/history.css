@@ -1,0 +1,16 @@
+.first-text-container {
+  gap: 50px;
+}
+.right-text {
+  border-left: solid 3px white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.first-heading {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.main-part {
+  background-color: black;
+}

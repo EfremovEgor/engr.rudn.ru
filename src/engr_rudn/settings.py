@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "pages",
+    "profiles",
     "ckeditor",
-    "django_json_widget",
+    "ckeditor_uploader",
+    "django_jsonform",
     "rosetta",
 ]
 
@@ -140,16 +142,58 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_ROOT = BASE_DIR / "uploads/"
 MEDIA_URL = "media/"
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_UPLOAD_PATH = "ckeditor/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CKEDITOR_CONFIGS = {
     "default": {
-        "width": "auto",
-        "extraPlugins": ",".join(
+        "toolbar": [
             [
-                "codesnippet",
-            ]
-        ),
-    },
+                "Undo",
+                "Redo",
+                "-",
+                "Bold",
+                "Italic",
+                "Underline",
+                "-",
+                "Link",
+                "Unlink",
+                "Anchor",
+                "-",
+                "Format",
+                "-",
+                "Maximize",
+                "-",
+                "Table",
+                "-",
+                "Image",
+                "-",
+                "Source",
+                "-",
+                "NumberedList",
+                "BulletedList",
+            ],
+            [
+                "JustifyLeft",
+                "JustifyCenter",
+                "JustifyRight",
+                "JustifyBlock",
+                "-",
+                "Font",
+                "FontSize",
+                "TextColor",
+                "-",
+                "Outdent",
+                "Indent",
+                "-",
+                "HorizontalRule",
+                "-",
+                "Blockquote",
+            ],
+        ],
+        "height": 500,
+        "width": "100%",
+        "toolbarCanCollapse": False,
+        "forcePasteAsPlainText": True,
+    }
 }

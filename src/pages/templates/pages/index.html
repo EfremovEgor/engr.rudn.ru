@@ -1,4 +1,4 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %} {% block content %} {%load static%}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 
 <div
@@ -295,7 +295,7 @@
               {% endif %} {% for phone in contact.phone_numbers %}
               <li class="uk-margin">
                 <a href="tel:{{phone}}" class="uk-link-heading card-link"
-                  ><span uk-icon="receiver"></span> {{phone}}
+                  ><span uk-icon="receiver"></span> {{phone.as_international}}
                 </a>
               </li>
               {% endfor %} {% for email in contact.emails %}
@@ -322,6 +322,7 @@
     </div>
   </div>
 </div>
+{% comment %}
 <a
   style="
     position: fixed;
@@ -336,4 +337,4 @@
   uk-icon="icon:chevron-up; ratio: 3"
 >
 </a>
-{% endblock %}
+{% endcomment %} {% endblock %}

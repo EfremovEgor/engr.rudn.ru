@@ -1,0 +1,80 @@
+{% extends "components/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+
+<div class="container-employee">
+  <h1>{{employee.full_name}}</h1>
+  <h3 class="job-title">{{employee.job_title.0}}</h3>
+  <div class="info-container">
+    <div
+      class="uk-grid-match uk-flex-center uk-grid-divider uk-child-width-1-2@m"
+      uk-grid
+      style="width: 100%; margin: auto"
+    >
+      <div
+        class="employee-image"
+        data-src="{{employee.image.url}}"
+        uk-img
+      ></div>
+      <div class="short-info">
+        <ul class="uk-list">
+          {% if employee.office %}
+          <li class="uk-margin">
+            <h4
+              target="_blank"
+              rel="noreferrer noopener"
+              class="uk-link-heading card-link"
+            >
+              <span uk-icon="icon: location; ratio: 1.2"></span>
+              <b>Адрес кабинета:</b> <br />
+              <span style="margin-left: 30px">{{employee.office}}</span>
+            </h4>
+          </li>
+          {% endif %} {% if employee.working_hours %}
+          <li class="uk-margin">
+            <h4 class="uk-link-heading card-link">
+              <span uk-icon="icon: clock; ratio: 1.2"></span>
+              <b>Рабочие часы:</b> <br />
+
+              <span style="margin-left: 30px"> {{employee.working_hours}}</span>
+            </h4>
+          </li>
+          {% endif %} {% if employee.phone_numbers %}
+          <li class="uk-margin">
+            <h4>
+              <span uk-icon="icon: receiver; ratio: 1.2"></span>
+              <b>Рабочий телефон:</b> <br />
+              {% for phone in employee.phone_numbers %}
+              <a
+                style="margin-left: 30px"
+                href="tel:{{phone}}"
+                class="uk-link-heading card-link"
+              >
+                {{phone.as_international}} <br />
+              </a>
+              {% endfor %}
+            </h4>
+          </li>
+          {% endif %} {% if employee.emails %}
+          <li class="uk-margin">
+            <h4>
+              <span uk-icon="icon: mail; ratio: 1.2"></span>
+              <b>Электронная почта:</b> <br />
+              {% for email in employee.emails %}
+              <a
+                style="margin-left: 30px"
+                href="mailto:{{email}}"
+                class="uk-link-heading card-link"
+                >{{email}}
+              </a>
+              {% endfor %}
+            </h4>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="profile_content">{{ employee.content|safe}}</div>
+</div>
+
+{%endblock %}

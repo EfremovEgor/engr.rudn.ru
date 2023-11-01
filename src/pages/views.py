@@ -1,7 +1,7 @@
 import os
 from django.forms import model_to_dict
 from django.shortcuts import render
-from .models import IndexContact, Profile
+from .models import IndexContact, Profile, AdministrationProfiles
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 
@@ -27,7 +27,7 @@ def news(request):
     )
 
 
-def profile(request, id):
+def directions(request, id):
     profile_object = get_object_or_404(Profile, pk=id)
     profile_data = model_to_dict(profile_object)
     profile_data["full_time_details"] = (
@@ -47,7 +47,7 @@ def profile(request, id):
     )
     return render(
         request,
-        "pages/profile.html",
+        "pages/direction.html",
         {"title": "Направление подготовки", "profile_data": profile_data},
     )
 
@@ -63,38 +63,25 @@ def academy(request):
 
 
 def administration(request):
+    profile_objects = AdministrationProfiles.objects.order_by("position").all()
+    data = list()
+    for profile in profile_objects:
+        data.append(model_to_dict(profile.employee))
     return render(
         request,
         "pages/academy/administration.html",
         {
             "title": "Дирекция",
+            "profiles": data,
         },
     )
 
 
-# def pages(request, folder, page):
-#     page_obj = get_object_or_404(Pages, url=f"{folder}/{page}")
-#     return render(
-#         request,
-#         f"pages/{folder}/{page}.html",
-#         {
-#             "title": page_obj.name,
-#         },
-#     )
-
-
-# def folders(request, folder):
-#     page_obj = get_object_or_404(Pages, url=f"{folder}")
-#     if not os.path.exists(
-#         os.path.join(
-#             os.getcwd(), "pages", "templates", "pages", folder, f"{folder}.html"
-#         )
-#     ):
-#         raise Http404
-#     return render(
-#         request,
-#         f"pages/{folder}/{folder}.html",
-#         {
-#             "title": "Новости",
-#         },
-#     )
+def history(request):
+    return render(
+        request,
+        "pages/academy/history.html",
+        {
+            "title": "История",
+        },
+    )

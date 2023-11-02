@@ -3,9 +3,10 @@
 
 <div class="container">
   <h1>Администрация</h1>
+  <div class="uk-child-width-1-2@m uk-grid-large" uk-grid>
   {% for profile in profiles %}
-  <div class="container-employee">
-    <article class="uk-comment uk-comment-primary" role="comment">
+  <div>
+    <article style="height: 90%;" class="uk-comment uk-comment-primary uk-grid-match" role="comment">
       <header class="uk-comment-header">
         <div class="uk-grid-medium uk-flex-middle" uk-grid>
           <div class="uk-width-auto">
@@ -93,6 +94,9 @@
     </article>
   </div>
   {% endfor %}
+</div>
+</div>
+
 </div>
 
 {%endblock %}

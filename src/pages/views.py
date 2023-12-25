@@ -85,3 +85,43 @@ def history(request):
             "title": "История",
         },
     )
+
+
+def science_directions(request):
+    return render(
+        request,
+        "pages/science/directions.html",
+        {
+            "title": "Направления",
+        },
+    )
+
+
+def science_journals(request):
+    return render(
+        request,
+        "pages/science/journals.html",
+        {
+            "title": "Научные журналы",
+        },
+    )
+
+
+def scientific_student_clubs(request):
+    return render(
+        request,
+        "pages/science/scientific_student_clubs.html",
+        {
+            "title": "Научные студенческие кружки",
+        },
+    )
+
+
+def science_seminars(request):
+    return render(
+        request,
+        "pages/science/seminars.html",
+        {
+            "title": "Семинары",
+        },
+    )

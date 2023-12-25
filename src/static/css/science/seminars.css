@@ -1,0 +1,50 @@
+.heading {
+    margin-top: 40px;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 600;
+}
+.line {
+    width: 23em;
+    margin-top: -18px;
+    border-top: 2px solid;
+    margin-bottom: 40px;
+}
+
+.back-c:hover {
+    background-color: whitesmoke !important;
+}
+.page-name {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 40px;
+}
+
+.text-on-image {
+    font-size: 38px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+
+.parallax-container {
+    display: flex;
+    min-height: 25vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+
+  background-image: url(../../images/science/seminars/parallax_image.png);
+  background-position: center;
+  background-size: cover;
+  color: var(--color);
+  row-gap: 4rem;
+
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+
+

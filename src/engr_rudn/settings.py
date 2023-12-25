@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "pages",
     "profiles",
+    "seminars",
     "ckeditor",
     "ckeditor_uploader",
     "django_jsonform",

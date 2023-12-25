@@ -168,7 +168,7 @@
     uk-slider="sets: true; autoplay: true;pause-on-hover: true"
   >
     <div class="uk-position-relative">
-      <ul class="uk-slider-items uk-child-width-1-2@m uk-grid-match uk-grid">
+      <ul class="uk-slider-items uk-child-width-1-3@m uk-grid-match uk-grid">
         <li>
           <a href="#" class="uk-link-toggle">
             <div class="uk-card uk-card-small uk-card-hover uk-card-default">
@@ -199,6 +199,21 @@
                 <h3 class="uk-card-title uk-text-truncate">
                   Cтарт стипендиального конкурса 2023/24 Фонда Потанина
                 </h3>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="uk-link-toggle">
+            <div class="uk-card uk-card-small uk-card-hover uk-card-default">
+              <div class="uk-card-media-top">
+                <img
+                  class="news-large-img"
+                  src="{% static 'images/index/nedra.jpg' %}"
+                />
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-truncate">Недра Земли</h3>
               </div>
             </div>
           </a>
@@ -322,19 +337,4 @@
     </div>
   </div>
 </div>
-{% comment %}
-<a
-  style="
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    color: rgb(0, 121, 191);
-    margin-right: 10px;
-  "
-  class="uk-visible@m"
-  uk-scroll
-  href=""
-  uk-icon="icon:chevron-up; ratio: 3"
->
-</a>
-{% endcomment %} {% endblock %}
+{% endblock %}

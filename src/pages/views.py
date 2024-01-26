@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404
 
 
 def index(request):
-    news = NewsItem.objects.prefetch_related().order_by("creation_date")[:3]
+    news = NewsItem.objects.prefetch_related().order_by("creation_date")[:6]
     return render(
         request,
         "pages/index.html",
@@ -310,7 +310,6 @@ def levels_of_study(request, level):
     if level not in levels:
         return HttpResponse(status=404)
     directions = StudyDirection.objects.filter(study_level=levels[level])
-    print(directions)
     return render(
         request,
         f"pages/applicants/levels/{level}.html",

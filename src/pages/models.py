@@ -105,6 +105,9 @@ class ProfileDetails(models.Model):
     program_manager = models.CharField(
         verbose_name="Руководитель программы", max_length=255
     )
+    sub_header = models.CharField(
+        verbose_name="Подзаголовок", max_length=255, blank=True, null=True
+    )
     phone = PhoneNumberField(verbose_name="Телефон", blank=True, null=True)
     email = models.EmailField(
         verbose_name="Электронная почта", max_length=255, blank=True, null=True

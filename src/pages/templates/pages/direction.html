@@ -64,7 +64,9 @@
         <h4><b>Руководитель программы:</b></h4>
         <h4 style="margin-top: -15px; margin-left:10px">{{profile_data.full_time_details.program_manager}}</h4>
         {% endif %}
-
+        {% if profile_data.full_time_details.sub_header %}
+        <p style="margin-top: -20px; margin-left:10px">{{profile_data.full_time_details.sub_header}} </p>
+        {% endif %}
         {% if profile_data.full_time_details.phone %}
         <p style="margin-top: -15px; margin-left:10px"><b>Телефон:</b> {{profile_data.full_time_details.phone}} </p>
         {% endif %}
@@ -136,7 +138,9 @@
         <h4><b>Руководитель программы:</b></h4>
         <h4 style="margin-top: -15px; margin-left:10px">{{profile_data.part_time_details.program_manager}}</h4>
         {% endif %}
-  
+        {% if profile_data.part_time_details.sub_header %}
+        <p style="margin-top: -20px; margin-left:10px">{{profile_data.part_time_details.sub_header}} </p>
+        {% endif %}
         {% if profile_data.part_time_details.phone %}
         <p style="margin-top: -15px; margin-left:10px"><b>Телефон:</b> {{profile_data.part_time_details.phone}} </p>
         {% endif %}
@@ -208,7 +212,9 @@
         <h4><b>Руководитель программы:</b></h4>
         <h4 style="margin-top: -15px; margin-left:10px">{{profile_data.extramural_details.program_manager}}</h4>
         {% endif %}
-  
+        {% if profile_data.extramural_details.sub_header %}
+        <p style="margin-top: -20px; margin-left:10px">{{profile_data.extramural_details.sub_header}} </p>
+        {% endif %}
         {% if profile_data.extramural_details.phone %}
         <p style="margin-top: -15px; margin-left:10px"><b>Телефон:</b> {{profile_data.extramural_details.phone}} </p>
         {% endif %}

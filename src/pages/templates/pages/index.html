@@ -1,6 +1,7 @@
 {% extends 'components/base.html' %} {% block content %} {%load static%}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 
+{% comment %}
 <div
   uk-height-viewport
   style="
@@ -11,6 +12,15 @@
   class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-background-fixed"
   uk-img
 >
+  <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
+    <h1 class="uk-text-bolder uk-text-break text_on_parallax">
+      Инженерная академия РУДН
+    </h1>
+  </div>
+</div>
+{% endcomment %}
+
+<div class="parallax-image" uk-height-viewport>
   <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
     <h1 class="uk-text-bolder uk-text-break text_on_parallax">
       Инженерная академия РУДН
@@ -34,7 +44,7 @@
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/bachelor"
+                href="/applicants/study_directions/bachelor"
                 >Бакалавриат</a
               >
             </li>
@@ -42,7 +52,15 @@
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/magistrate"
+                href="/applicants/study_directions/specialists"
+                >Специалитет</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/applicants/study_directions/masters"
                 >Магистратура</a
               >
             </li>
@@ -50,7 +68,7 @@
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/postgraduate"
+                href="/applicants/study_directions/postgraduates"
                 >Аспирантура</a
               >
             </li>
@@ -73,24 +91,32 @@
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/bachelor"
-                >Бакалавриат</a
+                href="/science/directions"
+                >Направления</a
               >
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/magistrate"
-                >Магистратура</a
+                href="/science/journals"
+                >Научные журналы</a
               >
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/postgraduate"
-                >Аспирантура</a
+                href="/science/scientific_student_society"
+                >Научное студенческое общество</a
+              >
+            </li>
+            <li class="uk-margin">
+              <a
+                uk-icon="arrow-right"
+                class="uk-link-heading card-link"
+                href="/science/seminars"
+                >Семинары</a
               >
             </li>
           </ul>
@@ -112,24 +138,16 @@
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/bachelor"
-                >Бакалавриат</a
+                href="/academy/administration"
+                >Дирекция</a
               >
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
-                href="/magistrate"
-                >Магистратура</a
-              >
-            </li>
-            <li class="uk-margin">
-              <a
-                uk-icon="arrow-right"
-                class="uk-link-heading card-link"
-                href="/postgraduate"
-                >Аспирантура</a
+                href="/academy/history"
+                >История</a
               >
             </li>
           </ul>

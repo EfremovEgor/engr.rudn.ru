@@ -39,13 +39,15 @@
             <div class="uk-card uk-card-body">
                 <h3 style="font-size: 36px; font-weight: 500">Регистрация на ДОД</h3>
                 <p style="font-size: 20px; font-weight: 400; text-align: justify;">Инженерная академия приглашает школьников, родителей и педагогов посетить Дни открытых дверей! В течение года вам доступны как онлайн, так и очные мероприятия по ознакомлению с нашим вузом.</p>
-                <a class="uk-link-muted" href="./../../archieve/Презентация ИА 2023 ДОД.pptx" style="font-size: 26px;">Презентация со Дня открытых дверей</a>
+                {% for presentation in presentations  %}
+                <a class="uk-link-muted" href="{{presentation.file.url}}" style="font-size: 26px;">{{presentation.name}}</a>
+                {% endfor %}
             </div>
             <div class="uk-card uk-card-default uk-width-1-2@m">
                 <div class="uk-card-header">
                     <div class="uk-grid-small uk-flex-middle" uk-grid>
                         <div class="uk-width-auto">
-                            <img class="uk-border-circle" width="80" height="60" src="./../../images/parshin-rs.png" alt="Avatar">
+                            <img class="uk-border-circle" width="80" height="60" src="{% static "images/shared/parshin-rs.png" %}" alt="Avatar">
                         </div>
                         <div class="uk-width-expand">
                             <h3 class="uk-card-title uk-margin-remove-bottom">Паршин Роман Сергеевич</h3>

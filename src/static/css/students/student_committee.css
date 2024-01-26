@@ -1,39 +1,39 @@
 .heading {
-    margin-top: 40px;
-    font-size: 30px;
-    text-align: left;
-    font-weight: 600;
+  margin-top: 40px;
+  font-size: 30px;
+  text-align: left;
+  font-weight: 600;
 }
 .line {
-    width: 23em;
-    margin-top: -18px;
-    border-top: 2px solid;
-    margin-bottom: 40px;
+  width: 23em;
+  margin-top: -18px;
+  border-top: 2px solid;
+  margin-bottom: 40px;
 }
 
 .back-c:hover {
-    background-color: whitesmoke !important;
+  background-color: whitesmoke !important;
 }
 .page-name {
-    font-size: 40px;
-    font-weight: 600;
-    margin: 40px;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 40px;
 }
 
 .text-on-image {
-    font-size: 38px;
-    font-weight: 600;
-    font-family: sans-serif;
-    color: whitesmoke;
+  font-size: 38px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: whitesmoke;
 }
 
 .parallax-container_1 {
-    display: flex;
-    min-height: 25vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-attachment: fixed;
+  display: flex;
+  min-height: 25vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
 
   background-image: url(./../../images/instacod.png);
   background-position: center;
@@ -47,12 +47,12 @@
 }
 
 .parallax-container_2 {
-    display: flex;
-    min-height: 40vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-attachment: fixed;
+  display: flex;
+  min-height: 40vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
 
   background-image: url(../../images/students/student_committee/studkom.png);
   background-position: bottom;
@@ -64,49 +64,31 @@
   margin-top: 40px;
 }
 
+.app-item-svg {
+  height: 32px;
+  fill: white;
+  transition: 0.5s;
+}
+
+.app-item-svg:hover {
+  height: 32px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255);
+  border-radius: 100%;
+}
+.vk:hover {
+  fill: white;
+}
 
 .app-item-svg {
-    height: 32px;
-    fill: white;
-    transition: 0.5s;
-  }
-  
-  .app-item-svg:hover {
-    height: 32px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255);
-    border-radius: 100%;
-  }
-  .vk:hover {
-    fill: white
-  } 
+  height: 32px;
+  fill: black;
+  transition: 0.5s;
+}
 
-  .app-item-svg {
-    height: 32px;
-    fill: black;
-    transition: 0.5s;
-  }
-  
-  .app-item-svg:hover {
-    height: 32px;
-    padding: 5px;
-    background-color: black;
-    border-radius: 100%;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.app-item-svg:hover {
+  height: 32px;
+  padding: 5px;
+  background-color: black;
+  border-radius: 100%;
+}

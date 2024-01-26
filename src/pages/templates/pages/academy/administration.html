@@ -6,12 +6,12 @@
   <div class="uk-child-width-1-2@m uk-grid-large" uk-grid>
   {% for profile in profiles %}
   <div>
-    <article style="height: 90%;" class="uk-comment uk-comment-primary uk-grid-match" role="comment">
-      <header class="uk-comment-header">
+    <article style="height: 90%;background-color:transparent;" class="uk-card-default uk-comment uk-comment-primary uk-grid-match" role="comment">
+      <header class="uk-comment-header " style="padding-bottom:15px;border-bottom: 1px solid #e5e5e5;">
         <div class="uk-grid-medium uk-flex-middle" uk-grid>
           <div class="uk-width-auto">
             <img
-              class="uk-comment-avatar"
+              class="uk-border-circle"
               src="{{profile.image.url}}"
               width="80"
               height="80"
@@ -37,34 +37,34 @@
       <div class="uk-comment-body">
         <ul class="uk-list">
           {% if profile.office %}
-          <li class="uk-margin">
+          <li >
             <h5
               target="_blank"
               rel="noreferrer noopener"
               class="uk-link-heading card-link"
             >
               <span uk-icon="icon: location; ratio: 1"></span>
-              <b>Кабинет:</b> <br />
-              <span style="margin-left: 30px">{{profile.office}}</span>
+              
+              <span >{{profile.office}}</span>
             </h5>
           </li>
           {% endif %} {% if profile.working_hours %}
-          <li class="uk-margin">
+          <li >
             <h5 class="uk-link-heading card-link">
               <span uk-icon="icon: clock; ratio: 1"></span>
-              <b>Рабочие часы:</b> <br />
+           
 
-              <span style="margin-left: 30px"> {{profile.working_hours}}</span>
+              <span > {{profile.working_hours}}</span>
             </h5>
           </li>
           {% endif %} {% if profile.phone_numbers %}
-          <li class="uk-margin">
+          <li>
             <h5>
-              <span uk-icon="icon: receiver; ratio: 1"></span>
-              <b>Рабочий телефон:</b> <br />
               {% for phone in profile.phone_numbers %}
+              <span uk-icon="icon: receiver; ratio: 1"></span>
+
               <a
-                style="margin-left: 30px"
+                
                 href="tel:{{phone}}"
                 class="uk-link-heading card-link"
               >
@@ -74,13 +74,14 @@
             </h5>
           </li>
           {% endif %} {% if profile.emails %}
-          <li class="uk-margin">
+          <li >
             <h5>
-              <span uk-icon="icon: mail; ratio: 1"></span>
-              <b>Электронная почта:</b> <br />
+              
+              
               {% for email in profile.emails %}
+              <span uk-icon="icon: mail; ratio: 1"></span>
               <a
-                style="margin-left: 30px"
+           
                 href="mailto:{{email}}"
                 class="uk-link-heading card-link"
                 >{{email}}

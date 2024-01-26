@@ -1,13 +1,17 @@
-import json
-import os
 from django.forms import model_to_dict
 from django.shortcuts import render
 from .models import IndexContact, Profile, AdministrationProfiles, StudyDirection
-from django.http import Http404, HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from news.models import NewsItem, Tag
 from django.views import View
 from django.shortcuts import get_object_or_404
+from documents.models import (
+    ApplicantsCISNormativeDocument,
+    ApplicantsForeignNormativeDocument,
+    OpenDaysFiles,
+    StudentsApplications,
+)
 
 
 def index(request):
@@ -190,12 +194,12 @@ def science_journals(request):
     )
 
 
-def scientific_student_clubs(request):
+def scientific_student_society(request):
     return render(
         request,
-        "pages/science/scientific_student_clubs.html",
+        "pages/science/scientific_student_society.html",
         {
-            "title": "Научные студенческие кружки",
+            "title": "Научные студенческое общество",
         },
     )
 
@@ -241,11 +245,13 @@ def graduates_topics_of_dissertation_research(request):
 
 
 def students_applications(request):
+    applications = StudentsApplications.objects.order_by("position").all()
     return render(
         request,
         "pages/students/applications.html",
         {
             "title": "Образцы заявлений",
+            "applications": applications,
         },
     )
 
@@ -271,21 +277,28 @@ def students_student_committee(request):
 
 
 def applicants_reference(request):
+    cis = ApplicantsCISNormativeDocument.objects.all()
+    foreign = ApplicantsForeignNormativeDocument.objects.all()
     return render(
         request,
         "pages/applicants/reference.html",
         {
             "title": "Справочная информация",
+            "cis": cis,
+            "foreign": foreign,
         },
     )
 
 
 def open_days(request):
+    presentations = OpenDaysFiles.objects.filter(type="Презентация").all()
+    print(presentations)
     return render(
         request,
         "pages/applicants/open_days.html",
         {
             "title": "Дни открытых дверей",
+            "presentations": presentations,
         },
     )
 

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "pages",
     "news",
+    "documents",
     "profiles",
     "seminars",
     "ckeditor",

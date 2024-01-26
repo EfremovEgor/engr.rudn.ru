@@ -23,9 +23,9 @@ urlpatterns = [
     path("science/directions", views.science_directions, name="science_directions"),
     path("science/journals", views.science_journals, name="science_journals"),
     path(
-        "science/scientific_student_clubs",
-        views.scientific_student_clubs,
-        name="scientific_student_clubs",
+        "science/scientific_student_society",
+        views.scientific_student_society,
+        name="scientific_student_society",
     ),
     path("science/seminars", views.science_seminars, name="science_seminars"),
     path("graduates/contacts", views.graduates_contacts, name="graduates_contacts"),

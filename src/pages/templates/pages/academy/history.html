@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="{% static 'css/history.css' %}" />
 <div uk-height-viewport style="
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url('{% static 'images/index/background.jpeg' %}');
-  " class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" uk-img>
-    <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
-        <div class="uk-child-width-1-2@s uk-grid-medium uk-grid-match uk-child-width-expand@s" uk-grid>
+      url('{% static 'images/index/background.jpeg' %}');" 
+      class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" uk-img>
+    <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical ">
+        <div class="uk-child-width-1-2@s uk-grid-medium uk-grid-match uk-child-width-expand@s uk-visible@m" uk-grid>
             <div style="max-width: 70%; padding-right:30px">
 
                 <h1 class="first-heading uk-text-break uk-text-right@s">
@@ -27,6 +27,11 @@
                 </div>
             </div>
         </div>
+        <div >
+            <h1 class="first-heading uk-hidden@m">
+                <b>История</b>
+            </h1>
+        </div>
     </div>
 </div>
 
@@ -36,6 +41,17 @@
 <div class="main-part">
     <div class="container">
         <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match  uk-flex-center" uk-grid>
+            <div class="uk-hidden@m">
+                <div class="uk-card uk-card-secondary uk-card-body">
+                    <h3 class="uk-card-title"><b>5 февраля 1960
+                    </b></h3>
+                    <h4 class="uk-card-title">Создание Университета
+                    </h4>
+
+                    <p>Постановление ЦК КПСС и Совета Министров СССР «Об организации Университета дружбы народов», датированное 5 февраля 1960 года, извещало о том, что «Университет дружбы народов готовит инженеров, специалистов сельского хозяйства, учителей, врачей, экономистов и специалистов по другим отраслям знаний».
+                    </p>
+                </div>
+            </div>
             <div>
                 <div class="uk-card uk-card-secondary uk-card-body">
                     <h3 class="uk-card-title"><b>17 марта, 1960</b></h3>

@@ -82,3 +82,10 @@
   max-width: 100% !important;
   width: 100% !important;
 }
+
+.no-background::after {
+  background-image: none !important;
+}
+.uk-thumbnav > * > ::after {
+  background-image: none !important;
+}

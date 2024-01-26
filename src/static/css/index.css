@@ -1,9 +1,22 @@
-.text_on_parallax {
-  font-size: 4em;
-  color: white;
-  font-weight: 600;
-  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+@media screen and (min-width: 993px) {
+  .text_on_parallax {
+    font-size: 10vh;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000; */
+  }
+}
+@media screen and (max-width: 992px) {
+  .text_on_parallax {
+    font-size: 5vh;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000; */
+  }
 }
 .card-container {
   max-width: 80%;

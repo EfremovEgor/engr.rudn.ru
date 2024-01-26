@@ -36,7 +36,7 @@
                 <a
                   uk-icon="chevron-down"
                   class="header-text header-text-main navbar-main-link"
-                  href="/academy"
+                  href=""
                   >Академия</a
                 >
                 <div class="uk-navbar-dropdown dropdown-black">
@@ -63,7 +63,7 @@
                 <a
                   uk-icon="chevron-down"
                   class="header-text header-text-main navbar-main-link"
-                  href="/science"
+                  href=""
                   >Наука</a
                 >
                 <div class="uk-navbar-dropdown dropdown-black">
@@ -212,6 +212,26 @@
       <div
         uk-navbar="dropbar: true; dropbar-anchor: !.uk-navbar-container; target-y: !.uk-navbar-container; "
       >
+        <div
+          class="uk-navbar-left uk-flex uk-flex-middle"
+          style="margin: 0; padding: 0; gap: 0"
+        >
+          <ul
+            class="uk-thumbnav uk-thumbnav-vertical"
+            style="margin: auto"
+            uk-margin
+          >
+            <li>
+              <a href="/"
+                ><img
+                  class="no-background"
+                  src="{% static 'images/header/logo.png' %}"
+                  width="60vw"
+                  alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
             <li>
@@ -366,14 +386,3 @@
     </div>
   </nav>
 </header>
-
-<!-- 
-    <div class="ui container">
-        <div class="{% if " /academy" in request.path %}active{% endif %} item"> Академия</div>
-        <div class="{% if " /science" in request.path %}active{% endif %} item">Наука</div>
-        <div class="{% if " /admission" in request.path %}active{% endif %} item">Абитуриентам</div>
-        <div class="{% if " /academic" in request.path %}active{% endif %} item">Преподавателям</div>
-        <div class="{% if " /students" in request.path %}active{% endif %} item">Студентам</div>
-        <div class="{% if " /postgraduates" in request.path %}active{% endif %} item">Аспирантам</div>
-
-    </div> -->

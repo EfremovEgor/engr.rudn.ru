@@ -86,3 +86,33 @@
   row-gap: 4rem;
   text-align: center;
 }
+.parallax-image-contacts {
+  display: flex;
+  min-height: 40vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/index/banners/contacts.jpg);
+  background-position: bottom;
+  background-size: cover;
+  row-gap: 4rem;
+  text-align: center;
+}
+.parallax-image-news {
+  display: flex;
+  min-height: 40vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/index/banners/news.jpg);
+  background-position: bottom;
+  background-size: cover;
+  row-gap: 4rem;
+  text-align: center;
+}

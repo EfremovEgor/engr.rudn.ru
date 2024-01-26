@@ -1,11 +1,8 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/history.css' %}" />
-<div uk-height-viewport style="
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-      url('{% static 'images/index/background.jpeg' %}');" 
-      class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex" uk-img>
-    <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical ">
+<div class="parallax-image" uk-height-viewport>
+    <div class="uk-text-center uk-light uk-margin-auto uk-margin-auto-vertical ">
         <div class="uk-child-width-1-2@s uk-grid-medium uk-grid-match uk-child-width-expand@s uk-visible@m" uk-grid>
             <div style="max-width: 70%; padding-right:30px">
 
@@ -33,7 +30,8 @@
             </h1>
         </div>
     </div>
-</div>
+  </div>
+
 
 
 </div>

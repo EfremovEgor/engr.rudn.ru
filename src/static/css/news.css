@@ -1,0 +1,8 @@
+.news-large-img {
+  vertical-align: middle;
+  object-fit: cover;
+  object-position: 0;
+  height: 50vh;
+  width: 100%;
+  color: white;
+}

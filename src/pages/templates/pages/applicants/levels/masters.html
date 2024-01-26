@@ -1,0 +1,40 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/applicants/study_directions.css' %}"
+/>
+
+<div class="uk-container">
+  <div class="page-name">Магистратура</div>
+</div>
+<div class="parallax-container_4">
+  <p class="text-on-image">
+    Выбирай будущее – поступай в РУДН!
+    <br />Choose your future – graduate at the RUDN!
+  </p>
+</div>
+<div class="uk-container">
+  <div class="heading"><p>Программы подготовки</p></div>
+  <div class="line"></div>
+  <div class="naprs" style="margin-top: 40px">
+    {% for direction in directions %}
+    <ul uk-accordion="multiple: true">
+      <li class="uk-open">
+        <a class="uk-accordion-title" href=""
+          ><b>{{direction.cipher}} «{{direction.name}}»</b></a
+        >
+        <div class="uk-accordion-content">
+          {% for profile in direction.profiles.all %}
+          <a
+            class="uk-link-text"
+            href="/applicants/study_directions/{{profile.id}}"
+            ><b>Профиль:</b> {{profile.name}}</a
+          >
+          {% endfor %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{%endblock %}

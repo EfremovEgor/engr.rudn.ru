@@ -169,70 +169,20 @@
   >
     <div class="uk-position-relative">
       <ul class="uk-slider-items uk-child-width-1-3@m uk-grid-match uk-grid">
+        {% for item in news %}
         <li>
-          <a href="#" class="uk-link-toggle">
+          <a href="/news/{{item.id}}" class="uk-link-toggle">
             <div class="uk-card uk-card-small uk-card-hover uk-card-default">
               <div class="uk-card-media-top">
-                <img
-                  class="news-large-img"
-                  src="{% static 'images/index/open_days.jpeg' %}"
-                />
+                <img class="news-large-img" src="{{item.preview_image.url}}" />
               </div>
               <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-truncate">
-                  День открытых дверей инженерной академии РУДН
-                </h3>
+                <h3 class="uk-card-title uk-text-truncate">{{item.title}}</h3>
               </div>
             </div>
           </a>
         </li>
-        <li>
-          <a href="#" class="uk-link-toggle">
-            <div class="uk-card uk-card-small uk-card-hover uk-card-default">
-              <div class="uk-card-media-top">
-                <img
-                  class="news-large-img"
-                  src="{% static 'images/index/stipa.png' %}"
-                />
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-truncate">
-                  Cтарт стипендиального конкурса 2023/24 Фонда Потанина
-                </h3>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="uk-link-toggle">
-            <div class="uk-card uk-card-small uk-card-hover uk-card-default">
-              <div class="uk-card-media-top">
-                <img
-                  class="news-large-img"
-                  src="{% static 'images/index/nedra.jpg' %}"
-                />
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-truncate">Недра Земли</h3>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="uk-link-toggle">
-            <div class="uk-card uk-card-small uk-card-hover uk-card-default">
-              <div class="uk-card-media-top">
-                <img
-                  class="news-large-img"
-                  src="{% static 'images/index/nedra.jpg' %}"
-                />
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-truncate">Недра Земли</h3>
-              </div>
-            </div>
-          </a>
-        </li>
+        {% endfor %}
       </ul>
     </div>
     <ul class="uk-slider-nav uk-dotnav" style="margin-top: 20px"></ul>
@@ -252,7 +202,6 @@
       class="uk-width-5-6 uk-text-center uk-margin-auto uk-margin-auto-vertical"
     >
       <a
-        href="/news"
         class="news-block-heading uk-link-heading uk-text-break uk-text-left text_on_parallax"
         uk-parallax="opacity: 0,3;x:-50,0,0; y: 0,0; scale: 1,1;end: 50vh + 50%;"
       >

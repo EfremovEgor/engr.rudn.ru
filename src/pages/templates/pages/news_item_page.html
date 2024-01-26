@@ -1,0 +1,28 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/news.css' %}" />
+<link rel="stylesheet" href="{% static 'js/news.js' %}" />
+<link rel="stylesheet" href="{% static 'css/global.css' %}" />
+
+<div class="container">
+  <h1>{{title}}</h1>
+  <div class="hashtags uk-flex">
+    <form action="/news" class="uk-margin" method="POST">
+      {% csrf_token %} {% for item in content.tags.all %}
+      <button
+        class="uk-button-link"
+        style="border: 0px; cursor: pointer; font-size: 18px"
+        type="submit"
+        name="tags"
+        value="{{item.name}}"
+      >
+        #{{item.name}}
+      </button>
+      {% endfor %}
+    </form>
+  </div>
+  <img src="{{content.preview_image.url}}" style="width: 70%" alt="" />
+
+  <div class="news_content uk-margin">{{ content.content|safe}}</div>
+</div>
+{% endblock %}

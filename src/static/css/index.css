@@ -48,10 +48,11 @@
   width: 100%;
 }
 .news-block-heading {
+  color: white !important;
   transition: all 0.3s ease 0s;
 }
 .news-block-heading:hover {
-  font-size: 600%;
+  font-size: 150%;
   transition: all 0.3s ease 0s;
 }
 .news-large-img {

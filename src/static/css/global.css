@@ -12,3 +12,6 @@
     padding: 25px 5px 50px 5px;
   }
 }
+.uk-accordion-title::before {
+  transform: scale(1.5);
+}

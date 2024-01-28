@@ -7,12 +7,20 @@
   color: white;
 }
 .news-card {
+  min-height: 300px;
   height: 100%;
+  width: 100%;
 }
 .news-card-no-image {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.news-card-container {
+/* .news-card-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
+.news-card-container > a {
+  max-width: 450px;
+} */

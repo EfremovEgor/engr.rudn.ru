@@ -16,6 +16,13 @@
             {{profile_data.full_time_details.budget_places}}</b>
         </h4>
         {% endif %}
+        {% if profile_data.full_time_details.paid_places %}
+        <h4 style="margin-top: -10px">
+
+          <b>Количество платных мест –
+            {{profile_data.full_time_details.paid_places}}</b>
+        </h4>
+        {% endif %}
         <h4 style="margin-top: -10px">
           <b>Стоимость обучения по контракту:</b>
         </h4>
@@ -90,6 +97,13 @@
             {{profile_data.part_time_details.budget_places}}</b>
         </h4>
         {% endif %}
+        {% if profile_data.part_time_details.paid_places %}
+        <h4 style="margin-top: -10px">
+
+          <b>Количество платных мест –
+            {{profile_data.part_time_details.paid_places}}</b>
+        </h4>
+        {% endif %}
         <h4 style="margin-top: -10px">
           <b>Стоимость обучения по контракту:</b>
         </h4>
@@ -162,6 +176,13 @@
   
           <b>Количество бюджетных мест –
             {{profile_data.extramural_details.budget_places}}</b>
+        </h4>
+        {% endif %}
+        {% if profile_data.extramural_details.paid_places %}
+        <h4 style="margin-top: -10px">
+
+          <b>Количество платных мест –
+            {{profile_data.extramural_details.paid_places}}</b>
         </h4>
         {% endif %}
         <h4 style="margin-top: -10px">

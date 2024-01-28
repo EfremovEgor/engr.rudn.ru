@@ -51,7 +51,10 @@ class IndexContact(models.Model):
 class ProfileDetails(models.Model):
     name = models.TextField(verbose_name="Название")
     budget_places = models.PositiveIntegerField(
-        verbose_name="Количество бюджетных мест"
+        verbose_name="Количество бюджетных мест", null=True, blank=True
+    )
+    paid_places = models.PositiveIntegerField(
+        verbose_name="Количество платных мест", null=True, blank=True
     )
     price_first_year = models.PositiveIntegerField(
         verbose_name="Стоимость обучения по контракту(1 год)", null=True, blank=True

@@ -21,8 +21,9 @@
       {% endfor %}
     </form>
   </div>
+  {% if content.preview_image %}
   <img src="{{content.preview_image.url}}" style="width: 70%" alt="" />
-
+  {% endif %}
   <div class="news_content uk-margin">{{ content.content|safe}}</div>
 </div>
 {% endblock %}

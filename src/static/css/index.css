@@ -117,3 +117,28 @@
   row-gap: 4rem;
   text-align: center;
 }
+.news-card-text {
+  overflow: hidden;
+  text-overflow: clip;
+}
+.news-card-text > * {
+  word-break: break-word;
+  white-space: normal;
+  overflow: hidden;
+  clear: both;
+  overflow-y: hidden;
+}
+.news-card-text {
+  overflow: hidden;
+  clear: both;
+  overflow-y: hidden;
+  overflow-y: hidden;
+}
+.news-card {
+  max-height: 600px;
+}
+.news-card-no-image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

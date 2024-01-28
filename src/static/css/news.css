@@ -2,7 +2,17 @@
   vertical-align: middle;
   object-fit: cover;
   object-position: 0;
-  height: 50vh;
+  height: 400px;
   width: 100%;
   color: white;
+}
+.news-card {
+  height: 100%;
+}
+.news-card-no-image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.news-card-container {
 }

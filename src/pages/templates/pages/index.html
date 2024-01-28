@@ -171,7 +171,96 @@
   </div>
 </div>
 
+
+
 <div class="card-container news-container block news-block">
+  <div class="uk-slider-container-offset" uk-slider>
+
+    <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+
+        <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-3@m uk-grid uk-grid-match">
+          {% for item in news %}
+            <li>
+              
+              {% if item.preview_image %}
+             
+                <div class="uk-card uk-card-hover uk-card-default news-card">
+                  <a href="/news/{{item.id}}" class="uk-link-toggle">
+                    <div class="uk-card-media-top">
+                        <img src="{{item.preview_image.url}}" width="1800" height="1200" alt="">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">{{item.title}}</h3>
+                    </div>
+                  </a>
+                  </div>
+
+                    {% else %}
+
+                    <div class="uk-card uk-card-hover uk-card-default uk-card-body news-card news-card-no-image">
+                      <a href="/news/{{item.id}}" class="uk-link-toggle">
+                      <h3 class="uk-card-title">{{item.title}}</h3>
+                    </a>
+                    </div>
+
+                  {% endif %}
+                
+                </li>
+            {% endfor %}
+              
+        </ul>
+
+        <a class="uk-position-center-left-out" href uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right-out" href uk-slidenav-next uk-slider-item="next"></a>
+
+    </div>
+
+    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+{% comment %} </div>
+
+
+
+  <div uk-slider="animation: push min-height: 300; max-height: 600; ratio: 7:3">
+    <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+      <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@">
+        {% for item in news %}
+        <li>
+          <a href="/news/{{item.id}}" class="uk-link-toggle">
+          {% if item.preview_image %}
+          <img src="{{item.preview_image.url}}" alt="" uk-cover />
+          <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+            <h3 class="uk-margin-remove">{{item.title}}</h3>
+        </div>
+          {% else %}
+              <div class="uk-card-body">
+                <h3 class="uk-card-title">{{item.title}}</h3>
+                <p class="uk-text-truncate news-card-text">
+                  {{item.content|safe}}
+                </p>
+              </div>
+            {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+      
+      <a
+        class="uk-position-center-left uk-position-small uk-hidden-hover"
+        href
+        uk-slidenav-previous
+        uk-slideshow-item="previous"
+      ></a>
+      <a
+        class="uk-position-center-right uk-position-small uk-hidden-hover"
+        href
+        uk-slidenav-next
+        uk-slideshow-item="next"
+      ></a>
+    </div>
+
+    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+  </div>
+
   <div
     class="uk-slider-container-offset uk-position-relative uk-visible-toggle"
     tabindex="-1"
@@ -183,12 +272,21 @@
         <li>
           <a href="/news/{{item.id}}" class="uk-link-toggle">
             <div class="uk-card uk-card-small uk-card-hover uk-card-default">
+              {% if item.preview_image %}
               <div class="uk-card-media-top">
                 <img class="news-large-img" src="{{item.preview_image.url}}" />
               </div>
               <div class="uk-card-body">
                 <h3 class="uk-card-title">{{item.title}}</h3>
               </div>
+              {% else %}
+              <div class="uk-card-body">
+                <h3 class="uk-card-title">{{item.title}}</h3>
+                <p class="uk-text-truncate news-card-text">
+                  {{item.content|safe}}
+                </p>
+              </div>
+              {% endif %}
             </div>
           </a>
         </li>
@@ -197,7 +295,7 @@
     </div>
     <ul class="uk-slider-nav uk-dotnav" style="margin-top: 20px"></ul>
   </div>
-</div>
+</div> {% endcomment %}
 <div class="block">
   <div class="parallax-image-contacts" style="height: 30vh">
     <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">

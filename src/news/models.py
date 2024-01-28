@@ -18,7 +18,8 @@ class NewsItem(models.Model):
     preview_image = models.ImageField(
         verbose_name="Фотография",
         upload_to="news",
-        blank=False,
+        null=True,
+        blank=True,
     )
     tags = models.ManyToManyField(Tag, verbose_name="Тэги")
     content = RichTextUploadingField(

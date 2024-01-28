@@ -89,3 +89,7 @@
 .uk-thumbnav > * > ::after {
   background-image: none !important;
 }
+.header-image > img {
+  height: 60px;
+  width: fit-content;
+}

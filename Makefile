@@ -6,3 +6,6 @@ update:
 
 create_env:
 	echo "DJANGO_DATABASE_HOST= \nDJANGO_DATABASE_PORT= \nDJANGO_DATABASE_NAME= \nDJANGO_DATABASE_USER= \nDJANGO_DATABASE_PASSWORD= " >> .env
+
+run_tests:
+	cd src && coverage run manage.py test 

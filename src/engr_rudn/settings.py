@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_prometheus",
     "pages",
     "news",
     "documents",
@@ -62,7 +63,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
+MIDDLEWARE = (
+    ["django_prometheus.middleware.PrometheusBeforeMiddleware"]
+    + MIDDLEWARE
+    + ["django_prometheus.middleware.PrometheusAfterMiddleware"]
+)
+PROMETHEUS_URL_SUFFIX = os.getenv("PROMETHEUS_URL_SUFFIX")
 ROOT_URLCONF = "engr_rudn.urls"
 
 TEMPLATES = [
@@ -80,7 +86,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = "engr_rudn.wsgi.application"
 LOCALE_PATHS = [
     BASE_DIR / "locale/",
@@ -91,7 +96,7 @@ LOCALE_PATHS = [
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django_prometheus.db.backends.postgresql",
         "NAME": os.getenv("DJANGO_DATABASE_NAME"),
         "USER": os.getenv("DJANGO_DATABASE_USER"),
         "PASSWORD": os.getenv("DJANGO_DATABASE_PASSWORD"),

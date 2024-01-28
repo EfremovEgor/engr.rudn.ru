@@ -91,5 +91,5 @@
 }
 .header-image > img {
   height: 60px;
-  width: fit-content;
+  min-width: fit-content;
 }

@@ -11,4 +11,8 @@ urlpatterns = [
     path("", include("pages.urls")),
     path("", include("profiles.urls")),
     path("", include("seminars.urls")),
+    path(
+        f"prometheus-{settings.PROMETHEUS_URL_SUFFIX}/",
+        include("django_prometheus.urls"),
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

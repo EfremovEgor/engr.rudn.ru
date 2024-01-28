@@ -117,3 +117,7 @@
   margin-bottom: 20px;
   margin-top: 40px;
 }
+
+.uk-accordion-title::before {
+  transform: scale(1.5);
+}

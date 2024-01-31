@@ -108,6 +108,13 @@ class ProfileDetails(models.Model):
     program_manager = models.CharField(
         verbose_name="Руководитель программы", max_length=255
     )
+    job_title = ArrayField(
+        models.CharField(verbose_name="Должность/Звание", max_length=255),
+        verbose_name="Должности/Звания",
+        size=20,
+        blank=True,
+        null=True,
+    )
     sub_header = models.CharField(
         verbose_name="Подзаголовок", max_length=255, blank=True, null=True
     )

@@ -16,6 +16,27 @@
   flex-direction: row;
   align-items: center;
 }
+.news-image {
+  object-fit: fill;
+  height: 300px;
+  width: 100%;
+}
+.news-card-container {
+  width: 380px;
+}
+.news-cards {
+  display: flex;
+  width: 100%;
+  gap: 50px 5px;
+}
+.news-cards:last-child {
+  justify-self: start;
+  align-self: flex-start;
+}
+.news-cards-wrapper {
+  width: 100%;
+}
+
 /* .news-card-container {
   display: flex;
   align-items: center;

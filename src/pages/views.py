@@ -117,6 +117,8 @@ def news(request):
 def directions(request, id):
     profile_object = get_object_or_404(Profile, pk=id)
     profile_data = model_to_dict(profile_object)
+    direction = StudyDirection.objects.filter(profiles__in=[profile_object]).first()
+    profile_data["direction"] = direction
     profile_data["full_time_details"] = (
         model_to_dict(profile_object.full_time_details)
         if profile_data["full_time_details"] is not None

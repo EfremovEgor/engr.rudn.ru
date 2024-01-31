@@ -18,11 +18,10 @@
               uk-margin
             >
               <li>
-                <a
-                  href="https://www.rudn.ru/"
-                  class="header-image"
-                  target="_blank"
-                  ><img src="{% static 'images/header/logo_2_imgs.png' %}" alt=""
+                <a class="header-image uk-link-reset" target="_blank"
+                  ><img
+                    src="{% static 'images/header/logo_2_imgs.png' %}"
+                    alt=""
                 /></a>
               </li>
             </ul>
@@ -46,6 +45,9 @@
 
           <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
+              <li>
+                <a class="header-text header-text-main" href="/">Главная</a>
+              </li>
               <li>
                 <a class="header-text header-text-main" href="/news">Новости</a>
               </li>
@@ -239,10 +241,7 @@
             uk-margin
           >
             <li>
-              <a
-                href="https://www.rudn.ru/"
-                class="header-image"
-                target="_blank"
+              <a class="uk-link-reset header-image" target="_blank"
                 ><img
                   class="no-background mobile-image"
                   src="{% static 'images/header/logo_2_imgs.png' %}"
@@ -288,6 +287,9 @@
                 >
                   <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li class="uk-nav-header">
+                        <a class="header-text" href="/">Главная</a>
+                      </li>
                       <li class="uk-nav-header">
                         <a class="header-text" href="/news">Новости</a>
                       </li>

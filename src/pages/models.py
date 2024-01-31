@@ -200,3 +200,4 @@ class AdministrationProfiles(models.Model):
     class Meta:
         verbose_name = "Профиль дирекции"
         verbose_name_plural = "Профили дирекции"
+        ordering = ["position", "employee__full_name"]

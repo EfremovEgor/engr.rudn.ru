@@ -1,7 +1,9 @@
 from django.contrib import admin
+from django.db.models.functions import Lower
 
 
 from .models import *
+
 
 admin.site.register(ProfileDetails)
 admin.site.register(IndexContact)

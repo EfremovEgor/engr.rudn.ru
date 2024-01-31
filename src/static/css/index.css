@@ -203,6 +203,7 @@ html {
 .news-card {
   min-height: 300px;
   height: 100%;
+  max-height: 400px;
   width: 100%;
 }
 .news-card-no-image {
@@ -226,4 +227,27 @@ html {
 }
 .news-link {
   height: 100%;
+}
+.news-title {
+  display: -webkit-box;
+  max-width: 400px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news-title-no-image {
+  display: -webkit-box;
+  max-width: 400px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slider-nav {
+  transform: scale(2);
+  color: black;
+}
+.slider-nav-mobile {
+  margin: 0px -40px;
 }

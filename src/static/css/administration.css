@@ -1,4 +1,4 @@
-@media screen and (min-width: 993px) {
+/* @media screen and (min-width: 993px) {
   .container-employee {
     max-width: 50%;
     margin: 50px 50px;
@@ -7,5 +7,18 @@
 @media screen and (max-width: 992px) {
   .container-employee {
     max-width: 100%;
+  }
+} */
+.employee-card {
+  width: 350px;
+}
+.employee_cards {
+  display: flex;
+  width: 100%;
+  gap: 50px 5px;
+}
+@media screen and (max-width: 400px) {
+  .employee-card {
+    width: 80%;
   }
 }

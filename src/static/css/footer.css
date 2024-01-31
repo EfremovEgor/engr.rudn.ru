@@ -82,9 +82,8 @@ a {
 
 .footer-heading {
   color: white;
-  white-space: nowrap;
 }
 
 .uk-heading-divider {
-  width: fit-content!important;
+  width: fit-content !important;
 }

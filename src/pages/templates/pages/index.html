@@ -157,45 +157,77 @@
 </div>
 
 <div class="card-container news-container block news-block">
-  <div class="uk-slider-container-offset" uk-slider="sets: true">
-    <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
-      <ul class="uk-slider-items uk-grid" style="gap: 30px">
-        {% for item in news %} {% if item.preview_image %}
-        <li class="news-card-container">
-          <a href="/news/{{item.id}}" class="uk-link-toggle">
-            <div
-              class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
-            >
-              <div class="uk-card-media-top">
-                <img
-                  src="{{item.preview_image.url}}"
-                  class="news-image"
-                  alt=""
-                />
+  <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+    <div uk-slider>
+      <div class="uk-slider-container uk-slider-container-offset">
+        <ul class="uk-slider-items uk-grid" style="gap: 30px">
+          {% for item in news %} {% if item.preview_image %}
+          <li class="news-card-container">
+            <a href="/news/{{item.id}}" class="uk-link-toggle">
+              <div
+                class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
+              >
+                <div class="uk-card-media-top">
+                  <img
+                    src="{{item.preview_image.url}}"
+                    class="news-image"
+                    alt=""
+                  />
+                </div>
+                <div class="uk-card-body">
+                  <h3 class="uk-card-title news-title">{{item.title}}</h3>
+                </div>
               </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title">{{item.title}}</h3>
+            </a>
+          </li>
+          {% else %}
+          <li class="news-card-container">
+            <a href="/news/{{item.id}}" class="news-link uk-link-toggle">
+              <div
+                class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
+              >
+                <h3 class="uk-card-title news-title-no-image">
+                  {{item.title}}
+                </h3>
               </div>
-            </div>
-          </a>
-        </li>
-        {% else %}
-        <li class="news-card-container">
-          <a href="/news/{{item.id}}" class="news-link uk-link-toggle">
-            <div
-              class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
-            >
-              <h3 class="uk-card-title">{{item.title}}</h3>
-            </div>
-          </a>
-        </li>
-        {% endif %} {% endfor %}
-      </ul>
+            </a>
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </div>
+      <div class="uk-hidden@s">
+        <a
+          class="slider-nav slider-nav-mobile uk-position-center-left"
+          href
+          uk-slidenav-previous
+          uk-slider-item="previous"
+        ></a>
+        <a
+          class="slider-nav slider-nav-mobile uk-position-center-right"
+          href
+          uk-slidenav-next
+          uk-slider-item="next"
+        ></a>
+      </div>
+
+      <div class="uk-visible@s">
+        <a
+          class="slider-nav uk-position-center-left-out uk-position-large"
+          href
+          uk-slidenav-previous
+          uk-slider-item="previous"
+        ></a>
+        <a
+          class="slider-nav uk-position-center-right-out uk-position-large"
+          href
+          uk-slidenav-next
+          uk-slider-item="next"
+        ></a>
+      </div>
+
+      <div class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></div>
     </div>
-
-    <div class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></div>
   </div>
-
   <div class="show-uni-news__wrap">
     <a href="/news" class="show-uni-news__link" target="_self">
       <span class="show-uni-news__link-text">Все НОВОСТИ</span>

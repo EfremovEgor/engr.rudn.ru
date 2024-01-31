@@ -69,8 +69,8 @@ MIDDLEWARE = (
     + ["django_prometheus.middleware.PrometheusAfterMiddleware"]
 )
 PROMETHEUS_URL_SUFFIX = os.getenv("PROMETHEUS_URL_SUFFIX")
-ROOT_URLCONF = "engr_rudn.urls"
 PROMETHEUS_METRICS_EXPORT_PORT_RANGE = range(8001, 8050)
+ROOT_URLCONF = "engr_rudn.urls"
 
 TEMPLATES = [
     {

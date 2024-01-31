@@ -209,7 +209,7 @@ def science_seminars(request):
         request,
         "pages/science/seminars.html",
         {
-            "title": "Семинары",
+            "title": "Научные семинары",
         },
     )
 

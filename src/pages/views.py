@@ -15,7 +15,7 @@ from documents.models import (
 
 
 def index(request):
-    news = NewsItem.objects.prefetch_related().order_by("creation_date")[:6]
+    news = NewsItem.objects.prefetch_related().order_by("creation_date")[:8]
     return render(
         request,
         "pages/index.html",

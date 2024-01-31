@@ -1,25 +1,6 @@
 {% extends 'components/base.html' %} {% block content %} {%load static%}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 
-{% comment %}
-<div
-  uk-height-viewport
-  style="
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('{% static 'images/index/background.jpeg' %}');
-  "
-  uk-parallax="media: @l; target: #body; y: 500; easing: -1;"
-  class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-background-fixed"
-  uk-img
->
-  <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
-    <h1 class="uk-text-bolder uk-text-break text_on_parallax">
-      Инженерная академия РУДН
-    </h1>
-  </div>
-</div>
-{% endcomment %}
-
 <div class="parallax-image" uk-height-viewport>
   <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
     <h1 class="uk-text-bolder uk-text-break text_on_parallax">
@@ -176,12 +157,9 @@
 </div>
 
 <div class="card-container news-container block news-block">
-  <div class="uk-slider-container-offset" uk-slider>
+  <div class="uk-slider-container-offset" uk-slider="sets: true">
     <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
-      <ul
-        class="uk-slider-items uk-flex-center news-cards uk-flex-nowrap"
-        style="gap: 30px"
-      >
+      <ul class="uk-slider-items uk-grid" style="gap: 30px">
         {% for item in news %} {% if item.preview_image %}
         <li class="news-card-container">
           <a href="/news/{{item.id}}" class="uk-link-toggle">
@@ -214,18 +192,7 @@
         {% endif %} {% endfor %}
       </ul>
     </div>
-    <a
-      class="uk-position-center-left-out"
-      href
-      uk-slidenav-previous
-      uk-slider-item="previous"
-    ></a>
-    <a
-      class="uk-position-center-right-out"
-      href
-      uk-slidenav-next
-      uk-slider-item="next"
-    ></a>
+
     <div class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></div>
   </div>
 

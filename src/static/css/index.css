@@ -1,3 +1,6 @@
+html {
+  padding: 0px !important;
+}
 @media screen and (min-width: 993px) {
   .text_on_parallax {
     font-size: 10vh;
@@ -214,6 +217,7 @@
 }
 .news-card-container {
   width: 380px;
+  z-index: 100;
 }
 .news-cards {
   display: flex;

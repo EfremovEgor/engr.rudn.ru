@@ -13,6 +13,7 @@ class BaseDocument(models.Model):
 
     class Meta:
         abstract = True
+        ordering = ["name"]
 
     def __str__(self):
         return self.name
@@ -50,6 +51,7 @@ class StudentsApplications(BaseDocument):
     class Meta:
         verbose_name = "Образец заявления"
         verbose_name_plural = "Студенты образцы заявлений"
+        ordering = ["position"]
 
     def __str__(self) -> str:
         return f"{self.position} - {self.name}"

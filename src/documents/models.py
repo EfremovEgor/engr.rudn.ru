@@ -4,6 +4,7 @@ from django.db import models
 class BaseDocument(models.Model):
     name = models.CharField(verbose_name="Название", max_length=255)
     file = models.FileField(
+        max_length=255,
         verbose_name="Файл",
         upload_to="documents",
         null=False,

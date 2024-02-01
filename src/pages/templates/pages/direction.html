@@ -5,7 +5,7 @@
 <div class="uk-container container" style="margin-bottom: 50px">
   <h1 class="">{{profile_data.direction.cipher}}  {{profile_data.direction.name}} </h1>
   <h2 class="heading" >Профиль: {{profile_data.name}}</h2>
-  <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match uk-grid">
+  <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match uk-grid">
     {% if profile_data.full_time_details %}
     <div class="card-wrapper">
       <div class="uk-card uk-card-default uk-card-body uk-card-hover">
@@ -31,7 +31,7 @@
         <p style="margin-top: -15px;"><b>{{heading}}:</b></p>
         <p style="margin-top: -15px;">
         {% for subject_object in data%}
-        <p style="margin-top: -15px; margin-left:10px"> {{subject_object.subject}} - {{subject_object.score}}</p>
+        <p style="margin-top: -15px; margin-left:10px"> {{subject_object.subject}} – {{subject_object.score}}</p>
         {% endfor%}
         </p>
         {% endfor%}
@@ -40,32 +40,32 @@
         </h4>
         {% if profile_data.full_time_details.price_first_year %}
         <p style="margin-top: -15px">
-          1-й год {% if not profile_data.full_time_details.price_second_year %} и далее {% endif %}- {{profile_data.full_time_details.price_first_year}} ₽
+          1-й год {% if not profile_data.full_time_details.price_second_year %} и далее {% endif %}– {{profile_data.full_time_details.price_first_year}} ₽
         </p>
 
         {% endif %} {% if profile_data.full_time_details.price_second_year %}
         <p style="margin-top: -15px">
-          2-й год {% if not profile_data.full_time_details.price_third_year %} и далее {% endif %}- {{profile_data.full_time_details.price_second_year}} ₽
+          2-й год {% if not profile_data.full_time_details.price_third_year %} и далее {% endif %}– {{profile_data.full_time_details.price_second_year}} ₽
         </p>
 
         {% endif %} {% if profile_data.full_time_details.price_third_year %}
         <p style="margin-top: -15px">
-          3-й год - {{profile_data.full_time_details.price_third_year}} ₽
+          3-й год – {{profile_data.full_time_details.price_third_year}} ₽
         </p>
 
         {% endif %} {% if profile_data.full_time_details.price_fourth_year %}
         <p style="margin-top: -15px">
-          4-й год - {{profile_data.full_time_details.price_fourth_year}} ₽
+          4-й год – {{profile_data.full_time_details.price_fourth_year}} ₽
         </p>
 
         {% endif %} {% if profile_data.full_time_details.price_fifth_year %}
         <p style="margin-top: -15px">
-          5-й год - {{profile_data.full_time_details.price_fifth_year}} ₽
+          5-й год – {{profile_data.full_time_details.price_fifth_year}} ₽
         </p>
 
         {% endif %} {% if profile_data.full_time_details.price_sixth_year %}
         <p style="margin-top: -15px">
-          6-й год - {{profile_data.full_time_details.price_sixth_year}} ₽
+          6-й год – {{profile_data.full_time_details.price_sixth_year}} ₽
         </p>
         {% endif %}
         {% if profile_data.full_time_details.program_manager %}
@@ -116,7 +116,7 @@
         <p style="margin-top: -15px;"><b>{{heading}}:</b></p>
         <p style="margin-top: -15px;">
         {% for subject_object in data%}
-        <p style="margin-top: -15px; margin-left:10px"> {{subject_object.subject}} - {{subject_object.score}}</p>
+        <p style="margin-top: -15px; margin-left:10px"> {{subject_object.subject}} – {{subject_object.score}}</p>
         {% endfor%}
         </p>
         {% endfor%}
@@ -125,32 +125,32 @@
         </h4>
         {% if profile_data.part_time_details.price_first_year %}
         <p style="margin-top: -15px">
-          1-й год {% if not profile_data.part_time_details.price_second_year %} и далее {% endif %} - {{profile_data.part_time_details.price_first_year}} ₽
+          1-й год {% if not profile_data.part_time_details.price_second_year %} и далее {% endif %} – {{profile_data.part_time_details.price_first_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.part_time_details.price_second_year %}
         <p style="margin-top: -15px">
-          2-й год {% if not profile_data.part_time_details.price_third_year %} и далее {% endif %} - {{profile_data.part_time_details.price_second_year}} ₽
+          2-й год {% if not profile_data.part_time_details.price_third_year %} и далее {% endif %} – {{profile_data.part_time_details.price_second_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.part_time_details.price_third_year %}
         <p style="margin-top: -15px">
-          3-й год - {{profile_data.part_time_details.price_third_year}} ₽
+          3-й год – {{profile_data.part_time_details.price_third_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.part_time_details.price_fourth_year %}
         <p style="margin-top: -15px">
-          4-й год - {{profile_data.part_time_details.price_fourth_year}} ₽
+          4-й год – {{profile_data.part_time_details.price_fourth_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.part_time_details.price_fifth_year %}
         <p style="margin-top: -15px">
-          5-й год - {{profile_data.part_time_details.price_fifth_year}} ₽
+          5-й год – {{profile_data.part_time_details.price_fifth_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.part_time_details.price_sixth_year %}
         <p style="margin-top: -15px">
-          6-й год - {{profile_data.part_time_details.price_sixth_year}} ₽
+          6-й год – {{profile_data.part_time_details.price_sixth_year}} ₽
         </p>
   
         {% endif %}
@@ -201,7 +201,7 @@
         <p style="margin-top: -15px;"><b>{{heading}}:</b></p>
         <p style="margin-top: -15px;">
         {% for subject_object in data%}
-        <p style="margin-top: -15px; margin-left:10px"> {{subject_object.subject}} - {{subject_object.score}}</p>
+        <p style="margin-top: -15px; margin-left:10px"> {{subject_object.subject}} – {{subject_object.score}}</p>
         {% endfor%}
         </p>
         {% endfor%}
@@ -210,32 +210,32 @@
         </h4>
         {% if profile_data.extramural_details.price_first_year %}
         <p style="margin-top: -15px">
-          1-й год {% if not profile_data.extramural_details.price_second_year %} и далее {% endif %} - {{profile_data.extramural_details.price_first_year}} ₽
+          1-й год {% if not profile_data.extramural_details.price_second_year %} и далее {% endif %} – {{profile_data.extramural_details.price_first_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.extramural_details.price_second_year %}
         <p style="margin-top: -15px">
-          2-й год {% if not profile_data.extramural_details.price_third_year %} и далее {% endif %} - {{profile_data.extramural_details.price_second_year}} ₽
+          2-й год {% if not profile_data.extramural_details.price_third_year %} и далее {% endif %} – {{profile_data.extramural_details.price_second_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.extramural_details.price_third_year %}
         <p style="margin-top: -15px">
-          3-й год - {{profile_data.extramural_details.price_third_year}} ₽
+          3-й год – {{profile_data.extramural_details.price_third_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.extramural_details.price_fourth_year %}
         <p style="margin-top: -15px">
-          4-й год - {{profile_data.extramural_details.price_fourth_year}} ₽
+          4-й год – {{profile_data.extramural_details.price_fourth_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.extramural_details.price_fifth_year %}
         <p style="margin-top: -15px">
-          5-й год - {{profile_data.extramural_details.price_fifth_year}} ₽
+          5-й год – {{profile_data.extramural_details.price_fifth_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.extramural_details.price_sixth_year %}
         <p style="margin-top: -15px">
-          6-й год - {{profile_data.extramural_details.price_sixth_year}} ₽
+          6-й год – {{profile_data.extramural_details.price_sixth_year}} ₽
         </p>
   
         {% endif %}

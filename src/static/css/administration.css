@@ -11,6 +11,10 @@
 } */
 .employee-card {
   width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .employee_cards {
   display: flex;

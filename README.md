@@ -76,6 +76,14 @@ $ .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
+### Запуск локального сервера
+
+С
+
+```
+$ pip install -r requirements.txt
+```
+
 ## After setup
 
 `$ git checkout -b feature_name`

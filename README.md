@@ -126,7 +126,7 @@ $ python3 manage.py runserver
 
 ## ⛏️ Примененные технологии
 
-- \[PostgreSQL\]https://www.postgresql.org/) - база данных
-- \[PostgreSQL\]https://www.postgresql.org/) - база данных
-- \[PostgreSQL\]https://www.postgresql.org/) - база данных
-- \[PostgreSQL\]https://www.postgresql.org/) - база данных
+- [PostgreSQL](https://www.postgresql.org/) - база данных
+- [Django](https://www.djangoproject.com/) - веб фреймворк
+- [PostgreSQL](https://www.postgresql.org/) - база данных
+- [PostgreSQL](https://www.postgresql.org/) - база данных

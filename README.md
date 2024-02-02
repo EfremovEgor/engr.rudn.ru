@@ -1,4 +1,4 @@
-# Сайт Инженерной Академии РУДН
+# Engineering Academy
 
 <div align="center">
 </div>

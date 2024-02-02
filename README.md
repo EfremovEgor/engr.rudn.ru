@@ -35,7 +35,7 @@ WSGI HTTP сервер - gunicorn
 
 ### Основные требования
 
-- [Python ](https://www.postgresql.org/)
+- [Python 3.10+](https://www.python.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 
 ## Update repo

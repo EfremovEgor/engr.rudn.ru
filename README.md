@@ -129,4 +129,4 @@ $ python3 manage.py runserver
 
 - [PostgreSQL](https://www.postgresql.org/) - База данных
 - [Django](https://www.djangoproject.com/) - Веб фреймворк
-- [Nginx](hhttps://www.nginx.com/) - Прокси-сервер
+- [Nginx](https://www.nginx.com/) - Прокси-сервер

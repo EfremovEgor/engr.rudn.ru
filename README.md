@@ -40,8 +40,9 @@ WSGI HTTP сервер - gunicorn
 
 ### Среда разработки
 
-```
+\`
 $ git remote add origin https://github.com/EfremovEgor/engr.rudn.ru
+
 ```
 
 ## After setup
@@ -71,3 +72,4 @@ then fill .env with your database credentials
 ## Push changes
 
 `$ git push origin feature_name`
+```

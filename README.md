@@ -40,6 +40,12 @@ WSGI HTTP сервер - gunicorn
 
 ### Среда разработки
 
+Инициализировать локальный ре
+
+```
+$ git remote add origin https://github.com/EfremovEgor/engr.rudn.ru
+```
+
 Добавить удаленный репозиторий:
 
 ```
@@ -53,6 +59,10 @@ $ git pull origin main
 ```
 
 Создать виртуальное окружение
+
+```
+$ git pull origin main
+```
 
 ## After setup
 

@@ -113,6 +113,12 @@ $ python3 manage.py migrate
 $ python3 manage.py createsuperuser
 ```
 
+Запустить сервер:
+
+```
+$ python3 manage.py runserver
+```
+
 ## After setup
 
 `$ git checkout -b feature_name`

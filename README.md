@@ -90,11 +90,8 @@ DJANGO_DATABASE_PORT= 5432
 DJANGO_DATABASE_NAME= engr.rudn.ru
 DJANGO_DATABASE_USER= postgres
 DJANGO_DATABASE_PASSWORD= postgres
-PROMETHEUS_URL_SUFFIX= random_
+PROMETHEUS_URL_SUFFIX= random_base64_string_url_safe
 ```
-
-где
-DJANGO_DATABASE_HOST - хост базы данных, в данном случае localhost
 
 ### Запуск локального сервера
 

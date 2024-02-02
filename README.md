@@ -5,7 +5,7 @@
 
 ![Статус](https://img.shields.io/badge/status-active-success.svg)
 
-# #Development
+## Development
 
 ## Initial Setup
 

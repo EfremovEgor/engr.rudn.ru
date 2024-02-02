@@ -25,8 +25,8 @@
 
 Сайт Инженерной Академии РУДН, написанный на Python, Django.
 База данных - PostgreSQL.
-Для сбора статистики используются Prometheus(django-prometheus), Grafana
-В качестве прр
+Для сбора статистики используются Prometheus(django-prometheus), Grafana.
+В качестве прокси-сервера используется nginx.
 
 ## Development
 

@@ -82,10 +82,10 @@ $ pip install -r requirements.txt
 $ make create_env
 ```
 
-или
+ПримерЖ
 
 ```
-DJANGO_DATABASE_HOST= 
+DJANGO_DATABASE_HOST= localhost
 DJANGO_DATABASE_PORT= 
 DJANGO_DATABASE_NAME= 
 DJANGO_DATABASE_USER= 
@@ -94,6 +94,7 @@ PROMETHEUS_URL_SUFFIX=
 ```
 
 где
+DJANGO_DATABASE_HOST - хост базы данных, в данном случае localhost
 
 ### Запуск локального сервера
 

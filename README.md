@@ -79,7 +79,7 @@ $ pip install -r requirements.txt
 Создать .env файл и заполнить его:
 
 ```
-$ pip install -r requirements.txt
+$ make create_env
 ```
 
 ### Запуск локального сервера

@@ -3,7 +3,10 @@
 <div align="center">
 </div>
 
-![Статус](https://img.shields.io/badge/status-active-success.svg)
+---
+
+<p align="center">Сайт Инженерной Академии РУДН<br></p>
+[]()![Статус](https://img.shields.io/badge/status-active-success.svg)
 
 ## Development
 

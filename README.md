@@ -73,7 +73,7 @@ $ .venv/bin/activate
 Установить зависимости
 
 ```
-$ .venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 ## After setup

@@ -82,6 +82,17 @@ $ pip install -r requirements.txt
 $ make create_env
 ```
 
+или
+
+```
+DJANGO_DATABASE_HOST= localhost
+DJANGO_DATABASE_PORT= 5432
+DJANGO_DATABASE_NAME= engr.rudn.ru
+DJANGO_DATABASE_USER= postgres
+DJANGO_DATABASE_PASSWORD= 
+PROMETHEUS_URL_SUFFIX= 
+```
+
 ### Запуск локального сервера
 
 ```

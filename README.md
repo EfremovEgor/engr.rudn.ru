@@ -95,8 +95,10 @@ PROMETHEUS_URL_SUFFIX= random_base64_string_url_safe
 
 ### Запуск локального сервера
 
+Миграции
+
 ```
-$ pip install -r requirements.txt
+$ 
 ```
 
 ## After setup

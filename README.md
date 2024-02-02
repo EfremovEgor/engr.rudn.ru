@@ -1,4 +1,4 @@
-<h3 align="center">Сайт Инженерной Академии</h3>
+<h3 align="center">Сайт Инженерной Академии РУДН</h3>
 <div align="center">
 </div>
 

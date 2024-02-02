@@ -116,3 +116,20 @@ $ apt-get install nginx
 [Ссылка на гайд по установке на Ubuntu](https://www.postgresql.org/download/linux/ubuntu/)
 
 ## Установка сайта
+
+Создаем папку с сайтом:
+
+```
+$ mkdir /var/www/new
+```
+
+Переходим в папку:
+
+```
+$ cd /var/www/engr.rudn.ru
+```
+
+```
+$ git init
+$ git pull https://github.com/EfremovEgor/engr.rudn.ru
+```

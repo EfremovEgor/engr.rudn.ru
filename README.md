@@ -119,7 +119,7 @@ $ python3 manage.py createsuperuser
 $ python3 manage.py runserver
 ```
 
-Сайт будет доступен по ссылке
+Сайт будет доступен по ссылке http://127.0.0.1:8000/
 
 ## After setup
 

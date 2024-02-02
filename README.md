@@ -119,6 +119,8 @@ $ python3 manage.py createsuperuser
 $ python3 manage.py runserver
 ```
 
+Сайт будет доступен по ссылке
+
 ## After setup
 
 `$ git checkout -b feature_name`

@@ -33,7 +33,7 @@ WSGI HTTP сервер - gunicorn
 
 Эти инструкции позволят вам запустить копию проекта на локальном компьютере в целях разработки и тестирования. К ак развернуть проект в действующей системе описано в разделе Развертывание.
 
-## Initial Setup
+### Initial Setup
 
 `$ git remote add origin https://github.com/EfremovEgor/engr.rudn.ru`
 

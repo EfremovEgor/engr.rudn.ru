@@ -21,6 +21,8 @@
 - [Авторы](#authors)
 - [Благодарности](#acknowledgement)
 
+## О проекте
+
 ## Development
 
 ## Initial Setup

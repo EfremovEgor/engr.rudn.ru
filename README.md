@@ -38,7 +38,7 @@ WSGI HTTP сервер - gunicorn
 - [Python 3.11+](https://www.python.org/)
 - [PostgreSQL Latest](https://www.postgresql.org/)
 
-### Инициализация репозитория и установка зависимостей
+### Начальная
 
 Инициализировать локальный репозиторий
 
@@ -76,9 +76,13 @@ $ .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-### Запуск локального сервера
+Установить зависимости
 
-С
+```
+$ pip install -r requirements.txt
+```
+
+### Запуск локального сервера
 
 ```
 $ pip install -r requirements.txt

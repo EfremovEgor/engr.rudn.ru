@@ -38,9 +38,10 @@ WSGI HTTP сервер - gunicorn
 - [Python 3.11+](https://www.python.org/)
 - [PostgreSQL Latest](https://www.postgresql.org/)
 
-## Update repo
+### Среда разработки
 
-`$ git pull origin main`
+```
+```
 
 ## After setup
 

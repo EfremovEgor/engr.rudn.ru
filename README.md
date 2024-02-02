@@ -128,5 +128,5 @@ $ python3 manage.py runserver
 
 - [PostgreSQL](https://www.postgresql.org/) - база данных
 - [Django](https://www.djangoproject.com/) - веб фреймворк
-- [PostgreSQL](https://www.postgresql.org/) - база данных
+- [Nginx](hhttps://www.nginx.com/) - база данных
 - [PostgreSQL](https://www.postgresql.org/) - база данных

@@ -119,32 +119,4 @@ $ python3 manage.py createsuperuser
 $ python3 manage.py runserver
 ```
 
-Сайт будет доступен по ссылке http://127.0.0.1:8000/
-
-## After setup
-
-`$ git checkout -b feature_name`
-
-### Create .env file with:
-
-`$ make create_env`
-
-then fill .env with your database credentials
-
-### Migrate database:
-
-`$ cd src`
-
-`$ python3 manage.py migrate`
-
-### Create super user:
-
-`$ python3 manage.py createsuperuser`
-
-### Run local server:
-
-`$ python3 manage.py runserver`
-
-## Push changes
-
-`$ git push origin feature_name`
+Сайт будет доступен по ссылке <http://127.0.0.1:8000/>

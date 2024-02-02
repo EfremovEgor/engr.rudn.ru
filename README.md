@@ -95,10 +95,16 @@ PROMETHEUS_URL_SUFFIX= random_base64_string_url_safe
 
 ### Запуск локального сервера
 
+Изменить директорию
+
+```
+$ cd src
+```
+
 Миграции
 
 ```
-$ 
+$ python3 manage.py 
 ```
 
 ## After setup

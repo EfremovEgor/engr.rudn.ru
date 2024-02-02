@@ -38,7 +38,7 @@ WSGI HTTP сервер - gunicorn
 - [Python 3.11+](https://www.python.org/)
 - [PostgreSQL Latest](https://www.postgresql.org/)
 
-### Начальная
+### Начальная установка
 
 Инициализировать локальный репозиторий
 
@@ -58,25 +58,25 @@ $ git remote add origin https://github.com/EfremovEgor/engr.rudn.ru
 $ git pull origin main
 ```
 
-Создать виртуальное окружение
+Создать виртуальное окружение:
 
 ```
 $ python3 -m venv .venv
 ```
 
-Включить виртуальное окружение
+Включить виртуальное окружение:
 
 ```
 $ .venv/bin/activate
 ```
 
-Установить зависимости
+Установить зависимости:
 
 ```
 $ pip install -r requirements.txt
 ```
 
-Установить зависимости
+Создать .env файл и заполнить его:
 
 ```
 $ pip install -r requirements.txt

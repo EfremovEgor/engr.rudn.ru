@@ -1,4 +1,4 @@
-# Engineering Academy
+# Engineering Academy Of RUDN (engr.rudn.ru)
 
 <div align="center">
 </div>

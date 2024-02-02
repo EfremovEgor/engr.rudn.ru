@@ -95,22 +95,22 @@ PROMETHEUS_URL_SUFFIX= random_base64_string_url_safe
 
 ### Запуск локального сервера
 
-Изменить директорию
+Изменить директорию:
 
 ```
 $ cd src
 ```
 
-Применить миграции
+Применить миграции:
 
 ```
 $ python3 manage.py migrate
 ```
 
-Создать
+Создать профиль администратора:
 
 ```
-$ python3 manage.py migrate
+$ python3 manage.py createsuperuser
 ```
 
 ## After setup

@@ -52,6 +52,8 @@ $ git remote add origin https://github.com/EfremovEgor/engr.rudn.ru
 $ git pull origin main
 ```
 
+Создать виртуальное окружение
+
 ## After setup
 
 `$ git checkout -b feature_name`

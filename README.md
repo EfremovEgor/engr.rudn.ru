@@ -101,10 +101,16 @@ PROMETHEUS_URL_SUFFIX= random_base64_string_url_safe
 $ cd src
 ```
 
-Миграции
+Применить миграции
 
 ```
-$ python3 manage.py 
+$ python3 manage.py migrate
+```
+
+Создать
+
+```
+$ python3 manage.py migrate
 ```
 
 ## After setup

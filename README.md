@@ -35,6 +35,8 @@ WSGI HTTP сервер - gunicorn
 
 ### Основные требования
 
+- [PostgreSQL]()
+
 ## Update repo
 
 `$ git pull origin main`

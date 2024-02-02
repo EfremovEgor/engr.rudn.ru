@@ -27,6 +27,7 @@
 База данных - PostgreSQL.
 Для сбора статистики используются Prometheus(django-prometheus), Grafana.
 В качестве прокси-сервера используется nginx.
+WSGI HTTP Серв-
 
 ## Development
 

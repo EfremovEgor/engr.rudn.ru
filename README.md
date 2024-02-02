@@ -38,7 +38,7 @@ WSGI HTTP сервер - gunicorn
 - [Python 3.11+](https://www.python.org/)
 - [PostgreSQL Latest](https://www.postgresql.org/)
 
-### Среда разработки
+### Инициализация репозитория и установка зависимостей
 
 Инициализировать локальный репозиторий
 

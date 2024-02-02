@@ -64,10 +64,16 @@ $ git pull origin main
 $ python3 -m venv .venv
 ```
 
-Создать виртуальное окружение
+Включить виртуальное окружение
 
 ```
-$ 
+$ .venv/bin/activate
+```
+
+Установить зависимости
+
+```
+$ .venv/bin/activate
 ```
 
 ## After setup

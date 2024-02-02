@@ -40,6 +40,8 @@ WSGI HTTP сервер - gunicorn
 
 ### Среда разработки
 
+Добавить
+
 ```
 $ git remote add origin https://github.com/EfremovEgor/engr.rudn.ru
 ```

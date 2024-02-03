@@ -277,8 +277,17 @@ $ systemd-analyze verify gunicorn.service
 Запустить gunicorn:
 
 ```
-sudo systemctl enable gunicorn
-sudo systemctl start gunicorn
+$ sudo systemctl enable gunicorn
+```
+
+```
+$ sudo systemctl start gunicorn
+```
+
+Проверить работоспособность guicorn
+
+```
+$ sudo systemctl status gunicorn
 ```
 
 ## Настройка и запуск Nginx
@@ -300,7 +309,7 @@ $ nano engr
 ```
 server {
     listen 80;
-    server_name 89.111.152.60;
+    server_name site_name;
 
     location /favicon.ico {
         access_log off; log_not_found off;
@@ -327,6 +336,12 @@ server {
 $ sudo ln -s /etc/nginx/sites-available/engr /etc/nginx/sites-enabled/
 ```
 
+Проверить конфигурацию:
+
+```
+$ sudo nginx -t
+```
+
 ### Запуск Nginx
 
 Открыть порт:
@@ -335,8 +350,16 @@ $ sudo ln -s /etc/nginx/sites-available/engr /etc/nginx/sites-enabled/
 $ sudo ufw allow 80
 ```
 
+Запустить Nginx:
+
 ```
-$ sudo nginx -t
+sudo service nginx start
+```
+
+Перезапустить Nginx:
+
+```
+sudo service nginx restart
 ```
 
 Теперь сайт доступен по внешнему IP вашего сервера

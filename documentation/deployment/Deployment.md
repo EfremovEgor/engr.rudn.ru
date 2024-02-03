@@ -139,7 +139,7 @@ $ sudo apt install python3-pip
 Создать папку с сайтом:
 
 ```
-$ mkdir /var/www/new
+$ mkdir /var/www/engr.rudn.ru
 ```
 
 Перейти в папку:
@@ -324,13 +324,19 @@ server {
 Создать символическую ссылку на файл в каталоге
 
 ```
-sudo ln -s /etc/nginx/sites-available/engr /etc/nginx/sites-enabled/
+$ sudo ln -s /etc/nginx/sites-available/engr /etc/nginx/sites-enabled/
 ```
 
 ### Запуск Nginx
 
+Открыть порт:
+
 ```
-sudo nginx -t
+$ sudo ufw allow 80
+```
+
+```
+$ sudo nginx -t
 ```
 
 Теперь сайт доступен по внешнему IP вашего сервера

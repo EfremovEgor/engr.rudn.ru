@@ -138,26 +138,26 @@ class Profile(models.Model):
     study_level = models.CharField(
         verbose_name="Уровень обучения", max_length=255, choices=STUDY_LEVELS
     )
-    full_time_details = models.OneToOneField(
+    full_time_details = models.ForeignKey(
         ProfileDetails,
         verbose_name="Информация по очной форме обучения",
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         related_name="full_time_details",
         blank=True,
         null=True,
     )
-    part_time_details = models.OneToOneField(
+    part_time_details = models.ForeignKey(
         ProfileDetails,
         verbose_name="Информация по очно-заочной форме обучения",
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         related_name="part_time_details",
         blank=True,
         null=True,
     )
-    extramural_details = models.OneToOneField(
+    extramural_details = models.ForeignKey(
         ProfileDetails,
         verbose_name="Информация по заочной форме обучения",
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         related_name="extramural_details",
         blank=True,
         null=True,

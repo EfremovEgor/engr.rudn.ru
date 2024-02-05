@@ -4,7 +4,12 @@
 
 <div class="uk-container container" style="margin-bottom: 50px">
   <h1 class="">{{profile_data.direction.cipher}}  {{profile_data.direction.name}} </h1>
+  {% if profile_data.study_level != "Аспирантура" %}
   <h2 class="heading" >Профиль: {{profile_data.name}}</h2>
+  {% else %}
+  <h2 class="heading" >Специальность: {{profile_data.cipher}} {{profile_data.name}}</h2>
+  {% endif %}
+  
   <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match uk-grid">
     {% if profile_data.full_time_details %}
     <div class="card-wrapper">

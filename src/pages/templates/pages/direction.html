@@ -45,7 +45,7 @@
 
         {% endif %} {% if profile_data.full_time_details.price_second_year %}
         <p style="margin-top: -15px">
-          2-й год {% if not profile_data.full_time_details.price_third_year %} и далее {% endif %}– {{profile_data.full_time_details.price_second_year}} ₽
+          2-й год {% if not profile_data.full_time_details.price_third_year and profile_data.study_level != "Магистратура" %} и далее {% endif %}– {{profile_data.full_time_details.price_second_year}} ₽
         </p>
 
         {% endif %} {% if profile_data.full_time_details.price_third_year %}
@@ -130,7 +130,7 @@
   
         {% endif %} {% if profile_data.part_time_details.price_second_year %}
         <p style="margin-top: -15px">
-          2-й год {% if not profile_data.part_time_details.price_third_year %} и далее {% endif %} – {{profile_data.part_time_details.price_second_year}} ₽
+          2-й год {% if not profile_data.part_time_details.price_third_year and profile_data.study_level != "Магистратура" %} и далее {% endif %} – {{profile_data.part_time_details.price_second_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.part_time_details.price_third_year %}
@@ -215,7 +215,7 @@
   
         {% endif %} {% if profile_data.extramural_details.price_second_year %}
         <p style="margin-top: -15px">
-          2-й год {% if not profile_data.extramural_details.price_third_year %} и далее {% endif %} – {{profile_data.extramural_details.price_second_year}} ₽
+          2-й год {% if not profile_data.extramural_details.price_third_year and profile_data.study_level != "Магистратура"  %} и далее {% endif %} – {{profile_data.extramural_details.price_second_year}} ₽
         </p>
   
         {% endif %} {% if profile_data.extramural_details.price_third_year %}

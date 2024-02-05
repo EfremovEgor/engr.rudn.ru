@@ -10,3 +10,8 @@ create_env:
 
 run_tests:
 	cd src && coverage run manage.py test 
+
+push:
+	git add *
+	git commit -m "push"
+	git push origin master

@@ -53,7 +53,7 @@
 .main-heading {
   margin-bottom: 20px;
 }
-.main-heading > h2>{
-  margin: 0px;
-  padding: 0px;
+.main-heading > h2{
+  margin: 0px !important;
+  padding: 0px !important;
 }

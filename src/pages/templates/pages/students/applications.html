@@ -14,14 +14,14 @@
     <div>
       <div class="uk-card uk-card-default uk-card-body">
         <h3 class="uk-card-title" style="font-size: 36px">
-          <a
+          {{application.position}}
+        </h3>
+        <a
           class="uk-link-muted"
           href="{{application.file.url}}"
           style="font-size: 22px"
           >{{application.name}}</a
         >
-        </h3>
-
       </div>
     </div>
     {% endfor %}

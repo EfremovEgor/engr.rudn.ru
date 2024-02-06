@@ -15,3 +15,25 @@
 .uk-accordion-title::before {
   transform: scale(1.5);
 }
+
+.parallax-container, .parallax-container_2, .parallax-container_1{
+  margin: unset !important;
+  margin-top: 45px !important;
+  
+}
+.page-name{
+  margin: unset !important;
+  margin-top: 40px !important;
+}
+
+.sub-heading{
+  text-decoration: underline 2px black !important;
+  text-underline-offset: 10px !important;
+  margin-top: 40px;
+}
+.uk-accordion-content{
+  margin-top: 10px !important;
+}
+.text-on-image{
+  text-shadow: 1px 1px 20px black;
+}

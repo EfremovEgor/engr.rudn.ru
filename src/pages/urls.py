@@ -12,6 +12,7 @@ urlpatterns = [
         "applicants/reference", views.applicants_reference, name="applicants_reference"
     ),
     path("applicants/open_days", views.open_days, name="applicants_open_days"),
+    path("applicants/committee", views.committee, name="committee"),
     path(
         "applicants/study_directions",
         views.study_directions,
@@ -28,12 +29,12 @@ urlpatterns = [
         name="scientific_student_society",
     ),
     path("science/seminars", views.science_seminars, name="science_seminars"),
-    path("graduates/contacts", views.graduates_contacts, name="graduates_contacts"),
     path(
-        "graduates/digital_library",
-        views.graduates_digital_library,
-        name="graduates_digital_library",
+        "science/digital_library",
+        views.digital_library,
+        name="digital_library",
     ),
+    path("graduates/contacts", views.graduates_contacts, name="graduates_contacts"),
     path(
         "graduates/topics_of_dissertation_research",
         views.graduates_topics_of_dissertation_research,

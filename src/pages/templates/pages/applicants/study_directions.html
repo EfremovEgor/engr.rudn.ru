@@ -4,15 +4,13 @@
   href="{% static 'css/applicants/study_directions.css' %}"
 />
 <div class="uk-container">
-    <div class="page-name">Абитуриентам</div>
+    <div class="page-name">{{title}}</div>
 </div>
     <div class="parallax-container_1">
         <p class="text-on-image">Ваш путь к успешной инженерной карьере начинается здесь</p>
     </div>
-<div class="uk-container content">
+<div class="uk-container content" style="margin-top:40px; margin-bottom:50px">
     
-    <div class="heading"><p>Направления подготовки</p></div>
-    <div class="line"></div>
     <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
         <div>
             <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle" href="#">
@@ -39,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="heading"><p>Контакты</p></div>
+    {% comment %} <div class="heading"><p>Контакты</p></div>
     <div class="line" style="width: 9em;"></div>
     <div class="uk-card uk-card-default uk-width-1-2@m back-c">
         <div class="uk-card-header">
@@ -63,7 +61,7 @@
             </p>
         </div>
 
-    </div>
+    </div> {% endcomment %}
     
 </div>
 {%endblock %}

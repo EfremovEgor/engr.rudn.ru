@@ -181,7 +181,7 @@ def science_directions(request):
         request,
         "pages/science/directions.html",
         {
-            "title": "Направления",
+            "title": "Научные направления",
         },
     )
 
@@ -226,10 +226,10 @@ def graduates_contacts(request):
     )
 
 
-def graduates_digital_library(request):
+def digital_library(request):
     return render(
         request,
-        "pages/graduates/digital_library.html",
+        "pages/science/digital_library.html",
         {
             "title": "Электронная библиотека",
         },
@@ -331,5 +331,15 @@ def levels_of_study(request, level):
         {
             "title": levels[level],
             "directions": directions,
+        },
+    )
+
+
+def committee(request):
+    return render(
+        request,
+        "pages/applicants/committee.html",
+        {
+            "title": "Приемная комиссия",
         },
     )

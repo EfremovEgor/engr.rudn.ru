@@ -10,7 +10,7 @@
   }
 } */
 .employee-card {
-  width: 450px;
+  width: 430px;
   min-height: 300px;
   display: flex;
   flex-direction: column;

@@ -64,3 +64,21 @@
   margin-top: 40px;
   filter: brightness(95%);
 }
+
+.employee-card {
+  width: 450px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.employee_cards {
+  display: flex;
+  width: 100%;
+  gap: 50px 5px;
+}
+@media screen and (max-width: 400px) {
+  .employee-card {
+    width: 80%;
+  }
+}

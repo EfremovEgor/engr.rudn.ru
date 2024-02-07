@@ -153,7 +153,6 @@
                         >Дни открытых дверей</a
                       >
                     </li>
-
                   </ul>
                 </div>
               </li>
@@ -191,14 +190,13 @@
                     <li>
                       <a
                         class="header-text navbar-sub-link"
-                        href="/students/dissertation_committee"
+                        href="{% url 'pages:dissertation_committees' %} "
                         >Диссертационные советы</a
                       >
                     </li>
                   </ul>
                 </div>
               </li>
-
             </ul>
           </div>
         </div>
@@ -326,9 +324,7 @@
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="header-text"
-                          href="/applicants/committee"
+                        <a class="header-text" href="/applicants/committee"
                           >Приемная комиссия
                         </a>
                       </li>
@@ -342,14 +338,15 @@
                           >Дни открытых дверей
                         </a>
                       </li>
-
                     </ul>
                   </div>
 
                   <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-nav-header header-text">
-                        <a class="header-text uk-disabled" href="">Студентам и Аспирантам</a>
+                        <a class="header-text uk-disabled" href=""
+                          >Студентам и Аспирантам</a
+                        >
                       </li>
                       <li>
                         <a class="header-text" href="/students/schedule"
@@ -371,16 +368,14 @@
                       <li>
                         <a
                           class="header-text"
-                          href="/students/dissertation_committee"
+                          href="{% url 'pages:dissertation_committees' %}"
                           >Диссертационные советы</a
                         >
                       </li>
                     </ul>
                   </div>
 
-                  <div>
-
-                  </div>
+                  <div></div>
                 </div>
               </div>
             </li>

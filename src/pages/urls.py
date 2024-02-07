@@ -1,7 +1,7 @@
 from django.urls import include, path, re_path
 from . import views
 
-
+app_name = "pages"
 urlpatterns = [
     path("", views.index, name="index"),
     path("news", views.NewsView.as_view(), name="news"),
@@ -11,6 +11,7 @@ urlpatterns = [
     path(
         "applicants/reference", views.applicants_reference, name="applicants_reference"
     ),
+    path("academy/departments", views.departments, name="departments"),
     path("applicants/open_days", views.open_days, name="applicants_open_days"),
     path("applicants/committee", views.committee, name="committee"),
     path(
@@ -46,6 +47,16 @@ urlpatterns = [
         name="students_applications",
     ),
     path("students/schedule", views.students_schedule, name="students_schedule"),
+    path(
+        "students/dissertation_committees",
+        views.dissertation_committees,
+        name="dissertation_committees",
+    ),
+    path(
+        "students/dissertation_committees/<int:id>",
+        views.dissertation_committee,
+        name="dissertation_committee_item",
+    ),
     path(
         "students/student_committee",
         views.students_student_committee,

@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+
 import os
 from django.utils.translation import gettext_lazy as _
 
@@ -84,6 +85,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
+            "libraries": {"custom_tags": "pages.template_tags.custom_tags"},
         },
     },
 ]

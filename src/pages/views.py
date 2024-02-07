@@ -1,6 +1,12 @@
 from django.forms import model_to_dict
 from django.shortcuts import render
-from .models import IndexContact, Profile, AdministrationProfiles, StudyDirection
+from .models import (
+    IndexContact,
+    Profile,
+    AdministrationProfiles,
+    StudyDirection,
+    DissertationCommittee,
+)
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from news.models import NewsItem, Tag
@@ -46,12 +52,12 @@ class NewsView(View):
 
     def post(self, request, *args, **kwargs):
         search_details = {
-            "searched_title": request.POST.get("title")
-            if request.POST.get("title")
-            else "",
-            "searched_tags": request.POST.get("tags")
-            if request.POST.get("tags")
-            else "",
+            "searched_title": (
+                request.POST.get("title") if request.POST.get("title") else ""
+            ),
+            "searched_tags": (
+                request.POST.get("tags") if request.POST.get("tags") else ""
+            ),
         }
 
         to_search = {}
@@ -341,5 +347,40 @@ def committee(request):
         "pages/applicants/committee.html",
         {
             "title": "Приемная комиссия",
+        },
+    )
+
+
+def dissertation_committees(request):
+    committees = DissertationCommittee.objects.order_by("cipher").all()
+    return render(
+        request,
+        "pages/students/dissertation_committees.html",
+        {
+            "title": "Диссертационные советы",
+            "committees": committees,
+        },
+    )
+
+
+def dissertation_committee(request, id):
+    committee = get_object_or_404(DissertationCommittee, pk=id)
+
+    return render(
+        request,
+        "pages/students/dissertation_committee_item.html",
+        {
+            "title": "Диссертационные советы",
+            "committee": committee,
+        },
+    )
+
+
+def departments(request):
+    return render(
+        request,
+        "pages/academy/departments.html",
+        {
+            "title": "Департаменты",
         },
     )

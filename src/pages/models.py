@@ -201,3 +201,58 @@ class AdministrationProfiles(models.Model):
         verbose_name = "Профиль дирекции"
         verbose_name_plural = "Профили дирекции"
         ordering = ["position", "employee__full_name"]
+
+
+class ScientificSpecialty(models.Model):
+    cipher = models.CharField(verbose_name="Шифр", max_length=255)
+    name = models.TextField(verbose_name="Название")
+
+    def __str__(self) -> str:
+        return f"{self.cipher}  {self.name}"
+
+    class Meta:
+        verbose_name = "Научное направлние"
+        verbose_name_plural = "Научные направления"
+        ordering = ["cipher", "name"]
+
+
+class DissertationCommittee(models.Model):
+    cipher = models.CharField(verbose_name="Шифр совета", max_length=255)
+    organization = models.CharField(
+        verbose_name="Организация",
+        max_length=255,
+        default="Российский университет дружбы народов",
+    )
+    faculty = models.CharField(
+        verbose_name="Факультет", max_length=255, default="Инженерная академия"
+    )
+    address = models.CharField(
+        verbose_name="Адрес",
+        max_length=255,
+        default="115419, Москва, улица Орджоникидзе, 3",
+    )
+    scientific_specialties = models.ManyToManyField(
+        ScientificSpecialty, verbose_name="Научные специальности", blank=True
+    )
+    chairman = models.CharField(verbose_name="Председатель", max_length=255)
+    deputy = models.CharField(verbose_name="Заместитель председателя", max_length=255)
+    secretary = models.CharField(verbose_name="Секретарь", max_length=255)
+    phone = PhoneNumberField(verbose_name="Телефон", blank=True, null=True)
+    email = models.EmailField(
+        verbose_name="Электронная почта", max_length=255, blank=True, null=True
+    )
+    composition = ArrayField(
+        models.CharField(verbose_name="Участник диссовета", max_length=255),
+        verbose_name="Cостав диссовета",
+        size=20,
+        blank=True,
+        null=True,
+    )
+
+    def __str__(self) -> str:
+        return f"{self.cipher}"
+
+    class Meta:
+        verbose_name = "Диссертационный совет"
+        verbose_name_plural = "Диссертационные советы"
+        ordering = ["cipher"]

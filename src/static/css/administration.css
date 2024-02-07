@@ -10,8 +10,8 @@
   }
 } */
 .employee-card {
-  width: 350px;
-  height: 300px;
+  width: 450px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,6 +26,6 @@
     width: 80%;
   }
 }
-.uk-comment-header {
+/* .uk-comment-header {
   height: 130px !important;
-}
+} */

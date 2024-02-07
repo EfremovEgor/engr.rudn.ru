@@ -1,0 +1,8 @@
+.department-card {
+  width: 500px;
+  height: 700px;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

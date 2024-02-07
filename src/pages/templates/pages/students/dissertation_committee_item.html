@@ -1,0 +1,84 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/students/dissertation_committees.css' %}"
+/>
+
+<div class="uk-container">
+  <div class="page-name">{{title}}</div>
+</div>
+{% comment %}
+<div class="parallax-container_2">
+  <p class="text-on-image">Нужна ли эта надпись</p>
+</div>
+{% endcomment %}
+<div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-hover uk-table-small uk-table-divider">
+      <tbody>
+        <tr>
+          <td class="uk-table-shrink uk-text-nowrap">Шифр</td>
+          <td>{{committee.cipher}}</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Организация</td>
+          <td>{{committee.organization}}</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Факультет</td>
+          <td>{{committee.faculty}}</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Адрес</td>
+          <td>{{committee.address}}</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Специальности</td>
+          <td>
+            <div class="scientific_specialties">
+              {% for spec in committee.scientific_specialties.all %}
+              <span><b>{{spec.cipher}}.</b> {{spec.name}}</span>
+              {% endfor %}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Председатель</td>
+          <td>{{committee.chairman}}</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Секретарь</td>
+          <td>{{committee.secretary}}</td>
+        </tr>
+        {% if committee.phohe %}
+        <tr>
+          <td class="uk-text-nowrap">Телефон</td>
+          <td>{{committee.phohe}}</td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td class="uk-text-nowrap">E-mail</td>
+          <td>{{committee.email}}</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Cостав диссовета</td>
+          <td>
+            <ul uk-accordion>
+              <li class="uk-open">
+                <a class="uk-accordion-title" href></a>
+                <div class="uk-accordion-content committee_members">
+                  {% for person in committee.composition %}
+                  <span>{{person}}</span>
+                  {% endfor %}
+                </div>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{%endblock %}

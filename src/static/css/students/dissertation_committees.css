@@ -1,0 +1,9 @@
+.scientific_specialties {
+  display: flex;
+  flex-direction: column;
+}
+.committee_members {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

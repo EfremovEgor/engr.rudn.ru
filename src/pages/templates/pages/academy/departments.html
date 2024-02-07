@@ -1,0 +1,169 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
+<link rel="stylesheet" href="{% static 'css/academy/departments.css' %}" />
+<div class="uk-container">
+  <div class="page-name">{{title}}</div>
+</div>
+<div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
+  <div class="uk-overflow-auto">
+    <div class="uk-flex uk-flex-wrap">
+      <div>
+        <div
+          class="department-card uk-card uk-card-default uk-card-hover uk-card-body"
+        >
+          <div>
+            <h3 class="uk-card-title">
+              <b>Департамент механики и процессов управления</b>
+            </h3>
+            <p>
+              Департамент готовит специалистов в области информационных
+              технологий, механики и процессов управления в различных
+              интеллектуальных и роботехнических системах для различных отраслей
+              промышленности, в том числе аэрокосмической, включая технологии
+              проектирования космических миссий, разработки и применения
+              геоинформационных систем по данным аэрокосмического мониторинга
+              Земли.
+            </p>
+          </div>
+          <div>
+            <h4><b> Руководитель </b></h4>
+            <p class="uk-margin-remove-bottom">Разумный Юрий Николаевич</p>
+            <ul
+              class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
+            >
+              <li><span> Доктор технических наук, профессор </span></li>
+            </ul>
+            <h5 class="uk-margin-remove">
+              <span uk-icon="icon: receiver; ratio: 1"></span>
+
+              <a
+                href="tel:+7 (495) 955-08-75"
+                class="uk-link-heading card-link"
+              >
+                +7 (495) 955-08-75
+              </a>
+            </h5>
+            <h5 class="uk-margin-remove">
+              <span uk-icon="icon: mail; ratio: 1"></span>
+
+              <a
+                href="mailto:razoumny-yun@rudn.ru"
+                class="uk-link-heading card-link"
+              >
+                razoumny-yun@rudn.ru
+              </a>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="department-card uk-card uk-card-default uk-card-hover uk-card-body"
+        >
+          <div>
+            <h3 class="uk-card-title">
+              <b>Базовая кафедра машиностроительных технологий</b>
+            </h3>
+            <p>
+              Кафедра готовит специалистов в области проектирования, создания и
+              эксплуатации машиностроительных производств, оборудования и
+              инструментов; разработки и внедрения новых технологических
+              процессов механической и физико-технической обработки на
+              предприятиях машиностроительного комплекса.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="department-card uk-card uk-card-default uk-card-hover uk-card-body"
+        >
+          <div>
+            <h3 class="uk-card-title">
+              <b>Департамент недропользования и нефтегазового дела</b>
+            </h3>
+
+            <p>
+              Департамент готовит специалистов в области геологии, поиска,
+              разведки, освоения, добычи и геолого-маркшейдерского обеспечения
+              освоения месторождений полезных ископаемых и минерального сырья,
+              рационального использования и охраны земных недр, создания
+              инновационных технологий горного и нефтегазового производства,
+              разработки и эксплуатации нефтяных и газовых месторождений,
+              обслуживания систем трубопроводного транспорта.
+            </p>
+          </div>
+          <div>
+            <h4><b> Руководитель </b></h4>
+            <p class="uk-margin-remove-bottom">
+              Котельников Александр Евгеньевич
+            </p>
+            <ul
+              class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
+            >
+              <li><span> Кандидат геолого-минералогических наук </span></li>
+            </ul>
+            <h5 class="uk-margin-remove">
+              <span uk-icon="icon: receiver; ratio: 1"></span>
+
+              <a
+                href="tel:+7 (495) 955-07-96"
+                class="uk-link-heading card-link"
+              >
+                +7 (495) 955-07-96
+              </a>
+            </h5>
+            <h5 class="uk-margin-remove">
+              <span uk-icon="icon: mail; ratio: 1"></span>
+
+              <a
+                href="mailto:kotelnikov-ae@rudn.ru"
+                class="uk-link-heading card-link"
+              >
+                kotelnikov-ae@rudn.ru
+              </a>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="department-card uk-card uk-card-default uk-card-hover uk-card-body"
+        >
+          <div>
+            <h3 class="uk-card-title">
+              <b>Департамент недропользования и нефтегазового дела</b>
+            </h3>
+            <p>
+              Кафедра готовит специалистов в области проектирования, создания и
+              эксплуатации энергетических машин; разработки технологий
+              использования возобновляемых источников энергии, систем
+              преобразования различных видов энергии и вторичного использования
+              тепла.
+            </p>
+          </div>
+          <div>
+            <h4><b> Руководитель </b></h4>
+            <p class="uk-margin-remove-bottom">Радин Юрий Анатольевич</p>
+            <ul
+              class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
+            >
+              <li><span> Д.т.н. </span></li>
+            </ul>
+            <h5 class="uk-margin-remove">
+              <span uk-icon="icon: mail; ratio: 1"></span>
+
+              <a
+                href="mailto:radin-yua@rudn.ru"
+                class="uk-link-heading card-link"
+              >
+                radin-yua@rudn.ru
+              </a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock %}

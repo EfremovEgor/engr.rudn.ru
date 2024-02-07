@@ -1,0 +1,94 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/students/dissertation_committees.css' %}"
+/>
+
+<div class="uk-container">
+  <div class="page-name">{{title}}</div>
+</div>
+{% comment %}
+<div class="parallax-container_2">
+  <p class="text-on-image">Нужна ли эта надпись</p>
+</div>
+{% endcomment %}
+<div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-hover uk-table-small uk-table-divider">
+      <table class="uk-table uk-table-divider uk-table-hover">
+        <thead>
+          <tr>
+            <th class="uk-table-shrink uk-text-nowrap"><h5>Шифр совета</h5></th>
+            <th class="uk-table-expand"><h5>Научные специальности</h5></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in committees %}
+          <tr>
+            <td>
+              <a
+                href="{% url 'pages:dissertation_committee_item'  id=item.id  %}"
+                >{{item.cipher}}</a
+              >
+            </td>
+            <td>
+              <div class="scientific_specialties">
+                {% for spec in item.scientific_specialties.all %}
+                <span><b>{{spec.cipher}}.</b> {{spec.name}}</span>
+                {% endfor %}
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% comment %}
+      <tbody>
+        <tr>
+          <td class="uk-table-shrink uk-text-nowrap">Название</td>
+          <td>Организация</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Организация</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Факультет</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Адрес</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Специальности</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Председатель</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Секретарь</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Телефон</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">E-mail</td>
+          <td>Table Data</td>
+        </tr>
+        <tr>
+          <td class="uk-text-nowrap">Cостав диссовета</td>
+          <td>Table Data</td>
+        </tr>
+      </tbody>
+      {% endcomment %}
+    </table>
+  </div>
+</div>
+{%endblock %}

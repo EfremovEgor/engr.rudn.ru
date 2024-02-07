@@ -8,25 +8,30 @@ footer {
   flex-wrap: wrap;
   gap: 20px 10px;
   align-items: start !important;
+  justify-content: space-between;
 }
 .navigation > ul {
-  width: 200px;
+  flex-grow: 1;
+  flex: 1 0 20%;
+  text-wrap: nowrap;
 }
-a {
+.navigation-link > a {
   color: white;
   text-decoration: none !important;
 }
-a:hover {
+.navigation-link > a:hover {
   color: white !important;
 }
 .navigation > * {
   margin: 0;
 }
-ul {
-  list-style-type: none;
+.navigation > ul {
+  list-style-type: none !important;
 }
+
 .navigation-heading > a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
   font-size: 13px;
   margin-bottom: 10px;
   font-weight: bold;
@@ -63,8 +68,7 @@ ul {
   flex-direction: row;
   gap: 20px;
 }
-.footer-image > img {
-}
+
 .footer-image-container {
   max-width: 400px;
 }

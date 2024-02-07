@@ -61,54 +61,90 @@
         <div class="navigation">
           <ul>
             <li class="navigation-heading" style="margin-bottom: 30px">
-              <a href="">Главная</a>
+              <a href="{% url 'pages:index' %}">Главная</a>
             </li>
-            <li class="navigation-heading"><a href="">Новости</a></li>
+            <li class="navigation-heading">
+              <a href="{% url 'pages:news' %}">Новости</a>
+            </li>
           </ul>
           <ul>
             <li class="navigation-heading"><a href="">Академия</a></li>
-            <li class="navigation-link"><a href="">Дирекция</a></li>
-            <li class="navigation-link"><a href="">Департаменты</a></li>
-            <li class="navigation-link"><a href="">История</a></li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:administration' %}">Дирекция</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:departments' %}">Департаменты</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:history' %}">История</a>
+            </li>
           </ul>
           <ul>
             <li class="navigation-heading"><a href="">Наука</a></li>
             <li class="navigation-link">
-              <a href="">Научные направления</a>
+              <a href="{% url 'pages:science_directions' %}"
+                >Научные направления</a
+              >
             </li>
-            <li class="navigation-link"><a href="">Научные журналы</a></li>
             <li class="navigation-link">
-              <a href="">Научное студенческое общество</a>
+              <a href="{% url 'pages:science_journals' %}">Научные журналы</a>
             </li>
-            <li class="navigation-link"><a href="">Научные семинары</a></li>
             <li class="navigation-link">
-              <a href="">Электронная библиотека</a>
+              <a href="{% url 'pages:scientific_student_society' %}"
+                >Научное студенческое общество</a
+              >
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:science_seminars' %}">Научные семинары</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:digital_library' %}"
+                >Электронная библиотека</a
+              >
             </li>
           </ul>
           <ul>
             <li class="navigation-heading"><a href="">Абитуриентам</a></li>
             <li class="navigation-link">
-              <a href="">Направления подготовки</a>
-            </li>
-            <li class="navigation-link"><a href="">Приемная комиссия</a></li>
-            <li class="navigation-link">
-              <a href="">Справочная информация</a>
+              <a href="{% url 'pages:applicants_study_directions' %}"
+                >Направления подготовки</a
+              >
             </li>
             <li class="navigation-link">
-              <a href="">Дни открытых дверей</a>
+              <a href="{% url 'pages:committee' %}">Приемная комиссия</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:applicants_reference' %}"
+                >Справочная информация</a
+              >
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:applicants_open_days' %}"
+                >Дни открытых дверей</a
+              >
             </li>
           </ul>
           <ul>
             <li class="navigation-heading">
               <a href="">Студентам и Аспирантам</a>
             </li>
-            <li class="navigation-link"><a href="">Расписание</a></li>
-            <li class="navigation-link"><a href="">Образцы заявлений</a></li>
             <li class="navigation-link">
-              <a href="">Студенческий комитет</a>
+              <a href="{% url 'pages:students_schedule' %}">Расписание</a>
             </li>
             <li class="navigation-link">
-              <a href="">Диссертационные советы</a>
+              <a href="{% url 'pages:students_applications' %}"
+                >Образцы заявлений</a
+              >
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:students_student_committee' %}"
+                >Студенческий комитет</a
+              >
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:dissertation_committees' %}"
+                >Диссертационные советы</a
+              >
             </li>
           </ul>
         </div>

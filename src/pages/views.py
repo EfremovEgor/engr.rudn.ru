@@ -370,7 +370,7 @@ def dissertation_committee(request, id):
         request,
         "pages/students/dissertation_committee_item.html",
         {
-            "title": "Диссертационные советы",
+            "title": f"ПДС {committee.cipher}",
             "committee": committee,
         },
     )

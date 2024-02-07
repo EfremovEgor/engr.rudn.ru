@@ -63,32 +63,3 @@
   margin-bottom: 20px;
   margin-top: 40px;
 }
-
-.app-item-svg {
-  height: 32px;
-  fill: white;
-  transition: 0.5s;
-}
-
-.app-item-svg:hover {
-  height: 32px;
-  padding: 5px;
-  background-color: rgba(255, 255, 255);
-  border-radius: 100%;
-}
-.vk:hover {
-  fill: white;
-}
-
-.app-item-svg {
-  height: 32px;
-  fill: black;
-  transition: 0.5s;
-}
-
-.app-item-svg:hover {
-  height: 32px;
-  padding: 5px;
-  background-color: black;
-  border-radius: 100%;
-}

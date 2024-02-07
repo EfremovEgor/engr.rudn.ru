@@ -13,7 +13,7 @@ footer {
 .navigation > ul {
   flex-grow: 1;
   flex: 1 0 20%;
-  text-wrap: nowrap;
+  flex-flow: column;
 }
 .navigation-link > a {
   color: white;

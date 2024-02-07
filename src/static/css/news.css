@@ -61,3 +61,10 @@
 .news-card-container > a {
   max-width: 450px;
 } */
+.news-item-image {
+  float: right;
+  max-height: 370px;
+}
+.uk-card-body {
+  background-color: rgb(250, 250, 250) !important;
+}

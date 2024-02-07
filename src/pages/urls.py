@@ -48,12 +48,12 @@ urlpatterns = [
     ),
     path("students/schedule", views.students_schedule, name="students_schedule"),
     path(
-        "students/dissertation_committees",
+        "science/dissertation_committees",
         views.dissertation_committees,
         name="dissertation_committees",
     ),
     path(
-        "students/dissertation_committees/<int:id>",
+        "science/dissertation_committees/<int:id>",
         views.dissertation_committee,
         name="dissertation_committee_item",
     ),

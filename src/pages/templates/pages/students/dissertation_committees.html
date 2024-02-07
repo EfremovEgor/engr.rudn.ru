@@ -16,97 +16,101 @@
 {% endcomment %}
 <div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
   <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-hover uk-table-small uk-table-divider">
-      <div class="button-container">
-        <a class="link-button">
-          <span
-            >Защиты диссертаций на соискание учёной степени кандидата наук</span
-          >
-          <span uk-icon="icon: chevron-right"></span>
-        </a>
-        <a class="link-button">
-          <span
-            >Защиты диссертаций на соискание учёной степени доктора наукv
-          </span>
-          <span uk-icon="icon: chevron-right"></span>
-        </a>
-        <a class="link-button">
-          <span>Заседания диссертационных советов </span>
-          <span uk-icon="icon: chevron-right"></span>
-        </a>
-      </div>
-      <table class="uk-table uk-table-divider uk-table-hover">
-        <thead>
-          <tr>
-            <th class="uk-table-shrink uk-text-nowrap">Шифр совета</th>
-            <th class="uk-table-expand">Научные специальности</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in committees %}
-          <tr>
-            <td>
-              <a
-                href="{% url 'pages:dissertation_committee_item'  id=item.id  %}"
-                >{{item.cipher}}</a
-              >
-            </td>
-            <td>
-              <div class="scientific_specialties">
-                {% for spec in item.scientific_specialties.all %}
-                <span><b>{{spec.cipher}}.</b> {{spec.name}}</span>
-                {% endfor %}
-              </div>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      {% comment %}
+    {% comment %}
+    <div class="button-container">
+      <a class="link-button">
+        <span
+          >Защиты диссертаций на соискание учёной степени кандидата наук</span
+        >
+        <span uk-icon="icon: chevron-right"></span>
+      </a>
+      <a class="link-button">
+        <span
+          >Защиты диссертаций на соискание учёной степени доктора наукv
+        </span>
+        <span uk-icon="icon: chevron-right"></span>
+      </a>
+      <a class="link-button">
+        <span>Заседания диссертационных советов </span>
+        <span uk-icon="icon: chevron-right"></span>
+      </a>
+    </div>
+    {% endcomment %}
+    <table class="uk-table uk-table-divider">
+      <thead>
+        <tr>
+          <th class="uk-table-shrink uk-text-nowrap">Шифр совета</th>
+          <th class="uk-table-expand">Научные специальности</th>
+        </tr>
+      </thead>
       <tbody>
+        {% for item in committees %}
         <tr>
-          <td class="uk-table-shrink uk-text-nowrap">Название</td>
-          <td>Организация</td>
+          <td>
+            <a
+              style="
+                text-decoration: 1px underline black;
+                text-underline-offset: 2px;
+              "
+              href="{% url 'pages:dissertation_committee_item'  id=item.id  %}"
+              >{{item.cipher}}</a
+            >
+          </td>
+          <td>
+            <div class="scientific_specialties">
+              {% for spec in item.scientific_specialties.all %}
+              <span><b>{{spec.cipher}}.</b> {{spec.name}}</span>
+              {% endfor %}
+            </div>
+          </td>
         </tr>
-        <tr>
-          <td class="uk-text-nowrap">Организация</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">Факультет</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">Адрес</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">Специальности</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">Председатель</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">Секретарь</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">Телефон</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">E-mail</td>
-          <td>Table Data</td>
-        </tr>
-        <tr>
-          <td class="uk-text-nowrap">Cостав диссовета</td>
-          <td>Table Data</td>
-        </tr>
+        {% endfor %}
       </tbody>
-      {% endcomment %}
     </table>
+    {% comment %}
+    <tbody>
+      <tr>
+        <td class="uk-table-shrink uk-text-nowrap">Название</td>
+        <td>Организация</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Организация</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Факультет</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Адрес</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Специальности</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Председатель</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Секретарь</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Телефон</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">E-mail</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td class="uk-text-nowrap">Cостав диссовета</td>
+        <td>Table Data</td>
+      </tr>
+    </tbody>
+    {% endcomment %}
   </div>
 </div>
 {%endblock %}

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'js/news.js' %}" />
 <link rel="stylesheet" href="{% static 'css/global.css' %}" />
 
-<div class="container">
+<div class="uk-container" style="margin-bottom: 50px">
   <h1>{{title}}</h1>
   <div class="hashtags uk-flex">
     <form action="/news" class="uk-margin" method="POST">
@@ -22,7 +22,7 @@
     </form>
   </div>
   {% if content.preview_image %}
-  <img src="{{content.preview_image.url}}" style="max-height: 500px" alt="" />
+  <img src="{{content.preview_image.url}}" class="news-item-image" alt="" />
   {% endif %}
   <div class="news_content uk-margin">{{ content.content|safe}}</div>
 </div>

@@ -97,6 +97,9 @@
   width: 100%;
   /* height: 30px!important; */
 }
-.uk-nav-header{
+.uk-nav-header {
   padding: unset !important;
+}
+.footer-image-container {
+  min-width: 200px;
 }

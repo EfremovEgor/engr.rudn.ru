@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.postgres.fields import ArrayField as postgres_array_field
 from phonenumber_field.modelfields import PhoneNumberField
@@ -9,6 +10,12 @@ STUDY_LEVELS = [
     ("Специалитет", "Специалитет"),
     ("Магистратура", "Магистратура"),
     ("Аспирантура", "Аспирантура"),
+]
+
+LANGUAGES = [
+    ("Русский", "Русский"),
+    ("Английский", "Английский"),
+    ("Русский и английский", "Русский и английский"),
 ]
 
 
@@ -137,6 +144,12 @@ class Profile(models.Model):
 
     study_level = models.CharField(
         verbose_name="Уровень обучения", max_length=255, choices=STUDY_LEVELS
+    )
+    language = models.CharField(
+        verbose_name="Язык обучения",
+        max_length=255,
+        choices=LANGUAGES,
+        default="Русский",
     )
     full_time_details = models.ForeignKey(
         ProfileDetails,

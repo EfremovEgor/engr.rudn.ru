@@ -62,7 +62,7 @@
         {% endfor%}
         {% endif %}
         {% if not profile_data.full_time_details.minimal_passing_scores|get_item:"Дополнительные предметы (один на выбор)"  %}
-        <p style="margin-top: -15px;"><b>Дополнительные предметы – Не предусмотрены</b></p>
+        <p style="margin-top: -15px;"><b>Дополнительные предметы – не предусмотрены</b></p>
 
         {% endif %}
         <h4 style="margin-top: -10px">
@@ -171,7 +171,7 @@
         {% endfor%}
         {% endif %}
         {% if not profile_data.full_time_details.minimal_passing_scores|get_item:"Дополнительные предметы (один на выбор)"  %}
-        <p style="margin-top: -15px;"><b>Дополнительные предметы – Не предусмотрены</b></p>
+        <p style="margin-top: -15px;"><b>Дополнительные предметы – не предусмотрены</b></p>
 
         {% endif %}
         <h4 style="margin-top: -10px">
@@ -274,13 +274,13 @@
         {% endfor%}
         {% else %}
         <p style="margin-top: -15px;"><b>Вступительные испытания</b></p>
-
+        
         {% for subject_object in profile_data.extramural_details.minimal_passing_scores|get_item:"Обязательные предметы" %}
         <p style="margin-top: -15px; margin-left:10px"> {{subject_object.subject}} – {{subject_object.score}}</p>
         {% endfor%}
         {% endif %}
         {% if not profile_data.full_time_details.minimal_passing_scores|get_item:"Дополнительные предметы (один на выбор)"  %}
-        <p style="margin-top: -15px;"><b>Дополнительные предметы – Не предусмотрены</b></p>
+        <p style="margin-top: -15px;"><b>Дополнительные предметы – не предусмотрены</b></p>
 
         {% endif %}
         <h4 style="margin-top: -10px">

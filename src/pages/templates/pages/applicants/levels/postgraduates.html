@@ -27,7 +27,7 @@
           <a
             class="uk-link-text"
             href="/applicants/study_directions/{{profile.id}}"
-            ><b>Специальность:</b> {{profile.cipher}} «{{profile.name}}»</a
+            ><b>Специальность:</b> {{profile.cipher}} «{{profile.name}}» ({% if profile.language == "Русский и английский" %}{{profile.language|lower}} языки{% else %}{{profile.language|lower}} язык{% endif %})</a
           >
           <br />
           {% endfor %}

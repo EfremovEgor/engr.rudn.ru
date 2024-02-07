@@ -1,3 +1,7 @@
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
 .scientific_specialties {
   display: flex;
   flex-direction: column;
@@ -6,4 +10,27 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+.link-button {
+  padding: 5px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  border: 1px black solid;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+.link-button:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
 }

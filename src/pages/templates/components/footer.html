@@ -4,13 +4,22 @@
     <nav class="uk-navbar-container uk-navbar-transparent">
       <div class="footer-wrapper">
         <div class="footer-image-container">
-          <a class="uk-link-reset footer-image" target="_blank"
-            ><img
-              class="no-background mobile-image"
-              src="{% static 'images/header/logo_2_imgs.png' %}"
-              width="60vw"
-              alt=""
-          /></a>
+          <div class="footer-images">
+            <a href="https://www.rudn.ru/">
+              <img
+                class="no-background footer-image"
+                src="{% static 'images/footer/rudn.png' %}"
+                width="60vw"
+                alt=""
+            /></a>
+            <a href="/">
+              <img
+                class="no-background footer-image"
+                src="{% static 'images/footer/engr-academy.png' %}"
+                width="60vw"
+                alt=""
+            /></a>
+          </div>
           <ul style="list-style-type: none">
             <li>
               <div class="logos" class="uk-flex">

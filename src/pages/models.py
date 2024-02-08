@@ -294,6 +294,8 @@ class DepartmentInfo(models.Model):
     head = models.ForeignKey(
         "profiles.EmployeeProfile",
         verbose_name="Руководитель",
+        blank=True,
+        null=True,
         on_delete=models.CASCADE,
     )
 

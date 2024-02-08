@@ -14,6 +14,7 @@
           <h2>{{department.name}}</h2>
           {{department.info|safe}}
         </div>
+        {% if department.head %}
         <div>
           <h4><b>Руководитель</b></h4>
           <article
@@ -103,6 +104,7 @@
             </div>
           </article>
         </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}

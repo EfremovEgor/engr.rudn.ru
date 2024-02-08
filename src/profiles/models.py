@@ -109,4 +109,4 @@ class StudentCommitteeProfile(models.Model):
         ordering = ["position"]
 
     def __str__(self):
-        return self.full_name
+        return f"{self.position}. {self.full_name}"

@@ -139,17 +139,22 @@ class ProfileDetails(models.Model):
 
 
 class Profile(models.Model):
+    def get_languages():
+        return ["Русский"]
+
     name = models.TextField(verbose_name="Название")
     cipher = models.CharField(verbose_name="Шифр", max_length=255)
 
     study_level = models.CharField(
         verbose_name="Уровень обучения", max_length=255, choices=STUDY_LEVELS
     )
-    language = models.CharField(
-        verbose_name="Язык обучения",
-        max_length=255,
-        choices=LANGUAGES,
-        default="Русский",
+    language_fields = ArrayField(
+        models.CharField(
+            verbose_name="Язык обучения",
+            max_length=255,
+            choices=LANGUAGES,
+        ),
+        default=get_languages,
     )
     full_time_details = models.ForeignKey(
         ProfileDetails,

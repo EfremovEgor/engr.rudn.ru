@@ -285,3 +285,22 @@ class DissertationCommittee(models.Model):
         verbose_name = "Диссертационный совет"
         verbose_name_plural = "Диссертационные советы"
         ordering = ["cipher"]
+
+
+class DepartmentInfo(models.Model):
+    name = models.CharField(verbose_name="Название департамента", max_length=255)
+    position = models.IntegerField(verbose_name="Позиция")
+    info = models.TextField(verbose_name="Информация о департаменте")
+    head = models.ForeignKey(
+        "profiles.EmployeeProfile",
+        verbose_name="Руководитель",
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self) -> str:
+        return f"{self.position}. {self.name}"
+
+    class Meta:
+        verbose_name = "Департамен"
+        verbose_name_plural = "Департаменты"
+        ordering = ["position"]

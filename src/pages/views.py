@@ -1,6 +1,7 @@
 from django.forms import model_to_dict
 from django.shortcuts import render
 from .models import (
+    DepartmentInfo,
     IndexContact,
     Profile,
     AdministrationProfiles,
@@ -396,10 +397,12 @@ def dissertation_committee(request, id):
 
 
 def departments(request):
+    departments = DepartmentInfo.objects.order_by("position").all()
     return render(
         request,
         "pages/academy/departments.html",
         {
             "title": "Департаменты",
+            "departments": departments,
         },
     )

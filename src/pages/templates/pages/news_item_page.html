@@ -3,9 +3,10 @@
 <link rel="stylesheet" href="{% static 'css/news.css' %}" />
 <link rel="stylesheet" href="{% static 'js/news.js' %}" />
 <link rel="stylesheet" href="{% static 'css/global.css' %}" />
-
+<div class="uk-container" style="margin-bottom: 40px">
+  <div class="page-name">{{title}}</div>
+</div>
 <div class="uk-container" style="margin-bottom: 50px">
-  <h1>{{title}}</h1>
   <div class="hashtags uk-flex">
     <form action="/news" class="uk-margin" method="POST">
       {% csrf_token %} {% for item in content.tags.all %}

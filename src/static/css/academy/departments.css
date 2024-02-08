@@ -1,8 +1,78 @@
-.department-card {
-  width: 500px;
-  height: 700px;
-  margin: 40px;
+.content {
+  max-width: 75%;
+}
+.heading {
+  padding-bottom: 30px;
+}
+.profile_content > p {
+  text-align: justify;
+  text-indent: 4%;
+  margin-top: -10px;
+}
+.profile_content {
+  margin-top: 100px;
+}
+.card-wrapper {
+  padding: 10px;
+}
+.direction_info-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 550px !important;
+}
+.direction_info-card > div > h4 {
+  margin-top: 20px !important;
+}
+.direction_info-card > div > * {
+  margin: 0px !important;
+}
+.profile_heading-container > * {
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 0;
+}
+.profile_name {
+  font-weight: bold;
+  line-height: 48px;
+  letter-spacing: -1px;
+  margin-top: 40px;
+}
+.department_name {
+  margin-top: 30px;
+}
+.study_level-badge {
+  box-shadow: 1px 1px 2px black;
+  padding: 10px;
+  border: 1px black solid;
+  color: black;
+  transition: all 0.2s;
+}
+
+.study_level-badge:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.direction_name {
+  margin-top: 30px;
+}
+.study_profile_details-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+}
+
+.employee-card {
+  margin-top: 40px !important;
+  height: fit-content;
+  width: 100%;
+}
+.employee-card-wrapper {
+  height: fit-content;
+}
+.page-name {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 40px;
 }

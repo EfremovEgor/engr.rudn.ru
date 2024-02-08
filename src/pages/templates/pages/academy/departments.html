@@ -4,13 +4,13 @@
   <div class="page-name">{{title}}</div>
 </div>
 <div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
-  <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match uk-grid">
+  <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match uk-grid">
     {% for department in departments %}
     <div class="card-wrapper">
       <div
         class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
       >
-        <div>
+        <div class="department-text">
           <h2>{{department.name}}</h2>
           {{department.info|safe}}
         </div>

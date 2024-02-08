@@ -58,6 +58,11 @@ urlpatterns = [
         name="dissertation_committee_item",
     ),
     path(
+        "science/scientific_centers",
+        views.scientific_centers,
+        name="scientific_centers",
+    ),
+    path(
         "students/student_committee",
         views.students_student_committee,
         name="students_student_committee",

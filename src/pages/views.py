@@ -368,6 +368,16 @@ def dissertation_committees(request):
     )
 
 
+def scientific_centers(request):
+    return render(
+        request,
+        "pages/science/scientific_centers.html",
+        {
+            "title": "Научные центры",
+        },
+    )
+
+
 def dissertation_committee(request, id):
     committee = get_object_or_404(DissertationCommittee, pk=id)
 

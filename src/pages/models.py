@@ -148,6 +148,17 @@ class Profile(models.Model):
     study_level = models.CharField(
         verbose_name="Уровень обучения", max_length=255, choices=STUDY_LEVELS
     )
+    faculty = models.CharField(
+        verbose_name="Кафедра/Факультет/Департамен",
+        help_text="Полностью, например: Департамент механики и процессов управления",
+        max_length=255,
+        default="Департамент механики и процессов управления",
+        blank=True,
+        null=True,
+    )
+    study_duration = models.IntegerField(
+        verbose_name="Длительность обучения", default=4
+    )
     language_fields = ArrayField(
         models.CharField(
             verbose_name="Язык обучения",

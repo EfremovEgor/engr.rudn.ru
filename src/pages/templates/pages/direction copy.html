@@ -3,41 +3,17 @@
 <link rel="stylesheet" href="{% static 'css/direction.css' %}" />
 
 <div class="uk-container container" style="margin-bottom: 50px">
-  <div class="profile_heading-container">
-    <a href="/applicants/study_directions/{{profile_data.study_level|study_level_to_page_name}}" class="study_level-badge">{{profile_data.study_level}}</a>
-    <h4 class="direction_name">Направление: {{profile_data.direction.name}} </h4>
-    <h2 class="profile_name"> {{profile_data.name}}</h2>
-    <h4 class="department_name">{{profile_data.faculty}}</h4>
-    <table class="study_profile_details-container">
-      <tr>
-      <td class="study_duration_badge">
-        <object type="image/svg+xml" data="{% static 'icons/calendar.svg' %}" width="32" height="32" >
-          Английский
-        </object>
-        {{profile_data.study_duration}} года 
-      
-      
-      </td>
-      {% for lang in profile_data.language_fields  %}
-        {% if lang ==  "Русский" %}
-          <td class="lang_ru_badge">
-            <object type="image/svg+xml" data="{% static 'icons/ru.svg' %}" width="32" height="32" >
-              Русский
-            </object>
-            
-        </td>
-        {% endif %}
-        {% if lang == "Английский" %}
-          <td class="lang_en_badge">
-              <object type="image/svg+xml" data="{% static 'icons/en.svg' %}" width="32" height="32" >
-                Английский
-              </object>
-            
-          </td>
-        {% endif %}
-      {% endfor %}
-      </tr>
-    </table>
+  <div class="main-heading">
+    <h2>{{profile_data.direction.cipher}}  «{{profile_data.direction.name}}» </h2>
+    {% if profile_data.study_level != "Аспирантура" %}
+    <h2>Профиль: {{profile_data.name}}</h2>
+    {% else %}
+    <h2>Специальность: {{profile_data.cipher}} «{{profile_data.name}}»</h2>
+    {% endif %}
+    </div>
+  <div class="main-heading">
+    <h2>Уровень обучения: {{profile_data.study_level}}</h2>
+    <h2>Язык обучения: {{profile_data.language}}</h2>
   </div>
   <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match uk-grid">
     {% if profile_data.full_time_details %}
@@ -86,9 +62,8 @@
         {% endfor%}
         {% endif %}
         {% if not profile_data.full_time_details.minimal_passing_scores|get_item:"Дополнительные предметы (один на выбор)"  %}
-        {% if profile_data.study_level == "Бакалавриат" or profile_data.study_level == "Специалитет" %}
         <p style="margin-top: -15px;"><b>Дополнительные предметы не предусмотрены</b></p>
-        {% endif %}
+
         {% endif %}
         <h4 style="margin-top: -10px">
           <b>Стоимость обучения по контракту</b>

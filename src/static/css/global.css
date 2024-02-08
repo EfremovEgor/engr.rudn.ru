@@ -16,24 +16,27 @@
   transform: scale(1.5);
 }
 
-.parallax-container, .parallax-container_2, .parallax-container_1{
+.parallax-container,
+.parallax-container_2,
+.parallax-container_1,
+.parallax-container_5 {
   margin: unset !important;
   margin-top: 45px !important;
-  
+  min-height: 25vh !important;
 }
-.page-name{
+.page-name {
   margin: unset !important;
   margin-top: 40px !important;
 }
 
-.sub-heading{
+.sub-heading {
   text-decoration: underline 2px black !important;
   text-underline-offset: 10px !important;
   margin-top: 40px;
 }
-.uk-accordion-content{
+.uk-accordion-content {
   margin-top: 10px !important;
 }
-.text-on-image{
+.text-on-image {
   text-shadow: 1px 1px 20px black;
 }

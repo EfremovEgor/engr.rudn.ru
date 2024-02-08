@@ -18,6 +18,7 @@ from documents.models import (
     OpenDaysFiles,
     StudentsApplications,
 )
+from profiles.models import StudentCommitteeProfile
 from .utils import aliases
 
 
@@ -276,11 +277,14 @@ def students_schedule(request):
 
 
 def students_student_committee(request):
+    profiles = StudentCommitteeProfile.objects.order_by("position").all()
+
     return render(
         request,
         "pages/students/student_committee.html",
         {
             "title": "Студенческий коммитет",
+            "profiles": profiles,
         },
     )
 

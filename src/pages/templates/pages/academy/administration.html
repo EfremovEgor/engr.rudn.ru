@@ -1,12 +1,14 @@
 {% extends "components/base.html" %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/administration.css' %}" />
 
-<div class="container">
-  <h1>Дирекция</h1>
-  <div class="uk-flex-around@m uk-flex-center uk-flex-wrap employee_cards">
+<div class="uk-container">
+  <div class="page-name">{{title}}</div>
+</div>
+<div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
+  <div class="employee_cards">
   {% for profile in profiles %}
   
-  <div>
+  <div class="employee-card-wrapper">
     <article style="background-color:transparent;" class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card" role="comment">
       <header class="uk-comment-header " style="padding-bottom:15px;border-bottom: 1px solid #e5e5e5;">
         <div class="uk-grid-medium uk-flex-middle" uk-grid>
@@ -98,7 +100,7 @@
   {% endfor %}
 </div>
 </div>
-
+</div>
 </div>
 
 {%endblock %}

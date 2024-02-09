@@ -16,10 +16,10 @@
   padding: 10px;
 }
 .department-text {
-  height: 450px;
+  min-height: 330px;
 }
 .direction_info-card {
-  min-height: 750px !important;
+  min-height: 450px !important;
 }
 .direction_info-card > div > h4 {
   margin-top: 20px !important;
@@ -66,10 +66,13 @@
   border-collapse: collapse;
 }
 
-.employee-card {
+.employee-card > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 40px !important;
-  height: fit-content;
   width: 100%;
+  min-height: 110px !important;
 }
 .employee-card-wrapper {
   height: fit-content;
@@ -78,4 +81,6 @@
   font-size: 40px;
   font-weight: 600;
   margin: 40px;
+}
+.head-text {
 }

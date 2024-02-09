@@ -11,15 +11,16 @@
         class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
       >
         <div class="department-text">
-          <h2>{{department.name}}</h2>
+          <h3>{{department.name}}</h3>
+          <br />
           {{department.info|safe}}
         </div>
         {% if department.head %}
         <div>
-          <h4><b>Руководитель</b></h4>
+          <h4 class="head-text"><b>Руководитель</b></h4>
           <article
-            style="background-color: transparent; margin-top: 50px !important"
-            class="uk-grid-match employee-card"
+            style="background-color: transparent; margin-top: 10px !important"
+            class="employee-card"
             role="comment"
           >
             <header

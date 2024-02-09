@@ -15,3 +15,8 @@ def get_alias_lang(key):
 @register.filter
 def study_level_to_page_name(key):
     return aliases.study_level_to_page_name.get(key.lower())
+
+
+@register.filter
+def replace_quotes(phrase):
+    return "» /	«".join([part.strip() for part in phrase.split("/")])

@@ -143,6 +143,33 @@ class ProfileDetails(models.Model):
         verbose_name_plural = "Информация по профилям направления подготовки"
 
 
+class DepartmentInfo(models.Model):
+    name = models.TextField(verbose_name="Название департамента")
+    position = models.IntegerField(verbose_name="Позиция")
+    job_title = models.CharField(
+        verbose_name="Должность руководителя",
+        choices=DEPARTMENT_JOB_TITLES,
+        default="Директор департамента",
+        max_length=255,
+    )
+    info = models.TextField(verbose_name="Информация о департаменте")
+    head = models.ForeignKey(
+        "profiles.EmployeeProfile",
+        verbose_name="Руководитель",
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self) -> str:
+        return f"{self.position}. {self.name}"
+
+    class Meta:
+        verbose_name = "Департамен"
+        verbose_name_plural = "Департаменты"
+        ordering = ["position"]
+
+
 class Profile(models.Model):
     def get_languages():
         return ["Русский"]
@@ -153,11 +180,11 @@ class Profile(models.Model):
     study_level = models.CharField(
         verbose_name="Уровень обучения", max_length=255, choices=STUDY_LEVELS
     )
-    faculty = models.CharField(
-        verbose_name="Кафедра/Факультет/Департамен",
-        help_text="Полностью, например: Департамент механики и процессов управления",
-        max_length=255,
-        default="Департамент механики и процессов управления",
+    faculty_field = models.ForeignKey(
+        DepartmentInfo,
+        verbose_name="Департамент/Кафедра",
+        on_delete=models.SET_NULL,
+        related_name="department_info",
         blank=True,
         null=True,
     )
@@ -290,30 +317,3 @@ class DissertationCommittee(models.Model):
         verbose_name = "Диссертационный совет"
         verbose_name_plural = "Диссертационные советы"
         ordering = ["cipher"]
-
-
-class DepartmentInfo(models.Model):
-    name = models.TextField(verbose_name="Название департамента")
-    position = models.IntegerField(verbose_name="Позиция")
-    job_title = models.CharField(
-        verbose_name="Должность руководителя",
-        choices=DEPARTMENT_JOB_TITLES,
-        default="Директор департамента",
-        max_length=255,
-    )
-    info = models.TextField(verbose_name="Информация о департаменте")
-    head = models.ForeignKey(
-        "profiles.EmployeeProfile",
-        verbose_name="Руководитель",
-        blank=True,
-        null=True,
-        on_delete=models.CASCADE,
-    )
-
-    def __str__(self) -> str:
-        return f"{self.position}. {self.name}"
-
-    class Meta:
-        verbose_name = "Департамен"
-        verbose_name_plural = "Департаменты"
-        ordering = ["position"]

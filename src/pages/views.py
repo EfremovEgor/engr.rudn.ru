@@ -128,7 +128,8 @@ def directions(request, id):
     profile_data = model_to_dict(profile_object)
     direction = StudyDirection.objects.filter(profiles__in=[profile_object]).first()
     profile_data["direction"] = direction
-    profile_data["faculty"] = model_to_dict(profile_object.faculty_field)
+    if profile_object.faculty_field is not None:
+        profile_data["faculty"] = model_to_dict(profile_object.faculty_field)
     profile_data["full_time_details"] = (
         model_to_dict(profile_object.full_time_details)
         if profile_data["full_time_details"] is not None

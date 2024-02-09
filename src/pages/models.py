@@ -441,9 +441,17 @@ class ScientificCenters(models.Model):
             verbose_name="Достижения / результаты проектов-исследований",
         ),
     )
-    equipment = models.ManyToManyField(EquipmentData, verbose_name="Оборудование")
+    equipment = models.ManyToManyField(
+        EquipmentData,
+        verbose_name="Оборудование",
+        blank=True,
+        null=True,
+    )
     partners = models.ManyToManyField(
-        PartnerData, verbose_name="Сотрудничество, партнеры"
+        PartnerData,
+        verbose_name="Сотрудничество, партнеры",
+        blank=True,
+        null=True,
     )
 
     def __str__(self) -> str:

@@ -406,7 +406,11 @@ class ScientificCenters(models.Model):
     email = models.EmailField(
         verbose_name="Электронная почта", max_length=255, blank=True, null=True
     )
-    brief_description = models.TextField(verbose_name="Краткое описание")
+    brief_description = models.TextField(
+        verbose_name="Краткое описание",
+        blank=True,
+        null=True,
+    )
     SCIENTISTS_SCHEMA = {
         "type": "list",
         "items": {
@@ -435,11 +439,15 @@ class ScientificCenters(models.Model):
         models.TextField(
             verbose_name="Научные направления",
         ),
+        blank=True,
+        null=True,
     )
     achievements = ArrayField(
         models.TextField(
             verbose_name="Достижения / результаты проектов-исследований",
         ),
+        blank=True,
+        null=True,
     )
     equipment = models.ManyToManyField(
         EquipmentData,

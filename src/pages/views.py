@@ -7,6 +7,7 @@ from .models import (
     AdministrationProfiles,
     StudyDirection,
     DissertationCommittee,
+    ScientificCenters,
 )
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -376,11 +377,25 @@ def dissertation_committees(request):
 
 
 def scientific_centers(request):
+    centers = ScientificCenters.objects.all().order_by("position")
     return render(
         request,
         "pages/science/scientific_centers.html",
         {
             "title": "Научные центры",
+            "centers": centers,
+        },
+    )
+
+
+def scientific_center_item(request, id):
+    center = get_object_or_404(ScientificCenters, pk=id)
+    return render(
+        request,
+        "pages/science/scientific_center_item.html",
+        {
+            "title": center.name,
+            "center": center,
         },
     )
 

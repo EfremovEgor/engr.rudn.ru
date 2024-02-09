@@ -14,6 +14,10 @@
           <h3>{{department.name|linebreaks}}</h3>
           <br />
           {{department.info|safe}}
+          <a href="" class="show-uni-department__link" target="_self">
+            <span class="show-uni-department__link-text">Подробнее</span>
+            <i class="icon-ic_arrow"></i>
+          </a>
         </div>
         {% if department.head %}
         <div>

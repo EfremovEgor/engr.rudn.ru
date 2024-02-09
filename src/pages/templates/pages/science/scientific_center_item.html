@@ -1,0 +1,131 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/science/scientific_centers.css' %}"
+/>
+<div class="uk-container">
+  <div class="page-name">{{title}}</div>
+</div>
+{% comment %}
+<div class="parallax-container_2">
+  <p class="text-on-image">
+    Открой Мир в одном Университете!<br />Discover the World in one Univeristy
+  </p>
+</div>
+{% endcomment %}
+<div class="uk-container" style="margin-bottom: 50px; margin-top: 40px">
+  <div class="uk-accordion-content">
+    <div class="uk-child-width-1-1@s" uk-grid>
+      <div class="">
+        <p><b>Структурное подразделение:</b> {{center.faculty_field.name}}</p>
+        <p><b>Руководитель:</b> {{center.head.full_name}}</p>
+        <p><b>Адрес:</b> {{center.address}}</p>
+        <p><b>Тел.:</b> {{center.phone}}</p>
+        <p><b>e-mail:</b> {{center.email}}</p>
+        <p class="uk-card-title" style="text-align: center; font-size: 25px">
+          Краткое описание
+        </p>
+        <p style="text-align: justify; text-indent: 3%">
+          {{center.brief_description|linebreaks}}
+        </p>
+        <p class="uk-card-title" style="text-align: center; font-size: 25px">
+          Команда ученых
+        </p>
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-striped">
+            <thead>
+              <tr>
+                <th>Ф.И.О., должность</th>
+                <th>Ученая степень, ученое звание</th>
+                <th>
+                  Область научных интересов (специализация; роль ученого в
+                  команде лаборатории)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in center.scientists %}
+              <tr>
+                <td>{{item.full_name_job_title}}</td>
+                <td>{{item.degree}}</td>
+                <td>{{item.specialization}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <p class="uk-card-title" style="text-align: center; font-size: 25px">
+          Научные направления (области исследования)
+        </p>
+        <ul style="list-style: '– '; text-align: justify">
+          {% for item in center.scientific_directions %}
+          <li>{{item}}</li>
+          {% endfor %}
+        </ul>
+        <ul style="list-style: '– '; text-align: justify">
+          {% for item in center.achievements %}
+          <li>{{item}}</li>
+          {% endfor %}
+        </ul>
+        <p class="uk-card-title" style="text-align: center; font-size: 25px">
+          Оборудование
+        </p>
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-striped">
+            <thead>
+              <tr>
+                <th>Наименование оборудования</th>
+                <th>Назначение</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in center.equipment.all %}
+              <tr>
+                <td>
+                  {{item.name}}
+                  <img src="{{item.image.url}}" width="200" align="left" />
+                </td>
+                <td>
+                  Предназначен для профилирования с высоким разрешением,
+                  измерения напряжений в пленках, анализа 2D-напряжений в
+                  образце, измерения шероховатости.
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <p class="uk-card-title" style="text-align: center; font-size: 25px">
+          Сотрудничество, партнеры
+        </p>
+
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-striped">
+            <thead>
+              <tr>
+                <th>Наименование организации</th>
+                <th>Предмет сотрудничества</th>
+                <th>Результат сотрудничества</th>
+                <th>О партнёре</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in center.partners.all %}
+              <tr>
+                <td>
+                  {{item.name}}
+                  <a href="{{item.link}}"><img src="{{item.image.url}}" /></a>
+                </td>
+                <td>{{item.collaboration_direction|linebreaks}}</td>
+                <td>{{item.result|linebreaks}}</td>
+                <td>{{item.about|linebreaks}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

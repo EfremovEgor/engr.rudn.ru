@@ -317,3 +317,140 @@ class DissertationCommittee(models.Model):
         verbose_name = "Диссертационный совет"
         verbose_name_plural = "Диссертационные советы"
         ordering = ["cipher"]
+
+
+class EquipmentData(models.Model):
+    name = models.TextField(verbose_name="Название")
+    prefix = models.CharField(
+        verbose_name="Префикс",
+        help_text="Для удобства поиска в админке",
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    image = models.ImageField(
+        verbose_name="Фотография",
+        upload_to="equipment",
+        blank=True,
+        null=True,
+    )
+    purpose = models.TextField(verbose_name="Назначение")
+
+    def __str__(self) -> str:
+        return f"{self.prefix} {self.name}"
+
+    class Meta:
+        verbose_name = "Оборудование"
+        verbose_name_plural = "Оборудование"
+        ordering = ["prefix", "name"]
+
+
+class PartnerData(models.Model):
+    name = models.TextField(verbose_name="Наименование организации")
+    link = models.URLField(
+        "Ссылка на сайт",
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    prefix = models.CharField(
+        verbose_name="Префикс",
+        help_text="Для удобства поиска в админке",
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    image = models.ImageField(
+        verbose_name="Фотография",
+        upload_to="equipment",
+        blank=True,
+        null=True,
+    )
+    collaboration_direction = models.TextField(verbose_name="Предмет сотрудничества")
+    result = models.TextField(verbose_name="Результат сотрудничества")
+    about = models.TextField(verbose_name="О партнёре")
+
+    def __str__(self) -> str:
+        return f"{self.prefix} {self.name}"
+
+    class Meta:
+        verbose_name = "Партнер"
+        verbose_name_plural = "Партнеры"
+        ordering = ["prefix", "name"]
+
+
+class ScientificCenters(models.Model):
+    name = models.TextField(verbose_name="Название")
+    position = models.IntegerField(verbose_name="Позиция")
+
+    head = models.ForeignKey(
+        "profiles.EmployeeProfile",
+        verbose_name="Руководитель",
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
+    faculty_field = models.ForeignKey(
+        DepartmentInfo,
+        verbose_name="Департамент/Кафедра",
+        on_delete=models.SET_NULL,
+        related_name="faculty_info_for_scientific_centers",
+        blank=True,
+        null=True,
+    )
+    address = models.CharField(
+        verbose_name="Адрес",
+        max_length=255,
+        default="115419, Москва, улица Орджоникидзе, 3",
+    )
+    phone = PhoneNumberField(verbose_name="Телефон", blank=True, null=True)
+    email = models.EmailField(
+        verbose_name="Электронная почта", max_length=255, blank=True, null=True
+    )
+    brief_description = models.TextField(verbose_name="Краткое описание")
+    SCIENTISTS_SCHEMA = {
+        "type": "list",
+        "items": {
+            "title": "Ученый",
+            "type": "dict",
+            "keys": {
+                "full_name_job_title": {"type": "string", "title": "Ф.И.О., должность"},
+                "degree": {
+                    "type": "string",
+                    "title": "Ученая степень, ученое звание",
+                },
+                "specialization": {
+                    "type": "string",
+                    "title": "Область научных интересов (специализация; роль ученого в команде лаборатории)",
+                },
+            },
+        },
+    }
+    scientists = JSONField(
+        verbose_name="Команда ученых",
+        schema=SCIENTISTS_SCHEMA,
+        blank=True,
+        null=True,
+    )
+    scientific_directions = ArrayField(
+        models.TextField(
+            verbose_name="Научные направления",
+        ),
+    )
+    achievements = ArrayField(
+        models.TextField(
+            verbose_name="Достижения / результаты проектов-исследований",
+        ),
+    )
+    equipment = models.ManyToManyField(EquipmentData, verbose_name="Оборудование")
+    partners = models.ManyToManyField(
+        PartnerData, verbose_name="Сотрудничество, партнеры"
+    )
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+    class Meta:
+        verbose_name = "Научный центр"
+        verbose_name_plural = "Научные центры"
+        ordering = ["name"]

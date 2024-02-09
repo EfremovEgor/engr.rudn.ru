@@ -63,6 +63,11 @@ urlpatterns = [
         name="scientific_centers",
     ),
     path(
+        "science/scientific_centers/<int:id>",
+        views.scientific_center_item,
+        name="scientific_center_item",
+    ),
+    path(
         "students/student_committee",
         views.students_student_committee,
         name="students_student_committee",

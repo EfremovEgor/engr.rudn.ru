@@ -1,3 +1,4 @@
+from tkinter import E
 from django.contrib import admin
 from django.db.models.functions import Lower
 
@@ -13,3 +14,6 @@ admin.site.register(AdministrationProfiles)
 admin.site.register(DissertationCommittee)
 admin.site.register(ScientificSpecialty)
 admin.site.register(DepartmentInfo)
+admin.site.register(ScientificCenters)
+admin.site.register(EquipmentData)
+admin.site.register(PartnerData)

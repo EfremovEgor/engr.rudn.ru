@@ -77,7 +77,8 @@
 .study_profile_details-container td {
   padding: 10px;
 }
-.study_duration_badge {
+.study_duration_badge,
+.lang_badge {
   display: flex;
   flex-direction: row;
   align-items: center;

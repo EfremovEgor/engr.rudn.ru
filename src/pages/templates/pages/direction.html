@@ -12,29 +12,25 @@
       <tr>
       <td class="study_duration_badge">
         <object type="image/svg+xml" data="{% static 'icons/calendar.svg' %}" width="32" height="32" >
-          Английский
+          {{profile_data.study_duration}} года 
         </object>
         {{profile_data.study_duration}} года 
       
       
       </td>
       {% for lang in profile_data.language_fields  %}
-        {% if lang ==  "Русский" %}
+
           <td class="lang_ru_badge">
-            <object type="image/svg+xml" data="{% static 'icons/ru.svg' %}" width="32" height="32" >
-              Русский
+            <div class="lang_badge">
+            <object type="image/svg+xml" data="{% static 'icons/language.svg' %}" width="32" height="32" >
+              {{lang}}
             </object>
-            
+            {{lang}}
+          </div>
         </td>
-        {% endif %}
-        {% if lang == "Английский" %}
-          <td class="lang_en_badge">
-              <object type="image/svg+xml" data="{% static 'icons/en.svg' %}" width="32" height="32" >
-                Английский
-              </object>
-            
-          </td>
-        {% endif %}
+   
+
+   
       {% endfor %}
       </tr>
     </table>

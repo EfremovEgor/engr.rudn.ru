@@ -1,4 +1,3 @@
-from email.policy import default
 from django.db import models
 from django.contrib.postgres.fields import ArrayField as postgres_array_field
 from phonenumber_field.modelfields import PhoneNumberField

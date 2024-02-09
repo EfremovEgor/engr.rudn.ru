@@ -18,6 +18,11 @@ LANGUAGES = [
     ("Русский и английский", "Русский и английский"),
 ]
 
+DEPARTMENT_JOB_TITLES = [
+    ("Директор департамента", "Директор департамента"),
+    ("Заведующий кафедры", "Заведующий кафедры"),
+]
+
 
 class IndexContact(models.Model):
     position = models.IntegerField(verbose_name="Позиция")
@@ -288,8 +293,14 @@ class DissertationCommittee(models.Model):
 
 
 class DepartmentInfo(models.Model):
-    name = models.CharField(verbose_name="Название департамента", max_length=255)
+    name = models.TextField(verbose_name="Название департамента")
     position = models.IntegerField(verbose_name="Позиция")
+    job_title = models.CharField(
+        verbose_name="Должность руководителя",
+        choices=DEPARTMENT_JOB_TITLES,
+        default="Директор департамента",
+        max_length=255,
+    )
     info = models.TextField(verbose_name="Информация о департаменте")
     head = models.ForeignKey(
         "profiles.EmployeeProfile",

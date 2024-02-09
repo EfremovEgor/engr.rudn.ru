@@ -40,7 +40,7 @@ class NewsView(View):
     template_name = "pages/news.html"
 
     def get(self, request):
-        news = NewsItem.objects.prefetch_related().order_by("creation_date")[:30]
+        news = NewsItem.objects.prefetch_related().order_by("-creation_date")[:30]
 
         tags = Tag.objects.filter(newsitem__tags__isnull=False).distinct()
         return render(

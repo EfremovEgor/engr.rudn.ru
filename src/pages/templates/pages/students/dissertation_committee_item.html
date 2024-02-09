@@ -63,11 +63,12 @@
           <td>{{committee.email}}</td>
         </tr>
         <tr class="hover">
-          <td class="uk-text-nowrap">Cостав диссовета</td>
-          <td>
+          <td colspan="2">
             <ul uk-accordion>
               <li>
-                <a class="uk-accordion-title" href></a>
+                <a class="uk-accordion-title uk-text-nowrap" href
+                  >Cостав диссовета</a
+                >
                 <div class="uk-accordion-content committee_members">
                   {% for person in committee.composition %}
                   <span>{{person}}</span>

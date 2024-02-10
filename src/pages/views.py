@@ -427,18 +427,34 @@ def departments(request):
 
 def department_item(request, id):
     department = get_object_or_404(DepartmentInfo, pk=id)
-    bachelors = StudyDirection.objects.filter(
-        profiles__faculty_field=department, profiles__study_level="Бакалавриат"
-    ).all()
-    masters = StudyDirection.objects.filter(
-        profiles__faculty_field=department, profiles__study_level="Магистратура"
-    ).all()
-    specialty = StudyDirection.objects.filter(
-        profiles__faculty_field=department, profiles__study_level="Специалитет"
-    ).all()
-    postgraduates = StudyDirection.objects.filter(
-        profiles__faculty_field=department, profiles__study_level="Аспирантура"
-    ).all()
+    bachelors = (
+        StudyDirection.objects.filter(
+            profiles__faculty_field=department, profiles__study_level="Бакалавриат"
+        )
+        .distinct()
+        .all()
+    )
+    masters = (
+        StudyDirection.objects.filter(
+            profiles__faculty_field=department, profiles__study_level="Магистратура"
+        )
+        .distinct()
+        .all()
+    )
+    specialty = (
+        StudyDirection.objects.filter(
+            profiles__faculty_field=department, profiles__study_level="Специалитет"
+        )
+        .distinct()
+        .all()
+    )
+    postgraduates = (
+        StudyDirection.objects.filter(
+            profiles__faculty_field=department, profiles__study_level="Аспирантура"
+        )
+        .distinct()
+        .all()
+    )
     scientific_centers = ScientificCenters.objects.filter(faculty_field=department)
     return render(
         request,

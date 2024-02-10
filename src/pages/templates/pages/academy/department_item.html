@@ -245,7 +245,7 @@
     {% endfor %}
     </ul>
     <h2 class="sub-heading">Профессорско-преподавательский состав</h2>
-    <ul style="list-style: none">
+    <div style="display:flex;flex-direction:column;gap:40px">
       {% for teacher in  staff %}
       <div style="max-width: fit-content">
         <article
@@ -325,7 +325,7 @@
         </article>
       </div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </div>
 {%endblock %}

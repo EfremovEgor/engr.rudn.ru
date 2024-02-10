@@ -463,9 +463,9 @@ class ScientificCenters(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"{self.position} {self.name}"
+        return f"{self.position}. {self.name}"
 
     class Meta:
         verbose_name = "Научный центр"
         verbose_name_plural = "Научные центры"
-        ordering = ["name"]
+        ordering = ["position", "name"]

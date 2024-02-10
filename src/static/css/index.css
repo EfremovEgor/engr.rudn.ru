@@ -271,3 +271,9 @@ html {
 .slider-nav-mobile {
   margin: 0px -40px;
 }
+.contacts-body {
+  padding: 10px 30px;
+}
+.contacts-header {
+  padding: 0px 30px 15px;
+}

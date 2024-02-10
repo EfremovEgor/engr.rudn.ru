@@ -262,66 +262,93 @@
 <div class="contacts-container">
   <div class="uk-child-width-1-2@l uk-grid-match" uk-grid>
     <div>
-      <div class="uk-child-width-1-1 uk-grid-match" uk-grid>
-        {% for contact in contacts %}
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-              <div class="uk-width-auto">
-                <img
-                  class="uk-border-circle"
-                  width="40"
-                  height="40"
-                  src="{{contact.image.url}}"
-                />
-              </div>
-              <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom">
-                  {{contact.heading}}
-                </h3>
-                <p class="uk-text-meta uk-margin-remove-top uk-text-truncate">
-                  {{contact.sub_heading}}
-                </p>
-              </div>
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-header contacts-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-expand">
+              <h3 class="uk-margin-remove-bottom">Научный отдел</h3>
             </div>
           </div>
-          <div class="uk-card-body">
-            <ul class="uk-list">
-              {% if contact.location %}
-              <li class="uk-margin">
-                <a
-                  href="https://yandex.ru/maps/-/CDXvMvs"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="uk-link-heading card-link"
-                  ><span uk-icon="location"></span>
-                  <span>{{contact.location}}</span>
-                </a>
-              </li>
-              {% endif %} {% if contact.working_hours %}
-              <li class="uk-margin">
-                <span class="uk-link-heading card-link"
-                  ><span uk-icon="clock"></span>
-                  <span> {{contact.working_hours}}</span>
-                </span>
-              </li>
-              {% endif %} {% for phone in contact.phone_numbers %}
-              <li class="uk-margin">
-                <a href="tel:{{phone}}" class="uk-link-heading card-link"
-                  ><span uk-icon="receiver"></span> {{phone.as_international}}
-                </a>
-              </li>
-              {% endfor %} {% for email in contact.emails %}
-              <li class="uk-margin">
-                <a href="mailto:{{email}}" class="uk-link-heading card-link"
-                  ><span uk-icon="mail"></span> {{email}}
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
+        </div>
+        <div class="uk-card-body contacts-body">
+          <ul class="uk-list">
+            <li class="">
+              <a href="tel:{{phone}}" class="uk-link-heading card-link"
+                ><span uk-icon="receiver"></span> +7 (891) 484 02 02
+              </a>
+            </li>
+            <li class="uk-margin">
+              <a href="mailto:{{email}}" class="uk-link-heading card-link"
+                ><span uk-icon="mail"></span> example@email.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-card-header contacts-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-expand">
+              <h3 class="uk-margin-remove-bottom">
+                Премная директора инженерной академиии
+              </h3>
+            </div>
           </div>
         </div>
-        {% endfor %}
+        <div class="uk-card-body contacts-body">
+          <ul class="uk-list">
+            <li class="">
+              <a href="tel:{{phone}}" class="uk-link-heading card-link"
+                ><span uk-icon="receiver"></span> +7 (891) 484 02 02
+              </a>
+            </li>
+            <li class="uk-margin">
+              <a href="mailto:{{email}}" class="uk-link-heading card-link"
+                ><span uk-icon="mail"></span> example@email.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-card-header contacts-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-expand">
+              <h3 class="uk-margin-remove-bottom">Научный отдел</h3>
+            </div>
+          </div>
+        </div>
+        <div class="uk-card-body contacts-body">
+          <ul class="uk-list">
+            <li class="">
+              <a href="tel:{{phone}}" class="uk-link-heading card-link"
+                ><span uk-icon="receiver"></span> +7 (891) 484 02 02
+              </a>
+            </li>
+            <li class="uk-margin">
+              <a href="mailto:{{email}}" class="uk-link-heading card-link"
+                ><span uk-icon="mail"></span> example@email.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-card-header contacts-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-expand">
+              <h3 class="uk-margin-remove-bottom">Учебный отдел</h3>
+            </div>
+          </div>
+        </div>
+        <div class="uk-card-body contacts-body">
+          <ul class="uk-list">
+            <li class="">
+              <a href="tel:{{phone}}" class="uk-link-heading card-link"
+                ><span uk-icon="receiver"></span> +7 (891) 484 02 02
+              </a>
+            </li>
+            <li class="uk-margin">
+              <a href="mailto:{{email}}" class="uk-link-heading card-link"
+                ><span uk-icon="mail"></span> example@email.com
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 

@@ -381,7 +381,6 @@ class PartnerData(models.Model):
 class ScientificCenters(models.Model):
     name = models.TextField(verbose_name="Название")
     position = models.IntegerField(verbose_name="Позиция")
-
     head = models.ForeignKey(
         "profiles.EmployeeProfile",
         verbose_name="Руководитель",

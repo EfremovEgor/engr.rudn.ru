@@ -125,6 +125,7 @@ class DepartmentStaff(models.Model):
         null=True,
     )
     department_office = models.TextField(
+        default="Москва, ул. Орджоникидзе, д. 3., каб",
         verbose_name="Кабинет департамента",
         blank=True,
         null=True,

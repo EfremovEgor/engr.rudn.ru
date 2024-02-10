@@ -419,7 +419,7 @@ def departments(request):
         request,
         "pages/academy/departments.html",
         {
-            "title": "Департаменты",
+            "title": "Кафедры",
             "departments": departments,
         },
     )
@@ -456,6 +456,7 @@ def department_item(request, id):
         .all()
     )
     scientific_centers = ScientificCenters.objects.filter(faculty_field=department)
+    # staff = department.teaching_staff.all()
     return render(
         request,
         "pages/academy/department_item.html",
@@ -467,5 +468,6 @@ def department_item(request, id):
             "specialty": specialty,
             "postgraduates": postgraduates,
             "scientific_centers": scientific_centers,
+            # "staff": staff,
         },
     )

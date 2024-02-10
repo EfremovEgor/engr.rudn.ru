@@ -15,7 +15,7 @@
           <br />
           {{department.info|safe}}
           <div style="margin-top: 10px !important">
-            <a class="show-uni-department__link" target="_self">
+            <a href="{% url "pages:department_item" department.id%}" class="show-uni-department__link" target="_self">
               <span class="show-uni-department__link-text">Подробнее</span>
               <i class="icon-ic_arrow"></i>
             </a>

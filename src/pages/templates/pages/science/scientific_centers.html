@@ -24,14 +24,13 @@
           <h3>{{item.name|linebreaks}}</h3>
           <br />
           {{item.brief_description|safe}}
-          <div style="margin-top: 10px!important;">
-          <a href="{% url "pages:scientific_center_item" item.id%}" class="show-uni-department__link" target="_self">
-          
-            <span class="show-uni-department__link-text">Подробнее</span>
-            <i class="icon-ic_arrow"></i>
-          </a>
+          <div style="margin-top: 10px !important">
+            <a class="show-uni-department__link" target="_self">
+              <span class="show-uni-department__link-text">Подробнее</span>
+              <i class="icon-ic_arrow"></i>
+            </a>
+          </div>
         </div>
-      </div>
         {% if item.head %}
         <div>
           <h4 class="head-text"><b>Директор центра</b></h4>
@@ -55,9 +54,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h3 class="uk-margin-remove">
-                    <a
-                      class="uk-link-reset"
-                      href="/profile/{{item.head.id}}"
+                    <a class="uk-link-reset" href="/profile/{{item.head.id}}"
                       >{{item.head.full_name}}</a
                     >
                   </h3>
@@ -74,8 +71,8 @@
             </header>
             <div class="uk-comment-body">
               <ul class="uk-list">
-                {% if item.head.office %}
-                {% comment %} <li>
+                {% if item.head.office %} {% comment %}
+                <li>
                   <h5
                     target="_blank"
                     rel="noreferrer noopener"
@@ -84,7 +81,8 @@
                     <span uk-icon="icon: location; ratio: 1"></span>
 
                     <span>{{item.address}}</span>
-                  </h5> {% endcomment %}
+                  </h5>
+                  {% endcomment %}
                 </li>
                 {% endif %} {% if item.head.working_hours %}
                 <li>
@@ -127,6 +125,5 @@
     </div>
     {% endfor %}
   </div>
-
 </div>
 {% endblock %}

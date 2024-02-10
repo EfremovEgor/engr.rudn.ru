@@ -34,13 +34,14 @@
 .profile_name {
   font-weight: bold;
   line-height: 48px;
-  letter-spacing: -1px;
+  /* letter-spacing: -1px; */
   margin-top: 40px;
 }
 .department_name {
   margin-top: 30px;
 }
 .study_level-badge {
+  text-transform: uppercase !important;
   box-shadow: 1px 1px 2px black;
   padding: 10px;
   border: 1px black solid;

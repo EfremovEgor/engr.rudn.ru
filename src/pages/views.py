@@ -457,7 +457,7 @@ def department_item(request, id):
     )
     scientific_centers = ScientificCenters.objects.filter(faculty_field=department)
     
-    staff = department.staff.all()
+    staff = department.staff.order_by("position").all()
     return render(
         request,
         "pages/academy/department_item.html",

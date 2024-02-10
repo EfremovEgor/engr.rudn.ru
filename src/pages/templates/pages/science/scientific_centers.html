@@ -75,7 +75,7 @@
             <div class="uk-comment-body">
               <ul class="uk-list">
                 {% if item.head.office %}
-                <li>
+                {% comment %} <li>
                   <h5
                     target="_blank"
                     rel="noreferrer noopener"
@@ -83,7 +83,8 @@
                   >
                     <span uk-icon="icon: location; ratio: 1"></span>
 
-                  </h5>
+                    <span>{{item.address}}</span>
+                  </h5> {% endcomment %}
                 </li>
                 {% endif %} {% if item.head.working_hours %}
                 <li>

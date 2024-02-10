@@ -127,30 +127,6 @@
     </div>
     {% endfor %}
   </div>
-  <table class="uk-table uk-table-divider">
-    <thead>
-      <tr>
-        <th>Название центра</th>
-        <th class="uk-table-expand">Руководитель</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in centers %}
-      <tr>
-        <td>
-          <a
-            style="
-              text-decoration: 1px underline black;
-              text-underline-offset: 2px;
-            "
-            href="{% url 'pages:scientific_center_item'  id=item.id  %}"
-            >{{item.name}}</a
-          >
-        </td>
-        <td>{{item.head }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
 </div>
 {% endblock %}

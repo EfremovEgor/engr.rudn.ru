@@ -111,7 +111,7 @@
       </header>
       <div class="uk-comment-body">
         <ul class="uk-list">
-          {% if department.head.office %}
+          {% if profiles.0.office %}
           <li>
             <h5
               target="_blank"
@@ -120,7 +120,7 @@
             >
               <span uk-icon="icon: location; ratio: 1"></span>
 
-              <span>{{department.head.office}}</span>
+              <span>{{profiles.0.office}}</span>
             </h5>
           </li>
           {% endif %}
@@ -195,7 +195,9 @@
         {% endif %} {% endfor %}
       </tbody>
     </table>
+
   </div>
+
 </div>
 
 {% endblock %}

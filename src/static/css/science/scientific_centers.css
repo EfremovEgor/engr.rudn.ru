@@ -64,3 +64,119 @@ a {
   margin-bottom: 20px;
   margin-top: 40px;
 }
+.content {
+  max-width: 75%;
+}
+.heading {
+  padding-bottom: 30px;
+}
+.profile_content > p {
+  text-align: justify;
+  text-indent: 4%;
+  margin-top: -10px;
+}
+.profile_content {
+  margin-top: 100px;
+}
+.card-wrapper {
+  padding: 10px;
+}
+.department-text {
+  min-height: 360px;
+}
+.direction_info-card {
+  min-height: 450px !important;
+}
+.direction_info-card > div > h4 {
+  margin-top: 20px !important;
+}
+.department-text > h2 {
+  letter-spacing: -1px;
+}
+.direction_info-card > div > * {
+  margin: 0px !important;
+}
+.profile_heading-container > * {
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 0;
+}
+.profile_name {
+  font-weight: bold;
+  line-height: 48px;
+  letter-spacing: -1px;
+  margin-top: 40px;
+}
+.department_name {
+  margin-top: 30px;
+}
+.study_level-badge {
+  box-shadow: 1px 1px 2px black;
+  padding: 10px;
+  border: 1px black solid;
+  color: black;
+  transition: all 0.2s;
+}
+
+.study_level-badge:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.direction_name {
+  margin-top: 30px;
+}
+.study_profile_details-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+}
+
+.employee-card > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px !important;
+  width: 100%;
+  min-height: 102px !important;
+}
+.employee-card-wrapper {
+  height: fit-content;
+}
+.page-name {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 40px;
+}
+.head-text {
+}
+.show-uni-department__link:hover {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+}
+.show-uni-department__link:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -2px;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.show-uni-department__link:hover:after {
+  width: 100%;
+  left: 0;
+}
+.show-uni-department__link {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+.show-uni-department__link {
+  position: relative;
+}

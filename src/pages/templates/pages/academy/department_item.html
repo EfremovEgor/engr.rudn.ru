@@ -230,13 +230,13 @@
     <ul style="list-style-type: none">
     {% for center in scientific_centers %}
     <li>
-        <a style="
+        <a  class="uk-accordion-title" style="
         color: inherit; 
         text-decoration: inherit; 
         text-decoration: 1px underline black;
         text-underline-offset: 2px; 
         " 
-      href="{% url "pages:scientific_center_item" center.id %}">{{center.name}}</a>
+      href="{% url "pages:scientific_center_item" center.id %}"><b>{{center.name}}</b></a>
     </li>
     {% endfor %}
     </ul>

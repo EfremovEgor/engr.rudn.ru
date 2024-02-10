@@ -423,3 +423,33 @@ def departments(request):
             "departments": departments,
         },
     )
+
+
+def department_item(request, id):
+    department = get_object_or_404(DepartmentInfo, pk=id)
+    bachelors = StudyDirection.objects.filter(
+        profiles__faculty_field=department, profiles__study_level="Бакалавриат"
+    ).all()
+    masters = StudyDirection.objects.filter(
+        profiles__faculty_field=department, profiles__study_level="Магистратура"
+    ).all()
+    specialty = StudyDirection.objects.filter(
+        profiles__faculty_field=department, profiles__study_level="Специалитет"
+    ).all()
+    postgraduates = StudyDirection.objects.filter(
+        profiles__faculty_field=department, profiles__study_level="Аспирантура"
+    ).all()
+    scientific_centers = ScientificCenters.objects.filter(faculty_field=department)
+    return render(
+        request,
+        "pages/academy/department_item.html",
+        {
+            "title": department.name,
+            "department": department,
+            "bachelors": bachelors,
+            "masters": masters,
+            "specialty": specialty,
+            "postgraduates": postgraduates,
+            "scientific_centers": scientific_centers,
+        },
+    )

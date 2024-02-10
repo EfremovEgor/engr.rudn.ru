@@ -22,9 +22,9 @@
           </a>
         </div>
       </div>
-        {% if department.head %}
+        {% if department.head|temp_replace_head_department %}
         <div>
-          <h4 class="head-text"><b>{{department.job_title}}</b></h4>
+          <h4 class="head-text"><b>{{department.job_title|}}</b></h4>
           <article
             style="background-color: transparent"
             class="employee-card"

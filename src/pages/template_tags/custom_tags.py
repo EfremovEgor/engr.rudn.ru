@@ -20,3 +20,8 @@ def study_level_to_page_name(key):
 @register.filter
 def replace_quotes(phrase):
     return "» /	«".join([part.strip() for part in phrase.split("/")])
+
+
+@register.filter
+def temp_replace_head_department(phrase: str):
+    return phrase.replace("кафедры", "кафедрой")

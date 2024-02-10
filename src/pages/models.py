@@ -153,8 +153,9 @@ class DepartmentInfo(models.Model):
     )
     info = models.TextField(verbose_name="Информация о департаменте")
     head = models.ForeignKey(
-        "profiles.EmployeeProfile",
+        "profiles.DepartmentStaff",
         verbose_name="Руководитель",
+        related_name="head_of_department",
         blank=True,
         null=True,
         on_delete=models.CASCADE,

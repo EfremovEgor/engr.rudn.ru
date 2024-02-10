@@ -5,7 +5,7 @@
 <div class="uk-container container" style="margin-bottom: 50px">
   <div class="profile_heading-container">
     <a class="study_level-badge">{{profile_data.study_level}}</a>
-    <h4 class="direction_name">Направление: {{profile_data.direction.name}} </h4>
+    <h4 class="direction_name">{{profile_data.direction.cipher}}  «{{profile_data.direction.name}}» </h4>
     <h2 class="profile_name"> {{profile_data.name}}</h2>
     {% if profile_data.faculty %}
     <h4 class="department_name">{{profile_data.faculty.name}}</h4>

@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #0079c1;
+  --secondary-color: #00a94f;
+  --tertiary-color: #ee2a24;
+}
+
 @media screen and (min-width: 993px) {
   .container {
     max-width: 75%;
@@ -43,6 +49,7 @@
   text-shadow: 1px 1px 20px black;
 }
 .page-name {
+  color: var(--primary-color);
   font-size: 40px;
   font-weight: 600;
   margin: 40px;
@@ -65,4 +72,16 @@
   font-size: 20px;
   font-weight: 400;
   text-align: justify;
+}
+.uk-subnav-pill > .uk-active > a {
+  background-color: var(--primary-color) !important;
+}
+a.uk-link-heading:hover {
+  color: var(--primary-color) !important;
+}
+.uk-button-secondary {
+  background-color: var(--primary-color);
+}
+.uk-button-secondary:hover {
+  background-color: var(--tertiary-color);
 }

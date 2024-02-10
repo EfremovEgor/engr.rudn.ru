@@ -6,7 +6,7 @@
   width: 100%;
   height: fit-content;
   min-height: 80px;
-  /* position: fixed;
+  /* position: fixed; 
   z-index: 100; */
 }
 .header-text {
@@ -19,7 +19,7 @@
 }
 .uk-dropbar,
 .dropdown-black {
-  background: rgba(0, 0, 0, 1) !important;
+  background: var(--primary-color) !important;
 }
 .uk-navbar-dropdown {
   padding: 15px !important;
@@ -37,7 +37,7 @@
 
 .header-text-main {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 .header-text-main:after {
   background: none repeat scroll 0 0 transparent;
@@ -47,7 +47,7 @@
   height: 5px;
   left: 50%;
   position: absolute;
-  background: #fff;
+  background: white;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -55,6 +55,9 @@
 .header-text-main {
   position: relative;
   padding: 5px 5px;
+}
+.header-text-main:hover {
+  /* color: var(--tertiary-color) !important;/ */
 }
 .header-text-main:hover:after {
   width: 100%;

@@ -87,7 +87,7 @@
 .show-uni-department__link:hover {
   font-size: 18px;
   font-weight: 600;
-  color: black;
+  color: var(--tertiary-color);
   text-decoration: none;
 }
 .show-uni-department__link:after {
@@ -98,7 +98,7 @@
   height: 3px;
   left: 50%;
   position: absolute;
-  background: black;
+  background: var(--tertiary-color);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -109,7 +109,7 @@
 .show-uni-department__link {
   font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: var(--primary-color);
 }
 .show-uni-department__link {
   position: relative;

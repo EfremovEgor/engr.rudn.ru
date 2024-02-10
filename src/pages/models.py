@@ -159,6 +159,7 @@ class DepartmentInfo(models.Model):
         null=True,
         on_delete=models.CASCADE,
     )
+    staff = models.ManyToManyField("profiles.DepartmentStaff", verbose_name="Сотрудники департамента", blank=True)
 
     def __str__(self) -> str:
         return f"{self.position}. {self.name}"

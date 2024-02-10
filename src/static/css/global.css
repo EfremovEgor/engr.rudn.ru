@@ -85,3 +85,6 @@ a.uk-link-heading:hover {
 .uk-button-secondary:hover {
   background-color: var(--tertiary-color);
 }
+.uk-navbar-nav > li > a {
+  color: white !important;
+}

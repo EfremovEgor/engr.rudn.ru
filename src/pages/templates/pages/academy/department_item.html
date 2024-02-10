@@ -245,6 +245,20 @@
     {% endfor %}
     </ul>
     <h2 class="sub-heading">Профессорско-преподавательский состав</h2>
+    <ul style="list-style: none">
+      {% for teacher in  staff %}
+      <li style="
+      margin-left: -30px;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      color: #333333 !important;
+      color: inherit; 
+      text-decoration: inherit; 
+      " >
+        <b>{{teacher.related_profile.full_name}}{% for title in teacher.department_responsibilities  %}, {{title|lower}}{% endfor %}</b>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
 {%endblock %}

@@ -3,7 +3,6 @@
   rel="stylesheet"
   href="{% static 'css/students/student_committee.css' %}"
 />
-<link rel="stylesheet" href="{% static 'css/administration.css' %}" />
 
 <div class="uk-container">
   <div class="page-name">Студенческий комитет</div>
@@ -14,85 +13,98 @@
   </p>
 </div>
 <div class="uk-container" style="margin-bottom: 50px">
+  <h2 style="text-decoration: none !important" class="sub-heading">
+    г. Москва, Орджоникидзе, д. 3.,каб. 538
+  </h2>
+  <h2 class="sub-heading">Миссия</h2>
+  <p class="large_text">
+    Создание общей экосистемы студентов на факультете.
+    <br />
+    Создание системы, которая будет способна решить 100% проблем обучающихся.
+  </p>
+  <h2 class="sub-heading">Направления деятельности</h2>
+  <p class="large_text"></p>
+  <p class="large_text">
+    <b>Комиссии:</b>
+  </p>
+  <ul style="list-style: '– '" class="large_text">
+    <li>
+      КМК (культурно-массовая комиссия): проведение мероприятий на площадке
+      факультета и других корпусов РУДН, формирование у активистов навыков
+      работы в команде, лидерских качеств, а также повышение социализации
+    </li>
+    <li>
+      ККО (комиссия по качеству образования): работа со старостами и кураторами,
+      консультация всех студентов по учебным и бытовым вопросам, помощь с
+      академическими задолженностями, решение конфликтов как внутри группы, так
+      и между студентом и преподавателем
+    </li>
+    <li>
+      РсИС (комиссия по работе с иностранными студентами): помощь иностранным
+      студентам с адаптацией в группе, а также в общественной жизни университета
+    </li>
+    <li>
+      ИК (информационная комиссия): формирование бренда СК ИА, производство
+      постов, фото и видеосъёмка мероприятий обучение студентов работе в таких
+      программах, как figma, adobe illustrator, adobe photoshop, adobe lightroom
+    </li>
+    <li>
+      ВК (волонтёрская комиссия): помощь в организации мероприятий,
+      патриотическая деятельность
+    </li>
+  </ul>
+  <p class="large_text">
+    <b>Комиссии:</b>
+  </p>
+  <ul style="list-style: '– '" class="large_text">
+    <li>
+      КН (клуб настолок): встречи активистов, желающих поиграть в различные
+      настольные игры
+    </li>
+    <li>
+      КК (книжный клуб): встречи читающих и слушающих активистов, желающих
+      поделиться впечатлениями о прочтенных ими книгах
+    </li>
+  </ul>
+  <h2 class="sub-heading">Как вступить</h2>
+  <p class="large_text">
+    Перейти в группу <a href="https://vk.com/skia.rudn">ВКонтакте</a> и нажать
+    на кнопку ВСТУПИТЬ В СК
+  </p>
+
   <h2 class="sub-heading">Состав студенческого совета</h2>
-  <div class="employee_cards">
-    {% for profile in profiles %}
-
-    <div class="employee-card-wrapper">
-      <article
-        style="background-color: transparent"
-        class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
-        role="comment"
-      >
-        <header
-          class="uk-comment-header"
-          style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
-        >
-          <div class="uk-grid-medium uk-flex-middle" uk-grid>
-            <div class="uk-width-auto">
-              <img
-                class="uk-border-circle"
-                src="{{profile.image.url}}"
-                width="80"
-                height="80"
-              />
-            </div>
-            <div class="uk-width-expand">
-              <h3 style="overflow-wrap: break-word" class="uk-margin-remove">
-                <a class="uk-link-reset" href="/profile/{{profile.id}}"
-                  >{{profile.full_name}}</a
-                >
-              </h3>
-              <ul
-                class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-              >
-                {% for title in profile.job_title %}
-
-                <li><span> {{title}}</span></li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </header>
-        <div class="uk-comment-body">
-          <ul class="uk-list">
-            {% if profile.office %}
-            <li>
-              <h5
-                target="_blank"
-                rel="noreferrer noopener"
-                class="uk-link-heading card-link"
-              >
-                <span uk-icon="icon: location; ratio: 1"></span>
-
-                <span>{{profile.office}}</span>
-              </h5>
-            </li>
-            {% endif %} {% if profile.working_hours %}
-            <li>
-              <h5 class="uk-link-heading card-link">
-                <span uk-icon="icon: clock; ratio: 1"></span>
-
-                <span> {{profile.working_hours}}</span>
-              </h5>
-            </li>
-            {% endif %} {% if profile.email %}
-            <li>
-              <h5>
-                <span uk-icon="icon: mail; ratio: 1"></span>
-                <a
-                  href="mailto:{{profile.email}}"
-                  class="uk-link-heading card-link"
-                  >{{profile.email}}
-                </a>
-              </h5>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-      </article>
-    </div>
-    {% endfor %}
+  <div class="student_committee">
+    <table
+      style="font-size: 18px !important; font-weight: 400 !important"
+      class="uk-table uk-table-divider"
+    >
+      <thead>
+        <tr>
+          <th style="font-size: 20px !important; font-weight: 400 !important">
+            ФИО
+          </th>
+          <th style="font-size: 20px !important; font-weight: 400 !important">
+            Должность
+          </th>
+          <th style="font-size: 20px !important; font-weight: 400 !important">
+            Почта
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for profile in profiles %}
+        <tr>
+          <td>{{profile.full_name }}</td>
+          <td>
+            {% for job_title in profile.job_title %} {{job_title }} {% endfor %}
+          </td>
+          <td>
+            <a href="mailto:{{profile.email}}">{{profile.email}}</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </div>
 

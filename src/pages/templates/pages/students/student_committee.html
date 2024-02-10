@@ -24,10 +24,6 @@
   </p>
 
   <h2 class="sub-heading">Направления деятельности</h2>
-  <p class="large_text"></p>
-  <p class="large_text">
-    <b>Комиссии:</b>
-  </p>
   <ul style="list-style: '– '" class="large_text">
     <li>
       Проведение мероприятий на площадке факультета и других корпусов РУДН,
@@ -75,6 +71,96 @@
   </p>
 
   <h2 class="sub-heading">Председатель</h2>
+
+  <h2 class="sub-heading">{{department.job_title|temp_replace_head_department}}</h2>
+  <div style="max-width: fit-content">
+    <article
+      style="background-color: transparent"
+      class="employee-card"
+      role="comment"
+    >
+      <header
+        class="uk-comment-header"
+        style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
+      >
+        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <img
+              class="uk-border-circle"
+              src="{{profiles.0.image.url}}"
+              width="80"
+              height="80"
+            />
+          </div>
+          <div class="uk-width-expand">
+            <h3 class="uk-margin-remove">
+              <a class="uk-link-reset" href="/profile/{{department.head.id}}"
+                >{{profiles.0.full_name}}</a
+              >
+            </h3>
+            <ul
+              class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
+            >
+              {% for title in profiles.0.job_title %}
+
+              <li><span> {{title}}</span></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="uk-comment-body">
+        <ul class="uk-list">
+          {% if department.head.office %}
+          <li>
+            <h5
+              target="_blank"
+              rel="noreferrer noopener"
+              class="uk-link-heading card-link"
+            >
+              <span uk-icon="icon: location; ratio: 1"></span>
+
+              <span>{{department.head.office}}</span>
+            </h5>
+          </li>
+          {% endif %}
+          {% if department.head.working_hours %}
+          <li>
+            <h5 class="uk-link-heading card-link">
+              <span uk-icon="icon: clock; ratio: 1"></span>
+
+              <span> {{department.head.working_hours}}</span>
+            </h5>
+          </li>
+          {% endif %} {% if profiles.0.phone_number %}
+          <li>
+            <h5>
+              
+              <span uk-icon="icon: receiver; ratio: 1"></span>
+
+              <a href="tel:{{phone_number}}" class="uk-link-heading card-link">
+                {{profiles.0.phone_number.as_international}} <br />
+              </a>
+
+            </h5>
+          </li>
+          {% endif %} {% if profiles.0.email %}
+          <li>
+            <h5>
+
+              <span uk-icon="icon: mail; ratio: 1"></span>
+              <a href="mailto:{{profiles.0.email}}" class="uk-link-heading card-link"
+                >{{profiles.0.email}}
+              </a>
+
+            </h5>
+          </li>
+          {% endif %}
+        </ul>
+        </div>
+      </div>
+   
+
   <h2 class="sub-heading">Состав студенческого комитета</h2>
   <div class="student_committee uk-overflow-auto">
     <table
@@ -95,7 +181,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for profile in profiles %}
+        {% for profile in profiles %} {% if profile.position != 1%}
         <tr>
           <td>{{profile.full_name }}</td>
           <td>
@@ -105,7 +191,7 @@
             <a href="mailto:{{profile.email}}">{{profile.email}}</a>
           </td>
         </tr>
-        {% endfor %}
+        {% endif %} {% endfor %}
       </tbody>
     </table>
   </div>

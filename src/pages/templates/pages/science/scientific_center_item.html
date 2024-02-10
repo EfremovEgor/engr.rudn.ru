@@ -77,7 +77,7 @@
           <li>{{item}}</li>
           {% endfor %}
         </ul>
-        {% endif %} {% if center.equipment %}
+        {% endif %} {% if center.equipment.all %}
         <p class="uk-card-title" style="text-align: center; font-size: 25px">
           Оборудование
         </p>
@@ -106,7 +106,7 @@
             </tbody>
           </table>
         </div>
-        {% endif %} {% if center.partners %}
+        {% endif %} {% if center.partners.all %}
         <p class="uk-card-title" style="text-align: center; font-size: 25px">
           Сотрудничество, партнеры
         </p>

@@ -159,6 +159,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CKEDITOR_CONFIGS = {
     "default": {
+        "extraPlugins": ",".join(
+            [
+                "html5video",
+            ]
+        ),
         "toolbar": [
             [
                 "Undo",
@@ -178,6 +183,7 @@ CKEDITOR_CONFIGS = {
                 "-",
                 "Table",
                 "-",
+                "Html5video",
                 "Image",
                 "-",
                 "Source",

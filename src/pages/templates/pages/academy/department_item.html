@@ -5,8 +5,8 @@
 </div>
 <div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
   <p>{{department.info|linebreaks}}</p>
-  <h2 class="sub-heading">{{department.job_title}}</h2>
   {% if department.head %}
+  <h2 class="sub-heading">{{department.job_title|temp_replace_head_department}}</h2>
   <div style="max-width: fit-content">
     <article
       style="background-color: transparent"
@@ -99,12 +99,12 @@
   
   <div class="uk-container" style="margin-bottom: 50px">
     {% if  bachelors%}
-    <ul uk-accordion="multiple: true;active:1">
+    <ul uk-accordion="multiple: true">
       <li>
         <a class="uk-accordion-title" href=""><b>Бакалавриат</b></a>
         <div class="uk-accordion-content">
           <div class="naprs" style="margin-left: 20px">
-            <ul uk-accordion="multiple: true;active:1">
+            <ul uk-accordion="multiple: true">
               {% for direction in bachelors %}
               <li>
                 <a class="uk-accordion-title" href=""
@@ -129,12 +129,12 @@
     </ul>
     {% endif %}
     {% if  specialty%}
-    <ul uk-accordion="multiple: true;active:1">
+    <ul uk-accordion="multiple: true">
       <li>
         <a class="uk-accordion-title" href=""><b>Специалитет</b></a>
         <div class="uk-accordion-content">
           <div class="naprs" style="margin-left: 20px">
-            <ul uk-accordion="multiple: true;active:1">
+            <ul uk-accordion="multiple: true">
               {% for direction in specialty %}
               <li>
                 <a class="uk-accordion-title" href=""
@@ -159,12 +159,12 @@
     </ul>
     {% endif %}
     {% if  masters%}
-    <ul uk-accordion="multiple: true;active:1">
+    <ul uk-accordion="multiple: true">
       <li>
         <a class="uk-accordion-title" href=""><b>Магистратура</b></a>
         <div class="uk-accordion-content">
           <div class="naprs" style="margin-left: 20px">
-            <ul uk-accordion="multiple: true;active:1">
+            <ul uk-accordion="multiple: true">
               {% for direction in masters %}
               <li>
                 <a class="uk-accordion-title" href=""
@@ -194,12 +194,12 @@
     </ul>
     {% endif %}
     {% if postgraduates%}
-    <ul uk-accordion="multiple: true;active:1">
+    <ul uk-accordion="multiple: true">
       <li>
         <a class="uk-accordion-title" href=""><b>Аспирантура</b></a>
         <div class="uk-accordion-content">
           <div class="naprs" style="margin-left: 20px">
-            <ul uk-accordion="multiple: true;active:1">
+            <ul uk-accordion="multiple: true">
               {% for direction in postgraduates %}
               <li>
                 <a class="uk-accordion-title" href=""

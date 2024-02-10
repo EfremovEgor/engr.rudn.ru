@@ -20,14 +20,19 @@
         <p><b>Структурное подразделение:</b> {{center.faculty_field.name}}</p>
         <p><b>Руководитель:</b> {{center.head.full_name}}</p>
         <p><b>Адрес:</b> {{center.address}}</p>
+        {% if center.phone%}
         <p><b>Тел.:</b> {{center.phone}}</p>
+        {% endif %} {% if center.email %}
         <p><b>e-mail:</b> {{center.email}}</p>
+        {% endif %} {% if center.brief_description %}
         <p class="uk-card-title" style="text-align: center; font-size: 25px">
           Краткое описание
         </p>
+
         <p style="text-align: justify; text-indent: 3%">
           {{center.brief_description|linebreaks}}
         </p>
+        {% endif %} {% if center.scientists %}
         <p class="uk-card-title" style="text-align: center; font-size: 25px">
           Команда ученых
         </p>
@@ -54,6 +59,7 @@
             </tbody>
           </table>
         </div>
+        {% endif %} {% if center.scientific_directions %}
         <p class="uk-card-title" style="text-align: center; font-size: 25px">
           Научные направления (области исследования)
         </p>
@@ -62,11 +68,16 @@
           <li>{{item}}</li>
           {% endfor %}
         </ul>
+        {% endif %} {% if center.achievements %}
+        <p class="uk-card-title" style="text-align: center; font-size: 25px">
+          Достижения/результаты проектов-исследований
+        </p>
         <ul style="list-style: '– '; text-align: justify">
           {% for item in center.achievements %}
           <li>{{item}}</li>
           {% endfor %}
         </ul>
+        {% endif %} {% if center.equipment %}
         <p class="uk-card-title" style="text-align: center; font-size: 25px">
           Оборудование
         </p>
@@ -95,6 +106,7 @@
             </tbody>
           </table>
         </div>
+        {% endif %} {% if center.partners %}
         <p class="uk-card-title" style="text-align: center; font-size: 25px">
           Сотрудничество, партнеры
         </p>
@@ -124,6 +136,7 @@
             </tbody>
           </table>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

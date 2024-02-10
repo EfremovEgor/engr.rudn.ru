@@ -456,6 +456,7 @@ def department_item(request, id):
         .all()
     )
     scientific_centers = ScientificCenters.objects.filter(faculty_field=department)
+    
     staff = department.staff.all()
     return render(
         request,

@@ -117,6 +117,7 @@ class StudentCommitteeProfile(models.Model):
     
 class DepartmentStaff(models.Model):
     related_profile = models.OneToOneField(EmployeeProfile, verbose_name=("Связанный профиль сотрудника"), on_delete=models.CASCADE)
+    position = position = models.IntegerField(verbose_name="Позиция",default=1)
     department_responsibilities = ArrayField(
         models.CharField(verbose_name="Должность/Звание", max_length=255),
         verbose_name="Должности/Звания",
@@ -134,6 +135,7 @@ class DepartmentStaff(models.Model):
     class Meta:
         verbose_name = "Профиль сотрудника департамента"
         verbose_name_plural = "Профили сотрудников департаментов"
+        ordering = ["related_profile__full_name"]
 
     def __str__(self):
         return f"{self.related_profile.full_name}"

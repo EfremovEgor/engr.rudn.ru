@@ -12,7 +12,9 @@ urlpatterns = [
         "applicants/reference", views.applicants_reference, name="applicants_reference"
     ),
     path("academy/departments", views.departments, name="departments"),
-    path("academy/departments/<int:id>", views.department_item, name="department_item"),
+    path(
+        "academy/departments/<str:name>", views.department_item, name="department_item"
+    ),
     path("applicants/open_days", views.open_days, name="applicants_open_days"),
     path("applicants/committee", views.committee, name="committee"),
     path(

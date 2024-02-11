@@ -81,3 +81,10 @@ def format_prices(data: dict):
         strings.append(f"{i+1}-й год – {price} ₽")
 
     return strings
+
+
+@register.filter
+def get_url_department_abbreviation(name):
+    for k, v in aliases.department_abbreviation_to_name.items():
+        if v == name:
+            return k

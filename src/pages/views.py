@@ -9,7 +9,7 @@ from .models import (
     DissertationCommittee,
     ScientificCenters,
 )
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404
 from news.models import NewsItem, Tag
 from django.views import View
@@ -430,8 +430,12 @@ def departments(request):
     )
 
 
-def department_item(request, id):
-    department = get_object_or_404(DepartmentInfo, pk=id)
+def department_item(request, name):
+    abb = aliases.department_abbreviation_to_name.get(name)
+    if abb is None:
+        raise Http404
+
+    department = get_object_or_404(DepartmentInfo, abbreviation=abb)
     bachelors = (
         StudyDirection.objects.filter(
             profiles__faculty_field=department, profiles__study_level="Бакалавриат"

@@ -121,6 +121,9 @@ a.uk-link-heading:hover {
 .link-hover-underline {
   position: relative;
 }
+.red-link-hover-underline {
+  color: var(--tertiary-color);
+}
 .red-link-hover-underline:after {
   background: var(--tertiary-color);
 }

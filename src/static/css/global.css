@@ -39,8 +39,10 @@
   text-decoration: underline 2px black !important;
   text-underline-offset: 10px !important;
   margin-top: 40px;
-  -webkit-text-decoration: underline 2px black !important;
-  -webkit-text-underline-offset: 10px !important;
+  -webkit-text-decoration-line: underline 2px black !important;
+  -webkit-text-decoration-color: black !important;
+  -webkit-text-decoration-style: solid !important;
+  -webkit-text-decoration-thickness: 2px !important;
 }
 .uk-accordion-content {
   margin-top: 10px !important;
@@ -87,4 +89,38 @@ a.uk-link-heading:hover {
 }
 .uk-navbar-nav > li > a {
   color: white !important;
+}
+
+.link-hover-underline {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.link-hover-underline:hover {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.link-hover-underline:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: var(--primary-color);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.link-hover-underline:hover:after {
+  width: 100%;
+  left: 0;
+}
+.link-hover-underline {
+  position: relative;
+}
+.red-link-hover-underline:after {
+  background: var(--tertiary-color);
 }

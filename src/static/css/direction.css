@@ -33,6 +33,7 @@
 .profile_name {
   font-weight: bold;
   line-height: 48px;
+  color: var(--primary-color);
   /* letter-spacing: -1px; */
   margin-top: 40px;
 }
@@ -41,15 +42,15 @@
 }
 .study_level-badge {
   text-transform: uppercase !important;
-  box-shadow: 1px 1px 2px black;
+  /* box-shadow: 1px 1px 2px var(--primary-color); */
   padding: 10px;
-  border: 1px black solid;
-  color: black;
+  border: 1.5px var(--primary-color) solid;
+  color: var(--primary-color);
   transition: all 0.2s;
 }
 
 .study_level-badge:hover {
-  background-color: black;
+  background-color: var(--primary-color);
   color: white;
   text-decoration: none;
 }
@@ -86,4 +87,7 @@
   font-size: 18px;
   color: black;
   font-weight: 600;
+}
+.study_duration_badge > div {
+  flex-direction: column;
 }

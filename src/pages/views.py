@@ -146,6 +146,7 @@ def directions(request, id):
         if profile_data["extramural_details"] is not None
         else None
     )
+
     return render(
         request,
         "pages/direction.html",
@@ -339,7 +340,11 @@ def levels_of_study(request, level):
     }
     if level not in levels:
         return HttpResponse(status=404)
-    directions = StudyDirection.objects.filter(study_level=levels[level]).all()
+    directions = (
+        StudyDirection.objects.filter(study_level=levels[level])
+        .order_by("cipher")
+        .all()
+    )
     # for direction in directions:
     #     for profile in direction.profiles.all():
     #         for index, lang in enumerate(profile.language_fields):
@@ -456,7 +461,7 @@ def department_item(request, id):
         .all()
     )
     scientific_centers = ScientificCenters.objects.filter(faculty_field=department)
-    
+
     staff = department.staff.order_by("position").all()
     return render(
         request,

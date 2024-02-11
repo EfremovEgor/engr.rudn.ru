@@ -7,6 +7,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("rosetta/", include("rosetta.urls")),
     path("ckeditor/", include("ckeditor_uploader.urls")),
+    path("admin_utilities/", include("admin_utilities.urls")),
     path("", include("news.urls")),
     path("", include("pages.urls")),
     path("", include("profiles.urls")),

@@ -85,6 +85,13 @@ class ProfileDetails(models.Model):
     price_sixth_year = models.PositiveIntegerField(
         verbose_name="Стоимость обучения по контракту(6 год)", null=True, blank=True
     )
+    study_duration = models.IntegerField(
+        "Продолжительность обучения", null=True, blank=True
+    )
+    admission_url = models.URLField(
+        "Ссылка на admission.rudn", max_length=255, null=True, blank=True
+    )
+
     SCORES_SCHEMA = {
         "type": "dict",  # or 'object'
         "keys": {  # or 'properties'
@@ -112,26 +119,17 @@ class ProfileDetails(models.Model):
             },
         },
     }
-    minimal_passing_scores = JSONField(
-        verbose_name="Минимальные проходные баллы:",
+    minimal_passing_scores_budget = JSONField(
+        verbose_name="Минимальные проходные баллы на бюджет:",
         schema=SCORES_SCHEMA,
-    )
-    program_manager = models.CharField(
-        verbose_name="Руководитель программы", max_length=255
-    )
-    job_title = ArrayField(
-        models.CharField(verbose_name="Должность/Звание", max_length=255),
-        verbose_name="Должности/Звания",
-        size=20,
         blank=True,
         null=True,
     )
-    sub_header = models.CharField(
-        verbose_name="Подзаголовок", max_length=255, blank=True, null=True
-    )
-    phone = PhoneNumberField(verbose_name="Телефон", blank=True, null=True)
-    email = models.EmailField(
-        verbose_name="Электронная почта", max_length=255, blank=True, null=True
+    minimal_passing_scores_contract = JSONField(
+        verbose_name="Минимальные проходные баллы на контракт:",
+        schema=SCORES_SCHEMA,
+        blank=True,
+        null=True,
     )
 
     def __str__(self) -> str:
@@ -145,6 +143,12 @@ class ProfileDetails(models.Model):
 class DepartmentInfo(models.Model):
     name = models.TextField(verbose_name="Название департамента")
     position = models.IntegerField(verbose_name="Позиция")
+    abbreviation = models.CharField(
+        verbose_name="Аббревиатура",
+        max_length=255,
+        blank=True,
+        null=True,
+    )
     job_title = models.CharField(
         verbose_name="Должность руководителя",
         choices=DEPARTMENT_JOB_TITLES,
@@ -160,7 +164,9 @@ class DepartmentInfo(models.Model):
         null=True,
         on_delete=models.CASCADE,
     )
-    staff = models.ManyToManyField("profiles.DepartmentStaff", verbose_name="Сотрудники департамента", blank=True)
+    staff = models.ManyToManyField(
+        "profiles.DepartmentStaff", verbose_name="Сотрудники департамента", blank=True
+    )
 
     def __str__(self) -> str:
         return f"{self.position}. {self.name}"
@@ -176,7 +182,12 @@ class Profile(models.Model):
         return ["Русский"]
 
     name = models.TextField(verbose_name="Название")
-    cipher = models.CharField(verbose_name="Шифр", max_length=255)
+    cipher = models.CharField(
+        verbose_name="Шифр",
+        max_length=255,
+        blank=True,
+        null=True,
+    )
 
     study_level = models.CharField(
         verbose_name="Уровень обучения", max_length=255, choices=STUDY_LEVELS
@@ -188,9 +199,6 @@ class Profile(models.Model):
         related_name="department_info",
         blank=True,
         null=True,
-    )
-    study_duration = models.IntegerField(
-        verbose_name="Длительность обучения", default=4
     )
     language_fields = ArrayField(
         models.CharField(

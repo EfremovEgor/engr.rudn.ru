@@ -24,7 +24,7 @@
         {% if department.head %}
         <div>
           <h4 class="head-text">
-            <b>{{department.job_title|temp_replace_head_department}}</b>
+            {{department.job_title|temp_replace_head_department}}
           </h4>
           <article
             style="background-color: transparent"

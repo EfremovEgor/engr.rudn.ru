@@ -20,3 +20,6 @@ department_abbreviation_to_name = {
     "knmt": "КНМТ",
     "kiya": "КИЯ",
 }
+scientific_center_name_to_page = {
+    "Научный центр нейротехнологий и процессов управления": "neural_technologies.html"
+}

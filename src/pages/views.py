@@ -394,9 +394,16 @@ def scientific_centers(request):
 
 def scientific_center_item(request, id):
     center = get_object_or_404(ScientificCenters, pk=id)
+    alias = aliases.scientific_center_name_to_page.get(
+        center.name.strip().replace("\n", "")
+    )
+
+    if alias is None:
+        raise Http404
+
     return render(
         request,
-        "pages/science/scientific_center_item.html",
+        f"pages/science/scientific_centers/{alias}",
         {
             "title": center.name,
             "center": center,

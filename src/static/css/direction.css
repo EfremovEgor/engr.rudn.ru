@@ -52,6 +52,8 @@
   border: 1.5px var(--primary-color) solid;
   color: var(--primary-color);
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 .study_level-badge:hover {

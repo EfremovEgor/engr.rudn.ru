@@ -46,7 +46,7 @@ class UpdateStudyProfilesView(FormView):
                 languages = []
                 if item["Русский"] == "ИСТИНА" or item["Русский"] == "":
                     languages.append("Русский")
-                if item["Английский"]:
+                if item["Английский"] == "ИСТИНА":
                     languages.append("Английский")
                 profile = Profile(
                     name=item["Название профиля или специальности"],

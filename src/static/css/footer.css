@@ -42,9 +42,17 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
 }
+.navigation-link {
+  line-height: 15px;
+}
+.navigation > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .navigation-link > a {
   color: white;
-  text-wrap: nowrap;
+
   font-size: 13px;
 }
 .app-item-svg {

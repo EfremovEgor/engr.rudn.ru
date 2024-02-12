@@ -162,7 +162,15 @@ class DepartmentInfo(models.Model):
         related_name="head_of_department",
         blank=True,
         null=True,
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
+    )
+    contact_employee = models.ForeignKey(
+        "profiles.DepartmentStaff",
+        verbose_name="Контактное лицо",
+        related_name="contact_employee",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
     )
     staff = models.ManyToManyField(
         "profiles.DepartmentStaff", verbose_name="Сотрудники департамента", blank=True

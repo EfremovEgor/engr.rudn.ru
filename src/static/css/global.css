@@ -36,6 +36,9 @@
 }
 
 .sub-heading {
+  font-size: 30px !important;
+  color: #666666 !important;
+  font-weight: 600 !important;
   text-decoration: underline 2px black !important;
   text-underline-offset: 10px !important;
   margin-top: 40px;
@@ -44,6 +47,12 @@
   -webkit-text-decoration-color: black !important;
   -webkit-text-decoration-style: solid !important;
   -webkit-text-decoration-thickness: 2px !important;
+}
+.sub-heading-no-underline {
+  font-size: 30px !important;
+  color: #666666 !important;
+  font-weight: 600 !important;
+  margin-top: 40px;
 }
 .uk-accordion-content {
   margin-top: 10px !important;

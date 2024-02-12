@@ -11,11 +11,11 @@
         class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
       >
         <div class="department-text">
-          <h3>{{department.name|linebreaks}}</h3>
+          <h3><b>{{department.name|linebreaks}}</b></h3>
           <br />
           {{department.info|safe}}
           <div style="margin-top: 10px !important">
-            <a href="{% url "pages:department_item" department.abbreviation|get_url_department_abbreviation%}" class="show-uni-department__link" target="_self">
+            <a href="{% url "pages:department_item" department.abbreviation|get_url_department_abbreviation%}" class="link-hover-underline red-link-hover-underline" target="_self">
               <span class="show-uni-department__link-text">Подробнее</span>
               <i class="icon-ic_arrow"></i>
             </a>

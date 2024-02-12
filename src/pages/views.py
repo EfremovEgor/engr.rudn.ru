@@ -146,7 +146,6 @@ def directions(request, id):
         if profile_data["extramural_details"] is not None
         else None
     )
-
     return render(
         request,
         "pages/direction.html",
@@ -214,7 +213,7 @@ def scientific_student_society(request):
         request,
         "pages/science/scientific_student_society.html",
         {
-            "title": "Научные студенческое общество",
+            "title": "Научное студенческое общество",
         },
     )
 

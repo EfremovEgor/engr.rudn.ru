@@ -37,6 +37,11 @@
   /* letter-spacing: -1px; */
   margin-top: 40px;
 }
+@media screen and (max-width: 660px) {
+  .profile_name {
+    line-height: unset;
+  }
+}
 .department_name {
   margin-top: 30px;
 }
@@ -60,8 +65,17 @@
 .study_profile_details-container {
   margin-top: 30px;
   margin-bottom: 30px;
-  border-collapse: collapse;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
 }
+.heading-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 /* .study_profile_details-container tr {
   border-radius: 50px !important;
   border: 1px solid black;

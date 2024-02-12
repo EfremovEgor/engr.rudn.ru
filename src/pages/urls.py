@@ -23,7 +23,11 @@ urlpatterns = [
         name="applicants_study_directions",
     ),
     path("applicants/study_directions/<int:id>", views.directions),
-    path("applicants/study_directions/<str:level>", views.levels_of_study),
+    path(
+        "applicants/study_directions/<str:level>",
+        views.levels_of_study,
+        name="study_direction_level",
+    ),
     path("academy/history", views.history, name="history"),
     path("science/directions", views.science_directions, name="science_directions"),
     path("science/journals", views.science_journals, name="science_journals"),

@@ -104,7 +104,7 @@ a.uk-link-heading:hover {
 }
 .link-hover-underline:after {
   background: none repeat scroll 0 0 transparent;
-  bottom: 0;
+  bottom: -5px;
   content: "";
   display: block;
   height: 3px;

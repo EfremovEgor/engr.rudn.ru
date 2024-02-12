@@ -237,13 +237,16 @@
     {% endfor %}
     </ul>
     <h2 class="sub-heading">Профессорско-преподавательский состав</h2>
-    <div style="employee_cards">
+    <div style="employee_cards" style="  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    justify-content: center;
+    gap: 15px;">
       {% for teacher in  staff %}
 
       <div class="employee-card-wrapper">
         <article
           style="background-color: transparent"
-          class="employee-card"
+          class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
           role="comment"
         >
           <header

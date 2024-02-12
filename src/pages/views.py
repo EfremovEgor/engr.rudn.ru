@@ -394,8 +394,9 @@ def scientific_centers(request):
 
 def scientific_center_item(request, id):
     center = get_object_or_404(ScientificCenters, pk=id)
+
     alias = aliases.scientific_center_name_to_page.get(
-        center.name.strip().replace("\n", "")
+        " ".join(word.strip() for word in center.name.split())
     )
 
     if alias is None:

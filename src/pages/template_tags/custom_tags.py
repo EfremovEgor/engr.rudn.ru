@@ -59,7 +59,7 @@ def format_scores(data: dict, subject_type: str):
         return strings
     strings = []
     for record in data["minimal_passing_scores_contract"][subject_type]:
-        strings.append(f"{record['subject']} – {record['score']} (контракт)")
+        strings.append(f"{record['subject']} – {record['score']}")
     return strings
 
 

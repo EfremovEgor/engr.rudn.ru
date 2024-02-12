@@ -15,7 +15,7 @@
 {% endcomment %}
 <div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
   <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match uk-grid">
-    {% for item in centers %}
+    {% for item in centers %} {% if item.display %}
     <div class="card-wrapper">
       <div
         class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
@@ -24,8 +24,17 @@
           <h3>{{item.name|linebreaks}}</h3>
           <br />
           {{item.brief_description|safe}}
-          <div style="margin-top: 10px !important">
-            <a class="show-uni-department__link" target="_self">
+          <div
+            style="
+              margin-top: 10px !important    ;
+              display: flex;
+              justify-content: center;
+            "
+          >
+            <a
+              class="link-hover-underline red-link-hover-underline"
+              target="_self"
+            >
               <span class="show-uni-department__link-text">Подробнее</span>
               <i class="icon-ic_arrow"></i>
             </a>
@@ -33,7 +42,7 @@
         </div>
         {% if item.head %}
         <div>
-          <h4 class="head-text"><b>Директор центра</b></h4>
+          <h4 class="head-text">Директор центра</h4>
           <article
             style="background-color: transparent"
             class="employee-card"
@@ -61,10 +70,7 @@
                   <ul
                     class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
                   >
-                    {% for title in item.head.job_title %}
-
-                    <li><span> {{title}}</span></li>
-                    {% endfor %}
+                    <li><span> {{item.head.job_title.1}}</span></li>
                   </ul>
                 </div>
               </div>
@@ -82,9 +88,8 @@
 
                     <span>{{item.address}}</span>
                   </h5>
-                  {% endcomment %}
                 </li>
-                {% endif %} {% if item.head.working_hours %}
+                {% endcomment %} {% endif %} {% if item.head.working_hours %}
                 <li>
                   <h5 class="uk-link-heading card-link">
                     <span uk-icon="icon: clock; ratio: 1"></span>
@@ -123,7 +128,7 @@
         {% endif %}
       </div>
     </div>
-    {% endfor %}
+    {% endif %} {% endfor %}
   </div>
 </div>
 {% endblock %}

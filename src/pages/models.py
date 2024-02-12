@@ -390,7 +390,13 @@ class PartnerData(models.Model):
 
 class ScientificCenters(models.Model):
     name = models.TextField(verbose_name="Название")
+    field_name = models.TextField(
+        verbose_name="Сфера деятельности",
+        blank=True,
+        null=True,
+    )
     position = models.IntegerField(verbose_name="Позиция")
+    display = models.BooleanField("Видимость", default=True)
     head = models.ForeignKey(
         "profiles.EmployeeProfile",
         verbose_name="Руководитель",
@@ -406,70 +412,74 @@ class ScientificCenters(models.Model):
         blank=True,
         null=True,
     )
-    address = models.CharField(
-        verbose_name="Адрес",
-        max_length=255,
-        default="115419, Москва, улица Орджоникидзе, 3",
-    )
-    phone = PhoneNumberField(verbose_name="Телефон", blank=True, null=True)
-    email = models.EmailField(
-        verbose_name="Электронная почта", max_length=255, blank=True, null=True
+    # address = models.CharField(
+    #     verbose_name="Адрес",
+    #     max_length=255,
+    #     default="115419, Москва, улица Орджоникидзе, 3",
+    # )
+    # phone = PhoneNumberField(verbose_name="Телефон", blank=True, null=True)
+    email_fields = ArrayField(
+        models.EmailField(verbose_name="Электронный адрес", max_length=255),
+        verbose_name="Электронные адреса",
+        size=10,
+        blank=True,
+        null=True,
     )
     brief_description = models.TextField(
         verbose_name="Краткое описание",
         blank=True,
         null=True,
     )
-    SCIENTISTS_SCHEMA = {
-        "type": "list",
-        "items": {
-            "title": "Ученый",
-            "type": "dict",
-            "keys": {
-                "full_name_job_title": {"type": "string", "title": "Ф.И.О., должность"},
-                "degree": {
-                    "type": "string",
-                    "title": "Ученая степень, ученое звание",
-                },
-                "specialization": {
-                    "type": "string",
-                    "title": "Область научных интересов (специализация; роль ученого в команде лаборатории)",
-                },
-            },
-        },
-    }
-    scientists = JSONField(
-        verbose_name="Команда ученых",
-        schema=SCIENTISTS_SCHEMA,
-        blank=True,
-        null=True,
-    )
-    scientific_directions = ArrayField(
-        models.TextField(
-            verbose_name="Научные направления",
-        ),
-        blank=True,
-        null=True,
-    )
-    achievements = ArrayField(
-        models.TextField(
-            verbose_name="Достижения / результаты проектов-исследований",
-        ),
-        blank=True,
-        null=True,
-    )
-    equipment = models.ManyToManyField(
-        EquipmentData,
-        verbose_name="Оборудование",
-        blank=True,
-        null=True,
-    )
-    partners = models.ManyToManyField(
-        PartnerData,
-        verbose_name="Сотрудничество, партнеры",
-        blank=True,
-        null=True,
-    )
+    # SCIENTISTS_SCHEMA = {
+    #     "type": "list",
+    #     "items": {
+    #         "title": "Ученый",
+    #         "type": "dict",
+    #         "keys": {
+    #             "full_name_job_title": {"type": "string", "title": "Ф.И.О., должность"},
+    #             "degree": {
+    #                 "type": "string",
+    #                 "title": "Ученая степень, ученое звание",
+    #             },
+    #             "specialization": {
+    #                 "type": "string",
+    #                 "title": "Область научных интересов (специализация; роль ученого в команде лаборатории)",
+    #             },
+    #         },
+    #     },
+    # }
+    # scientists = JSONField(
+    #     verbose_name="Команда ученых",
+    #     schema=SCIENTISTS_SCHEMA,
+    #     blank=True,
+    #     null=True,
+    # )
+    # scientific_directions = ArrayField(
+    #     models.TextField(
+    #         verbose_name="Научные направления",
+    #     ),
+    #     blank=True,
+    #     null=True,
+    # )
+    # achievements = ArrayField(
+    #     models.TextField(
+    #         verbose_name="Достижения / результаты проектов-исследований",
+    #     ),
+    #     blank=True,
+    #     null=True,
+    # )
+    # equipment = models.ManyToManyField(
+    #     EquipmentData,
+    #     verbose_name="Оборудование",
+    #     blank=True,
+    #     null=True,
+    # )
+    # partners = models.ManyToManyField(
+    #     PartnerData,
+    #     verbose_name="Сотрудничество, партнеры",
+    #     blank=True,
+    #     null=True,
+    # )
 
     def __str__(self) -> str:
         return f"{self.position}. {self.name}"

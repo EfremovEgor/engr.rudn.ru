@@ -63,9 +63,14 @@
 }
 .page-name {
   color: var(--primary-color);
-  font-size: 40px;
+  font-size: 40px !important;
   font-weight: 600;
   margin: 40px;
+}
+@media screen and (max-width: 640px) {
+  .page-name {
+    font-size: 32px !important;
+  }
 }
 /* .uk-container {
   max-width: 70% !important;

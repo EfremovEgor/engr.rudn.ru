@@ -18,6 +18,9 @@
 .department-text {
   min-height: 360px;
 }
+.department-text > h3 {
+  line-height: 30px;
+}
 .direction_info-card {
   min-height: 450px !important;
 }

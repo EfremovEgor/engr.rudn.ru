@@ -32,7 +32,7 @@
 }
 .profile_name {
   font-weight: bold;
-  line-height: 48px;
+  line-height: 36px;
   color: var(--primary-color);
   /* letter-spacing: -1px; */
   margin-top: 40px;

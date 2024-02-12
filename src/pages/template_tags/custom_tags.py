@@ -53,7 +53,7 @@ def format_scores(data: dict, subject_type: str):
             if record["score"] != find_subject_in_scores(
                 data["minimal_passing_scores_contract"][subject_type], record["subject"]
             ):
-                string += f"({find_subject_in_scores(data['minimal_passing_scores_contract'][subject_type],record['subject'])} – на контракт)"
+                string += f" ({find_subject_in_scores(data['minimal_passing_scores_contract'][subject_type],record['subject'])} – на контракт)"
             strings.append(string)
 
         return strings

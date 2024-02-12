@@ -10,7 +10,6 @@
   position: relative;
   padding-left: 0 !important;
   width: 250px;
-  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,10 +35,10 @@
 }
 .logo-turn-image {
   width: 250px;
-  max-height: 250px;
+
   float: left;
 
-  object-fit: cover;
+  object-fit: contain;
 }
 .logo-holder > .logo-turn-image,
 .logo-holder > .logo-turn-text {

@@ -48,7 +48,7 @@ footer {
 .navigation > ul {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 .navigation-link > a {
   color: white;

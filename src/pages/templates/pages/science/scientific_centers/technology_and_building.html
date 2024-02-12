@@ -1,0 +1,93 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/science/scientific_center_item.css' %}"
+/>
+<div class="uk-container">
+  <div class="page-name">Научный центр техники и технологий строительства</div>
+</div>
+
+<div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
+  <div class="info-block">{{center.brief_description|linebreaks}}</div>
+  <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
+    <div>
+      <h2 class="sub-heading">Директор центра</h2>
+      <div class="employee-card-wrapper" style="max-width: 550px">
+        <article
+          style="background-color: transparent"
+          class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
+          role="comment"
+        >
+          <header
+            class="uk-comment-header"
+            style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
+          >
+            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img
+                  class="uk-border-circle"
+                  src="{{center.head.image.url}}"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-margin-remove">
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}"
+                    >{{center.head.full_name}}</a
+                  >
+                </h3>
+                <ul
+                  class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
+                >
+                  <li>
+                    <span> Доктор технических наук, профессор </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </header>
+          <div class="uk-comment-body">
+            <ul class="uk-list">
+              {% comment %}
+              <li>
+                <h5
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="uk-link-heading card-link"
+                >
+                  <span uk-icon="icon: location; ratio: 1"></span>
+
+                  <span>office</span>
+                </h5>
+              </li>
+              {% endcomment %}
+
+              <li>
+                <h5>
+                  <span uk-icon="icon: receiver; ratio: 1"></span>
+                  <a href="tel:+74959520829" class="uk-link-heading card-link">
+                    +7 (495) 952-08-29<br />
+                  </a>
+                </h5>
+              </li>
+
+              <li>
+                <h5>
+                  <span uk-icon="icon: mail; ratio: 1"></span>
+                  <a
+                    href="mailto:razoumny-yun@rudn.ru"
+                    class="uk-link-heading card-link"
+                    >razoumny-yun@rudn.ru
+                  </a>
+                </h5>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <h2 class="sub-heading">Направления деятельности</h2>
+</div>
+{% endblock %}

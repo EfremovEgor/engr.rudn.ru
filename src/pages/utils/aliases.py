@@ -21,5 +21,9 @@ department_abbreviation_to_name = {
     "kiya": "КИЯ",
 }
 scientific_center_name_to_page = {
-    "Научный центр нейротехнологий и процессов управления": "neural_technologies.html"
+    "Научный центр нейротехнологий и процессов управления": "neural_technologies.html",
+    "Центр научно-технологической инициативы «Фотоника»": "photon.html",
+    "Международный научно-исследовательский центр реставрации и сохранения архитектурного наследия": "restoration_architectural_heritage.html",
+    "Научный центр комплексного исследования и эффективной разработки недр": "subsoil_development.html",
+    "Научный центр техники и технологий строительства": "technology_and_building.html",
 }

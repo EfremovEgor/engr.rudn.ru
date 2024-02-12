@@ -143,3 +143,6 @@
     gap: 50px 5px;
   }
 }
+.info-block > * {
+  margin: 0px !important;
+}

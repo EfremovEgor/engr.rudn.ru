@@ -1,32 +1,8 @@
-.heading {
-  margin-top: 40px;
-  font-size: 30px;
-  text-align: left;
-  font-weight: 600;
-}
-
-.line {
-  width: 23em;
-  margin-top: -18px;
-  border-top: 2px solid;
-  margin-bottom: 40px;
-}
-
-.back-c:hover {
-  background-color: whitesmoke !important;
-}
-
 .page-name {
   font-size: 40px;
   font-weight: 600;
-  margin-top: 40px;
-  margin-bottom: 40px !important;
-  color: #0079c1;
+  margin: 40px;
 }
-
-.text-on-image {
-  font-size: 38px;
-  font-weight: 600;
-  font-family: sans-serif;
-  color: whitesmoke;
+.info-block > * {
+  margin: 0px !important;
 }

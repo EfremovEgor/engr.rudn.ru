@@ -4,7 +4,10 @@
   <div class="page-name">{{title}}</div>
 </div>
 <div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
-  <p>{{department.info|linebreaks}}</p>
+  <div class="info-block">
+    {{department.info|linebreaks}}
+  </div>
+  
   <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
   {% if department.head %}
   <div>
@@ -251,7 +254,7 @@
                   <a
                     class="uk-link-text"
                     href="/applicants/study_directions/{{profile.id}}"
-                    ><b>Специальность:</b> «{{profile.name|replace_quotes}}»
+                    ><b>Профиль:</b> «{{profile.name|replace_quotes}}»
                     {%if profile.language_fields|length == 2 %}(на
                     {{profile.language_fields.0|get_alias_lang}} и
                     {{profile.language_fields.1|get_alias_lang}}

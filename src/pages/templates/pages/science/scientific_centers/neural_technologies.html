@@ -1,95 +1,108 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/science/digital_library.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/science/scientific_center_item.css' %}"
+/>
 <div class="uk-container">
   <div class="page-name">
     Научный центр нейротехнологий и процессов управления
   </div>
 </div>
-<div class="uk-container">
-  <div
-    class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover uk-width-1-2"
-  >
-    <div class="department-text">
-      <h3 class="head-text">Директор центра</h3>
-      <article
-        style="background-color: transparent"
-        class="employee-card"
-        role="comment"
-      >
-        <header
-          class="uk-comment-header"
-          style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
+<div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
+  <div class="info-block">{{center.brief_description|linebreaks}}</div>
+  <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
+    <div>
+      <h2 class="sub-heading">Директор центра</h2>
+      <div class="employee-card-wrapper" style="max-width: 550px">
+        <article
+          style="background-color: transparent"
+          class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
+          role="comment"
         >
-          <div class="uk-grid-medium uk-flex-middle uk-grid" uk-grid="">
-            <div class="uk-width-auto uk-first-column">
-              <img
-                class="uk-border-circle"
-                src="{{center.head.image.url}}"
-                width="80"
-                height="80"
-              />
-            </div>
-            <div class="uk-width-expand">
-              <h3 class="uk-margin-remove">
-                <a class="uk-link-reset" href="{{center.head.id}}"
-                  >Pазумный Юрий Николаевич</a
+          <header
+            class="uk-comment-header"
+            style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
+          >
+            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img
+                  class="uk-border-circle"
+                  src="{{center.head.image.url}}"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-margin-remove">
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}"
+                    >{{center.head.full_name}}</a
+                  >
+                </h3>
+                <ul
+                  class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
                 >
-              </h3>
-              <ul
-                class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-              >
-                <li><span> Доктор технических наук, профессор</span></li>
-              </ul>
+                  <li>
+                    <span> Доктор технических наук, профессор </span>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </header>
-        <div class="uk-comment-body">
-          <ul class="uk-list">
-            <li>
-              <h5>
-                <span uk-icon="icon: receiver; ratio: 1" class="uk-icon">
-                  <svg width="20" height="20" viewBox="0 0 20 20"></svg
-                ></span>
-                <a href="tel:+74959520829" class="uk-link-heading card-link">
-                  +7 495 952-08-29 <br />
-                </a>
-              </h5>
-            </li>
-            <li>
-              <h5>
-                <span uk-icon="icon: mail; ratio: 1" class="uk-icon"
-                  ><svg width="20" height="20" viewBox="0 0 20 20"></svg
-                ></span>
-                <a
-                  href="mailto:razoumny-yun@rudn.ru"
+          </header>
+          <div class="uk-comment-body">
+            <ul class="uk-list">
+              {% comment %}
+              <li>
+                <h5
+                  target="_blank"
+                  rel="noreferrer noopener"
                   class="uk-link-heading card-link"
-                  >razoumny-yun@rudn.ru
-                </a>
-              </h5>
-            </li>
-          </ul>
-        </div>
-      </article>
+                >
+                  <span uk-icon="icon: location; ratio: 1"></span>
+
+                  <span>office</span>
+                </h5>
+              </li>
+              {% endcomment %}
+
+              <li>
+                <h5>
+                  <span uk-icon="icon: receiver; ratio: 1"></span>
+                  <a href="tel:+74959520829" class="uk-link-heading card-link">
+                    +7 (495) 952-08-29<br />
+                  </a>
+                </h5>
+              </li>
+
+              <li>
+                <h5>
+                  <span uk-icon="icon: mail; ratio: 1"></span>
+                  <a
+                    href="mailto:razoumny-yun@rudn.ru"
+                    class="uk-link-heading card-link"
+                    >razoumny-yun@rudn.ru
+                  </a>
+                </h5>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
-  <h2 class="uk-heading-divider">Направления деятельности</h2>
-  <ul>
+  <h2 class="sub-heading">Направления деятельности</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
     <li>
       Разработка нейросетевых технологий распознавания объектов и компьютерного
       зрения для анализа и автоматизации технологических процессов
       (автоматизация промышленного производства, управление наземными и
       космическими робототехническими средствами).
     </li>
-  </ul>
-  <ul>
     <li>
       Разработка систем управления транспортными средствами (беспилотные
       наземные и летательные аппараты, автоматические космические аппараты) на
       основе использования элементов искусственного интеллекта и машинного
       обучения.
     </li>
-  </ul>
-  <ul>
     <li>
       Разработка экспертных систем и систем тематической интерпретации данных на
       основе применения методов обработки больших данных и машинного обучения
@@ -97,212 +110,188 @@
       беспилотных летательных аппаратов, семантический анализ текстов, обработка
       статистической и финансовой информации).
     </li>
-  </ul>
-  <ul>
     <li>Разработка нейросетевых технологий информационной безопасности.</li>
   </ul>
-  <h2 class="uk-heading-divider">Ресурсы</h2>
+  <h2 class="sub-heading">Ресурсы</h2>
   <p>
     Имеющиеся вычислительные ресурсы позволяют проводить широкий комплекс работ
     по анализу и интерпретации больших данных, оптимизации систем управления,
     созданию программно-математических комплексов на основе применения элементов
     искусственного интеллекта и машинного обучения.
   </p>
-  <h2 class="uk-heading-divider">Парк оборудования</h2>
-  <ul>
+  <b>В парке оборудования центра два сервера: </b>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
     <li>
       GPU вычислитель NVIDIA Tesla A100, PCI-E 4.0, 6912 CUDA cores, 432 Tensor
       cores, 40GB HBM2 ECC (2 шт.) CPU AMD Epyc 7542, 32cores, 64 threads
-      2.9GHz, 3.4GHz Turbo core, cache 128MB, TDP 225W;
+      2.9GHz, 3.4GHz Turbo core, cache 128MB, TDP 225W
     </li>
-  </ul>
-  <ul>
     <li>
       GPU вычислитель NVIDIA Quadro RTX A6000, PCI-E 48Gb, PCI-E 4.0, память 48
       Гб GDDR6, 384 бит, 4xDisplayPort (2 шт.) CPU AMD Epyc 7542, 32cores, 64
-      threads 2.9GHz, 3.4GHz Turbo core, cache 128MB, TDP 225W.
+      threads 2.9GHz, 3.4GHz Turbo core, cache 128MB, TDP 225W
     </li>
   </ul>
   <p>
     Возможности серверов при необходимости расширяются за счет подключения к
     суперкомпьютеру РУДН (205,46 Tflops).
   </p>
-  <h2 class="uk-heading-divider">Результаты</h2>
-  <ul>
-    <li>
-      Программно-математический комплекс нейросетевых технологий распознавания
-      объектов на фото и видеоизображениях.
-    </li>
-    <ul>
-      <li>
-        <b>Область применения:</b> анализ технологических процессов в
-        промышленности (сварочные роботы и др.), обработка данных дистанционного
-        зондирования Земли со спутников и беспилотных летательных аппаратов,
-        анализ рентгеновских снимков и др. (аналоги – MultiVox DICOM Viewer,
-        ABBYY FineReader,АРМ Look Inside, Гамма Мультивокс веб, Оптимум
-        СмартЛук, Aria, Гембафейс).
-      </li>
-    </ul>
-  </ul>
-  <ul>
-    <li>
-      Программно-математический комплекс компьютерного зрения для автоматизации
-      технологических процессов управления роботами и автоматическими системами.
-    </li>
-    <ul>
-      <li>
-        <b>Область применения:</b> транспорт (самоуправляемые автомобили,
-        беспилотные летательные аппараты, автоматические космические аппараты),
-        строительство, ремонт и обслуживание сложных промышленных объектов
-        (оптимизация режимов работы насосного оборудования, оптимизация
-        энергопотребления, газовая сварка и др.) (аналоги – Yandex Vision,
-        Caffe, Label Studio, Diffgram, CVAT, Tesseract OCR, Видеоинтеллект).
-      </li>
-    </ul>
-  </ul>
-  <ul>
-    <li>
-      Программно-математический комплекс оптимизации межпланетных траекторий
-      космических аппаратов на основе применения нейросетевых алгоритмов.
-    </li>
-    <ul>
-      <li>
-        <b>Область применения:</b> проектирование орбит и систем управления
-        межпланетными космическими аппаратами на этапах выведения,
-        маневрирования, спуска на поверхность планет (аналоги – AGI, FreeFlyer).
-      </li>
-    </ul>
-  </ul>
-  <ul>
-    <li>
-      Программно-математический комплекс нейросетевых технологий информационной
-      безопасности.
-    </li>
-    <ul>
-      <li>
-        <b>Область применения:</b> обнаружение аномалий, предотвращение взлома,
-        защита документов, фильтрация информации, обнаружение вторжений,
-        мошенничества с кредитными и дебетовыми картами, аутентификация и
-        идентификация, криптография, аналитика информационной безопасности на
-        предприятиях, защита от утечек и кражи конфиденциальной информации
-        (аналоги – Nestor PRISM, Angoss KnowledgeSeeker, IBM QRadar Security
-        Intelligence, Splunk Enterprise Security, Стахановец, EveryTag).
-      </li>
-    </ul>
-  </ul>
-  <ul>
-    <li>
-      Программно-математический комплекс нейросетевых технологий для задач
-      обработки больших объемов статистической информации.
-    </li>
-    <ul>
-      <li>
-        <b>Область применения:</b> обработка сигналов в реальном времени,
-        интерпретация данных медицинской статистики (информация о пациентах,
-        лекарствах и заболеваниях), оптимизации управления транспортными
-        потоками на дорогах, в аэропортах и на железнодорожных станциях (аналоги
-        – Neural Designer, Knet, IBM SPSS Statistics, Weka, PSPP, Torch, SOFA
-        Statistics, Apache MXNet).
-      </li>
-    </ul>
-  </ul>
-  <ul>
-    <li>Программно-математический комплекс семантического анализа данных.</li>
-    <ul>
-      <li>
-        <b>Область применения:</b> семантический анализ, создание
-        естественно-языковых интерфейсов распознавания и синтеза речи, анализ
-        больших текстовых данных, создание персонализированных обучающих
-        программ и задач в образовании, лингвистический анализ текста (аналоги –
-        word2vec, Apache OpenNLP, Лингвоанализатор, StarLing, WordSmith Tools,
-        TextAnalyst 2.0, Galaktika-ZOOM, netXtract, Key Collector).
-      </li>
-    </ul>
-  </ul>
-  <ul>
-    <li>
-      Программно-математический комплекс проектирования экспертных систем.
-    </li>
-    <ul>
-      <li>
-        <b>Область применения:</b> нейро-нечеткие системы управления, системы
-        поддержки принятия решений и рекомендательные системы в области
-        строительства, градостроительной политики, недропользования и др.
-        (аналоги – Acquire, Expert Developer Pro, Flex, Fuzzy-logic toolbox,
-        Pyfuzzy, Crystal, Knowledge Craft, Guru, CxPERT).
-      </li>
-    </ul>
-  </ul>
-  <ul>
-    <li>
-      Программно-математический комплекс нейросетевых технологий обработки
-      финансовой информации.
-    </li>
-    <ul>
-      <li>
-        <b>Область применения:</b> аналитика, прогнозирование изменений цен и
-        продаж, инвестиционные платформы, оценка рисков, кредитный скоринг,
-        анализ поведения клиентов, обнаружение мошенников (аналоги – Pine Script
-        Wizard, Ellisense, Paymefy, Truewind, StockGPT, StockGPT, Genius Sheets,
-        AiTax, Pluto, StockInsights AI).
-      </li>
-    </ul>
-  </ul>
-  <h2 class="uk-heading-divider">Партнеры</h2>
-  <ul>
+  <p>
+    <b>Команда центра</b> решает широкий спектр задач в интересах академических
+    и индустриальных партнеров по разработке математических методов и
+    нейросетевых алгоритмов в области механики и процессов управления.
+  </p>
+  <h2 class="sub-heading">Результаты</h2>
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-divider">
+      <thead>
+        <tr>
+          <th class="uk-table-expand">Название</th>
+          <th class="uk-table-expand">Области применения:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Программно-математический комплекс нейросетевых технологий
+            распознавания объектов на фото и видеоизображениях
+          </td>
+          <td>
+            Анализ технологических процессов в промышленности (сварочные роботы
+            и др.), обработка данных дистанционного зондирования Земли со
+            спутников и беспилотных летательных аппаратов, анализ рентгеновских
+            снимков и др. (аналоги – MultiVox DICOM Viewer, ABBYY FineReader,АРМ
+            Look Inside, Гамма Мультивокс веб, Оптимум СмартЛук, Aria,
+            Гембафейс).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Программно-математический комплекс компьютерного зрения для
+            автоматизации технологических процессов управления роботами и
+            автоматическими системами
+          </td>
+          <td>
+            Транспорт (самоуправляемые автомобили, беспилотные летательные
+            аппараты, автоматические космические аппараты), строительство,
+            ремонт и обслуживание сложных промышленных объектов (оптимизация
+            режимов работы насосного оборудования, оптимизация
+            энергопотребления, газовая сварка и др.) (аналоги – Yandex Vision,
+            Caffe, Label Studio, Diffgram, CVAT, Tesseract OCR, Видеоинтеллект).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Программно-математический комплекс оптимизации межпланетных
+            траекторий космических аппаратов на основе применения нейросетевых
+            алгоритмов
+          </td>
+          <td>
+            Проектирование орбит и систем управления межпланетными космическими
+            аппаратами на этапах выведения, маневрирования, спуска на
+            поверхность планет (аналоги – AGI, FreeFlyer).
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Программно-математический комплекс нейросетевых технологий
+            информационной безопасности
+          </td>
+          <td>
+            Обнаружение аномалий, предотвращение взлома, защита документов,
+            фильтрация информации, обнаружение вторжений, мошенничества с
+            кредитными и дебетовыми картами, аутентификация и идентификация,
+            криптография, аналитика информационной безопасности на предприятиях,
+            защита от утечек и кражи конфиденциальной информации (аналоги –
+            Nestor PRISM, Angoss KnowledgeSeeker, IBM QRadar Security
+            Intelligence, Splunk Enterprise Security, Стахановец, EveryTag).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Программно-математический комплекс нейросетевых технологий для задач
+            обработки больших объемов статистической информации
+          </td>
+          <td>
+            Обработка сигналов в реальном времени, интерпретация данных
+            медицинской статистики (информация о пациентах, лекарствах и
+            заболеваниях), оптимизации управления транспортными потоками на
+            дорогах, в аэропортах и на железнодорожных станциях (аналоги –
+            Neural Designer, Knet, IBM SPSS Statistics, Weka, PSPP, Torch, SOFA
+            Statistics, Apache MXNet).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Программно-математический комплекс семантического анализа данных
+          </td>
+          <td>
+            Семантический анализ, создание естественно-языковых интерфейсов
+            распознавания и синтеза речи, анализ больших текстовых данных,
+            создание персонализированных обучающих программ и задач в
+            образовании, лингвистический анализ текста (аналоги – word2vec,
+            Apache OpenNLP, Лингвоанализатор, StarLing, WordSmith Tools,
+            TextAnalyst 2.0, Galaktika-ZOOM, netXtract, Key Collector).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Программно-математический комплекс проектирования экспертных систем
+          </td>
+          <td>
+            Нейро-нечеткие системы управления, системы поддержки принятия
+            решений и рекомендательные системы в области строительства,
+            градостроительной политики, недропользования и др. (аналоги –
+            Acquire, Expert Developer Pro, Flex, Fuzzy-logic toolbox, Pyfuzzy,
+            Crystal, Knowledge Craft, Guru, CxPERT).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Программно-математический комплекс нейросетевых технологий обработки
+            финансовой информации
+          </td>
+          <td>
+            Аналитика, прогнозирование изменений цен и продаж, инвестиционные
+            платформы, оценка рисков, кредитный скоринг, анализ поведения
+            клиентов, обнаружение мошенников (аналоги – Pine Script Wizard,
+            Ellisense, Paymefy, Truewind, StockGPT, StockGPT, Genius Sheets,
+            AiTax, Pluto, StockInsights AI
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2 class="sub-heading">Партнеры</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
     <li>АО «Научно-производственное объединение «Эшелон»</li>
-  </ul>
-  <ul>
     <li>Лаборатория Касперского</li>
-  </ul>
-  <ul>
     <li>
       Научный совет при Президиуме РАН по методологии искусственного интеллекта
       и когнитивных исследований (НСМИИ РАН)
     </li>
-  </ul>
-  <ul>
     <li>
       Институт системного программирования им. В.П. Иванникова РАН (ИСП РАН)
     </li>
-  </ul>
-  <ul>
     <li>Институт прикладной математики им. М.В. Келдыша РАН (ИПМ РАН)</li>
-  </ul>
-  <ul>
     <li>Институт машиноведения им. А.А. Благонравова РАН (ИМ РАН)</li>
-  </ul>
-  <ul>
     <li>Институт проблем управления им. В.А. Трапезникова РАН (ИПУ РАН)</li>
-  </ul>
-  <ul>
     <li>
       Научно-исследовательский институт прикладной механики и электродинамики
       МАИ
     </li>
-  </ul>
-  <ul>
     <li>ООО «Специальный технологический центр»</li>
-  </ul>
-  <ul>
     <li>ООО «Астрономический научный центр»</li>
-  </ul>
-  <ul>
     <li>Группа компаний «Сканекс»</li>
-  </ul>
-  <ul>
     <li>
       АО «Научно-производственная корпорация «Системы прецизионного
       приборостроения» ГК «Роскосмос»
     </li>
-  </ul>
-  <ul>
     <li>
       Центр управления полетами АО «Центральный научно-исследовательский
       институт машиностроения» ГК «Роскосмос
     </li>
-  </ul>
-  <ul>
     <li>Холдинг «Швабе» ГК «Ростех»</li>
   </ul>
 </div>

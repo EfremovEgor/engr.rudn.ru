@@ -33,6 +33,7 @@
 .page-name {
   margin: unset !important;
   margin-top: 40px !important;
+  line-height: 40px;
 }
 
 .sub-heading {

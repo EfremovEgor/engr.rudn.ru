@@ -9,10 +9,10 @@
   {% if department.head %}
   <div>
   <h2 class="sub-heading">{{department.job_title|temp_replace_head_department}}</h2>
-  <div style="max-width: fit-content">
+  <div class="employee-card-wrapper">
     <article
       style="background-color: transparent"
-      class="employee-card"
+      class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
       role="comment"
     >
       <header
@@ -90,10 +90,10 @@
   </div>
   <div>
     <h2 class="sub-heading">Контактное лицо</h2>
-    <div style="max-width: fit-content">
+    <div class="employee-card-wrapper">
       <article
         style="background-color: transparent"
-        class="employee-card"
+        class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
         role="comment"
       >
         <header

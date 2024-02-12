@@ -133,7 +133,7 @@
 }
 @media screen and (max-width: 600px) {
   .employee-card {
-    width: 80% !important;
+    width: 82% !important;
     min-width: 80% !important;
   }
   .employee_cards {

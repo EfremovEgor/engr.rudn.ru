@@ -480,3 +480,13 @@ def department_item(request, name):
             "staff": staff,
         },
     )
+
+
+def contacts(request):
+    return render(
+        request,
+        "pages/academy/contacts.html",
+        {
+            "title": "Контакты",
+        },
+    )

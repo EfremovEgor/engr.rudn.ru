@@ -17,6 +17,7 @@ urlpatterns = [
     ),
     path("applicants/open_days", views.open_days, name="applicants_open_days"),
     path("applicants/committee", views.committee, name="committee"),
+    path("academy/contacts", views.contacts, name="contacts"),
     path(
         "applicants/study_directions",
         views.study_directions,

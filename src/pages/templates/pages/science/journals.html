@@ -1,81 +1,119 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/science/journals.css' %}" />
-
 <div class="uk-container">
-  <div class="page-name">{{title}}</div>
+    <div class="page-name">{{title}}</div>
 </div>
-
 <div class="parallax-container uk-visible@s">
-  <p class="text-on-image">Знания – твой ключ к свободе!<br>Knowledge is your key to freedom!</p>
+    <p class="text-on-image">Знания – твой ключ к свободе!</p>
 </div>
-<div class="uk-container"  style="margin-bottom: 50px">
-  <h2 class="sub-heading journal-heading">Строительная механика инженерных конструкций и сооружений</h2>
-  <table>
-      <tr>
-          <td style="width:198px; height:283px;vertical-align:middle">
-              <img  style="box-shadow: 0 14px 25px rgba(0,0,0,.16);" src="{% static 'images/science/journals/structural_mechanics.png' %}" width="198" height="283" style="min-width: 100%">
-          </td>
-          <td class="journal_description">
-              <span><b>Главный редактор:</b> Акимов Павел Алексеевич, доктор технических наук, профессор</span><br>
-              <span><b>Индексация:</b> <a href="https://www.elibrary.ru/title_about_new.asp?id=25196">РИНЦ</a>, ВАК, <a href="https://scholar.google.ru/">Google Scholar</a>, <a href="http://www.serialssolutions.com/en/services/ulrichs">Ulrich’s Periodicals Directory</a>, <a href="https://doaj.org/toc/2587-8700?source=%7B%22query%22%3A%7B%22filtered%22%3A%7B%22filter%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22terms%22%3A%7B%22index.issn.exact%22%3A%5B%221815-5235%22%2C%222587-8700%22%5D%7D%7D%2C%7B%22term%22%3A%7B%22_type%22%3A%22article%22%7D%7D%5D%7D%7D%2C%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%7D%7D%2C%22from%22%3A0%2C%22size%22%3A100%7D">DOAJ</a>, <a href="http://www.worldcat.org/search?q=Vestnik+RUDN&qt=results_page">WorldCat</a>, <a href="https://cyberleninka.ru/journal/n/stroitelnaya-mehanika-inzhenernyh-konstruktsiy-i-sooruzheniy">Cyberleninka</a>, <a href="https://app.dimensions.ai/discover/publication?and_facet_journal=jour.1299914">Dimensions</a></span><br>
-              <span><b>Open Access и периодичность выхода:</b> Open Access; 4 выпуска в год (ежеквартально)</span><br>
-              <span><b>Рецензирование:</b> двойное слепое.</span><br>
-              <span><b>ISSN:</b> 1815-5235 (Print) <b>ISSN:</b> 2587-8700 (Online)</span><br>
-              <span><b>Издатель:</b> <a href="http://www.rudn.ru/">Российский университет дружбы народов</a></span><br>
-              <span><b>Сайт журнала:</b> <a href="http://journals.rudn.ru/structural-mechanics/index">http://journals.rudn.ru/structural-mechanics/index</a></span>
-
-          </td>
-      </tr>
-  </table>
-              <ul uk-accordion>
-                  <li >
-                      <a class="uk-accordion-title" href>Подробнее</a>
-                      <div class="uk-accordion-content">
-                          <p style="text-indent: 3%; text-align: justify">Основные разделы журнала «Расчет строительных конструкций», «Динамика конструкций и сооружений», «Аналитические и численные методы расчета конструкций», «Расчет оболочек», «Проблемы теории упругости», «Расчеты на устойчивость», «Геометрические исследования срединных поверхностей оболочек», «Экспериментальные исследования», «Теория пластичности», «Механика жидкости», «Прочность летательных аппаратов» и другие отражают современный уровень научных исследований по строительству и архитектуре.</p>
-                          <p style="text-indent: 3%; text-align: justify; margin-top: -20px">Журнал принимает для публикации научно-технические статьи, написанные не по темам разделов журнала, но, материалы которых могут найти применение в указанных выше областях науки, например, статьи по дифференциальным уравнениям.</p>
-                          <p style="text-indent: 3%; text-align: justify; margin-top: -20px">Журнал зарегистрирован Федеральной службой по надзору за соблюдением законодательства в сфере массовых коммуникаций и охране наследия. Свидетельство о регистрации средства массовой информации ПИ № ФС77-19706 от 13 апреля 2005 г. Подписной индекс по каталогу агентства «Роспечать» – 20479 (полгода) и 80344 (год).</p>
-                          <p style="text-indent: 3%; text-align: justify; margin-top: -20px">Журнал входит в Перечень рецензируемых научных изданий, сформированный Минобрнауки России, для публикаций основных научных результатов диссертаций на соискание ученых степеней кандидата и доктора наук. Перечень вступил в силу 1 декабря 2015 г.</p>
-                      </div>
-                  </li>
-              
-          
-
-
-
-  <h2 style="margin-bottom:5px;" class="sub-heading journal-heading">Вестник Российского университета дружбы народов</h2>
-  <h2 class="sub-heading-no-underline" style="margin-top:unset;"> Серия: Инженерные исследования</h2>
-  <table>
-      <tr>
-          <td style="width:198px; height:283px;vertical-align:middle">
-              <img style="box-shadow: 0 14px 25px rgba(0,0,0,.16);" src="{% static 'images/science/journals/engineering_researches.png' %}" width="198" height="283">
-          </td>
-          <td class="journal_description">
-              <span><b>Главный редактор:</b> Разумный Юрий Николаевич, доктор технических наук, профессор</span><br>
-              <span><b>Индексация:</b> <a href="https://www.elibrary.ru/title_about_new.asp?id=25196">РИНЦ</a>, ВАК, <a href="https://scholar.google.ru/">Google Scholar</a>, <a href="http://www.serialssolutions.com/en/services/ulrichs">Ulrich’s Periodicals Directory</a>, <a href="https://doaj.org/toc/2587-8700?source=%7B%22query%22%3A%7B%22filtered%22%3A%7B%22filter%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22terms%22%3A%7B%22index.issn.exact%22%3A%5B%221815-5235%22%2C%222587-8700%22%5D%7D%7D%2C%7B%22term%22%3A%7B%22_type%22%3A%22article%22%7D%7D%5D%7D%7D%2C%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%7D%7D%2C%22from%22%3A0%2C%22size%22%3A100%7D">DOAJ</a>, <a href="http://www.worldcat.org/search?q=Vestnik+RUDN&qt=results_page">WorldCat</a>, <a href="https://cyberleninka.ru/journal/n/stroitelnaya-mehanika-inzhenernyh-konstruktsiy-i-sooruzheniy">Cyberleninka</a>, <a href="https://app.dimensions.ai/discover/publication?and_facet_journal=jour.1299914">Dimensions</a></span><br>
-              <span><b>Open Access и периодичность выхода:</b> Open Access; 6 выпусков в год.</span><br>
-              <span><b>Рецензирование:</b> двойное слепое.</span><br>
-              <span><b>ISSN:</b> 2312-8143 (Print) <b>ISSN:</b> 2312-8151 (Online)</span><br>
-              <span><b>Издатель:</b> <a href="http://www.rudn.ru/">Российский университет дружбы народов</a></span><br>
-              <span><b>Сайт журнала:</b> <a href="http://journals.rudn.ru/structural-mechanics/index">http://journals.rudn.ru/structural-mechanics/index</a></span>
-
-          </td>
-      </tr>
-  </table>
-  <ul uk-accordion>
-      <li >
-          <a class="uk-accordion-title" href>Подробнее</a>
-          <div class="uk-accordion-content">
-              <p style="text-indent: 3%; text-align: justify">Научный журнал «Вестник Российского университета дружбы народов. Серия: Инженерные исследования» основан в 1993 г. в Москве. Журнал зарегистрирован Министерством печати и информации РФ № 0110440 от 16 марта 1993 г.
-
-                  Журнал входит в Перечень ведущих научных журналов и изданий ВАК, в которых должны быть опубликованы основные результаты диссертаций на соискание ученых степеней кандидата и доктора наук.
-                  
-                  В журнале обсуждаются самые актуальные проблемы машиностроения и автомобилестроения, вопросы строительства и архитектуры, проблемы рационального недропользования и изучения земных недр. Информация об опубликованных статьях регулярно передается в систему Российского индекса научного цитирования.
-                  </p>
-              <p style="text-indent: 3%; text-align: justify; margin-top: -20px">История журнала теснейшим образом связана с инженерным факультетом РУДН и его научными и инженерными исследованиями в области машиностроения, строительства и архитектуры и наук о Земле. Журнал отражает спектр научных исследований, проводимых на кафедрах инженерного факультета.</p>
-              <p style="text-indent: 3%; text-align: justify; margin-top: -20px">С уверенностью можно констатировать, что «Вестник Российского университета дружбы народов. Серия: Инженерные исследования» вносит существенный вклад в формирование отечественных школ машиностроения, строительства и архитектуры и наук о Земле, поддерживает и пропагандирует перспективные научные исследования, способствуя их внедрению в практику.</p>
-          </div>
-      </li>
-  
-
-</div>
-{% endblock %}
+<div class="uk-container" style="margin-bottom: 50px">
+    <h2 class="sub-heading journal-heading">Строительная механика инженерных конструкций и сооружений</h2>
+    <table>
+        <tr>
+            <td style="width:198px; height:283px;vertical-align:middle">
+                <img style="box-shadow: 0 14px 25px rgba(0,0,0,.16);"
+                    src="{% static 'images/science/journals/structural_mechanics.png' %}" width="198" height="283"
+                    style="min-width: 100%">
+            </td>
+            <td class="journal_description">
+                <span><b>Главный редактор:</b> Акимов Павел Алексеевич, доктор технических наук, профессор</span><br>
+                <span><b>Индексация:</b> <a href="https://www.elibrary.ru/title_about_new.asp?id=25196">РИНЦ</a>, ВАК,
+                    <a href="https://scholar.google.ru/">Google Scholar</a>, <a
+                        href="http://www.serialssolutions.com/en/services/ulrichs">Ulrich’s Periodicals Directory</a>,
+                    <a
+                        href="https://doaj.org/toc/2587-8700?source=%7B%22query%22%3A%7B%22filtered%22%3A%7B%22filter%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22terms%22%3A%7B%22index.issn.exact%22%3A%5B%221815-5235%22%2C%222587-8700%22%5D%7D%7D%2C%7B%22term%22%3A%7B%22_type%22%3A%22article%22%7D%7D%5D%7D%7D%2C%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%7D%7D%2C%22from%22%3A0%2C%22size%22%3A100%7D">DOAJ</a>,
+                    <a href="http://www.worldcat.org/search?q=Vestnik+RUDN&qt=results_page">WorldCat</a>, <a
+                        href="https://cyberleninka.ru/journal/n/stroitelnaya-mehanika-inzhenernyh-konstruktsiy-i-sooruzheniy">Cyberleninka</a>,
+                    <a
+                        href="https://app.dimensions.ai/discover/publication?and_facet_journal=jour.1299914">Dimensions</a></span><br>
+                <span><b>Open Access и периодичность выхода:</b> Open Access; 4 выпуска в год (ежеквартально)</span><br>
+                <span><b>Рецензирование:</b> двойное слепое.</span><br>
+                <span><b>ISSN:</b> 1815-5235 (Print) <b>ISSN:</b> 2587-8700 (Online)</span><br>
+                <span><b>Издатель:</b> <a href="http://www.rudn.ru/">Российский университет дружбы
+                        народов</a></span><br>
+                <span><b>Сайт журнала:</b> <a
+                        href="http://journals.rudn.ru/structural-mechanics/index">http://journals.rudn.ru/structural-mechanics/index</a></span>
+            </td>
+        </tr>
+    </table>
+    <ul uk-accordion>
+        <li>
+            <a class="uk-accordion-title" href>Подробнее</a>
+            <div class="uk-accordion-content">
+                <p style="text-indent: 3%; text-align: justify">Основные разделы журнала «Расчет строительных
+                    конструкций», «Динамика конструкций и сооружений», «Аналитические и численные методы расчета
+                    конструкций», «Расчет оболочек», «Проблемы теории упругости», «Расчеты на устойчивость»,
+                    «Геометрические исследования срединных поверхностей оболочек», «Экспериментальные исследования»,
+                    «Теория пластичности», «Механика жидкости», «Прочность летательных аппаратов» и другие отражают
+                    современный уровень научных исследований по строительству и архитектуре.</p>
+                <p style="text-indent: 3%; text-align: justify; margin-top: -20px">Журнал принимает для публикации
+                    научно-технические статьи, написанные не по темам разделов журнала, но, материалы которых могут
+                    найти применение в указанных выше областях науки, например, статьи по дифференциальным уравнениям.
+                </p>
+                <p style="text-indent: 3%; text-align: justify; margin-top: -20px">Журнал зарегистрирован Федеральной
+                    службой по надзору за соблюдением законодательства в сфере массовых коммуникаций и охране наследия.
+                    Свидетельство о регистрации средства массовой информации ПИ № ФС77-19706 от 13 апреля 2005 г.
+                    Подписной индекс по каталогу агентства «Роспечать» – 20479 (полгода) и 80344 (год).</p>
+                <p style="text-indent: 3%; text-align: justify; margin-top: -20px">Журнал входит в Перечень
+                    рецензируемых научных изданий, сформированный Минобрнауки России, для публикаций основных научных
+                    результатов диссертаций на соискание ученых степеней кандидата и доктора наук. Перечень вступил в
+                    силу 1 декабря 2015 г.</p>
+            </div>
+        </li>
+        <h2 style="margin-bottom:5px;" class="sub-heading journal-heading">Вестник Российского университета дружбы
+            народов</h2>
+        <h2 class="sub-heading-no-underline" style="margin-top:unset;"> Серия: Инженерные исследования</h2>
+        <table>
+            <tr>
+                <td style="width:198px; height:283px;vertical-align:middle">
+                    <img style="box-shadow: 0 14px 25px rgba(0,0,0,.16);"
+                        src="{% static 'images/science/journals/engineering_researches.png' %}" width="198"
+                        height="283">
+                </td>
+                <td class="journal_description">
+                    <span><b>Главный редактор:</b> Разумный Юрий Николаевич, доктор технических наук,
+                        профессор</span><br>
+                    <span><b>Индексация:</b> <a href="https://www.elibrary.ru/title_about_new.asp?id=25196">РИНЦ</a>,
+                        ВАК, <a href="https://scholar.google.ru/">Google Scholar</a>, <a
+                            href="http://www.serialssolutions.com/en/services/ulrichs">Ulrich’s Periodicals
+                            Directory</a>, <a
+                            href="https://doaj.org/toc/2587-8700?source=%7B%22query%22%3A%7B%22filtered%22%3A%7B%22filter%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22terms%22%3A%7B%22index.issn.exact%22%3A%5B%221815-5235%22%2C%222587-8700%22%5D%7D%7D%2C%7B%22term%22%3A%7B%22_type%22%3A%22article%22%7D%7D%5D%7D%7D%2C%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%7D%7D%2C%22from%22%3A0%2C%22size%22%3A100%7D">DOAJ</a>,
+                        <a href="http://www.worldcat.org/search?q=Vestnik+RUDN&qt=results_page">WorldCat</a>, <a
+                            href="https://cyberleninka.ru/journal/n/stroitelnaya-mehanika-inzhenernyh-konstruktsiy-i-sooruzheniy">Cyberleninka</a>,
+                        <a
+                            href="https://app.dimensions.ai/discover/publication?and_facet_journal=jour.1299914">Dimensions</a></span><br>
+                    <span><b>Open Access и периодичность выхода:</b> Open Access; 6 выпусков в год.</span><br>
+                    <span><b>Рецензирование:</b> двойное слепое.</span><br>
+                    <span><b>ISSN:</b> 2312-8143 (Print) <b>ISSN:</b> 2312-8151 (Online)</span><br>
+                    <span><b>Издатель:</b> <a href="http://www.rudn.ru/">Российский университет дружбы
+                            народов</a></span><br>
+                    <span><b>Сайт журнала:</b> <a
+                            href="http://journals.rudn.ru/structural-mechanics/index">http://journals.rudn.ru/structural-mechanics/index</a></span>
+                </td>
+            </tr>
+        </table>
+        <ul uk-accordion>
+            <li>
+                <a class="uk-accordion-title" href>Подробнее</a>
+                <div class="uk-accordion-content">
+                    <p style="text-indent: 3%; text-align: justify">Научный журнал «Вестник Российского университета
+                        дружбы народов. Серия: Инженерные исследования» основан в 1993 г. в Москве. Журнал
+                        зарегистрирован Министерством печати и информации РФ № 0110440 от 16 марта 1993 г. Журнал входит
+                        в Перечень ведущих научных журналов и изданий ВАК, в которых должны быть опубликованы основные
+                        результаты диссертаций на соискание ученых степеней кандидата и доктора наук. В журнале
+                        обсуждаются самые актуальные проблемы машиностроения и автомобилестроения, вопросы строительства
+                        и архитектуры, проблемы рационального недропользования и изучения земных недр. Информация об
+                        опубликованных статьях регулярно передается в систему Российского индекса научного цитирования.
+                    </p>
+                    <p style="text-indent: 3%; text-align: justify; margin-top: -20px">История журнала теснейшим образом
+                        связана с инженерным факультетом РУДН и его научными и инженерными исследованиями в области
+                        машиностроения, строительства и архитектуры и наук о Земле. Журнал отражает спектр научных
+                        исследований, проводимых на кафедрах инженерного факультета.</p>
+                    <p style="text-indent: 3%; text-align: justify; margin-top: -20px">С уверенностью можно
+                        констатировать, что «Вестник Российского университета дружбы народов. Серия: Инженерные
+                        исследования» вносит существенный вклад в формирование отечественных школ машиностроения,
+                        строительства и архитектуры и наук о Земле, поддерживает и пропагандирует перспективные научные
+                        исследования, способствуя их внедрению в практику.</p>
+                </div>
+            </li>
+</div> {% endblock %}

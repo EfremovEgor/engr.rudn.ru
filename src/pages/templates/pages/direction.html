@@ -10,7 +10,7 @@
     </h4>
     <h2 class="profile_name">{{profile_data.name}}</h2>
     {% if profile_data.faculty %}
-    <h4 class="department_name">{{profile_data.faculty.name}}</h4>
+    <h4 class="department_name"><a href="{% url "pages:department_item" profile_data.faculty.abbreviation|get_url_department_abbreviation%}" class="uk-link-reset" >{{profile_data.faculty.name}}</a></h4>
     {% endif %}
     <table class="study_profile_details-container">
       <tr>

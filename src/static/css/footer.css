@@ -111,3 +111,9 @@ footer {
     flex-direction: row;
   }
 }
+.link-no-red > a {
+  color: white !important;
+}
+.link-no-red:hover > a {
+  color: white !important;
+}

@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils import timezone
 
 
 class Tag(models.Model):
@@ -27,7 +28,7 @@ class NewsItem(models.Model):
         blank=False,
         null=False,
     )
-    creation_date = models.DateTimeField(verbose_name="Название", auto_now=True)
+    creation_date = models.DateTimeField(verbose_name="Название", default=timezone.now)
 
     class Meta:
         verbose_name = "Новость"

@@ -39,12 +39,12 @@
   font-size: 30px !important;
   color: #666666 !important;
   font-weight: 600 !important;
-  text-decoration: underline 2px black !important;
+  text-decoration: underline 2px #666666 !important;
   text-underline-offset: 10px !important;
   margin-top: 40px;
-  text-decoration-thickness: 2px !important;
+  text-decoration-thickness: 2px #666666 !important;
   -webkit-text-decoration-line: underline;
-  -webkit-text-decoration-color: black !important;
+  -webkit-text-decoration-color: #666666 !important;
   -webkit-text-decoration-style: solid !important;
   -webkit-text-decoration-thickness: 2px !important;
 }

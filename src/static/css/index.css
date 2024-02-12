@@ -29,6 +29,11 @@ html {
   max-width: 70%;
   margin: 100px auto;
 }
+@media screen and (max-width: 960px) {
+  .contacts-container {
+    max-width: 90%;
+  }
+}
 .map {
   display: flex;
   width: 100%;
@@ -158,7 +163,7 @@ html {
   content: "";
   position: absolute;
   height: 2px;
-  background: #333333;
+  background: var(--primary-color);
   left: 0;
   top: 50%;
   transform: translateY(50%);
@@ -191,16 +196,19 @@ html {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #333;
+  color: var(--primary-color);
 }
 .show-uni-news__link:hover {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
-  color: black;
+  color: var(--tertiary-color);
   text-decoration: none;
 }
-.show-uni-news__link:after {
+.show-uni-news__link:hover > .icon-ic_arrow {
+  color: var(--primary-color) !important;
+}
+.show-uni-news__link-text:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -208,11 +216,11 @@ html {
   height: 3px;
   left: 50%;
   position: absolute;
-  background: black;
+  background: var(--tertiary-color);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-.show-uni-news__link:hover:after {
+.show-uni-news__link:hover > .show-uni-news__link-text:after {
   width: 100%;
   left: 0;
 }

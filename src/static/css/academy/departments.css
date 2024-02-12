@@ -114,19 +114,6 @@
   position: relative;
 }
 
-@media screen and (max-width: 600px) {
-  .employee-card {
-    width: 80%;
-    max-width: 80%;
-    min-width: 80%;
-  }
-  .employee_cards {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 50px 5px;
-  }
-}
 .employee-card {
   min-width: 300px;
   max-width: 650px;
@@ -143,4 +130,16 @@
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   justify-content: center;
   gap: 15px;
+}
+@media screen and (max-width: 600px) {
+  .employee-card {
+    width: 80% !important;
+    min-width: 80% !important;
+  }
+  .employee_cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px 5px;
+  }
 }

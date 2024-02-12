@@ -13,7 +13,7 @@
       <li>
         <a class="uk-accordion-title" href=""><b>{{direction.cipher}} «{{direction.name}}»</b></a>
         <div class="uk-accordion-content"> {% for profile in direction.profiles.all %} <a class="uk-link-text"
-            href="/applicants/study_directions/{{profile.id}}"><b>Специальность:</b> «{{profile.name|replace_quotes}}»
+            href="/applicants/study_directions/{{profile.id}}"><b>Профиль:</b> {{profile.name}}
             {% if profile.language_fields|length == 2 %}(на {{profile.language_fields.0|get_alias_lang}} и
             {{profile.language_fields.1|get_alias_lang}} языках){% else %}(на
             {{profile.language_fields.0|get_alias_lang}} языке){% endif %}</a>

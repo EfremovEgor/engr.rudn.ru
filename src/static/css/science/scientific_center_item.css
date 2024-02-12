@@ -6,3 +6,52 @@
 .info-block > * {
   margin: 0px !important;
 }
+.logo-holder {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*dimensions of image*/
+}
+.logo-turn-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.partners-logos {
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.partners-logos::after {
+  content: "";
+  flex: auto;
+}
+.logo-turn-image {
+  width: 250px;
+  max-height: 250px;
+}
+.logo-holder > .logo-turn-image,
+.logo-holder > .logo-turn-text {
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 1s;
+}
+.logo-holder > .logo-turn-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.logo-holder:hover > .logo-turn-image {
+  opacity: 0;
+}
+.logo-holder:hover > .logo-turn-text {
+  opacity: 1;
+}

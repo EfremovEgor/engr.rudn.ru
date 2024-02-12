@@ -4,27 +4,13 @@
   <div class="page-name">{{title}}</div>
 </div>
 <div class="parallax-container_2 uk-visible@s">
-  <p class="text-on-image">
-    Образование - ключ к успеху!<br />Education is the key to success!
-  </p>
+  <p class="text-on-image"> Образование - ключ к успеху! </p>
 </div>
 <div class="uk-container" style="margin-bottom: 50px; margin-top: 40px">
-  <div class="uk-child-width-1-3@s uk-grid-small uk-grid-match" uk-grid>
-    {% for application in applications %}
-    <div>
+  <div class="uk-child-width-1-3@s uk-grid-small uk-grid-match" uk-grid> {% for application in applications %} <div>
       <div class="uk-card uk-card-default uk-card-body">
-        <h3 class="uk-card-title" style="font-size: 36px">
-          {{application.position}}
-        </h3>
-        <a
-          class="uk-link-muted"
-          href="{{application.file.url}}"
-          style="font-size: 22px"
-          >{{application.name}}</a
-        >
+        <h3 class="uk-card-title" style="font-size: 36px"> {{application.position}} </h3>
+        <a class="uk-link-muted" href="{{application.file.url}}" style="font-size: 22px">{{application.name}}</a>
       </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-{% endblock %}
+    </div> {% endfor %} </div>
+</div> {% endblock %}

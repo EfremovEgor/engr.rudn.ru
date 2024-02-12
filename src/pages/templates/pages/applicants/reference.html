@@ -1,37 +1,25 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-
 <link rel="stylesheet" href="{% static 'css/applicants/reference.css' %}" />
 <div class="uk-container">
     <div class="page-name">Справочная информация для абитуриентов</div>
 </div>
 <div class="parallax-container_2 uk-visible@s">
-    <p class="text-on-image">Открой Мир в одном Университете!<br>Discover the World in one Univeristy</p>
+    <p class="text-on-image">Открой Мир в одном Университете!</p>
 </div>
-<div class="uk-container"  style="margin-top:40px;margin-bottom: 50px   ">     
-            <p style="font-size: 20px; font-weight: 400; text-align: justify;">В данном разделе размещается нормативная документация с актуальными правилам и регламентами приема и отбора для поступающих в бакалавриат, специалитет, магистратуру и аспирантуру для российских и иностранных граждан.</p>
-            
-
-            <p style="font-size: 20px; font-weight: 400; text-align: justify;"><b>            ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ ИНОСТРАННЫХ ГРАЖДАН:</b></p>
-            <ul>
-         
-                {% for item  in  foreign  %}
-                <li>
-                    <a class="uk-link-muted" href="{{item.file.url}}" style="font-size: 22px;">{{item.name}}</a><br>
-                </li>
-
-                {% endfor %}
-            </ul>
-            <p style="font-size: 20px; font-weight: 400; text-align: justify;"><b>ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ ГРАЖДАН РОССИЙСКОЙ ФЕДЕРАЦИИ И СТРАН СНГ:</b></p>
-            <ul>
-         
-                {% for item  in  cis  %}
-                <li>
-                    <a class="uk-link-muted" href="{{item.file.url}}" style="font-size: 22px;">{{item.name}}</a><br>
-                </li>
-
-                {% endfor %}
-            </ul>
-        </div>
-        </div>
+<div class="uk-container" style="margin-top:40px;margin-bottom: 50px   ">
+    <p style="font-size: 20px; font-weight: 400; text-align: justify;">В данном разделе размещается нормативная
+        документация с актуальными правилам и регламентами приема и отбора для поступающих в бакалавриат, специалитет,
+        магистратуру и аспирантуру для российских и иностранных граждан.</p>
+    <p style="font-size: 20px; font-weight: 400; text-align: justify;"><b> ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ
+            ИНОСТРАННЫХ ГРАЖДАН:</b></p>
+    <ul> {% for item in foreign %} <li>
+            <a class="uk-link-muted" href="{{item.file.url}}" style="font-size: 22px;">{{item.name}}</a><br>
+        </li> {% endfor %} </ul>
+    <p style="font-size: 20px; font-weight: 400; text-align: justify;"><b>ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ ГРАЖДАН
+            РОССИЙСКОЙ ФЕДЕРАЦИИ И СТРАН СНГ:</b></p>
+    <ul> {% for item in cis %} <li>
+            <a class="uk-link-muted" href="{{item.file.url}}" style="font-size: 22px;">{{item.name}}</a><br>
+        </li> {% endfor %} </ul>
 </div>
-{%endblock %}
+</div>
+</div> {%endblock %}

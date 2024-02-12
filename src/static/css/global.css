@@ -39,7 +39,8 @@
   text-decoration: underline 2px black !important;
   text-underline-offset: 10px !important;
   margin-top: 40px;
-  -webkit-text-decoration-line: underline 2px black !important;
+  text-decoration-thickness: 2px !important;
+  -webkit-text-decoration-line: underline;
   -webkit-text-decoration-color: black !important;
   -webkit-text-decoration-style: solid !important;
   -webkit-text-decoration-thickness: 2px !important;

@@ -4,10 +4,10 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path(f"admin-{settings.ADMIN_SITE}/", admin.site.urls),
     path("rosetta/", include("rosetta.urls")),
     path("ckeditor/", include("ckeditor_uploader.urls")),
-    path("admin_utilities/", include("admin_utilities.urls")),
+    path(f"admin_utilities-{settings.ADMIN_SITE}/", include("admin_utilities.urls")),
     path("", include("news.urls")),
     path("", include("pages.urls")),
     path("", include("profiles.urls")),

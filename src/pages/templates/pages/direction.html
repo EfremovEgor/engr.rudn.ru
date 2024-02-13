@@ -76,7 +76,7 @@
           </h4>
           {% endif %}
           <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
-          {% if profile_data.study_level == "Аспирантура" %}
+          {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура" %}
           <p><b>Вступительные испытания</b></p>
           {% for line in profile_data.full_time_details|format_scores:"Обязательные предметы"%} 
           <p >{{line}}</p> 
@@ -128,7 +128,7 @@
           </h4>
           {% endif %}
           <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
-          {% if profile_data.study_level == "Аспирантура" %}
+          {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"%}
           <p><b>Вступительные испытания</b></p>
           {% for line in profile_data.part_time_details|format_scores:"Обязательные предметы"%} 
           <p >{{line}}</p> 
@@ -180,7 +180,7 @@
           </h4>
           {% endif %}
           <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
-          {% if profile_data.study_level == "Аспирантура" %}
+          {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"  %}
           <p><b>Вступительные испытания</b></p>
           {% for line in profile_data.extramural_details|format_scores:"Обязательные предметы"%} 
           <p >{{line}}</p> 

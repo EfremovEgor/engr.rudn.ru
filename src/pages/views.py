@@ -394,11 +394,13 @@ def scientific_centers(request):
 
 def scientific_center_item(request, name):
     centers = ScientificCenters.objects.all()
+    center = None
     for item in centers:
         if functions.make_slug(item.name) == name:
             center = item
             break
-
+    if center is None:
+        raise Http404
     alias = aliases.scientific_center_name_to_page.get(
         " ".join(word.strip() for word in center.name.split())
     )

@@ -52,3 +52,17 @@
   margin-bottom: 20px;
   margin-top: 40px;
 }
+@media screen and (max-width: 640px) {
+  .mobile-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-column > tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile-column > tr > .journal_description > span {
+    margin-left: 0px;
+  }
+}

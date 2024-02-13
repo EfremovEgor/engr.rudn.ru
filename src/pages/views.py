@@ -25,7 +25,7 @@ from .utils import aliases, functions
 
 
 def index(request):
-    news = NewsItem.objects.prefetch_related().order_by("creation_date")[:10]
+    news = NewsItem.objects.prefetch_related().order_by("-creation_date")[:10]
     return render(
         request,
         "pages/index.html",

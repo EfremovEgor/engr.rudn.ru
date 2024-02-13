@@ -14,8 +14,7 @@
         <div class="uk-accordion-content"> {% for profile in direction.profiles.all %} <a class="uk-link-text"
             href="/applicants/study_directions/{{profile.id}}"><b>Специальность:</b> {{profile.cipher}}
             «{{profile.name|replace_quotes}}» {% if profile.language_fields|length == 2 %}(на
-            {{profile.language_fields.0|get_alias_lang}} и {{profile.language_fields.1|get_alias_lang}} языках){% else
-            %}(на {{profile.language_fields.0|get_alias_lang}} языке){% endif %} </a>
+            {{profile.language_fields.0|get_alias_lang}} и {{profile.language_fields.1|get_alias_lang}} языках){% elif profile.language_fields.0 == "Английский" %}(на {{profile.language_fields.0|get_alias_lang}} языке){% endif %} </a>
           <br /> {% endfor %}
         </div>
       </li> {% endfor %}

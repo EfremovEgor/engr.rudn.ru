@@ -344,6 +344,8 @@ def levels_of_study(request, level):
         .order_by("cipher")
         .all()
     )
+    for direction in directions:
+        direction.profiles = direction.profiles.all().reverse()
     # for direction in directions:
     #     for profile in direction.profiles.all():
     #         for index, lang in enumerate(profile.language_fields):

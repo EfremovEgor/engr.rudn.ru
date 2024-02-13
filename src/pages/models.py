@@ -405,6 +405,13 @@ class ScientificCenters(models.Model):
     )
     position = models.IntegerField(verbose_name="Позиция")
     display = models.BooleanField("Видимость", default=True)
+    page_url = models.CharField(
+        "Путь",
+        max_length=100,
+        blank=True,
+        null=True,
+        unique=True,
+    )
     head = models.ForeignKey(
         "profiles.EmployeeProfile",
         verbose_name="Руководитель",

@@ -1,47 +1,27 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/science/scientific_center_item.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
 <div class="uk-container">
-  <div class="page-name">
-    Научный центр комплексного исследования и эффективной разработки недр
-  </div>
+  <div class="page-name"> Научный центр комплексного исследования и эффективной разработки недр </div>
 </div>
-
 <div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
   <div class="info-block">{{center.brief_description|linebreaks}}</div>
   <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
     <div>
       <h2 class="sub-heading">Директор центра</h2>
       <div class="employee-card-wrapper" style="max-width: 550px">
-        <article
-          style="background-color: transparent"
+        <article style="background-color: transparent"
           class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
-          role="comment"
-        >
-          <header
-            class="uk-comment-header"
-            style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
-          >
+          role="comment">
+          <header class="uk-comment-header" style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5">
             <div class="uk-grid-medium uk-flex-middle" uk-grid>
               <div class="uk-width-auto">
-                <img
-                  class="uk-border-circle"
-                  src="{{center.head.image.url}}"
-                  width="80"
-                  height="80"
-                />
+                <img class="uk-border-circle" src="{{center.head.image.url}}" width="80" height="80" />
               </div>
               <div class="uk-width-expand">
                 <h3 class="uk-margin-remove">
-                  <a class="uk-link-reset" href="/profile/{{center.head.id}}"
-                    >{{center.head.full_name}}</a
-                  >
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}">{{center.head.full_name}}</a>
                 </h3>
-                <ul
-                  class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-                >
+                <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
                   <li>
                     <span> Доктор технических наук, профессор </span>
                   </li>
@@ -50,38 +30,22 @@
             </div>
           </header>
           <div class="uk-comment-body">
-            <ul class="uk-list">
-              {% comment %}
-              <li>
-                <h5
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="uk-link-heading card-link"
-                >
+            <ul class="uk-list"> {% comment %} <li>
+                <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
                   <span uk-icon="icon: location; ratio: 1"></span>
-
                   <span>office</span>
                 </h5>
-              </li>
-              {% endcomment %}
-
-              <li>
+              </li> {% endcomment %} <li>
                 <h5>
                   <span uk-icon="icon: receiver; ratio: 1"></span>
-                  <a href="tel:+74959520829" class="uk-link-heading card-link">
-                    +7 (495) 952-08-29<br />
+                  <a href="tel:+74959520829" class="uk-link-heading card-link"> +7 (495) 952-08-29<br />
                   </a>
                 </h5>
               </li>
-
               <li>
                 <h5>
                   <span uk-icon="icon: mail; ratio: 1"></span>
-                  <a
-                    href="mailto:razoumny-yun@rudn.ru"
-                    class="uk-link-heading card-link"
-                    >razoumny-yun@rudn.ru
-                  </a>
+                  <a href="mailto:razoumny-yun@rudn.ru" class="uk-link-heading card-link">razoumny-yun@rudn.ru </a>
                 </h5>
               </li>
             </ul>
@@ -91,5 +55,179 @@
     </div>
   </div>
   <h2 class="sub-heading">Направления деятельности</h2>
-</div>
-{% endblock %}
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> Разработка эффективного комплекса поисково-оценочных методов для обнаружения рудных месторождений (медь,
+      золото, молибден, редкие земли и др.). </li>
+    <li> Разработка горно-геологических цифровых моделей месторождений твердых полезных ископаемых, подсчет запасов и
+      оценка ресурсов. </li>
+    <li> Разработка оптимальных моделей добычи твердых полезных ископаемых с применением специализированного
+      программного обеспечения. </li>
+    <li>Проведение маркшейдерско-геодезической съемки объектов горной и нефтегазовой промышленности (карьеры, шахты,
+      инфраструктурные объекты), объектов гражданского назначения (тоннели метро, мосты и др.). </li>
+    <li>Усовершенствование методики поисков и разведки месторождений углеводородного сырья. </li>
+    <li>Разработка геологических и гидродинамических цифровых моделей месторождений нефти и газа, подсчет запасов и
+      оценка ресурсов. </li>
+    <li>Разработка эффективной технологии освоения нефтяных месторождений для повышения нефтеотдачи пластов. </li>
+    <li>Разработка перспективной техники и технологии транспортировки углеводородного сырья. </li>
+    <li>Разработка технологии переработки углеводородов (получение битумов, высокооктанового топлива). </li>
+  </ul>
+  <h2 class="sub-heading">Ресурсы</h2>
+  <p> Лабораторная база центра позволяет проводить следующие работы и исследования: </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>геологическое картирование; </li>
+    <li>геодезическая и маркшейдерская съемка; </li>
+    <li>геофизическая съемка; </li>
+    <li>геохимическая съемка; </li>
+    <li>рентгенофлюоресцентный анализ горных пород; </li>
+    <li>цифровое моделирование месторождений твердых полезных ископаемых; </li>
+    <li>цифровое моделирование нефтяных и газовых пластов; </li>
+    <li>моделирование процессов добычи нефти и газа; </li>
+    <li>моделирование процессов транспортировки углеводородов; </li>
+    <li>моделирование процессов переработки углеводородов. </li>
+  </ul>
+  <b>В парке оборудования: </b>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> универсальный оверхаузеровский магнитометр-градиентометр MaxiMag (Россия); </li>
+    <li>измеритель магнитной восприимчивости SatisGeo KM-7 (Россия); </li>
+    <li>радиометр поисковый ДКС-96П (Россия); </li>
+    <li>рентгенофлюоресцентный лабораторный прибор РЛП-3-01 (Россия); </li>
+    <li>поляризационные микроскопы проходящего и отраженного света Альтами Полар 3 (Россия); </li>
+    <li>поляризационный микроскоп проходящего и отраженного света Микроскоп NIKON 100D (Япония); </li>
+    <li>инфракрасный Фурье спектрометр Scimitar1000 (США); </li>
+    <li>тахеометр LeicaTCR 1205 R100 (Германия); </li>
+    <li>цифровой нивелир Leica Sprinter 100 (Германия); </li>
+    <li>лазерный дальномер Leica Disto A5 (Германия); </li>
+    <li>программное обеспечение Micromine (Австралия), QGIS, tNavigator (Россия). </li>
+  </ul>
+  <p>Возможности вычислительной техники центра при необходимости расширяются за счет подключения к суперкомпьютеру РУДН
+    (205,46 Tflops).</p>
+  <p>
+    <b>Команда центра</b> решает широкий спектр задач в интересах академических и индустриальных партнеров по проведению
+    полевых и лабораторных работ, моделированию объектов и процессов, разработки новых технологий в геологии, горного и
+    нефтегазового дела.
+  </p>
+  <h2 class="sub-heading">Результаты</h2>
+  <p>Учеными центра создана уникальная методика реставрации объектов культурного наследия, разработаны технологии
+    консервации объектов культурного наследия. Сотрудники центра применили методы 3D-сканирования и VR-технологии при
+    разработке проектов реконструкции и реставрации объектов различного назначения. Результаты их работы позволили
+    сохранить многие уникальные объекты архитектурного наследия, являющиеся памятниками архитектуры, в том числе: </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>Создана уникальная методика палеовулканического реконструирования территории для восстановления
+      структурно-тектонического строения района с целью эффективного поиска новых месторождений полезных ископаемых.
+    </li>
+    <li>Выделены площади, перспективные для обнаружения новых медно-молибден-порфировых месторождений, в пределах Урала,
+      Чукотки, Восточного Прибалхашья, Красноморских холмов Судана и Египта. </li>
+    <li>Разработана и апробирована методика атмогеохимической оценки выявленных сейсмическими методами потенциальных
+      нефтегазоносных ловушек и перспективных для поиска углеводородов площадей по фиксируемым аномалиям широкого
+      спектра углеводородных соединений. </li>
+    <li>Установлены закономерность размещения месторождений твердых полезных ископаемых и углеводородного сырья с
+      региональными структурно-тектоническими единицами Африки, Азии и других континентов. </li>
+    <li>Выявлен новый промышленный тип фосфоритовых месторождений. Разработана модель древнего (эдиакарского)
+      фосфогенеза. Запатентована биотехнология обогащения фосфатного сырья. </li>
+    <li>Разработана методика использования вероятностных методов при автоматизированных расчётов гистограмм
+      проницаемости и остаточной водонасыщенности каждой элементарной ячейки геологических моделей нефтяных залежей.
+    </li>
+    <li>Разработаны технологии производства высокооктановых топлив для автомобильной и авиационной техники.</li>
+  </ul>
+  <h2 class="sub-heading">Партнеры</h2>
+  <div class="partners-logos uk-grid-match uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/eshelon.png"
+        %}" />
+      <div class="logo-turn-text">
+        <p>АО «Научно-производственное объединение «Эшелон»</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/kaspersky.png"
+        %}" />
+      <div class="logo-turn-text">
+        <p>Лаборатория Касперского</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/RAN.png"
+        %}" />
+      <div class="logo-turn-text">
+        <p>Научный совет при Президиуме РАН по методологии искусственного интеллекта и когнитивных исследований (НСМИИ
+          РАН)</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/isp_ran.png"
+        %}" />
+      <div class="logo-turn-text">
+        <p>Институт системного программирования им. В.П. Иванникова РАН (ИСП РАН) </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "
+        images/science/scientific_centers/neural_technologies/blagonravov.jpg" %}" />
+      <div class="logo-turn-text">
+        <p>Институт машиноведения им. А.А. Благонравова РАН (ИМ РАН) </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "
+        images/science/scientific_centers/neural_technologies/trapeznikov.png" %}" />
+      <div class="logo-turn-text">
+        <p>Институт проблем управления им. В.А. Трапезникова РАН (ИПУ РАН)</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/tsniimash.png"
+        %}" />
+      <div class="logo-turn-text">
+        <p>Центр управления полетами АО «Центральный научно-исследовательский институт машиностроения» ГК «Роскосмос
+        </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/shvabe.png"
+        %}" />
+      <div class="logo-turn-text">
+        <p>Холдинг «Швабе» ГК «Ростех» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "
+        images/science/scientific_centers/neural_technologies/stc.png" %}" />
+      <div class="logo-turn-text">
+        <p>ООО «Специальный технологический центр» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "
+        images/science/scientific_centers/neural_technologies/keldish.jpg" %}" />
+      <div class="logo-turn-text">
+        <p>Институт прикладной математики им. М.В. Келдыша РАН (ИПМ РАН) </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "
+        images/science/scientific_centers/neural_technologies/mai.png" %}" />
+      <div class="logo-turn-text">
+        <p>Научно-исследовательский институт прикладной механики и электродинамики МАИ </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "
+        images/science/scientific_centers/neural_technologies/precision_roskosmos.jpg" %}" />
+      <div class="logo-turn-text">
+        <p>АО «Научно-производственная корпорация «Системы прецизионного приборостроения» ГК «Роскосмос» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/anc.jpg"
+        %}" />
+      <div class="logo-turn-text">
+        <p>ООО «Астрономический научный центр» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static " images/science/scientific_centers/neural_technologies/scanex.png"
+        %}" />
+      <div class="logo-turn-text">
+        <p>Группа компаний «Сканекс» </p>
+      </div>
+    </div> {% endblock %}

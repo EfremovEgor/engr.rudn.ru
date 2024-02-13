@@ -306,8 +306,27 @@
     </ul>
     {% endif %}
     <h2 class="sub-heading">Лабораторная база</h2>
+    <ul uk-accordion="multiple: true">
+      {% for center in scientific_centers %}
+      <li>
+        <a class="uk-accordion-title" href=""><b>{{center.name}}</b></a>
+        <div class="uk-accordion-content">
+          <div class="info-block">
+          {{center.brief_description}}
+        </div>
+
+          <a style="margin-top:20px" class="link-hover-underline red-link-hover-underline" href="{% url "pages:scientific_center_item" center.id %}">Подробнее</a>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% comment %} </ul> 
     <ul style="list-style-type: none">
-    {% for center in scientific_centers %}
+
+      
+    
+
     <li style="
     margin-top:20px;
     ">
@@ -321,8 +340,8 @@
         " 
       href="{% url "pages:scientific_center_item" center.id %}"><b>{{center.name}}</b></a>
     </li>
-    {% endfor %}
-    </ul>
+
+    </ul> {% endcomment %}
     <h2 class="sub-heading">Профессорско-преподавательский состав</h2>
     <div class="employee_cards">
       {% for teacher in  staff %}

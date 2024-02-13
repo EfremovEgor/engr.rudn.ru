@@ -21,7 +21,7 @@ from documents.models import (
     StudentsApplications,
 )
 from profiles.models import StudentCommitteeProfile
-from .utils import aliases
+from .utils import aliases, functions
 
 
 def index(request):
@@ -392,8 +392,12 @@ def scientific_centers(request):
     )
 
 
-def scientific_center_item(request, id):
-    center = get_object_or_404(ScientificCenters, pk=id)
+def scientific_center_item(request, name):
+    centers = ScientificCenters.objects.all()
+    for item in centers:
+        if functions.make_slug(item.name) == name:
+            center = item
+            break
 
     alias = aliases.scientific_center_name_to_page.get(
         " ".join(word.strip() for word in center.name.split())

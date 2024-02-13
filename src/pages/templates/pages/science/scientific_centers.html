@@ -26,7 +26,7 @@
           {{item.brief_description|safe}}
           <div style="margin-top: 10px !important">
             <a
-            href="{% url "pages:scientific_center_item" item.id %}"
+            href="{% url "pages:scientific_center_item" item.name|slugify_url %}"
               class="link-hover-underline red-link-hover-underline"
               target="_self"
             >

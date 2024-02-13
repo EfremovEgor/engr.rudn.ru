@@ -71,7 +71,7 @@ urlpatterns = [
         name="scientific_centers",
     ),
     path(
-        "science/scientific_centers/<int:id>",
+        "science/scientific_centers/<str:name>",
         views.scientific_center_item,
         name="scientific_center_item",
     ),

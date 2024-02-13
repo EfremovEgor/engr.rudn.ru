@@ -315,7 +315,7 @@
           {{center.brief_description}}
         </div>
 
-          <a style="margin-top:20px" class="link-hover-underline red-link-hover-underline" href="{% url "pages:scientific_center_item" center.id %}">Подробнее</a>
+          <a style="margin-top:20px" class="link-hover-underline red-link-hover-underline" href="{% url "pages:scientific_center_item" center.name|slugify_url %}">Подробнее</a>
         </div>
       </a>
     </li>

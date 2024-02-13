@@ -1,6 +1,6 @@
 import enum
 from django.template.defaulttags import register
-from pages.utils import aliases
+from pages.utils import aliases, functions
 
 
 @register.filter
@@ -130,3 +130,8 @@ def create_heading_with_duration(data: dict, details_type: str):
             return f"({data['extramural_details']['study_duration']} {get_duration_suffix(data['extramural_details']['study_duration'])})"
 
     return ""
+
+
+@register.filter
+def slugify_url(string: str):
+    return functions.make_slug(string)

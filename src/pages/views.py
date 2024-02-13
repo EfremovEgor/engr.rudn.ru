@@ -339,7 +339,6 @@ def levels_of_study(request, level):
     }
     if level not in levels:
         return HttpResponse(status=404)
-    from django.db.models import Func, F, Value, Subquery
 
     directions = (
         StudyDirection.objects.filter(study_level=levels[level])
@@ -350,7 +349,7 @@ def levels_of_study(request, level):
     for direction in directions:
         direction_ = direction.__dict__
         direction_["profiles"] = direction.profiles.all().order_by(
-            "cipher", "-language_fields"
+            "cipher", "-language_fields", "-name"
         )
         directions_.append(direction_)
     # for direction in directions:

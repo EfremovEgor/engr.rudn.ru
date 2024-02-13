@@ -25,9 +25,20 @@ html {
   max-width: 70%;
   margin: 100px auto;
 }
+.contacts-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/index/background.jpeg);
+  background-position: bottom;
+  background-size: cover;
+}
 .contacts-container {
   max-width: 70%;
-  margin: 100px auto;
 }
 @media screen and (max-width: 960px) {
   .contacts-container {

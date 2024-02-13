@@ -1,45 +1,27 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/science/scientific_center_item.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
 <div class="uk-container">
   <div class="page-name">Научный центр техники и технологий строительства</div>
 </div>
-
 <div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
   <div class="info-block">{{center.brief_description|linebreaks}}</div>
   <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
     <div>
       <h2 class="sub-heading">Директор центра</h2>
       <div class="employee-card-wrapper" style="max-width: 550px">
-        <article
-          style="background-color: transparent"
+        <article style="background-color: transparent"
           class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
-          role="comment"
-        >
-          <header
-            class="uk-comment-header"
-            style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
-          >
+          role="comment">
+          <header class="uk-comment-header" style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5">
             <div class="uk-grid-medium uk-flex-middle" uk-grid>
               <div class="uk-width-auto">
-                <img
-                  class="uk-border-circle"
-                  src="{{center.head.image.url}}"
-                  width="80"
-                  height="80"
-                />
+                <img class="uk-border-circle" src="{{center.head.image.url}}" width="80" height="80" />
               </div>
               <div class="uk-width-expand">
                 <h3 class="uk-margin-remove">
-                  <a class="uk-link-reset" href="/profile/{{center.head.id}}"
-                    >{{center.head.full_name}}</a
-                  >
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}">{{center.head.full_name}}</a>
                 </h3>
-                <ul
-                  class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-                >
+                <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
                   <li>
                     <span> Доктор технических наук, профессор </span>
                   </li>
@@ -48,38 +30,22 @@
             </div>
           </header>
           <div class="uk-comment-body">
-            <ul class="uk-list">
-              {% comment %}
-              <li>
-                <h5
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="uk-link-heading card-link"
-                >
+            <ul class="uk-list"> {% comment %} <li>
+                <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
                   <span uk-icon="icon: location; ratio: 1"></span>
-
                   <span>office</span>
                 </h5>
-              </li>
-              {% endcomment %}
-
-              <li>
+              </li> {% endcomment %} <li>
                 <h5>
                   <span uk-icon="icon: receiver; ratio: 1"></span>
-                  <a href="tel:+74959520829" class="uk-link-heading card-link">
-                    +7 (495) 952-08-29<br />
+                  <a href="tel:+74959520829" class="uk-link-heading card-link"> +7 (495) 952-08-29<br />
                   </a>
                 </h5>
               </li>
-
               <li>
                 <h5>
                   <span uk-icon="icon: mail; ratio: 1"></span>
-                  <a
-                    href="mailto:razoumny-yun@rudn.ru"
-                    class="uk-link-heading card-link"
-                    >razoumny-yun@rudn.ru
-                  </a>
+                  <a href="mailto:razoumny-yun@rudn.ru" class="uk-link-heading card-link">razoumny-yun@rudn.ru </a>
                 </h5>
               </li>
             </ul>
@@ -89,5 +55,133 @@
     </div>
   </div>
   <h2 class="sub-heading">Направления деятельности</h2>
-</div>
-{% endblock %}
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>Нанотехнологии в строительном материаловедении. </li>
+    <li> Техническая безопасность зданий и сооружений. </li>
+    <li> Гидротехническое строительство и водные ресурсы. </li>
+    <li>Инженерное оборудование и санитарная техника. </li>
+    <li>Механика грунтов, основания и фундаменты. </li>
+    <li>Строительная механика зданий и сооружений. </li>
+  </ul>
+  <h2 class="sub-heading">Ресурсы</h2>
+  <p> В распоряжении центра четыре современные лаборатории, оснащенные высокоэффективным оборудованием: </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>лаборатория инженерного оборудования; </li>
+    <li>лаборатория строительных материалов и конструкций; </li>
+    <li>лаборатория сопротивления материалов; </li>
+    <li>лаборатория гидрологической и технической безопасности. </li>
+  </ul>
+  <p>Лабораторная база позволяет проводить исследования в области систем жизнеобеспечения зданий, прогнозирования
+    изменений речного стока малых рек, строительных конструкций и строительного материаловедения. </p>
+  <p>
+    <b>В парке оборудования: </b>имеется более 100 единиц оборудования и приборов, в том числе:
+  </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> лабораторный стенд централизованной системы полного кондиционирования воздуха; </li>
+    <li>лабораторный стенд для исследования температурных полей в ограждающих конструкциях зданий; </li>
+    <li>лабораторный стенд для исследования централизованной системы промышленной вентиляции; </li>
+    <li>лабораторный стенд для исследования централизованной системы водяного отопления; </li>
+    <li>стенд S11 для исследования кинетики грунтовых вод; </li>
+    <li>исследовательский проточный канал S6-MKII; </li>
+    <li>стенд S1 для моделирования дренажных процессов в проницаемых для жидкости средах; </li>
+    <li>расширенная система экологической гидрологии S12; </li>
+    <li>гидрограф дождевых осадков S10-A; </li>
+    <li>малогабаритный гидравлический пресс 2ПГ-10, </li>
+    <li>гидравлические прессы 2ПГ-50, 2ПГ-250; </li>
+    <li>комбинированная испытательная машина С040N+C092-11. </li>
+  </ul>
+  <p>Лабораторно-исследовательское оборудование и измерительные приборы позволяют получать широкий спектр объективных
+    характеристик исследуемых объектов строительства и систем жизнеобеспечения. </p>
+  <p>
+    <b>Команда центра</b> разрабатывает и исследует современные строительные конструкции, теплоизоляционные и
+    конструкционные строительные материалы с использованием нанотехнологий и наноразмерных модификаторов. Эти материалы
+    позволяют получать технологии возведения зданий в условиях сухого жаркого климата, в условиях жаркого влажного
+    климата, а также создавать энергоэффективные конструкции для строительства зданий различного назначения.
+  </p>
+  <h2 class="sub-heading">Результаты</h2>
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-divider">
+      <thead>
+        <tr>
+          <th class="uk-table-expand">Название</th>
+          <th class="uk-table-expand">Области применения:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> Разработана комплексная методология исследования процессов инновационного проектирования и строительства
+            промышленных, гражданских и гидротехнических сооружений на основе цифровых информационных систем и
+            применения нанотехнологий в строительном материаловедении. </td>
+          <td> анализ процессов прикладного использования цифровых технологий в проектировании строительных конструкций
+            и строительных материалов. </td>
+        </tr>
+        <tr>
+          <td> Разработаны и испытаны технологии получения новых видов бетонов с заданными свойствами. </td>
+          <td> строительство зданий и сооружений с энергоэффективными конструкциями для условий жаркого сухого и жаркого
+            влажного климата. </td>
+        </tr>
+        <tr>
+          <td> Созданы модели геликоидов разных типов, проведен анализ их напряженно-деформированного состояния. </td>
+          <td> проектирование современных пространственных конструкций из тонких железобетонных или металлических
+            оболочек. </td>
+        </tr>
+        <tr>
+          <td> Разработана композиция антиадгезионного покрытия с применением наноразмерных материалов, необходимого для
+            предотвращения прилипания твердеющей бетонной смеси к поверхностям щитов опалубки. </td>
+          <td> возведение зданий с обеспечением высокого качества поверхностей строительных конструкций, возводимых из
+            монолитного железобетона, а также существенное увеличение оборачиваемости опалубки. </td>
+        </tr>
+        <tr>
+          <td> Разработана и запатентована технология получения наноразмерного диоксида кремния из рисовой шелухи. </td>
+          <td> химическая промышленность, производство минеральных модификаторов цементных вяжущих. </td>
+        </tr>
+        <tr>
+          <td> Разработана и запатентована технология получения наномодифицированного строительного раствора для условий
+            сухого жаркого климата при температурах окружающего воздуха, достигающей 40-50 °С, которая обладает
+            необходимой подвижностью, водоудерживающей способностью и регулируемым сроком схватывания строительного
+            раствора. </td>
+          <td> каменная кладка из керамических камней, керамического кирпича, пустотелого кирпича в условиях сухого
+            жаркого климата. </td>
+        </tr>
+        <tr>
+          <td> Разработана и запатентована технология получения специальной бетонной смеси для бетонных конструкций с
+            повышенной ударной вязкостью, которая повышает прочность при сжатии, снижает паропроницаемость бетона. </td>
+          <td> монолитное бетонирование защитных сооружений, подвергаемых ударным нагрузкам. </td>
+        </tr>
+        <tr>
+          <td> Созданы и зарегистрированы программы ЭВМ для моделирования и расчета геликоидов и строительных элементов
+            разных типов. </td>
+          <td> проектирование пространственных конструкций строительных объектов различного назначения. </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2 class="sub-heading">Партнеры</h2>
+  <div class="partners-logos uk-grid-match uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/technology_and_building/dvfu.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>Дальневосточный федеральный университет </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/technology_and_building/tss.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>Компания «ТРАНС-СТРОЙ» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/technology_and_building/gsp.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>Специальный проектно-изыскательский институт «Гидроспецпроект» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/technology_and_building/mics.png" %}" />
+      <div class="logo-turn-text">
+        <p>Лаборатория MICS, Университет Париж-Сакле</p>
+      </div>
+    </div>
+      </div>
+      </div>
+    </div> {% endblock %}

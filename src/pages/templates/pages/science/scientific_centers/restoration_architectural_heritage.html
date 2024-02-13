@@ -1,88 +1,52 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/science/scientific_center_item.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
 <div class="uk-container">
-  <div class="page-name">
-    Международный научно-исследовательский центр реставрации и сохранения
-    архитектурного наследия
+  <div class="page-name"> Международный научно-исследовательский центр реставрации и сохранения архитектурного наследия
   </div>
 </div>
-
 <div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
   <div class="info-block">{{center.brief_description|linebreaks}}</div>
   <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
     <div>
       <h2 class="sub-heading">Директор центра</h2>
       <div class="employee-card-wrapper" style="max-width: 550px">
-        <article
-          style="background-color: transparent"
+        <article style="background-color: transparent"
           class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
-          role="comment"
-        >
-          <header
-            class="uk-comment-header"
-            style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
-          >
+          role="comment">
+          <header class="uk-comment-header" style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5">
             <div class="uk-grid-medium uk-flex-middle" uk-grid>
               <div class="uk-width-auto">
-                <img
-                  class="uk-border-circle"
-                  src="{{center.head.image.url}}"
-                  width="80"
-                  height="80"
-                />
+                <img class="uk-border-circle" src="{{center.head.image.url}}" width="80" height="80" />
               </div>
               <div class="uk-width-expand">
                 <h3 class="uk-margin-remove">
-                  <a class="uk-link-reset" href="/profile/{{center.head.id}}"
-                    >{{center.head.full_name}}</a
-                  >
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}">{{center.head.full_name}}</a>
                 </h3>
-                <ul
-                  class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-                >
+                <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
                   <li>
-                    <span> Доктор технических наук, профессор </span>
+                    <span> Кандидат архитектуры, доцент </span>
                   </li>
                 </ul>
               </div>
             </div>
           </header>
           <div class="uk-comment-body">
-            <ul class="uk-list">
-              {% comment %}
-              <li>
-                <h5
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="uk-link-heading card-link"
-                >
+            <ul class="uk-list"> {% comment %} <li>
+                <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
                   <span uk-icon="icon: location; ratio: 1"></span>
-
                   <span>office</span>
                 </h5>
-              </li>
-              {% endcomment %}
-
-              <li>
+              </li> {% endcomment %} <li>
                 <h5>
                   <span uk-icon="icon: receiver; ratio: 1"></span>
-                  <a href="tel:+74959520829" class="uk-link-heading card-link">
-                    +7 (495) 952-08-29<br />
+                  <a href="tel:+74959550805" class="uk-link-heading card-link"> +7 (495) 955-08-05<br />
                   </a>
                 </h5>
               </li>
-
               <li>
                 <h5>
                   <span uk-icon="icon: mail; ratio: 1"></span>
-                  <a
-                    href="mailto:razoumny-yun@rudn.ru"
-                    class="uk-link-heading card-link"
-                    >razoumny-yun@rudn.ru
-                  </a>
+                  <a href="mailto:bik-ov@rudn.ru" class="uk-link-heading card-link">bik-ov@rudn.ru </a>
                 </h5>
               </li>
             </ul>
@@ -92,5 +56,139 @@
     </div>
   </div>
   <h2 class="sub-heading">Направления деятельности</h2>
-</div>
-{% endblock %}
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> Архитектура жилых, общественных и промышленных зданий. </li>
+    <li> Дизайн архитектурной среды. </li>
+    <li> Дизайн промышленных и социальных объектов. </li>
+    <li>Творческие концепции архитектурной деятельности. </li>
+    <li>Реставрация архитектурных конструкций и элементов из металла, из дерева. </li>
+    <li>Реставрация монументальной живописи, монументальРазработка инновационных методов и технологий в области
+      архитектурного проектирования, реконструкции и реставрации архитектурного наследия. Творческие концепции
+      архитектурной деятельности. </li>
+    <li>Распространение результатов научных исследований и разработок. </li>
+    <li>Организация совместной научно-исследовательской деятельности между российскими и зарубежными организациями в
+      области архитектурного проектирования, реконструкции и реставрации архитектурного наследия. </li>
+    <li>Повышение квалификации выпускников, архитекторов и инженерно-технических работников архитектурных и строительных
+      компаний. </li>
+  </ul>
+  <h2 class="sub-heading">Ресурсы</h2>
+  <p> Лабораторная база центра позволяет проводить следующие работы и исследования: </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>определение фактических размеров объекта и их сравнение с проектными (при наличии проекта);</li>
+    <li>сбор исходных данных для дальнейших конструктивных расчетов; </li>
+    <li>определение взаимного расположения частей здания или сооружения; </li>
+    <li>подготовка исходных данных для разработки проекта реконструкции или реставрации объекта; </li>
+    <li>уточнение фактической формы объекта; </li>
+    <li>построение трехмерной модели здания, сооружения, элемента и его визуализация; </li>
+    <li>обнаружение деформаций и отклонений зданий и сооружений; </li>
+    <li>сбор данных, которые затем импортируются в другие приложения для обработки (например, для построения трехмерной
+      модели здания); </li>
+    <li>мониторинг состояния объекта культурного наследия (в том числе памятника архитектуры); </li>
+    <li>проведение сравнения отчета по обследованию предыдущих лет с текущим состоянием объекта, с применением цифровых
+      технологий сканирования;</li>
+    <li>формирование отчета по визуальному обследованию объекта с выводами и рекомендациями; </li>
+    <li>получение цифрового «двойника» объекта культурного (включая памятники архитектурного наследия) для
+      восстановления точной геометрии в случае ее нарушения в ходе реставрационных работ; </li>
+    <li>получение фактической BIM модели для реставрационных работ и внедрения новых проектных решений; </li>
+    <li>изготавливать макеты зданий и сооружений, в том числе для объектов архитектурного наследия, малых архитектурных
+      форм, зданий и сооружений повышенной сложности, промышленных объектов; </li>
+    <li>производить профессиональные обмеры, 3D-сканирование при выполнении обмеров объектов архитектурного наследия;
+    </li>
+    <li>осуществлять архитектурно-реставрационное проектирование с использованием средств виртуальной реальности. </li>
+  </ul>
+  <b>В парке оборудования: </b>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> рабочие станции для работы с компьютерной графикой, трёхмерными системами автоматизированного проектирования и
+      черчения; </li>
+    <li>кабинет виртуальной реальности, шлемы виртуальной реальности; </li>
+    <li>перчатки со встроенными сенсорами, которые позволяют отслеживать движения кистей и пальцев рук; </li>
+    <li>цифровой нивелир Leica Sprinter 100 (Германия); </li>
+    <li>лазерный дальномер Leica Disto A5 (Германия); </li>
+    <li>световой стол для витража; </li>
+    <li>шлифовальные машины для стекла; </li>
+    <li>столы для мозаики, столы скульптора, мольберты, чертежные столы; </li>
+    <li>станки для раскройки смальты; </li>
+    <li>гипсовые фигуры и модели; </li>
+    <li>станок токарно-винторезный 16К20; </li>
+    <li>сварочный инвертор Flama TIG 200 AC/DC; </li>
+    <li>инвертированный металлографический микроскоп Olympus GX53; </li>
+    <li>многофункциональные плазменный аппарат Мультиплаз 3500; </li>
+    <li>печь муфельная одноступенчатая ЭКПС 50 л с вытяжкой; </li>
+    <li>мульти-микроскоп сканирующий «СММ-2000»; </li>
+    <li>станок настольно-шлифовальный ВШ-032; </li>
+    <li>универсальный испытательный пресс S205-05N. </li>
+  </ul>
+  <p>Возможности вычислительной техники центра при необходимости расширяются за счет подключения к суперкомпьютеру РУДН
+    (205,46 Tflops).</p>
+  <p>
+    <b>Команда центра</b> решает широкий спектр задач в интересах академических и индустриальных партнеров:
+  </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>разрабатывает проектную документацию в области реконструкции жилых, промышленных и общественных зданий; </li>
+    <li>разрабатывает проекты реставрации объектов культурного наследия; </li>
+    <li>применяет новейшие технологии при обследовании зданий и сооружений; </li>
+    <li>применяет новейшие технологии в реставрации объектов культурного наследия; </li>
+    <li>осуществляет PR- и GR-консультирование в строительной отрасли;</li>
+    <li>готовит квалифицированных специалистов в области реконструкции и реставрации архитектурного наследия; </li>
+    <li>проводит реставрационные работы; </li>
+    <li>занимается моделированием объектов и процессов; </li>
+    <li>разрабатывает новые технологии в реставрации и проектировании. </li>
+  </ul>
+  <h2 class="sub-heading">Результаты</h2>
+  <p>Учеными центра создана уникальная методика реставрации объектов культурного наследия, разработаны технологии
+    консервации объектов культурного наследия. Сотрудники центра применили методы 3D-сканирования и VR-технологии при
+    разработке проектов реконструкции и реставрации объектов различного назначения. Результаты их работы позволили
+    сохранить многие уникальные объекты архитектурного наследия, являющиеся памятниками архитектуры, в том числе: </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>Лопухинские палаты (XVII в.) Новодевичьего монастыря в Москве;</li>
+    <li>Смоленский собор (XVI в.) Новодевичьего монастыря в Москве; </li>
+    <li>Успенская церковь с трапезной (XVII в.) Новодевичьего монастыря в Москве; </li>
+    <li>Спасская башня Московского Кремля (XV-XIX вв.); </li>
+    <li>Сенатская башня Московского Кремля (XV-XIX вв.); </li>
+    <li>Боровицкая башня Московского Кремля (XV-XIX вв.); </li>
+    <li>Оружейная башня Московского Кремля. (XV-XIX вв.); </li>
+    <li>Прясло крепостной стены между Спасской и Сенатской башнями Московского Кремля (XV-XIX вв.); </li>
+    <li>Прясло крепостной стены между Боровицкой и Оружейной башнями (XV-XIX вв.) Московского Кремля; </li>
+    <li>Прясло крепостной стены между Оружейной и Комендантской башнями (XV-XIX вв.) Московского Кремля. </li>
+  </ul>
+  <h2 class="sub-heading">Партнеры</h2>
+  <div class="partners-logos uk-grid-match uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/restoration_architectural_heritage/gosniir.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>Государственный научно-исследовательский институт реставрации</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/restoration_architectural_heritage/nev_pal.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>ООО «Невская палитра» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/restoration_architectural_heritage/fridlender.png" %}" />
+      <div class="logo-turn-text">
+        <p>ООО «Краски Фридлендеръ»</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/restoration_architectural_heritage/cniip.png" %}" />
+      <div class="logo-turn-text">
+        <p>Научно-исследовательский институт теории и истории архитектуры и градостроительства (филиал ФГБУ «ЦНИИП Минстроя России») </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/restoration_architectural_heritage/resmix.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>Компания «RESMIX» </p>
+      </div>
+    </div>
+    
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/restoration_architectural_heritage/kolom_kras.png" %}" />
+      <div class="logo-turn-text">
+        <p>ООО «Коломенские краски» </p>
+      </div>
+  </div>
+  </div>
+</div> {% endblock %}

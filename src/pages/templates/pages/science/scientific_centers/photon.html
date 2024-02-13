@@ -1,87 +1,51 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/science/scientific_center_item.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
 <div class="uk-container">
-  <div class="page-name">
-    Центр научно-технологической инициативы «Фотоника»
-  </div>
+  <div class="page-name"> Центр научно-технологической инициативы «Фотоника» </div>
 </div>
-
 <div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
   <div class="info-block">{{center.brief_description|linebreaks}}</div>
   <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
     <div>
       <h2 class="sub-heading">Директор центра</h2>
       <div class="employee-card-wrapper" style="max-width: 550px">
-        <article
-          style="background-color: transparent"
+        <article style="background-color: transparent"
           class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
-          role="comment"
-        >
-          <header
-            class="uk-comment-header"
-            style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
-          >
+          role="comment">
+          <header class="uk-comment-header" style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5">
             <div class="uk-grid-medium uk-flex-middle" uk-grid>
               <div class="uk-width-auto">
-                <img
-                  class="uk-border-circle"
-                  src="{{center.head.image.url}}"
-                  width="80"
-                  height="80"
-                />
+                <img class="uk-border-circle" src="{{center.head.image.url}}" width="80" height="80" />
               </div>
               <div class="uk-width-expand">
                 <h3 class="uk-margin-remove">
-                  <a class="uk-link-reset" href="/profile/{{center.head.id}}"
-                    >{{center.head.full_name}}</a
-                  >
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}">{{center.head.full_name}}</a>
                 </h3>
-                <ul
-                  class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-                >
+                <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
                   <li>
-                    <span> Доктор технических наук, профессор </span>
+                    <span> Кандидат технических наук, доцент </span>
                   </li>
                 </ul>
               </div>
             </div>
           </header>
           <div class="uk-comment-body">
-            <ul class="uk-list">
-              {% comment %}
-              <li>
-                <h5
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="uk-link-heading card-link"
-                >
+            <ul class="uk-list"> {% comment %} <li>
+                <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
                   <span uk-icon="icon: location; ratio: 1"></span>
-
                   <span>office</span>
                 </h5>
-              </li>
-              {% endcomment %}
-
-              <li>
+              </li> {% endcomment %} <li>
                 <h5>
                   <span uk-icon="icon: receiver; ratio: 1"></span>
-                  <a href="tel:+74959520829" class="uk-link-heading card-link">
-                    +7 (495) 952-08-29<br />
+                  <a href="tel:+74959550952" class="uk-link-heading card-link"> +7 (495) 955-09-52<br />
                   </a>
                 </h5>
               </li>
-
               <li>
                 <h5>
                   <span uk-icon="icon: mail; ratio: 1"></span>
-                  <a
-                    href="mailto:razoumny-yun@rudn.ru"
-                    class="uk-link-heading card-link"
-                    >razoumny-yun@rudn.ru
-                  </a>
+                  <a href="mailto:agasieva-sv@rudn.ru" class="uk-link-heading card-link">agasieva-sv@rudn.ru </a>
                 </h5>
               </li>
             </ul>
@@ -91,5 +55,87 @@
     </div>
   </div>
   <h2 class="sub-heading">Направления деятельности</h2>
-</div>
-{% endblock %}
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> Разработка элементной базы для лазерной гироскопии. </li>
+    <li> Разработка перспективных лазерных информационных систем. </li>
+    <li> Технологии повышения эффективности работы лазерных излучателей и фотоприемников. </li>
+    <li>Разработка элементной базы приборов микроволновой радиотермометрии. </li>
+  </ul>
+  <h2 class="sub-heading">Ресурсы</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> профилометр KLA-Tencor Alpha-Step Д-600; </li>
+    <li> спектрофотометр LAMBDA-1050; </li>
+    <li> установка магнетронного напыления омических контактов Aspira-200М; </li>
+    <li> конфокальный лазерный сканирующий микроскоп LEXT OLS 4100; </li>
+    <li> установка быстрого термического отжига AS-One 100 HT; </li>
+    <li> рентгено-флуоресцентный анализатор покрытий Bowman BA 100 (P серия); </li>
+    <li> высоковакуумная установка нанесения широкозонных покрытий ZnSe (на базе установки серии Elato-R); </li>
+    <li> установка вакуумного напыления в комплекте с загрузочным боксом Carolinе D 12A; </li>
+    <li> установка совмещения ВЧ магнетронного и электронно-лучевого напыления оптических покрытий на активные элементы
+      лазерных диодов Ortus-700M. </li>
+  </ul>
+  <p>
+    <b>Команда специалистов выполняет:</b>
+  </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>проектирование и разработку технологий изготовления радиоэлектронной аппаратуры; </li>
+    <li>разработку оптических и оптико-электронных приборов и комплексов; </li>
+    <li>разработку компонентной базы и гетероструктур для изделий микро- и наноэлектроники, квантовых устройств; </li>
+    <li>исследования электрооптических эффектов в жидких кристаллах; </li>
+    <li>разработку материалов для изделий фотоники, нано-, оптоэлектроники и микросистемной техники; </li>
+    <li>разработку энергосберегающих покрытий и прозрачных электродов. </li>
+  </ul>
+  <h2 class="sub-heading">Результаты</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>Разработаны помехозащищенные медицинские антенны для проведения радиотермометрической диагностики, работающие на
+      нескольких частотах. Антенны принимают собственное излучение биологического объекта, трансформируют в сигнал
+      радиотермографа (приёмник + ЭВМ), который визуализирует информацию об интенсивности электромагнитного излучения в
+      понятном для врача виде. Появляется возможность диагностики любых заболеваний организма человека, сопровождающихся
+      тепловыми отклонениями: повышение температуры (канцерогенез, воспаление, сосудистая патология, травмы и пр.) и
+      снижении температуры (снижение кровотока, жировая инволюция и т.д.). </li>
+    <li>Разработано отечественное программное обеспечение (ПО) для захвата и обработки стереоизображений. ПО
+      специализируется на микроскопии для медицинских целей и содержит ряд служебных функций, необходимых для обработки
+      медицинских изображений, обеспечивает связь микроскопа и компьютера. ПО апробировано в ходе ряда испытаний при
+      компьютерной обработке микроскопических снимков живых тканей, заменяет аналогичное иностранное программное
+      обеспечение. </li>
+  </ul>
+  <h2 class="sub-heading">Партнеры</h2>
+  <div class="partners-logos uk-grid-match uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/photon/polus.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>АО «НИИ «Полюс» им. М.Ф. Стельмаха»  </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/photon/shvabe.png" %}" />
+      <div class="logo-turn-text">
+        <p>Холдинг «Швабе» ГК «Ростех» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/photon/lzos.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>АО «Лыткаринский завод оптического стекла»  </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/photon/vniinm.png" %}" />
+      <div class="logo-turn-text">
+        <p>АО «ВНИИНМ»  </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/photon/orion.svg" %}" />
+      <div class="logo-turn-text">
+        <p>АО «НПО «Орион»  </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/photon/luch.png" %}" />
+      <div class="logo-turn-text">
+        <p>АО «НИИ НПО «ЛУЧ» </p>
+      </div>
+    </div>
+    </div>
+  </div> {% endblock %}

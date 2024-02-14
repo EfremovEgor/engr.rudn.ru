@@ -151,9 +151,23 @@ html {
   justify-content: center;
   align-items: center;
   min-height: 500px;
+}
+@media screen and (max-width: 1200px) {
+  .news-block-background {
+    visibility: hidden;
+  }
+}
+.news-block-background {
   background-image: url(../images/index/bg_lines_n.png);
+  background-position: 100%;
   background-repeat: no-repeat;
-  background-position: 100% 0;
+  display: block;
+  height: 650px;
+  position: absolute;
+  transform: scaleX(-1);
+  bottom: -49%;
+  background-size: contain;
+  width: 100%;
 }
 .news-card-text {
   overflow: hidden;

@@ -9,7 +9,7 @@
     </h1>
   </div>
 </div>  {% endcomment %}
-<div class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
+<div style="z-index:2" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
 
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
@@ -180,7 +180,8 @@
 </div>
 {% endcomment %}
 <div class="news-block-wrapper">
-<div style="margin-top:0px; padding:40px 0px" class="card-container news-container block news-block">
+  <div class="news-block-background"> </div>
+<div style="z-index:2;margin-top:0px; padding:40px 0px" class="card-container news-container block news-block">
   <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
     <div uk-slider>
       <div class="uk-slider-container uk-slider-container-offset">
@@ -283,7 +284,7 @@
 </div>
 {% endcomment %}
 
-<div class="contacts-wrapper">
+<div style="z-index:2; position:relative" class="contacts-wrapper">
   <div class="contacts-container" style="padding:40px 0px">
     <div class="uk-child-width-1-2@l uk-child-width-1-1 uk-grid-match" style="justify-content:space-between" uk-grid>
       <div>

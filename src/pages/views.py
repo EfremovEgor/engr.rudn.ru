@@ -8,6 +8,7 @@ from .models import (
     StudyDirection,
     DissertationCommittee,
     ScientificCenters,
+    MainSlider,
 )
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404
@@ -25,6 +26,7 @@ from .utils import aliases, functions
 
 
 def index(request):
+    slider_images = MainSlider.objects.all()
     news = NewsItem.objects.prefetch_related().order_by("-creation_date")[:10]
     return render(
         request,
@@ -33,6 +35,7 @@ def index(request):
             "title": "Инженерная академия РУДН",
             "contacts": list(IndexContact.objects.order_by("position").all()),
             "news": news,
+            "slider_images": slider_images,
         },
     )
 

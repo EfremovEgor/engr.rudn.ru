@@ -445,56 +445,6 @@ class ScientificCenters(models.Model):
         blank=True,
         null=True,
     )
-    # SCIENTISTS_SCHEMA = {
-    #     "type": "list",
-    #     "items": {
-    #         "title": "Ученый",
-    #         "type": "dict",
-    #         "keys": {
-    #             "full_name_job_title": {"type": "string", "title": "Ф.И.О., должность"},
-    #             "degree": {
-    #                 "type": "string",
-    #                 "title": "Ученая степень, ученое звание",
-    #             },
-    #             "specialization": {
-    #                 "type": "string",
-    #                 "title": "Область научных интересов (специализация; роль ученого в команде лаборатории)",
-    #             },
-    #         },
-    #     },
-    # }
-    # scientists = JSONField(
-    #     verbose_name="Команда ученых",
-    #     schema=SCIENTISTS_SCHEMA,
-    #     blank=True,
-    #     null=True,
-    # )
-    # scientific_directions = ArrayField(
-    #     models.TextField(
-    #         verbose_name="Научные направления",
-    #     ),
-    #     blank=True,
-    #     null=True,
-    # )
-    # achievements = ArrayField(
-    #     models.TextField(
-    #         verbose_name="Достижения / результаты проектов-исследований",
-    #     ),
-    #     blank=True,
-    #     null=True,
-    # )
-    # equipment = models.ManyToManyField(
-    #     EquipmentData,
-    #     verbose_name="Оборудование",
-    #     blank=True,
-    #     null=True,
-    # )
-    # partners = models.ManyToManyField(
-    #     PartnerData,
-    #     verbose_name="Сотрудничество, партнеры",
-    #     blank=True,
-    #     null=True,
-    # )
 
     def __str__(self) -> str:
         return f"{self.position}. {self.name}"
@@ -502,4 +452,29 @@ class ScientificCenters(models.Model):
     class Meta:
         verbose_name = "Научный центр"
         verbose_name_plural = "Научные центры"
+        ordering = ["position", "name"]
+
+
+class MainSlider(models.Model):
+    name = models.TextField(verbose_name="Название")
+    position = models.IntegerField(verbose_name="Позиция")
+    image_full = models.ImageField(
+        verbose_name="Фотография полноразмерная",
+        upload_to="main_slider_full",
+        blank=True,
+        null=True,
+    )
+    image_mobile = models.ImageField(
+        verbose_name="Фотография мобильная",
+        upload_to="main_slider_mobile",
+        blank=True,
+        null=True,
+    )
+
+    def __str__(self) -> str:
+        return f"{self.position}. {self.name}"
+
+    class Meta:
+        verbose_name = "Картинка главного слайдера"
+        verbose_name_plural = "Картинки главного слайдера"
         ordering = ["position", "name"]

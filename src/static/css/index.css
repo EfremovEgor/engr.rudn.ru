@@ -298,3 +298,7 @@ html {
 .contacts-header {
   padding: 0px 30px 15px;
 }
+.main-slider-image {
+  width: 100%;
+  height: auto;
+}

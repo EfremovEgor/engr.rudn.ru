@@ -1,13 +1,27 @@
 {% extends 'components/base.html' %} {% block content %} {%load static%}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 
-<div class="parallax-image" uk-height-viewport>
+{% comment %} <div class="parallax-image" uk-height-viewport>
   <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
     <h1 class="uk-text-bolder uk-text-break text_on_parallax">
       Добро пожаловать </br>
       в Инженерную академию РУДН
     </h1>
   </div>
+</div> {% endcomment %}
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="sets: true;autoplay: true">
+
+  <ul class="uk-slider-items uk-child-width-1-1">
+    {% for image in slider_images %}
+      <li>
+          <img class="main-slider-image" src="{{image.image_full.url}}"  alt="">
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
+  <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
+
 </div>
 {% comment %}
 <div class="card-container info-cards-container">

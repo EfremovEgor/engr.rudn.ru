@@ -18,7 +18,7 @@
     <meta name="twitter:title" content="Инженерная академия РУДН">
     <meta name="twitter:image:src"  content="{{ ""|get_server_uri }}{% block twimage %}{% static '/images/favicon.svg' %}{% endblock %}">
     <meta name="twitter:description" content="Сайт инженерной академии РУДН">
-    <meta name="twitter:url" content="{{ ""|get_server_uri }}{{request.path}}">
+    <meta name="twitter:url" content="{{ ""|get_server_uri }}{{request.path|truncate_url}}">
     <meta property="og:title" content="Инженерная академия РУДН">
     <meta property="og:site_name" content="Инженерная академия РУДН">
     <meta property="og:description" content="Сайт инженерной академии РУДН">

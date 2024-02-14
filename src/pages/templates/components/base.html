@@ -23,7 +23,7 @@
     <meta property="og:site_name" content="Инженерная академия РУДН">
     <meta property="og:description" content="Сайт инженерной академии РУДН">
     <meta property="og:image" content="{{ ""|get_server_uri }}{% block ogimage %}{% static '/images/favicon.svg' %}{% endblock %}">
-    <meta property="og:url" content="{{ ""|get_server_uri }}{{request.path}}">
+    <meta property="og:url" content="{{ ""|get_server_uri }}{{request.path|truncate_url}}">
     <meta property="og:type" content="website">
     <title>{{title}}</title>
     <link

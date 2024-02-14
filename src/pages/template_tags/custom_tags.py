@@ -135,6 +135,13 @@ def create_heading_with_duration(data: dict, details_type: str):
 @register.filter
 def slugify_url(string: str):
     return functions.make_slug(string)
+
+
 @register.filter
 def get_server_uri(_):
     return "https://academy.rudn.ru"
+
+
+@register.filter
+def truncate_url(url: str):
+    return url[:-1] if url[-1] == "/" else url

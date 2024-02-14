@@ -138,7 +138,6 @@ html {
   align-items: center;
   justify-content: center;
   background-attachment: fixed;
-
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../images/index/banners/news.jpg);
   background-position: bottom;
@@ -152,6 +151,9 @@ html {
   justify-content: center;
   align-items: center;
   min-height: 500px;
+  background-image: url(../images/index/bg_lines_n.png);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
 }
 .news-card-text {
   overflow: hidden;

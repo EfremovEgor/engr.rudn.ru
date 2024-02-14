@@ -13,7 +13,7 @@
 
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
-      <li  onclick="window.location.href = '{{image.url}}'">
+      <li  onclick="window.open('{{image.url}}', '_blank').focus()">
 
           <img class="uk-visible@m main-slider-image" src="{{image.image_full.url}}"  alt="">
           

@@ -33,6 +33,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-attachment: fixed;
   background-image: url(../../images/applicants/study_directions/main_levels_parallax.png);
   background-position: center;
   background-size: cover;

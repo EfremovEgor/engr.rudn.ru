@@ -25,7 +25,6 @@ html {
 }
 .card-container {
   max-width: 70%;
-  margin: 100px auto;
 }
 .contacts-wrapper {
   display: flex;
@@ -40,7 +39,7 @@ html {
   background-size: cover;
 }
 .contacts-container {
-  max-width: 70%;
+  max-width: 80%;
 }
 @media screen and (max-width: 960px) {
   .contacts-container {

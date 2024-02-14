@@ -339,6 +339,7 @@ html {
   }
 }
 .news-card > .uk-card-body,
-.news-card-no-image {
+.news-card-no-image,
+.news-card {
   background-color: rgb(246, 246, 246) !important;
 }

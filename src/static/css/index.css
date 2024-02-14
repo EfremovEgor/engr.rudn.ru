@@ -39,7 +39,7 @@ html {
   background-size: cover;
 }
 .contacts-container {
-  max-width: 80%;
+  width: 70%;
 }
 @media screen and (max-width: 960px) {
   .contacts-container {

@@ -19,10 +19,11 @@
     <meta name="twitter:image:src"content="{{ request.scheme }}://{{ request.get_host }}{% block twimage %}{% static '/images/favicon.svg' %}{% endblock %}">
     <meta name="twitter:description" content="Сайт инженерной академии РУДН">
     <meta name="twitter:url" content="{{ request.scheme }}://{{ request.get_host }}{% block twurl %}{{ request.path }}{% endblock %}">
-    <meta property="og:title" content="Сайт инженерной академии РУДН" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{% block ogurl %}{{ request.path }}{% endblock %}" />
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% block ogimage %}{% static '/images/favicon.svg' %}{% endblock %}" />
+    <meta property="og:title" content="Инженерная академия РУДН">
+    <meta property="og:description" content="Сайт инженерной академии РУДН">
+    <meta property="og:image" content="{{ request.build_absolute_uri }}{% block ogimage %}{% static '/images/favicon.svg' %}{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:type" content="website">
     <title>{{title}}</title>
     <link
       rel="stylesheet"

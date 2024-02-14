@@ -18,10 +18,11 @@
     <meta name="twitter:title" content="Инженерная академия РУДН">
     <meta name="twitter:image:src"  content="{{ ""|get_server_uri }}{% block twimage %}{% static '/images/favicon.svg' %}{% endblock %}">
     <meta name="twitter:description" content="Сайт инженерной академии РУДН">
+    <meta name="twitter:domain" content="academy.rudn.ru">
     <meta name="twitter:url" content="{{ ""|get_server_uri }}{{request.path|truncate_url}}">
     <meta property="og:title" content="Инженерная академия РУДН">
     <meta property="og:site_name" content="Инженерная академия РУДН">
-    <meta property="og:description" content="Сайт инженерной академии РУДН">
+    {% comment %} <meta property="og:description" content="Сайт инженерной академии РУДН"> {% endcomment %}
     <meta property="og:image" content="{{ ""|get_server_uri }}{% block ogimage %}{% static '/images/favicon.svg' %}{% endblock %}">
     <meta property="og:url" content="{{ ""|get_server_uri }}{{request.path|truncate_url}}">
     <meta property="og:type" content="website">

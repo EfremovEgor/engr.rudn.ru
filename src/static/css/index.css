@@ -32,7 +32,7 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 500px;
   background-attachment: fixed;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../images/index/background.jpeg);
@@ -146,6 +146,13 @@ html {
   row-gap: 4rem;
   text-align: center;
 }
+.news-block-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
 .news-card-text {
   overflow: hidden;
   text-overflow: clip;
@@ -183,7 +190,6 @@ html {
   width: 80%;
 }
 .show-uni-news__wrap {
-  margin-top: 70px;
   width: 100%;
   display: flex;
   justify-content: flex-end;

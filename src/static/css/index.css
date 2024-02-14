@@ -338,6 +338,7 @@ html {
     object-position: bottom;
   }
 }
-.uk-card-body {
+.news-card > .uk-card-body,
+.news-card-no-image {
   background-color: rgb(246, 246, 246) !important;
 }

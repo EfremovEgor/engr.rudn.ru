@@ -458,6 +458,12 @@ class ScientificCenters(models.Model):
 class MainSlider(models.Model):
     name = models.TextField(verbose_name="Название")
     position = models.IntegerField(verbose_name="Позиция")
+    url = models.URLField(
+        "Ссылка",
+        max_length=255,
+        blank=True,
+        null=True,
+    )
     image_full = models.ImageField(
         verbose_name="Фотография полноразмерная",
         upload_to="main_slider_full",

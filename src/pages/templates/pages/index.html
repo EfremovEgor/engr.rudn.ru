@@ -9,19 +9,25 @@
     </h1>
   </div>
 </div>  {% endcomment %}
-<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="sets: true;autoplay: true">
+<div class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
 
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
-      <li>
-          <img class="main-slider-image" src="{{image.image_full.url}}"  alt="">
+      <li  onclick="window.location.href = '{{image.url}}'">
+
+          <img class="uk-visible@m main-slider-image" src="{{image.image_full.url}}"  alt="">
+          
+          <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile.url}}"  alt="">
+          
+
       </li>
     {% endfor %}
-  </ul>
 
+  </ul>
+  <ul  style="position: absolute; bottom: 0;left: 50%;" class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+  
   <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
   <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
-
 </div>
 {% comment %}
 <div class="card-container info-cards-container">

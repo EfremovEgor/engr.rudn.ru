@@ -1,0 +1,126 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
+<div class="uk-container">
+  <div class="page-name"> Научный центр транспортных систем и комплексов </div>
+</div>
+<div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
+  <div class="info-block">{{center.brief_description|linebreaks}}</div>
+  <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
+    <div>
+      <h2 class="sub-heading">Директор центра</h2>
+      <div class="employee-card-wrapper" style="max-width: 550px">
+        <article style="background-color: transparent"
+          class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
+          role="comment">
+          <header class="uk-comment-header" style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5">
+            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img class="uk-border-circle" src="{{center.head.image.url}}" width="80" height="80" />
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-margin-remove">
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}">{{center.head.full_name}}</a>
+                </h3>
+                <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
+                  <li>
+                    <span> Доктор технических наук, профессор </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </header>
+          <div class="uk-comment-body">
+            <ul class="uk-list"> {% comment %} <li>
+                <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
+                  <span uk-icon="icon: location; ratio: 1"></span>
+                  <span>office</span>
+                </h5>
+              </li> {% endcomment %} <li>
+                <h5>
+                  <span uk-icon="icon: receiver; ratio: 1"></span>
+                  <a href="tel:+74954340212" class="uk-link-heading card-link"> +7 (495) 434-02-12<br />
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5>
+                  <span uk-icon="icon: mail; ratio: 1"></span>
+                  <a href="mailto: asoyan-ar@rudn.ru" class="uk-link-heading card-link"> asoyan-ar@rudn.ru </a>
+                </h5>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <h2 class="sub-heading">Направления деятельности</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> Исследование, разработка и создание мобильных диагностических устройств оценки технического состояния транспортных средств. </li>
+    <li> Моделирование рабочих процессов двигателей, работающих на альтернативных видах топлива, в том числе водорода применяемого в качестве добавки к углеводородным топливам. </li>
+    <li> Испытание автотранспортных средств по энергетическим, экологическим и экономическим параметрам. </li>
+    <li>Разработка и изготовление беспилотных наземных и летательных аппаратов. </li>
+    <li>Разработка методов и средств управления улично-дорожной сети городов при обеспечении безопасности дорожного движения.</li>
+
+  </ul>
+  <h2 class="sub-heading">Ресурсы</h2>
+  <p>Лабораторная база центра позволяет проводить следующие работы и исследования:</p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> оценка технического состояния транспортных средств; </li>
+    <li> цифровое моделирование рабочих процессов двигателей, работающих на альтернативных видах топлива; </li>
+    <li> испытание автотранспортных средств по энергетическим, экологическим и экономическим параметрам; </li>
+    <li> цифровое моделирование, разработка и изготовление беспилотных наземных и летательных аппаратов. </li>
+  </ul>
+  <p>
+    <b>В парке оборудования:</b>
+  </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>стенд «НР-6В» фирмы AE&T для оценки технического состояния электромагнитных форсунок;</li>
+    <li>мощностной стенд с беговыми барабанами Cartec LPS 2510 c одной ведущей осью для оценки энергетических показателей двигателей автомобилей (мощность, крутящий момент), на различных режимах, имитирующих реальные дорожные условия;</li>
+    <li>пятикомпонентный газоанализатор Инфракар 5М-3Т.02 для оценки экологических показателей двигателей внутреннего сгорания;</li>
+    <li>расходомер топлива DFM 100 CK. для оценки экономических показателей двигателей автомобилей, а также для получения и анализа данных о фактически потребленном топливе двигателем;</li>
+    <li>рабочие станции для численного моделирования работы узлов и агрегатов автомобилей;</li>
+    <li>рабочие станции для численного моделирование трафика движения автомобильного транспорта по улично-дорожной сети городов. </li>
+  </ul>
+  <p>Возможности вычислительной техники центра при необходимости расширяются за счет подключения к суперкомпьютеру РУДН (205,46 Tflops).</p>
+  <p><b>Команда центра</b> решает широкий спектр задач в интересах академических и индустриальных партнеров по реализации прикладных и научных исследований, актуальных проблем эксплуатации автомобильного и наземного транспорта, разработки новых беспилотных систем как наземных, так и летательных аппаратов.</p>
+  <h2 class="sub-heading">Результаты</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>Алгоритм оценки усталостного ресурса механических компонентов со сложной геометрией и случайной не пропорциональной нагрузкой с несколькими входами. Область применения – технология машиностроения. </li>
+    <li>Алгоритм оценки динамической прочности кузовов автомобилей с учетом точечных сварных швов. Область применения – технология машиностроения. </li>
+    <li>Математическая модель функционирования системы автоматической фиксации нарушений правил дорожного движения при обеспечении безопасности дорожного движения. Отрасль – безопасность дорожного движения. </li>
+    <li>Научное обоснование процесса контактной точечной сварки. Область применения – технология машиностроения.</li>
+    <li>Установлено влияние различных параметров процесса сварки на качество точечного шва. Область применения – технология машиностроения.</li>
+    <li>Метод прогнозирования статической и усталостной прочности точечных сварных соединений с точки зрения ультразвуковых изображений. Область применения – технология машиностроения. </li>
+    <li>Технология производства водорода на борту транспортного средства и использование его в качестве добавки к основному топливу двигателя внутреннего сгорания. Область – альтернативные виды топлив.</li>
+    <li>Алгоритм выбора структуры и обоснования параметров системы автоматической фиксации нарушений правил дорожного движения. Отрасль – безопасность дорожного движения.</li>
+
+  </ul>
+  <h2 class="sub-heading">Партнеры</h2>
+  <div class="partners-logos uk-grid-match uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    <div class="logo-holder">
+      <img style="max-width: 180px" class="logo-turn-image" src="{% static "images/science/scientific_centers/operational_systems_and_complexes/kamaz.png" %}" />
+      <div class="logo-turn-text">
+        <p>ПАО «КАМАЗ»</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/operational_systems_and_complexes/rus-avtodom.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>ООО «РУС-АВТОДОМ»</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/operational_systems_and_complexes/nami.png" %}" />
+      <div class="logo-turn-text">
+        <p>ГНЦ ФГУП «НАМИ»  </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 200px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/operational_systems_and_complexes/becema.png" %}" />
+      <div class="logo-turn-text">
+        <p>АО «БЕЦЕМА» Машиностроительный завод</p>
+      </div>
+    </div>
+    </div>
+  </div> {% endblock %}

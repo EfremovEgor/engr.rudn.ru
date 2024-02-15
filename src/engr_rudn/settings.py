@@ -30,7 +30,7 @@ ADMIN_SITE = os.getenv("DJANGO_ADMIN_URL_SUFFIX")
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ["https://academy.rudn.ru", "http://academy.rudn.ru"]
 
 # Application definition
 

@@ -1,7 +1,7 @@
 {% load static %}
 
-<header class="header">
-  <div class="uk-visible@l upper-header-wrapper">
+<header class="header uk-visible@l">
+  <div class="upper-header-wrapper">
     <div class="upper-header">
       <div class="upper-header-first_part">
         <div class="uk-container first_part-container">
@@ -261,11 +261,11 @@
       </div>
     </nav>
   </div>
-
+</header>
+<header uk-sticky class="header uk-hidden@l">
   <nav
-    class="uk-navbar-container uk-hidden@l"
+    class="uk-navbar-container"
     style="background-color: var(--primary-color)"
-    uk-sticky
   >
     <div class="uk-container">
       <div

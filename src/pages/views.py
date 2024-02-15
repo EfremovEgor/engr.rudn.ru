@@ -312,7 +312,6 @@ def applicants_reference(request):
 
 def open_days(request):
     presentations = OpenDaysFiles.objects.filter(type="Презентация").all()
-    print(presentations)
     return render(
         request,
         "pages/applicants/open_days.html",
@@ -355,10 +354,6 @@ def levels_of_study(request, level):
             "cipher", "-language_fields", "-name"
         )
         directions_.append(direction_)
-    # for direction in directions:
-    #     for profile in direction.profiles.all():
-    #         for index, lang in enumerate(profile.language_fields):
-    #             profile.language_fields[index] = aliases.lang_aliases[lang.lower()]
     return render(
         request,
         f"pages/applicants/levels/{level}.html",
@@ -405,13 +400,6 @@ def scientific_centers(request):
 
 def scientific_center_item(request, name):
     center = get_object_or_404(ScientificCenters, page_url=name)
-    # center = None
-    # for item in centers:
-    #     if functions.make_slug(item.name) == name:
-    #         center = item
-    #         break
-    # if center is None:
-    #     raise Http404
     alias = aliases.scientific_center_name_to_page.get(
         " ".join(word.strip() for word in center.name.split())
     )

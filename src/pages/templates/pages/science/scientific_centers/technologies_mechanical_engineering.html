@@ -1,0 +1,123 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
+<div class="uk-container">
+  <div class="page-name"> Научный центр технологий машиностроения и приборостроения </div>
+</div>
+<div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
+  <div class="info-block">{{center.brief_description|linebreaks}}</div>
+  <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
+    <div>
+      <h2 class="sub-heading">Директор центра</h2>
+      <div class="employee-card-wrapper" style="max-width: 550px">
+        <article style="background-color: transparent"
+          class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
+          role="comment">
+          <header class="uk-comment-header" style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5">
+            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img class="uk-border-circle" src="{{center.head.image.url}}" width="80" height="80" />
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-margin-remove">
+                  <a class="uk-link-reset" href="/profile/{{center.head.id}}">{{center.head.full_name}}</a>
+                </h3>
+                <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
+                  <li>
+                    <span> Доктор технических наук, профессор </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </header>
+          <div class="uk-comment-body">
+            <ul class="uk-list"> {% comment %} <li>
+                <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
+                  <span uk-icon="icon: location; ratio: 1"></span>
+                  <span>office</span>
+                </h5>
+              </li> {% endcomment %} <li>
+                <h5>
+                  <span uk-icon="icon: receiver; ratio: 1"></span>
+                  <a href="tel:+74959529589" class="uk-link-heading card-link"> +7 495 952-95-89<br />
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5>
+                  <span uk-icon="icon: mail; ratio: 1"></span>
+                  <a href="mailto:  radin-yua@rudn.ru" class="uk-link-heading card-link">  radin-yua@rudn.ru </a>
+                </h5>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <h2 class="sub-heading">Направления деятельности</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> Разработка рекомендаций по увеличению межсервисного интервала газотурбинных установок различной мощности на основании математического моделирования. </li>
+    <li> Оптимизация режимов эксплуатации энергетического оборудования тепловых электростанций.</li>
+    <li> Исследование критических деталей энергетического оборудования и разработка алгоритмов диагностики их технического состояния.</li>
+    <li>Разработка рекомендаций по снижению выбросов углекислого газа, оксидов азота на предприятиях электроэнергетики. </li>
+    <li>Разработка руководящих документов, стандартов организации, ГОСТов и других нормативно-технических документов для предприятий электроэнергетики.</li>
+
+  </ul>
+  <h2 class="sub-heading">Ресурсы</h2>
+  <p>Лабораторная база центра позволяет проводить следующие работы и исследования:</p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> решение общесистемных вопросов по структуре генерирующих мощностей в единой энергосистеме и изолированных энергосистемах;</li>
+    <li> решение проблем маневренности энергоблоков парогазовых установок и паросиловых установок, увеличения межсервисных интервалов газотурбинных установок на основании компьютерного моделирования; </li>
+    <li> согласование колебаний мощности возобновляемых источников энергии и особенностей их параллельной работы с тепловыми электростанциями; </li>
+    <li> разработка технологий для снижения выбросов дымовых газов тепловых электростанций. </li>
+  </ul>
+  <p>
+    <b>В парке оборудования:</b>
+  </p>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li> экспериментальная установка «Многоступенчатый тепловой насос» для оценки эффективности использования тепловых насосов при утилизации вторичных энергетических ресурсов;</li>
+    <li>стенд для измерения напряженно-деформированного состояния юбки составного поршня двигателя внутреннего сгорания;</li>
+    <li> гибкий USB видеоэндоскоп jProbe NT 1-85-80 SF для визуальной диагностики полых полостей различных агрегатов;</li>
+    <li>переносные газоанализаторы;</li>
+    <li> тепловизоры, пирометры;</li>
+    <li>портативные барометры, влагомеры, датчики температуры, анемометры; </li>
+    <li>течеискатели.</li>
+  </ul>
+  <p><b>Команда центра</b> решает широкий спектр задач в интересах академических и индустриальных партнеров по проведению научно-исследовательских работ по энергоэффективности оборудования тепловых станций и использованию вторичных и возобновляемых энергетических ресурсов, моделированию объектов и процессов, разработки новых технологий.</p>
+  <h2 class="sub-heading">Результаты</h2>
+  <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
+    <li>Создана экспериментальная установка двухступенчатого теплового насоса (патент на изобретение) для оценки эффективности использования тепловых насосов при утилизации вторичных источников энергии.</li>
+    <li>Разработана и создана уникальная экспериментальная установка многоступенчатого теплового насоса (патент на изобретение), используемая для оценки эффективности использования тепловых насосов при утилизации вторичных источников энергии.</li>
+    <li>Разработан метод совершенствования системы охлаждения свободнопоршневого двигателя Стирлинга (СПДС) путем реорганизации течения рабочего тела в охладителе СПДС для улучшения эффективности теплоотвода и повышения технико-экономических показателей. </li>
+    <li>Разработана методика определения геометрических параметров исследуемых теплообменников, имеющих в качестве основного элемента конструкции сложенные медные ребра.</li>
+    <li>Разработана двухтрубная расчетная модель процессов теплообмена при течении рабочего тела в охладителе с использованием программного обеспечения ANSYS Fluent, на которой проведена валидация с использованием разработанного испытательного стенда</li>
+    <li>Разработана методика профилирования юбки составного поршня форсированного четырехтактного дизеля с учетом условий его смазки в цилиндре (патент на полезную модель, патенты на программы для ЭВМ) создан испытательный стенд.</li>
+  </ul>
+  <h2 class="sub-heading">Партнеры</h2>
+  <div class="partners-logos uk-grid-match uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    <div class="logo-holder">
+      <img style="max-width: 180px" class="logo-turn-image" src="{% static "images/science/scientific_centers/technologies_mechanical_engineering/mos-energo.jpeg" %}" />
+      <div class="logo-turn-text">
+        <p>ПАО «Мосэнерго»</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img class="logo-turn-image" src="{% static "images/science/scientific_centers/technologies_mechanical_engineering/nami.png" %}" />
+      <div class="logo-turn-text">
+        <p>ГНЦ РФ ФГУП «НАМИ»</p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 125px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/technologies_mechanical_engineering/kolom-zavod.png" %}" />
+      <div class="logo-turn-text">
+        <p>ОАО «Коломенский завод» </p>
+      </div>
+    </div>
+    <div class="logo-holder">
+      <img style="max-width: 200px !important" class="logo-turn-image" src="{% static "images/science/scientific_centers/technologies_mechanical_engineering/ran.webp" %}" />
+      <div class="logo-turn-text">
+        <p>Объединённый институт высоких температур РАН</p>
+      </div>
+    </div>
+    </div>
+  </div> {% endblock %}

@@ -152,7 +152,7 @@ def directions(request, id):
     return render(
         request,
         "pages/direction.html",
-        {"title": "Направление подготовки", "profile_data": profile_data},
+        {"title": profile_object.name, "profile_data": profile_data},
     )
 
 

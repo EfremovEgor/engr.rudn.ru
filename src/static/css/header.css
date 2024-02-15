@@ -152,7 +152,7 @@
 .second_part-image-container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 50px;
 }
 .second_part-container {
   width: fit-content !important;

@@ -45,6 +45,7 @@
     >
       <div class="uk-container">
         <div uk-navbar>
+          {% comment %}
           <div
             class="uk-navbar-left uk-flex uk-flex-middle"
             style="margin: 0; padding: 0; gap: 0; margin-right: 30px"
@@ -63,9 +64,13 @@
               </li>
             </ul>
           </div>
+          {% endcomment %}
 
-          <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav">
+          <div class="uk-navbar-center" style="width: 100%">
+            <ul
+              class="uk-navbar-nav"
+              style="display: flex; width: 100%; justify-content: space-between"
+            >
               <li>
                 <a class="header-text header-text-main" href="/">Главная</a>
               </li>

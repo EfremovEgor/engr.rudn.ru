@@ -1,6 +1,39 @@
 {% load static %}
 
-<header class="header" uk-sticky>
+<header class="header">
+  <div class="uk-visible@l upper-header-wrapper">
+    <div class="upper-header">
+      <div class="upper-header-first_part">
+        <div class="uk-container first_part-container">
+          <div class="upper-header-first_part-link_container">
+            <a class="upper-header-heading" href="/"
+              >Международное сотрудничество</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="upper-header-second_part">
+        <div class="uk-container second_part-container">
+          <div class="second_part-image-container">
+            <a class="uk-link-reset" target="_blank"
+              ><img
+                class="second_part-image"
+                src="{% static 'images/header/rudn_logo_color.png' %}"
+                width="60vw"
+                alt=""
+            /></a>
+            <a class="uk-link-reset" target="_blank"
+              ><img
+                class="second_part-image"
+                src="{% static 'images/header/engr_logo.jpg' %}"
+                width="60vw"
+                alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     class="uk-section-secondary uk-visible@l"
     style="background-color: transparent"
@@ -8,6 +41,7 @@
     <nav
       class="uk-navbar-container uk-navbar-transparent"
       style="background-color: var(--primary-color)"
+      uk-sticky
     >
       <div class="uk-container">
         <div uk-navbar>
@@ -226,6 +260,7 @@
   <nav
     class="uk-navbar-container uk-hidden@l"
     style="background-color: var(--primary-color)"
+    uk-sticky
   >
     <div class="uk-container">
       <div

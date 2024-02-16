@@ -132,7 +132,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   justify-content: center;
-  gap: 15px;
+  gap: 40px;
 }
 @media screen and (max-width: 600px) {
   .employee-card {

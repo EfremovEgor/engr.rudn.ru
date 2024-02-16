@@ -149,3 +149,6 @@
 .info-block > * {
   margin: 0px !important;
 }
+.uk-accordion > :nth-child(n + 2) {
+  margin-top: 10px !important;
+}

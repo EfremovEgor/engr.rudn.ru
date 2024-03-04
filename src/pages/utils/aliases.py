@@ -27,7 +27,8 @@ scientific_center_name_to_page = {
     "Научный центр комплексного исследования и эффективной разработки недр": "subsoil_development.html",
     "Научный центр техники и технологий строительства": "technology_and_building.html",
     "Научный центр транспортных систем и комплексов": "operational_systems_and_complexes.html",
-    "Научный центр технологий машиностроения и приборостроения": "technologies_mechanical_engineering.html"
+    "Научный центр технологий машиностроения и приборостроения": "technologies_mechanical_engineering.html",
+    "Международный центр трансфера технологий": "transfer-center.html",
     # "Учебный центр управления полетами"
 }
 # scientific_center_name_to_abbreviation =  {

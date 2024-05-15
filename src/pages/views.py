@@ -221,12 +221,39 @@ def scientific_student_society(request):
     )
 
 
+def science_events(request):
+    return render(
+        request,
+        "pages/science/events.html",
+        {
+            "title": "Научные мероприятия",
+        },
+    )
+
 def science_seminars(request):
     return render(
         request,
         "pages/science/seminars.html",
         {
             "title": "Научные семинары",
+        },
+    )
+
+def science_cits(request):
+    return render(
+        request,
+        "pages/science/cits.html",
+        {
+            "title": "Конференция по информационным и техническим системам",
+        },
+    )
+
+def science_scitechforum(request):
+    return render(
+        request,
+        "pages/science/scitechforum.html",
+        {
+            "title": "Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам",
         },
     )
 

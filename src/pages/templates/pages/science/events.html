@@ -1,0 +1,33 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/science/events.css' %}" />
+<div class="uk-container">
+  <div class="page-name">Научные мероприятия</div>
+</div>
+<div class="parallax-container uk-visible@s">
+  <p class="text-on-image"> Расширяй границы </p>
+</div>
+<div class="uk-container" style="margin-bottom: 50px; margin-top: 60px">
+    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body  uk-link-toggle">
+                <h3 class="uk-card-title"><a class="uk-link-heading" href="/science/seminars">Научные семинары</a></h3>
+                <p>Совместно с мировыми учеными</p>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle uk-card-small">
+                <h3 class="uk-card-title"><a class="uk-link-heading" href="/science/cits">Конференция
+                    по информационным и техническим системам
+                    </a></h3>
+                <p>Cовместно с университетами ШОС и СНГ</p>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle uk-card-small">
+                <h3 class="uk-card-title"><a class="uk-link-heading" href="/science/scitechforum">Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам</a></h3>
+                <p>Cовместно с университетами стран БРИКС</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div> {% endblock %}

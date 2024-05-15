@@ -1,0 +1,488 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/science/cits.css' %}" />
+<div class="uk-container">
+    <div class="page-name">Конференция по информационным и техническим системам</div>
+  </div>
+  
+  <div class="parallax-container uk-visible@s">
+    <p class="text-on-image"> Конференция по информационным и техническим системам </p>
+    <p class="text-on-image" style="margin-top:-50px"> Май 2025 </p>
+
+  </div>
+  
+  
+  <!-- <div class="uk-container" style="display: flex; justify-content: space-around; align-items: center;">
+  
+    <div class="uk-grid uk-grid-small">
+      <div class="uk-width-auto">
+        <img width="64" height="64" src="./maps-and-flags.png" alt="">
+      </div>
+      <div class="uk-width-expand">
+        <h3>RUDN University</h3>
+        <p>Moscow, Russia</p>
+      </div>
+    </div>
+  
+    <div class="uk-grid uk-grid-small">
+      <div class="uk-width-auto">
+        <img width="64" height="64" src="./calendar.png" alt="">
+      </div>
+      <div class="uk-width-expand">
+        <h3>November 26, 2023</h3>
+        <p>4 days</p>
+      </div>
+    </div>
+  
+    <div class="uk-grid uk-grid-small">
+      <div class="uk-width-auto">
+        <img width="64" height="64" src="./multiple-users-silhouette.png" alt="">
+      </div>
+      <div class="uk-width-expand">
+        <h3>2 Conferences</h3>
+        <p>13 Thematic Sessions</p>
+      </div>
+    </div>
+  
+    <div class="uk-grid uk-grid-small">
+      <div class="uk-width-auto">
+        <img width="64" height="64" src="./microphone-black-shape.png" alt="">
+      </div>
+      <div class="uk-width-expand">
+        <h3>17 Plenary Events</h3>
+        <p>Best Speakers</p>
+      </div>
+    </div>
+  
+  </div> -->
+  
+  
+  
+  <div class="uk-container" style="margin-bottom: 50px; margin-top: 60px">
+  
+    <b>Конференция по информационным и техническим системам (совместно с университетами ШОС и СНГ)</b> проводится с 28 по 30 мая 2024 года в Москве.
+    </p>
+    <p
+      style="
+        
+        margin: 1rem 0;
+        font-size: 1.07rem;
+        
+        text-align: justify;
+      "
+    >
+    Конференция проводится на площадке <b>Российского университета дружбы народов имени Патриса Лумумбы (РУДН)</b> совместно с университетами стран <b>Шанхайской организации сотрудничества</b> и <b>Содружества Независимых Государств</b>.
+    </p>
+    <p
+      style="
+        
+        margin: 1rem 0;
+        font-size: 1.07rem;
+        
+        text-align: justify;
+      "
+    >
+    Мы предлагаем участникам <b>гибридный формат участия</b>. Участники могут посетить все мероприятия конференции и выступить с докладом как в очном, так и в заочном формате. <b>Языки проведения конференции</b>: русский и английский.
+    </p>
+    <p
+      style="
+        
+        margin: 1rem 0;
+        font-size: 1.07rem;
+        
+        text-align: justify;
+      "
+    >
+    Доклады на конференцию будут отбираться по представленным авторами аннотациям, состоящим из 500 слов. Для принятых аннотаций требуются полные версии статей и презентаций. Материалы конференции будут опубликованы Российским университетом дружбы народов имени Патриса Лумумбы. Лучшие статьи будут рекомендованы к печати в ведущих российских журналах категорий К1/К2.
+    </p>
+    <p style="
+    
+    margin: 1rem 0;
+    font-size: 1.07rem;
+    
+    text-align: justify;
+  ">В рамках конференции проводятся следующие симпозиумы:</p>
+    <ul style="
+    
+    margin: 1rem 0;
+    font-size: 1.07rem;
+    
+    margin-top: -15px
+  
+  ">
+      <li>Интеллектуальные технические системы</li>
+      <li>Машиностроение и приборостроение</li>
+      <li>Архитектура и строительство</li>
+      <li>Геология, горное и нефтегазовое дело</li>
+      <li>Управление и экономика в промышленности</li>
+    </ul>
+  
+  
+    <div class="uk-container" style="display: flex; flex-wrap: wrap;">
+  
+      <div class="uk-grid uk-grid-small" style="flex: 1;">
+        <div style="display: flex; align-items: center;">
+          <div class="uk-width-auto">
+            <img width="64" height="64" src="{% static "images/science/events/geo.jpeg" %}" alt="">
+          </div>
+          <div class="uk-width-expand">
+            <strong style="font-weight: 700; font-size: larger; white-space:nowrap">RUDN University</strong>
+            <p style="font-size: small;">Moscow, Russia</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="uk-grid uk-grid-small" style="flex: 1;">
+        <div style="display: flex; align-items: center;">
+          <div class="uk-width-auto">
+            <img width="64" height="64" src="{% static "images/science/events/calendar.jpeg" %}" alt="">
+          </div>
+          <div class="uk-width-expand">
+            <strong style="font-weight: 700; font-size: larger;">Dates</strong>
+            <p>November 26-29, 2024</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="uk-grid uk-grid-small" style="flex: 1;">
+        <div style="display: flex; align-items: center;">
+          <div class="uk-width-auto">
+            <img width="64" height="64" src="{% static "images/science/events/megaphone.png" %}" alt="">
+          </div>
+          <div class="uk-width-expand">
+            <strong style="font-weight: 700; font-size: larger;">Hybrid Format</strong>
+            <p>1On-site and distant</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="uk-grid uk-grid-small" style="flex: 1;">
+        <div style="display: flex; align-items: center;">
+          <div class="uk-width-auto">
+            <img width="64" height="64" src="{% static "images/science/events/globe.png" %}" alt="">
+          </div>
+          <div class="uk-width-expand">
+            <strong style="font-weight: 700; font-size: larger;">Working language</strong>
+            <p>English</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="uk-grid uk-grid-small" style="flex: 1;">
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <div class="uk-width-auto">
+            <img width="64" height="64" src="{% static "images/science/events/clock.png" %}" alt="">
+          </div>
+          <div class="uk-width-expand">
+            <!-- <strong style="font-weight: 700; font-size: larger;">Abstract Submission Deadline</strong> -->
+            <p>Abstract Submission Deadline</p>
+            <p>October 1, 2024</p>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  
+  
+  
+  
+    <h3
+    style="
+      font-size: 30px;
+      color: #666666;
+      font-weight: 600;
+      margin-top: 40px;
+    "
+  >
+    Порядок предоставления аннотаций
+  </h3>
+  <p
+    style="
+      
+      margin: 1rem 0;
+      font-size: 1.07rem;
+      
+      text-align: justify;
+    "
+  >
+  Аннотации оригинальных презентаций принимаются для включения в программу конференции по следующим направлениям:
+  </p>
+  
+  <div class="uk-visible@l">
+        <table class="uk-table uk-table-divider uk-table-small" style="
+        margin: 1rem 0;
+        font-size: 1.07rem;
+        
+        ">
+          <tbody>
+            <tr>
+              <td style="border-right: 1px solid #e5e5e5; padding-right:0">
+                <b>Симпозиум «Интеллектуальные технические системы»</b>
+                <ul style="margin-top: -2px; padding-left: 20px">
+                  <li style="white-space: nowrap">Искусственный интеллект и робототехнические системы</li>
+                  <li>Информационная безопасность</li>
+                  <li>Проектирование космических миссий и систем</li>
+                  <li>Машинное обучение и обработка геоданных</li>
+                </ul>
+            </td>
+              <td>
+                <p style="margin-left: -8px"><b>Симпозиум «Машиностроение и приборостроение»</b></p>
+                <ul style="margin-top: -22px; padding-left: 20px">
+                  <li>Нанотехнологии и новые материалы</li>
+                  <li>Возобновляемые источники энергии</li>
+                  <li>Технологии приборостроения</li>
+                  <li>Техника и технология транспорта</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-right: 1px solid #e5e5e5; padding-right: 0;">
+                <b>Симпозиум «Архитектура и строительство»</b>
+                <ul style="margin-top: -2px; padding-left: 20px ">
+                  <li>Проектирование зданий и сооружений</li>
+                  <li>Реставрация и реконструкция архитектурного наследия</li>
+                  <li>Дизайн архитектурной среды</li>
+                  <li>Компьютерное моделирование зданий и сооружений</li>
+                </ul>
+              </td>
+              <td>
+                <p style="margin-left: -8px"><b>Симпозиум «Геология, горное и нефтегазовое дело»</b></p>
+                <ul style="margin-top: -22px; padding-left: 20px">
+                  <li>Поиск, разведка, освоение и добыча полезных ископаемых и минерального сырья</li>
+                  <li>Рациональное использование и охрана земных недр</li>
+                  <li>Хранение и переработка нефти и газа</li>
+                  <li>Обслуживание трубопроводного транспорта</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-right: 1px solid #e5e5e5; padding-right: 0">
+                <b>Симпозиум «Управление и экономика в<br> промышленности»</b>
+                <ul style="margin-top: -2px; padding-left: 20px ">
+                  <li>Управление социальными и экономическими<br> системами</li>
+                  <li>Инженерно-экономическое обоснование технических систем</li>
+                  <li>Управление проектами в промышленности</li>
+                  <li>Статистические и инструментальные методы<br> в экономике</li>
+                </ul>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>  
+  
+  <div class="uk-hidden@l uk-visible@s">
+    <table class="uk-table uk-table-divider uk-table-small" style="
+  margin: 1rem 0;
+  font-size: 1.07rem;
+  
+  ">
+    <tbody>
+      <tr>
+        <td style="border-right: 1px solid #e5e5e5;">
+          <b>Симпозиум «Интеллектуальные технические системы»</b>
+          <ul style="margin-top: -2px">
+            <li>Искусственный интеллект и робототехнические системы</li>
+            <li>Информационная безопасность</li>
+            <li>Проектирование космических миссий и систем</li>
+            <li>Машинное обучение и обработка геоданных</li>
+          </ul>
+      </td>
+        <td>
+          <b>Симпозиум «Машиностроение и приборостроение»</b>
+          <ul style="margin-top: -2px">
+            <li>Нанотехнологии и новые материалы</li>
+            <li>Возобновляемые источники энергии</li>
+            <li>Технологии приборостроения</li>
+            <li>Техника и технология транспорта</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid #e5e5e5;">
+          <b>Симпозиум «Архитектура и строительство»</b>
+          <ul style="margin-top: -2px">
+            <li>Проектирование зданий и сооружений</li>
+            <li>Реставрация и реконструкция архитектурного наследия</li>
+            <li>Дизайн архитектурной среды</li>
+            <li>Компьютерное моделирование зданий и сооружений</li>
+          </ul>
+        </td>
+        <td>
+          <b>Симпозиум «Геология, горное и нефтегазовое дело»</b>
+          <ul style="margin-top: -2px">
+            <li>Поиск, разведка, освоение и добыча полезных ископаемых и минерального сырья</li>
+            <li>Рациональное использование и охрана земных недр</li>
+            <li>Хранение и переработка нефти и газа</li>
+            <li>Обслуживание трубопроводного транспорта</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid #e5e5e5;">
+          <b>Симпозиум «Управление и экономика в промышленности»</b>
+          <ul style="margin-top: -2px">
+            <li>Управление социальными и экономическими системами</li>
+            <li>Инженерно-экономическое обоснование технических систем</li>
+            <li>Управление проектами в промышленности</li>
+            <li>Статистические и инструментальные методы в экономике</li>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+  <div class="uk-hidden@s" style="
+  margin: 1rem 0;
+  font-size: 1.07rem;
+  ">
+  <b>Симпозиум «Интеллектуальные технические системы»</b>
+          <ul style="margin-top: -2px">
+            <li>Искусственный интеллект и робототехнические системы</li>
+            <li>Информационная безопасность</li>
+            <li>Проектирование космических миссий и систем</li>
+            <li>Машинное обучение и обработка геоданных</li>
+          </ul>
+          <b>Симпозиум «Машиностроение и приборостроение»</b>
+          <ul style="margin-top: -2px">
+            <li>Нанотехнологии и новые материалы</li>
+            <li>Возобновляемые источники энергии</li>
+            <li>Технологии приборостроения</li>
+            <li>Техника и технология транспорта</li>
+          </ul>
+          <b>Симпозиум «Архитектура и строительство»</b>
+          <ul style="margin-top: -2px">
+            <li>Проектирование зданий и сооружений</li>
+            <li>Реставрация и реконструкция архитектурного наследия</li>
+            <li>Дизайн архитектурной среды</li>
+            <li>Компьютерное моделирование зданий и сооружений</li>
+          </ul>
+          <b>Симпозиум «Геология, горное и нефтегазовое дело»</b>
+          <ul style="margin-top: -2px">
+            <li>Поиск, разведка, освоение и добыча полезных ископаемых и минерального сырья</li>
+            <li>Рациональное использование и охрана земных недр</li>
+            <li>Хранение и переработка нефти и газа</li>
+            <li>Обслуживание трубопроводного транспорта</li>
+          </ul>
+          <b>Симпозиум «Управление и экономика в промышленности»</b>
+          <ul style="margin-top: -2px">
+            <li>Управление социальными и экономическими системами</li>
+            <li>Инженерно-экономическое обоснование технических систем</li>
+            <li>Управление проектами в промышленности</li>
+            <li>Статистические и инструментальные методы в экономике</li>
+          </ul>
+  </div>
+  <p
+    style="
+      
+      margin: 1rem 0;
+      font-size: 1.07rem;
+      
+      text-align: justify;
+    "
+  >
+  Чтобы облегчить процесс подачи заявки и последующий процесс обработки, пожалуйста, примите во внимание следующие рекомендации, информацию и сроки:
+  </p>
+  <ul style="margin-top: -15px">
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Подача аннотаций будет открыта <b>до 1 апреля 2025 года</b> через <a href="#">вэб-приложение</a>.
+      </span>
+    </li>
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Авторы выбирают предпочитаемый симпозиум и направление, на которое они подают аннотации.
+      </span>
+    </li>
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Авторы указывают предпочитаемый вид доклада (очный или онлайн).
+      </span>
+    </li>
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Авторы указывают полное ФИО, организацию и электронный адрес, в том числе для всех соавторов.
+      </span>
+    </li>
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Аннотации должны быть написаны открытым текстом и не должны содержать таблиц, рисунков и фотографий.
+      </span>
+    </li>
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Название доклада должно содержать не более 30 слов.
+      </span>
+    </li>
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Текст аннотации должен быть ограничен 500 словами.
+      </span>
+    </li>
+    <li style="font-size: 1.07rem">
+      <span
+        style="
+          
+          margin: 1rem 0;
+          
+          text-align: justify;
+        "
+      >
+      Подача доклада подтверждает ваше согласие на публикацию аннотации в официальных материалах конференции.
+      </span>
+    </li>
+  </ul>
+  
+  
+
+</div> {% endblock %}

@@ -36,7 +36,7 @@
     justify-content: center;
     background-attachment: fixed;
 
-  background-image: url(../../images/science/events/stars.jpeg);
+  background-image: url(../../images/science/events/stars.png);
   background-position: center;
   background-size: cover;
   color: var(--color);
@@ -45,6 +45,19 @@
   text-align: center;
   margin-bottom: 20px;
   margin-top: 40px;
+}
+
+.parallax-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    margin-top: 98px;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 

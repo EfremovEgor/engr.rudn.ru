@@ -1,0 +1,20 @@
+{% extends "components/base.html" %} {% block content %} {% load static %}
+<script src="{% static 'js/seminars.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'css/seminars.css' %}" />
+<div class="uk-container">
+  <div class="page-name">{{seminar.name}}</div>
+</div>
+<div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
+  <h3>Председатель:</h3>
+  <span>{{seminar.chair}}</span>
+  <h3>Кафедра:</h3>
+  <span>{{seminar.department.name}}</span>
+  <div class="seminar-description uk-margin">{{ seminar.description|safe}}</div>
+  <div class="uk-overflow-auto">
+    <div id="reports" uk-grid>
+      <div id="time"></div>
+    </div>
+  </div>
+</div>
+{%endblock %}

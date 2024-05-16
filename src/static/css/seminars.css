@@ -1,0 +1,74 @@
+:root {
+  --column-width: 25vw;
+  --column-min-width: 300px;
+}
+
+#reports {
+  padding: 5px;
+}
+
+#time > div {
+  width: max(var(--column-width), var(--column-min-width));
+  padding: 5px;
+  text-align: center;
+}
+
+.report-info {
+  font-size: 16px;
+  max-height: 30px;
+  height: 30px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  line-clamp: 2;
+  --webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.report > h4 {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#time {
+  display: flex;
+  flex-direction: row;
+}
+
+.report {
+  cursor: pointer;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+}
+
+.badge-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.uk-badge {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.weekly_reports {
+  width: max(var(--column-width), var(--column-min-width));
+  min-height: 150px;
+}
+
+.monthly_reports {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 50px;
+}
+
+.reports-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

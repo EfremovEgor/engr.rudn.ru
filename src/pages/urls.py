@@ -38,9 +38,11 @@ urlpatterns = [
         name="scientific_student_society",
     ),
     path("science/events", views.science_events, name="science_events"),
-    path("science/seminars", views.science_seminars, name="science_seminars"),
+    # path("science/seminars", views.science_seminars, name="science_seminars"),
     path("science/cits", views.science_cits, name="science_cits"),
-    path("science/scitechforum", views.science_scitechforum, name="science_scitechforum"),
+    path(
+        "science/scitechforum", views.science_scitechforum, name="science_scitechforum"
+    ),
     path(
         "science/digital_library",
         views.digital_library,

@@ -1,0 +1,29 @@
+{% extends "components/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/seminars.css' %}" />
+<div class="uk-container">
+  <div class="page-name">{{seminar.name}}</div>
+</div>
+<div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
+  <h3>{{report.name}}</h3>
+  <span
+    >{{report.date_start}} - {{report.time_start}} – {{report.time_end}}</span
+  >
+  <div class="speaker-container">
+    <img src="{{report.speaker.image.url}}" class="speaker_image" alt="" />
+    <div class="speaker-info">
+      <h3>
+        {{report.speaker.first_name}} {{report.speaker.last_name}}
+        {{report.speaker.middle_name}}
+      </h3>
+      <p>{{report.speaker.job_title.0}}</p>
+      <p>{{report.speaker.academic_title}}</p>
+      <p>{{report.speaker.academic_degree}}</p>
+    </div>
+  </div>
+  <h3>Аннотация</h3>
+  <p>{{ report.annotation|safe}}</p>
+  <h3>Краткая биография</h3>
+  <p>{{ report.speaker.bio|safe}}</p>
+</div>
+
+{%endblock %}

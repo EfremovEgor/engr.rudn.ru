@@ -13,48 +13,36 @@
   
   <div class="uk-container" style="margin-bottom: 50px; margin-top: 60px">
 
-    <div class="uk-grid-small uk-child-width-1-5@m uk-child-width-1-3@s uk-text-center" uk-grid>
-        <div style="display: flex; align-items: center;">
-            <div>
-                <img class="uk-align-center" width="64" height="64" src="{% static "images/science/events/geo.jpeg" %}" alt="">
-            </div>
-            <div class="uk-width-expand">
-                <p >РУДН<br>Москва, Россия</p>
-            </div>
+    <div class="logo-container" style="display:flex; flex-direction:row; flex-wrap: wrap;gap: 20px; font-size:18px; color:black; font-weight:600; text-align:center">
+        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
+            <img width="48" height="48" src="{% static "images/science/events/geo.jpeg" %}" alt="">
+            <p>РУДН<br>Москва, Россия</p>
         </div>
-        <div style="display: flex; align-items: center;">
-            <div сlass="uk-width-auto">
-              <img class="uk-align-center" width="64" height="64" src="{% static "images/science/events/calendar.jpeg" %}" alt="">
-            </div>
-            <div class="uk-width-expand">
-              <p>Май 2025 года</p>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center;">
-            <div class="uk-width-auto">
-              <img class="uk-align-center" width="64" height="64" src="{% static "images/science/events/megaphone.png" %}" alt="">
-            </div>
-            <div class="uk-width-expand">
-              <p>Очный<br> и дистанционный формат</p>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center;">
-            <div class="uk-width-auto">
-              <img class="uk-align-center" width="64" height="64" src="{% static "images/science/events/globe.png" %}" alt="">
-            </div>
-            <div class="uk-width-expand">
-              <p>Английский<br> и русский</p>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: center;">
-            <div class="uk-width-auto">
-              <img class="uk-align-center" width="64" height="64" src="{% static "images/science/events/clock.png" %}" alt="">
-            </div>
-            <div class="uk-width-expand">
-              <p>Подача докладов до 1 апреля 2025 года</p>
-            </div>
-          </div>
-    </div>
+        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
+            <object type="image/svg+xml" data="/static/icons/calendar.svg" width="48" height="48">
+            </object>
+            <p>26-29 ноября, 2024</p>
+        </div>
+        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
+            <img width="48" height="48" src="{% static "images/science/events/people.png" %}" alt="">
+            <p>Очный<br> и дистанционный формат</p>
+        </div>
+        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
+            <object type="image/svg+xml" data="/static/icons/language.svg" width="48" height="48">
+              </object>
+            <p>Английский</p>
+        </div>
+        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
+            <img width="48" height="48" src="{% static "images/science/events/clock.png" %}" alt="">
+            <p>Подача докладов<br> до 1 октября 2024 года</p>
+        </div>
+    </div>  
+
+  <!-- 2 Блок -->
+  <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+
+  <!-- Основное описание -->
+  <div style="margin-right: 2%;">
 
   <p class="heading">О конференции</p>
     <p style="
@@ -120,16 +108,29 @@
       <li>Геология, горное и нефтегазовое дело</li>
       <li>Управление и экономика в промышленности</li>
     </ul>
-  
-  
+  </div>
+  <!-- Основное описание -->
+
+  <!-- Кнопки -->
+  <div class="uk-visible@s">
     <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
         <a href="#" class="study_level-badge">Подать документы</a>
-        <a href="#" class="study_level-badge">Ссылка на сайт конференции</a>
+        <a href="https://www.icits.ru/" target="_blank" class="study_level-badge">Сайт конференции</a>
     </div>  
-  
-  
-  
-  
+  </div>
+
+  <!-- Кнопки -->
+
+  </div>
+  <!-- 2 Блок -->
+  <div class="uk-hidden@s">
+    <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
+        <a href="#" style="align-self:center" class="study_level-badge">Подать документы</a>
+        <a style="align-self:center" href="https://www.icits.ru/" target="_blank" class="study_level-badge">Сайт конференции</a>
+    </div>  
+  </div>
+
+  <!-- 3 Блок(Аннотации) -->
     <h3
     style="
       font-size: 30px;
@@ -427,7 +428,7 @@
       </span>
     </li>
   </ul>
-  
+  <!-- 3 Блок(Аннотации) -->
   
 
 </div> {% endblock %}

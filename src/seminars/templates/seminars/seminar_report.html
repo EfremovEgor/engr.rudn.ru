@@ -9,7 +9,7 @@
     >{{report.date_start}} - {{report.time_start}} – {{report.time_end}}</span
   >
   <div class="speaker-container">
-    <img src="{{report.speaker.image.url}}" class="speaker_image" alt="" />
+    <img src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}" class="speaker_image" alt="" width="68" />
     <div class="speaker-info">
       <h3>
         {{report.speaker.first_name}} {{report.speaker.last_name}}

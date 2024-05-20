@@ -4,26 +4,47 @@
   <div class="page-name">{{seminar.name}}</div>
 </div>
 <div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
-  <h3>{{report.name}}</h3>
-  <span
-    >{{report.date_start}} - {{report.time_start}} – {{report.time_end}}</span
-  >
+  <h3 style="line-height: 1;">{{report.name}}</h3>
+  <p style="margin-top:-20px"
+    >{{report.date_start}} - {{report.time_start}} – {{report.time_end}}</p>
   <div class="speaker-container">
-    <img src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}" class="speaker_image" alt="" width="68" />
-    <div class="speaker-info">
-      <h3>
-        {{report.speaker.first_name}} {{report.speaker.last_name}}
-        {{report.speaker.middle_name}}
-      </h3>
-      <p>{{report.speaker.job_title.0}}</p>
-      <p>{{report.speaker.academic_title}}</p>
-      <p>{{report.speaker.academic_degree}}</p>
+    <div class="speaker-info uk-visible@s">
+      <table cellspacing="10px" cellpadding="0px 10px">
+        <tr>
+          <td>
+            <img src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}" class="speaker_image" alt="" width="120" />
+          </td>
+          <td>
+            <h3>
+              {{report.speaker.first_name}} {{report.speaker.last_name}}
+              {{report.speaker.middle_name}}
+            </h3>
+            <p style="margin-top: -20px">{{report.speaker.job_title.0}}</p>
+            <p style="margin-top: -20px">{{report.speaker.academic_title}}</p>
+            <p style="margin-top: -20px">{{report.speaker.academic_degree}}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div style="margin-top: 20px" class="speaker-info uk-hidden@s">
+            <img  src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}" class="speaker_image" alt="" width="120" />
+            <h3 style="margin-top:20px">
+              {{report.speaker.first_name}} {{report.speaker.last_name}}
+              {{report.speaker.middle_name}}
+            </h3>
+            <p style="margin-top: -20px">{{report.speaker.job_title.0}}</p>
+            <p style="margin-top: -20px">{{report.speaker.academic_title}}</p>
+            <p style="margin-top: -20px">{{report.speaker.academic_degree}}</p>
     </div>
   </div>
-  <h3>Аннотация</h3>
-  <p>{{ report.annotation|safe}}</p>
-  <h3>Краткая биография</h3>
-  <p>{{ report.speaker.bio|safe}}</p>
+  {% if report.annotation %}
+  <h3 style="margin-top:10px">Аннотация</h3>
+  {% endif %}
+  <p style="margin-top:-20px">{% if report.annotation %}{{ report.annotation|safe}}{% endif %}</p>
+  {% if report.speaker.bio %}
+  <h3 style="margin-top:10px">Краткая биография</h3>
+  {% endif %}
+  <p style="margin-top:-20px">{% if report.speaker.bio %}{{ report.speaker.bio|safe}}{% endif %}</p>
 </div>
 
 {%endblock %}

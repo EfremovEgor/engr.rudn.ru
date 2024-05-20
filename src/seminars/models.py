@@ -33,8 +33,8 @@ class SeminarSpeaker(models.Model):
     )
     bio = RichTextUploadingField(
         verbose_name="Биография",
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
     )
 
     class Meta:
@@ -73,8 +73,8 @@ class SeminarReport(models.Model):
     )
     annotation = RichTextUploadingField(
         verbose_name="Аннотация",
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
     )
 
     class Meta:

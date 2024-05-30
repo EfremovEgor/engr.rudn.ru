@@ -45,12 +45,18 @@
     <meta property="og:image:height" content="903" />
     <meta property="og:image:alt" content="Инженерная академия РУДН" />
     <title>{{title}}</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/css/uikit.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit-icons.min.js"></script>
+    /> -->
+    <link
+    rel="stylesheet"
+    href="{% static 'uikit-3/css/uikit.min.css' %}"
+  />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit-icons.min.js"></script> -->
+    <script src="{% static 'uikit-3/js/uikit.min.js' %}"></script>
+    <script src="{% static 'uikit-3/js/uikit-icons.min.js' %}"></script>
    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
 
     {% load i18n %}

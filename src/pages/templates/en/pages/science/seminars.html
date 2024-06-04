@@ -1,0 +1,18 @@
+{% extends 'components/base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/science/seminars.css' %}" />
+<div class="uk-container">
+  <div class="page-name">Научные семинары</div>
+</div>
+<div class="parallax-container uk-visible@s">
+  <p class="text-on-image"> Лучшие профессора – лучший опыт! </p>
+</div>
+<div class="uk-container" style="margin-bottom: 50px; margin-top: 60px">
+  
+  <ul class="uk-list">
+    <li><a class="uk-link-muted uk-text-large" href="#">Расширенные заседания Секции «Международное научное сотрудничество» Совета РАН по космосу</a></li>
+    <li><a class="uk-link-muted uk-text-large" href="#">Международный научный семинар по механике и процессам управления</a></li>
+
+    <li><a class="uk-link-muted uk-text-large" href="#">Научный семинар по технологиям оптоэлектроники и фотоники</a></li>
+    <li><a class="uk-link-muted uk-text-large" href="#">Научный семинар по вопросам геологии, горного и нефтегазового дела</a></li>
+</ul>
+</div> {% endblock %}

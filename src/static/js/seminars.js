@@ -113,7 +113,7 @@ function generateTable(data) {
       table += `<div id="scrollTo" class="monthly_reports">${monthlyItems}</div>`;
     }
   });
-  table = `<div class="reports-body">${table}</div>`;
+  table = `<div class="reports-body" >${table}</div>`;
   $("#time").html(tableHeading);
   $("#reports").append(table);
   document

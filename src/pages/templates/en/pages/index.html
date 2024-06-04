@@ -1,0 +1,205 @@
+{% extends 'en/components/base.html' %} {% block content %} {%load static%}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<div
+  style="z-index: 2"
+  class="main-slider uk-position-relative uk-visible-toggle uk-light"
+  tabindex="-1"
+  uk-slider="autoplay: true"
+>
+  <ul class="uk-slider-items uk-child-width-1-1">
+    {% for image in slider_images %}
+    <li onclick="window.open('{{image.url}}', '_blank').focus()">
+      <img
+        class="uk-visible@m main-slider-image"
+        src="{{image.image_full.url}}"
+        alt=""
+      />
+
+      <img
+        class="uk-hidden@m main-slider-image"
+        src="{{image.image_mobile.url}}"
+        alt=""
+      />
+    </li>
+    {% endfor %}
+  </ul>
+  <ul
+    style="position: absolute; bottom: 0; left: 50%"
+    class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"
+  ></ul>
+
+  <a
+    class="uk-position-center-left uk-position-small uk-hidden-hover"
+    href
+    uk-slidenav-previous
+    uk-slider-item="previous"
+  ></a>
+  <a
+    class="uk-position-center-right uk-position-small uk-hidden-hover"
+    href
+    uk-slidenav-next
+    uk-slider-item="next"
+  ></a>
+</div>
+
+<div class="news-block-wrapper">
+  <div
+    style="z-index: 2; margin-top: 0px; padding: 40px 0px"
+    class="card-container news-container block news-block"
+  >
+    <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+      <div uk-slider>
+        <div class="uk-slider-container uk-slider-container-offset">
+          <ul class="uk-slider-items uk-grid" style="gap: 30px">
+            {% for item in news %} {% if item.preview_image %}
+            <li class="news-card-container">
+              <a href="/en/news/{{item.id}}" class="uk-link-toggle">
+                <div
+                  class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
+                >
+                  <div class="uk-card-media-top">
+                    <img
+                      src="{{item.preview_image.url}}"
+                      class="news-image"
+                      alt=""
+                    />
+                  </div>
+                  <div class="uk-card-body">
+                    <div class="uk-card-badge uk-label uk-visible@m">
+                      {{item.creation_date}}
+                    </div>
+                    <h3 class="uk-card-title news-title">{{item.title_en}}</h3>
+                  </div>
+                </div>
+              </a>
+            </li>
+            {% else %}
+            <li class="news-card-container">
+              <a href="/en/news/{{item.id}}" class="news-link uk-link-toggle">
+                <div
+                  class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
+                >
+                  <div class="uk-card-badge uk-label uk-visible@m">
+                    {{item.creation_date}}
+                  </div>
+                  <h3 class="uk-card-title news-title-no-image">
+                    {{item.title_en}}
+                  </h3>
+                </div>
+              </a>
+            </li>
+            {% endif %} {% endfor %}
+          </ul>
+        </div>
+        <div class="uk-hidden@s">
+          <a
+            class="slider-nav slider-nav-mobile uk-position-center-left"
+            href
+            uk-slidenav-previous
+            uk-slider-item="previous"
+          ></a>
+          <a
+            class="slider-nav slider-nav-mobile uk-position-center-right"
+            href
+            uk-slidenav-next
+            uk-slider-item="next"
+          ></a>
+        </div>
+
+        <div class="uk-visible@s">
+          <a
+            class="slider-nav uk-position-center-left-out uk-position-large"
+            href
+            uk-slidenav-previous
+            uk-slider-item="previous"
+          ></a>
+          <a
+            class="slider-nav uk-position-center-right-out uk-position-large"
+            href
+            uk-slidenav-next
+            uk-slider-item="next"
+          ></a>
+        </div>
+
+        <div class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></div>
+      </div>
+    </div>
+    <div class="show-uni-news__wrap">
+      <a href="/news" class="show-uni-news__link" target="_self">
+        <span class="show-uni-news__link-text">All NEWS</span>
+        <i class="icon-ic_arrow"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div style="z-index: 2; position: relative" class="contacts-wrapper">
+  <div class="contacts-container" style="padding: 40px 0px">
+    <div
+      class="uk-child-width-1-2@l uk-child-width-1-1 uk-grid-match"
+      style="justify-content: space-between"
+      uk-grid
+    >
+      <div>
+        <div class="uk-card uk-card-default" style="padding: 40px 20px">
+          <div class="uk-card-header contacts-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-expand">
+                <h3 class="uk-margin-remove-bottom uk-visible@s">
+                  <b>RUDN University<br />Engineering academy </b>
+                </h3>
+                <h3
+                  style="margin-top: 0px"
+                  class="uk-margin-remove-bottom uk-hidden@s"
+                >
+                  <b>Engineering academy </b>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="uk-card-body contacts-body">
+            <ul class="uk-list">
+              <li class="">
+                <a
+                  href="https://yandex.ru/maps/-/CDXvMvs"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="uk-link-heading card-link"
+                  ><span uk-icon="location"></span>
+                  <span>115419, Moscow, Ordzhonikidze Ulitsa 3</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="tel:+74959550966" class="uk-link-heading card-link"
+                  ><span uk-icon="receiver"></span> +7 (495) 955-09-66
+                </a>
+              </li>
+              <li class="">
+                <a href="tel:+74959550829" class="uk-link-heading card-link"
+                  ><span uk-icon="receiver"></span> +7 (495) 952-08-29
+                  (director's reception room)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:academyofengineering@rudn.ru"
+                  class="uk-link-heading card-link"
+                  ><span uk-icon="mail"></span> engineering@rudn.ru
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="uk-visible@l uk-cover-container">
+        <iframe
+          class="map"
+          src="https://yandex.ru/map-widget/v1/?ll=37.603747%2C55.710702&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjY4MjU1ORJC0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINGD0LvQuNGG0LAg0J7RgNC00LbQvtC90LjQutC40LTQt9C1LCAzIgoNPWoWQhXC115C&z=17.08"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

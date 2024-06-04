@@ -1,14 +1,30 @@
 :root {
-  --column-width: 25vw;
+  --column-width: 40vw;
   --column-min-width: 300px;
 }
 
-#reports {
-  padding: 5px;
+@media screen and (max-width: 1300px) {
+  :root {
+    --column-width: 45vw;
+    --column-min-width: 300px;
+  }
+
 }
 
-#time > div {
-  width: max(var(--column-width), var(--column-min-width));
+@media screen and (max-width: 500px) {
+  :root {
+    --column-width: 90vw;
+    --column-min-width: 300px;
+  }
+
+}
+
+#reports {
+  /* padding: 5px; */
+}
+
+#time>div {
+  width: var(--column-width);
   padding: 5px;
   text-align: center;
 }
@@ -25,7 +41,7 @@
   word-break: break-word;
 }
 
-.report > h4 {
+.report>h4 {
   margin: 0;
   margin-top: 10px;
   font-size: 16px;
@@ -42,6 +58,14 @@
   height: 100%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #fff;
+}
+
+.report:hover {
+  background-color: whitesmoke;
+  box-shadow: 0 14px 25px rgba(0, 0, 0, .16);
 }
 
 .badge-container {
@@ -56,15 +80,18 @@
 }
 
 .weekly_reports {
-  width: max(var(--column-width), var(--column-min-width));
-  min-height: 150px;
+  width: var(--column-width);
+  height: 250px;
+  padding-top: 20px;
+  margin: 2px;
+  background-color: #fbfbfb;
+  padding-bottom: 40px;
 }
 
 .monthly_reports {
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  gap: 50px;
+  /* padding: 5px; */
 }
 
 .reports-body {

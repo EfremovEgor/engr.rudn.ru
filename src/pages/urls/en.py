@@ -1,19 +1,23 @@
 from django.urls import include, path, re_path
-from . import views
+from ..views import en as views
 
-app_name = "pages"
+app_name = "pages_en"
 urlpatterns = [
     path("", views.index, name="index"),
     path("news", views.NewsView.as_view(), name="news"),
-    path("news/<int:id>", views.NewsItemView.as_view(), name="news_item"),
-    path("academy", views.academy, name="academy"),
-    path("academy/administration", views.administration, name="administration"),
+    path("news/<int:id>", views.NewsItemView.as_view(), name="en_news_item"),
+    path("academy", views.academy, name="en_academy"),
+    path("academy/administration", views.administration, name="en_administration"),
     path(
-        "applicants/reference", views.applicants_reference, name="applicants_reference"
+        "applicants/reference",
+        views.applicants_reference,
+        name="en_applicants_reference",
     ),
-    path("academy/departments", views.departments, name="departments"),
+    path("academy/departments", views.departments, name="en_departments"),
     path(
-        "academy/departments/<str:name>", views.department_item, name="department_item"
+        "academy/departments/<str:name>",
+        views.department_item,
+        name="en_department_item",
     ),
     path("applicants/open_days", views.open_days, name="applicants_open_days"),
     path("applicants/committee", views.committee, name="committee"),

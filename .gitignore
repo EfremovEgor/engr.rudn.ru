@@ -158,6 +158,7 @@ staticfiles/
 **/uploads/news/
 **/uploads/profiles/
 **/uploads/equipment/
+**/uploads/seminar_speakers/
 **/uploads/main_slider_full/
 **/uploads/main_slider_mobile/
 **/uploads/student_committee_profiles/

@@ -74,6 +74,8 @@ def format_prices(data: dict):
         data["price_fourth_year"],
         data["price_fifth_year"],
     ]
+    if data["price_first_year"] is None:
+        return []
     for i, price in enumerate(prices):
         if i == 4 or i + 1 == max_year:
             strings.append(f"{i+1}-й год – {price} ₽")

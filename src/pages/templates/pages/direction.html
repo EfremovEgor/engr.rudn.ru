@@ -95,12 +95,15 @@
           <p><b>Дополнительные предметы не предусмотрены</p></b>
           {% endif %}
           {% endif %}
+          {% if profile_data.full_time_details|format_prices %}
           <h4 style="margin-top: -10px">
             <b>Стоимость обучения по контракту</b>
           </h4>
           {% for price_info in profile_data.full_time_details|format_prices   %}
           <p>{{price_info}}</p>
           {% endfor %}
+          {% endif %}
+
         </div>
         <div style="margin-top:50px">
           <a href="{{profile_data.full_time_details.admission_url}}" target="_blank" class="link-hover-underline red-link-hover-underline"> Подать документы </a>
@@ -147,12 +150,15 @@
           <p><b>Дополнительные предметы не предусмотрены</p></b>
           {% endif %}
           {% endif %}
+          {% if profile_data.full_time_details|format_prices %}
           <h4 style="margin-top: -10px">
             <b>Стоимость обучения по контракту</b>
           </h4>
           {% for price_info in profile_data.part_time_details|format_prices   %}
           <p>{{price_info}}</p>
           {% endfor %}
+          {% endif %}
+
         </div>
         <div style="margin-top:50px">
           <a href="{{profile_data.part_time_details.admission_url}}" target="_blank" class="link-hover-underline red-link-hover-underline"> Подать документы </a>
@@ -199,12 +205,15 @@
           <p><b>Дополнительные предметы не предусмотрены</p></b>
           {% endif %}
           {% endif %}
+          {% if profile_data.full_time_details|format_prices %}
           <h4 style="margin-top: -10px">
             <b>Стоимость обучения по контракту</b>
           </h4>
           {% for price_info in profile_data.extramural_details|format_prices   %}
           <p>{{price_info}}</p>
           {% endfor %}
+          {% endif %}
+
         </div>
         <div style="margin-top:50px">
           <a href="{{profile_data.extramural_details.admission_url}}" target="_blank" class="link-hover-underline red-link-hover-underline"> Подать документы </a>

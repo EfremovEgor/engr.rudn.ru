@@ -1,5 +1,37 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
+
+<style>
+
+  .uk-card .uk-card-body {
+    padding: 20px;
+    /* margin-bottom: 20px; */
+  }
+
+  .uk-card .uk-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .uk-card .uk-card-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .uk-card .uk-card-img {
+    margin-bottom: 15px;
+  }
+
+  .uk-card-img {
+    width: 100%;
+  }
+
+  .uk-grid-match {
+    margin-bottom: 20px;
+  }
+</style>
+
 <div class="uk-container">
   <div class="page-name">{{title}}</div>
 </div>
@@ -7,6 +39,192 @@
   <p class="text-on-image">Открой Мир в одном Университете!</p>
 </div>
 <div class="uk-container" style="margin-bottom: 50px">
+  <div class="heading">
+    <p>Важные даты и контрольные точки</p>
+  </div>
+  <div class="line" style="width: 32em"></div>
+
+  <div class="uk-grid uk-grid-match uk-grid-stack" uk-grid>
+
+    <div class="uk-width-1-3@m uk-width-1-1">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Начало работы приемной комиссии</h3>
+          <p class="uk-card-text">20 Июня</p>
+          <img class="uk-card-img" src="{%static "images/applicants/twenty.png"%}">
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-width-1-3@m uk-width-1-1">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Окончание подачи документов на направление 
+            "Архитектура"
+            </h3>
+          <p class="uk-card-text">10 Июля</p>
+          <img class="uk-card-img" src="{%static "images/applicants/architect.png"%}">
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-width-1-3@m uk-width-1-1">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Окончание подачи документов на остальные направления</h3>
+          <p class="uk-card-text">25 Июля</p>
+          <img class="uk-card-img" src="{%static "images/applicants/schedule.png"%}">
+        </div>
+      </div>
+    </div>
+    
+    <div class="uk-width-1-2@m uk-width-1-1">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Публикация конкурсных списков</h3>
+          <p class="uk-card-text">27 Июля</p>
+          <img class="uk-card-img" src="{%static "images/applicants/clipboard.png"%}">
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-width-1-2@m uk-width-1-1">
+      <div class="heading">
+        <p>Зачисление проводится в 2 этапа:</p>
+      </div>
+
+      <ul>
+        <li>
+          <p class="uk-card-title">28 Июля – 30 Июля</p>
+          <p class="uk-card-text">Проводится этап приоритетного зачисления, на котором осуществляется зачисление лиц, поступающих без вступительных испытаний и поступающих на места в пределах квот</p>
+        </li>
+
+        <li>
+          <p class="uk-card-title">3 Августа – 9 Августа</p>
+          <p class="uk-card-text">Проводится основной этап зачисления, на котором осуществляется зачисление лиц, поступающих по результатам вступительных испытаний на основные места в рамках контрольных цифр, оставшиеся после зачисления без вступительных испытаний 
+          </p>
+        </li>
+      </ul>
+
+      <div class="line" width="100%"></div>
+
+      
+      
+
+    </div>
+
+    <ul class="heading">
+      <li>На каждом этапе зачисления устанавливается день завершения выставления отметок об оригинале и приема оригинала от лиц, подлежащих зачислению на этом этапе:</p>
+    </ul>
+
+    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">На этапе приоритетного зачисления</h3>
+            <p class="uk-card-text">28 Июля</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">На основном этапе зачисления</h3>
+            <p class="uk-card-text">3 Августа</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <ul class="heading">
+      <li>Издание приказов о зачислении осуществляется:</li>
+    </ul>
+
+    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">На этапе приоритетного зачисления</h3>
+            <p class="uk-card-text">30 Июля</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">На основном этапе зачисления</h3>
+            <p class="uk-card-text">Не ранее 4 Августа и не позднее 9 Августа</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <ul class="heading">
+      <li>На контрактной форме обучения подача документов осуществляется до 31.08.2024</li>
+    </ul>
+
+    <ul class="heading">
+      <li>Прием документов у иностранных граждан, поступающих для обучения по договорам с оплатой стоимости обучения физическими и (или) юридическими лицами начинается 1 апреля и завершается:</li>
+    </ul>
+
+    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">По очной и очно-заочной формам обучения</h3>
+            <p class="uk-card-text">29 Сентября</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">По заочной форме обучения</h3>
+            <p class="uk-card-text">26 Ноября</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <ul class="heading">
+      <li>Зачисление иностранных граждан проводится:</li>
+    </ul>
+
+    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">По очной и очно-заочной формам обучения</h3>
+            <p class="uk-card-text">до 1 Октября</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">По заочной форме обучения</h3>
+            <p class="uk-card-text">до 1 Декабря</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
   <div class="heading">
     <p>Контакты</p>
   </div>
@@ -50,8 +268,8 @@
         <li>
           <h5>
             <span uk-icon="icon: receiver; ratio: 1"></span>
-            <a href="tel: +74959550913" class="uk-link-heading card-link">
-              +7 495-955-09-13 <br />
+            <a href="tel: +79035000130" class="uk-link-heading card-link">
+              +7 903-500-01-30 <br />
             </a>
           </h5>
         </li>

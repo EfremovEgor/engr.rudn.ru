@@ -164,9 +164,9 @@ def directions(request, id):
 def academy(request):
     return render(
         request,
-        "pages/academy/academy.html",
+        "en/pages/academy/academy.html",
         {
-            "title": "Академия",
+            "title": "Academy",
         },
     )
 
@@ -178,9 +178,9 @@ def administration(request):
         data.append(model_to_dict(profile.employee))
     return render(
         request,
-        "pages/academy/administration.html",
+        "en/pages/academy/administration.html",
         {
-            "title": "Дирекция",
+            "title": "Administration",
             "profiles": data,
         },
     )
@@ -189,9 +189,9 @@ def administration(request):
 def history(request):
     return render(
         request,
-        "pages/academy/history.html",
+        "en/pages/academy/history.html",
         {
-            "title": "История",
+            "title": "History",
         },
     )
 
@@ -199,9 +199,9 @@ def history(request):
 def science_directions(request):
     return render(
         request,
-        "pages/science/directions.html",
+        "en/pages/science/directions.html",
         {
-            "title": "Научные направления",
+            "title": "Scientific Directions",
         },
     )
 
@@ -209,9 +209,9 @@ def science_directions(request):
 def science_journals(request):
     return render(
         request,
-        "pages/science/journals.html",
+        "en/pages/science/journals.html",
         {
-            "title": "Научные журналы",
+            "title": "Scientific Journals",
         },
     )
 
@@ -219,9 +219,9 @@ def science_journals(request):
 def scientific_student_society(request):
     return render(
         request,
-        "pages/science/scientific_student_society.html",
+        "en/pages/science/scientific_student_society.html",
         {
-            "title": "Научное студенческое общество",
+            "title": "Scientific Student Society",
         },
     )
 
@@ -229,9 +229,9 @@ def scientific_student_society(request):
 def science_events(request):
     return render(
         request,
-        "pages/science/events.html",
+        "en/pages/science/events.html",
         {
-            "title": "Научные мероприятия",
+            "title": "Scientific Events",
         },
     )
 
@@ -249,9 +249,9 @@ def science_seminars(request):
 def science_cits(request):
     return render(
         request,
-        "pages/science/cits.html",
+        "en/pages/science/cits.html",
         {
-            "title": "Конференция по информационным и техническим системам",
+            "title": "SCO/CIS Conference on Information and Technical Systems",
         },
     )
 
@@ -259,9 +259,9 @@ def science_cits(request):
 def science_scitechforum(request):
     return render(
         request,
-        "pages/science/scitechforum.html",
+        "en/pages/science/scitechforum.html",
         {
-            "title": "Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам",
+            "title": "BRICS SCITECH FORUM",
         },
     )
 
@@ -269,9 +269,9 @@ def science_scitechforum(request):
 def graduates_contacts(request):
     return render(
         request,
-        "pages/graduates/contacts.html",
+        "en/pages/graduates/contacts.html",
         {
-            "title": "Контакты",
+            "title": "Contacts",
         },
     )
 
@@ -279,9 +279,9 @@ def graduates_contacts(request):
 def digital_library(request):
     return render(
         request,
-        "pages/science/digital_library.html",
+        "en/pages/science/digital_library.html",
         {
-            "title": "Электронная библиотека",
+            "title": "Digital Library",
         },
     )
 
@@ -300,9 +300,9 @@ def students_applications(request):
     applications = StudentsApplications.objects.order_by("position").all()
     return render(
         request,
-        "pages/students/applications.html",
+        "en/pages/students/applications.html",
         {
-            "title": "Образцы заявлений",
+            "title": "Sample Applications",
             "applications": applications,
         },
     )
@@ -311,9 +311,9 @@ def students_applications(request):
 def students_schedule(request):
     return render(
         request,
-        "pages/students/schedule.html",
+        "en/pages/students/schedule.html",
         {
-            "title": "Расписание",
+            "title": "Class Schedule",
         },
     )
 
@@ -323,9 +323,9 @@ def students_student_committee(request):
 
     return render(
         request,
-        "pages/students/student_committee.html",
+        "en/pages/students/student_committee.html",
         {
-            "title": "Студенческий коммитет",
+            "title": "Student Committee",
             "profiles": profiles,
         },
     )
@@ -336,9 +336,9 @@ def applicants_reference(request):
     foreign = ApplicantsForeignNormativeDocument.objects.all()
     return render(
         request,
-        "pages/applicants/reference.html",
+        "en/pages/applicants/reference.html",
         {
-            "title": "Справочная информация",
+            "title": "Admission of Foreign Citizens",
             "cis": cis,
             "foreign": foreign,
         },
@@ -360,9 +360,9 @@ def open_days(request):
 def study_directions(request):
     return render(
         request,
-        "pages/applicants/study_directions.html",
+        "en/pages/applicants/study_directions.html",
         {
-            "title": "Направления подготовки",
+            "title": "Educational Programs",
         },
     )
 
@@ -402,9 +402,9 @@ def levels_of_study(request, level):
 def committee(request):
     return render(
         request,
-        "pages/applicants/committee.html",
+        "en/pages/applicants/committee.html",
         {
-            "title": "Приемная комиссия",
+            "title": "Admissions Committee",
         },
     )
 
@@ -413,9 +413,9 @@ def dissertation_committees(request):
     committees = DissertationCommittee.objects.order_by("cipher").all()
     return render(
         request,
-        "pages/students/dissertation_committees.html",
+        "en/pages/students/dissertation_committees.html",
         {
-            "title": "Диссертационные советы",
+            "title": "Dissertation Committee",
             "committees": committees,
         },
     )
@@ -425,9 +425,9 @@ def scientific_centers(request):
     centers = ScientificCenters.objects.all().order_by("position")
     return render(
         request,
-        "pages/science/scientific_centers.html",
+        "en/pages/science/scientific_centers.html",
         {
-            "title": "Научные центры",
+            "title": "Scientific Centers",
             "centers": centers,
         },
     )
@@ -469,9 +469,9 @@ def departments(request):
     departments = DepartmentInfo.objects.order_by("position").all()
     return render(
         request,
-        "pages/academy/departments.html",
+        "en/pages/academy/departments.html",
         {
-            "title": "Кафедры",
+            "title": "Department",
             "departments": departments,
         },
     )
@@ -516,7 +516,7 @@ def department_item(request, name):
     staff = department.staff.order_by("position").all()
     return render(
         request,
-        "pages/academy/department_item.html",
+        "en/pages/academy/department_item.html",
         {
             "title": department.name,
             "department": department,
@@ -533,8 +533,8 @@ def department_item(request, name):
 def contacts(request):
     return render(
         request,
-        "pages/academy/contacts.html",
+        "en/pages/academy/contacts.html",
         {
-            "title": "Контакты",
+            "title": "Contacts",
         },
     )

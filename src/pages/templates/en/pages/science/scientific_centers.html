@@ -1,10 +1,10 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'en/components/base.html' %} {% block content %} {% load static %}
 <link
   rel="stylesheet"
   href="{% static 'css/science/scientific_centers.css' %}"
 />
 <div class="uk-container">
-  <div class="page-name">Научные центры</div>
+  <div class="page-name">{{title}}</div>
 </div>
 {% comment %}
 <div class="parallax-container_2">

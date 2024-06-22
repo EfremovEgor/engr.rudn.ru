@@ -1,6 +1,7 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/applicants/admissions_committee.css' %}" />
 
+
 <style>
 
 .date-underline {
@@ -139,10 +140,21 @@
       </div>
     </div>
 
+    <div class="uk-width-1-4@m uk-width-1-2">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">Конец подачи документов на контрактную форму</h3>
+          <p class="uk-card-text">31 Августа</p>
+          <img class="uk-card-img" src="{%static "images/applicants/contract.png"%}">
+        </div>
+      </div>
+    </div>
+  </div>
+
 
     
-
-    <p class="heading" style="margin-left: 20px;">
+  <div class="uk-grid uk-grid-match uk-grid-stack" uk-grid>
+    <p class="heading" style="margin-left: 10px;">
       Издание приказов о зачислении осуществляется:
     </p>
 
@@ -169,11 +181,11 @@
     </div>
 
 
-    <ul class="heading" style="margin-left: 20px;">
+    <!-- <ul class="heading" style="margin-left: 10px;">
       <li>На контрактной форме обучения подача документов осуществляется до 31.08.2024</li>
-    </ul>
+    </ul> -->
 
-    <p class="heading" style="margin-left: 20px;">
+    <p class="heading" style="margin-left: 10px;">
       Прием документов от иностранных граждан по договорам с оплатой стоимости обучения начинается 1 апреля и заканчивается:
     </p>
 
@@ -234,7 +246,7 @@
     </ol>
 
     <h2 class="sub-heading">Порядок зачисления</h2>
-    <p class="heading" style="margin-left: 20px;">Зачисление иностранных граждан проводится:</p>
+    <p class="heading" style="margin-left: 10px;">Зачисление иностранных граждан проводится:</p>
 
     <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
 
@@ -262,26 +274,55 @@
   
 
   <div >
-    <div class="heading">
+    <div class="heading" style="margin-left: 10px;">
       <p>Зачисление проводится в 2 этапа:</p>
     </div>
 
-    <ul class="uk-grid uk-grid-match uk-grid-stack" uk-grid>
+    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
       <li class="uk-width-1-2@m uk-width-1-1">
-        <p class="uk-card-title">28 Июля – 30 Июля</p>
-        <p class="uk-card-text">Проводится этап приоритетного зачисления, на котором осуществляется зачисление лиц, поступающих без вступительных испытаний и поступающих на места в пределах квот</p>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">28 Июля – 30 Июля</h3>
+            <p class="uk-card-text">Проводится этап приоритетного зачисления, на котором зачисляются лица без вступительных испытаний и по квотам</p>
+          </div>
+        </div>
       </li>
 
       <li class="uk-width-1-2@m uk-width-1-1">
-        <p class="uk-card-title">3 Августа – 9 Августа</p>
-        <p class="uk-card-text">Проводится основной этап зачисления, на котором осуществляется зачисление лиц, поступающих по результатам вступительных испытаний на основные места в рамках контрольных цифр, оставшиеся после зачисления без вступительных испытаний 
-        </p>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">3 Августа – 9 Августа</h3>
+            <p class="uk-card-text">Проводится основной этап зачисления, на котором зачисляются лица по результатам вступительных испытаний на основные места</p>
+          </div>
+        </div>
       </li>
-    </ul>
-
+    </div>
 
   </div>
-<div>3 – 9 августа на почту абитуриентам будет отправлено письмо с результатами приемной комиссии<br> 19 августа в 15:00 будет организационная онлайн встреча для первокурсников Инженерной Академии РУДН, ссылка будет отправлена на почту позже</div>
+
+  <div>
+    <div class="heading" style="margin-left: 10px;"><p>Важные даты для зачисленных:</p></div>
+
+    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
+      <li class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">3 – 9 августа</h3>
+            <p class="uk-card-text">На почту абитуриентам будет отправлено письмо с результатами приемной комиссии</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="uk-width-1-2@m uk-width-1-1">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">19 августа в 15:00</h3>
+            <p class="uk-card-text">Организационная онлайн-встреча для первокурсников Инженерной Академии РУДН, ссылка будет отправлена на почту позже</p>
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
 
   <div class="heading">
     <p>Контакты</p>

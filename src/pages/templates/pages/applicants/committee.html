@@ -1,71 +1,77 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
+<link rel="stylesheet" href="{% static 'css/applicants/admissions_committee.css' %}" />
 
 <style>
 
+.date-underline {
+  width: 16em;
+}
+
+@media (min-width: 600px) {
   .date-underline {
-    width: 16em;
+    width: 32em;
   }
+}
 
-  @media (min-width: 600px) {
-    .date-underline {
-      width: 32em;
-    }
-  }
+.main-header{
+  font-size: 1.7rem;
+  font-weight: bold;
+  background: #1e87f0;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  color: #fff;
+  
+}
 
-  .main-header{
-    font-size: 1.7rem;
-    font-weight: bold;
-    background: #1e87f0;
-    padding: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    display: inline-block;
-    color: #fff;
-    
-  }
+.uk-card .uk-card-body {
+  padding: 20px;
+  /* margin-bottom: 20px; */
+}
 
-  .uk-card .uk-card-body {
-    padding: 20px;
-    /* margin-bottom: 20px; */
-  }
+.uk-card .uk-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
+.uk-card .uk-card-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
   .uk-card .uk-card-title {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: bold;
     margin-bottom: 10px;
+    
   }
 
   .uk-card .uk-card-text {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     line-height: 1.5;
   }
+}
 
-  @media (max-width: 600px) {
-    .uk-card .uk-card-title {
-      font-size: 0.9rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      
-    }
 
-    .uk-card .uk-card-text {
-      font-size: 0.6rem;
-      line-height: 1.5;
-    }
+.uk-card .uk-card-img {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  .heading{
+    font-size: 20px;
   }
   
-
-  .uk-card .uk-card-img {
-    margin-bottom: 15px;
+}
+@media (min-width: 600px) {
+  .heading{
+    font-size: 22px;
   }
-
-  @media (max-width: 600px) {
-    .heading{
-      font-size: 1.5rem;
-    }
-    
-  }
+  
+}
 
   .uk-card-img {
     width: 100%;
@@ -85,16 +91,16 @@
   <p class="text-on-image">Открой Мир в одном Университете!</p>
 </div>
 <div class="uk-container" style="margin-bottom: 50px">
-  <div class="main-header">
-    Важные даты и контрольные точки
-  </div>
+  <h2 class="sub-heading">
+    Ключевые даты
+  </h2>
 
   <div class="uk-grid uk-grid-match uk-grid-stack" uk-grid>
 
     <div class="uk-width-1-4@m uk-width-1-2">
       <div class="uk-card uk-card-default">
         <div class="uk-card-body">
-          <h3 class="uk-card-title">Начало работы приемной комиссии в 2024 году</h3>
+          <h3 class="uk-card-title">Начало приема документов в 2024 году</h3>
           <p class="uk-card-text">20 Июня</p>
           <img class="uk-card-img" src="{%static "images/applicants/twenty.png"%}">
         </div>
@@ -133,63 +139,12 @@
       </div>
     </div>
 
-    <!-- <div class="uk-width-1-2@m uk-width-1-1">
-      <div class="heading">
-        <p>Зачисление проводится в 2 этапа:</p>
-      </div>
-
-      <ul>
-        <li>
-          <p class="uk-card-title">28 Июля – 30 Июля</p>
-          <p class="uk-card-text">Проводится этап приоритетного зачисления, на котором осуществляется зачисление лиц, поступающих без вступительных испытаний и поступающих на места в пределах квот</p>
-        </li>
-
-        <li>
-          <p class="uk-card-title">3 Августа – 9 Августа</p>
-          <p class="uk-card-text">Проводится основной этап зачисления, на котором осуществляется зачисление лиц, поступающих по результатам вступительных испытаний на основные места в рамках контрольных цифр, оставшиеся после зачисления без вступительных испытаний 
-          </p>
-        </li>
-      </ul>
-
-      <div class="line" width="100%"></div>
-
-      
-      
-
-    </div> -->
-
-    <!-- <ul class="heading">
-      <li>Сроки для выставления отметок и приема оригиналов от лиц, подлежащих зачислению:</p>
-    </ul>
-
-    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
-
-      <div class="uk-width-1-2@s uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">На этапе приоритетного зачисления</h3>
-            <p class="uk-card-text">28 Июля</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="uk-width-1-2@s uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">На основном этапе зачисления</h3>
-            <p class="uk-card-text">3 Августа</p>
-          </div>
-        </div>
-      </div>
-
-    </div> -->
-
 
     
 
-    <ul class="heading" style="margin-left: 20px;">
-      <li>Издание приказов о зачислении осуществляется:</li>
-    </ul>
+    <p class="heading" style="margin-left: 20px;">
+      Издание приказов о зачислении осуществляется:
+    </p>
 
     <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
 
@@ -218,9 +173,9 @@
       <li>На контрактной форме обучения подача документов осуществляется до 31.08.2024</li>
     </ul>
 
-    <ul class="heading" style="margin-left: 20px;">
-      <li>Прием документов от иностранных граждан по договорам с оплатой стоимости обучения начинается 1 апреля и заканчивается:</li>
-    </ul>
+    <p class="heading" style="margin-left: 20px;">
+      Прием документов от иностранных граждан по договорам с оплатой стоимости обучения начинается 1 апреля и заканчивается:
+    </p>
 
     <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
 
@@ -243,10 +198,43 @@
       </div>
 
     </div>
+  </div>
 
-    <ul class="heading" style="margin-left: 20px;">
-      <li>Зачисление иностранных граждан проводится:</li>
-    </ul>
+    <h2 class="sub-heading">Порядок поступления и подачи документов</h2>
+
+    <div class="uk-child-width-1-2@m" uk-grid>
+      <div>
+          <div class="uk-card uk-card-default">
+              <div class="uk-card-media-top">
+                  <img src="{%static "images/applicants/committee/ochno.jpeg"%}" width="1800" height="1200" alt="">
+              </div>
+              <div class="uk-card-body">
+                  <h3 class="uk-card-title">Личная подача документов</h3>
+                  <p><a  uk-icon="location"></a> <a href="https://yandex.ru/maps/org/rossiyskiy_universitet_druzhby_narodov_imeni_patrisa_lumumby/1023090723/">г. Москва, ул. Миклухо-Маклая, д.6, каб. 168</a></p>
+              </div>
+          </div>
+      </div>
+      <div>
+          <div class="uk-card uk-card-default">
+              <div class="uk-card-body">
+                  <h3 class="uk-card-title">Онлайн-подача документов на сайте РУДН </h3>
+                  <p><a  uk-icon="laptop"></a> <a href="ab.rudn.ru">ab.rudn.ru</a></p>
+
+              </div>
+              <div class="uk-card-media-bottom">
+                  <img src="{%static "images/applicants/committee/online.png"%}" width="1800" height="1200" alt="">
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <ol type="1">
+      <li>Перечень <a href="https://admission.rudn.ru/undergraduate/documents/" target="_blank">документов</a> для поступления </li>
+      <li><a href="https://academy.rudn.ru/applicants/study_directions">Направления подготовки инженерной академии</a></li>
+    </ol>
+
+    <h2 class="sub-heading">Порядок зачисления</h2>
+    <p class="heading" style="margin-left: 20px;">Зачисление иностранных граждан проводится:</p>
 
     <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
 
@@ -271,7 +259,7 @@
     </div>
 
 
-  </div>
+  
 
   <div >
     <div class="heading">
@@ -293,34 +281,7 @@
 
 
   </div>
-
-  <!-- <ul class="heading">
-    <li>Сроки для выставления отметок и приема оригиналов от лиц, подлежащих зачислению:</p>
-  </ul>
-
-  <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
-
-    <div class="uk-width-1-2@s uk-width-1-1">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">На этапе приоритетного зачисления</h3>
-          <p class="uk-card-text">28 Июля</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="uk-width-1-2@s uk-width-1-1">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">На основном этапе зачисления</h3>
-          <p class="uk-card-text">3 Августа</p>
-        </div>
-      </div>
-    </div>
-
-  </div> -->
-
-
+<div>3 – 9 августа на почту абитуриентам будет отправлено письмо с результатами приемной комиссии<br> 19 августа в 15:00 будет организационная онлайн встреча для первокурсников Инженерной Академии РУДН, ссылка будет отправлена на почту позже</div>
 
   <div class="heading">
     <p>Контакты</p>
@@ -345,7 +306,7 @@
           <ul
             class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
           >
-            <li><span> Ответственный секретарь приемной комиссии</span></li>
+            <li><span> Заместитель директора по воспитательной работе</span></li>
           </ul>
         </div>
       </div>
@@ -359,7 +320,7 @@
             class="uk-link-heading card-link"
           >
             <span uk-icon="icon: location; ratio: 1"></span>
-            <span>115419, г. Москва, Орджоникидзе, д. 3.</span>
+            <span>115419, г. Москва, Орджоникидзе, д. 3., каб. 426</span>
           </h5>
         </li>
         <li>

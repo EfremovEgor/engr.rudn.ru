@@ -1,0 +1,84 @@
+.heading {
+  margin-top: 40px;
+  font-size: 30px;
+  text-align: left;
+  font-weight: 600;
+}
+.line {
+  width: 23em;
+  margin-top: -18px;
+  border-top: 2px solid;
+  margin-bottom: 40px;
+}
+
+.back-c:hover {
+  background-color: whitesmoke !important;
+}
+.page-name {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 40px;
+}
+
+.text-on-image {
+  font-size: 38px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: white;
+}
+
+.parallax-container_1 {
+  display: flex;
+  min-height: 25vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+
+  background-image: url(./../../images/instacod.png);
+  background-position: center;
+  background-size: cover;
+  color: var(--color);
+  row-gap: 4rem;
+
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.parallax-container_2 {
+  display: flex;
+  min-height: 25vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+
+  background-image: url(../../images/applicants/open_days.png);
+  background-position: center;
+  background-size: cover;
+  color: var(--color);
+  row-gap: 4rem;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  filter: brightness(95%);
+}
+
+.employee-card {
+  width: 450px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.employee_cards {
+  display: flex;
+  width: 100%;
+  gap: 50px 5px;
+}
+@media screen and (max-width: 400px) {
+  .employee-card {
+    width: 80%;
+  }
+}

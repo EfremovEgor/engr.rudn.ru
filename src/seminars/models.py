@@ -98,7 +98,6 @@ class Seminar(models.Model):
         blank=True,
         null=True
     )
-    chair = models.TextField(verbose_name="Председатель")
     department = models.ForeignKey(
         DepartmentInfo,
         verbose_name="Департамент",
@@ -109,8 +108,8 @@ class Seminar(models.Model):
     )
     description = RichTextUploadingField(
         verbose_name="Описание",
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
     )
 
     reports = models.ManyToManyField(SeminarReport, verbose_name="Доклады", blank=True)

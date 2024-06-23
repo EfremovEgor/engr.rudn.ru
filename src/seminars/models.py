@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.postgres.fields import ArrayField, DateRangeField
 from pages.models import DepartmentInfo
+from datetime import date
 
 
 class SeminarSpeaker(models.Model):
@@ -67,6 +68,7 @@ class SeminarReport(models.Model):
         SeminarSpeaker,
         verbose_name="Докладчик",
         related_name="speaker_report",
+        default="profile_default.png",
         blank=True,
         null=True,
         on_delete=models.CASCADE,
@@ -84,9 +86,18 @@ class SeminarReport(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def is_past_due(self):
+        return date.today() > self.date_start
+
 
 class Seminar(models.Model):
     name = models.TextField(verbose_name="Название")
+    chair1 = models.ForeignKey(
+        "profiles.EmployeeProfile", verbose_name="Председатель", on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
     chair = models.TextField(verbose_name="Председатель")
     department = models.ForeignKey(
         DepartmentInfo,
@@ -113,3 +124,5 @@ class Seminar(models.Model):
 
     def __str__(self):
         return self.name
+
+    

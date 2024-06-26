@@ -10,9 +10,9 @@
   <ul class="uk-list">
     {% for seminar in seminars %}
 
-    <li>
-      <a
-        class="uk-link-muted uk-text-large"
+    <li style="margin: 15px 0">
+      <a style="font-size: 1.5rem; line-height: 1.2;"
+        class="uk-link-muted"
         href="{% url 'seminars:get_seminar' id=seminar.id %}"
         >{{seminar.name}}</a
       >

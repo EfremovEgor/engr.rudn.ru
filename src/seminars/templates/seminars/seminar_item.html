@@ -91,60 +91,66 @@
   
   <!-- <h3 style="margin-top:-10px">Кафедра: <span style="font-size: 16px; color:#666666">{{seminar.department.name}}</span></h3> -->
 
-  <h2 class="sub-heading">Предстоящие доклады</h2>
-  <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-  {% for report in seminar.reports.all %}
-  {% if not report.is_past_due %}
-    <div>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-          <div class="uk-card-badge uk-label" >{{report.date_start|date:"j/m/o"}} {{report.time_start|date:"H:i"}}</div>
-            <h3 class="uk-card-title uk-margin-remove">
-              <a class="uk-link-reset" href="/science/seminars/{{seminar.id}}/reports/{{report.id}}" style="font-weight: 500">
-                {{report}}
-              </a>
-            </h3>
-            <h4 class="uk-margin-remove" >
-                {{report.speaker.last_name}} {{report.speaker.first_name}} {{report.speaker.middle_name}}
-            </h4>
-            <ul
-                class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-              >
-                {% for title in report.speaker.job_title %}
+  <h2 class="sub-heading">Доклады</h2>
+  <div style="margin-left: 20px">
+    <ul uk-accordion>
+      <li class="uk-open">
+        <a class="uk-accordion-title" href>Предстоящие</a>
+        <div style="margin-left: 20px; margin-top: 10px" class="uk-accordion-content">
+          <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+          {% for report in seminar.reports.all %}
+          {% if not report.is_past_due %}
+            <div>
+                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                  <div class="uk-card-badge uk-label" >{{report.date_start|date:"j/m/o"}} {{report.time_start|date:"H:i"}}</div>
+                    <h3 class="uk-card-title uk-margin-remove">
+                      <a class="uk-link-reset" href="/science/seminars/{{seminar.id}}/reports/{{report.id}}" style="font-weight: 500">
+                        {{report}}
+                      </a>
+                    </h3>
+                    <h4 class="uk-margin-remove" >
+                        {{report.speaker.last_name}} {{report.speaker.first_name}} {{report.speaker.middle_name}}
+                    </h4>
+                    <ul
+                        class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
+                      >
+                        {% for title in report.speaker.job_title %}
 
-                <li><span> {{title}}</span></li>
-                <li><span> {{report.speaker.academic_degree}}</span></li>
-                <li><span> {{report.speaker.academic_title}}</span></li>
-                {% endfor %}
-              </ul>
-              <a href="/science/seminars/{{seminar.id}}/reports/{{report.id}}" class="link-hover-underline red-link-hover-underline" target="_self">
-                <span class="show-uni-department__link-text">Подробнее</span>
-                <i class="icon-ic_arrow"></i>
-              </a>
+                        <li><span> {{title}}</span></li>
+                        <li><span> {{report.speaker.academic_degree}}</span></li>
+                        <li><span> {{report.speaker.academic_title}}</span></li>
+                        {% endfor %}
+                      </ul>
+                      <a href="/science/seminars/{{seminar.id}}/reports/{{report.id}}" class="link-hover-underline red-link-hover-underline" target="_self">
+                        <span class="show-uni-department__link-text">Подробнее</span>
+                        <i class="icon-ic_arrow"></i>
+                      </a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
         </div>
-    </div>
-    {% endif %}
-    {% endfor %}
-  </div>
-  
-
-  
-  <ul uk-accordion>
-    <li>
-        <a class="uk-accordion-title  sub-heading" href>Прошедшие доклады</a>
-        {% for report in seminar.reports.all %}
-        {% if report.is_past_due %}
-        <div class="uk-accordion-content">
-          {% if report.speaker.middle_name %}
-          <a href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}} «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}. {{report.speaker.middle_name.0}}.)</a>
-          {% else %}
-          <a href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}} «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}.)</a>
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </div>
-        
     </li>
-  </ul> 
+  
+      <li>
+          <a class="uk-accordion-title" href>Прошедшие</a>
+          
+          <div style="margin-left: 20px; margin-top: 10px" class="uk-accordion-content">
+            {% for report in seminar.reports.all %}
+            {% if report.is_past_due %}
+            {% if report.speaker.middle_name %}
+            <a class="uk-link-muted" href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}} «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}. {{report.speaker.middle_name.0}}.)</a><br>
+            {% else %}
+            <a class="uk-link-muted" href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}} «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}.)</a><br>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </div>
+          
+      </li>
+    </ul> 
+  </div>
         
 
 

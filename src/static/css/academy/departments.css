@@ -159,23 +159,3 @@
 .level-accordion > li > div > div > ul {
   margin-bottom: 0px !important;
 }
-
-.study_level-badge {
-  text-transform: uppercase !important;
-  /* box-shadow: 1px 1px 2px var(--primary-color); */
-  padding: 10px;
-  border: 1.5px var(--primary-color) solid;
-  color: var(--primary-color);
-  transition: all 0.2s;
-  display: inline-block;
-  text-align: center;
-  background-color: transparent;
-  margin-top: 40px;
-  margin-right: 20px;
-}
-
-.study_level-badge:hover {
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-}

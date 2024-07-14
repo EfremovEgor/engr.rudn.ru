@@ -35,7 +35,7 @@ CSRF_TRUSTED_ORIGINS = ["https://academy.rudn.ru", "http://academy.rudn.ru"]
 # Application definition
 
 INSTALLED_APPS = [
-    "semantic_admin",
+    # "semantic_admin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

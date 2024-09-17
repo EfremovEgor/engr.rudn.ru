@@ -10,63 +10,10 @@
 <div class="parallax-container uk-visible@s">
 <p class="text-on-image"> INTERNATIONAL SCIENTIFIC EVENT </p>
 </div>
-<!-- <div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
-  <ul class="uk-list">
-    {% for seminar in seminars %}
 
-    <li style="margin: 15px 0">
-      <a style="font-size: 1.5rem; line-height: 1.2;"
-        class="uk-link-muted"
-        href="{% url 'seminars:get_seminar' id=seminar.id %}"
-        >{{ seminar.name }}</a
-      >
-      <p>Лектор: {{seminar.chair1.full_name}}</p>
-      <p>Должность: {{ seminar.chair1.job_title.0 }} {{ seminar.chair1.job_title.1|safe  }}</p>
-      {% if seminar.chair1.phone_numbers %}
-      <li>
-        <h5>
-          {% for phone in seminar.chair1.phone_numbers %}
-          <span uk-icon="icon: receiver; ratio: 1"></span>
-
-          <a href="tel:{{phone}}" class="uk-link-heading card-link">
-            {{phone.as_international}} <br />
-            
-          </a>
-          {% endfor %}
-        </h5>
-      </li>
-      {% endif %}
-      {% if seminar.chair1.working_hours %}
-      <li>
-        <h5 class="uk-link-heading card-link">
-          <span uk-icon="icon: clock; ratio: 1"></span>
-
-          <span> {{seminar.chair1.working_hours}}</span>
-        </h5>
-      </li>
-      {% endif %}
-      {% if seminar.chair1.emails %}
-      <li>
-        <h5>
-          {% for email in seminar.chair1.emails %}
-          <span uk-icon="icon: mail; ratio: 1"></span>
-          <a href="mailto:{{email}}" class="uk-link-heading card-link"
-            >{{email}}
-          </a>
-          {% endfor %}
-        </h5>
-      </li>
-      {% endif %}
-
-      <p>Описание: {{ seminar.description|safe }}</p>
-      <p>Аннотация: {{ seminar.reports.first.annotation|safe }}</p>
-    </li>
-
-
-
-    {% endfor %}
-  </ul>
-</div> -->
+<div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
+  <a href="/science/events" class="return-button">Научные мероприятия</a>
+</div>
 
 <div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
   <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match uk-grid">

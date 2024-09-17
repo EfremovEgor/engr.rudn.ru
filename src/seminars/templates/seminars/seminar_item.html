@@ -1,9 +1,10 @@
 {% extends "components/base.html" %} {% block content %} {% load static %}
 <script src="{% static 'js/seminars.js' %}"></script>
 <link rel="stylesheet" href="{% static 'css/academy/departments.css' %}" />
-
 <link rel="stylesheet" href="{% static 'css/seminars.css' %}" />
 <div class="uk-container">
+  <a href="/science/events" class="return-button">Научные мероприятия</a>
+  <a href="/science/seminars" class="return-button" style="margin-top: 40px;">Семинары</a>
   <div class="page-name">{{seminar.name}}</div>
 </div>
 <div class="uk-container " style="margin-top: 20px; margin-bottom: 50px">

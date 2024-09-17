@@ -29,7 +29,7 @@
     <div style="margin-top: 20px" class="speaker-info uk-hidden@s">
             <img  src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}" class="speaker_image" alt="" width="120" />
             <h3 style="margin-top:20px">
-              {{report.speaker.first_name}} {{report.speaker.last_name}}
+              {{report.speaker.last_name}} {{report.speaker.first_name}}
               {{report.speaker.middle_name}}
             </h3>
             <p style="margin-top: -20px">{{report.speaker.job_title.0}}</p>

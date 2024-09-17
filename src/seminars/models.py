@@ -112,6 +112,8 @@ class Seminar(models.Model):
         null=True,
     )
 
+    position = models.IntegerField(default=0, null=True)
+
     reports = models.ManyToManyField(SeminarReport, verbose_name="Доклады", blank=True)
 
     def __str__(self) -> str:

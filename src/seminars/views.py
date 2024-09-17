@@ -9,7 +9,7 @@ from django.db.models.fields.related import ManyToManyField
 
 
 def seminars(request):
-    seminars = Seminar.objects.all()
+    seminars = Seminar.objects.order_by("position").all()
 
     return render(
         request,

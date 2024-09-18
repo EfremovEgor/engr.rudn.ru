@@ -112,6 +112,8 @@ class Seminar(models.Model):
         null=True,
     )
 
+    image = models.ImageField(upload_to='seminar_images/', null=True, blank=True)
+
     position = models.IntegerField(default=0, null=True)
 
     reports = models.ManyToManyField(SeminarReport, verbose_name="Доклады", blank=True)

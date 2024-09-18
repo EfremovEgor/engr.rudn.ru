@@ -1,50 +1,36 @@
-{% extends "components/base.html" %} {% block content %} {% load static %}
+{% extends "components/base.html" %}
+{% load static %}
+{% block content %}
 <link rel="stylesheet" href="{% static 'css/seminars.css' %}" />
-<link
-  rel="stylesheet"
-  href="{% static 'css/science/scientific_centers.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/science/scientific_centers.css' %}" />
+
 <div class="uk-container">
-  <div style="margin-top: 50px; margin-bottom: 50px;"><a href="/science/events" class="return-button">Научные мероприятия</a></div>
-
-  <div class="page-name">{{title}}</div>
-  
+  <div style="margin-top: 50px; margin-bottom: 50px;">
+    <a href="/science/events" class="return-button">Научные мероприятия</a>
+  </div>
+  <div class="page-name">{{ title }}</div>
 </div>
-</div>
-
-
-
 
 <div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
   <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match uk-grid">
-    {% for seminar in seminars %} 
+    {% for seminar in seminars %}
     <div class="card-wrapper">
-      <div
-        class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
-      >
-        <div class="department-text">
-          <h3><b>{{seminar.name|linebreaks}}</b></h3>
-          <br />
-          
-          <div style="margin-top: 10px !important">
-            <a
-            href="{% url 'seminars:get_seminar' id=seminar.id %}"
-              class="link-hover-underline red-link-hover-underline"
-              target="_self"
-            >
+      <a href="{% url 'seminars:get_seminar' id=seminar.id %}" style="text-decoration: none; color: inherit;">
+        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
+          <div class="department-text">
+            <h3><b>{{ seminar.name|linebreaks }}</b></h3>
+            <br />
+            <div style="margin-top: 10px !important">
               <span class="show-uni-department__link-text">Подробнее</span>
               <i class="icon-ic_arrow"></i>
-            </a>
+            </div>
           </div>
+          {% if seminar.chair1 %}
+          {% endif %}
         </div>
-        {% if seminar.chair1 %}
-        
-        {% endif %}
-      </div>
+      </a>
     </div>
-     {% endfor %}
+    {% endfor %}
   </div>
 </div>
-{%endblock %}
-
-
+{% endblock %}

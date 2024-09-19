@@ -20,11 +20,11 @@ def seminars(request):
 
 def get_seminar(request, id):
     seminar = get_object_or_404(Seminar, id=id)
-
+    reports = seminar.reports.order_by("-date_start").all()
     return render(
         request,
         "seminars/seminar_item.html",
-        {"title": seminar.name, "seminar": seminar},
+        {"title": seminar.name, "seminar": seminar, "reports": reports},
     )
 
 

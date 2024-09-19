@@ -45,3 +45,40 @@
   margin-bottom: 20px;
   margin-top: 40px;
 }
+
+/* Badge Container Styles */
+.badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    gap: 5px;
+}
+
+.badge-container img {
+    width: 48px;
+    height: 48px;
+}
+
+.badge-container p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Icons Grid */
+.icons-grid {
+    margin-bottom: 40px;
+}
+
+/* Seminar Description */
+.seminar-description {
+    clear: both;
+}
+
+/* Buttons */
+.return-button {
+    margin-bottom: 20px;
+}

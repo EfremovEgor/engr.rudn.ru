@@ -21,28 +21,36 @@
 
 </div>
 <div class="uk-container" style="margin-bottom: 50px; margin-top: 60px">
-    <div class="logo-container" style="display:flex; flex-direction:row; flex-wrap: wrap;gap: 20px; font-size:18px; color:black; font-weight:600; text-align:center">
-        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-            <img width="48" height="48" src="{% static "images/science/events/geo.jpeg" %}" alt="">
-            <p>РУДН<br>Москва, Россия</p>
+    <div class="icons-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-5@m uk-flex-center" uk-grid>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'images/science/events/geo.jpeg' %}" alt="Location Icon">
+                <p>РУДН<br>Москва, Россия</p>
+            </div>
         </div>
-        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-            <object type="image/svg+xml" data="/static/icons/calendar.svg" width="48" height="48">
-            </object>
-            <p>25-27 ноября, 2024</p>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'icons/calendar.svg' %}" alt="Calendar Icon">
+                <p>25-27 ноября, 2024</p>
+            </div>
         </div>
-        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-            <img width="48" height="48" src="{% static "images/science/events/people.png" %}" alt="">
-            <p>Очный<br> и дистанционный формат</p>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'images/science/events/people.png' %}" alt="People Icon">
+                <p>Очный<br>и дистанционный формат</p>
+            </div>
         </div>
-        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-            <object type="image/svg+xml" data="/static/icons/language.svg" width="48" height="48">
-              </object>
-            <p>Английский</p>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'icons/language.svg' %}" alt="Language Icon">
+                <p>Английский язык</p>
+            </div>
         </div>
-        <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-            <img width="48" height="48" src="{% static "images/science/events/clock.png" %}" alt="">
-            <p>Подача докладов<br> до 10 октября 2024 года</p>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'images/science/events/clock.png' %}" alt="Deadline Icon">
+                <p>Подача докладов<br>до 10 октября 2024 года</p>
+            </div>
         </div>
     </div>
 
@@ -74,7 +82,7 @@
         <li>Датчики, исполнительные механизмы и бортовое оборудование</li>
     </ul>
 
-    <p class="heading">Аннотация</p>
+    <p class="heading">Порядок подачи тезисов</p>
     <p style="margin-bottom:-10px">Подача тезисов может осуществляться через веб-систему подачи ConfChair. Чтобы перейти на страницу подачи заявок, авторам необходимо войти в свою учетную запись ConfChair или создать ее, если они не сделали этого раньше.    
         Доклады для конференций отбираются по качеству тезисов объемом 500 слов. Для принятых докладов необходимо предоставить презентацию и полную рукопись. Материалы форума будут опубликованы университетом РУДН. Лучшие статьи будут рекомендованы к публикации в специальном выпуске Acta Astronautica в виде исследовательской статьи.
         Все статьи должны быть оригинальными и не должны быть одновременно представлены в других журналах или на конференциях.</p>

@@ -24,10 +24,11 @@ def get_seminar(request, id):
     past_reports = []
     upcoming_reports = []
     for report in reports:
-        if report.is_past_due():
+        if report.is_past_due:
             past_reports.append(report)
         else:
             upcoming_reports.append(report)
+    print(len(past_reports))
     return render(
         request,
         "seminars/seminar_item.html",

@@ -117,18 +117,23 @@
       <li>
         <a class="uk-accordion-title" href>Прошедшие</a>
 
-        <div style="margin-left: 20px; margin-top: 10px" class="uk-accordion-content">
+        <div style="margin-left: 20px; margin-top: 10px; display:flex; flex-direction: column;gap:10px"
+          class="uk-accordion-content">
           {% for report in reports %}
           {% if report.is_past_due %}
           {% if report.speaker.middle_name %}
-          <a class="uk-link-muted"
-            href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}}
-            «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}.
-            {{report.speaker.middle_name.0}}.)</a><br>
+          <div>
+            <a class="uk-link-muted"
+              href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}}
+              «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}.
+              {{report.speaker.middle_name.0}}.)</a>
+          </div>
           {% else %}
-          <a class="uk-link-muted"
-            href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}}
-            «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}.)</a><br>
+          <div>
+            <a class="uk-link-muted"
+              href="/science/seminars/{{seminar.id}}/reports/{{report.id}}">{{report.date_start|date:"o.m.d"}}
+              «{{report}}» ({{report.speaker.last_name}} {{report.speaker.first_name.0}}.)</a><br>
+          </div>
           {% endif %}
           {% endif %}
           {% endfor %}

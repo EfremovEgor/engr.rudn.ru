@@ -1,54 +1,54 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% block content %}
+{% load static %}
 <link rel="stylesheet" href="{% static 'css/science/cits.css' %}" />
+
 <div class="uk-container">
     <a href="/science/events" class="return-button" style="margin-top: 40px;">Научные мероприятия</a>
     <div class="page-name">Конференция по информационным и техническим системам</div>
-  </div>
-  
-  <div class="parallax-container uk-visible@s">
-    <p class="text-on-image"> Конференция по информационным и техническим системам </p>
-    <p class="text-on-image" style="margin-top:-90px; font-size: 26px; font-weight:500"> (совместно с университетами ШОС и СНГ) </p>
-    <p class="text-on-image" style="margin-top:-70px"> Май 2025 </p>
+</div>
 
-  </div>
-  
-  <div class="uk-container" style="margin-bottom: 50px; margin-top: 60px">
-    <div class="logo-container" style="display:flex; flex-direction:row; flex-wrap: wrap;gap: 20px; font-size:18px; color:black; font-weight:600; text-align:center">
-    <div class="uk-text-center" uk-grid>
-        <div class="uk-width-1-2">
-            <div class="badge-container; uk-flex-center@s" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-                <img width="48" height="48" src="{% static "images/science/events/geo.jpeg" %}" alt="">
+<div class="parallax-container uk-visible@s">
+    <p class="text-on-image">SCO/CIS Conference on Information and Technical Systems</p>
+    <p class="text-on-image" style="margin-top: -70px;">May 2025</p>
+</div>
+
+<div class="uk-container" style="margin-bottom: 50px; margin-top: 60px;">
+    <!-- Icons and Texts Section -->
+    <div class="icons-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-5@m uk-flex-center" uk-grid>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'images/science/events/geo.jpeg' %}" alt="Location Icon">
                 <p>РУДН<br>Москва, Россия</p>
             </div>
         </div>
-        <div class="uk-width-1-2">
-            <div class="badge-container; uk-flex-center@s" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-                <object type="image/svg+xml" data="/static/icons/calendar.svg" width="48" height="48">
-                </object>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'icons/calendar.svg' %}" alt="Calendar Icon">
                 <p>26-29 ноября, 2024</p>
             </div>
         </div>
-        <div class="uk-width-1-2">
-            <div class="badge-container; uk-flex-center@s" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-                <img width="48" height="48" src="{% static "images/science/events/people.png" %}" alt="">
-                <p>Очный<br> и дистанционный формат</p>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'images/science/events/people.png' %}" alt="People Icon">
+                <p>Очный<br>и дистанционный формат</p>
             </div>
         </div>
-        <div class="uk-width-1-2">
-            <div class="badge-container; uk-flex-center@s" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-                <object type="image/svg+xml" data="/static/icons/language.svg" width="48" height="48">
-                  </object>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'icons/language.svg' %}" alt="Language Icon">
                 <p>Английский и Русский</p>
             </div>
         </div>
-        <div class="uk-width-1-2">
-            <div class="badge-container; uk-flex-center@s" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
-                <img width="48" height="48" src="{% static "images/science/events/clock.png" %}" alt="">
-                <p>Подача докладов<br> до 1 октября 2024 года</p>
+        <div>
+            <div class="badge-container">
+                <img src="{% static 'images/science/events/clock.png' %}" alt="Deadline Icon">
+                <p>Подача докладов<br>до 1 октября 2024 года</p>
             </div>
         </div>
     </div>
-    </div>
+    <!-- End of Icons and Texts Section -->
+
     <!-- <div class="logo-container" style="display:flex; flex-direction:row; flex-wrap: wrap;gap: 20px; font-size:18px; color:black; font-weight:600; text-align:center">
         <div class="badge-container" style="display: flex; flex-direction: row; align-items:center; gap: 5px">
             <img width="48" height="48" src="{% static "images/science/events/geo.jpeg" %}" alt="">
@@ -150,8 +150,8 @@
   <!-- Кнопки -->
   <div class="uk-visible@s">
     <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-        <a href="#" class="return-button">Подать документы</a>
-        <a href="https://www.icits.ru/" target="_blank" class="return-button">Сайт конференции</a>
+        <a href="http://www.icits.ru/registration" target="_blank" class="return-button">Регистрация</a>
+        <a href="http://www.icits.ru" target="_blank" class="return-button">Сайт конференции</a>
     </div>  
   </div>
 
@@ -161,8 +161,8 @@
   <!-- 2 Блок -->
   <div class="uk-hidden@s">
     <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-        <a href="#" style="align-self:center" class="return-button">Подать документы</a>
-        <a style="align-self:center" href="https://www.icits.ru/" target="_blank" class="return-button">Сайт конференции</a>
+        <a style="align-self:center" href="http://www.icits.ru/registration" target="_blank" class="return-button">Регистрация</a>
+        <a style="align-self:center" href="http://www.icits.ru" target="_blank" class="return-button">Сайт конференции</a>
     </div>  
   </div>
 

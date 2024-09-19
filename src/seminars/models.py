@@ -94,9 +94,11 @@ class SeminarReport(models.Model):
 class Seminar(models.Model):
     name = models.TextField(verbose_name="Название")
     chair1 = models.ForeignKey(
-        "profiles.EmployeeProfile", verbose_name="Председатель", on_delete=models.CASCADE,
+        "profiles.EmployeeProfile",
+        verbose_name="Председатель",
+        on_delete=models.CASCADE,
         blank=True,
-        null=True
+        null=True,
     )
     department = models.ForeignKey(
         DepartmentInfo,
@@ -112,7 +114,7 @@ class Seminar(models.Model):
         null=True,
     )
 
-    image = models.ImageField(upload_to='seminar_images/', null=True, blank=True)
+    image = models.ImageField(upload_to="seminar_images/", null=True, blank=True)
 
     position = models.IntegerField(default=0, null=True)
 
@@ -127,5 +129,3 @@ class Seminar(models.Model):
 
     def __str__(self):
         return self.name
-
-    

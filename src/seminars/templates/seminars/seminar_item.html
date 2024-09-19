@@ -78,7 +78,10 @@
         <a class="uk-accordion-title" href>Предстоящие</a>
         <div style="margin-left: 20px; margin-top: 10px" class="uk-accordion-content">
           <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-            {% for report in reports %}
+            {% if not report.past_reports %}
+            Нет предстоящих семинаров
+            {% endif %}
+            {% for report in upcoming_reports %}
             {% if not report.is_past_due %}
             <div>
               <div class="uk-card uk-card-default uk-card-hover uk-card-body">
@@ -117,9 +120,13 @@
       <li>
         <a class="uk-accordion-title" href>Прошедшие</a>
 
-        <div style="margin-left: 20px; margin-top: 10px; display:flex; flex-direction: column;gap:10px"
+        <div style="margin-left: 20px; margin-top: 10px; display:flex; flex-direction: column;gap:5px"
           class="uk-accordion-content">
-          {% for report in reports %}
+          {% if not report.past_reports %}
+          Нет прошедших семинаров
+          {% endif %}
+
+          {% for report in past_reports %}
           {% if report.is_past_due %}
           {% if report.speaker.middle_name %}
           <div>

@@ -21,10 +21,23 @@ def seminars(request):
 def get_seminar(request, id):
     seminar = get_object_or_404(Seminar, id=id)
     reports = seminar.reports.order_by("-date_start").all()
+    past_reports = []
+    upcoming_reports = []
+    for report in reports:
+        if report.is_past_due():
+            past_reports.append(report)
+        else:
+            upcoming_reports.append(report)
     return render(
         request,
         "seminars/seminar_item.html",
-        {"title": seminar.name, "seminar": seminar, "reports": reports},
+        {
+            "title": seminar.name,
+            "seminar": seminar,
+            "reports": reports,
+            "past_reports": past_reports,
+            "upcoming_reports": upcoming_reports,
+        },
     )
 
 

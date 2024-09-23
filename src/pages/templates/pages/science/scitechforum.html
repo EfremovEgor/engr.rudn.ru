@@ -49,9 +49,26 @@
         <div>
             <div class="badge-container">
                 <img src="{% static 'images/science/events/clock.png' %}" alt="Deadline Icon">
-                <p>Подача докладов<br>до 10 октября 2024 года</p>
+                <p>Подача тезисов<br>до 10 октября 2024 года</p>
             </div>
         </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <div class="uk-visible@s">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 20px;">
+                <a href="https://confchair.org/conferences/scitech2024/" target="_blank" class="return-button">Подать тезисы</a>
+                <a href="https://spaceflightmechanics.com/" target="_blank" class="return-button">Сайт конференции</a>
+            </div>  
+        </div>
+        
+        <div class="uk-hidden@s">
+            <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
+                <a style="align-self:center" href="https://confchair.org/conferences/scitech2024/" target="_blank"  class="return-button">Подать тезисы</a>
+                <a style="align-self:center" href="https://spaceflightmechanics.com/" target="_blank" class="return-button">Сайт конференции</a>
+            </div>
+        </div>
+
     </div>
 
   <p class="heading">О конференции</p>
@@ -88,19 +105,6 @@
         Все статьи должны быть оригинальными и не должны быть одновременно представлены в других журналах или на конференциях.</p>
     </div>
 
-    <div class="uk-visible@s">
-        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-            <a href="https://confchair.org/conferences/scitech2024/" target="_blank" class="return-button">Подать доклад</a>
-            <a href="https://spaceflightmechanics.com/" target="_blank" class="return-button">Сайт конференции</a>
-        </div>  
-    </div>
-    </div>
-    <div class="uk-hidden@s">
-        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-            <a style="align-self:center" href="https://confchair.org/conferences/scitech2024/" target="_blank"  class="return-button">Подать документы</a>
-            <a style="align-self:center" href="https://spaceflightmechanics.com/" target="_blank" class="return-button">Сайт конференции</a>
-        </div>
-      </div>
     <!-- <p class="heading">Спонсоры</p> -->
-    
+    </div>
 </div> {% endblock %}

@@ -114,7 +114,7 @@ class Seminar(models.Model):
         null=True,
     )
 
-    image = models.ImageField(upload_to="seminar_images/", null=True, blank=True)
+    image = models.ImageField(default= "default_seminar.jpg", upload_to="seminar_images/", null=True, blank=True)
 
     position = models.IntegerField(default=0, null=True)
 

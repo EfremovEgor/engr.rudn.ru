@@ -14,7 +14,7 @@ def seminars(request):
     return render(
         request,
         "seminars/seminars.html",
-        {"title": "Научные семинары и симпозиумы", "seminars": seminars},
+        {"title": "Научные семинары", "seminars": seminars},
     )
 
 

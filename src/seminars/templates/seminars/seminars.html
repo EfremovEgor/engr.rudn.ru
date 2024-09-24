@@ -19,7 +19,7 @@
         <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
              style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100%;">
 
-          {% if seminar.image %}
+          <!-- {% if seminar.image %}
           <div class="seminar-background"
                style="background-image: url('{{ seminar.image.url }}'); background-size: cover; background-position: center; filter: blur(2px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
           </div>
@@ -27,16 +27,16 @@
           <div class="seminar-background"
                style="background-image: 'default_seminar.jpg'; background-size: cover; background-position: center; filter: blur(10px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
           </div>
-          {% endif %}
+          {% endif %} -->
 
-          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(200, 200, 200, 0.3); z-index: 1;">
-          </div>
+          <!-- <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(200, 200, 200, 0.3); z-index: 1;">
+          </div> -->
 
           <div class="department-text" style="padding: 10px; position: relative; z-index: 2; color: white;">
             <h3><b>{{ seminar.name|linebreaks }}</b></h3>
             <br />
-            <h5>{{seminar.description}}</h5>
-            <div class="link-hover-underline red-link-hover-underline" style="display: flex;" target="_self">
+            
+            <div class="link-hover-underline red-link-hover-underline" target="_self">
               <span class="show-uni-department__link-text" style="margin-top: 50px;">Подробнее</span>
               <i class="icon-ic_arrow" style="color: white;"></i>
             </div>

@@ -37,6 +37,10 @@
   justify-content: space-between;
   }
 
+  .title-color {
+    color: white;
+  }
+
 </style>
 
 
@@ -52,13 +56,27 @@
     {% for seminar in seminars %}
     <div class="card-wrapper">
       <a href="{% url 'seminars:get_seminar' id=seminar.id %}" style="display: block; text-decoration: none; color: inherit; width: 100%; height: 100%;">
-        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
+        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover" style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100%;">
+
+          {% if seminar.image %}
+          <div class="seminar-background"
+               style="background-image: url('{{ seminar.image.url }}'); background-size: cover; background-position: center; filter: blur(3px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
+          </div>
+          {% else %}
+          <div class="seminar-background"
+               style="background-image: 'default_seminar.jpg'; background-size: cover; background-position: center; filter: blur(3px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
+          </div>
+          {% endif %}
+
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(80, 80, 80, 0.5); z-index: 1;">
+          </div>
+
           <div class="department-text">
-            <h3><b>{{ seminar.name|linebreaks }}</b></h3>
+            <h3 class="title-color"><b>{{ seminar.name|linebreaks }}</b></h3>
             <br />
             <div class="link-hover-underline red-link-hover-underline" target="_self">
-              <span class="show-uni-department__link-text" style="margin-top: 50px;">Подробнее</span>
-              <i class="icon-ic_arrow" style="color: white;"></i>
+              <span class="show-uni-department__link-text title-color">Подробнее</span>
+              <i class="icon-ic_arrow"></i>
             </div>
           </div>
         </div>

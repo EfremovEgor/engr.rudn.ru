@@ -1,7 +1,7 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/academy/departments.css' %}" />
 <div class="uk-container">
-  <a href="/academy/departments" class="return-button" style="margin-top: 40px;">Кафедры</a>
+  <a href="/academy/departments" class="return-button" style="margin-top: 50px;">Кафедры</a>
   <div class="page-name">{{title}}</div>
 </div>
 <div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
@@ -122,9 +122,10 @@
                <ul
                 class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
               >
-  
-  
-                <li><span> {{department.contact_employee.department_responsibilities.1}}</span></li>
+                <!-- <li><span>{{department.contact_employee.department_responsibilities.0}}</span></li> -->
+                {% for title in department.contact_employee.department_responsibilities %}
+                <li><span>{{title}}</span></li>
+                {% endfor %}
   
               </ul> 
             </div>

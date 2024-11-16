@@ -1,4 +1,6 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% block content %}
+{% load static %}
 <link rel="stylesheet" href="{% static 'css/applicants/study_directions.css' %}" />
 <div class="uk-container">
   <div class="page-name">Аспирантура</div>
@@ -8,16 +10,29 @@
 </div>
 <div class="uk-container" style="margin-bottom: 50px">
   <h2 class="sub-heading">Программы подготовки</h2>
-  <div class="naprs" style="margin-top: 40px"> {% for direction in directions %} <ul uk-accordion="multiple: true">
-      <li>
-        <a class="uk-accordion-title" href=""><b>{{direction.cipher}} «{{direction.name}}»</b></a>
-        <div class="uk-accordion-content"> {% for profile in direction.profiles.all %} <a class="uk-link-text"
-            href="/applicants/study_directions/{{profile.id}}"><b>Специальность:</b> {{profile.cipher}}
-            «{{profile.name|replace_quotes}}» {% if profile.language_fields|length == 2 %}(на
-            {{profile.language_fields.0|get_alias_lang}} и {{profile.language_fields.1|get_alias_lang}} языках){% elif profile.language_fields.0 == "Английский" %}(на {{profile.language_fields.0|get_alias_lang}} языке){% endif %} </a>
-          <br /> {% endfor %}
-        </div>
-      </li> {% endfor %}
+  <div class="naprs" style="margin-top: 40px">
+    <ul uk-accordion="multiple: true">
+      {% for direction in directions %}
+        <li>
+          <a class="uk-accordion-title" href="">
+            <b>{{ direction.cipher }} «{{ direction.name }}»</b>
+          </a>
+          <div class="uk-accordion-content">
+            {% for profile in direction.sorted_profiles %}
+              <a class="uk-link-text" href="/applicants/study_directions/{{ profile.id }}">
+                <b>Специальность:</b> {{ profile.cipher }} «{{ profile.name|replace_quotes }}»
+                {% if profile.language_fields|length == 2 %}
+                  (на {{ profile.language_fields.0|get_alias_lang }} и {{ profile.language_fields.1|get_alias_lang }} языках)
+                {% elif profile.language_fields.0 == "Английский" %}
+                  (на {{ profile.language_fields.0|get_alias_lang }} языке)
+                {% endif %}
+              </a>
+              <br />
+            {% endfor %}
+          </div>
+        </li>
+      {% endfor %}
     </ul>
   </div>
-</div> {%endblock %}
+</div>
+{% endblock %}

@@ -4,75 +4,40 @@
   <div class="upper-header-wrapper">
     <div class="upper-header">
       <div class="upper-header-first_part">
-        <div class="uk-container first_part-container">
-          {% comment %}
-          <div class="upper-header-first_part-link_container">
-            <a class="upper-header-heading" href="/"
-              >Международное сотрудничество</a
-            >
-          </div>
-          {% endcomment %}
+        <div class="uk-container first_part-container" style="justify-content: center; align-items: center;">
+          <span class="open_days_main-header-text">ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ В ИНЖЕНЕРНОЙ АКАДЕМИИ 22.02.2025 Регистрация
+            открыта</span>
         </div>
       </div>
       <div class="upper-header-second_part">
         <div class="uk-container second_part-container">
           <div class="second_part-image-container">
-            <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank"
-              ><img
-                class="second_part-image"
-                src="{% static 'images/header/rudn_logo_color.jpg' %}"
-                width="60vw"
-                alt=""
-            /></a>
-            <a href="/" class="uk-link-reset"
-              ><img
-                class="second_part-image"
-                src="{% static 'images/header/engr_logo.jpg' %}"
-                width="60vw"
-                alt=""
-            /></a>
+            <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank"><img class="second_part-image"
+                src="{% static 'images/header/rudn_logo_color.jpg' %}" width="60vw" alt="" /></a>
+            <a href="/" class="uk-link-reset"><img class="second_part-image"
+                src="{% static 'images/header/engr_logo.jpg' %}" width="60vw" alt="" /></a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div
-    class="uk-section-secondary uk-visible@l"
-    style="background-color: transparent"
-  >
-    <nav
-      class="uk-navbar-container uk-navbar-transparent"
-      style="background-color: var(--primary-color)"
-      uk-sticky
-    >
+  <div class="uk-section-secondary uk-visible@l" style="background-color: transparent">
+    <nav class="uk-navbar-container uk-navbar-transparent" style="background-color: var(--primary-color)" uk-sticky>
       <div class="uk-container">
         <div uk-navbar>
           {% comment %}
-          <div
-            class="uk-navbar-left uk-flex uk-flex-middle"
-            style="margin: 0; padding: 0; gap: 0; margin-right: 30px"
-          >
-            <ul
-              class="uk-thumbnav uk-thumbnav-vertical"
-              style="margin: auto"
-              uk-margin
-            >
+          <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
+            <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
               <li>
-                <a class="header-image uk-link-reset" target="_blank"
-                  ><img
-                    src="{% static 'images/header/logo_2_imgs.png' %}"
-                    alt=""
-                /></a>
+                <a class="header-image uk-link-reset" target="_blank"><img
+                    src="{% static 'images/header/logo_2_imgs.png' %}" alt="" /></a>
               </li>
             </ul>
           </div>
           {% endcomment %}
 
           <div class="uk-navbar-center" style="width: 100%">
-            <ul
-              class="uk-navbar-nav"
-              style="display: flex; width: 100%; justify-content: space-between"
-            >
+            <ul class="uk-navbar-nav" style="display: flex; width: 100%; justify-content: space-between">
               <li>
                 <a class="header-text header-text-main" href="/">Главная</a>
               </li>
@@ -80,122 +45,62 @@
                 <a class="header-text header-text-main" href="/news">Новости</a>
               </li>
               <li>
-                <a
-                  uk-icon="chevron-down"
-                  class="header-text header-text-main navbar-main-link"
-                  href=""
-                  >Академия</a
-                >
+                <a uk-icon="chevron-down" class="header-text header-text-main navbar-main-link" href="">Академия</a>
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/academy/administration"
-                        >Дирекция</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/academy/administration">Дирекция</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/academy/departments"
-                        >Кафедры</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/academy/departments">Кафедры</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/academy/history"
-                        >История</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/academy/history">История</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/academy/contacts"
-                        >Контакты</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/academy/contacts">Контакты</a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li>
-                <a
-                  uk-icon="chevron-down"
-                  class="header-text header-text-main navbar-main-link"
-                  href=""
-                  >Наука</a
-                >
+                <a uk-icon="chevron-down" class="header-text header-text-main navbar-main-link" href="">Наука</a>
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/science/events"
-                        >Научные мероприятия</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/science/events">Научные мероприятия</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="{% url 'pages:scientific_centers' %}"
-                        >Научные центры</a
-                      >
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:scientific_centers' %}">Научные
+                        центры</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/science/directions"
-                        >Научные направления</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/science/directions">Научные направления</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/science/journals"
-                        >Научные журналы</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/science/journals">Научные журналы</a>
                     </li>
 
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="{% url 'pages:dissertation_committees' %} "
-                        >Диссертационные советы</a
-                      >
+                      <a class="header-text navbar-sub-link"
+                        href="{% url 'pages:dissertation_committees' %} ">Диссертационные советы</a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li>
-                <a
-                  uk-icon="chevron-down"
-                  class="header-text header-text-main navbar-main-link"
-                  href=""
-                  >Абитуриентам</a
-                >
+                <a uk-icon="chevron-down" class="header-text header-text-main navbar-main-link" href="">Абитуриентам</a>
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/applicants/study_directions"
-                        >Направления подготовки</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/applicants/study_directions">Направления
+                        подготовки</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/applicants/committee"
-                        >Приемная комиссия</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/applicants/committee">Приемная комиссия</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/applicants/reference"
-                        >Справочная информация</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/applicants/reference">Справочная информация</a>
                     </li>
                     <!-- <li>
                       <a
@@ -209,49 +114,28 @@
               </li>
 
               <li>
-                <a
-                  uk-icon="chevron-down"
-                  class="header-text header-text-main navbar-main-link"
-                  href="#"
-                  >Студентам и Аспирантам</a
-                >
+                <a uk-icon="chevron-down" class="header-text header-text-main navbar-main-link" href="#">Студентам и
+                  Аспирантам</a>
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/students/schedule"
-                        >Расписание занятий
+                      <a class="header-text navbar-sub-link" href="/students/schedule">Расписание занятий
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/science/scientific_student_society"
-                        >Научное студенческое общество
+                      <a class="header-text navbar-sub-link" href="/science/scientific_student_society">Научное
+                        студенческое общество
                       </a>
                     </li>
 
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/students/student_committee"
-                        >Студенческий комитет</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/students/student_committee">Студенческий комитет</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/science/digital_library"
-                        >Электронная библиотека</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/science/digital_library">Электронная библиотека</a>
                     </li>
                     <li>
-                      <a
-                        class="header-text navbar-sub-link"
-                        href="/students/appplications"
-                        >Образцы заявлений</a
-                      >
+                      <a class="header-text navbar-sub-link" href="/students/appplications">Образцы заявлений</a>
                     </li>
                   </ul>
                 </div>
@@ -264,31 +148,14 @@
   </div>
 </header>
 <header uk-sticky class="header uk-hidden@l">
-  <nav
-    class="uk-navbar-container"
-    style="background-color: var(--primary-color)"
-  >
+  <nav class="uk-navbar-container" style="background-color: var(--primary-color)">
     <div class="uk-container">
-      <div
-        uk-navbar="dropbar: true; dropbar-anchor: !.uk-navbar-container; target-y: !.uk-navbar-container; "
-      >
-        <div
-          class="uk-navbar-left uk-flex uk-flex-middle"
-          style="margin: 0; padding: 0; gap: 0; margin-right: 30px"
-        >
-          <ul
-            class="uk-thumbnav uk-thumbnav-vertical"
-            style="margin: auto"
-            uk-margin
-          >
+      <div uk-navbar="dropbar: true; dropbar-anchor: !.uk-navbar-container; target-y: !.uk-navbar-container; ">
+        <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
+          <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
             <li>
-              <a class="uk-link-reset header-image" target="_blank"
-                ><img
-                  class="no-background mobile-image"
-                  src="{% static 'images/header/logo_2_imgs.png' %}"
-                  width="60vw"
-                  alt=""
-              /></a>
+              <a class="uk-link-reset header-image" target="_blank"><img class="no-background mobile-image"
+                  src="{% static 'images/header/logo_2_imgs.png' %}" width="60vw" alt="" /></a>
             </li>
           </ul>
         </div>
@@ -296,17 +163,9 @@
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
             <li>
-              <a
-                class="uk-navbar-toggle uk-navbar-toggle-animate"
-                uk-navbar-toggle-icon
-                href="#"
-              ></a>
+              <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
               <div class="uk-navbar-dropdown" bg-scroll="false">
-                <div
-                  style="height: 70vh"
-                  class="uk-drop-grid uk-child-width-1-2 uk-overflow-auto"
-                  uk-grid
-                >
+                <div style="height: 70vh" class="uk-drop-grid uk-child-width-1-2 uk-overflow-auto" uk-grid>
                   <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-nav-header">
@@ -319,24 +178,16 @@
                         Академия
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/administration"
-                          >Дирекция</a
-                        >
+                        <a class="header-text" href="/academy/administration">Дирекция</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/departments"
-                          >Кафедры</a
-                        >
+                        <a class="header-text" href="/academy/departments">Кафедры</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/history"
-                          >История</a
-                        >
+                        <a class="header-text" href="/academy/history">История</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/contacts"
-                          >Контакты</a
-                        >
+                        <a class="header-text" href="/academy/contacts">Контакты</a>
                       </li>
                     </ul>
                   </div>
@@ -347,33 +198,20 @@
                         <a class="header-text uk-disabled" href="">Наука</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/science/events"
-                          >Научные мероприятия</a
-                        >
+                        <a class="header-text" href="/science/events">Научные мероприятия</a>
                       </li>
                       <li>
-                        <a
-                          class="header-text"
-                          href="{% url 'pages:scientific_centers' %}"
-                          >Научные центры</a
-                        >
+                        <a class="header-text" href="{% url 'pages:scientific_centers' %}">Научные центры</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/science/directions"
-                          >Научные направления</a
-                        >
+                        <a class="header-text" href="/science/directions">Научные направления</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/science/journals"
-                          >Научные журналы</a
-                        >
+                        <a class="header-text" href="/science/journals">Научные журналы</a>
                       </li>
                       <li>
-                        <a
-                          class="header-text"
-                          href="{% url 'pages:dissertation_committees' %}"
-                          >Диссертационные советы</a
-                        >
+                        <a class="header-text" href="{% url 'pages:dissertation_committees' %}">Диссертационные
+                          советы</a>
                       </li>
                     </ul>
                   </div>
@@ -381,26 +219,18 @@
                   <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-nav-header header-text">
-                        <a class="header-text uk-disabled" href=""
-                          >Абитуриентам</a
-                        >
+                        <a class="header-text uk-disabled" href="">Абитуриентам</a>
                       </li>
                       <li>
-                        <a
-                          class="header-text"
-                          href="/applicants/study_directions"
-                          >Направления подготовки
+                        <a class="header-text" href="/applicants/study_directions">Направления подготовки
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/applicants/committee"
-                          >Приемная комиссия
+                        <a class="header-text" href="/applicants/committee">Приемная комиссия
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/applicants/reference"
-                          >Справочная информация</a
-                        >
+                        <a class="header-text" href="/applicants/reference">Справочная информация</a>
                       </li>
                       <!-- <li>
                         <a class="header-text" href="/applicants/open_days"
@@ -413,39 +243,24 @@
                   <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-nav-header header-text">
-                        <a class="header-text uk-disabled" href=""
-                          >Студентам и Аспирантам</a
-                        >
+                        <a class="header-text uk-disabled" href="">Студентам и Аспирантам</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/students/schedule"
-                          >Расписание занятий</a
-                        >
+                        <a class="header-text" href="/students/schedule">Расписание занятий</a>
                       </li>
 
                       <li>
-                        <a
-                          class="header-text"
-                          href="/science/scientific_student_society"
-                          >Научное студенческое общество
+                        <a class="header-text" href="/science/scientific_student_society">Научное студенческое общество
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="header-text"
-                          href="/students/student_committee"
-                          >Студенческий комитет</a
-                        >
+                        <a class="header-text" href="/students/student_committee">Студенческий комитет</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/science/digital_library"
-                          >Электронная библиотека</a
-                        >
+                        <a class="header-text" href="/science/digital_library">Электронная библиотека</a>
                       </li>
                       <li>
-                        <a class="header-text" href="/students/appplications"
-                          >Образцы заявлений</a
-                        >
+                        <a class="header-text" href="/students/appplications">Образцы заявлений</a>
                       </li>
                     </ul>
                   </div>

@@ -59,14 +59,14 @@
         <a href="/news/{{item.id}}" class="uk-link-toggle">
           <div
             class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
-            style="background-color: rgb(246, 246, 246)"
+            style="background-color: rgb(246, 246, 246); border-radius: 20px;"
           >
             <div class="uk-card-media-top">
-              <img src="{{item.preview_image.url}}" alt="" />
+              <img src="{{item.preview_image.url}}" alt="" style="border-radius: 20px;"/>
             </div>
             <div class="uk-card-body">
               <div style="text-transform: lowercase!important;" class="uk-card-badge uk-label uk-visible@m">
-                {{item.creation_date}}
+                {{item.creation_date.date}}
               </div>
               <h3 class="uk-card-title news-title">{{item.title}}</h3>
             </div>

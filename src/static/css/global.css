@@ -2,7 +2,14 @@
   --primary-color: #0079c1;
   --secondary-color: #00a94f;
   --tertiary-color: #ee2a24;
+  --base-margin: 20px;
 }
+@media screen and (max-width: 992px) {
+  :root {
+    --base-margin: 10px;
+  }
+}
+
 
 @media screen and (min-width: 993px) {
   .container {

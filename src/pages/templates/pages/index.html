@@ -9,7 +9,7 @@
     </h1>
   </div>
 </div>  {% endcomment %}
-<div style="z-index:2; margin-top: var(--base-top-margin); margin-left: var(--base-scrolling-margin); margin-right: var(--base-scrolling-margin); border-radius: var(--base-border-radius);" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
+<div style="z-index:2; margin-top: var(--base-top-margin); margin-left: var(--base-margin); margin-right: var(--base-margin); border-radius: var(--base-border-radius);" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
 
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
@@ -200,7 +200,7 @@
                 </div>
                 <div class="uk-card-body">
                   <div class="uk-card-badge uk-label uk-visible@m">
-                    {{item.creation_date.date}}
+                    {{item.creation_date|date:"d.m.Y"}}
                   </div>
                   <h3 class="uk-card-title news-title">{{item.title}}</h3>
                 </div>

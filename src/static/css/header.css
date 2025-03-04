@@ -168,3 +168,6 @@
   justify-content: space-around;
   min-height: 40px;
 }
+.uk-navbar-dropdown {
+  border-radius: 20px;
+}

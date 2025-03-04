@@ -108,7 +108,6 @@ footer {
 }
 @media screen and (max-width: 960px) {
   .footer-wrapper {
-    padding-left: 30px;
     align-items: center;
     display: flex;
     flex-direction: column;

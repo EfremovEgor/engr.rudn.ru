@@ -9,7 +9,7 @@
     </h1>
   </div>
 </div>  {% endcomment %}
-<div style="z-index:2; margin-top: 40px; margin-left: 40px; margin-right: 40px; border-radius: 20px;" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
+<div style="z-index:2; margin-top: var(--base-top-margin); margin-left: var(--base-scrolling-margin); margin-right: var(--base-scrolling-margin); border-radius: var(--base-border-radius);" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
 
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}

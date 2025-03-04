@@ -3,13 +3,10 @@
   --secondary-color: #00a94f;
   --tertiary-color: #ee2a24;
   --base-margin: 20px;
+  --base-top-margin: 40px;
+  --base-border-radius: 20px;
+  --base-scrolling-margin: var(var(--base-margin));
 }
-@media screen and (max-width: 992px) {
-  :root {
-    --base-margin: 10px;
-  }
-}
-
 
 @media screen and (min-width: 993px) {
   .container {
@@ -24,6 +21,11 @@
     max-width: 95%;
     margin: 0 auto;
     padding: 25px 5px 50px 5px;
+  }
+  :root{
+    --base-margin: 20px;
+    --base-top-margin: 20px;
+    --base-scrolling-margin: 0px;
   }
 }
 

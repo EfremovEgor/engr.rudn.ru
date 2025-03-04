@@ -5,7 +5,6 @@
   --base-margin: 40px;
   --base-top-margin: 40px;
   --base-border-radius: 20px;
-  --base-scrolling-margin: var(var(--base-margin));
 }
 
 @media screen and (min-width: 993px) {

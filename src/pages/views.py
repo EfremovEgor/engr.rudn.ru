@@ -23,7 +23,7 @@ from documents.models import (
 )
 from profiles.models import StudentCommitteeProfile
 from .utils import aliases, functions
-
+import re
 
 def index(request):
     slider_images = MainSlider.objects.all()
@@ -369,24 +369,34 @@ def levels_of_study(request, level):
     if level not in levels:
         return HttpResponse(status=404)
 
-    directions = (
+    def natural_sort_key(s):
+        return [
+            int(text) if text.isdigit() else text.lower()
+            for text in re.split(r'(\d+)', s.cipher)
+        ]
+
+    directions = list(
         StudyDirection.objects.filter(study_level=levels[level])
-        .order_by("cipher")
-        .all()
     )
-    directions_ = []
+    directions.sort(key=natural_sort_key)
+
     for direction in directions:
-        direction_ = direction.__dict__
-        direction_["profiles"] = direction.profiles.all().order_by(
-            "cipher", "-language_fields", "-name"
-        )
-        directions_.append(direction_)
+        profiles = list(direction.profiles.all())
+
+        profiles.sort(key=lambda s: [
+            int(text) if text.isdigit() else text.lower()
+            for text in re.split(r'(\d+)', s.cipher or '')
+        ])
+
+
+        direction.sorted_profiles = profiles
+
     return render(
         request,
         f"pages/applicants/levels/{level}.html",
         {
             "title": levels[level],
-            "directions": directions_,
+            "directions": directions,
         },
     )
 

@@ -9,7 +9,7 @@
     </h1>
   </div>
 </div>  {% endcomment %}
-<div style="z-index:2" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
+<div style="z-index:2; margin-top: 40px; margin-left: 40px; margin-right: 40px; border-radius: 20px;" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
 
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
@@ -200,7 +200,7 @@
                 </div>
                 <div class="uk-card-body">
                   <div class="uk-card-badge uk-label uk-visible@m">
-                    {{item.creation_date}}
+                    {{item.creation_date.date}}
                   </div>
                   <h3 class="uk-card-title news-title">{{item.title}}</h3>
                 </div>
@@ -214,7 +214,7 @@
                 class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
               >
                 <div class="uk-card-badge uk-label uk-visible@m">
-                  {{item.creation_date}}
+                  {{item.creation_date.date}}
                 </div>
                 <h3 class="uk-card-title news-title-no-image">
                   {{item.title}}
@@ -287,7 +287,7 @@
   <div class="contacts-container" style="padding:40px 0px">
     <div class="uk-child-width-1-2@l uk-child-width-1-1 uk-grid-match" style="justify-content:space-between" uk-grid>
       <div>
-        <div class="uk-card uk-card-default" style="padding: 40px 20px;">
+        <div class="uk-card uk-card-default" style="padding: 40px 20px; border-radius: 20px;">
           <div class="uk-card-header contacts-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
               <div class="uk-width-expand">
@@ -342,6 +342,7 @@
       </div>
       <div class="uk-visible@l uk-cover-container">
         <iframe
+          style="border-radius: 20px;"
           class="map"
           src="https://yandex.ru/map-widget/v1/?ll=37.603747%2C55.710702&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjY4MjU1ORJC0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINGD0LvQuNGG0LAg0J7RgNC00LbQvtC90LjQutC40LTQt9C1LCAzIgoNPWoWQhXC115C&z=17.08"
           frameborder="0"

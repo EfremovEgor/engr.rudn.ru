@@ -188,6 +188,8 @@ html {
 }
 .news-card {
   max-height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .news-card-no-image {
   display: flex;
@@ -278,6 +280,7 @@ html {
   object-fit: fill;
   height: 300px;
   width: 100%;
+  border-radius: 20px;
 }
 @media screen and (max-width: 500px) {
   .news-image {
@@ -335,6 +338,7 @@ html {
   height: auto;
   object-fit: cover;
   object-position: bottom;
+  border-radius: 20px;
 }
 @media screen and (min-width: 960px) {
   .main-slider > ul > li > img {

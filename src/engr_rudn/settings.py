@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "ckeditor_uploader",
     "django_jsonform",
     "rosetta",
+    "compressor",
 ]
 
 MIDDLEWARE = [
@@ -148,6 +149,7 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
 ]
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]

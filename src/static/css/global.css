@@ -4,7 +4,7 @@
   --tertiary-color: #ee2a24;
   --base-margin: 40px;
   --base-top-margin: 40px;
-  --base-border-radius: 20px;
+  --base-border-radius: 30px;
 }
 
 @media only screen and (min-width: 993px) {
@@ -26,6 +26,7 @@
     --base-margin: 20px;
     --base-top-margin: 20px;
     --base-scrolling-margin: 0px;
+    --base-border-radius: 20px;
   }
 }
 

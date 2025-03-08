@@ -102,7 +102,7 @@ class ProfileDetails(models.Model):
                     "type": "dict",
                     "keys": {
                         "subject": {"type": "string", "title": "Предмет"},
-                        "score": {"type": "integer", "title": "Балл"},
+                        "score": {"type": "string", "title": "Балл"},
                     },
                 },
             },
@@ -113,7 +113,7 @@ class ProfileDetails(models.Model):
                     "type": "dict",
                     "keys": {
                         "subject": {"type": "string", "title": "Предмет"},
-                        "score": {"type": "integer", "title": "Балл"},
+                        "score": {"type": "string", "title": "Балл"},
                     },
                 },
             },

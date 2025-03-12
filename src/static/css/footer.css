@@ -3,6 +3,7 @@
     background: var(--primary-color) url(../images/footer/footer_bg.png) no-repeat 0 100%;
     border-radius: var(--base-border-radius);
     margin: var(--base-top-margin) var(--base-margin) 0;
+    margin-bottom: 40px;
   }
 
   .navigation {

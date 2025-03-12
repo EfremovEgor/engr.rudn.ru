@@ -1,52 +1,67 @@
 .content {
   max-width: 75%;
 }
+
 .heading {
   padding-bottom: 30px;
 }
-.profile_content > p {
+
+.profile_content>p {
   text-align: justify;
   text-indent: 4%;
   margin-top: -10px;
 }
+
 .profile_content {
   margin-top: 100px;
 }
+
 .card-wrapper {
   padding: 10px;
 }
+
 .department-text {
+  text-align: justify;
   min-height: 360px;
 }
-.department-text > h3 {
+
+.department-text>h3 {
   line-height: 30px;
 }
+
 .direction_info-card {
   min-height: 450px !important;
 }
-.direction_info-card > div > h4 {
+
+.direction_info-card>div>h4 {
   margin-top: 20px !important;
 }
-.department-text > h2 {
+
+.department-text>h2 {
   letter-spacing: -1px;
 }
-.direction_info-card > div > * {
+
+.direction_info-card>div>* {
   margin: 0px !important;
 }
-.profile_heading-container > * {
+
+.profile_heading-container>* {
   letter-spacing: -1px;
   margin: 0;
   padding: 0;
 }
+
 .profile_name {
   font-weight: bold;
   line-height: 48px;
   letter-spacing: -1px;
   margin-top: 40px;
 }
+
 .department_name {
   margin-top: 30px;
 }
+
 .study_level-badge {
   box-shadow: 1px 1px 2px black;
   padding: 10px;
@@ -60,16 +75,18 @@
   color: white;
   text-decoration: none;
 }
+
 .direction_name {
   margin-top: 30px;
 }
+
 .study_profile_details-container {
   margin-top: 30px;
   margin-bottom: 30px;
   border-collapse: collapse;
 }
 
-.employee-card > header {
+.employee-card>header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,9 +94,18 @@
   width: 100%;
   min-height: 102px !important;
 }
+
 .employee-card-wrapper {
   height: fit-content;
+
 }
+
+.employee-card-wrapper>.uk-card-default {
+  border-radius: var(--base-border-radius);
+
+
+}
+
 .page-name {
   font-size: 40px;
   font-weight: 600;
@@ -92,6 +118,7 @@
   color: var(--tertiary-color);
   text-decoration: none;
 }
+
 .show-uni-department__link:after {
   background: none repeat scroll 0 0 transparent;
   bottom: -2px;
@@ -104,15 +131,18 @@
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
+
 .show-uni-department__link:hover:after {
   width: 100%;
   left: 0;
 }
+
 .show-uni-department__link {
   font-size: 18px;
   font-weight: 600;
   color: var(--primary-color);
 }
+
 .show-uni-department__link {
   position: relative;
 }
@@ -125,20 +155,24 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .employee-card-wrapper {
   height: fit-content;
 }
+
 .employee_cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   justify-content: center;
   gap: 40px;
 }
+
 @media screen and (max-width: 600px) {
   .employee-card {
     width: 82% !important;
     min-width: 80% !important;
   }
+
   .employee_cards {
     display: flex;
     flex-direction: column;
@@ -146,16 +180,36 @@
     gap: 50px 5px;
   }
 }
-.info-block > * {
+
+.info-block>* {
+  text-align: justify;
   margin: 0px !important;
 }
-.uk-accordion > :nth-child(n + 2) {
+
+.uk-accordion> :nth-child(n + 2) {
   margin-top: 10px !important;
 }
+
 .level-accordion {
   margin-bottom: 20px !important;
   margin-top: 0px !important;
 }
-.level-accordion > li > div > div > ul {
+
+.level-accordion>li>div>div>ul {
   margin-bottom: 0px !important;
+}
+
+.level_accordion-wrapper {
+  border-radius: var(--base-border-radius);
+}
+
+
+.uk-accordion>.uk-open>.uk-accordion-title::before {
+
+  background-image: url(/static/icons/chevron_up.svg);
+}
+
+.uk-accordion>li>.uk-accordion-title::before {
+
+  background-image: url(/static/icons/chevron_down.svg);
 }

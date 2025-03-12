@@ -3,3 +3,7 @@
   flex-direction: column;
   gap: 40px;
 }
+
+.contacts-wrapper>div>.uk-card {
+  border-radius: var(--base-border-radius);
+}

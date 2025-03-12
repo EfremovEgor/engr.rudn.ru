@@ -20,9 +20,15 @@
               {{report.speaker.last_name}} {{report.speaker.first_name}}
               {{report.speaker.middle_name}}
             </h3>
-            <p style="margin-top: -20px">{{report.speaker.job_title.0}}</p>
-            <p style="margin-top: -20px">{{report.speaker.academic_title}}</p>
+            {% if report.speaker.academic_degree %}
             <p style="margin-top: -20px">{{report.speaker.academic_degree}}</p>
+            {% endif %}
+            {% if report.speaker.job_title %}
+            <p style="margin-top: -20px">{{report.speaker.job_title.0}}</p>
+            {% endif %}
+            {% if report.speaker.academic_title %}
+            <p style="margin-top: -20px">{{report.speaker.academic_title}}</p>
+            {% endif %}
           </td>
         </tr>
       </table>
@@ -43,11 +49,12 @@
   {% if report.annotation %}
   <h3 style="margin-top:10px">Аннотация</h3>
   {% endif %}
-  <p style="margin-top:-20px">{% if report.annotation %}{{ report.annotation|safe}}{% endif %}</p>
+  <div style="margin-top:-20px; text-align: justify;">{% if report.annotation %}{{ report.annotation|safe}}{% endif %}</div>
   {% if report.speaker.bio %}
   <h3 style="margin-top:10px">Краткая биография</h3>
   {% endif %}
-  <p style="margin-top:-20px">{% if report.speaker.bio %}{{ report.speaker.bio|safe}}{% endif %}</p>
+  <div style="margin-top:-20px; text-align: justify;">{% if report.speaker.bio %}{{ report.speaker.bio|safe}}{% endif %}
+  </div>
 </div>
 
 {%endblock %}

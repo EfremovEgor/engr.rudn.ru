@@ -2,7 +2,7 @@
   --primary-color: #0079c1;
   --secondary-color: #00a94f;
   --tertiary-color: #ee2a24;
-  --base-margin: 40px;
+  --base-margin: 80px;
   --base-top-margin: 40px;
   --base-border-radius: 30px;
 }
@@ -185,6 +185,7 @@ a.uk-link-heading:hover {
   display: inline-block;
   text-align: center;
   background-color: transparent;
+  border-radius: var(--base-border-radius);
 }
 
 .return-button:hover {

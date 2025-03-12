@@ -38,26 +38,35 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .employee_cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   justify-content: center;
   gap: 15px;
 }
+
 .employee-card-wrapper {
   height: fit-content;
 }
+
+.employee-card-wrapper>.uk-card-default {
+  border-radius: var(--base-border-radius);
+}
+
 .page-name {
   font-size: 40px;
   font-weight: 600;
   margin: 40px;
 }
+
 @media screen and (max-width: 600px) {
   .employee-card {
     width: 80%;
     max-width: 80%;
     min-width: 80%;
   }
+
   .employee_cards {
     display: flex;
     flex-direction: column;

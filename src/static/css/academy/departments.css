@@ -30,6 +30,7 @@
 }
 
 .direction_info-card {
+  border-radius: var(--base-border-radius);
   min-height: 450px !important;
 }
 

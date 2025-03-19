@@ -120,12 +120,11 @@
 <body>
   <div id="body" class="uk-section-default uk-preserve-color">
     {% include "./header.html" %} 
-    {% compress css %}
 
     {% block content %} 
     {% endblock %}
 
-    {% endcompress %}
+    
 
     {%include "./footer.html" %}
   </div>

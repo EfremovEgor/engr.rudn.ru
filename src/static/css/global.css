@@ -224,3 +224,19 @@ a.uk-link-heading:hover {
   text-decoration: none !important;
   animation: rainbow 0.5s infinite;
 }
+
+header nav.uk-navbar-container {
+  border-radius: var(--base-border-radius) !important;
+}
+
+header.uk-sticky-fixed nav {
+  border-radius: 0 !important;
+  border-bottom-left-radius: var(--base-border-radius) !important;
+  border-bottom-right-radius: var(--base-border-radius) !important;
+}
+
+header nav.uk-sticky-fixed {
+  border-radius: 0 !important;
+  border-bottom-left-radius: var(--base-border-radius) !important;
+  border-bottom-right-radius: var(--base-border-radius) !important;
+}

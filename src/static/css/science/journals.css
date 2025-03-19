@@ -4,6 +4,7 @@
   text-align: left;
   font-weight: 600;
 }
+
 .line {
   width: 23em;
   margin-top: -18px;
@@ -14,6 +15,7 @@
 .back-c:hover {
   background-color: whitesmoke !important;
 }
+
 .page-name {
   font-size: 40px;
   font-weight: 600;
@@ -26,15 +28,21 @@
   font-family: sans-serif;
   color: whitesmoke;
 }
+
 .journal-heading {
   margin-top: 40px !important;
 }
-.journal_description > * {
+
+.journal_description>* {
   margin-left: 20px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
+
 .journal_description {
   display: block;
 }
+
 .parallax-container {
   display: flex;
   min-height: 25vh;
@@ -52,17 +60,30 @@
   margin-bottom: 20px;
   margin-top: 40px;
 }
+
 @media screen and (max-width: 640px) {
   .mobile-column {
     display: flex;
     flex-direction: column;
   }
-  .mobile-column > tr {
+
+  .mobile-column>tr {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .mobile-column > tr > .journal_description > span {
+
+  .mobile-column>tr>.journal_description>span {
     margin-left: 0px;
   }
+}
+
+.uk-accordion>.uk-open>.uk-accordion-title::before {
+
+  background-image: url(/static/icons/chevron_up.svg);
+}
+
+.uk-accordion>li>.uk-accordion-title::before {
+
+  background-image: url(/static/icons/chevron_down.svg);
 }

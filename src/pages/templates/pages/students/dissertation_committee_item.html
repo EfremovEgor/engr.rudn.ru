@@ -1,10 +1,12 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-
+{% load compress %}
+{% compress css %}
 <link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
 <link
   rel="stylesheet"
   href="{% static 'css/students/dissertation_committees.css' %}"
 />
+{% endcompress %}
 
 <div class="uk-container">
   <div class="page-name">{{title}}</div>

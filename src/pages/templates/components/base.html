@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 {% load static %}
-{% load compress %}
-{% compress css %}
+
   <head>
   <link rel="icon" href="{% static '/images/favicon.png' %}" type="image/png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Инженерная академия РУДН">
   <link rel="shortcut icon" href="{% static '/images/favicon.png' %}">
-
+  {% load compress %}
+  {% compress css %}
   <link rel="stylesheet" type="text/css" charset="utf-8" href="{% static 'css/header.css' %}" />
   <link rel="stylesheet" type="text/css" charset="utf-8" href="{% static 'css/footer.css' %}" />
   <link rel="stylesheet" type="text/css" charset="utf-8" href="{% static 'css/global.css' %}" />
+  {% endcompress %}
 
   <meta name="google-site-verification" content="AZK_NYw5WA9klohyExnxhwWjlP5M-1ogTE7-P_ITWMA" />
   <!-- Yandex.Metrika counter -->
@@ -118,10 +119,15 @@
 
 <body>
   <div id="body" class="uk-section-default uk-preserve-color">
-    {% include "./header.html" %} {% block content %} {% endblock %}
+    {% include "./header.html" %} 
+    {% compress css %}
+
+    {% block content %} 
+    {% endblock %}
+
+    {% endcompress %}
+
     {%include "./footer.html" %}
   </div>
 </body>
-{% endcompress %}
-
 </html>

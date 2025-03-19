@@ -1,5 +1,8 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
+{% load compress %}
+{% compress css %}
 <link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
+{% endcompress %}
 <div class="uk-container">
   <a href="/science/scientific_centers" class="return-button" style="margin-top: 50px">Научные центры</a>
   <div class="page-name"> Международный научно-исследовательский центр реставрации и сохранения архитектурного наследия
@@ -56,6 +59,8 @@
       </div>
     </div>
   </div>
+  <div class="scientific-center-large-description">
+
   <h2 class="sub-heading">Направления деятельности</h2>
   <ul style="list-style: '– '; margin-left: 12px" class="uk-list">
     <li> Архитектура жилых, общественных и промышленных зданий. </li>
@@ -152,6 +157,7 @@
     <li>Прясло крепостной стены между Боровицкой и Оружейной башнями (XV-XIX вв.) Московского Кремля; </li>
     <li>Прясло крепостной стены между Оружейной и Комендантской башнями (XV-XIX вв.) Московского Кремля. </li>
   </ul>
+</div>
   <h2 class="sub-heading">Партнеры</h2>
   <div class="partners-logos uk-grid-match uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
     <div class="logo-holder">

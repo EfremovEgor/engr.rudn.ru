@@ -1,5 +1,8 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
+{% load compress %}
+{% compress css %}
 <link rel="stylesheet" href="{% static 'css/science/events.css' %}" />
+{% endcompress %}
 <div class="uk-container">
     <div class="page-name">Научные мероприятия</div>
 </div>

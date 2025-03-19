@@ -14,6 +14,7 @@
 .back-c:hover {
   background-color: whitesmoke !important;
 }
+
 .page-name {
   font-size: 40px;
   font-weight: 600;
@@ -115,4 +116,14 @@
   text-align: center;
   margin-bottom: 20px;
   margin-top: 40px;
+}
+
+.naprs .uk-accordion>.uk-open>.uk-accordion-title::before {
+
+  background-image: url(/static/icons/chevron_up.svg);
+}
+
+.naprs .uk-accordion>li>.uk-accordion-title::before {
+
+  background-image: url(/static/icons/chevron_down.svg);
 }

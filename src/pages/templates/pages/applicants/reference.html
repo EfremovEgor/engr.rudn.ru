@@ -12,12 +12,12 @@
         магистратуру и аспирантуру для российских и иностранных граждан.</p>
     <p style="font-size: 20px; font-weight: 400; text-align: justify;"><b> ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ
             ИНОСТРАННЫХ ГРАЖДАН:</b></p>
-    <ul> {% for item in foreign %} <li>
+    <ul> {% for item in foreign %} <li style="text-align: justify;">
             <a class="uk-link-muted" href="{{item.file.url}}" style="font-size: 22px;">{{item.name}}</a><br>
         </li> {% endfor %} </ul>
     <p style="font-size: 20px; font-weight: 400; text-align: justify;"><b>ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ ГРАЖДАН
             РОССИЙСКОЙ ФЕДЕРАЦИИ И СТРАН СНГ:</b></p>
-    <ul> {% for item in cis %} <li>
+    <ul> {% for item in cis %} <li style="text-align: justify;">
             <a class="uk-link-muted" href="{{item.file.url}}" style="font-size: 22px;">{{item.name}}</a><br>
         </li> {% endfor %} </ul>
 </div>

@@ -1,35 +1,45 @@
 .content {
   max-width: 75%;
 }
+
 .heading {
   padding-bottom: 30px;
 }
-.profile_content > p {
+
+.profile_content>p {
   text-align: justify;
   text-indent: 4%;
   margin-top: -10px;
 }
+
 .profile_content {
   margin-top: 100px;
 }
+
 .card-wrapper {
   padding: 10px;
 }
+
 .direction_info-card {
+  border-radius: var(--base-border-radius);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.direction_info-card > div > h4 {
+
+.direction_info-card>div>h4 {
   margin-top: 20px !important;
 }
-.direction_info-card > div > * {
+
+.direction_info-card>div>* {
   margin: 0px !important;
 }
-.profile_heading-container > * {
+
+.profile_heading-container>* {
   margin: 0;
   padding: 0;
 }
+
 .profile_name {
   font-weight: bold;
   line-height: 36px;
@@ -37,14 +47,17 @@
   /* letter-spacing: -1px; */
   margin-top: 40px;
 }
+
 @media screen and (max-width: 660px) {
   .profile_name {
     line-height: unset;
   }
 }
+
 .department_name {
   margin-top: 30px;
 }
+
 .study_level-badge {
   text-transform: uppercase !important;
   /* box-shadow: 1px 1px 2px var(--primary-color); */
@@ -62,9 +75,11 @@
   color: white;
   text-decoration: none;
 }
+
 .direction_name {
   margin-top: 30px;
 }
+
 .study_profile_details-container {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -73,6 +88,7 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+
 .heading-button-container {
   display: flex;
   flex-direction: row;
@@ -95,6 +111,7 @@
 .study_profile_details-container td {
   padding: 10px;
 }
+
 .study_duration_badge,
 .lang_badge {
   display: flex;
@@ -105,6 +122,7 @@
   color: black;
   font-weight: 600;
 }
-.study_duration_badge > div {
+
+.study_duration_badge>div {
   flex-direction: column;
 }

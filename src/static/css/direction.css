@@ -68,6 +68,7 @@
   transition: all 0.2s;
   display: flex;
   align-items: center;
+  border-radius: var(--base-border-radius);
 }
 
 .study_level-badge:hover {

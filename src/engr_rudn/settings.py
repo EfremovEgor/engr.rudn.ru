@@ -27,7 +27,8 @@ load_dotenv()
 SECRET_KEY = "django-insecure-zt82e8$fndgk1t)c3^27gz!7!_2$(753z6i#ku%z!pnjdjh2)f"
 ADMIN_SITE = os.getenv("DJANGO_ADMIN_URL_SUFFIX")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("ENVIRONMENT") == "DEBUG"
+COMPRESS_ENABLED = True
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["https://academy.rudn.ru", "http://academy.rudn.ru"]

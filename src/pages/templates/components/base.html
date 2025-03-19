@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 {% load static %}
-
 {% load compress %}
-  {% compress css %}
+{% compress css %}
   <head>
   <link rel="icon" href="{% static '/images/favicon.png' %}" type="image/png" />
   <meta charset="UTF-8" />
@@ -121,6 +120,6 @@
     {%include "./footer.html" %}
   </div>
 </body>
+{% endcompress %}
 
 </html>
-{% endcompress %}

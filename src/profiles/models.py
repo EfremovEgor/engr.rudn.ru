@@ -8,6 +8,7 @@ from django_jsonform.models.fields import JSONField, ArrayField
 
 class EmployeeProfile(models.Model):
     full_name = models.TextField(verbose_name="ФИО")
+    full_name_en = models.TextField(verbose_name="ФИО", null=True)
     image = models.ImageField(
         verbose_name="Фотография",
         upload_to="profiles",

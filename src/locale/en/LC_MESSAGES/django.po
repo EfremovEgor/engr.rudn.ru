@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-16 20:10+0300\n"
+"POT-Creation-Date: 2025-03-25 16:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,180 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\engr_rudn\settings.py:119
-msgid "English"
-msgstr ""
 
-#: .\engr_rudn\settings.py:120
-msgid "Russian"
-msgstr ""
+#: pages/templates/components/footer.html:80
+#: pages/templates/components/header.html:95
+#: pages/templates/components/header.html:252
+msgid "Главная"
+msgstr "Home"
 
-#: .\pages\templates\components\header.html:15
+#: pages/templates/components/footer.html:83
+#: pages/templates/components/header.html:98
+#: pages/templates/components/header.html:255
+msgid "Новости"
+msgstr "News"
+
+#: pages/templates/components/footer.html:88
+#: pages/templates/components/header.html:104
+#: pages/templates/components/header.html:258
 msgid "Академия"
-msgstr ""
+msgstr "Academy"
 
-#: .\pages\templates\components\header.html:25
+#: pages/templates/components/footer.html:91
+#: pages/templates/components/header.html:109
+#: pages/templates/components/header.html:261
+msgid "Дирекция"
+msgstr "Administration"
+
+#: pages/templates/components/footer.html:94
+#: pages/templates/components/header.html:112
+#: pages/templates/components/header.html:264
+msgid "Кафедры"
+msgstr "Departments"
+
+#: pages/templates/components/footer.html:97
+#: pages/templates/components/header.html:115
+#: pages/templates/components/header.html:267
+msgid "История"
+msgstr "History"
+
+#: pages/templates/components/footer.html:100
+#: pages/templates/components/header.html:118
+#: pages/templates/components/header.html:270
+msgid "Контакты"
+msgstr "Contacts"
+
+#: pages/templates/components/footer.html:105
+#: pages/templates/components/header.html:127
+#: pages/templates/components/header.html:279
 msgid "Наука"
-msgstr ""
+msgstr "Science"
 
-#: .\pages\templates\components\header.html:35
+#: pages/templates/components/footer.html:109
+#: pages/templates/components/header.html:136
+#: pages/templates/components/header.html:289
+msgid "Научные центры"
+msgstr "Research Centers"
+
+#: pages/templates/components/footer.html:114
+#: pages/templates/components/header.html:140
+#: pages/templates/components/header.html:294
+msgid "Научные направления"
+msgstr "Research Directions"
+
+#: pages/templates/components/footer.html:119
+#: pages/templates/components/header.html:143
+#: pages/templates/components/header.html:299
+msgid "Научные журналы"
+msgstr "Academic Journals"
+
+#: pages/templates/components/footer.html:124
+#: pages/templates/components/header.html:132
+#: pages/templates/components/header.html:284
+msgid "Научные мероприятия"
+msgstr "Scientific Events"
+
+#: pages/templates/components/footer.html:129
+#: pages/templates/components/header.html:148
+#: pages/templates/components/header.html:304
+msgid "Диссертационные советы"
+msgstr "Dissertation Committees"
+
+#: pages/templates/components/footer.html:135
+#: pages/templates/components/header.html:158
+#: pages/templates/components/header.html:314
 msgid "Абитуриентам"
-msgstr ""
+msgstr "Prospective Students"
 
-#: .\pages\templates\components\header.html:45
-msgid "Студентам"
-msgstr ""
+#: pages/templates/components/footer.html:139
+#: pages/templates/components/header.html:165
+#: pages/templates/components/header.html:319
+msgid "Направления подготовки"
+msgstr "Programs"
 
-#: .\pages\templates\components\header.html:55
-msgid "Аспирантам"
-msgstr ""
+#: pages/templates/components/footer.html:144
+#: pages/templates/components/header.html:170
+#: pages/templates/components/header.html:324
+msgid "Приемная комиссия"
+msgstr "Admissions Office"
+
+#: pages/templates/components/footer.html:149
+#: pages/templates/components/header.html:175
+#: pages/templates/components/header.html:329
+msgid "Справочная информация"
+msgstr "Reference Information"
+
+#: pages/templates/components/footer.html:155
+#: pages/templates/components/header.html:185
+#: pages/templates/components/header.html:339
+msgid "Студентам и Аспирантам"
+msgstr "Students & Postgraduates"
+
+#: pages/templates/components/footer.html:159
+#, fuzzy
+#| msgid "Расписание занятий"
+msgid "Расписание"
+msgstr "Schedule"
+
+#: pages/templates/components/footer.html:164
+#: pages/templates/components/header.html:196
+#: pages/templates/components/header.html:349
+msgid "Научное студенческое общество"
+msgstr "Student Research Society"
+
+#: pages/templates/components/footer.html:169
+#: pages/templates/components/header.html:201
+#: pages/templates/components/header.html:354
+msgid "Студенческий комитет"
+msgstr "Student Committee"
+
+#: pages/templates/components/footer.html:174
+#: pages/templates/components/header.html:206
+#: pages/templates/components/header.html:359
+msgid "Электронная библиотека"
+msgstr "E-Library"
+
+#: pages/templates/components/footer.html:179
+#: pages/templates/components/header.html:211
+#: pages/templates/components/header.html:364
+msgid "Образцы заявлений"
+msgstr "Application Forms"
+
+#: pages/templates/components/header.html:191
+#: pages/templates/components/header.html:344
+msgid "Расписание занятий"
+msgstr "Schedule"
+
+#: pages/templates/pages/index.html:266
+msgid "Все НОВОСТИ"
+msgstr "All News"
+
+#: pages/templates/pages/index.html:307
+msgid "Российский университет дружбы народов"
+msgstr "People's Friendship University of Russia"
+
+#: pages/templates/pages/index.html:309
+#, fuzzy
+#| msgid "Приемная комиссия"
+msgid "Инженерная академия"
+msgstr "Admissions Office"
+
+#: pages/templates/pages/index.html:317
+msgid "Инженерная академия РУДН"
+msgstr "Engineering Academy"
+
+#: pages/templates/pages/index.html:334
+msgid "115419, Москва, ул. Орджоникидзе, д. 3."
+msgstr "115419, Moscow, Ordzhonikidze st, 3"
+
+#: pages/templates/pages/index.html:341
+msgid "+7 (495) 955-09-66"
+msgstr "+7 (495) 955-09-66"
+
+#: pages/templates/pages/index.html:347
+msgid "+7 (495) 952-08-29 (приемная директора)"
+msgstr "+7 (495) 952-08-29 (Director's Reception)"
+
+#: pages/templates/pages/index.html:356
+msgid "engineering@rudn.ru"
+msgstr "engineering@rudn.ru"

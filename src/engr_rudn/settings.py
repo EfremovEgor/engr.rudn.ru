@@ -88,6 +88,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.i18n",
             ],
             "libraries": {"custom_tags": "pages.template_tags.custom_tags"},
         },
@@ -137,12 +138,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "ru"
 LANGUAGES = (
-    ("en", _("English")),
-    ("ru", _("Russian")),
+    ("en", "English"),
+    ("ru", "Russian"),
 )
 TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 

@@ -1,69 +1,79 @@
-{% extends 'components/base.html' %} {% block content %} {%load static%}
+{% extends 'components/base.html' %}
+{% block content %}
+{% load static %}
 {% load compress %}
+{% load i18n %}
+
 {% compress css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 {% endcompress %}
 
-{% comment %} <div class="parallax-image" uk-height-viewport>
+{% comment %}
+<div class="parallax-image" uk-height-viewport>
   <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
     <h1 class="uk-text-bolder uk-text-break text_on_parallax">
-      Добро пожаловать </br>
-      в Инженерную академию РУДН
+      {% trans "Добро пожаловать" %} </br>
+      {% trans "в Инженерную академию РУДН" %}
     </h1>
   </div>
-</div>  {% endcomment %}
-<div style="z-index:2; margin-top: var(--base-top-margin); margin-left: var(--base-margin); margin-right: var(--base-margin); border-radius: var(--base-border-radius);" class="main-slider uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true">
+</div>
+{% endcomment %}
 
+<div
+  style="z-index:2; margin-top: var(--base-top-margin); margin-left: var(--base-margin); margin-right: var(--base-margin); border-radius: var(--base-border-radius);"
+  class="main-slider uk-position-relative uk-visible-toggle uk-light"
+  tabindex="-1"
+  uk-slider="autoplay: true"
+>
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
-      <li  onclick="window.open('{{image.url}}', '_blank').focus()">
-
-          <img class="uk-visible@m main-slider-image" src="{{image.image_full.url}}"  alt="">
-          
-          <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile.url}}"  alt="">
-          
-
+      <li onclick="window.open('{{image.url}}', '_blank').focus()">
+        <img class="uk-visible@m main-slider-image" src="{{image.image_full.url}}" alt="">
+        <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile.url}}" alt="">
       </li>
     {% endfor %}
-
   </ul>
-  <ul  style="position: absolute; bottom: 0;left: 50%;" class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
-  
-  <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
-  <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
+
+  <ul style="position: absolute; bottom: 0; left: 50%;" class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+  <a
+    class="uk-position-center-left uk-position-small uk-hidden-hover"
+    href
+    uk-slidenav-previous
+    uk-slider-item="previous"
+  ></a>
+  <a
+    class="uk-position-center-right uk-position-small uk-hidden-hover"
+    href
+    uk-slidenav-next
+    uk-slider-item="next"
+  ></a>
 </div>
+
 {% comment %}
 <div class="card-container info-cards-container">
-  <div
-    class="uk-child-width-1-3@m uk-child-width-1-1@s uk-grid-match info-cards"
-    uk-grid
-  >
+  <div class="uk-child-width-1-3@m uk-child-width-1-1@s uk-grid-match info-cards" uk-grid>
     <div class="info-card">
       <div class="info-card uk-card uk-card-hover uk-card-default">
         <div class="uk-card-media-top">
-          <img
-            class="card-img"
-            src="{% static 'images/index/cards/academy.jpg' %}"
-          />
+          <img class="card-img" src="{% static 'images/index/cards/academy.jpg' %}" />
         </div>
         <div class="uk-card-body">
-          <h3 class="uk-card-title">Академия</h3>
+          <h3 class="uk-card-title">{% trans "Академия" %}</h3>
           <ul class="uk-list">
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/academy/administration"
-                >Дирекция</a
-              >
+              >{% trans "Дирекция" %}</a>
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/academy/history"
-                >История</a
-              >
+              >{% trans "История" %}</a>
             </li>
           </ul>
         </div>
@@ -72,45 +82,38 @@
     <div class="info-card">
       <div class="info-card uk-card uk-card-hover uk-card-default">
         <div class="uk-card-media-top">
-          <img
-            class="card-img"
-            src="{% static 'images/index/cards/education.jpg' %}"
-          />
+          <img class="card-img" src="{% static 'images/index/cards/education.jpg' %}" />
         </div>
         <div class="uk-card-body">
-          <h3 class="uk-card-title">Высшее образование</h3>
+          <h3 class="uk-card-title">{% trans "Высшее образование" %}</h3>
           <ul class="uk-list">
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/applicants/study_directions/bachelor"
-                >Бакалавриат</a
-              >
+              >{% trans "Бакалавриат" %}</a>
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/applicants/study_directions/specialists"
-                >Специалитет</a
-              >
+              >{% trans "Специалитет" %}</a>
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/applicants/study_directions/masters"
-                >Магистратура</a
-              >
+              >{% trans "Магистратура" %}</a>
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/applicants/study_directions/postgraduates"
-                >Аспирантура</a
-              >
+              >{% trans "Аспирантура" %}</a>
             </li>
           </ul>
         </div>
@@ -119,29 +122,24 @@
     <div class="info-card">
       <div class="info-card uk-card uk-card-hover uk-card-default">
         <div class="uk-card-media-top">
-          <img
-            class="card-img"
-            src="{% static 'images/index/cards/science.jpg' %}"
-          />
+          <img class="card-img" src="{% static 'images/index/cards/science.jpg' %}" />
         </div>
         <div class="uk-card-body">
-          <h3 class="uk-card-title">Наука</h3>
+          <h3 class="uk-card-title">{% trans "Наука" %}</h3>
           <ul class="uk-list">
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/science/directions"
-                >Направления</a
-              >
+              >{% trans "Направления" %}</a>
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/science/journals"
-                >Научные журналы</a
-              >
+              >{% trans "Научные журналы" %}</a>
             </li>
             <li class="uk-margin">
               <a
@@ -149,16 +147,14 @@
                 class="uk-link-heading card-link"
                 style="line-height: normal"
                 href="/science/scientific_student_society"
-                >Научное студенческое общество</a
-              >
+              >{% trans "Научное студенческое общество" %}</a>
             </li>
             <li class="uk-margin">
               <a
                 uk-icon="arrow-right"
                 class="uk-link-heading card-link"
                 href="/science/seminars"
-                >Семинары</a
-              >
+              >{% trans "Семинары" %}</a>
             </li>
           </ul>
         </div>
@@ -166,7 +162,9 @@
     </div>
   </div>
 </div>
-{% endcomment %} {% comment %}
+{% endcomment %}
+
+{% comment %}
 <div style="margin-top: 0px" class="block">
   <div class="parallax-image-news">
     <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
@@ -175,100 +173,104 @@
           class="news-block-heading uk-link-heading uk-text-break uk-text-left text_on_parallax"
           uk-parallax="opacity: 0,3;x:-50,0,0; y: 0,0; scale: 1,1;end: 50vh + 50%;"
         >
-          Новости
+          {% trans "Новости" %}
         </a>
       </h1>
     </div>
   </div>
 </div>
 {% endcomment %}
+
 <div class="news-block-wrapper">
-<div style="z-index:2;margin-top:0px; padding:40px 0px" class="card-container news-container block news-block">
-  <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
-    <div uk-slider>
-      <div class="uk-slider-container uk-slider-container-offset">
-        <ul class="uk-slider-items uk-grid" style="gap: 30px">
-          {% for item in news %} {% if item.preview_image %}
-          <li class="news-card-container">
-            <a href="/news/{{item.id}}" class="uk-link-toggle">
-              <div
-                class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
-              >
-                <div class="uk-card-media-top">
-                  <img
-                    src="{{item.preview_image.url}}"
-                    class="news-image"
-                    alt=""
-                  />
-                </div>
-                <div class="uk-card-body">
-                  <div class="uk-card-badge uk-label uk-visible@m">
-                    {{item.creation_date|date:"d.m.Y"}}
-                  </div>
-                  <h3 class="uk-card-title news-title">{{item.title}}</h3>
-                </div>
-              </div>
-            </a>
-          </li>
-          {% else %}
-          <li class="news-card-container">
-            <a href="/news/{{item.id}}" class="news-link uk-link-toggle">
-              <div
-                class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
-              >
-                <div class="uk-card-badge uk-label uk-visible@m">
-                  {{item.creation_date.date}}
-                </div>
-                <h3 class="uk-card-title news-title-no-image">
-                  {{item.title}}
-                </h3>
-              </div>
-            </a>
-          </li>
-          {% endif %} {% endfor %}
-        </ul>
-      </div>
-      <div class="uk-hidden@s">
-        <a
-          class="slider-nav slider-nav-mobile uk-position-center-left"
-          href
-          uk-slidenav-previous
-          uk-slider-item="previous"
-        ></a>
-        <a
-          class="slider-nav slider-nav-mobile uk-position-center-right"
-          href
-          uk-slidenav-next
-          uk-slider-item="next"
-        ></a>
-      </div>
+  <div style="z-index:2;margin-top:0px; padding:40px 0px" class="card-container news-container block news-block">
+    <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+      <div uk-slider>
+        <div class="uk-slider-container uk-slider-container-offset">
+          <ul class="uk-slider-items uk-grid" style="gap: 30px">
+            {% for item in news %}
+              {% if item.preview_image %}
+                <li class="news-card-container">
+                  <a href="/news/{{item.id}}" class="uk-link-toggle">
+                    <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card">
+                      <div class="uk-card-media-top">
+                        <img
+                          src="{{item.preview_image.url}}"
+                          class="news-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="uk-card-body">
+                        <div class="uk-card-badge uk-label uk-visible@m">
+                          {{item.creation_date|date:"d.m.Y"}}
+                        </div>
+                        <h3 class="uk-card-title news-title">{{item.title}}</h3>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% else %}
+                <li class="news-card-container">
+                  <a href="/news/{{item.id}}" class="news-link uk-link-toggle">
+                    <div
+                      class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
+                    >
+                      <div class="uk-card-badge uk-label uk-visible@m">
+                        {{item.creation_date.date}}
+                      </div>
+                      <h3 class="uk-card-title news-title-no-image">
+                        {{item.title}}
+                      </h3>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
 
-      <div class="uk-visible@s">
-        <a
-          class="slider-nav uk-position-center-left-out uk-position-large"
-          href
-          uk-slidenav-previous
-          uk-slider-item="previous"
-        ></a>
-        <a
-          class="slider-nav uk-position-center-right-out uk-position-large"
-          href
-          uk-slidenav-next
-          uk-slider-item="next"
-        ></a>
-      </div>
+        <div class="uk-hidden@s">
+          <a
+            class="slider-nav slider-nav-mobile uk-position-center-left"
+            href
+            uk-slidenav-previous
+            uk-slider-item="previous"
+          ></a>
+          <a
+            class="slider-nav slider-nav-mobile uk-position-center-right"
+            href
+            uk-slidenav-next
+            uk-slider-item="next"
+          ></a>
+        </div>
 
-      <div class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></div>
+        <div class="uk-visible@s">
+          <a
+            class="slider-nav uk-position-center-left-out uk-position-large"
+            href
+            uk-slidenav-previous
+            uk-slider-item="previous"
+          ></a>
+          <a
+            class="slider-nav uk-position-center-right-out uk-position-large"
+            href
+            uk-slidenav-next
+            uk-slider-item="next"
+          ></a>
+        </div>
+
+        <div class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></div>
+      </div>
+    </div>
+
+    <div class="show-uni-news__wrap">
+      <a href="/news" class="show-uni-news__link" target="_self">
+        <span class="show-uni-news__link-text">{% trans "Все НОВОСТИ" %}</span>
+        <i class="icon-ic_arrow"></i>
+      </a>
     </div>
   </div>
-  <div class="show-uni-news__wrap">
-    <a href="/news" class="show-uni-news__link" target="_self">
-      <span class="show-uni-news__link-text">Все НОВОСТИ</span>
-      <i class="icon-ic_arrow"></i>
-    </a>
-  </div>
 </div>
-</div>
+
 {% comment %}
 <div class="block">
   <div class="parallax-image-contacts">
@@ -278,7 +280,7 @@
           class="news-block-heading uk-link-heading uk-text-break uk-text-left text_on_parallax"
           uk-parallax="opacity: 0,3;x:-50,0,0; y: 0,0; scale: 1,1;end: 50vh + 50%;"
         >
-          Контакты
+          {% trans "Контакты" %}
         </a>
       </h1>
     </div>
@@ -288,23 +290,33 @@
 
 <div style="z-index:2; position:relative" class="contacts-wrapper">
   <div class="contacts-container" style="padding:40px 0px">
-    <div class="uk-child-width-1-2@l uk-child-width-1-1 uk-grid-match" style="justify-content:space-between" uk-grid>
+    <div
+      class="uk-child-width-1-2@l uk-child-width-1-1 uk-grid-match"
+      style="justify-content:space-between"
+      uk-grid
+    >
       <div>
-        <div class="uk-card uk-card-default" style="padding: 40px 20px; border-radius: 20px;">
+        <div
+          class="uk-card uk-card-default"
+          style="padding: 40px 20px; border-radius: 20px;"
+        >
           <div class="uk-card-header contacts-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
               <div class="uk-width-expand">
                 <h3 class="uk-margin-remove-bottom uk-visible@s">
-                  <b
-                    >Российский университет дружбы народов<br />Инженерная
-                    академия</b
-                  >
+                  <b>
+                    {% trans "Российский университет дружбы народов" %}
+                    <br />
+                    {% trans "Инженерная академия" %}
+                  </b>
                 </h3>
-                <h3 style="margin-top: 0px" class="uk-margin-remove-bottom uk-hidden@s">
-                  <b
-                    >Инженерная
-                    академия РУДН</b
-                  >
+                <h3
+                  style="margin-top: 0px"
+                  class="uk-margin-remove-bottom uk-hidden@s"
+                >
+                  <b>
+                    {% trans "Инженерная академия РУДН" %}
+                  </b>
                 </h3>
               </div>
             </div>
@@ -317,26 +329,32 @@
                   target="_blank"
                   rel="noreferrer noopener"
                   class="uk-link-heading card-link"
-                  ><span uk-icon="location"></span>
-                  <span>115419, Москва, ул. Орджоникидзе, д. 3.</span>
+                >
+                  <span uk-icon="location"></span>
+                  <span>
+                    {% trans "115419, Москва, ул. Орджоникидзе, д. 3." %}
+                  </span>
                 </a>
               </li>
               <li class="">
-                <a href="tel:+74959550966" class="uk-link-heading card-link"
-                  ><span uk-icon="receiver"></span> +7 (495) 955-09-66
+                <a href="tel:+74959550966" class="uk-link-heading card-link">
+                  <span uk-icon="receiver"></span>
+                  {% trans "+7 (495) 955-09-66" %}
                 </a>
               </li>
               <li class="">
-                <a href="tel:+74959550829" class="uk-link-heading card-link"
-                  ><span uk-icon="receiver"></span> +7 (495) 952-08-29 (приемная
-                  директора)
+                <a href="tel:+74959550829" class="uk-link-heading card-link">
+                  <span uk-icon="receiver"></span>
+                  {% trans "+7 (495) 952-08-29 (приемная директора)" %}
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:academyofengineering@rudn.ru"
                   class="uk-link-heading card-link"
-                  ><span uk-icon="mail"></span> engineering@rudn.ru
+                >
+                  <span uk-icon="mail"></span>
+                  {% trans "engineering@rudn.ru" %}
                 </a>
               </li>
             </ul>

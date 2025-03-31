@@ -92,9 +92,8 @@
   .logos {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
-    gap: 20px;
+    gap: 60px;
   }
 
   .footer-wrapper {

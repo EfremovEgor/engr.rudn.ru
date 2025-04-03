@@ -17,20 +17,35 @@
           <div class="second_part-image-container">
 
             {% if LANGUAGE_CODE == "ru" %}
-              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
-                {% csrf_token %}
-                <input type="hidden" name="language" value="en">
-                <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                <button type="submit">ENG</button>
-              </form>
-            {% elif LANGUAGE_CODE == "en" %}
-              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
-                {% csrf_token %}
-                <input type="hidden" name="language" value="ru">
-                <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
-                <button type="submit">RUS</button>
-              </form>
-            {% endif %}
+            <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+              {% csrf_token %}
+              <input type="hidden" name="language" value="en">
+              <input type="hidden" name="next" value="{{ request.get_full_path }}">
+              <button type="submit" style="
+              border: 0px solid #ffffff; 
+              border-radius: 10px;
+              background-color: rgb(210, 232, 255);
+              padding: 20px 25px; 
+              cursor: pointer;
+              font-size: large;
+              ">ENG</button>
+            </form>
+          {% elif LANGUAGE_CODE == "en" %}
+            <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+              {% csrf_token %}
+              <input type="hidden" name="language" value="ru">
+              <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+              <button type="submit" style="
+              border: 0px solid #ffffff; 
+              border-radius: 10px;
+              background-color: rgb(210, 232, 255);
+              padding: 20px 25px; 
+              cursor: pointer;
+              font-size: large;
+              ">RUS</button>              
+            </form>
+          {% endif %}
+
             
             <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
               <img
@@ -230,43 +245,54 @@
         <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
           <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
             <li>
-              <a class="uk-link-reset header-image" target="_blank" style="width: 80%;">
+              <a class="uk-link-reset header-image" target="_blank" style="width: 60%;">
                 <img class="no-background mobile-image"
                      src="{% static 'images/header/logo_2_imgs.png' %}"
                      width="60vw"
                      alt="" />
               </a>
 
-              {% if LANGUAGE_CODE == "ru" %}
-              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 50px; bottom: 29px;">
-                {% csrf_token %}
-                <input type="hidden" name="language" value="en">
-                <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                <button type="submit" style="
-                border: 0px solid #ffffff; 
-                border-radius: 10px;
-                background-color: rgb(210, 232, 255);
-                padding: 3px 9px; 
-                cursor: pointer;
-                ">ENG</button>
-              </form>
-            {% elif LANGUAGE_CODE == "en" %}
-              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 50px; bottom: 29px;">
-                {% csrf_token %}
-                <input type="hidden" name="language" value="ru">
-                <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
-                <button type="submit" style="
-                border: 0px solid #ffffff; 
-                border-radius: 10px;
-                background-color: rgb(210, 232, 255);
-                padding: 3px 9px; 
-                cursor: pointer;
-                ">RUS</button>              
-              </form>
-            {% endif %}
-
-
             </li>
+
+            {% if LANGUAGE_CODE == "ru" %}
+            <form action="{% url 'set_language' %}" method="POST" style="
+              position: absolute; 
+              right: 50px; 
+              bottom: 29px; 
+              border: 0px solid #ffffff; 
+              border-radius: 10px;
+              background-color: rgb(210, 232, 255);
+              padding: 3px 9px; 
+              cursor: pointer;
+              pointer-events: auto;
+              ">
+              {% csrf_token %}
+              <input type="hidden" name="language" value="en">
+              <input type="hidden" name="next" value="{{ request.get_full_path }}">
+              <button type="submit" style="background:none; border:none;">
+                ENG
+              </button>
+            </form>
+            {% elif LANGUAGE_CODE == "en" %}
+            <form action="{% url 'set_language' %}" method="POST" style="
+              position: absolute; 
+              right: 50px; 
+              bottom: 29px; 
+              border: 0px solid #ffffff; 
+              border-radius: 10px;
+              background-color: rgb(210, 232, 255);
+              padding: 3px 9px; 
+              cursor: pointer;
+              pointer-events: auto;
+              ">
+              {% csrf_token %}
+              <input type="hidden" name="language" value="ru">
+              <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+              <button type="submit" style="background:none; border:none;">
+                RUS
+              </button>
+            </form>
+            {% endif %}
           </ul>
         </div>
 

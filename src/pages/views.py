@@ -102,13 +102,18 @@ class NewsItemView(View):
     template_name = "pages/news_item_page.html"
 
     def get(self, request, id):
-        content = get_object_or_404(NewsItem, pk=id)
+        news_item = get_object_or_404(NewsItem, pk=id)
+        if request.LANGUAGE_CODE == 'en':
+            page_title = news_item.title_en or "Untitled"
+        else:
+            page_title = news_item.title_ru or "Без названия"
+
         return render(
             request,
             self.template_name,
             {
-                "title": content.title,
-                "content": content,
+                "title": page_title,
+                "content": news_item,
             },
         )
 

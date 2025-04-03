@@ -15,6 +15,23 @@
       <div class="upper-header-second_part">
         <div class="uk-container second_part-container">
           <div class="second_part-image-container">
+
+            {% if LANGUAGE_CODE == "ru" %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="en">
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button type="submit">ENG</button>
+              </form>
+            {% elif LANGUAGE_CODE == "en" %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="ru">
+                <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+                <button type="submit">RUS</button>
+              </form>
+            {% endif %}
+            
             <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
               <img
                 class="second_part-image"
@@ -23,7 +40,7 @@
                 alt=""
               />
             </a>
-            <a href="/" class="uk-link-reset">
+            <a href="{% url 'pages:index' %}" class="uk-link-reset">
               <img
                 class="second_part-image"
                 src="{% static 'images/header/engr_logo.jpg' %}"
@@ -31,46 +48,13 @@
                 alt=""
               />
             </a>
-            {% if LANGUAGE_CODE == "ru" %}
-              <!-- Если язык русский, то даём ссылку /en и показываем флаг Англии -->
-              <a href="/en" class="uk-link-reset" style="position: absolute; right: 80px;">
-                <img
-                  class="second_part-image"
-                  src="{% static 'images/header/eng_logo.png' %}"
-                  width="60vw"
-                  style="border-radius: 20px;"
-                  alt="English Flag"
-                />
-              </a>
-            {% elif LANGUAGE_CODE == "en" %}
-              <!-- Если язык английский, то даём ссылку / и показываем флаг России -->
-              <a href="/" class="uk-link-reset" style="position: absolute; right: 80px;">
-                <img
-                  class="second_part-image"
-                  src="{% static 'images/header/rus_logo.png' %}"
-                  width="60vw"
-                  style="border-radius: 20px;"
-                  alt="Russian Flag"
-                />
-              </a>
-            {% else %}
-              <!-- На случай других языков, если появятся -->
-              <a href="/en" class="uk-link-reset" style="position: absolute; right: 80px;">
-                <img
-                  class="second_part-image"
-                  src="{% static 'images/header/eng_logo.png' %}"
-                  width="60vw"
-                  style="border-radius: 20px;"
-                  alt="English Flag"
-                />
-              </a>
-            {% endif %}
-            
+
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="uk-section-secondary uk-visible@l" style="background-color: transparent;">
     <nav class="uk-navbar-container uk-navbar-transparent"
          style="background-color: var(--primary-color) !important; margin-left: var(--base-margin) !important; margin-right: var(--base-margin) !important;"
@@ -81,8 +65,9 @@
           <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
             <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
               <li>
-                <a class="header-image uk-link-reset" target="_blank"><img
-                    src="{% static 'images/header/logo_2_imgs.png' %}" alt="" /></a>
+                <a class="header-image uk-link-reset" target="_blank">
+                  <img src="{% static 'images/header/logo_2_imgs.png' %}" alt="" />
+                </a>
               </li>
             </ul>
           </div>
@@ -91,30 +76,42 @@
           <div class="uk-navbar-center" style="width: 100%">
             <ul class="uk-navbar-nav" style="display: flex; width: 100%; justify-content: space-between">
               <li>
-                <a class="header-text header-text-main" href="/">{% trans "Главная" %}</a>
+                <a class="header-text header-text-main" href="{% url 'pages:index' %}">
+                  {% trans "Главная" %}
+                </a>
               </li>
               <li>
-                <a class="header-text header-text-main" href="/news">{% trans "Новости" %}</a>
+                <a class="header-text header-text-main" href="{% url 'pages:news' %}">
+                  {% trans "Новости" %}
+                </a>
               </li>
               <li>
                 <a uk-icon="chevron-down"
                    class="header-text header-text-main navbar-main-link"
-                   href="">
+                   href="#">
                   {% trans "Академия" %}
                 </a>
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a class="header-text navbar-sub-link" href="/academy/administration">{% trans "Дирекция" %}</a>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:administration' %}">
+                        {% trans "Дирекция" %}
+                      </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/academy/departments">{% trans "Кафедры" %}</a>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:departments' %}">
+                        {% trans "Кафедры" %}
+                      </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/academy/history">{% trans "История" %}</a>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:history' %}">
+                        {% trans "История" %}
+                      </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/academy/contacts">{% trans "Контакты" %}</a>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:contacts' %}">
+                        {% trans "Контакты" %}
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -122,13 +119,15 @@
               <li>
                 <a uk-icon="chevron-down"
                    class="header-text header-text-main navbar-main-link"
-                   href="">
+                   href="#">
                   {% trans "Наука" %}
                 </a>
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/events">{% trans "Научные мероприятия" %}</a>
+                      <a class="header-text navbar-sub-link" href="/science/events">
+                        {% trans "Научные мероприятия" %}
+                      </a>
                     </li>
                     <li>
                       <a class="header-text navbar-sub-link" href="{% url 'pages:scientific_centers' %}">
@@ -136,14 +135,17 @@
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/directions">{% trans "Научные направления" %}</a>
+                      <a class="header-text navbar-sub-link" href="/science/directions">
+                        {% trans "Научные направления" %}
+                      </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/journals">{% trans "Научные журналы" %}</a>
+                      <a class="header-text navbar-sub-link" href="/science/journals">
+                        {% trans "Научные журналы" %}
+                      </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link"
-                         href="{% url 'pages:dissertation_committees' %}">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:dissertation_committees' %}">
                         {% trans "Диссертационные советы" %}
                       </a>
                     </li>
@@ -153,24 +155,23 @@
               <li>
                 <a uk-icon="chevron-down"
                    class="header-text header-text-main navbar-main-link"
-                   href="">
+                   href="#">
                   {% trans "Абитуриентам" %}
                 </a>
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a class="header-text navbar-sub-link"
-                         href="/applicants/study_directions">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:applicants_study_directions' %}">
                         {% trans "Направления подготовки" %}
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/applicants/committee">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:committee' %}">
                         {% trans "Приемная комиссия" %}
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/applicants/reference">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:applicants_reference' %}">
                         {% trans "Справочная информация" %}
                       </a>
                     </li>
@@ -186,27 +187,27 @@
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a class="header-text navbar-sub-link" href="/students/schedule">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:students_schedule' %}">
                         {% trans "Расписание занятий" %}
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/scientific_student_society">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:scientific_student_society' %}">
                         {% trans "Научное студенческое общество" %}
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/students/student_committee">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:students_student_committee' %}">
                         {% trans "Студенческий комитет" %}
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/digital_library">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:digital_library' %}">
                         {% trans "Электронная библиотека" %}
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="/students/appplications">
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:students_applications' %}">
                         {% trans "Образцы заявлений" %}
                       </a>
                     </li>
@@ -229,12 +230,42 @@
         <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
           <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
             <li>
-              <a class="uk-link-reset header-image" target="_blank">
+              <a class="uk-link-reset header-image" target="_blank" style="width: 80%;">
                 <img class="no-background mobile-image"
                      src="{% static 'images/header/logo_2_imgs.png' %}"
                      width="60vw"
                      alt="" />
               </a>
+
+              {% if LANGUAGE_CODE == "ru" %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 50px; bottom: 29px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="en">
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button type="submit" style="
+                border: 0px solid #ffffff; 
+                border-radius: 10px;
+                background-color: rgb(210, 232, 255);
+                padding: 3px 9px; 
+                cursor: pointer;
+                ">ENG</button>
+              </form>
+            {% elif LANGUAGE_CODE == "en" %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 50px; bottom: 29px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="ru">
+                <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+                <button type="submit" style="
+                border: 0px solid #ffffff; 
+                border-radius: 10px;
+                background-color: rgb(210, 232, 255);
+                padding: 3px 9px; 
+                cursor: pointer;
+                ">RUS</button>              
+              </form>
+            {% endif %}
+
+
             </li>
           </ul>
         </div>
@@ -248,25 +279,37 @@
                   <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-nav-header">
-                        <a class="header-text" href="/">{% trans "Главная" %}</a>
+                        <a class="header-text" href="{% url 'pages:index' %}">
+                          {% trans "Главная" %}
+                        </a>
                       </li>
                       <li class="uk-nav-header">
-                        <a class="header-text" href="/news">{% trans "Новости" %}</a>
+                        <a class="header-text" href="{% url 'pages:news' %}">
+                          {% trans "Новости" %}
+                        </a>
                       </li>
                       <li class="uk-nav-header header-text uk-disabled">
                         {% trans "Академия" %}
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/administration">{% trans "Дирекция" %}</a>
+                        <a class="header-text" href="{% url 'pages:administration' %}">
+                          {% trans "Дирекция" %}
+                        </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/departments">{% trans "Кафедры" %}</a>
+                        <a class="header-text" href="{% url 'pages:departments' %}">
+                          {% trans "Кафедры" %}
+                        </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/history">{% trans "История" %}</a>
+                        <a class="header-text" href="{% url 'pages:history' %}">
+                          {% trans "История" %}
+                        </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/academy/contacts">{% trans "Контакты" %}</a>
+                        <a class="header-text" href="{% url 'pages:contacts' %}">
+                          {% trans "Контакты" %}
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -314,17 +357,17 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/applicants/study_directions">
+                        <a class="header-text" href="{% url 'pages:applicants_study_directions' %}">
                           {% trans "Направления подготовки" %}
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/applicants/committee">
+                        <a class="header-text" href="{% url 'pages:committee' %}">
                           {% trans "Приемная комиссия" %}
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/applicants/reference">
+                        <a class="header-text" href="{% url 'pages:applicants_reference' %}">
                           {% trans "Справочная информация" %}
                         </a>
                       </li>
@@ -339,27 +382,27 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/students/schedule">
+                        <a class="header-text" href="{% url 'pages:students_schedule' %}">
                           {% trans "Расписание занятий" %}
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/science/scientific_student_society">
+                        <a class="header-text" href="{% url 'pages:scientific_student_society' %}">
                           {% trans "Научное студенческое общество" %}
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/students/student_committee">
+                        <a class="header-text" href="{% url 'pages:students_student_committee' %}">
                           {% trans "Студенческий комитет" %}
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/science/digital_library">
+                        <a class="header-text" href="{% url 'pages:digital_library' %}">
                           {% trans "Электронная библиотека" %}
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="/students/appplications">
+                        <a class="header-text" href="{% url 'pages:students_applications' %}">
                           {% trans "Образцы заявлений" %}
                         </a>
                       </li>

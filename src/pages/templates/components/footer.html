@@ -6,7 +6,7 @@
       <div class="footer-wrapper">
         <div class="footer-image-container">
           <div class="footer-images">
-            <a href="/">
+            <a href="{% url 'pages:index' %}">
               <img
                 class="no-background footer-image"
                 src="{% static 'images/footer/rudn.png' %}"
@@ -14,7 +14,7 @@
                 alt=""
               />
             </a>
-            <a href="/">
+            <a href="{% url 'pages:index' %}">
               <img
                 class="no-background footer-image"
                 src="{% static 'images/footer/engr-academy.png' %}"
@@ -97,7 +97,7 @@
               <a href="{% url 'pages:history' %}">{% trans "История" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="/academy/contacts">{% trans "Контакты" %}</a>
+              <a href="{% url 'pages:contacts' %}">{% trans "Контакты" %}</a>
             </li>
           </ul>
           <ul>
@@ -105,29 +105,19 @@
               <a href="">{% trans "Наука" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:scientific_centers' %}"
-                >{% trans "Научные центры" %}</a
-              >
+              <a href="{% url 'pages:scientific_centers' %}">{% trans "Научные центры" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:science_directions' %}"
-                >{% trans "Научные направления" %}</a
-              >
+              <a href="{% url 'pages:science_directions' %}">{% trans "Научные направления" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:science_journals' %}"
-                >{% trans "Научные журналы" %}</a
-              >
+              <a href="{% url 'pages:science_journals' %}">{% trans "Научные журналы" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:science_events' %}"
-                >{% trans "Научные мероприятия" %}</a
-              >
+              <a href="{% url 'pages:science_events' %}">{% trans "Научные мероприятия" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:dissertation_committees' %}"
-                >{% trans "Диссертационные советы" %}</a
-              >
+              <a href="{% url 'pages:dissertation_committees' %}">{% trans "Диссертационные советы" %}</a>
             </li>
           </ul>
           <ul>
@@ -135,19 +125,13 @@
               <a href="">{% trans "Абитуриентам" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:applicants_study_directions' %}"
-                >{% trans "Направления подготовки" %}</a
-              >
+              <a href="{% url 'pages:applicants_study_directions' %}">{% trans "Направления подготовки" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:committee' %}"
-                >{% trans "Приемная комиссия" %}</a
-              >
+              <a href="{% url 'pages:committee' %}">{% trans "Приемная комиссия" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:applicants_reference' %}"
-                >{% trans "Справочная информация" %}</a
-              >
+              <a href="{% url 'pages:applicants_reference' %}">{% trans "Справочная информация" %}</a>
             </li>
           </ul>
           <ul>
@@ -155,29 +139,19 @@
               <a href="">{% trans "Студентам и Аспирантам" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:students_schedule' %}"
-                >{% trans "Расписание" %}</a
-              >
+              <a href="{% url 'pages:students_schedule' %}">{% trans "Расписание" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:scientific_student_society' %}"
-                >{% trans "Научное студенческое общество" %}</a
-              >
+              <a href="{% url 'pages:scientific_student_society' %}">{% trans "Научное студенческое общество" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:students_student_committee' %}"
-                >{% trans "Студенческий комитет" %}</a
-              >
+              <a href="{% url 'pages:students_student_committee' %}">{% trans "Студенческий комитет" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:digital_library' %}"
-                >{% trans "Электронная библиотека" %}</a
-              >
+              <a href="{% url 'pages:digital_library' %}">{% trans "Электронная библиотека" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:students_applications' %}"
-                >{% trans "Образцы заявлений" %}</a
-              >
+              <a href="{% url 'pages:students_applications' %}">{% trans "Образцы заявлений" %}</a>
             </li>
           </ul>
         </div>

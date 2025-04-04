@@ -16,53 +16,73 @@
         <div class="uk-container second_part-container">
           <div class="second_part-image-container">
 
+            <!-- Кнопка смены языка -->
             {% if LANGUAGE_CODE == "ru" %}
-            <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
-              {% csrf_token %}
-              <input type="hidden" name="language" value="en">
-              <input type="hidden" name="next" value="{{ request.get_full_path }}">
-              <button type="submit" style="
-              border: 0px solid #ffffff; 
-              border-radius: 10px;
-              background-color: rgb(210, 232, 255);
-              padding: 20px 25px; 
-              cursor: pointer;
-              font-size: large;
-              ">ENG</button>
-            </form>
-          {% elif LANGUAGE_CODE == "en" %}
-            <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
-              {% csrf_token %}
-              <input type="hidden" name="language" value="ru">
-              <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
-              <button type="submit" style="
-              border: 0px solid #ffffff; 
-              border-radius: 10px;
-              background-color: rgb(210, 232, 255);
-              padding: 20px 25px; 
-              cursor: pointer;
-              font-size: large;
-              ">RUS</button>              
-            </form>
-          {% endif %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="en">
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button type="submit" style="
+                border: 0px solid #ffffff; 
+                border-radius: 10px;
+                background-color: rgb(210, 232, 255);
+                padding: 20px 25px; 
+                cursor: pointer;
+                font-size: large;
+                ">ENG</button>
+              </form>
+            {% elif LANGUAGE_CODE == "en" %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="ru">
+                <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+                <button type="submit" style="
+                border: 0px solid #ffffff; 
+                border-radius: 10px;
+                background-color: rgb(210, 232, 255);
+                padding: 20px 25px; 
+                cursor: pointer;
+                font-size: large;
+                ">RUS</button>              
+              </form>
+            {% endif %}
 
-            
-            <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
-              <img
-                class="second_part-image"
-                src="{% static 'images/header/rudn_logo_color.jpg' %}"
-                width="60vw"
-                alt=""
-              />
-            </a>
-            <a href="{% url 'pages:index' %}" class="uk-link-reset">
-              <img
-                class="second_part-image"
-                src="{% static 'images/header/engr_logo.jpg' %}"
-                width="60vw"
-                alt=""
-              />
-            </a>
+            <!-- ЛОГОТИПЫ В ЗАВИСИМОСТИ ОТ ЯЗЫКА -->
+            {% if LANGUAGE_CODE == "ru" %}
+              <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/header/rudn_logo_color.png' %}"
+                  width="60vw"
+                  alt="Логотип RUDN"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}" class="uk-link-reset">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/header/engr_logo.jpg' %}"
+                  width="60vw"
+                  alt="Логотип Инженерной Академии"
+                />
+              </a>
+            {% elif LANGUAGE_CODE == "en" %}
+              <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/logo_RUDN_eng.png' %}"
+                  width="60vw"
+                  alt="RUDN Logo"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}" class="uk-link-reset">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/header/ACADEMY_OF_ENGINEERING.png' %}"
+                  width="100%"
+                  alt="Engineering Academy Logo"
+                />
+              </a>
+            {% endif %}
 
           </div>
         </div>
@@ -245,7 +265,7 @@
         <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
           <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
             <li>
-              <a class="uk-link-reset header-image" target="_blank" style="width: 60%;">
+              <a class="uk-link-reset header-image" target="_blank" style="width: 80%;">
                 <img class="no-background mobile-image"
                      src="{% static 'images/header/logo_2_imgs.png' %}"
                      width="60vw"

@@ -128,8 +128,6 @@ msgstr "Students & Postgraduates"
 
 #: pages/templates/components/footer.html:142
 #: pages/templates/components/header.html:374
-#, fuzzy
-#| msgid "Расписание занятий"
 msgid "Расписание"
 msgstr "Schedule"
 

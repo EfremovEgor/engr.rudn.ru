@@ -1,33 +1,51 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
 
 <link rel="stylesheet" href="{% static 'css/news.css' %}" />
 <link rel="stylesheet" href="{% static 'js/news.js' %}" />
 <link rel="stylesheet" href="{% static 'css/global.css' %}" />
 
 <div class="uk-container" style="margin-bottom: 40px">
-  <div class="news-items-date">{{content.creation_date|date:"d.m.Y"}}</div>
-  <div class="page-name" style="margin-top: 0px !important;">{{title}}</div>
+  <div class="news-items-date">{{ content.creation_date|date:"d.m.Y" }}</div>
+  
+  {% if LANGUAGE_CODE == "en" %}
+    <div class="page-name" style="margin-top: 0px !important;">{{ content.title_en }}</div>
+  {% else %}
+    <div class="page-name" style="margin-top: 0px !important;">{{ content.title_ru }}</div>
+  {% endif %}
 </div>
+
 <div class="uk-container" style="margin-bottom: 50px">
 
   <div class="hashtags uk-flex">
     <form action="/news" class="uk-margin" method="POST">
-      {% csrf_token %} {% for item in content.tags.all %}
-      <button
-        class="uk-button-link"
-        style="border: 0px; cursor: pointer; font-size: 18px"
-        type="submit"
-        name="tags"
-        value="{{item.name}}"
-      >
-        #{{item.name}}
-      </button>
+      {% csrf_token %}
+      {% for item in content.tags.all %}
+        <button
+          class="uk-button-link"
+          style="border: 0px; cursor: pointer; font-size: 18px"
+          type="submit"
+          name="tags"
+          value="{{ item.name }}"
+        >
+          #{{ item.name }}
+        </button>
       {% endfor %}
     </form>
   </div>
+
   {% if content.preview_image %}
-  <img src="{{content.preview_image.url}}" class="news-item-image" alt="" />
+    <img src="{{ content.preview_image.url }}" class="news-item-image" alt="" />
   {% endif %}
-  <div class="news_content uk-margin">{{ content.content|safe}}</div>
+
+  <div class="news_content uk-margin">
+    {% if LANGUAGE_CODE == "en" %}
+      {{ content.content_en|safe }}
+    {% else %}
+      {{ content.content_ru|safe }}
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

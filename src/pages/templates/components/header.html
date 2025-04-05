@@ -16,7 +16,6 @@
         <div class="uk-container second_part-container">
           <div class="second_part-image-container">
 
-            <!-- Кнопка смены языка -->
             {% if LANGUAGE_CODE == "ru" %}
               <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
                 {% csrf_token %}
@@ -47,7 +46,6 @@
               </form>
             {% endif %}
 
-            <!-- ЛОГОТИПЫ В ЗАВИСИМОСТИ ОТ ЯЗЫКА -->
             {% if LANGUAGE_CODE == "ru" %}
               <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
                 <img
@@ -78,7 +76,7 @@
                 <img
                   class="second_part-image"
                   src="{% static 'images/header/ACADEMY_OF_ENGINEERING.png' %}"
-                  width="100%"
+                  width="60vw"
                   alt="Engineering Academy Logo"
                 />
               </a>

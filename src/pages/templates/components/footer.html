@@ -1,27 +1,50 @@
 {% load static %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 <footer>
   <div class="uk-container">
     <nav class="uk-navbar-container uk-navbar-transparent">
       <div class="footer-wrapper">
         <div class="footer-image-container">
           <div class="footer-images">
-            <a href="{% url 'pages:index' %}">
-              <img
-                class="no-background footer-image"
-                src="{% static 'images/footer/rudn.png' %}"
-                width="60vw"
-                alt=""
-              />
-            </a>
-            <a href="{% url 'pages:index' %}">
-              <img
-                class="no-background footer-image"
-                src="{% static 'images/footer/engr-academy.png' %}"
-                width="60vw"
-                alt=""
-              />
-            </a>
+
+            {% if LANGUAGE_CODE == "en" %}
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/logo_RUDN_white.png' %}"
+                  width="60vw"
+                  alt="RUDN Logo EN"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/logo_ACADEMY_OF_ENGINEERING_white(2).png' %}"
+                  width="60vw"
+                  alt="Engineering Academy EN"
+                />
+              </a>
+            {% else %}
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/rudn.png' %}"
+                  width="60vw"
+                  alt="Лого РУДН"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/engr-academy.png' %}"
+                  width="60vw"
+                  alt="Лого Инженерная Академия"
+                />
+              </a>
+            {% endif %}
+
           </div>
 
           <ul style="padding: 0px; list-style-type: none">
@@ -74,6 +97,7 @@
             </li>
           </ul>
         </div>
+
         <div class="navigation">
           <ul>
             <li class="navigation-heading" style="margin-bottom: 30px">

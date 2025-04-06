@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-01 00:34+0300\n"
+"POT-Creation-Date: 2025-04-05 16:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,149 +18,146 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: pages/templates/components/footer.html:80
-#: pages/templates/components/header.html:98
-#: pages/templates/components/header.html:271
+#: pages/templates/components/footer.html:104
+#: pages/templates/components/header.html:114
+#: pages/templates/components/header.html:328
 msgid "Главная"
 msgstr "Home"
 
-#: pages/templates/components/footer.html:83
-#: pages/templates/components/header.html:103
-#: pages/templates/components/header.html:276
+#: pages/templates/components/footer.html:107
+#: pages/templates/components/header.html:119
+#: pages/templates/components/header.html:333 pages/views.py:54
+#: pages/views.py:93 pages/views.py:128
 msgid "Новости"
 msgstr "News"
 
-#: pages/templates/components/footer.html:88
-#: pages/templates/components/header.html:110
-#: pages/templates/components/header.html:280
+#: pages/templates/components/footer.html:112
+#: pages/templates/components/header.html:126
+#: pages/templates/components/header.html:337 pages/views.py:169
 msgid "Академия"
 msgstr "Academy"
 
-#: pages/templates/components/footer.html:91
-#: pages/templates/components/header.html:116
-#: pages/templates/components/header.html:284
+#: pages/templates/components/footer.html:115
+#: pages/templates/components/header.html:132
+#: pages/templates/components/header.html:341 pages/views.py:183
 msgid "Дирекция"
 msgstr "Administration"
 
-#: pages/templates/components/footer.html:94
-#: pages/templates/components/header.html:121
-#: pages/templates/components/header.html:289
+#: pages/templates/components/footer.html:118
+#: pages/templates/components/header.html:137
+#: pages/templates/components/header.html:346 pages/views.py:481
 msgid "Кафедры"
 msgstr "Departments"
 
-#: pages/templates/components/footer.html:97
-#: pages/templates/components/header.html:126
-#: pages/templates/components/header.html:294
+#: pages/templates/components/footer.html:121
+#: pages/templates/components/header.html:142
+#: pages/templates/components/header.html:351 pages/views.py:194
 msgid "История"
 msgstr "History"
 
-#: pages/templates/components/footer.html:100
-#: pages/templates/components/header.html:131
-#: pages/templates/components/header.html:299
+#: pages/templates/components/footer.html:124
+#: pages/templates/components/header.html:147
+#: pages/templates/components/header.html:356 pages/views.py:271
+#: pages/views.py:545
 msgid "Контакты"
 msgstr "Contacts"
 
-#: pages/templates/components/footer.html:105
-#: pages/templates/components/header.html:141
-#: pages/templates/components/header.html:309
+#: pages/templates/components/footer.html:129
+#: pages/templates/components/header.html:157
+#: pages/templates/components/header.html:366
 msgid "Наука"
 msgstr "Science"
 
-#: pages/templates/components/footer.html:108
-#: pages/templates/components/header.html:152
-#: pages/templates/components/header.html:319
+#: pages/templates/components/footer.html:132
+#: pages/templates/components/header.html:168
+#: pages/templates/components/header.html:376 pages/views.py:437
 msgid "Научные центры"
 msgstr "Research Centers"
 
-#: pages/templates/components/footer.html:111
-#: pages/templates/components/header.html:157
-#: pages/templates/components/header.html:324
+#: pages/templates/components/footer.html:135
+#: pages/templates/components/header.html:173
+#: pages/templates/components/header.html:381 pages/views.py:204
 msgid "Научные направления"
 msgstr "Research Directions"
 
-#: pages/templates/components/footer.html:114
-#: pages/templates/components/header.html:162
-#: pages/templates/components/header.html:329
+#: pages/templates/components/footer.html:138
+#: pages/templates/components/header.html:178
+#: pages/templates/components/header.html:386 pages/views.py:214
 msgid "Научные журналы"
 msgstr "Academic Journals"
 
-#: pages/templates/components/footer.html:117
-#: pages/templates/components/header.html:147
-#: pages/templates/components/header.html:314
+#: pages/templates/components/footer.html:141
+#: pages/templates/components/header.html:163
+#: pages/templates/components/header.html:371 pages/views.py:234
 msgid "Научные мероприятия"
 msgstr "Scientific Events"
 
-#: pages/templates/components/footer.html:120
-#: pages/templates/components/header.html:167
-#: pages/templates/components/header.html:334
+#: pages/templates/components/footer.html:144
+#: pages/templates/components/header.html:183
+#: pages/templates/components/header.html:391 pages/views.py:425
 msgid "Диссертационные советы"
 msgstr "Dissertation Committees"
 
-#: pages/templates/components/footer.html:125
-#: pages/templates/components/header.html:177
-#: pages/templates/components/header.html:344
+#: pages/templates/components/footer.html:149
+#: pages/templates/components/header.html:193
+#: pages/templates/components/header.html:401
 msgid "Абитуриентам"
 msgstr "Prospective Students"
 
-#: pages/templates/components/footer.html:128
-#: pages/templates/components/header.html:183
-#: pages/templates/components/header.html:349
+#: pages/templates/components/footer.html:152
+#: pages/templates/components/header.html:199
+#: pages/templates/components/header.html:406 pages/views.py:362
 msgid "Направления подготовки"
 msgstr "Programs"
 
-#: pages/templates/components/footer.html:131
-#: pages/templates/components/header.html:188
-#: pages/templates/components/header.html:354
+#: pages/templates/components/footer.html:155
+#: pages/templates/components/header.html:204
+#: pages/templates/components/header.html:411 pages/views.py:414
 msgid "Приемная комиссия"
 msgstr "Admissions Office"
 
-#: pages/templates/components/footer.html:134
-#: pages/templates/components/header.html:193
-#: pages/templates/components/header.html:359
+#: pages/templates/components/footer.html:158
+#: pages/templates/components/header.html:209
+#: pages/templates/components/header.html:416 pages/views.py:338
 msgid "Справочная информация"
 msgstr "Reference Information"
 
-#: pages/templates/components/footer.html:139
-#: pages/templates/components/header.html:203
-#: pages/templates/components/header.html:369
+#: pages/templates/components/footer.html:163
+#: pages/templates/components/header.html:219
+#: pages/templates/components/header.html:426
 msgid "Студентам и Аспирантам"
 msgstr "Students & Postgraduates"
 
-#: pages/templates/components/footer.html:142
-#: pages/templates/components/header.html:374
+#: pages/templates/components/footer.html:166 pages/views.py:313
 msgid "Расписание"
 msgstr "Schedule"
 
-#: pages/templates/components/footer.html:145
-#: pages/templates/components/header.html:214
-#: pages/templates/components/header.html:379
+#: pages/templates/components/footer.html:169
+#: pages/templates/components/header.html:230
+#: pages/templates/components/header.html:436 pages/views.py:224
 msgid "Научное студенческое общество"
 msgstr "Student Research Society"
 
-#: pages/templates/components/footer.html:148
-#: pages/templates/components/header.html:219
-#: pages/templates/components/header.html:384
+#: pages/templates/components/footer.html:172
+#: pages/templates/components/header.html:235
+#: pages/templates/components/header.html:441 pages/views.py:325
 msgid "Студенческий комитет"
 msgstr "Student Committee"
 
-#: pages/templates/components/footer.html:151
-#: pages/templates/components/header.html:224
-#: pages/templates/components/header.html:389
+#: pages/templates/components/footer.html:175
+#: pages/templates/components/header.html:240
+#: pages/templates/components/header.html:446 pages/views.py:281
 msgid "Электронная библиотека"
 msgstr "E-Library"
 
-#: pages/templates/components/footer.html:154
-#: pages/templates/components/header.html:229
-#: pages/templates/components/header.html:394
+#: pages/templates/components/footer.html:178
+#: pages/templates/components/header.html:245
+#: pages/templates/components/header.html:451 pages/views.py:302
 msgid "Образцы заявлений"
 msgstr "Application Forms"
 
-#: pages/templates/components/header.html:11
-msgid ""
-"ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ В ИНЖЕНЕРНОЙ АКАДЕМИИ 22.02.2025 Регистрация открыта"
-msgstr ""
-
-#: pages/templates/components/header.html:209
+#: pages/templates/components/header.html:225
+#: pages/templates/components/header.html:431
 msgid "Расписание занятий"
 msgstr "Schedule"
 
@@ -185,11 +182,11 @@ msgid ""
 "хозяйства, учителей, врачей, экономистов и специалистов по другим отраслям "
 "знаний»."
 msgstr ""
-"The decree of the CPSU Central Committee and the Council of Ministers of "
-"the USSR \"On the Organization of the University of People's Friendship\", "
-"dated February 5, 1960, announced that \"The University of People's Friendship "
-"trains engineers, agricultural specialists, teachers, doctors, economists, and "
-"specialists in other fields of knowledge.\""
+"The decree of the CPSU Central Committee and the Council of Ministers of the "
+"USSR \"On the Organization of the University of People's Friendship\", dated "
+"February 5, 1960, announced that \"The University of People's Friendship "
+"trains engineers, agricultural specialists, teachers, doctors, economists, "
+"and specialists in other fields of knowledge.\""
 
 #: pages/templates/pages/academy/history.html:243
 msgid "17 марта, 1960"
@@ -215,11 +212,12 @@ msgid ""
 "факультете – «Машиностроение», «Строительство», «Геология», «Разработка "
 "месторождений полезных ископаемых», «Паровые и газовые турбины»."
 msgstr ""
-"By the Decree of the Council of Ministers of the USSR No. 604 dated June 14, 1960, "
-"\"On Measures Related to the Organization of the University of People's Friendship\", "
-"in Section 3 \"Faculties and Specializations\", the first specializations in the faculty "
-"were defined: \"Mechanical Engineering\", \"Construction\", \"Geology\", \"Development of "
-"Mineral Deposits\", \"Steam and Gas Turbines\"."
+"By the Decree of the Council of Ministers of the USSR No. 604 dated June 14, "
+"1960, \"On Measures Related to the Organization of the University of "
+"People's Friendship\", in Section 3 \"Faculties and Specializations\", the "
+"first specializations in the faculty were defined: \"Mechanical "
+"Engineering\", \"Construction\", \"Geology\", \"Development of Mineral "
+"Deposits\", \"Steam and Gas Turbines\"."
 
 #: pages/templates/pages/academy/history.html:271
 msgid "17 февраля, 1961"
@@ -233,10 +231,11 @@ msgid ""
 "факультета Московского высшего технического училища им. Баумана Михаил "
 "Сергеевич Шкаликов (1920 – 1996)."
 msgstr ""
-"The work on establishing the Engineering Faculty, developing curricula, programs, "
-"and recruiting staff began in 1961, when on February 17 the first dean of the faculty "
-"was appointed – a graduate of the Mechanical and Technological Faculty of Bauman Moscow "
-"State Technical University, Mikhail Sergeyevich Shkalikov (1920 – 1996)."
+"The work on establishing the Engineering Faculty, developing curricula, "
+"programs, and recruiting staff began in 1961, when on February 17 the first "
+"dean of the faculty was appointed – a graduate of the Mechanical and "
+"Technological Faculty of Bauman Moscow State Technical University, Mikhail "
+"Sergeyevich Shkalikov (1920 – 1996)."
 
 #: pages/templates/pages/academy/history.html:278
 msgid "Основание инженерного факультета"
@@ -254,7 +253,7 @@ msgstr "People's Friendship University of Russia"
 msgid "Инженерная академия"
 msgstr "Engineering Academy"
 
-#: pages/templates/pages/index.html:318
+#: pages/templates/pages/index.html:318 pages/views.py:36
 msgid "Инженерная академия РУДН"
 msgstr "Engineering Academy"
 
@@ -273,3 +272,57 @@ msgstr "+7 (495) 952-08-29 (Director's Reception)"
 #: pages/templates/pages/index.html:357
 msgid "engineering@rudn.ru"
 msgstr "engineering@rudn.ru"
+
+#: pages/views.py:109
+msgid "Без названия"
+msgstr "Untitled"
+
+#: pages/views.py:243
+#, fuzzy
+#| msgid "Научные центры"
+msgid "Научные семинары"
+msgstr "Research Centers"
+
+#: pages/views.py:252
+msgid "Конференция по информационным и техническим системам"
+msgstr "Conference on Information and Technical Systems"
+
+#: pages/views.py:261
+msgid ""
+"Международный научно-технический форум по механике космического полета и "
+"космическим конструкциям и материалам"
+msgstr "International Scientific and Technical Forum on Space Flight Mechanics and Space Structures and Materials"
+
+#: pages/views.py:291
+#, fuzzy
+#| msgid "Диссертационные советы"
+msgid "Тематики диссертационных исследований"
+msgstr "Dissertation Committees"
+
+#: pages/views.py:346
+msgid "Презентация"
+msgstr "Presentation"
+
+#: pages/views.py:351
+msgid "Дни открытых дверей"
+msgstr "Open Days"
+
+#: pages/views.py:369 pages/views.py:495
+msgid "Бакалавриат"
+msgstr "Bachelor's Degree"
+
+#: pages/views.py:370 pages/views.py:502
+msgid "Магистратура"
+msgstr "Master's Degree"
+
+#: pages/views.py:371 pages/views.py:516
+msgid "Аспирантура"
+msgstr "Postgraduate Studies"
+
+#: pages/views.py:372 pages/views.py:509
+msgid "Специалитет"
+msgstr "Specialist Degree"
+
+#: pages/views.py:469
+msgid "ПДС"
+msgstr "Dissertation Committee"

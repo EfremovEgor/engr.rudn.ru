@@ -3,6 +3,7 @@
 {% load static %}
 {% load compress %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% compress css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
@@ -190,36 +191,42 @@
             {% for item in news %}
               {% if item.preview_image %}
                 <li class="news-card-container">
-                  <a href="/news/{{item.id}}" class="uk-link-toggle">
+                  <a href="/news/{{ item.id }}" class="uk-link-toggle">
                     <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card">
                       <div class="uk-card-media-top">
                         <img
-                          src="{{item.preview_image.url}}"
+                          src="{{ item.preview_image.url }}"
                           class="news-image"
                           alt=""
                         />
                       </div>
                       <div class="uk-card-body">
                         <div class="uk-card-badge uk-label uk-visible@m">
-                          {{item.creation_date|date:"d.m.Y"}}
+                          {{ item.creation_date|date:"d.m.Y" }}
                         </div>
-                        <h3 class="uk-card-title news-title">{{item.title}}</h3>
+                        {% if LANGUAGE_CODE == "en" %}
+                          <h3 class="uk-card-title news-title">{{ item.title_en }}</h3>
+                        {% else %}
+                          <h3 class="uk-card-title news-title">{{ item.title_ru }}</h3>
+                        {% endif %}
                       </div>
                     </div>
                   </a>
                 </li>
               {% else %}
                 <li class="news-card-container">
-                  <a href="/news/{{item.id}}" class="news-link uk-link-toggle">
+                  <a href="/news/{{ item.id }}" class="news-link uk-link-toggle">
                     <div
-                      class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
+                      class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small news-card-no-image news-card"
                     >
                       <div class="uk-card-badge uk-label uk-visible@m">
-                        {{item.creation_date.date}}
+                        {{ item.creation_date|date:"d.m.Y" }}
                       </div>
-                      <h3 class="uk-card-title news-title-no-image">
-                        {{item.title}}
-                      </h3>
+                      {% if LANGUAGE_CODE == "en" %}
+                        <h3 class="uk-card-title news-title-no-image">{{ item.title_en }}</h3>
+                      {% else %}
+                        <h3 class="uk-card-title news-title-no-image">{{ item.title_ru }}</h3>
+                      {% endif %}
                     </div>
                   </a>
                 </li>

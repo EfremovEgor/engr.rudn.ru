@@ -84,7 +84,7 @@
 
           {% for report in upcoming_reports %}
           {% if not report.is_past_due %}
-          <div>
+          <div style="display: flex; flex-direction: column-reverse;">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
               <div class="uk-card-badge uk-label">{{ report.date_start|date:"j/m/o" }} {{ report.time_start|date:"H:i" }}</div>
               <h3 class="uk-card-title uk-margin-remove" style="text-align: justify;">

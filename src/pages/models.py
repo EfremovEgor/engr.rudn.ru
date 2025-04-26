@@ -142,6 +142,11 @@ class ProfileDetails(models.Model):
 
 class DepartmentInfo(models.Model):
     name = models.TextField(verbose_name="Название департамента")
+    name_en = models.TextField(
+        verbose_name="Название департамента (англ.)",
+        blank=True, null=True
+    )
+
     position = models.IntegerField(verbose_name="Позиция")
     abbreviation = models.CharField(
         verbose_name="Аббревиатура",
@@ -156,6 +161,10 @@ class DepartmentInfo(models.Model):
         max_length=255,
     )
     info = models.TextField(verbose_name="Информация о департаменте")
+    info_en = models.TextField(
+        verbose_name="Информация о департаменте (англ.)",
+        blank=True, null=True
+    )    
     head = models.ForeignKey(
         "profiles.DepartmentStaff",
         verbose_name="Руководитель",

@@ -158,27 +158,36 @@
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/events">
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:science_events' %}">
                         {% trans "Научные мероприятия" %}
                       </a>
                     </li>
+              
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:scientific_centers' %}">
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:scientific_centers' %}">
                         {% trans "Научные центры" %}
                       </a>
                     </li>
+              
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/directions">
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:science_directions' %}">
                         {% trans "Научные направления" %}
                       </a>
                     </li>
+              
                     <li>
-                      <a class="header-text navbar-sub-link" href="/science/journals">
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:science_journals' %}">
                         {% trans "Научные журналы" %}
                       </a>
                     </li>
+              
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:dissertation_committees' %}">
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:dissertation_committees' %}">
                         {% trans "Диссертационные советы" %}
                       </a>
                     </li>

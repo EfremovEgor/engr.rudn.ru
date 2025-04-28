@@ -6,6 +6,7 @@ from .models import Seminar, SeminarReport
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
 from django.db.models.fields.related import ManyToManyField
+from django.utils.translation import gettext as _
 
 
 def seminars(request):
@@ -14,7 +15,7 @@ def seminars(request):
     return render(
         request,
         "seminars/seminars.html",
-        {"title": "Научные семинары", "seminars": seminars},
+        {"title": _("Научные семинары"), "seminars": seminars},
     )
 
 

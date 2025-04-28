@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-05 16:46+0300\n"
+"POT-Creation-Date: 2025-04-28 15:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,8 @@ msgstr "Administration"
 
 #: pages/templates/components/footer.html:118
 #: pages/templates/components/header.html:137
-#: pages/templates/components/header.html:346 pages/views.py:481
+#: pages/templates/components/header.html:346
+#: pages/templates/pages/academy/department_item.html:10 pages/views.py:481
 msgid "Кафедры"
 msgstr "Departments"
 
@@ -88,7 +89,11 @@ msgstr "Academic Journals"
 
 #: pages/templates/components/footer.html:141
 #: pages/templates/components/header.html:163
-#: pages/templates/components/header.html:371 pages/views.py:234
+#: pages/templates/components/header.html:371
+#: pages/templates/pages/science/events.html:11
+#: pages/templates/pages/science/scitechforum.html:9 pages/views.py:234
+#: seminars/templates/seminars/seminar_item.html:11
+#: seminars/templates/seminars/seminars.html:19
 msgid "Научные мероприятия"
 msgstr "Scientific Events"
 
@@ -112,7 +117,8 @@ msgstr "Programs"
 
 #: pages/templates/components/footer.html:155
 #: pages/templates/components/header.html:204
-#: pages/templates/components/header.html:411 pages/views.py:414
+#: pages/templates/components/header.html:411
+#: pages/templates/pages/academy/contacts.html:17 pages/views.py:414
 msgid "Приемная комиссия"
 msgstr "Admissions Office"
 
@@ -160,6 +166,76 @@ msgstr "Application Forms"
 #: pages/templates/components/header.html:431
 msgid "Расписание занятий"
 msgstr "Schedule"
+
+#: pages/templates/pages/academy/contacts.html:21
+msgid "Секретарь отборочной комиссии"
+msgstr "Secretary of the Admissions Board"
+
+#: pages/templates/pages/academy/contacts.html:28
+#: pages/templates/pages/academy/contacts.html:86
+#: pages/templates/pages/academy/contacts.html:110
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;403"
+msgstr "Moscow, Ordzhonikidze St 3, office 403"
+
+#: pages/templates/pages/academy/contacts.html:47
+msgid "Организационный отдел"
+msgstr "Administrative Department"
+
+#: pages/templates/pages/academy/contacts.html:51
+#: pages/templates/pages/academy/contacts.html:79
+#: pages/templates/pages/academy/contacts.html:133
+msgid "Начальник отдела"
+msgstr "Head of Department"
+
+#: pages/templates/pages/academy/contacts.html:57
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;444"
+msgstr "Moscow, Ordzhonikidze St 3, office 444"
+
+#: pages/templates/pages/academy/contacts.html:75
+msgid "Учебный отдел"
+msgstr "Academic Affairs Office"
+
+#: pages/templates/pages/academy/contacts.html:103
+msgid "Тьютор по учебной работе"
+msgstr "Academic Tutor"
+
+#: pages/templates/pages/academy/contacts.html:129
+msgid "Научно-инновационный отдел"
+msgstr "Research & Innovation Office"
+
+#: pages/templates/pages/academy/contacts.html:139
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;436"
+msgstr "Moscow, Ordzhonikidze St 3, office 436"
+
+#: pages/templates/pages/academy/contacts.html:156
+msgid "Ведущий специалист"
+msgstr "Lead Specialist"
+
+#: pages/templates/pages/academy/contacts.html:162
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;440"
+msgstr "Moscow, Ordzhonikidze St 3, office 440"
+
+#: pages/templates/pages/academy/department_item.html:97
+msgid "Контактное лицо"
+msgstr "Contact Person"
+
+#: pages/templates/pages/academy/department_item.html:163
+msgid "Направления подготовки и специальности"
+msgstr "Study Programs and Specialties"
+
+#: pages/templates/pages/academy/department_item.html:378
+msgid "Лабораторная база"
+msgstr "Laboratory Facilities"
+
+#: pages/templates/pages/academy/department_item.html:416
+msgid "Профессорско-преподавательский состав"
+msgstr "Faculty Staff"
+
+#: pages/templates/pages/academy/departments.html:38
+#: seminars/templates/seminars/seminar_item.html:97
+#: seminars/templates/seminars/seminars.html:61
+msgid "Подробнее"
+msgstr "Read more"
 
 #: pages/templates/pages/academy/history.html:9
 msgid "История академии"
@@ -241,47 +317,258 @@ msgstr ""
 msgid "Основание инженерного факультета"
 msgstr "Founding of the Engineering Faculty"
 
-#: pages/templates/pages/index.html:267
+#: pages/templates/pages/index.html:274
 msgid "Все НОВОСТИ"
 msgstr "All News"
 
-#: pages/templates/pages/index.html:308
+#: pages/templates/pages/index.html:315
 msgid "Российский университет дружбы народов"
 msgstr "People's Friendship University of Russia"
 
-#: pages/templates/pages/index.html:310
+#: pages/templates/pages/index.html:317
 msgid "Инженерная академия"
 msgstr "Engineering Academy"
 
-#: pages/templates/pages/index.html:318 pages/views.py:36
+#: pages/templates/pages/index.html:325 pages/views.py:36
 msgid "Инженерная академия РУДН"
 msgstr "Engineering Academy"
 
-#: pages/templates/pages/index.html:335
+#: pages/templates/pages/index.html:342
 msgid "115419, Москва, ул. Орджоникидзе, д. 3."
 msgstr "115419, Moscow, Ordzhonikidze st, 3"
 
-#: pages/templates/pages/index.html:342
+#: pages/templates/pages/index.html:349
 msgid "+7 (495) 955-09-66"
 msgstr "+7 (495) 955-09-66"
 
-#: pages/templates/pages/index.html:348
+#: pages/templates/pages/index.html:355
 msgid "+7 (495) 952-08-29 (приемная директора)"
 msgstr "+7 (495) 952-08-29 (Director's Reception)"
 
-#: pages/templates/pages/index.html:357
+#: pages/templates/pages/index.html:364
 msgid "engineering@rudn.ru"
 msgstr "engineering@rudn.ru"
+
+#: pages/templates/pages/science/events.html:16
+msgid "Расширяй границы научных познаний и делись опытом"
+msgstr "Broaden the frontiers of knowledge and share your experience"
+
+#: pages/templates/pages/science/events.html:28
+msgid "Научные семинары и симпозиумы"
+msgstr "Scientific Seminars and Symposia"
+
+#: pages/templates/pages/science/events.html:31
+msgid "Совместно с мировыми учеными"
+msgstr "In collaboration with leading international scientists"
+
+#: pages/templates/pages/science/events.html:40
+#: pages/templates/pages/science/scitechforum.html:13
+msgid ""
+"5-й Международный научно-технический форум по механике космического полета и "
+"космическим конструкциям и материалам"
+msgstr ""
+"5th International Scientific and Technical Forum on Space-Flight Mechanics, "
+"Space Structures and Materials"
+
+#: pages/templates/pages/science/events.html:43
+msgid "Совместно с Российской академией наук и университетами стран БРИКС"
+msgstr ""
+"In partnership with the Russian Academy of Sciences and BRICS universities"
+
+#: pages/templates/pages/science/scitechforum.html:35
+msgid "РУДН"
+msgstr "RUDN University"
+
+#: pages/templates/pages/science/scitechforum.html:35
+msgid "Москва, Россия"
+msgstr "Moscow, Russia"
+
+#: pages/templates/pages/science/scitechforum.html:42
+msgid "25-27 ноября&nbsp;2024"
+msgstr "25–27 November 2024"
+
+#: pages/templates/pages/science/scitechforum.html:49
+msgid "Очный"
+msgstr "On-site"
+
+#: pages/templates/pages/science/scitechforum.html:49
+msgid "и дистанционный формат"
+msgstr "and online format"
+
+#: pages/templates/pages/science/scitechforum.html:56
+msgid "Английский язык"
+msgstr "English"
+
+#: pages/templates/pages/science/scitechforum.html:63
+msgid "Подача тезисов"
+msgstr "Abstract submission"
+
+#: pages/templates/pages/science/scitechforum.html:63
+msgid "до 10 октября 2024 года"
+msgstr "until 10 October 2024"
+
+#: pages/templates/pages/science/scitechforum.html:72
+#: pages/templates/pages/science/scitechforum.html:83
+msgid "Подать тезисы"
+msgstr "Submit abstract"
+
+#: pages/templates/pages/science/scitechforum.html:75
+#: pages/templates/pages/science/scitechforum.html:86
+msgid "Сайт конференции"
+msgstr "Conference website"
+
+#: pages/templates/pages/science/scitechforum.html:93
+msgid "О конференции"
+msgstr "About the conference"
+
+#: pages/templates/pages/science/scitechforum.html:95
+msgid ""
+"<b>5-й Международный научно-технический форум по механике космического "
+"полета и космическим конструкциям и материалам</b> проводится 25-27 "
+"ноября&nbsp;2024 года. Организаторами Форума являются Российская академия "
+"наук и РУДН им.&nbsp;Патриса Лумумбы."
+msgstr ""
+"<b>The 5th International Scientific and Technical Forum on Space-Flight "
+"Mechanics and Space Structures & Materials</b> will be held on 25-27 November 2024. "
+"The Forum is organised by the Russian Academy of Sciences and RUDN University."
+
+#: pages/templates/pages/science/scitechforum.html:103
+msgid "5-ая Конференция по механике космических полетов"
+msgstr "5th Conference on Space-Flight Mechanics"
+
+#: pages/templates/pages/science/scitechforum.html:104
+msgid "5-ая Конференция по космическим конструкциям и материалам"
+msgstr "5th Conference on Space Structures and Materials"
+
+#: pages/templates/pages/science/scitechforum.html:107
+msgid ""
+"Форум проводится на площадке РУДН им.&nbsp;Патриса Лумумбы. Мы предлагаем "
+"участникам <b>гибридный формат участия</b>. Участники могут посетить все "
+"мероприятия Форума и выступить с докладом как в очном, так и в заочном "
+"формате. <b>Язык проведения Форума</b>: английский."
+msgstr ""
+"The Forum will take place at RUDN University. A <b>hybrid format</b> is offered: "
+"participants may attend and give presentations either on-site or online. "
+"<b>Working language:</b> English."
+
+#: pages/templates/pages/science/scitechforum.html:114
+msgid ""
+"Доклады на конференцию будут отбираться по представленным авторами "
+"аннотациям (до 500 слов). Материалы Форума будут опубликованы РУДН. Лучшие "
+"статьи будут рекомендованы к публикации в специальном выпуске <i>Acta "
+"Astronautica</i>."
+msgstr ""
+"Papers will be selected on the basis of 500-word abstracts submitted by the authors. "
+"The Forum proceedings will be published by RUDN University, and the best papers "
+"will be recommended for publication in a special issue of <i>Acta Astronautica</i>."
+
+#: pages/templates/pages/science/scitechforum.html:121
+msgid "Порядок представления тезисов"
+msgstr "Abstract submission guidelines"
+
+#: pages/templates/pages/science/scitechforum.html:123
+msgid "Тезисы принимаются по следующим направлениям:"
+msgstr "Abstracts are accepted in the following areas:"
+
+#: pages/templates/pages/science/scitechforum.html:131
+msgid "Конференция по механике космических полетов"
+msgstr "Conference on Space-Flight Mechanics"
+
+#: pages/templates/pages/science/scitechforum.html:133
+msgid "Наведение, навигация и управление"
+msgstr "Guidance, navigation and control"
+
+#: pages/templates/pages/science/scitechforum.html:134
+msgid "Орбитальная динамика"
+msgstr "Orbital dynamics"
+
+#: pages/templates/pages/science/scitechforum.html:135
+msgid "Проектирование и оптимизация космических миссий"
+msgstr "Space-mission design and optimisation"
+
+#: pages/templates/pages/science/scitechforum.html:136
+msgid "Космические проекты и извлеченный опыт"
+msgstr "Space projects and lessons learned"
+
+#: pages/templates/pages/science/scitechforum.html:137
+msgid "Космическая политика, право и экономика"
+msgstr "Space policy, law and economics"
+
+#: pages/templates/pages/science/scitechforum.html:142
+msgid "Конференция по космическим конструкциям и материалам"
+msgstr "Conference on Space Structures and Materials"
+
+#: pages/templates/pages/science/scitechforum.html:145
+msgid "Современные космические материалы"
+msgstr "Advanced space materials"
+
+#: pages/templates/pages/science/scitechforum.html:146
+msgid "Космическая энергетика и двигательные установки"
+msgstr "Space power and propulsion systems"
+
+#: pages/templates/pages/science/scitechforum.html:147
+msgid "Датчики, исполнительные механизмы и бортовое оборудование"
+msgstr "Sensors, actuators and on-board equipment"
+
+#: pages/templates/pages/science/scitechforum.html:148
+msgid "Космические сооружения на Луне и планетах"
+msgstr "Space structures on the Moon and other planets"
+
+#: pages/templates/pages/science/scitechforum.html:149
+msgid "Полезные ископаемые на Луне и астероидах: технические и правовые аспекты"
+msgstr "Lunar and asteroid resources: technical and legal aspects"
+
+#: pages/templates/pages/science/scitechforum.html:156
+msgid ""
+"Чтобы облегчить процесс подачи заявки и последующий процесс обработки, "
+"пожалуйста, примите во внимание следующие рекомендации, информацию и сроки:"
+msgstr ""
+"To facilitate submission and review, please note the following guidelines and deadlines:"
+
+#: pages/templates/pages/science/scitechforum.html:158
+msgid "Подача аннотаций будет открыта до 14 ноября 2024 года через веб-приложение"
+msgstr "Abstract submission is open until 14 November 2024 via the web application"
+
+#: pages/templates/pages/science/scitechforum.html:159
+msgid "Авторы выбирают предпочитаемое направление, на которое они подают тезисы"
+msgstr "Authors must select the preferred track for their abstract"
+
+#: pages/templates/pages/science/scitechforum.html:160
+msgid "Авторы указывают предпочитаемый вид доклада (очный или онлайн)"
+msgstr "Authors indicate preferred presentation mode (on-site or online)"
+
+#: pages/templates/pages/science/scitechforum.html:161
+msgid "Авторы указывают полное ФИО, организацию и электронный адрес для всех соавторов"
+msgstr "Full name, affiliation and e-mail must be provided for all co-authors"
+
+#: pages/templates/pages/science/scitechforum.html:162
+msgid "Аннотация должна быть написана открытым текстом (до 500 слов) без таблиц и рисунков"
+msgstr "Abstract text (max 500 words) must be plain text without tables or figures"
+
+#: pages/templates/pages/science/scitechforum.html:163
+msgid "Название доклада должно содержать не более 30 слов"
+msgstr "Paper title must not exceed 30 words"
+
+#: pages/templates/pages/science/scitechforum.html:164
+msgid "Текст аннотации ограничен 500 словами"
+msgstr "Abstract text is limited to 500 words"
+
+#: pages/templates/pages/science/scitechforum.html:165
+msgid "Подача доклада подтверждает согласие на публикацию тезисов в материалах конференции"
+msgstr "By submitting, authors consent to publication of the abstract in the conference proceedings"
+
+#: pages/views.py:107
+msgid "Untitled"
+msgstr ""
 
 #: pages/views.py:109
 msgid "Без названия"
 msgstr "Untitled"
 
-#: pages/views.py:243
-#, fuzzy
-#| msgid "Научные центры"
+#: pages/views.py:243 seminars/templates/seminars/seminar_item.html:13
+#: seminars/views.py:18
 msgid "Научные семинары"
-msgstr "Research Centers"
+msgstr "Scientific Seminars"
 
 #: pages/views.py:252
 msgid "Конференция по информационным и техническим системам"
@@ -291,7 +578,9 @@ msgstr "Conference on Information and Technical Systems"
 msgid ""
 "Международный научно-технический форум по механике космического полета и "
 "космическим конструкциям и материалам"
-msgstr "International Scientific and Technical Forum on Space Flight Mechanics and Space Structures and Materials"
+msgstr ""
+"International Scientific and Technical Forum on Space Flight Mechanics and "
+"Space Structures and Materials"
 
 #: pages/views.py:291
 #, fuzzy
@@ -326,3 +615,55 @@ msgstr "Specialist Degree"
 #: pages/views.py:469
 msgid "ПДС"
 msgstr "Dissertation Committee"
+
+#: profiles/models.py:11
+msgid "ФИО"
+msgstr "Full name"
+
+#: profiles/models.py:12
+msgid "ФИО (англ.)"
+msgstr "Full name (English)"
+
+#: profiles/models.py:27
+msgid "Должность/Звание (англ.)"
+msgstr "Position/Title (English)"
+
+#: profiles/models.py:28
+msgid "Должности/Звания (англ.)"
+msgstr "Positions/Titles (English)"
+
+#: seminars/templates/seminars/seminar_item.html:28
+msgid "Семинар проводится в рамках"
+msgstr "The seminar is held within the framework of"
+
+#: seminars/templates/seminars/seminar_item.html:47
+msgid "Председатель"
+msgstr "Chairperson"
+
+#: seminars/templates/seminars/seminar_item.html:50
+msgid "Доклады"
+msgstr "Reports"
+
+#: seminars/templates/seminars/seminar_item.html:55
+msgid "Предстоящие"
+msgstr "Upcoming"
+
+#: seminars/templates/seminars/seminar_item.html:58
+msgid "Предстоящие доклады не запланированы"
+msgstr "No upcoming reports scheduled"
+
+#: seminars/templates/seminars/seminar_item.html:108
+msgid "Прошедшие"
+msgstr "Past"
+
+#: seminars/templates/seminars/seminar_item.html:111
+msgid "Прошедшие доклады отсутствуют"
+msgstr "No past reports"
+
+#: seminars/templates/seminars/seminar_report.html:34
+msgid "Аннотация"
+msgstr "Abstract"
+
+#: seminars/templates/seminars/seminar_report.html:45
+msgid "Краткая биография"
+msgstr "Short biography"

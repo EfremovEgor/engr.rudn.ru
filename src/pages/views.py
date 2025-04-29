@@ -25,6 +25,7 @@ from profiles.models import StudentCommitteeProfile
 from .utils import aliases, functions
 from django.utils.translation import gettext as _
 import re
+from django.utils.translation import get_language
 
 def index(request):
     slider_images = MainSlider.objects.all()
@@ -364,43 +365,53 @@ def study_directions(request):
     )
 
 
-def levels_of_study(request, level):
-    levels = {
-        "bachelor": _("Бакалавриат"),
-        "masters": _("Магистратура"),
-        "postgraduates": _("Аспирантура"),
-        "specialists": _("Специалитет"),
-    }
-    if level not in levels:
-        return HttpResponse(status=404)
+def levels_of_study(request, level: str):
+    """
+    /applicants/study_directions/<level>
 
-    def natural_sort_key(s):
-        return [
-            int(text) if text.isdigit() else text.lower()
-            for text in re.split(r'(\d+)', s.cipher)
-        ]
+    * выбираем направления по РУССКОМУ названию уровня (оно хранится в БД);
+    * заголовок страницы показываем на том языке, который активен у пользователя.
+    """
+
+    LEVELS = {
+        "bachelor":      ("Бакалавриат",   "Bachelor’s Degree"),
+        "masters":       ("Магистратура",  "Master’s Degree"),
+        "postgraduates": ("Аспирантура",   "Post-graduate Studies"),
+        "specialists":   ("Специалитет",   "Specialist Degree"),
+    }
+
+    if level not in LEVELS:
+        raise Http404
+
+    ru_level, en_level = LEVELS[level]
+    lang_code          = get_language()
 
     directions = list(
-        StudyDirection.objects.filter(study_level=levels[level])
+        StudyDirection.objects
+        .filter(study_level=ru_level)
+        .prefetch_related("profiles")
     )
-    directions.sort(key=natural_sort_key)
+
+    def natural_key(obj):
+        return [
+            int(t) if t.isdigit() else t.lower()
+            for t in re.split(r"(\d+)", obj.cipher or "")
+        ]
+
+    directions.sort(key=natural_key)
 
     for direction in directions:
         profiles = list(direction.profiles.all())
-
-        profiles.sort(key=lambda s: [
-            int(text) if text.isdigit() else text.lower()
-            for text in re.split(r'(\d+)', s.cipher or '')
-        ])
-
-
+        profiles.sort(key=natural_key)
         direction.sorted_profiles = profiles
+
+    page_title = en_level if lang_code == "en" else ru_level
 
     return render(
         request,
         f"pages/applicants/levels/{level}.html",
         {
-            "title": levels[level],
+            "title":      page_title,
             "directions": directions,
         },
     )

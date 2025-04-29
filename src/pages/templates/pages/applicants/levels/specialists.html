@@ -1,21 +1,66 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/applicants/study_directions.css' %}" />
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'css/applicants/study_directions.css' %}" />
+
 <div class="uk-container">
-  <div class="page-name">Специалитет</div>
-</div>
-<div class="parallax-container_3">
-  <p class="text-on-image"> Превратите свои увлечения в профессию! </p>
-</div>
-<div class="uk-container" style="margin-bottom: 50px">
-  <h2 class="sub-heading">Программы подготовки</h2>
-  <div class="naprs" style="margin-top: 40px"> {% for direction in directions %} <ul uk-accordion="multiple: true;">
-      <li>
-        <a class="uk-accordion-title" href=""><b>{{direction.cipher}} «{{direction.name}}»</b></a>
-        <div class="uk-accordion-content"> {% for profile in direction.profiles.all %} <a class="uk-link-text"
-            href="/applicants/study_directions/{{profile.id}}"><b>Профиль:</b> {{profile.name}}</a>
-          <br /> {% endfor %}
-        </div>
-      </li> {% endfor %}
-    </ul>
+  <div class="page-name">
+    {% if LANGUAGE_CODE == 'en' %}{% trans "Специалитет" %}{% else %}Специалитет{% endif %}
   </div>
-</div> {%endblock %}
+</div>
+
+<div class="parallax-container_3">
+  <p class="text-on-image">
+    {% if LANGUAGE_CODE == 'en' %}
+      {% trans "Превратите свои увлечения в профессию!" %}
+    {% else %}
+      Превратите свои увлечения в профессию!
+    {% endif %}
+  </p>
+</div>
+
+<div class="uk-container" style="margin-bottom:50px">
+  <h2 class="sub-heading">
+    {% trans "Программы подготовки" %}
+  </h2>
+
+  <div class="naprs" style="margin-top:40px">
+    {% for direction in directions %}
+      <ul uk-accordion="multiple:true;">
+        <li>
+          <a class="uk-accordion-title" href="#">
+            <b>
+              {{ direction.cipher }} «
+              {# если есть английский — покажем его, иначе русский #}
+              {% if LANGUAGE_CODE == "en" and direction.name_en %}
+                  {{ direction.name_en }}
+              {% else %}
+                  {{ direction.name }}
+              {% endif %}
+              »
+            </b>
+          </a>
+        
+          <div class="uk-accordion-content">
+            {% for profile in direction.profiles.all %}
+              <a class="uk-link-text"
+                 href="{% url 'pages:study_direction_profile' profile.id %}">
+                 <b>{% trans "Профиль:" %}</b>
+                 {# аналогично для имени профиля #}
+                 {% if LANGUAGE_CODE == "en" and profile.name_en %}
+                     {{ profile.name_en }}
+                 {% else %}
+                     {{ profile.name }}
+                 {% endif %}
+              </a><br>
+            {% endfor %}
+          </div>
+        </li>
+              </ul>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

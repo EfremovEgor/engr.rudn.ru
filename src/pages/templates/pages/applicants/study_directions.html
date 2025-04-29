@@ -22,7 +22,8 @@
       <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
            style="border-radius:var(--base-border-radius);">
         <h3 class="uk-card-title">
-          <a class="uk-link-heading" href="/applicants/study_directions/bachelor">
+          <a class="uk-link-heading"
+             href="{% url 'pages:study_direction_level' 'bachelor' %}">
             {% trans "Бакалавриат" %}
           </a>
         </h3>
@@ -34,7 +35,8 @@
       <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
            style="border-radius:var(--base-border-radius);">
         <h3 class="uk-card-title">
-          <a class="uk-link-heading" href="/applicants/study_directions/specialists">
+          <a class="uk-link-heading"
+             href="{% url 'pages:study_direction_level' 'specialists' %}">
             {% trans "Специалитет" %}
           </a>
         </h3>
@@ -46,7 +48,8 @@
       <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
            style="border-radius:var(--base-border-radius);">
         <h3 class="uk-card-title">
-          <a class="uk-link-heading" href="/applicants/study_directions/masters">
+          <a class="uk-link-heading"
+             href="{% url 'pages:study_direction_level' 'masters' %}">
             {% trans "Магистратура" %}
           </a>
         </h3>
@@ -58,7 +61,8 @@
       <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
            style="border-radius:var(--base-border-radius);">
         <h3 class="uk-card-title">
-          <a class="uk-link-heading" href="/applicants/study_directions/postgraduates">
+          <a class="uk-link-heading"
+             href="{% url 'pages:study_direction_level' 'postgraduates' %}">
             {% trans "Аспирантура" %}
           </a>
         </h3>
@@ -67,6 +71,5 @@
     </div>
 
   </div>
-
 </div>
 {% endblock %}

@@ -429,7 +429,7 @@ def dissertation_committees(request):
 
 
 def scientific_centers(request):
-    centers = ScientificCenters.objects.all().order_by("position")
+    centers = ScientificCenters.objects.order_by("position")
     return render(
         request,
         "pages/science/scientific_centers.html",
@@ -442,18 +442,17 @@ def scientific_centers(request):
 
 def scientific_center_item(request, name):
     center = get_object_or_404(ScientificCenters, page_url=name)
-    alias = aliases.scientific_center_name_to_page.get(
-        " ".join(word.strip() for word in center.name.split())
-    )
 
-    if alias is None:
-        raise Http404
+    if request.LANGUAGE_CODE == "en" and center.name_en:
+        page_title = center.name_en
+    else:
+        page_title = center.name
 
     return render(
         request,
-        f"pages/science/scientific_centers/{alias}",
+        "pages/science/scientific_centers/scientific_center_item.html",
         {
-            "title": center.name,
+            "title": page_title,
             "center": center,
         },
     )

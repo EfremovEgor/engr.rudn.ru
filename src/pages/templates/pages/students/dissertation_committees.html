@@ -1,4 +1,6 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
 <link
@@ -39,8 +41,8 @@
     <table class="uk-table uk-table-divider">
       <thead>
         <tr>
-          <th class="uk-table-shrink uk-text-nowrap">Шифр совета</th>
-          <th class="uk-table-expand">Научные специальности</th>
+          <th class="uk-table-shrink uk-text-nowrap">{% trans 'Шифр совета' %}</th>
+          <th class="uk-table-expand">{% trans 'Научные специальности' %}</th>
         </tr>
       </thead>
       <tbody>

@@ -1,67 +1,72 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/applicants/study_directions.css' %}"
-/>
-<div class="uk-container">
-    <div class="page-name">{{title}}</div>
-</div>
-    <div class="parallax-container_1 uk-visible@s">
-        <p class="text-on-image">Ваш путь к успешной инженерной карьере начинается здесь</p>
-    </div>
-<div class="uk-container content" style="margin-top:40px; margin-bottom:50px">
-    
-    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-        <div>
-            <div style="border-radius: var(--base-border-radius);" class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle" href="#">
-                    <h3 class="uk-card-title"><a class="uk-link-heading" href="/applicants/study_directions/bachelor">Бакалавриат</a></h3>
-                    <p>Открытие новых горизонтов знаний!</p>
-            </div>
-        </div>
-        <div>
-            <div style="border-radius: var(--base-border-radius);" class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle">
-                <h3 class="uk-card-title"><a class="uk-link-heading" href="/applicants/study_directions/specialists">Специалитет</a></h3>
-                <p>Превратите свои увлечения в профессию!</p>
-            </div>
-        </div>
-        <div>
-            <div style="border-radius: var(--base-border-radius);" class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle">
-                <h3 class="uk-card-title"><a class="uk-link-heading" href="/applicants/study_directions/masters">Магистратура</a></h3>
-                <p>Углубленное изучение вашей специализации!</p>
-            </div>
-        </div>
-        <div>
-            <div style="border-radius: var(--base-border-radius);" class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle">
-                <h3 class="uk-card-title"><a class="uk-link-heading" href="/applicants/study_directions/postgraduates">Аспирантура</a></h3>
-                <p>Станьте экспертом в своей области!</p>
-            </div>
-        </div>
-    </div>
-    {% comment %} <div class="heading"><p>Контакты</p></div>
-    <div class="line" style="width: 9em;"></div>
-    <div class="uk-card uk-card-default uk-width-1-2@m back-c">
-        <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                <div class="uk-width-auto">
-                    <img class="uk-border-circle" width="60" height="40" src="{% static "images/applicants/study_directions/parshin-rs.png" %}" alt="Avatar">
-                </div>
-                <div class="uk-width-expand">
-                    <h3 class="uk-card-title uk-margin-remove-bottom">Паршин Роман Сергеевич</h3>
-                    <p class="uk-text-meta uk-margin-remove-top">Ответственный секретарь приемной комиссии</p>
-                </div>
-            </div>
-        </div>
-        <div class="uk-card-body">
-            <p>
-                <ul style="list-style-type: none;">
-                    <li><a uk-icon="icon: receiver" href="tel:+7 993-337-81-6"></a> +7 495-955-09-13</li>
-                    <li><a uk-icon="icon: mail" href="mailto:parshin-rs@rudn.ru"></a> parshin-rs@rudn.ru</li>
-                    <li><a uk-icon="icon: location" href="https://yandex.ru/maps/-/CDqgaQ-8"></a> 115419, г. Москва, Орджоникидзе, д. 3.</li>
-                </ul>
-            </p>
-        </div>
+{% extends "components/base.html" %}
+{% load static i18n %}
+{% block content %}
 
-    </div> {% endcomment %}
-    
+<link rel="stylesheet" href="{% static 'css/applicants/study_directions.css' %}">
+
+<div class="uk-container">
+  <div class="page-name">{{ title }}</div>
 </div>
-{%endblock %}
+
+<div class="parallax-container_1 uk-visible@s">
+  <p class="text-on-image">
+    {% trans "Ваш путь к успешной инженерной карьере начинается здесь" %}
+  </p>
+</div>
+
+<div class="uk-container content" style="margin-top:40px; margin-bottom:50px">
+
+  <div class="uk-child-width-1-2@s uk-grid-match uk-flex-center" uk-grid>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="/applicants/study_directions/bachelor">
+            {% trans "Бакалавриат" %}
+          </a>
+        </h3>
+        <p>{% trans "Открытие новых горизонтов знаний!" %}</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="/applicants/study_directions/specialists">
+            {% trans "Специалитет" %}
+          </a>
+        </h3>
+        <p>{% trans "Превратите свои увлечения в профессию!" %}</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="/applicants/study_directions/masters">
+            {% trans "Магистратура" %}
+          </a>
+        </h3>
+        <p>{% trans "Углублённое изучение вашей специализации!" %}</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="/applicants/study_directions/postgraduates">
+            {% trans "Аспирантура" %}
+          </a>
+        </h3>
+        <p>{% trans "Станьте экспертом в своей области!" %}</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

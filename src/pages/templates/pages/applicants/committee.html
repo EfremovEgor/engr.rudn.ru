@@ -1,7 +1,9 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/applicants/admissions_committee.css' %}" />
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% block content %}
 
-
+<link rel="stylesheet" href="{% static 'css/applicants/admissions_committee.css' %}">
+<link rel="stylesheet" href="{% static 'css/students/dissertation_committees.css' %}">
 
 <style>
 
@@ -85,38 +87,26 @@
 
 </style>
 
-
 <div class="uk-container">
-  <div class="page-name">{{title}}</div>
+  <div class="page-name">{{ title }}</div>
 </div>
+
 <div class="parallax-container_2 uk-visible@s">
-  <p class="text-on-image">Открой Мир в одном Университете!</p>
+  <p class="text-on-image">{% trans "Открой Мир в одном Университете!" %}</p>
 </div>
-<div class="uk-container" style="margin-bottom: 50px">
-  <h2 class="sub-heading">
-    Ключевые даты
-  </h2>
 
-  <div class="uk-grid uk-grid-match uk-grid-stack" uk-grid>
+<div class="uk-container" style="margin-bottom:50px">
+  <h2 class="sub-heading">{% trans "Ключевые даты" %}</h2>
 
+  <div class="uk-grid uk-grid-match" uk-grid>
+
+    {% comment %} ► блоки-карточки дат {% endcomment %}
     <div class="uk-width-1-4@m uk-width-1-2">
       <div class="uk-card uk-card-default">
         <div class="uk-card-body">
-          <h3 class="uk-card-title">Начало приема документов</h3>
-          <p class="uk-card-text">20 Июня</p>
-          <img class="uk-card-img" src="{%static "images/applicants/twenty.png"%}">
-        </div>
-      </div>
-    </div>
-
-    <div class="uk-width-1-4@m uk-width-1-2">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">Окончание подачи документов на направление 
-            "Архитектура"
-            </h3>
-          <p class="uk-card-text">15 Июля</p>
-          <img class="uk-card-img" src="{%static "images/applicants/architect.png"%}">
+          <h3 class="uk-card-title">{% trans "Начало приёма документов" %}</h3>
+          <p class="uk-card-text">{% trans "20 июня" %}</p>
+          <img class="uk-card-img" src="{% static 'images/applicants/twenty.png' %}">
         </div>
       </div>
     </div>
@@ -124,19 +114,11 @@
     <div class="uk-width-1-4@m uk-width-1-2">
       <div class="uk-card uk-card-default">
         <div class="uk-card-body">
-          <h3 class="uk-card-title">Завершение приема заявлений на бюджетную форму обучения</h3>
-          <p class="uk-card-text">25 Июля</p>
-          <img class="uk-card-img" src="{%static "images/applicants/schedule.png"%}">
-        </div>
-      </div>
-    </div>
-    
-    <div class="uk-width-1-4@m uk-width-1-2">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">Публикация конкурсных списков</h3>
-          <p class="uk-card-text">27 Июля</p>
-          <img class="uk-card-img" src="{%static "images/applicants/clipboard.png"%}">
+          <h3 class="uk-card-title">
+            {% trans "Окончание подачи документов на направление “Архитектура”" %}
+          </h3>
+          <p class="uk-card-text">{% trans "15 июля" %}</p>
+          <img class="uk-card-img" src="{% static 'images/applicants/architect.png' %}">
         </div>
       </div>
     </div>
@@ -144,210 +126,199 @@
     <div class="uk-width-1-4@m uk-width-1-2">
       <div class="uk-card uk-card-default">
         <div class="uk-card-body">
-          <h3 class="uk-card-title">Конец подачи документов на контрактную форму</h3>
-          <p class="uk-card-text">25 Августа</p>
-          <img class="uk-card-img" src="{%static "images/applicants/contract.png"%}">
+          <h3 class="uk-card-title">{% trans "Завершение приёма заявлений на бюджет" %}</h3>
+          <p class="uk-card-text">{% trans "25 июля" %}</p>
+          <img class="uk-card-img" src="{% static 'images/applicants/schedule.png' %}">
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-width-1-4@m uk-width-1-2">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Публикация конкурсных списков" %}</h3>
+          <p class="uk-card-text">{% trans "27 июля" %}</p>
+          <img class="uk-card-img" src="{% static 'images/applicants/clipboard.png' %}">
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-width-1-4@m uk-width-1-2">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Конец подачи документов на контракт" %}</h3>
+          <p class="uk-card-text">{% trans "25 августа" %}</p>
+          <img class="uk-card-img" src="{% static 'images/applicants/contract.png' %}">
         </div>
       </div>
     </div>
   </div>
 
+  <p class="heading" style="margin-left:10px">
+    {% trans "Издание приказов о зачислении осуществляется:" %}
+  </p>
 
-    
-  <div class="uk-grid uk-grid-match uk-grid-stack" uk-grid>
-    <p class="heading" style="margin-left: 10px;">
-      Издание приказов о зачислении осуществляется:
-    </p>
-
-    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
-
-      <div class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">На этапе приоритетного зачисления</h3>
-            <p class="uk-card-text">30 Июля</p>
-          </div>
+  <div class="uk-grid uk-grid-match" uk-grid>
+    <div class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Этап приоритетного зачисления" %}</h3>
+          <p class="uk-card-text">{% trans "30 июля" %}</p>
         </div>
       </div>
-
-      <div class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">На основном этапе зачисления</h3>
-            <p class="uk-card-text">Не ранее 4 Августа и не позднее 9 Августа</p>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-
-    <!-- <ul class="heading" style="margin-left: 10px;">
-      <li>На контрактной форме обучения подача документов осуществляется до 31.08.2024</li>
-    </ul> -->
-
-    <p class="heading" style="margin-left: 10px;">
-      Прием документов от иностранных граждан по договорам с оплатой стоимости обучения начинается 1 апреля и заканчивается:
-    </p>
-
-    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
-
-      <div class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">По очной и очно-заочной формам обучения</h3>
-            <p class="uk-card-text">29 Сентября</p>
-          </div>
+    <div class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Основной этап зачисления" %}</h3>
+          <p class="uk-card-text">{% trans "4–9 августа" %}</p>
         </div>
       </div>
-
-      <div class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">По заочной форме обучения</h3>
-            <p class="uk-card-text">26 Ноября</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
-    <h2 class="sub-heading">Порядок поступления и подачи документов</h2>
+  <p class="heading" style="margin-left:10px">
+    {% trans "Приём документов от иностранных граждан по договорам начинается 1 апреля и заканчивается:" %}
+  </p>
 
-    <div class="uk-child-width-1-2@m" uk-grid>
-      <div>
-          <div class="uk-card uk-card-default">
-              <div class="uk-card-media-top">
-                  <img src="{%static "images/applicants/committee/ochno.jpeg"%}" width="1800" height="1200" alt="">
-              </div>
-              <div class="uk-card-body">
-                  <h3 class="uk-card-title">Личная подача документов</h3>
-                  <p><a  uk-icon="location"></a> <a href="https://yandex.ru/maps/org/rossiyskiy_universitet_druzhby_narodov_imeni_patrisa_lumumby/1023090723/">г. Москва, ул. Миклухо-Маклая, д.6, каб. 168</a></p>
-              </div>
-          </div>
-      </div>
-      <div>
-          <div class="uk-card uk-card-default">
-              <div class="uk-card-body">
-                  <h3 class="uk-card-title">Онлайн-подача документов на сайте РУДН </h3>
-                  <p><a  uk-icon="laptop"></a> <a href="ab.rudn.ru">ab.rudn.ru</a></p>
-
-              </div>
-              <div class="uk-card-media-bottom">
-                  <img src="{%static "images/applicants/committee/online.png"%}" width="1800" height="1200" alt="">
-              </div>
-          </div>
-      </div>
-  </div>
-
-    <ol type="1">
-      <li>Перечень <a href="https://admission.rudn.ru/undergraduate/documents/" target="_blank">документов</a> для поступления </li>
-      <li><a href="https://academy.rudn.ru/applicants/study_directions">Направления подготовки инженерной академии</a></li>
-    </ol>
-
-    <h2 class="sub-heading">Порядок зачисления</h2>
-    <p class="heading" style="margin-left: 10px;">Зачисление иностранных граждан проводится:</p>
-
-    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
-
-      <div class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">По очной и очно-заочной формам обучения</h3>
-            <p class="uk-card-text">до 1 Октября</p>
-          </div>
+  <div class="uk-grid uk-grid-match" uk-grid>
+    <div class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Очная и очно-заочная формы" %}</h3>
+          <p class="uk-card-text">{% trans "29 сентября" %}</p>
         </div>
       </div>
-
-      <div class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">По заочной форме обучения</h3>
-            <p class="uk-card-text">до 1 Декабря</p>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-
-  
-
-  <div >
-    <div class="heading" style="margin-left: 10px;">
-      <p>Зачисление проводится в 2 этапа:</p>
-    </div>
-
-    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
-      <li class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">28 Июля – 30 Июля</h3>
-            <p class="uk-card-text">Проводится этап приоритетного зачисления, на котором зачисляются лица без вступительных испытаний и по квотам</p>
-          </div>
+    <div class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Заочная форма" %}</h3>
+          <p class="uk-card-text">{% trans "26 ноября" %}</p>
         </div>
-      </li>
-
-      <li class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">3 Августа – 9 Августа</h3>
-            <p class="uk-card-text">Проводится основной этап зачисления, на котором зачисляются лица по результатам вступительных испытаний на основные места</p>
-          </div>
-        </div>
-      </li>
-    </div>
-
-  </div>
-
-  <div>
-    <div class="heading" style="margin-left: 10px;"><p>Важные даты для зачисленных:</p></div>
-
-    <div class="uk-grid uk-grid-match uk-grid-stack .uk-width-1-1" uk-grid>
-      <li class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">3 – 9 августа</h3>
-            <p class="uk-card-text">На почту абитуриентам будет отправлено письмо с результатами приемной комиссии</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="uk-width-1-2@m uk-width-1-1">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">19 августа в 15:00</h3>
-            <p class="uk-card-text">Организационная онлайн-встреча для первокурсников Инженерной Академии РУДН, ссылка будет отправлена на почту позже</p>
-          </div>
-        </div>
-      </li>
+      </div>
     </div>
   </div>
 
-  <div class="heading">
-    <p style="text-decoration: underline; text-underline-offset: 5px">Контакты</p>
+  <h2 class="sub-heading">{% trans "Порядок поступления и подачи документов" %}</h2>
+
+  <div class="uk-child-width-1-2@m" uk-grid>
+    <div>
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-media-top">
+          <img src="{% static 'images/applicants/committee/ochno.jpeg' %}" alt="">
+        </div>
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Личная подача документов" %}</h3>
+          <p>
+            <a uk-icon="location"></a>
+            <a href="https://yandex.ru/maps/org/rossiyskiy_universitet_druzhby_narodov_imeni_patrisa_lumumby/1023090723/">
+              {% trans "г. Москва, ул. Миклухо-Маклая, д. 6, каб. 168" %}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Онлайн-подача документов на сайте РУДН" %}</h3>
+          <p><a uk-icon="laptop"></a> <a href="https://ab.rudn.ru">ab.rudn.ru</a></p>
+        </div>
+        <div class="uk-card-media-bottom">
+          <img src="{% static 'images/applicants/committee/online.png' %}" alt="">
+        </div>
+      </div>
+    </div>
   </div>
-  <article
-    style="background-color: transparent"
-    class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
-    role="comment"
-  >
-    <header
-      class="uk-comment-header"
-      style="padding-bottom: 15px; border-bottom: 1px solid #e5e5e5"
-    >
+
+  <ol>
+    <li>{% trans "Перечень" %} <a href="https://admission.rudn.ru/undergraduate/documents/" target="_blank">{% trans "документов для поступления" %}</a></li>
+    <li><a href="https://academy.rudn.ru/applicants/study_directions">{% trans "Направления подготовки Инженерной академии" %}</a></li>
+  </ol>
+
+  <h2 class="sub-heading">{% trans "Порядок зачисления" %}</h2>
+  <p class="heading" style="margin-left:10px">{% trans "Зачисление иностранных граждан проводится:" %}</p>
+
+  <div class="uk-grid uk-grid-match" uk-grid>
+    <div class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Очная и очно-заочная формы" %}</h3>
+          <p class="uk-card-text">{% trans "до 1 октября" %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "Заочная форма" %}</h3>
+          <p class="uk-card-text">{% trans "до 1 декабря" %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="heading" style="margin-left:10px">{% trans "Зачисление проводится в 2 этапа:" %}</p>
+
+  <div class="uk-grid uk-grid-match" uk-grid>
+    <li class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "28 июля – 30 июля" %}</h3>
+          <p class="uk-card-text">{% trans "Этап приоритетного зачисления: без вступительных испытаний и по квотам" %}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "3 августа – 9 августа" %}</h3>
+          <p class="uk-card-text">{% trans "Основной этап зачисления: по результатам вступительных испытаний" %}</p>
+        </div>
+      </div>
+    </li>
+  </div>
+
+  <p class="heading" style="margin-left:10px">{% trans "Важные даты для зачисленных:" %}</p>
+
+  <div class="uk-grid uk-grid-match" uk-grid>
+    <li class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "3–9 августа" %}</h3>
+          <p class="uk-card-text">{% trans "На почту абитуриентов будет отправлено письмо с результатами" %}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="uk-width-1-2@m">
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{% trans "19 августа в 15:00" %}</h3>
+          <p class="uk-card-text">{% trans "Организационная онлайн-встреча для первокурсников (ссылка придёт на почту)" %}</p>
+        </div>
+      </div>
+    </li>
+  </div>
+
+  <div class="heading"><p>{% trans "Контакты" %}</p></div>
+
+  <article class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card" role="comment">
+    <header class="uk-comment-header" style="padding-bottom:15px;border-bottom:1px solid #e5e5e5">
       <div class="uk-grid-medium uk-flex-middle" uk-grid>
         <div class="uk-width-auto">
-          <img class="uk-border-circle" src="{%static "images/profile_default.png"%}" width="80"
-          height="80" />
+          <img class="uk-border-circle" src="{% static 'images/profile_default.png' %}" width="80" height="80">
         </div>
         <div class="uk-width-expand">
-          <h3 class="uk-margin-remove">Надежда Александровна Сташевская</h3>
-          <ul
-            class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top"
-          >
-            <li><span>Секретарь отборочной комиссии</span></li>
+          <h3 class="uk-margin-remove">{% trans "Надежда Александровна Сташевская" %}</h3>
+          <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
+            <li><span>{% trans "Секретарь отборочной комиссии" %}</span></li>
           </ul>
         </div>
       </div>
@@ -355,35 +326,26 @@
     <div class="uk-comment-body">
       <ul class="uk-list">
         <li>
-          <h5
-            target="_blank"
-            rel="noreferrer noopener"
-            class="uk-link-heading card-link"
-          >
-            <span uk-icon="icon: location; ratio: 1"></span>
-            <span>Москва, ул. Орджоникидзе, д. 3, каб. 403</span>
+          <h5 class="uk-link-heading card-link">
+            <span uk-icon="location"></span>
+            <span>{% trans "Москва, ул. Орджоникидзе, д. 3, каб. 403" %}</span>
           </h5>
         </li>
         <li>
           <h5>
-            <span uk-icon="icon: receiver; ratio: 1"></span>
-            <a href="tel: +74959550913" class="uk-link-heading card-link">
-              +7 (495) 955-09-13 <br />
-            </a>
+            <span uk-icon="receiver"></span>
+            <a href="tel:+74959550913" class="uk-link-heading card-link">+7 (495) 955-09-13</a>
           </h5>
         </li>
         <li>
           <h5>
-            <span uk-icon="icon: mail; ratio: 1"></span>
-            <a
-              href="mailto:parshin-rs@rudn.ru"
-              class="uk-link-heading card-link"
-              >stashevskaya_na@pfur.ru
-            </a>
+            <span uk-icon="mail"></span>
+            <a href="mailto:stashevskaya_na@pfur.ru" class="uk-link-heading card-link">stashevskaya_na@pfur.ru</a>
           </h5>
         </li>
       </ul>
     </div>
   </article>
 </div>
-{%endblock %}
+
+{% endblock %}

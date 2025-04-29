@@ -1,39 +1,64 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% block content %}
+{% load static i18n %}
+
 <link rel="stylesheet" href="{% static 'css/science/digital_library.css' %}" />
+
 <div class="uk-container">
-  <div class="page-name">{{title}}</div>
+  <div class="page-name">{{ title }}</div>
 </div>
+
 <div class="parallax-container_2 uk-visible@s">
-  <p class="text-on-image"> Открой для себя новые возможности! </p>
+  <p class="text-on-image">{% trans "Открой для себя новые возможности!" %}</p>
 </div>
+
 <div class="uk-container" style="margin-bottom: 50px; margin-top: 40px">
   <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <a href="https://lib.rudn.ru/resources/20">
-      <h3 class="uk-card-title"> Электронно-библиотечные системы — Online libraries for learning </h3>
+      <h3 class="uk-card-title">
+        {% trans "Электронно-библиотечные системы — Online libraries for learning" %}
+      </h3>
     </a>
   </div>
+
   <hr class="uk-divider-icon" />
+
   <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <a href="https://lib.rudn.ru/resources/21">
-      <h3 class="uk-card-title"> Электронные ресурсы — Digital content for research </h3>
+      <h3 class="uk-card-title">
+        {% trans "Электронные ресурсы — Digital content for research" %}
+      </h3>
     </a>
   </div>
+
   <hr class="uk-divider-icon" />
+
   <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <a href="https://lib.rudn.ru/resources/22">
-      <h3 class="uk-card-title"> Открытые электронные ресурсы — Open access </h3>
+      <h3 class="uk-card-title">
+        {% trans "Открытые электронные ресурсы — Open access" %}
+      </h3>
     </a>
   </div>
+
   <hr class="uk-divider-icon" />
+
   <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <a href="https://lib.rudn.ru/resources/10">
-      <h3 class="uk-card-title">Научные статьи и книги</h3>
+      <h3 class="uk-card-title">
+        {% trans "Научные статьи и книги" %}
+      </h3>
     </a>
   </div>
+
   <hr class="uk-divider-icon" />
+
   <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <a href="https://lib.rudn.ru/resources/16">
-      <h3 class="uk-card-title">Видеолекции — Video lectures</h3>
+      <h3 class="uk-card-title">
+        {% trans "Видеолекции — Video lectures" %}
+      </h3>
     </a>
   </div>
-</div> {% endblock %}
+</div>
+{% endblock %}

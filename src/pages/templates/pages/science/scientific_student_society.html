@@ -1,15 +1,23 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% block content %}
+{% load static i18n %}
+
 <link rel="stylesheet" href="{% static 'css/science/scientific_student_clubs.css' %}" />
+
 <div class="uk-container">
-  <div class="page-name">{{title}}</div>
+  <div class="page-name">{{ title }}</div>
 </div>
+
 <div class="parallax-container uk-visible@s">
-  <p class="text-on-image"> Изучай, твори, достигай! </p>
+  <p class="text-on-image">{% trans "Изучай, твори, достигай!" %}</p>
 </div>
+
 <div class="uk-container" style="margin-bottom: 50px">
   <div>
-    <h2 class="sub-heading">Научные студенческие кружки</h2>
+    <h2 class="sub-heading">{% trans "Научные студенческие кружки" %}</h2>
   </div>
+
+  {# ---------- Кружок 1 ---------- #}
   <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" uk-grid>
     <div class="uk-card-media-left uk-cover-container">
       <img src="{% static 'images/science/scientific_student_clubs/ssc1.png' %}" alt="" uk-cover />
@@ -17,20 +25,35 @@
     </div>
     <div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title"> Информационные системы, искусственный интеллект, космические технологии </h3>
-        <span style="font-weight: 320">Руководитель кружка</span><br />
-        <a class="uk-link-muted" href="mailto:karatunov@rudn.ru" style="font-size: 24px; font-weight: 400">Каратунов
-          Максим Олегович</a><br />
-        <span style="font-weight: 320">к.т.н., доцент кафедры механики и процессов управления</span><br />
-        <p style="font-size: 18px; text-align: justify;"> Студенты изучают программирование, проводят исследования в области современных
-          проблем управления, занимаются разработкой эффективных вычислительных алгоритмов для решения сложных
-          прикладных задач оптимизации и управления, визуализацией сложных графиков, готовятся к олимпиадам по
-          инженерным профилям, алгоритмам в программировании. Мы также проводим мастер-классы для школьников и
-          студентов. </p>
+        <h3 class="uk-card-title">
+          {% trans "Информационные системы, искусственный интеллект, космические технологии" %}
+        </h3>
+
+        <span style="font-weight: 320">{% trans "Руководитель кружка" %}</span><br />
+        <a class="uk-link-muted" href="mailto:karatunov@rudn.ru"
+           style="font-size: 24px; font-weight: 400">
+           {% trans "Каратунов Максим Олегович" %}
+        </a><br />
+        <span style="font-weight: 320">
+          {% trans "к.т.н., доцент кафедры механики и процессов управления" %}
+        </span><br />
+
+        <p style="font-size: 18px; text-align: justify;">
+          {% blocktrans trimmed %}
+            Студенты изучают программирование, проводят исследования в области современных
+            проблем управления, занимаются разработкой эффективных вычислительных алгоритмов для
+            решения сложных прикладных задач оптимизации и&nbsp;управления, визуализацией сложных
+            графиков, готовятся к&nbsp;олимпиадам по&nbsp;инженерным профилям и&nbsp;алгоритмам
+            программирования. Мы также проводим мастер-классы для школьников и&nbsp;студентов.
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
   </div>
+
   <hr class="uk-divider-icon" />
+
+  {# ---------- Кружок 2 ---------- #}
   <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" uk-grid>
     <div class="uk-flex-last@m uk-card-media-right uk-cover-container">
       <img src="{% static 'images/science/scientific_student_clubs/ssc2.png' %}" alt="" uk-cover />
@@ -38,20 +61,32 @@
     </div>
     <div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title">Удивительный потенциал нанотехнологий</h3>
-        <span style="font-weight: 320">Руководитель кружка</span><br />
-        <a class="uk-link-muted" href="mailto:agasieva-sv@rudn.ru" style="font-size: 24px; font-weight: 400">Агасиева
-          Светлана Викторовна.</a><br />
-        <span style="font-weight: 320">к.т.н., доцент кафедры нанотехнологий и микросистемной техники</span><br />
-        <p style="font-size: 18px; text-align: justify;"> Студенты изучают сверхсовременные отрасли наноэлектроники, нанофотоники,
-          наномедицины, производства и применения наноматериалов, проводят исследования в области нанотехнологий,
-          подготавливают статьи в научные журналы, доклады для конференций и выступают в качестве спикеров. Мы
-          сотрудничаем с Научно-исследовательским институтом «Полюс» им. М. Ф. Стельмаха. Мы также организуем и проводим
-          мастер-классы для школьников и студентов. </p>
+        <h3 class="uk-card-title">{% trans "Удивительный потенциал нанотехнологий" %}</h3>
+
+        <span style="font-weight: 320">{% trans "Руководитель кружка" %}</span><br />
+        <a class="uk-link-muted" href="mailto:agasieva-sv@rudn.ru"
+           style="font-size: 24px; font-weight: 400">
+           {% trans "Агасиева Светлана Викторовна" %}
+        </a><br />
+        <span style="font-weight: 320">
+          {% trans "к.т.н., доцент кафедры нанотехнологий и микросистемной техники" %}
+        </span><br />
+
+        <p style="font-size: 18px; text-align: justify;">
+          {% blocktrans trimmed %}
+            Студенты изучают передовые направления наноэлектроники, нанофотоники, наномедицины,
+            занимаются исследованиями в области нанотехнологий, готовят статьи в научные журналы и
+            доклады для конференций. Кружок сотрудничает с НИИ «Полюс» им.&nbsp;М.&nbsp;Ф.&nbsp;Стельмаха и
+            регулярно проводит мастер-классы для школьников и студентов.
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
   </div>
+
   <hr class="uk-divider-icon" />
+
+  {# ---------- Кружок 3 ---------- #}
   <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" uk-grid>
     <div class="uk-card-media-left uk-cover-container">
       <img src="{% static 'images/science/scientific_student_clubs/ssc3.png' %}" alt="" uk-cover />
@@ -59,21 +94,34 @@
     </div>
     <div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title"> Инновационные технологии в недропользовании и нефетегазовом деле </h3>
-        <span style="font-weight: 320">Руководитель кружка</span><br />
-        <a class="uk-link-muted" href="mailto:vorobyev-ka@rudn.ru" style="font-size: 24px; font-weight: 400">Воробьев
-          Кирилл Александрович</a><br />
-        <span style="font-weight: 320">учебный мастер кафедры недропользования и нефтегазрового дела</span><br />
-        <span style="font-weight: 320"></span>
-        <p style="font-size: 18px; text-align: justify;"> Цель кружка заключается в создании условий, способствующих общению и сотрудничеству
-          студентов различных курсов друг с другом, для передачи опыта в проведении научно-исследовательской работы.
-          Основной задачей кружка является повышение качества подготовки будущих специалистов горной и нефтяной
-          промышленностей. В кружке проводятся обсуждения современных тенденций в областях геологии, горного и
-          нефтегазового дела. </p>
+        <h3 class="uk-card-title">
+          {% trans "Инновационные технологии в недропользовании и нефтегазовом деле" %}
+        </h3>
+
+        <span style="font-weight: 320">{% trans "Руководитель кружка" %}</span><br />
+        <a class="uk-link-muted" href="mailto:vorobyev-ka@rudn.ru"
+           style="font-size: 24px; font-weight: 400">
+           {% trans "Воробьев Кирилл Александрович" %}
+        </a><br />
+        <span style="font-weight: 320">
+          {% trans "учебный мастер кафедры недропользования и нефтегазового дела" %}
+        </span><br />
+
+        <p style="font-size: 18px; text-align: justify;">
+          {% blocktrans trimmed %}
+            Цель кружка — создать условия для общения и сотрудничества студентов разных курсов,
+            передавать опыт научно-исследовательской работы и повышать качество подготовки будущих
+            специалистов горной и нефтяной промышленности. Обсуждаются современные тенденции геологии,
+            горного и нефтегазового дела.
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
   </div>
+
   <hr class="uk-divider-icon" />
+
+  {# ---------- Кружок 4 ---------- #}
   <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" uk-grid>
     <div class="uk-flex-last@m uk-card-media-right uk-cover-container">
       <img src="{% static 'images/science/scientific_student_clubs/ssc4.png' %}" alt="" uk-cover />
@@ -81,20 +129,31 @@
     </div>
     <div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title">Новые технологии в машиностроении</h3>
-        <span style="font-weight: 320">Руководитель кружка</span><br />
-        <a class="uk-link-muted" href="mailto:allenov-dg@rudn.ru" style="font-size: 24px; font-weight: 400">Алленов
-          Дмитрий Геннадьевич</a><br />
-        <span style="font-weight: 320">к.т.н., доцент кафедры машиностроительных технологий</span><br />
-        <p style="font-size: 18px; text-align: justify;"> Студенты научного кружка изучают наукоёмкие технологии и инновации, возникающие на
-          пересечении нескольких наук: энергетики, компьютерных технологий, программных продуктов и пр. Это сочетание
-          позволяет разрабатывать гибкие, многофункциональные машины. Участвуют в международных и всероссийских
-          мероприятиях, пишут научные статьи, участвуют в научно-технических конференциях. Мы также организуем и
-          проводим мастер-классы для детей и школьников. </p>
+        <h3 class="uk-card-title">{% trans "Новые технологии в машиностроении" %}</h3>
+
+        <span style="font-weight: 320">{% trans "Руководитель кружка" %}</span><br />
+        <a class="uk-link-muted" href="mailto:allenov-dg@rudn.ru"
+           style="font-size: 24px; font-weight: 400">
+           {% trans "Алленов Дмитрий Геннадьевич" %}
+        </a><br />
+        <span style="font-weight: 320">
+          {% trans "к.т.н., доцент кафедры машиностроительных технологий" %}
+        </span><br />
+
+        <p style="font-size: 18px; text-align: justify;">
+          {% blocktrans trimmed %}
+            Участники изучают высокотехнологичные инновации на стыке энергетики, IT и&nbsp;машиностроения,
+            публикуют научные статьи, выступают на конференциях и проводят мастер-классы для детей и
+            школьников.
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
   </div>
+
   <hr class="uk-divider-icon" />
+
+  {# ---------- Кружок 5 ---------- #}
   <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" uk-grid>
     <div class="uk-card-media-left uk-cover-container">
       <img src="{% static 'images/science/scientific_student_clubs/ssc5.png' %}" alt="" uk-cover />
@@ -102,21 +161,31 @@
     </div>
     <div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title">Управление инновациями</h3>
-        <span style="font-weight: 320">Руководитель кружка</span><br />
-        <a class="uk-link-muted" href="mailto:kovaleva-ea@rudn.ru" style="font-size: 24px; font-weight: 400">Ковалева
-          Екатерина Алексанровна</a><br />
-        <span style="font-weight: 320">к.э.н., доцент кафедры инновационного менеджмента в отраслях
-          промышленности</span><br />
-        <p style="font-size: 18px; text-align: justify;"> Сфера научных интересов членов кружка – управление инновациями в промышленности. Мы
-          тесно сотрудничаем с Университетом Тренто и Уральским государственным экономическим университетом, результат
-          сотрудничества – совместное участие в международном конкурсе по маркетингу Challenge of Trento на площадке
-          Евразийского молодежного форума. Также наши студенты участвуют в ежегодной международной олимпиаде по
-          логистике Fresh connection. </p>
+        <h3 class="uk-card-title">{% trans "Управление инновациями" %}</h3>
+
+        <span style="font-weight: 320">{% trans "Руководитель кружка" %}</span><br />
+        <a class="uk-link-muted" href="mailto:kovaleva-ea@rudn.ru"
+           style="font-size: 24px; font-weight: 400">
+           {% trans "Ковалева Екатерина Алексанровна" %}
+        </a><br />
+        <span style="font-weight: 320">
+          {% trans "к.э.н., доцент кафедры инновационного менеджмента в отраслях промышленности" %}
+        </span><br />
+
+        <p style="font-size: 18px; text-align: justify;">
+          {% blocktrans trimmed %}
+            Сфера интересов — управление инновациями в промышленности. Кружок сотрудничает с Университетом
+            Тренто и УрГЭУ, участвует в международных конкурсах Challenge of Trento, Fresh Connection и
+            других мероприятиях.
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
   </div>
+
   <hr class="uk-divider-icon" />
+
+  {# ---------- Кружок 6 ---------- #}
   <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" uk-grid>
     <div class="uk-flex-last@m uk-card-media-right uk-cover-container">
       <img src="{% static 'images/science/scientific_student_clubs/ssc6.png' %}" alt="" uk-cover />
@@ -124,20 +193,33 @@
     </div>
     <div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title"> Цифровое моделирование строительных объектов </h3>
-        <span style="font-weight: 320">Руководитель кружка</span><br />
-        <a class="uk-link-muted" href="mailto:kireev-ol@rudn.ru" style="font-size: 24px; font-weight: 400">Киреев Олег
-          Леонидович</a><br />
-        <span style="font-weight: 320">старший преподаватель кафедры строительства</span><br />
-        <p style="font-size: 18px; text-align: justify;"> Наш кружок для будущих инженеров-строителей в сфере моделирования строительных
-          объектов, включая BIM (Building Information Modeling) технологии информационного моделирования, которая
-          включает в себя элементы геоинформационной системы и системы автоматизированного проектирования, занимается
-          построением информационных моделей зданий и сооружений, так же организовываем и проводим мастер-классы для
-          детей и школьников </p>
+        <h3 class="uk-card-title">
+          {% trans "Цифровое моделирование строительных объектов" %}
+        </h3>
+
+        <span style="font-weight: 320">{% trans "Руководитель кружка" %}</span><br />
+        <a class="uk-link-muted" href="mailto:kireev-ol@rudn.ru"
+           style="font-size: 24px; font-weight: 400">
+           {% trans "Киреев Олег Леонидович" %}
+        </a><br />
+        <span style="font-weight: 320">
+          {% trans "старший преподаватель кафедры строительства" %}
+        </span><br />
+
+        <p style="font-size: 18px; text-align: justify;">
+          {% blocktrans trimmed %}
+            Кружок посвящён BIM-технологиям и цифровому моделированию зданий и&nbsp;сооружений. Участники
+            строят информационные модели, изучают интеграцию с ГИС и CAD, проводят мастер-классы для
+            школьников.
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
   </div>
+
   <hr class="uk-divider-icon" />
+
+  {# ---------- Кружок 7 ---------- #}
   <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" uk-grid>
     <div class="uk-card-media-left uk-cover-container">
       <img src="{% static 'images/science/scientific_student_clubs/ssc7.png' %}" alt="" uk-cover />
@@ -145,17 +227,26 @@
     </div>
     <div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title">Дизайн архитектурной среды</h3>
-        <span style="font-weight: 320">Руководитель кружка</span><br />
-        <a class="uk-link-muted" href="mailto:bik-ov@rudn.ru" style="font-size: 24px; font-weight: 400">Бик Олег
-          Витальевич</a><br />
-        <span style="font-weight: 320">к.арх., директор кафедры архитектуры</span>
-        <p style="font-size: 18px; text-align: justify;"> Мы регулярно принимаем участие в международных конкурсах, выставках, научно
-          -практических конференциях различного уровня, публикуем статьи на иностранных языках; оформляем холлы
-          Инженерной академии; организовываем мастер-классы. В наших мастерских читают лекции и мастер-классы
-          практикующие дизайнеры, реставраторы, мозаичисты. Наши студенты принимают участие в ежегодном конкурсе молодых
-          дизайнеров «Дизайн – перспектива». </p>
+        <h3 class="uk-card-title">{% trans "Дизайн архитектурной среды" %}</h3>
+
+        <span style="font-weight: 320">{% trans "Руководитель кружка" %}</span><br />
+        <a class="uk-link-muted" href="mailto:bik-ov@rudn.ru"
+           style="font-size: 24px; font-weight: 400">
+           {% trans "Бик Олег Витальевич" %}
+        </a><br />
+        <span style="font-weight: 320">
+          {% trans "к.арх., директор кафедры архитектуры" %}
+        </span>
+
+        <p style="font-size: 18px; text-align: justify;">
+          {% blocktrans trimmed %}
+            Участники регулярно выступают на конкурсах, выставках и конференциях, публикуют статьи на
+            иностранных языках, проводят мастер-классы с приглашёнными дизайнерами, реставраторами и
+            мозаичистами. Студенты принимают участие в ежегодном конкурсе «Дизайн&nbsp;– перспектива».
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
   </div>
-</div> {% endblock %}
+</div>
+{% endblock %}

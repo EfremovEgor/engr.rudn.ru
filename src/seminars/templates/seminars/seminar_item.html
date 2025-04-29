@@ -50,54 +50,46 @@
   <div style="margin-left:20px">
     <ul uk-accordion>
       <li class="uk-open">
-        <a class="uk-accordion-title" href>{% trans "Предстоящие" %}</a>
-        <div class="uk-accordion-content" style="margin-left:20px;margin-top:10px;display:flex;flex-direction:column;gap:5px">
+        <a class="uk-accordion-title" href>Предстоящие</a>
+        <div style="margin-left: 20px; margin-top: 10px; display:flex; flex-direction: column;gap:5px"
+          class="uk-accordion-content">
           {% if upcoming_reports|length == 0 %}
             {% trans "Предстоящие доклады не запланированы" %}
           {% endif %}
 
           {% for report in upcoming_reports %}
-            {% if not report.is_past_due %}
-              <div>
-                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                  <div class="uk-card-badge uk-label">
-                    {{ report.date_start|date:"j/m/o" }} {{ report.time_start|date:"H:i" }}
-                  </div>
-
-                  <h3 class="uk-card-title uk-margin-remove">
-                    <a class="uk-link-reset" href="/science/seminars/{{ seminar.id }}/reports/{{ report.id }}">
-                      {% if LANGUAGE_CODE == 'en' and report.name_en %}
-                        {{ report.name_en }}
-                      {% else %}
-                        {{ report }}
-                      {% endif %}
-                    </a>
-                  </h3>
-
-                  <h4 class="uk-margin-remove">
-                    {{ report.speaker.last_name }} {{ report.speaker.first_name }} {{ report.speaker.middle_name }}
-                  </h4>
-
-                  <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
-                    {% for title in report.speaker.job_title %}
-                      <li>{{ title }}</li>
-                    {% endfor %}
-                    {% if report.speaker.academic_degree %}
-                      <li>{{ report.speaker.academic_degree }}</li>
-                    {% endif %}
-                    {% if report.speaker.academic_title %}
-                      <li>{{ report.speaker.academic_title }}</li>
-                    {% endif %}
-                  </ul>
-
-                  <a href="/science/seminars/{{ seminar.id }}/reports/{{ report.id }}"
-                     class="link-hover-underline red-link-hover-underline">
-                    <span class="show-uni-department__link-text">{% trans "Подробнее" %}</span>
-                    <i class="icon-ic_arrow"></i>
-                  </a>
-                </div>
-              </div>
-            {% endif %}
+          {% if not report.is_past_due %}
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+              <div class="uk-card-badge uk-label">{{ report.date_start|date:"j/m/o" }} {{ report.time_start|date:"H:i" }}</div>
+              <h3 class="uk-card-title uk-margin-remove">
+                <a class="uk-link-reset" href="/science/seminars/{{ seminar.id }}/reports/{{ report.id }}"
+                  style="font-weight: 500">
+                  {{ report }}
+                </a>
+              </h3>
+              <h4 class="uk-margin-remove">
+                {{ report.speaker.last_name }} {{ report.speaker.first_name }} {{ report.speaker.middle_name }}
+              </h4>
+              <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
+                {% for title in report.speaker.job_title %}
+                <li><span>{{ title }}</span></li>
+                {% endfor %}
+                {% if report.speaker.academic_degree %}
+                <li><span>{{ report.speaker.academic_degree }}</span></li>
+                {% endif %}
+                {% if report.speaker.academic_title %}
+                <li><span>{{ report.speaker.academic_title }}</span></li>
+                {% endif %}
+              </ul>
+              <a href="/science/seminars/{{ seminar.id }}/reports/{{ report.id }}"
+                class="link-hover-underline red-link-hover-underline" target="_self">
+                <span class="show-uni-department__link-text">Подробнее</span>
+                <i class="icon-ic_arrow"></i>
+              </a>
+            </div>
+          </div>
+          {% endif %}
           {% endfor %}
         </div>
       </li>

@@ -98,3 +98,24 @@ text-align: center;
 margin-bottom: 20px;
 margin-top: 40px;
 }
+
+.btn-row {
+  display: flex;
+  flex-wrap: nowrap;       /* всё в одну строку */
+  align-items: center;     /* выровнять по базовой линии текста */
+  gap: 0.5rem;             /* равномерные отступы между элементами */
+  overflow-x: auto;        /* скролл на мобильных, если не вмещается */
+  -webkit-overflow-scrolling: touch;
+  margin: 50px 0;          /* общий отступ сверху-снизу */
+}
+
+.btn-row > * {
+  flex: 0 0 auto;          /* ни растягиваться, ни сжиматься */
+  white-space: nowrap;     /* не переносить текст */
+}
+
+.return-button {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  display: inline-block;
+}

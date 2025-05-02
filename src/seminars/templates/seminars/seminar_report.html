@@ -6,61 +6,87 @@
 <link rel="stylesheet" href="{% static 'css/seminars.css' %}">
 
 <div class="uk-container">
-  <div class="page-name">{{seminar.name}}</div>
+  <div class="btn-row">
+    {% if LANGUAGE_CODE == 'en' and seminar.name_en %}
+    <a href="{% url 'seminars:seminar_detail' seminar.id %}" class="return-button">{{ seminar.name_en }}</a>
+    {% else %}
+    <a href="{% url 'seminars:seminar_detail' seminar.id %}" class="return-button">{{ seminar.name }}</a>
+    {% endif %} 
+  </div>
 </div>
-<div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
-  <h3 style="font-weight: bold;">{{report.name}}</h3>
-  <p style="margin-top:-20px">{{report.date_start}} - {{report.time_start}} – {{report.time_end}}</p>
-  <div class="speaker-container">
-    <div class="speaker-info uk-visible@s">
-      <table cellspacing="10px" cellpadding="0px 10px">
-        <tr>
-          <td>
-            <img
-              src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}"
-              alt="" class="uk-border-circle" width="150" height="150" />
-          </td>
-          <td>
-            <h3>
-              {{report.speaker.last_name}} {{report.speaker.first_name}}
-              {{report.speaker.middle_name}}
-            </h3>
-            {% if report.speaker.academic_degree %}
-            <p style="margin-top: -20px">{{report.speaker.academic_degree}}</p>
-            {% endif %}
-            {% if report.speaker.job_title %}
-            <p style="margin-top: -20px">{{report.speaker.job_title.0}}</p>
-            {% endif %}
-            {% if report.speaker.academic_title %}
-            <p style="margin-top: -20px">{{report.speaker.academic_title}}</p>
-            {% endif %}
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div style="margin-top: 20px" class="speaker-info uk-hidden@s">
-      <img
-        src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}"
-        alt="" class="uk-border-circle" width="150" height="150" />
-      <h3 style="margin-top:20px">
-        {{report.speaker.last_name}} {{report.speaker.first_name}}
-        {{report.speaker.middle_name}}
-      </h3>
-      <p style="margin-top: -20px">{{report.speaker.job_title.0}}</p>
-      <p style="margin-top: -20px">{{report.speaker.academic_title}}</p>
-      <p style="margin-top: -20px">{{report.speaker.academic_degree}}</p>
-    </div>
-  {% endif %}
 
-  {% if report.speaker.bio or report.speaker.bio_en %}
-    <h3 style="margin-top:10px">{% trans "Краткая биография" %}</h3>
-    <div style="margin-top:-20px;text-align:justify;">
-      {% if LANGUAGE_CODE == 'en' and report.speaker.bio_en %}
-        {{ report.speaker.bio_en|safe }}
-      {% else %}
-        {{ report.speaker.bio|safe }}
-      {% endif %}
-    </div>
-  {% endif %}
+<div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
+  <h3 style="font-weight: bold;">{{ report.name }}</h3>
+  <p style="margin-top:-20px">
+    {{ report.date_start }} - {{ report.time_start }} – {{ report.time_end }}
+  </p>
+
+  <div class="speaker-container">
+    {% if report.speaker %}
+      <div class="speaker-info uk-visible@s">
+        <table cellspacing="10px" cellpadding="0px 10px">
+          <tr>
+            <td>
+              <img
+                src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}"
+                alt="" class="uk-border-circle"
+                width="150" height="150"
+              />
+            </td>
+            <td>
+              <h3>
+                {{ report.speaker.last_name }}
+                {{ report.speaker.first_name }}
+                {{ report.speaker.middle_name }}
+              </h3>
+              {% if report.speaker.academic_degree %}
+                <p style="margin-top: -20px">{{ report.speaker.academic_degree }}</p>
+              {% endif %}
+              {% if report.speaker.job_title %}
+                <p style="margin-top: -20px">{{ report.speaker.job_title.0 }}</p>
+              {% endif %}
+              {% if report.speaker.academic_title %}
+                <p style="margin-top: -20px">{{ report.speaker.academic_title }}</p>
+              {% endif %}
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="speaker-info uk-hidden@s" style="margin-top: 20px">
+        <img
+          src="{% if report.speaker.image %}{{ report.speaker.image.url }}{% else %}{% static 'images/profile_default.png' %}{% endif %}"
+          alt="" class="uk-border-circle"
+          width="150" height="150"
+        />
+        <h3 style="margin-top:20px">
+          {{ report.speaker.last_name }}
+          {{ report.speaker.first_name }}
+          {{ report.speaker.middle_name }}
+        </h3>
+        {% if report.speaker.job_title %}
+          <p style="margin-top: -20px">{{ report.speaker.job_title.0 }}</p>
+        {% endif %}
+        {% if report.speaker.academic_title %}
+          <p style="margin-top: -20px">{{ report.speaker.academic_title }}</p>
+        {% endif %}
+        {% if report.speaker.academic_degree %}
+          <p style="margin-top: -20px">{{ report.speaker.academic_degree }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if report.speaker.bio or report.speaker.bio_en %}
+      <h3 style="margin-top:10px">{% trans "Краткая биография" %}</h3>
+      <div style="margin-top:-20px; text-align:justify;">
+        {% if LANGUAGE_CODE == 'en' and report.speaker.bio_en %}
+          {{ report.speaker.bio_en|safe }}
+        {% else %}
+          {{ report.speaker.bio|safe }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
 </div>
+
 {% endblock %}

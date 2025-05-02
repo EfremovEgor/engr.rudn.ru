@@ -6,11 +6,20 @@
 <script src="{% static 'js/seminars.js' %}"></script>
 <link rel="stylesheet" href="{% static 'css/academy/departments.css' %}">
 <link rel="stylesheet" href="{% static 'css/seminars.css' %}">
+<link rel="stylesheet" href="{% static 'css/direction.css' %}" />
 
 <div class="uk-container">
-  <a href="{% url 'pages:science_events' %}" class="return-button">{% trans "Научные мероприятия" %}</a>
-  <a href="{% url 'seminars:seminars_list' %}" class="return-button" style="margin-top:50px;margin-left:15px;">{% trans "Научные семинары" %}</a>
+  <div class="btn-row">
+    <a href="{% url 'pages:science_events' %}" class="return-button">
+      {% trans "Научные мероприятия" %}
+    </a>
+    <a href="{% url 'seminars:seminars_list' %}" class="return-button">
+      {% trans "Научные семинары" %}
+    </a>
+  </div>
+</div>
 
+<div class="uk-container" style="margin-top:20px;margin-bottom:50px">
   <div class="page-name">
     {% if LANGUAGE_CODE == 'en' and seminar.name_en %}
       {{ seminar.name_en }}
@@ -18,10 +27,6 @@
       {{ seminar.name }}
     {% endif %}
   </div>
-</div>
-
-<div class="uk-container" style="margin-top:20px;margin-bottom:50px">
-
   <div class="seminar-description uk-margin" style="margin-top:-10px;">
     {% trans "Семинар проводится в рамках" %}
 

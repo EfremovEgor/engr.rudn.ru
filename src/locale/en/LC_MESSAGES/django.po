@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 15:44+0300\n"
+"POT-Creation-Date: 2025-04-29 18:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgstr "Research Directions"
 #: pages/models.py:312 pages/templates/components/footer.html:134
 #: pages/templates/components/header.html:178
 #: pages/templates/components/header.html:390
-#: pages/templates/pages/science/directions.html:8 pages/views.py:204
+#: pages/templates/pages/science/directions.html:8 pages/views.py:205
 msgid "Научные направления"
 msgstr "Research Directions"
 
@@ -160,9 +160,37 @@ msgstr "Dissertation Committee"
 
 #: pages/models.py:383 pages/templates/components/footer.html:143
 #: pages/templates/components/header.html:192
-#: pages/templates/components/header.html:400 pages/views.py:425
+#: pages/templates/components/header.html:400 pages/views.py:430
 msgid "Диссертационные советы"
 msgstr "Dissertation Committees"
+
+#: pages/template_tags/custom_tags.py:25
+#, fuzzy
+#| msgid "Кафедры"
+msgid "кафедры"
+msgstr "Departments"
+
+#: pages/template_tags/custom_tags.py:25
+#, fuzzy
+#| msgid "Кафедры"
+msgid "кафедрой"
+msgstr "Departments"
+
+#: pages/template_tags/custom_tags.py:51
+#, fuzzy
+#| msgid "Сайт конференции"
+msgid "на контракт"
+msgstr "Conference website"
+
+#: pages/template_tags/custom_tags.py:77 pages/template_tags/custom_tags.py:82
+#, python-format
+msgid "%(year)d-й год – %(price)s ₽"
+msgstr "%(year)d-year – %(price)s ₽"
+
+#: pages/template_tags/custom_tags.py:80
+#, python-format
+msgid "%(year)d-й год и далее – %(price)s ₽"
+msgstr "%(year)d-year and beyond – %(price)s ₽"
 
 #: pages/templates/components/footer.html:103
 #: pages/templates/components/header.html:114
@@ -172,41 +200,41 @@ msgstr "Home"
 
 #: pages/templates/components/footer.html:106
 #: pages/templates/components/header.html:119
-#: pages/templates/components/header.html:342 pages/views.py:54
-#: pages/views.py:93 pages/views.py:128
+#: pages/templates/components/header.html:342 pages/views.py:55
+#: pages/views.py:94 pages/views.py:129
 msgid "Новости"
 msgstr "News"
 
 #: pages/templates/components/footer.html:111
 #: pages/templates/components/header.html:126
-#: pages/templates/components/header.html:346 pages/views.py:169
+#: pages/templates/components/header.html:346 pages/views.py:170
 msgid "Академия"
 msgstr "Academy"
 
 #: pages/templates/components/footer.html:114
 #: pages/templates/components/header.html:132
-#: pages/templates/components/header.html:350 pages/views.py:183
+#: pages/templates/components/header.html:350 pages/views.py:184
 msgid "Дирекция"
 msgstr "Administration"
 
 #: pages/templates/components/footer.html:117
 #: pages/templates/components/header.html:137
 #: pages/templates/components/header.html:355
-#: pages/templates/pages/academy/department_item.html:10 pages/views.py:480
+#: pages/templates/pages/academy/department_item.html:10 pages/views.py:485
 msgid "Кафедры"
 msgstr "Departments"
 
 #: pages/templates/components/footer.html:120
 #: pages/templates/components/header.html:142
-#: pages/templates/components/header.html:360 pages/views.py:194
+#: pages/templates/components/header.html:360 pages/views.py:195
 msgid "История"
 msgstr "History"
 
 #: pages/templates/components/footer.html:123
 #: pages/templates/components/header.html:147
 #: pages/templates/components/header.html:365
-#: pages/templates/pages/applicants/committee.html:311 pages/views.py:271
-#: pages/views.py:544
+#: pages/templates/pages/applicants/committee.html:311 pages/views.py:272
+#: pages/views.py:549
 msgid "Контакты"
 msgstr "Contacts"
 
@@ -220,13 +248,13 @@ msgstr "Science"
 #: pages/templates/components/header.html:171
 #: pages/templates/components/header.html:385
 #: pages/templates/pages/science/scientific_center_item.html:10
-#: pages/templates/pages/science/scientific_centers.html:9 pages/views.py:437
+#: pages/templates/pages/science/scientific_centers.html:9 pages/views.py:442
 msgid "Научные центры"
 msgstr "Research Centers"
 
 #: pages/templates/components/footer.html:137
 #: pages/templates/components/header.html:185
-#: pages/templates/components/header.html:395 pages/views.py:214
+#: pages/templates/components/header.html:395 pages/views.py:215
 msgid "Научные журналы"
 msgstr "Academic Journals"
 
@@ -234,7 +262,7 @@ msgstr "Academic Journals"
 #: pages/templates/components/header.html:164
 #: pages/templates/components/header.html:380
 #: pages/templates/pages/science/events.html:11
-#: pages/templates/pages/science/scitechforum.html:9 pages/views.py:234
+#: pages/templates/pages/science/scitechforum.html:9 pages/views.py:235
 #: seminars/templates/seminars/seminar_item.html:11
 #: seminars/templates/seminars/seminars.html:20
 msgid "Научные мероприятия"
@@ -248,20 +276,21 @@ msgstr "Prospective Students"
 
 #: pages/templates/components/footer.html:151
 #: pages/templates/components/header.html:208
-#: pages/templates/components/header.html:415 pages/views.py:362
+#: pages/templates/components/header.html:415
+#: pages/templates/pages/direction.html:15 pages/views.py:363
 msgid "Направления подготовки"
 msgstr "Programs"
 
 #: pages/templates/components/footer.html:154
 #: pages/templates/components/header.html:213
 #: pages/templates/components/header.html:420
-#: pages/templates/pages/academy/contacts.html:17 pages/views.py:414
+#: pages/templates/pages/academy/contacts.html:17 pages/views.py:419
 msgid "Приемная комиссия"
 msgstr "Admissions Office"
 
 #: pages/templates/components/footer.html:157
 #: pages/templates/components/header.html:218
-#: pages/templates/components/header.html:425 pages/views.py:338
+#: pages/templates/components/header.html:425 pages/views.py:339
 msgid "Справочная информация"
 msgstr "Reference Information"
 
@@ -272,32 +301,32 @@ msgid "Студентам и Аспирантам"
 msgstr "Students & Postgraduates"
 
 #: pages/templates/components/footer.html:165
-#: pages/templates/pages/students/schedule.html:7 pages/views.py:313
+#: pages/templates/pages/students/schedule.html:7 pages/views.py:314
 msgid "Расписание"
 msgstr "Schedule"
 
 #: pages/templates/components/footer.html:168
 #: pages/templates/components/header.html:239
-#: pages/templates/components/header.html:445 pages/views.py:224
+#: pages/templates/components/header.html:445 pages/views.py:225
 msgid "Научное студенческое общество"
 msgstr "Student Research Society"
 
 #: pages/templates/components/footer.html:171
 #: pages/templates/components/header.html:244
 #: pages/templates/components/header.html:450
-#: pages/templates/pages/students/student_committee.html:8 pages/views.py:325
+#: pages/templates/pages/students/student_committee.html:8 pages/views.py:326
 msgid "Студенческий комитет"
 msgstr "Student Committee"
 
 #: pages/templates/components/footer.html:174
 #: pages/templates/components/header.html:249
-#: pages/templates/components/header.html:455 pages/views.py:281
+#: pages/templates/components/header.html:455 pages/views.py:282
 msgid "Электронная библиотека"
 msgstr "E-Library"
 
 #: pages/templates/components/footer.html:177
 #: pages/templates/components/header.html:254
-#: pages/templates/components/header.html:460 pages/views.py:302
+#: pages/templates/components/header.html:460 pages/views.py:303
 msgid "Образцы заявлений"
 msgstr "Application Forms"
 
@@ -547,6 +576,7 @@ msgstr "29 September"
 
 #: pages/templates/pages/applicants/committee.html:199
 #: pages/templates/pages/applicants/committee.html:260
+#: pages/templates/pages/direction.html:174
 msgid "Заочная форма"
 msgstr "Distance (extramural) mode"
 
@@ -648,20 +678,20 @@ msgid "Москва, ул. Орджоникидзе, д. 3, каб. 403"
 msgstr "Moscow, Ordzhonikidze St 3, office 403"
 
 #: pages/templates/pages/applicants/levels/bachelor.html:14
-#: pages/templates/pages/applicants/study_directions.html:29
+#: pages/templates/pages/applicants/study_directions.html:30
 msgid "Открытие новых горизонтов знаний!"
 msgstr "Opening new horizons of knowledge!"
 
 #: pages/templates/pages/applicants/levels/bachelor.html:19
 #: pages/templates/pages/applicants/levels/masters.html:18
 #: pages/templates/pages/applicants/levels/postgraduates.html:19
-#: pages/templates/pages/applicants/levels/specialists.html:19
+#: pages/templates/pages/applicants/levels/specialists.html:27
 msgid "Программы подготовки"
 msgstr "Study programmes"
 
 #: pages/templates/pages/applicants/levels/bachelor.html:39
 #: pages/templates/pages/applicants/levels/masters.html:39
-#: pages/templates/pages/applicants/levels/specialists.html:39
+#: pages/templates/pages/applicants/levels/specialists.html:51
 msgid "Профиль:"
 msgstr "Profile:"
 
@@ -693,24 +723,22 @@ msgid "языке"
 msgstr "language"
 
 #: pages/templates/pages/applicants/levels/masters.html:8
-#: pages/templates/pages/applicants/study_directions.html:50 pages/views.py:370
-#: pages/views.py:501
+#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:506
 msgid "Магистратура"
 msgstr "Master's Degree"
 
 #: pages/templates/pages/applicants/levels/masters.html:13
-#: pages/templates/pages/applicants/study_directions.html:53
+#: pages/templates/pages/applicants/study_directions.html:56
 msgid "Углублённое изучение вашей специализации!"
 msgstr "Deepen your specialization!"
 
 #: pages/templates/pages/applicants/levels/postgraduates.html:9
-#: pages/templates/pages/applicants/study_directions.html:62 pages/views.py:371
-#: pages/views.py:515
+#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:520
 msgid "Аспирантура"
 msgstr "Postgraduate Studies"
 
 #: pages/templates/pages/applicants/levels/postgraduates.html:14
-#: pages/templates/pages/applicants/study_directions.html:65
+#: pages/templates/pages/applicants/study_directions.html:69
 msgid "Станьте экспертом в своей области!"
 msgstr "Become an expert in your field!"
 
@@ -720,14 +748,13 @@ msgstr "Become an expert in your field!"
 msgid "Специальность:"
 msgstr "Specialties"
 
-#: pages/templates/pages/applicants/levels/specialists.html:9
-#: pages/templates/pages/applicants/study_directions.html:38 pages/views.py:372
-#: pages/views.py:508
+#: pages/templates/pages/applicants/levels/specialists.html:11
+#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:513
 msgid "Специалитет"
 msgstr "Specialist Degree"
 
-#: pages/templates/pages/applicants/levels/specialists.html:14
-#: pages/templates/pages/applicants/study_directions.html:41
+#: pages/templates/pages/applicants/levels/specialists.html:18
+#: pages/templates/pages/applicants/study_directions.html:43
 msgid "Превратите свои увлечения в профессию!"
 msgstr "Turn your passion into a profession!"
 
@@ -765,10 +792,55 @@ msgstr ""
 msgid "Ваш путь к успешной инженерной карьере начинается здесь"
 msgstr "Your path to a successful engineering career starts here"
 
-#: pages/templates/pages/applicants/study_directions.html:26 pages/views.py:369
-#: pages/views.py:494
+#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:499
 msgid "Бакалавриат"
 msgstr "Bachelor's Degree"
+
+#: pages/templates/pages/direction.html:92
+msgid "Очная форма"
+msgstr "Full-time mode"
+
+#: pages/templates/pages/direction.html:96
+#: pages/templates/pages/direction.html:140
+#: pages/templates/pages/direction.html:178
+msgid "Бюджетные места –"
+msgstr "State-funded places – "
+
+#: pages/templates/pages/direction.html:99
+#: pages/templates/pages/direction.html:143
+#: pages/templates/pages/direction.html:181
+msgid "Бюджетные места – нет"
+msgstr "No state-funded places"
+
+#: pages/templates/pages/direction.html:102
+#: pages/templates/pages/direction.html:146
+#: pages/templates/pages/direction.html:184
+msgid "Минимальные проходные баллы"
+msgstr "Minimum entrance scores"
+
+#: pages/templates/pages/direction.html:105
+msgid "Вступительные испытания"
+msgstr "Entrance examinations"
+
+#: pages/templates/pages/direction.html:107
+msgid "Обязательные предметы"
+msgstr "Required subjects"
+
+#: pages/templates/pages/direction.html:113
+#: pages/templates/pages/direction.html:151
+#: pages/templates/pages/direction.html:189
+msgid "Стоимость обучения по контракту"
+msgstr "Tuition fee (contract)"
+
+#: pages/templates/pages/direction.html:123
+#: pages/templates/pages/direction.html:161
+#: pages/templates/pages/direction.html:199
+msgid "Подать документы"
+msgstr "Apply now"
+
+#: pages/templates/pages/direction.html:136
+msgid "Очно-заочная форма"
+msgstr "Part-time (blended) mode"
 
 #: pages/templates/pages/index.html:274
 msgid "Все НОВОСТИ"
@@ -782,7 +854,7 @@ msgstr "People's Friendship University of Russia"
 msgid "Инженерная академия"
 msgstr "Engineering Academy"
 
-#: pages/templates/pages/index.html:325 pages/views.py:36
+#: pages/templates/pages/index.html:325 pages/views.py:37
 msgid "Инженерная академия РУДН"
 msgstr "Engineering Academy"
 
@@ -1866,24 +1938,24 @@ msgstr "Position"
 msgid "Почта"
 msgstr "Mail"
 
-#: pages/views.py:107
+#: pages/views.py:108
 msgid "Untitled"
 msgstr ""
 
-#: pages/views.py:109
+#: pages/views.py:110
 msgid "Без названия"
 msgstr "Untitled"
 
-#: pages/views.py:243 seminars/templates/seminars/seminar_item.html:12
+#: pages/views.py:244 seminars/templates/seminars/seminar_item.html:12
 #: seminars/views.py:18
 msgid "Научные семинары"
 msgstr "Scientific Seminars"
 
-#: pages/views.py:252
+#: pages/views.py:253
 msgid "Конференция по информационным и техническим системам"
 msgstr "Conference on Information and Technical Systems"
 
-#: pages/views.py:261
+#: pages/views.py:262
 msgid ""
 "Международный научно-технический форум по механике космического полета и "
 "космическим конструкциям и материалам"
@@ -1891,21 +1963,21 @@ msgstr ""
 "International Scientific and Technical Forum on Space Flight Mechanics and "
 "Space Structures and Materials"
 
-#: pages/views.py:291
+#: pages/views.py:292
 #, fuzzy
 #| msgid "Диссертационные советы"
 msgid "Тематики диссертационных исследований"
 msgstr "Dissertation Committees"
 
-#: pages/views.py:346
+#: pages/views.py:347
 msgid "Презентация"
 msgstr "Presentation"
 
-#: pages/views.py:351
+#: pages/views.py:352
 msgid "Дни открытых дверей"
 msgstr "Open Days"
 
-#: pages/views.py:468
+#: pages/views.py:473
 msgid "ПДС"
 msgstr "Dissertation Committee"
 

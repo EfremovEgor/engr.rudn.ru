@@ -365,14 +365,7 @@ def study_directions(request):
     )
 
 
-def levels_of_study(request, level: str):
-    """
-    /applicants/study_directions/<level>
-
-    * выбираем направления по РУССКОМУ названию уровня (оно хранится в БД);
-    * заголовок страницы показываем на том языке, который активен у пользователя.
-    """
-
+def levels_of_study(request, level: str):    
     LEVELS = {
         "bachelor":      ("Бакалавриат",   "Bachelor’s Degree"),
         "masters":       ("Магистратура",  "Master’s Degree"),

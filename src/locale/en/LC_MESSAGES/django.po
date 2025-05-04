@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 18:35+0300\n"
+"POT-Creation-Date: 2025-05-04 16:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin_utilities/views.py:49
+msgid "Russian"
+msgstr "Russian"
+
+#: admin_utilities/views.py:51
+msgid "English"
+msgstr "English"
 
 #: documents/models.py:8 pages/models.py:66 pages/models.py:205
 #: pages/models.py:269 pages/models.py:305
@@ -160,37 +168,27 @@ msgstr "Dissertation Committee"
 
 #: pages/models.py:383 pages/templates/components/footer.html:143
 #: pages/templates/components/header.html:192
-#: pages/templates/components/header.html:400 pages/views.py:430
+#: pages/templates/components/header.html:400 pages/views.py:429
 msgid "Диссертационные советы"
 msgstr "Dissertation Committees"
 
-#: pages/template_tags/custom_tags.py:25
-#, fuzzy
-#| msgid "Кафедры"
-msgid "кафедры"
-msgstr "Departments"
-
-#: pages/template_tags/custom_tags.py:25
-#, fuzzy
-#| msgid "Кафедры"
-msgid "кафедрой"
-msgstr "Departments"
-
-#: pages/template_tags/custom_tags.py:51
-#, fuzzy
-#| msgid "Сайт конференции"
-msgid "на контракт"
-msgstr "Conference website"
-
-#: pages/template_tags/custom_tags.py:77 pages/template_tags/custom_tags.py:82
+#: pages/template_tags/custom_tags.py:106
 #, python-format
-msgid "%(year)d-й год – %(price)s ₽"
-msgstr "%(year)d-year – %(price)s ₽"
+msgid "%(n)d‑й год и далее – %(p)s ₽"
+msgstr "%(n)d‑year and beyond – %(p)s ₽"
 
-#: pages/template_tags/custom_tags.py:80
+#: pages/template_tags/custom_tags.py:112
 #, python-format
-msgid "%(year)d-й год и далее – %(price)s ₽"
-msgstr "%(year)d-year and beyond – %(price)s ₽"
+msgid "%(n)d‑й год – %(p)s ₽"
+msgstr "%(n)d‑year – %(p)s ₽"
+
+#: pages/template_tags/custom_tags.py:149
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] "%(num)d year"
+msgstr[1] "%(num)d years"
+msgstr[2] "%(num)d years"
 
 #: pages/templates/components/footer.html:103
 #: pages/templates/components/header.html:114
@@ -220,7 +218,7 @@ msgstr "Administration"
 #: pages/templates/components/footer.html:117
 #: pages/templates/components/header.html:137
 #: pages/templates/components/header.html:355
-#: pages/templates/pages/academy/department_item.html:10 pages/views.py:485
+#: pages/templates/pages/academy/department_item.html:10 pages/views.py:484
 msgid "Кафедры"
 msgstr "Departments"
 
@@ -234,7 +232,7 @@ msgstr "History"
 #: pages/templates/components/header.html:147
 #: pages/templates/components/header.html:365
 #: pages/templates/pages/applicants/committee.html:311 pages/views.py:272
-#: pages/views.py:549
+#: pages/views.py:548
 msgid "Контакты"
 msgstr "Contacts"
 
@@ -248,7 +246,7 @@ msgstr "Science"
 #: pages/templates/components/header.html:171
 #: pages/templates/components/header.html:385
 #: pages/templates/pages/science/scientific_center_item.html:10
-#: pages/templates/pages/science/scientific_centers.html:9 pages/views.py:442
+#: pages/templates/pages/science/scientific_centers.html:9 pages/views.py:441
 msgid "Научные центры"
 msgstr "Research Centers"
 
@@ -263,7 +261,7 @@ msgstr "Academic Journals"
 #: pages/templates/components/header.html:380
 #: pages/templates/pages/science/events.html:11
 #: pages/templates/pages/science/scitechforum.html:9 pages/views.py:235
-#: seminars/templates/seminars/seminar_item.html:11
+#: seminars/templates/seminars/seminar_item.html:14
 #: seminars/templates/seminars/seminars.html:20
 msgid "Научные мероприятия"
 msgstr "Scientific Events"
@@ -277,14 +275,14 @@ msgstr "Prospective Students"
 #: pages/templates/components/footer.html:151
 #: pages/templates/components/header.html:208
 #: pages/templates/components/header.html:415
-#: pages/templates/pages/direction.html:15 pages/views.py:363
+#: pages/templates/pages/direction.html:16 pages/views.py:363
 msgid "Направления подготовки"
 msgstr "Programs"
 
 #: pages/templates/components/footer.html:154
 #: pages/templates/components/header.html:213
 #: pages/templates/components/header.html:420
-#: pages/templates/pages/academy/contacts.html:17 pages/views.py:419
+#: pages/templates/pages/academy/contacts.html:17 pages/views.py:418
 msgid "Приемная комиссия"
 msgstr "Admissions Office"
 
@@ -576,7 +574,7 @@ msgstr "29 September"
 
 #: pages/templates/pages/applicants/committee.html:199
 #: pages/templates/pages/applicants/committee.html:260
-#: pages/templates/pages/direction.html:174
+#: pages/templates/pages/direction.html:171
 msgid "Заочная форма"
 msgstr "Distance (extramural) mode"
 
@@ -723,7 +721,7 @@ msgid "языке"
 msgstr "language"
 
 #: pages/templates/pages/applicants/levels/masters.html:8
-#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:506
+#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:505
 msgid "Магистратура"
 msgstr "Master's Degree"
 
@@ -733,7 +731,7 @@ msgid "Углублённое изучение вашей специализац
 msgstr "Deepen your specialization!"
 
 #: pages/templates/pages/applicants/levels/postgraduates.html:9
-#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:520
+#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:519
 msgid "Аспирантура"
 msgstr "Postgraduate Studies"
 
@@ -749,7 +747,7 @@ msgid "Специальность:"
 msgstr "Specialties"
 
 #: pages/templates/pages/applicants/levels/specialists.html:11
-#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:513
+#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:512
 msgid "Специалитет"
 msgstr "Specialist Degree"
 
@@ -792,53 +790,54 @@ msgstr ""
 msgid "Ваш путь к успешной инженерной карьере начинается здесь"
 msgstr "Your path to a successful engineering career starts here"
 
-#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:499
+#: pages/templates/pages/applicants/study_directions.html:27
+#: pages/templates/pages/direction.html:22 pages/views.py:498
 msgid "Бакалавриат"
 msgstr "Bachelor's Degree"
 
-#: pages/templates/pages/direction.html:92
+#: pages/templates/pages/direction.html:89
 msgid "Очная форма"
 msgstr "Full-time mode"
+
+#: pages/templates/pages/direction.html:93
+#: pages/templates/pages/direction.html:137
+#: pages/templates/pages/direction.html:175
+msgid "Бюджетные места –"
+msgstr "State-funded places – "
 
 #: pages/templates/pages/direction.html:96
 #: pages/templates/pages/direction.html:140
 #: pages/templates/pages/direction.html:178
-msgid "Бюджетные места –"
-msgstr "State-funded places – "
+msgid "Бюджетные места – нет"
+msgstr "No state-funded places"
 
 #: pages/templates/pages/direction.html:99
 #: pages/templates/pages/direction.html:143
 #: pages/templates/pages/direction.html:181
-msgid "Бюджетные места – нет"
-msgstr "No state-funded places"
-
-#: pages/templates/pages/direction.html:102
-#: pages/templates/pages/direction.html:146
-#: pages/templates/pages/direction.html:184
 msgid "Минимальные проходные баллы"
 msgstr "Minimum entrance scores"
 
-#: pages/templates/pages/direction.html:105
+#: pages/templates/pages/direction.html:102
 msgid "Вступительные испытания"
 msgstr "Entrance examinations"
 
-#: pages/templates/pages/direction.html:107
+#: pages/templates/pages/direction.html:104
 msgid "Обязательные предметы"
 msgstr "Required subjects"
 
-#: pages/templates/pages/direction.html:113
-#: pages/templates/pages/direction.html:151
-#: pages/templates/pages/direction.html:189
+#: pages/templates/pages/direction.html:110
+#: pages/templates/pages/direction.html:148
+#: pages/templates/pages/direction.html:186
 msgid "Стоимость обучения по контракту"
 msgstr "Tuition fee (contract)"
 
-#: pages/templates/pages/direction.html:123
-#: pages/templates/pages/direction.html:161
-#: pages/templates/pages/direction.html:199
+#: pages/templates/pages/direction.html:120
+#: pages/templates/pages/direction.html:158
+#: pages/templates/pages/direction.html:196
 msgid "Подать документы"
 msgstr "Apply now"
 
-#: pages/templates/pages/direction.html:136
+#: pages/templates/pages/direction.html:133
 msgid "Очно-заочная форма"
 msgstr "Part-time (blended) mode"
 
@@ -1738,7 +1737,7 @@ msgid "Специальности"
 msgstr "Specialties"
 
 #: pages/templates/pages/students/dissertation_committee_item.html:59
-#: seminars/templates/seminars/seminar_item.html:45
+#: seminars/templates/seminars/seminar_item.html:50
 msgid "Председатель"
 msgstr "Chairperson"
 
@@ -1946,7 +1945,7 @@ msgstr ""
 msgid "Без названия"
 msgstr "Untitled"
 
-#: pages/views.py:244 seminars/templates/seminars/seminar_item.html:12
+#: pages/views.py:244 seminars/templates/seminars/seminar_item.html:17
 #: seminars/views.py:18
 msgid "Научные семинары"
 msgstr "Scientific Seminars"
@@ -1977,7 +1976,7 @@ msgstr "Presentation"
 msgid "Дни открытых дверей"
 msgstr "Open Days"
 
-#: pages/views.py:473
+#: pages/views.py:472
 msgid "ПДС"
 msgstr "Dissertation Committee"
 
@@ -1993,29 +1992,44 @@ msgstr "Position/Title (English)"
 msgid "Должности/Звания (англ.)"
 msgstr "Positions/Titles (English)"
 
-#: seminars/templates/seminars/seminar_item.html:26
+#: seminars/templates/seminars/seminar_item.html:31
 msgid "Семинар проводится в рамках"
 msgstr "The seminar is held within the framework of"
 
-#: seminars/templates/seminars/seminar_item.html:48
+#: seminars/templates/seminars/seminar_item.html:53
 msgid "Доклады"
 msgstr "Reports"
 
-#: seminars/templates/seminars/seminar_item.html:57
+#: seminars/templates/seminars/seminar_item.html:62
 msgid "Предстоящие доклады не запланированы"
 msgstr "No upcoming reports scheduled"
 
-#: seminars/templates/seminars/seminar_item.html:98
+#: seminars/templates/seminars/seminar_item.html:103
 msgid "Прошедшие"
 msgstr "Past"
 
-#: seminars/templates/seminars/seminar_item.html:101
+#: seminars/templates/seminars/seminar_item.html:106
 msgid "Прошедшие доклады отсутствуют"
 msgstr "No past reports"
 
-#: seminars/templates/seminars/seminar_report.html:56
+#: seminars/templates/seminars/seminar_report.html:80
 msgid "Краткая биография"
 msgstr "Short biography"
+
+#, fuzzy
+#~| msgid "Кафедры"
+#~ msgid "кафедры"
+#~ msgstr "Departments"
+
+#, fuzzy
+#~| msgid "Кафедры"
+#~ msgid "кафедрой"
+#~ msgstr "Departments"
+
+#, fuzzy
+#~| msgid "Сайт конференции"
+#~ msgid "на контракт"
+#~ msgstr "Conference website"
 
 #~ msgid "Образование - ключ к успеху!"
 #~ msgstr "Education is the key to success!"

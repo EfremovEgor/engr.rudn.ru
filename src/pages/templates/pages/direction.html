@@ -2,6 +2,7 @@
 {% load static i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 {% block content %}
+{% load custom_tags %}
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
 <link rel="stylesheet" href="{% static 'css/direction.css' %}" />
@@ -18,11 +19,7 @@
       <a href="{% url 'pages:study_direction_level'
                    profile_data.study_level|study_level_to_page_name %}"
          class="study_level-badge">
-        {% if LANGUAGE_CODE == 'en' and profile_data.study_level_en %}
-             {{ profile_data.study_level_en }}
-        {% else %}
-             {{ profile_data.study_level }}
-        {% endif %}
+         {% trans "Бакалавриат" %}
       </a>
     </div>
 
@@ -64,7 +61,7 @@
           {{ profile_data.study_duration }}
         </object>
         <p style="margin:0">
-          {{ profile_data|create_study_duration_badge_text }}
+          {{ profile_data|create_study_duration_badge_text }}        
         </p>
       </div>
 
@@ -73,9 +70,8 @@
           <div class="lang_badge">
             <object type="image/svg+xml"
                     data="{% static 'icons/language.svg' %}" width="48" height="48">
-              {{ lang }}
             </object>
-            {{ lang }}
+            {% trans lang %}
           </div>
         </div>
       {% endfor %}
@@ -206,7 +202,13 @@
 
   </div>
 
-  <div class="profile_content">{{ profile_data.content|safe }}</div>
+  <div class="profile_content">
+    {% if LANGUAGE_CODE == "en" %}
+      {{ profile_data.content_en|safe }}
+    {% else %}
+      {{ profile_data.content|safe }}
+    {% endif %}
+  </div>
 </div>
 
 {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-04 16:20+0300\n"
+"POT-Creation-Date: 2025-05-06 14:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: admin_utilities/views.py:49
-msgid "Russian"
-msgstr "Russian"
-
-#: admin_utilities/views.py:51
-msgid "English"
-msgstr "English"
 
 #: documents/models.py:8 pages/models.py:66 pages/models.py:205
 #: pages/models.py:269 pages/models.py:305
@@ -172,23 +164,35 @@ msgstr "Dissertation Committee"
 msgid "Диссертационные советы"
 msgstr "Dissertation Committees"
 
-#: pages/template_tags/custom_tags.py:106
+#: pages/template_tags/custom_tags.py:99
 #, python-format
 msgid "%(n)d‑й год и далее – %(p)s ₽"
 msgstr "%(n)d‑year and beyond – %(p)s ₽"
 
-#: pages/template_tags/custom_tags.py:112
+#: pages/template_tags/custom_tags.py:105
 #, python-format
 msgid "%(n)d‑й год – %(p)s ₽"
 msgstr "%(n)d‑year – %(p)s ₽"
 
-#: pages/template_tags/custom_tags.py:149
+#: pages/template_tags/custom_tags.py:142
 #, python-format
 msgid "%(num)d year"
 msgid_plural "%(num)d years"
 msgstr[0] "%(num)d year"
 msgstr[1] "%(num)d years"
 msgstr[2] "%(num)d years"
+
+#: pages/template_tags/custom_tags.py:181
+#: pages/templates/pages/direction.html:76
+#: pages/templates/pages/direction.html:84
+msgid "Russian"
+msgstr "Russian"
+
+#: pages/template_tags/custom_tags.py:182
+#: pages/templates/pages/direction.html:78
+#: pages/templates/pages/direction.html:86
+msgid "English"
+msgstr "English"
 
 #: pages/templates/components/footer.html:103
 #: pages/templates/components/header.html:114
@@ -574,7 +578,7 @@ msgstr "29 September"
 
 #: pages/templates/pages/applicants/committee.html:199
 #: pages/templates/pages/applicants/committee.html:260
-#: pages/templates/pages/direction.html:171
+#: pages/templates/pages/direction.html:186
 msgid "Заочная форма"
 msgstr "Distance (extramural) mode"
 
@@ -790,54 +794,53 @@ msgstr ""
 msgid "Ваш путь к успешной инженерной карьере начинается здесь"
 msgstr "Your path to a successful engineering career starts here"
 
-#: pages/templates/pages/applicants/study_directions.html:27
-#: pages/templates/pages/direction.html:22 pages/views.py:498
+#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:498
 msgid "Бакалавриат"
 msgstr "Bachelor's Degree"
 
-#: pages/templates/pages/direction.html:89
+#: pages/templates/pages/direction.html:104
 msgid "Очная форма"
 msgstr "Full-time mode"
 
-#: pages/templates/pages/direction.html:93
-#: pages/templates/pages/direction.html:137
-#: pages/templates/pages/direction.html:175
+#: pages/templates/pages/direction.html:108
+#: pages/templates/pages/direction.html:152
+#: pages/templates/pages/direction.html:190
 msgid "Бюджетные места –"
 msgstr "State-funded places – "
 
-#: pages/templates/pages/direction.html:96
-#: pages/templates/pages/direction.html:140
-#: pages/templates/pages/direction.html:178
+#: pages/templates/pages/direction.html:111
+#: pages/templates/pages/direction.html:155
+#: pages/templates/pages/direction.html:193
 msgid "Бюджетные места – нет"
 msgstr "No state-funded places"
 
-#: pages/templates/pages/direction.html:99
-#: pages/templates/pages/direction.html:143
-#: pages/templates/pages/direction.html:181
+#: pages/templates/pages/direction.html:114
+#: pages/templates/pages/direction.html:158
+#: pages/templates/pages/direction.html:196
 msgid "Минимальные проходные баллы"
 msgstr "Minimum entrance scores"
 
-#: pages/templates/pages/direction.html:102
+#: pages/templates/pages/direction.html:117
 msgid "Вступительные испытания"
 msgstr "Entrance examinations"
 
-#: pages/templates/pages/direction.html:104
+#: pages/templates/pages/direction.html:119
 msgid "Обязательные предметы"
 msgstr "Required subjects"
 
-#: pages/templates/pages/direction.html:110
-#: pages/templates/pages/direction.html:148
-#: pages/templates/pages/direction.html:186
+#: pages/templates/pages/direction.html:125
+#: pages/templates/pages/direction.html:163
+#: pages/templates/pages/direction.html:201
 msgid "Стоимость обучения по контракту"
 msgstr "Tuition fee (contract)"
 
-#: pages/templates/pages/direction.html:120
-#: pages/templates/pages/direction.html:158
-#: pages/templates/pages/direction.html:196
+#: pages/templates/pages/direction.html:135
+#: pages/templates/pages/direction.html:173
+#: pages/templates/pages/direction.html:211
 msgid "Подать документы"
 msgstr "Apply now"
 
-#: pages/templates/pages/direction.html:133
+#: pages/templates/pages/direction.html:148
 msgid "Очно-заочная форма"
 msgstr "Part-time (blended) mode"
 

@@ -1,5 +1,5 @@
 {% extends "components/base.html" %}
-{% load static i18n %}
+{% load static i18n custom_tags %}
 {% get_current_language as LANGUAGE_CODE %}
 {% block content %}
 
@@ -35,19 +35,16 @@
 
           <div class="uk-accordion-content">
             {% for profile in direction.profiles.all %}
-              <a class="uk-link-text" href="/applicants/study_directions/{{ profile.id }}">
-                <b>{% trans "Профиль:" %}</b>
+            <a class="uk-link-text" href="{% url 'pages:study_direction_profile' profile.id %}">
+              <b>{% trans "Профиль:" %}</b>
                 {% if LANGUAGE_CODE == 'en' and profile.name_en %}
                   {{ profile.name_en }}
                 {% else %}
                   {{ profile.name }}
                 {% endif %}
 
-                {% if profile.language_fields|length == 2 %}
-                  ({% trans "на" %} {{ profile.language_fields.0|get_alias_lang }} {% trans "и" %}
-                  {{ profile.language_fields.1|get_alias_lang }} {% trans "языках" %})
-                {% elif profile.language_fields.0 == "Английский" %}
-                  ({% trans "на" %} {{ profile.language_fields.0|get_alias_lang }} {% trans "языке" %})
+                {% if profile.language_fields|length >= 2 %}
+                  {{ profile.language_fields|langs_phrase }}
                 {% endif %}
               </a><br>
             {% endfor %}

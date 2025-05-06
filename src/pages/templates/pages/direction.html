@@ -1,8 +1,7 @@
 {% extends 'components/base.html' %}
-{% load static i18n %}
+{% load static i18n custom_tags%}
 {% get_current_language as LANGUAGE_CODE %}
 {% block content %}
-{% load custom_tags %}
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
 <link rel="stylesheet" href="{% static 'css/direction.css' %}" />
@@ -15,12 +14,13 @@
          class="study_level-badge">
         {% trans "Направления подготовки" %}
       </a>
-
-      <a href="{% url 'pages:study_direction_level'
-                   profile_data.study_level|study_level_to_page_name %}"
+      {% with slug=profile_data.study_level|study_level_to_page_name %}
+      <a href="{% url 'pages:study_direction_level' slug %}"
          class="study_level-badge">
-         {% trans "Бакалавриат" %}
+         {{ slug|level_slug_to_label }}
       </a>
+    {% endwith %}
+        
     </div>
 
     <h4 class="direction_name">
@@ -65,16 +65,19 @@
         </p>
       </div>
 
-      {% for lang in profile_data.language_fields %}
+      {% for code in profile_data.language_fields %}
         <div class="lang_ru_badge">
           <div class="lang_badge">
             <object type="image/svg+xml"
                     data="{% static 'icons/language.svg' %}" width="48" height="48">
+              {{ code|lang_code_to_label }}
             </object>
-            {% trans lang %}
+            {{ code|lang_code_to_label }}
           </div>
         </div>
       {% endfor %}
+      
+    
     </div>
   </div>
 

@@ -4,7 +4,74 @@ from pages.utils import aliases, functions
 from django.utils.translation import ngettext
 from django import template
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, get_language_info
 
+RU_LABELS = {
+    "ru": "Русский",
+    "en": "Английский",
+}
+
+CANON = {
+    "ru": "ru", "рус": "ru", "русский": "ru", "russian": "ru",
+    "en": "en", "анг": "en", "английский": "en", "english": "en",
+}
+
+_LEVEL_CANON = {
+    "bachelor": "bachelor",
+    "bachelors": "bachelor",
+    "бакалавриат": "bachelor",
+    "бакалавриаты": "bachelor",
+
+    "specialist": "specialist",
+    "specialists": "specialist",
+    "specialitet": "specialist",
+    "speciality": "specialist",
+    "специалитет": "specialist",
+    "специалитеты": "specialist",
+
+    "master": "master",
+    "masters": "master",
+    "магистратура": "master",
+    "магистратуры": "master",
+
+    "phd": "phd",
+    "postgraduate": "phd",
+    "postgraduates": "phd",
+    "aspirantura": "phd",
+    "aspirant": "phd",
+    "aspirants": "phd",
+    "аспирантура": "phd",
+    "аспирантуры": "phd",
+}
+
+_TO_CODE = {
+    "ru": "ru", "рус": "ru", "русский": "ru", "russian": "ru",
+    "en": "en", "англ": "en", "английский": "en", "english": "en",
+}
+
+_RU_LOC = {
+    "ru": "русском",
+    "en": "английском",
+}
+
+_EN_NAME = {
+    "ru": "Russian",
+    "en": "English",
+}
+
+_RU_LEVEL = {
+    "bachelor": "Бакалавриат",
+    "specialist": "Специалитет",
+    "master": "Магистратура",
+    "phd": "Аспирантура",
+}
+
+_EN_LEVEL = {
+    "bachelor": "Bachelor",
+    "specialist": "Specialist",
+    "master": "Master",
+    "phd": "PhD",
+}
 
 @register.filter
 def get_item(dictionary, key):
@@ -173,3 +240,52 @@ def get_server_uri(_):
 @register.filter
 def truncate_url(url: str):
     return url[:-1] if url[-1] == "/" else url
+
+@register.filter
+def lang_code_to_label(raw_value: str) -> str:
+    if not raw_value:
+        return ""
+
+    code = CANON.get(raw_value.lower(), raw_value.lower())
+
+    ui_lang = (get_language() or "en")[:2]
+
+    if ui_lang == "ru":
+        return RU_LABELS.get(code, raw_value)
+
+    try:
+        return get_language_info(code)["name"]
+    except KeyError:
+        return raw_value
+
+@register.filter
+def langs_phrase(raw_list) -> str:
+    if not raw_list:
+        return ""
+
+    codes = [_TO_CODE.get(str(x).lower(), str(x).lower()) for x in raw_list[:2]]
+
+    ui = (get_language() or "en")[:2]
+
+    if ui == "ru":
+        if len(codes) == 2:
+            return f"(на {_RU_LOC.get(codes[0])} и {_RU_LOC.get(codes[1])} языках)"
+        return f"(на {_RU_LOC.get(codes[0])} языке)"
+
+    if len(codes) == 2:
+        return f"(in {_EN_NAME.get(codes[0])} and {_EN_NAME.get(codes[1])} languages)"
+    return f"(in {_EN_NAME.get(codes[0])} language)"
+
+
+
+@register.filter
+def level_slug_to_label(raw: str) -> str:
+    if not raw:
+        return ""
+
+    slug = _LEVEL_CANON.get(str(raw).strip().lower(), str(raw).strip().lower())
+    ui = (get_language() or "en")[:2]
+
+    if ui == "ru":
+        return _RU_LEVEL.get(slug, raw)
+    return _EN_LEVEL.get(slug, slug.capitalize())

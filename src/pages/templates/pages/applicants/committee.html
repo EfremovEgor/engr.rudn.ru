@@ -4,8 +4,223 @@
 
 <link rel="stylesheet" href="{% static 'css/applicants/admissions_committee.css' %}">
 <link rel="stylesheet" href="{% static 'css/students/dissertation_committees.css' %}">
+<link rel="stylesheet" href="{% static 'uikit/css/uikit.min.css' %}">
 
 <style>
+
+:root{
+    --clr-primary:#0b7de5;
+    --clr-primary-light:#eff7ff;
+    --clr-text:#0d0d0d;
+    --clr-muted:#666;
+    --radius:8px;
+    --fs-h1:1.8rem;
+    --fs-h2:1.4rem;
+    --fs-body:1rem;
+}
+@media (max-width:640px){
+    :root{
+        --fs-h1:1.4rem;
+        --fs-h2:1.15rem;
+        --fs-body:.9rem;
+    }
+}
+
+.admissions-container{
+    max-width:1200px;
+    margin-inline:auto;
+    padding:0 1rem 4rem;
+    font-size:var(--fs-body);
+    color:var(--clr-text);
+}
+
+.page-title{
+    font-size:var(--fs-h1);
+    font-weight:700;
+    margin:2rem 0 1.5rem;
+}
+
+.tabs{
+    display:flex;
+    gap:2rem;
+    border-bottom:2px solid var(--clr-primary-light);
+}
+.tabs button{
+    position:relative;
+    background:none;
+    border:none;
+    padding:.75rem 0;
+    font-weight:600;
+    cursor:pointer;
+    transition:color .2s ease;
+}
+.tabs button.active,
+.tabs button:hover{
+    color:var(--clr-primary);
+}
+.tabs button.active::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-2px;
+    width:100%;
+    height:2px;
+    background:var(--clr-primary);
+}
+
+.highlight-date{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    background:var(--clr-primary-light);
+    border:2px solid #d3e8ff;
+    border-radius:var(--radius);
+    padding:1.25rem 1.5rem;
+    margin:2rem 0 2.5rem;
+    box-shadow:0 2px 4px rgba(0,0,0,.04);
+}
+.highlight-date img{
+    width:44px; 
+    height:44px;
+    flex-shrink:0;
+}
+
+.date-tiles{
+    display:grid;
+    gap:1.5rem;
+}
+@media(min-width:768px){
+    .date-tiles{
+        grid-template-columns:repeat(4,1fr);
+    }
+}
+.date-tile{
+    text-align:center;
+    padding:1.25rem .5rem 1rem;
+    background:#fff;
+    border:1px solid #e1eaf5;
+    border-radius:var(--radius);
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.date-tile img{
+    width:44px; 
+    height:44px;
+    margin-bottom:.75rem;
+}
+.date-tile .tile-title{
+    font-size:.9rem;
+    font-weight:600;
+    margin-bottom:.5rem;
+}
+.date-tile .tile-date{
+    font-weight:500;
+    color:var(--clr-primary);
+    font-size:.85rem;
+}
+
+.info-columns{
+    display:grid;
+    gap:1.5rem;
+    margin:2.5rem 0;
+}
+@media(min-width:768px){
+    .info-columns{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+.info-box{
+    background:var(--clr-primary-light);
+    border:1px solid #d3e8ff;
+    padding:1.25rem 1rem 1rem;
+    border-radius:var(--radius);
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.info-box h3{
+    font-size:.95rem;
+    font-weight:700;
+    margin-bottom:.75rem;
+}
+.info-box ul{
+    padding-left:1rem;
+    margin:0;
+    list-style-type:disc;
+    font-size:.84rem;
+}
+.info-box ul li+li{margin-top:.25rem}
+
+.timeline-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:2rem;
+}
+.timeline-table th,
+.timeline-table td{
+    padding:.75rem .5rem;
+    border-bottom:1px solid #e1eaf5;
+}
+.timeline-table th{
+    text-align:left;
+    font-weight:600;
+    font-size:.88rem;
+}
+.timeline-table td{
+    font-size:.84rem;
+}
+.timeline-table tr:nth-child(even){
+    background:#f9fcff;
+}
+
+.mode-switch{
+    display:flex;
+    gap:1rem;
+    margin:1.5rem 0 .25rem;
+}
+.mode-switch button{
+    padding:.5rem 1.25rem;
+    border:1px solid var(--clr-primary);
+    background:#fff;
+    border-radius:var(--radius);
+    font-size:.86rem;
+    cursor:pointer;
+    transition:background .2s ease,color .2s ease;
+}
+.mode-switch button.active,
+.mode-switch button:hover{
+    background:var(--clr-primary);
+    color:#fff;
+}
+
+.contacts{
+    margin-top:3rem;
+}
+.contact-card{
+    display:flex;
+    gap:1rem;
+    border:1px solid #e1eaf5;
+    border-radius:var(--radius);
+    padding:1rem 1.25rem;
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.contact-card img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+}
+.contact-card h4{
+    margin:.25rem 0 .35rem;
+    font-size:.9rem;
+    font-weight:600;
+}
+.contact-card ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-size:.84rem;
+}
+.contact-card ul li+li{margin-top:.3rem}
+
+
 
 .date-underline {
   width: 16em;
@@ -95,257 +310,174 @@
   <p class="text-on-image">{% trans "Открой Мир в одном Университете!" %}</p>
 </div>
 
-<div class="uk-container" style="margin-bottom:50px">
-  <h2 class="sub-heading">{% trans "Ключевые даты" %}</h2>
 
-  <div class="uk-grid uk-grid-match" uk-grid>
+<div class="admissions-container" style="margin-top: 45px;">
 
-    {% comment %} ► блоки-карточки дат {% endcomment %}
-    <div class="uk-width-1-4@m uk-width-1-2">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Начало приёма документов" %}</h3>
-          <p class="uk-card-text">{% trans "20 июня" %}</p>
-          <img class="uk-card-img" src="{% static 'images/applicants/twenty.png' %}">
-        </div>
+  <nav class="tabs" id="degreeTabs" style="margin-bottom: 30px;">
+      <button class="active" data-tab="tab-bachelor">{% trans "Бакалавриат/Специалитет" %}</button>
+      <button data-tab="tab-master">{% trans "Магистратура" %}</button>
+      <button data-tab="tab-phd">{% trans "Аспирантура" %}</button>
+  </nav>
+
+  <section id="tab-bachelor" class="tab-panel">
+
+      <h2 class="section-heading">{% trans "Ключевые даты" %}</h2>
+
+      <div class="highlight-date">
+          <img src="{% static 'images/applicants/committee/education_1575474 1.svg' %}" alt="{% trans 'Начало приёма' %}">
+          <p><strong>{% trans "Начало приёма документов — 20 июня 2025 г." %}</strong></p>
       </div>
-    </div>
 
-    <div class="uk-width-1-4@m uk-width-1-2">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">
-            {% trans "Окончание подачи документов на направление “Архитектура”" %}
-          </h3>
-          <p class="uk-card-text">{% trans "15 июля" %}</p>
-          <img class="uk-card-img" src="{% static 'images/applicants/architect.png' %}">
-        </div>
+      <div class="date-tiles">
+
+          <div class="date-tile">
+              <img src="{% static 'images/applicants/icons/education1.png' %}" alt="">
+              <div class="tile-title">{% trans "Завершение подачи документов<br>на направление «Архитектура»" %}</div>
+              <div class="tile-date">15 июля 2025 г.</div>
+          </div>
+
+          <div class="date-tile">
+              <img src="{% static 'images/applicants/icons/budget.svg' %}" alt="">
+              <div class="tile-title">{% trans "Завершение заявлений на бюджетные места" %}</div>
+              <div class="tile-date">25 июля 2025 г.</div>
+          </div>
+
+          <div class="date-tile">
+              <img src="{% static 'images/applicants/icons/list.svg' %}" alt="">
+              <div class="tile-title">{% trans "Публикация конкурсных списков" %}</div>
+              <div class="tile-date">27 июля 2025 г.</div>
+          </div>
+
+          <div class="date-tile">
+              <img src="{% static 'images/applicants/icons/contract.svg' %}" alt="">
+              <div class="tile-title">{% trans "Конец приёма документов на контракт" %}</div>
+              <div class="tile-date">25 августа 2025 г.</div>
+          </div>
+
       </div>
-    </div>
 
-    <div class="uk-width-1-4@m uk-width-1-2">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Завершение приёма заявлений на бюджет" %}</h3>
-          <p class="uk-card-text">{% trans "25 июля" %}</p>
-          <img class="uk-card-img" src="{% static 'images/applicants/schedule.png' %}">
-        </div>
+      <div class="info-columns">
+          <div class="info-box">
+              <h3>{% trans "Особые условия" %}</h3>
+              <ul>
+                  <li>{% trans "Олимпиадники и высокобалльники" %}</li>
+                  <li>{% trans "Дополнительные баллы" %}</li>
+                  <li>{% trans "Целевое обучение" %}</li>
+                  <li>{% trans "Особая квота" %}</li>
+                  <li>{% trans "Отдельная квота" %}</li>
+                  <li>{% trans "Преимущественное право на зачисление" %}</li>
+                  <li>{% trans "Сироты" %}</li>
+              </ul>
+          </div>
+
+          <div class="info-box">
+              <h3>{% trans "Прогноз поступления" %}</h3>
+              <ul>
+                  <li>{% trans "Калькулятор ЕГЭ" %}</li>
+                  <li>{% trans "Минимальные баллы на бюджет и контракт" %}</li>
+                  <li>{% trans "Проходной балл прошлых лет" %}</li>
+                  <li>{% trans "Тест на профориентацию" %}</li>
+                  <li>{% trans "Предварительный договор" %}</li>
+              </ul>
+          </div>
+
+          <div class="info-box">
+              <h3>{% trans "Приём 2025" %}</h3>
+              <ul>
+                  <li>{% trans "Выбери программу университетской академии" %}</li>
+                  <li>{% trans "Лиги-баттлы" %}</li>
+                  <li>{% trans "Индивидуальные достижения" %}</li>
+                  <li>{% trans "Профессиональные испытания" %}</li>
+                  <li>{% trans "Нормативы ГТО" %}</li>
+                  <li>{% trans "Электронные документы" %}</li>
+                  <li>{% trans "Сроки проведения практик" %}</li>
+              </ul>
+          </div>
       </div>
-    </div>
 
-    <div class="uk-width-1-4@m uk-width-1-2">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Публикация конкурсных списков" %}</h3>
-          <p class="uk-card-text">{% trans "27 июля" %}</p>
-          <img class="uk-card-img" src="{% static 'images/applicants/clipboard.png' %}">
-        </div>
+      <h2 class="section-heading">{% trans "Сроки приёма в бакалавриат и специалитет в 2025 году" %}</h2>
+
+      <div class="mode-switch" id="modeSwitch">
+          <button class="active" data-mode="budget">{% trans "Поступление на бюджетные места" %}</button>
+          <button data-mode="paid">{% trans "Поступление на платные места" %}</button>
       </div>
-    </div>
 
-    <div class="uk-width-1-4@m uk-width-1-2">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Конец подачи документов на контракт" %}</h3>
-          <p class="uk-card-text">{% trans "25 августа" %}</p>
-          <img class="uk-card-img" src="{% static 'images/applicants/contract.png' %}">
-        </div>
-      </div>
-    </div>
-  </div>
+      <table class="timeline-table" id="timelineTable">
+          <thead>
+          <tr>
+              <th>{% trans "Этап" %}</th>
+              <th>{% trans "Очная, очно-заочная" %}</th>
+              <th>{% trans "Заочная" %}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-mode="budget">
+              <td>{% trans "Сроки приёма документов" %}<br><em>{% trans "Для направлений «Архитектура»" %}</em></td>
+              <td>15 июня 2025 г. — 20 августа 2025 г.</td>
+              <td>20 сентября 2025 г.</td>
+          </tr>
+          <tr data-mode="budget">
+              <td>{% trans "Сроки проведения вступительных испытаний" %}</td>
+              <td>1 июня — 25 августа 2025 г.</td>
+              <td>1 июня — 1 сентября 2025 г.</td>
+          </tr>
+          <tr data-mode="budget">
+              <td>{% trans "Сроки публикации конкурсного списка (рейтинг)" %}</td>
+              <td>27 июля 2025 г.</td>
+              <td>27 августа 2025 г.</td>
+          </tr>
+          <tr data-mode="paid">
+              <td>{% trans "Завершение заключения договора" %}</td>
+              <td>27 августа 2025 г.</td>
+              <td>27 сентября 2025 г.</td>
+          </tr>
+          <tr data-mode="paid">
+              <td>{% trans "Сроки зачисления" %}<br><em>{% trans "Приказ первой волны" %}</em></td>
+              <td>3 августа 2025 г.</td>
+              <td>30 августа 2025 г.</td>
+          </tr>
+          <tr data-mode="paid">
+              <td>{% trans "Срок начала учебного года" %}</td>
+              <td>1 сентября 2025 г.</td>
+              <td>1 октября 2025 г.</td>
+          </tr>
+          </tbody>
+      </table>
 
-  <p class="heading" style="margin-left:10px">
-    {% trans "Издание приказов о зачислении осуществляется:" %}
-  </p>
+  </section>
 
-  <div class="uk-grid uk-grid-match" uk-grid>
-    <div class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Этап приоритетного зачисления" %}</h3>
-          <p class="uk-card-text">{% trans "30 июля" %}</p>
-        </div>
-      </div>
-    </div>
+  <section id="tab-master" class="tab-panel" hidden>
+      <h2 class="section-heading">{% trans "Магистратура – информация будет опубликована 1 февраля 2025 г." %}</h2>
+  </section>
 
-    <div class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Основной этап зачисления" %}</h3>
-          <p class="uk-card-text">{% trans "4–9 августа" %}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <section id="tab-phd" class="tab-panel" hidden>
+      <h2 class="section-heading">{% trans "Аспирантура – следите за обновлениями на нашем сайте" %}</h2>
+  </section>
 
-  <p class="heading" style="margin-left:10px">
-    {% trans "Приём документов от иностранных граждан по договорам начинается 1 апреля и заканчивается:" %}
-  </p>
-
-  <div class="uk-grid uk-grid-match" uk-grid>
-    <div class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Очная и очно-заочная формы" %}</h3>
-          <p class="uk-card-text">{% trans "29 сентября" %}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Заочная форма" %}</h3>
-          <p class="uk-card-text">{% trans "26 ноября" %}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h2 class="sub-heading">{% trans "Порядок поступления и подачи документов" %}</h2>
-
-  <div class="uk-child-width-1-2@m" uk-grid>
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-media-top">
-          <img src="{% static 'images/applicants/committee/ochno.jpeg' %}" alt="">
-        </div>
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Личная подача документов" %}</h3>
-          <p>
-            <a uk-icon="location"></a>
-            <a href="https://yandex.ru/maps/org/rossiyskiy_universitet_druzhby_narodov_imeni_patrisa_lumumby/1023090723/">
-              {% trans "г. Москва, ул. Миклухо-Маклая, д. 6, каб. 168" %}
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Онлайн-подача документов на сайте РУДН" %}</h3>
-          <p><a uk-icon="laptop"></a> <a href="https://ab.rudn.ru">ab.rudn.ru</a></p>
-        </div>
-        <div class="uk-card-media-bottom">
-          <img src="{% static 'images/applicants/committee/online.png' %}" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <ol>
-    <li>{% trans "Перечень" %} <a href="https://admission.rudn.ru/undergraduate/documents/" target="_blank">{% trans "документов для поступления" %}</a></li>
-    <li><a href="https://academy.rudn.ru/applicants/study_directions">{% trans "Направления подготовки Инженерной академии" %}</a></li>
-  </ol>
-
-  <h2 class="sub-heading">{% trans "Порядок зачисления" %}</h2>
-  <p class="heading" style="margin-left:10px">{% trans "Зачисление иностранных граждан проводится:" %}</p>
-
-  <div class="uk-grid uk-grid-match" uk-grid>
-    <div class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Очная и очно-заочная формы" %}</h3>
-          <p class="uk-card-text">{% trans "до 1 октября" %}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "Заочная форма" %}</h3>
-          <p class="uk-card-text">{% trans "до 1 декабря" %}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <p class="heading" style="margin-left:10px">{% trans "Зачисление проводится в 2 этапа:" %}</p>
-
-  <div class="uk-grid uk-grid-match" uk-grid>
-    <li class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "28 июля – 30 июля" %}</h3>
-          <p class="uk-card-text">{% trans "Этап приоритетного зачисления: без вступительных испытаний и по квотам" %}</p>
-        </div>
-      </div>
-    </li>
-
-    <li class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "3 августа – 9 августа" %}</h3>
-          <p class="uk-card-text">{% trans "Основной этап зачисления: по результатам вступительных испытаний" %}</p>
-        </div>
-      </div>
-    </li>
-  </div>
-
-  <p class="heading" style="margin-left:10px">{% trans "Важные даты для зачисленных:" %}</p>
-
-  <div class="uk-grid uk-grid-match" uk-grid>
-    <li class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "3–9 августа" %}</h3>
-          <p class="uk-card-text">{% trans "На почту абитуриентов будет отправлено письмо с результатами" %}</p>
-        </div>
-      </div>
-    </li>
-
-    <li class="uk-width-1-2@m">
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-          <h3 class="uk-card-title">{% trans "19 августа в 15:00" %}</h3>
-          <p class="uk-card-text">{% trans "Организационная онлайн-встреча для первокурсников (ссылка придёт на почту)" %}</p>
-        </div>
-      </div>
-    </li>
-  </div>
-
-  <div class="heading"><p>{% trans "Контакты" %}</p></div>
-
-  <article class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card" role="comment">
-    <header class="uk-comment-header" style="padding-bottom:15px;border-bottom:1px solid #e5e5e5">
-      <div class="uk-grid-medium uk-flex-middle" uk-grid>
-        <div class="uk-width-auto">
-          <img class="uk-border-circle" src="{% static 'images/profile_default.png' %}" width="80" height="80">
-        </div>
-        <div class="uk-width-expand">
-          <h3 class="uk-margin-remove">{% trans "Надежда Александровна Сташевская" %}</h3>
-          <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
-            <li><span>{% trans "Секретарь отборочной комиссии" %}</span></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <div class="uk-comment-body">
-      <ul class="uk-list">
-        <li>
-          <h5 class="uk-link-heading card-link">
-            <span uk-icon="location"></span>
-            <span>{% trans "Москва, ул. Орджоникидзе, д. 3, каб. 403" %}</span>
-          </h5>
-        </li>
-        <li>
-          <h5>
-            <span uk-icon="receiver"></span>
-            <a href="tel:+74959550913" class="uk-link-heading card-link">+7 (495) 955-09-13</a>
-          </h5>
-        </li>
-        <li>
-          <h5>
-            <span uk-icon="mail"></span>
-            <a href="mailto:stashevskaya_na@pfur.ru" class="uk-link-heading card-link">stashevskaya_na@pfur.ru</a>
-          </h5>
-        </li>
-      </ul>
-    </div>
-  </article>
 </div>
 
+<script>
+document.querySelectorAll('#degreeTabs button').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+      document.querySelector('#degreeTabs button.active').classList.remove('active');
+      btn.classList.add('active');
+      document.querySelectorAll('.tab-panel').forEach(p=>p.hidden=true);
+      document.getElementById(btn.dataset.tab).hidden=false;
+  });
+});
+
+document.querySelectorAll('#modeSwitch button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+      document.querySelector('#modeSwitch button.active').classList.remove('active');
+      btn.classList.add('active');
+      const mode=btn.dataset.mode;
+      document.querySelectorAll('#timelineTable tbody tr').forEach(row=>{
+          row.style.display=row.dataset.mode===mode ? '' : 'none';
+      });
+  });
+});
+document.querySelectorAll('#timelineTable tbody tr').forEach(row=>{
+  if(row.dataset.mode!=='budget'){row.style.display='none';}
+});
+</script>
 {% endblock %}

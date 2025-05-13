@@ -16,7 +16,7 @@
         <div class="uk-container second_part-container">
           <div class="second_part-image-container">
 
-            {% if LANGUAGE_CODE == "ru" %}
+            <!-- {% if LANGUAGE_CODE == "ru" %}
               <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
                 {% csrf_token %}
                 <input type="hidden" name="language" value="en">
@@ -44,7 +44,7 @@
                 font-size: large;
                 ">RUS</button>              
               </form>
-            {% endif %}
+            {% endif %} -->
 
             {% if LANGUAGE_CODE == "ru" %}
               <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">

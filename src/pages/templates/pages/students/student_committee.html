@@ -1,75 +1,54 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/students/student_committee.css' %}"
-/>
+{% extends 'components/base.html' %}
+{% block content %}
+{% load static i18n %}
+
+<link rel="stylesheet" href="{% static 'css/students/student_committee.css' %}" />
 
 <div class="uk-container">
-  <div class="page-name">Студенческий комитет</div>
+  <div class="page-name">{% trans "Студенческий комитет" %}</div>
 </div>
+
 <div class="parallax-container_2 uk-visible@s">
-  <p class="text-on-image">
-    Присоединяйтесь к нам и меняйте мир!
-  </p>
+  <p class="text-on-image">{% trans "Присоединяйтесь к нам и меняйте мир!" %}</p>
 </div>
+
 <div class="uk-container" style="margin-bottom: 50px">
-  <h2 class="sub-heading">Миссия</h2>
+  <h2 class="sub-heading">{% trans "Миссия" %}</h2>
+  {% blocktrans trimmed %}
   <p class="large_text">
-    Создание общей экосистемы студентов на факультете.
-    <br />
+    Создание общей экосистемы студентов на факультете.<br>
     Создание системы, которая будет способна решить 100% проблем обучающихся.
   </p>
+  {% endblocktrans %}
 
-  <h2 class="sub-heading">Направления деятельности</h2>
+  <h2 class="sub-heading">{% trans "Направления деятельности" %}</h2>
   <ul style="list-style: '– '" class="large_text">
-    <li>
-      Проведение мероприятий на площадке факультета и других корпусов РУДН,
-      формирование у активистов навыков работы в команде, лидерских качеств, а
-      также повышение социализации (культурно-массовая комиссия)
-    </li>
-    <li>
-      Работа со старостами и кураторами, консультация всех студентов по учебным
-      и бытовым вопросам, помощь с академическими задолженностями, решение
-      конфликтов как внутри группы, так и между студентом и преподавателем
-      (комиссия по качеству образования)
-    </li>
-    <li>
-      Помощь иностранным студентам с адаптацией в группе, а также в общественной
-      жизни университета (комиссия по работе с иностранными студентами)
-    </li>
-    <li>
-      Формирование бренда СК ИА, производство постов, фото и видеосъёмка
-      мероприятий обучение студентов работе в таких программах, как figma, adobe
-      illustrator, adobe photoshop, adobe lightroom (информационная комиссия)
-    </li>
-    <li>
-      Помощь в организации мероприятий, патриотическая деятельность
-      (волонтёрская комиссия)
-    </li>
-  </ul>
-  <p class="large_text">
-    <b>Клубы:</b>
-  </p>
-  <ul style="list-style: '– '" class="large_text">
-    <li>
-      Клуб настольных игр: встречи активистов, желающих поиграть в различные
-      настольные игры
-    </li>
-    <li>
-      Книжный клуб: встречи читающих и слушающих активистов, желающих поделиться
-      впечатлениями о прочтенных ими книгах
-    </li>
+    <li>{% trans "Проведение мероприятий на площадке факультета и других корпусов РУДН, формирование у активистов навыков работы в команде, лидерских качеств, а также повышение социализации (культурно-массовая комиссия)" %}</li>
+    <li>{% trans "Работа со старостами и кураторами, консультация всех студентов по учебным и бытовым вопросам, помощь с академическими задолженностями, решение конфликтов как внутри группы, так и между студентом и преподавателем (комиссия по качеству образования)" %}</li>
+    <li>{% trans "Помощь иностранным студентам с адаптацией в группе, а также в общественной жизни университета (комиссия по работе с иностранными студентами)" %}</li>
+    <li>{% trans "Формирование бренда СК ИА, производство постов, фото- и видеосъёмка мероприятий, обучение студентов работе в таких программах, как Figma, Adobe Illustrator, Photoshop, Lightroom (информационная комиссия)" %}</li>
+    <li>{% trans "Помощь в организации мероприятий, патриотическая деятельность (волонтёрская комиссия)" %}</li>
   </ul>
 
-  <h2 class="sub-heading">Как вступить</h2>
+  <p class="large_text"><b>{% trans "Клубы:" %}</b></p>
+  <ul style="list-style: '– '" class="large_text">
+    <li>{% trans "Клуб настольных игр: встречи активистов, желающих поиграть в различные настольные игры" %}</li>
+    <li>{% trans "Книжный клуб: встречи читающих и слушающих активистов, желающих поделиться впечатлениями о прочитанных ими книгах" %}</li>
+  </ul>
+
+  <h2 class="sub-heading">{% trans "Как вступить" %}</h2>
   <p class="large_text">
-    Перейти в группу <a href="https://vk.com/skia.rudn">ВКонтакте</a> и нажать
-    на кнопку ВСТУПИТЬ В СК!!
+    {% blocktrans trimmed %}
+    Перейти в группу <a href="https://vk.com/skia.rudn">ВКонтакте</a> и нажать на кнопку «ВСТУПИТЬ В СК!»
+    {% endblocktrans %}
   </p>
 
-  <h2 class="sub-heading">Председатель комитета</h2>
+  <h2 class="sub-heading">{% trans "Председатель комитета" %}</h2>
 
-  <h2 class="sub-heading">{{department.job_title|temp_replace_head_department}}</h2>
+  <h2 class="sub-heading">
+    {{ department.job_title|temp_replace_head_department }}
+  </h2>
+
   <div style="max-width: fit-content">
     <article
       style="background-color: transparent"
@@ -160,44 +139,32 @@
 
   <ul uk-accordion style="margin-top:40px">
     <li>
-      <a class="uk-accordion-title" href> <h2 style="margin-top:0px" class="sub-heading">Состав комитета</h2></a>
-  <div class="uk-accordion-content student_committee uk-overflow-auto">
-
-    <table
-      style="font-size: 18px !important; font-weight: 400 !important"
-      class="uk-table uk-table-divider"
-    >
-      <thead>
-        <tr>
-          <th style="font-size: 20px !important; font-weight: 400 !important">
-            ФИО
-          </th>
-          <th style="font-size: 20px !important; font-weight: 400 !important">
-            Должность
-          </th>
-          <th style="font-size: 20px !important; font-weight: 400 !important">
-            Почта
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for profile in profiles %} {% if profile.position != 1%}
-        <tr>
-          <td>{{profile.full_name }}</td>
-          <td>
-            {% for job_title in profile.job_title %} {{job_title }} {% endfor %}
-          </td>
-          <td>
-            <a href="mailto:{{profile.email}}">{{profile.email}}</a>
-          </td>
-        </tr>
-        {% endif %} {% endfor %}
-      </tbody>
-    </table>
-
-  </div>
-  </li>
+      <a class="uk-accordion-title" href>
+        <h2 style="margin-top:0" class="sub-heading">{% trans "Состав комитета" %}</h2>
+      </a>
+      <div class="uk-accordion-content student_committee uk-overflow-auto">
+        <table class="uk-table uk-table-divider" style="font-size:18px;font-weight:400">
+          <thead>
+            <tr>
+              <th>{% trans "ФИО" %}</th>
+              <th>{% trans "Должность" %}</th>
+              <th>{% trans "Почта" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for profile in profiles %}
+              {% if profile.position != 1 %}
+              <tr>
+                <td>{{ profile.full_name }}</td>
+                <td>{% for job_title in profile.job_title %}{{ job_title }}{% endfor %}</td>
+                <td><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </li>
   </ul>
 </div>
-
 {% endblock %}

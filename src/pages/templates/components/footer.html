@@ -1,24 +1,50 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 <footer>
   <div class="uk-container">
     <nav class="uk-navbar-container uk-navbar-transparent">
       <div class="footer-wrapper">
         <div class="footer-image-container">
           <div class="footer-images">
-            <a href="/">
-              <img
-                class="no-background footer-image"
-                src="{% static 'images/footer/rudn.png' %}"
-                width="60vw"
-                alt=""
-            /></a>
-            <a href="/">
-              <img
-                class="no-background footer-image"
-                src="{% static 'images/footer/engr-academy.png' %}"
-                width="60vw"
-                alt=""
-            /></a>
+
+            {% if LANGUAGE_CODE == "en" %}
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/logo_RUDN_white.png' %}"
+                  width="60vw"
+                  alt="RUDN Logo EN"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/logo_ACADEMY_OF_ENGINEERING_white(2).png' %}"
+                  width="60vw"
+                  alt="Engineering Academy EN"
+                />
+              </a>
+            {% else %}
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/rudn.png' %}"
+                  width="60vw"
+                  alt="Лого РУДН"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}">
+                <img
+                  class="no-background footer-image"
+                  src="{% static 'images/footer/engr-academy.png' %}"
+                  width="60vw"
+                  alt="Лого Инженерная Академия"
+                />
+              </a>
+            {% endif %}
+
           </div>
 
           <ul style="padding: 0px; list-style-type: none">
@@ -28,7 +54,8 @@
                   href="https://vk.com/eng_academyrudn"
                   target="_blank"
                   class="app__item-link"
-                  ><svg
+                >
+                  <svg
                     class="app-item-svg vk"
                     viewBox="-2.5 0 32 32"
                     version="1.1"
@@ -47,10 +74,11 @@
                     </g>
                   </svg> </a
                 ><a
-                  href="https://t.me/engacademy2024"
+                  href="https://t.me/Academy_of_engineering"
                   target="_blank"
                   class="app__item-link"
-                  ><svg viewBox="0 0 24 24" class="app-item-svg tg">
+                >
+                  <svg viewBox="0 0 24 24" class="app-item-svg tg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
@@ -68,107 +96,85 @@
             </li>
           </ul>
         </div>
+
         <div class="navigation">
           <ul>
             <li class="navigation-heading" style="margin-bottom: 30px">
-              <a href="{% url 'pages:index' %}">Главная</a>
+              <a href="{% url 'pages:index' %}">{% trans "Главная" %}</a>
             </li>
             <li class="navigation-heading">
-              <a href="{% url 'pages:news' %}">Новости</a>
+              <a href="{% url 'pages:news' %}">{% trans "Новости" %}</a>
             </li>
           </ul>
           <ul>
             <li class="navigation-heading link-no-red">
-              <a href="">Академия</a>
+              <a href="">{% trans "Академия" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:administration' %}">Дирекция</a>
+              <a href="{% url 'pages:administration' %}">{% trans "Дирекция" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:departments' %}">Кафедры</a>
+              <a href="{% url 'pages:departments' %}">{% trans "Кафедры" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:history' %}">История</a>
+              <a href="{% url 'pages:history' %}">{% trans "История" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="/academy/contacts">Контакты</a>
-            </li>
-          </ul>
-          <ul>
-            <li class="navigation-heading link-no-red"><a href="">Наука</a></li>
-
-            <li class="navigation-link">
-              <a href="{% url 'pages:scientific_centers' %}">Научные центры</a>
-            </li>
-            <li class="navigation-link">
-              <a href="{% url 'pages:science_directions' %}"
-                >Научные направления</a
-              >
-            </li>
-            <li class="navigation-link">
-              <a href="{% url 'pages:science_journals' %}">Научные журналы</a>
-            </li>
-
-            <li class="navigation-link">
-              <a href="{% url 'pages:science_events' %}">Научные меропрития</a>
-            </li>
-
-            <li class="navigation-link">
-              <a href="{% url 'pages:dissertation_committees' %}"
-                >Диссертационные советы</a
-              >
+              <a href="{% url 'pages:contacts' %}">{% trans "Контакты" %}</a>
             </li>
           </ul>
           <ul>
             <li class="navigation-heading link-no-red">
-              <a href="">Абитуриентам</a>
+              <a href="">{% trans "Наука" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:applicants_study_directions' %}"
-                >Направления подготовки</a
-              >
+              <a href="{% url 'pages:scientific_centers' %}">{% trans "Научные центры" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:committee' %}">Приемная комиссия</a>
+              <a href="{% url 'pages:science_directions' %}">{% trans "Научные направления" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:applicants_reference' %}"
-                >Справочная информация</a
-              >
+              <a href="{% url 'pages:science_journals' %}">{% trans "Научные журналы" %}</a>
             </li>
-            <!-- <li class="navigation-link">
-              <a href="{% url 'pages:applicants_open_days' %}"
-                >Дни открытых дверей</a
-              >
-            </li> -->
+            <li class="navigation-link">
+              <a href="{% url 'pages:science_events' %}">{% trans "Научные мероприятия" %}</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:dissertation_committees' %}">{% trans "Диссертационные советы" %}</a>
+            </li>
           </ul>
           <ul>
             <li class="navigation-heading link-no-red">
-              <a href="">Студентам и Аспирантам</a>
+              <a href="">{% trans "Абитуриентам" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:students_schedule' %}">Расписание</a>
-            </li>
-
-            <li class="navigation-link">
-              <a href="{% url 'pages:scientific_student_society' %}"
-                >Научное студенческое общество</a
-              >
+              <a href="{% url 'pages:applicants_study_directions' %}">{% trans "Направления подготовки" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:students_student_committee' %}"
-                >Студенческий комитет</a
-              >
+              <a href="{% url 'pages:committee' %}">{% trans "Приемная комиссия" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:digital_library' %}"
-                >Электронная библиотека</a
-              >
+              <a href="{% url 'pages:applicants_reference' %}">{% trans "Справочная информация" %}</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="navigation-heading link-no-red">
+              <a href="">{% trans "Студентам и Аспирантам" %}</a>
             </li>
             <li class="navigation-link">
-              <a href="{% url 'pages:students_applications' %}"
-                >Образцы заявлений</a
-              >
+              <a href="{% url 'pages:students_schedule' %}">{% trans "Расписание" %}</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:scientific_student_society' %}">{% trans "Научное студенческое общество" %}</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:students_student_committee' %}">{% trans "Студенческий комитет" %}</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:digital_library' %}">{% trans "Электронная библиотека" %}</a>
+            </li>
+            <li class="navigation-link">
+              <a href="{% url 'pages:students_applications' %}">{% trans "Образцы заявлений" %}</a>
             </li>
           </ul>
         </div>

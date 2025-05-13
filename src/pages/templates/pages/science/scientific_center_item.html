@@ -1,142 +1,177 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/science/scientific_centers.css' %}"
-/>
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/science/scientific_centers.css' %}">
+
 <div class="uk-container">
-  <a href="/science/scientific_centers" class="study_level-badge">Научные центры</a>
-  <div class="page-name">{{title}}</div>
+  <a href="{% url 'pages:scientific_centers' %}" class="study_level-badge">
+    {% trans "Научные центры" %}
+  </a>
+  <div class="page-name">{{ title }}</div>
 </div>
-{% comment %}
-<div class="parallax-container_2">
-  <p class="text-on-image">
-    Открой Мир в одном Университете!<br />Discover the World in one Univeristy
-  </p>
-</div>
-{% endcomment %}
-<div class="uk-container" style="margin-bottom: 50px; margin-top: 40px">
+
+<div class="uk-container" style="margin:40px 0 50px 0">
   <div class="uk-accordion-content">
     <div class="uk-child-width-1-1@s" uk-grid>
-      <div class="">
-        <p><b>Структурное подразделение:</b> {{center.faculty_field.name}}</p>
-        <p><b>Руководитель:</b> {{center.head.full_name}}</p>
-        <p><b>Адрес:</b> {{center.address}}</p>
-        {% if center.phone%}
-        <p><b>Тел.:</b> {{center.phone}}</p>
-        {% endif %} {% if center.email %}
-        <p><b>e-mail:</b> {{center.email}}</p>
-        {% endif %} {% if center.brief_description %}
-        <p class="uk-card-title" style="text-align: center; font-size: 25px">
-          Краткое описание
+      <div>
+
+        <p>
+          <b>{% trans "Структурное подразделение:" %}</b>
+          {{ center.faculty_field.name }}
         </p>
 
-        <p style="text-align: justify; text-indent: 3%">
-          {{center.brief_description|linebreaks}}
-        </p>
-        {% endif %} {% if center.scientists %}
-        <p class="uk-card-title" style="text-align: center; font-size: 25px">
-          Команда ученых
-        </p>
-        <div class="uk-overflow-auto">
-          <table class="uk-table uk-table-striped">
-            <thead>
-              <tr>
-                <th>Ф.И.О., должность</th>
-                <th>Ученая степень, ученое звание</th>
-                <th>
-                  Область научных интересов (специализация; роль ученого в
-                  команде лаборатории)
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for item in center.scientists %}
-              <tr>
-                <td>{{item.full_name_job_title}}</td>
-                <td>{{item.degree}}</td>
-                <td>{{item.specialization}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-        {% endif %} {% if center.scientific_directions %}
-        <p class="uk-card-title" style="text-align: center; font-size: 25px">
-          Научные направления (области исследования)
-        </p>
-        <ul style="list-style: '– '; text-align: justify">
-          {% for item in center.scientific_directions %}
-          <li>{{item}}</li>
-          {% endfor %}
-        </ul>
-        {% endif %} {% if center.achievements %}
-        <p class="uk-card-title" style="text-align: center; font-size: 25px">
-          Достижения/результаты проектов-исследований
-        </p>
-        <ul style="list-style: '– '; text-align: justify">
-          {% for item in center.achievements %}
-          <li>{{item}}</li>
-          {% endfor %}
-        </ul>
-        {% endif %} {% if center.equipment.all %}
-        <p class="uk-card-title" style="text-align: center; font-size: 25px">
-          Оборудование
-        </p>
-        <div class="uk-overflow-auto">
-          <table class="uk-table uk-table-striped">
-            <thead>
-              <tr>
-                <th>Наименование оборудования</th>
-                <th>Назначение</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for item in center.equipment.all %}
-              <tr>
-                <td>
-                  {{item.name}}
-                  <img src="{{item.image.url}}" width="200" align="left" />
-                </td>
-                <td>
-                  Предназначен для профилирования с высоким разрешением,
-                  измерения напряжений в пленках, анализа 2D-напряжений в
-                  образце, измерения шероховатости.
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-        {% endif %} {% if center.partners.all %}
-        <p class="uk-card-title" style="text-align: center; font-size: 25px">
-          Сотрудничество, партнеры
+        <p>
+          <b>{% trans "Руководитель:" %}</b>
+          {% if LANGUAGE_CODE == 'en' and center.head.full_name_en %}
+            {{ center.head.full_name_en }}
+          {% else %}
+            {{ center.head.full_name }}
+          {% endif %}
         </p>
 
-        <div class="uk-overflow-auto">
-          <table class="uk-table uk-table-striped">
-            <thead>
-              <tr>
-                <th>Наименование организации</th>
-                <th>Предмет сотрудничества</th>
-                <th>Результат сотрудничества</th>
-                <th>О партнёре</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for item in center.partners.all %}
-              <tr>
-                <td>
-                  {{item.name}}
-                  <a href="{{item.link}}"><img src="{{item.image.url}}" /></a>
-                </td>
-                <td>{{item.collaboration_direction|linebreaks}}</td>
-                <td>{{item.result|linebreaks}}</td>
-                <td>{{item.about|linebreaks}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+        {% if center.address %}
+          <p><b>{% trans "Адрес:" %}</b> {{ center.address }}</p>
+        {% endif %}
+
+        {% if center.phone %}
+          <p><b>{% trans "Тел.:" %}</b> {{ center.phone }}</p>
+        {% endif %}
+
+        {% if center.email %}
+          <p><b>e-mail:</b> {{ center.email }}</p>
+        {% endif %}
+
+        {% if center.brief_description or center.brief_description_en %}
+          <p class="uk-card-title uk-text-center" style="font-size:25px">
+            {% trans "Краткое описание" %}
+          </p>
+
+          <p style="text-align:justify;text-indent:3%">
+            {% if LANGUAGE_CODE == 'en' and center.brief_description_en %}
+              {{ center.brief_description_en|linebreaks }}
+            {% else %}
+              {{ center.brief_description|linebreaks }}
+            {% endif %}
+          </p>
+        {% endif %}
+
+        {% if center.scientists %}
+          <p class="uk-card-title uk-text-center" style="font-size:25px">
+            {% trans "Команда ученых" %}
+          </p>
+
+          <div class="uk-overflow-auto">
+            <table class="uk-table uk-table-striped">
+              <thead>
+                <tr>
+                  <th>{% trans "Ф.И.О., должность" %}</th>
+                  <th>{% trans "Ученая степень, ученое звание" %}</th>
+                  <th>{% trans "Область научных интересов" %}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in center.scientists %}
+                  <tr>
+                    <td>{{ item.full_name_job_title }}</td>
+                    <td>{{ item.degree }}</td>
+                    <td>{{ item.specialization }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+
+        {% if center.scientific_directions %}
+          <p class="uk-card-title uk-text-center" style="font-size:25px">
+            {% trans "Научные направления (области исследования)" %}
+          </p>
+          <ul style="list-style:'– ';text-align:justify">
+            {% for item in center.scientific_directions %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if center.achievements %}
+          <p class="uk-card-title uk-text-center" style="font-size:25px">
+            {% trans "Достижения/результаты проектов-исследований" %}
+          </p>
+          <ul style="list-style:'– ';text-align:justify">
+            {% for item in center.achievements %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if center.equipment.all %}
+          <p class="uk-card-title uk-text-center" style="font-size:25px">
+            {% trans "Оборудование" %}
+          </p>
+
+          <div class="uk-overflow-auto">
+            <table class="uk-table uk-table-striped">
+              <thead>
+                <tr>
+                  <th>{% trans "Наименование оборудования" %}</th>
+                  <th>{% trans "Назначение" %}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in center.equipment.all %}
+                  <tr>
+                    <td>
+                      {{ item.name }}<br>
+                      <img src="{{ item.image.url }}" width="200" class="uk-margin-small-top">
+                    </td>
+                    <td>
+                      {% if LANGUAGE_CODE == 'en' and item.purpose_en %}
+                        {{ item.purpose_en|linebreaks }}
+                      {% else %}
+                        {{ item.purpose|linebreaks }}
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+
+        {% if center.partners.all %}
+          <p class="uk-card-title uk-text-center" style="font-size:25px">
+            {% trans "Сотрудничество, партнеры" %}
+          </p>
+
+          <div class="uk-overflow-auto">
+            <table class="uk-table uk-table-striped">
+              <thead>
+                <tr>
+                  <th>{% trans "Наименование организации" %}</th>
+                  <th>{% trans "Предмет сотрудничества" %}</th>
+                  <th>{% trans "Результат сотрудничества" %}</th>
+                  <th>{% trans "О партнёре" %}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in center.partners.all %}
+                  <tr>
+                    <td>
+                      {{ item.name }}<br>
+                      {% if item.image %}
+                        <a href="{{ item.link }}"><img src="{{ item.image.url }}"></a>
+                      {% endif %}
+                    </td>
+                    <td>{{ item.collaboration_direction|linebreaks }}</td>
+                    <td>{{ item.result|linebreaks }}</td>
+                    <td>{{ item.about|linebreaks }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         {% endif %}
       </div>
     </div>

@@ -1,14 +1,32 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/academy/departments.css' %}" />
-<div class="uk-container">
-  <a href="/academy/departments" class="return-button" style="margin-top: 50px;">Кафедры</a>
-  <div class="page-name">{{title}}</div>
-</div>
-<div class="uk-container" style="margin-top: 20px; margin-bottom: 50px">
-  <div class="info-block">
-    {{department.info|linebreaks}}
-  </div>
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
 
+<link rel="stylesheet" href="{% static 'css/academy/departments.css' %}" />
+
+<div class="uk-container">
+  <a href="/academy/departments" class="return-button" style="margin-top:50px;">
+    {% trans "Кафедры" %}
+  </a>
+
+  <div class="page-name">
+    {% if LANGUAGE_CODE == 'en' and department.name_en %}
+      {{ department.name_en }}
+    {% else %}
+      {{ department.name }}
+    {% endif %}
+  </div>
+</div>
+
+<div class="uk-container" style="margin-top:20px;margin-bottom:50px">
+  <div class="info-block">
+    {% if LANGUAGE_CODE == 'en' and department.info_en %}
+      {{ department.info_en|linebreaks }}
+    {% else %}
+      {{ department.info|linebreaks }}
+    {% endif %}
+  </div>
   <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
     {% if department.head %}
     <div>
@@ -76,7 +94,7 @@
       </div>
     </div>
     <div>
-      <h2 class="sub-heading">Контактное лицо</h2>
+      <h2 class="sub-heading">{% trans "Контактное лицо" %}</h2>
       <div class="employee-card-wrapper">
         <article style="background-color: transparent"
           class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
@@ -142,8 +160,8 @@
     </div>
     {% endif %}
   </div>
-  <h2 class="sub-heading">Направления подготовки и специальности</h2>
-
+  <h2 class="sub-heading">{% trans "Направления подготовки и специальности" %}</h2>
+  
   <div class="uk-container" style="margin-bottom: 50px">
     {% if bachelors%}
     <div class="level_accordion-wrapper uk-card uk-card-default uk-card-hover uk-card-body">
@@ -357,7 +375,7 @@
       </ul>
     </div>
     {% endif %}
-    <h2 class="sub-heading">Лабораторная база</h2>
+    <h2 class="sub-heading">{% trans "Лабораторная база" %}</h2>    
     <ul uk-accordion="multiple: true">
       {% for center in scientific_centers %}
       <li>
@@ -394,7 +412,7 @@
       </li>
 
     </ul> {% endcomment %}
-    <h2 class="sub-heading">Профессорско-преподавательский состав</h2>
+    <h2 class="sub-heading">{% trans "Профессорско-преподавательский состав" %}</h2>    
     <div class="employee_cards">
       {% for teacher in staff %}
 

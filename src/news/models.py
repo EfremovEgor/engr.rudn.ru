@@ -9,7 +9,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 class Tag(models.Model):
     name = models.CharField(verbose_name="Тэг", max_length=255)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -18,7 +18,9 @@ class Tag(models.Model):
 
 
 class NewsItem(models.Model):
-    title = models.TextField(verbose_name="Название", unique=True)
+    title_ru = models.TextField(verbose_name="Название", unique=True, null=True, blank=True)
+    title_en = models.TextField(verbose_name="Name", unique=True, null=True, blank=True)
+
     preview_image = models.ImageField(
         verbose_name="Фотография",
         upload_to="news",
@@ -26,25 +28,35 @@ class NewsItem(models.Model):
         blank=True,
     )
     tags = models.ManyToManyField(Tag, verbose_name="Тэги")
-    content = RichTextUploadingField(
+    content_ru = RichTextUploadingField(
         verbose_name="Информация",
-        blank=False,
-        null=False,
+        null=True, blank=True
     )
-    creation_date = models.DateTimeField(verbose_name="Дата создания", default=timezone.now)
+    content_en = RichTextUploadingField(
+        verbose_name="Content",
+        null=True, blank=True
+    )
+    creation_date = models.DateTimeField(
+        verbose_name="Дата создания",
+        default=timezone.now
+    )
 
     class Meta:
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
 
-    def __str__(self) -> str:
-        return self.title
+    def __str__(self):
+        # Fallback to RU or EN as you prefer:
+        if self.title_ru:
+            return self.title_ru
+        elif self.title_en:
+            return self.title_en
+        return "Untitled"
 
     def save(self, *args, **kwargs):
         if self.preview_image:
-            img = Image.open(self.preview_image)
-            img = img.convert('RGB')
-
+            img = Image.open(self.preview_image).convert('RGB')
+            # resize to 600x450
             img = img.resize((600, 450))
 
             thumb_io = io.BytesIO()
@@ -52,7 +64,12 @@ class NewsItem(models.Model):
             thumb_io.seek(0)
 
             self.preview_image = InMemoryUploadedFile(
-                thumb_io, None, self.preview_image.name, 'image/jpeg', thumb_io.getbuffer().nbytes, None
+                thumb_io,
+                None,
+                self.preview_image.name,
+                'image/jpeg',
+                thumb_io.getbuffer().nbytes,
+                None
             )
         
         super().save(*args, **kwargs)

@@ -23,7 +23,9 @@ from documents.models import (
 )
 from profiles.models import StudentCommitteeProfile
 from .utils import aliases, functions
+from django.utils.translation import gettext as _
 import re
+from django.utils.translation import get_language
 
 def index(request):
     slider_images = MainSlider.objects.all()
@@ -32,7 +34,7 @@ def index(request):
         request,
         "pages/index.html",
         {
-            "title": "Инженерная академия РУДН",
+            "title": _("Инженерная академия РУДН"),
             "contacts": list(IndexContact.objects.order_by("position").all()),
             "news": news,
             "slider_images": slider_images,
@@ -44,14 +46,13 @@ class NewsView(View):
     template_name = "pages/news.html"
 
     def get(self, request):
-        news = NewsItem.objects.prefetch_related().order_by("-creation_date")[:30]
-
+        news = NewsItem.objects.prefetch_related().order_by("-creation_date")[:30]        
         tags = Tag.objects.filter(newsitem__tags__isnull=False).distinct()
         return render(
             request,
             self.template_name,
             {
-                "title": "Новости",
+                "title": _("Новости"),
                 "news": news,
                 "tags": tags,
             },
@@ -90,7 +91,7 @@ class NewsView(View):
             request,
             "pages/news.html",
             {
-                "title": "Новости",
+                "title": _("Новости"),
                 "news": news,
                 "tags": tags,
                 **search_details,
@@ -102,13 +103,18 @@ class NewsItemView(View):
     template_name = "pages/news_item_page.html"
 
     def get(self, request, id):
-        content = get_object_or_404(NewsItem, pk=id)
+        news_item = get_object_or_404(NewsItem, pk=id)
+        if request.LANGUAGE_CODE == 'en':
+            page_title = news_item.title_en or _("Untitled")
+        else:
+            page_title = news_item.title_ru or _("Без названия")
+
         return render(
             request,
             self.template_name,
             {
-                "title": content.title,
-                "content": content,
+                "title": page_title,
+                "content": news_item,
             },
         )
 
@@ -120,7 +126,7 @@ def news(request):
         request,
         "pages/news.html",
         {
-            "title": "Новости",
+            "title": _("Новости"),
             "news": news,
             "tags": tags,
         },
@@ -161,7 +167,7 @@ def academy(request):
         request,
         "pages/academy/academy.html",
         {
-            "title": "Академия",
+            "title": _("Академия"),
         },
     )
 
@@ -175,7 +181,7 @@ def administration(request):
         request,
         "pages/academy/administration.html",
         {
-            "title": "Дирекция",
+            "title": _("Дирекция"),
             "profiles": data,
         },
     )
@@ -186,7 +192,7 @@ def history(request):
         request,
         "pages/academy/history.html",
         {
-            "title": "История",
+            "title": _("История"),
         },
     )
 
@@ -196,7 +202,7 @@ def science_directions(request):
         request,
         "pages/science/directions.html",
         {
-            "title": "Научные направления",
+            "title": _("Научные направления"),
         },
     )
 
@@ -206,7 +212,7 @@ def science_journals(request):
         request,
         "pages/science/journals.html",
         {
-            "title": "Научные журналы",
+            "title": _("Научные журналы"),
         },
     )
 
@@ -216,7 +222,7 @@ def scientific_student_society(request):
         request,
         "pages/science/scientific_student_society.html",
         {
-            "title": "Научное студенческое общество",
+            "title": _("Научное студенческое общество"),
         },
     )
 
@@ -226,7 +232,7 @@ def science_events(request):
         request,
         "pages/science/events.html",
         {
-            "title": "Научные мероприятия",
+            "title": _("Научные мероприятия"),
         },
     )
 
@@ -235,7 +241,7 @@ def science_seminars(request):
         request,
         "pages/science/seminars.html",
         {
-            "title": "Научные семинары",
+            "title": _("Научные семинары"),
         },
     )
 
@@ -244,7 +250,7 @@ def science_cits(request):
         request,
         "pages/science/cits.html",
         {
-            "title": "Конференция по информационным и техническим системам",
+            "title": _("Конференция по информационным и техническим системам"),
         },
     )
 
@@ -253,7 +259,7 @@ def science_scitechforum(request):
         request,
         "pages/science/scitechforum.html",
         {
-            "title": "Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам",
+            "title": _("Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам"),
         },
     )
 
@@ -263,7 +269,7 @@ def graduates_contacts(request):
         request,
         "pages/graduates/contacts.html",
         {
-            "title": "Контакты",
+            "title": _("Контакты"),
         },
     )
 
@@ -273,7 +279,7 @@ def digital_library(request):
         request,
         "pages/science/digital_library.html",
         {
-            "title": "Электронная библиотека",
+            "title": _("Электронная библиотека"),
         },
     )
 
@@ -283,7 +289,7 @@ def graduates_topics_of_dissertation_research(request):
         request,
         "pages/graduates/topics_of_dissertation_research.html",
         {
-            "title": "Тематики диссертационных исследований",
+            "title": _("Тематики диссертационных исследований"),
         },
     )
 
@@ -294,7 +300,7 @@ def students_applications(request):
         request,
         "pages/students/applications.html",
         {
-            "title": "Образцы заявлений",
+            "title": _("Образцы заявлений"),
             "applications": applications,
         },
     )
@@ -305,7 +311,7 @@ def students_schedule(request):
         request,
         "pages/students/schedule.html",
         {
-            "title": "Расписание",
+            "title": _("Расписание"),
         },
     )
 
@@ -317,7 +323,7 @@ def students_student_committee(request):
         request,
         "pages/students/student_committee.html",
         {
-            "title": "Студенческий коммитет",
+            "title": _("Студенческий комитет"),
             "profiles": profiles,
         },
     )
@@ -330,7 +336,7 @@ def applicants_reference(request):
         request,
         "pages/applicants/reference.html",
         {
-            "title": "Справочная информация",
+            "title": _("Справочная информация"),
             "cis": cis,
             "foreign": foreign,
         },
@@ -338,12 +344,12 @@ def applicants_reference(request):
 
 
 def open_days(request):
-    presentations = OpenDaysFiles.objects.filter(type="Презентация").all()
+    presentations = OpenDaysFiles.objects.filter(type=_("Презентация")).all()
     return render(
         request,
         "pages/applicants/open_days.html",
         {
-            "title": "Дни открытых дверей",
+            "title": _("Дни открытых дверей"),
             "presentations": presentations,
         },
     )
@@ -354,48 +360,51 @@ def study_directions(request):
         request,
         "pages/applicants/study_directions.html",
         {
-            "title": "Направления подготовки",
+            "title": _("Направления подготовки"),
         },
     )
 
 
-def levels_of_study(request, level):
-    levels = {
-        "bachelor": "Бакалавриат",
-        "masters": "Магистратура",
-        "postgraduates": "Аспирантура",
-        "specialists": "Специалитет",
+def levels_of_study(request, level: str):    
+    LEVELS = {
+        "bachelor":      ("Бакалавриат",   "Bachelor’s Degree"),
+        "masters":       ("Магистратура",  "Master’s Degree"),
+        "postgraduates": ("Аспирантура",   "Post-graduate Studies"),
+        "specialists":   ("Специалитет",   "Specialist Degree"),
     }
-    if level not in levels:
-        return HttpResponse(status=404)
 
-    def natural_sort_key(s):
-        return [
-            int(text) if text.isdigit() else text.lower()
-            for text in re.split(r'(\d+)', s.cipher)
-        ]
+    if level not in LEVELS:
+        raise Http404
+
+    ru_level, en_level = LEVELS[level]
+    lang_code          = get_language()
 
     directions = list(
-        StudyDirection.objects.filter(study_level=levels[level])
+        StudyDirection.objects
+        .filter(study_level=ru_level)
+        .prefetch_related("profiles")
     )
-    directions.sort(key=natural_sort_key)
+
+    def natural_key(obj):
+        return [
+            int(t) if t.isdigit() else t.lower()
+            for t in re.split(r"(\d+)", obj.cipher or "")
+        ]
+
+    directions.sort(key=natural_key)
 
     for direction in directions:
         profiles = list(direction.profiles.all())
-
-        profiles.sort(key=lambda s: [
-            int(text) if text.isdigit() else text.lower()
-            for text in re.split(r'(\d+)', s.cipher or '')
-        ])
-
-
+        profiles.sort(key=natural_key)
         direction.sorted_profiles = profiles
+
+    page_title = en_level if lang_code == "en" else ru_level
 
     return render(
         request,
         f"pages/applicants/levels/{level}.html",
         {
-            "title": levels[level],
+            "title":      page_title,
             "directions": directions,
         },
     )
@@ -406,7 +415,7 @@ def committee(request):
         request,
         "pages/applicants/committee.html",
         {
-            "title": "Приемная комиссия",
+            "title": _("Приемная комиссия"),
         },
     )
 
@@ -417,19 +426,19 @@ def dissertation_committees(request):
         request,
         "pages/students/dissertation_committees.html",
         {
-            "title": "Диссертационные советы",
+            "title": _("Диссертационные советы"),
             "committees": committees,
         },
     )
 
 
 def scientific_centers(request):
-    centers = ScientificCenters.objects.all().order_by("position")
+    centers = ScientificCenters.objects.order_by("position")
     return render(
         request,
         "pages/science/scientific_centers.html",
         {
-            "title": "Научные центры",
+            "title": _("Научные центры"),
             "centers": centers,
         },
     )
@@ -437,18 +446,17 @@ def scientific_centers(request):
 
 def scientific_center_item(request, name):
     center = get_object_or_404(ScientificCenters, page_url=name)
-    alias = aliases.scientific_center_name_to_page.get(
-        " ".join(word.strip() for word in center.name.split())
-    )
 
-    if alias is None:
-        raise Http404
+    if request.LANGUAGE_CODE == "en" and center.name_en:
+        page_title = center.name_en
+    else:
+        page_title = center.name
 
     return render(
         request,
-        f"pages/science/scientific_centers/{alias}",
+        "pages/science/scientific_centers/scientific_center_item.html",
         {
-            "title": center.name,
+            "title": page_title,
             "center": center,
         },
     )
@@ -461,7 +469,7 @@ def dissertation_committee(request, id):
         request,
         "pages/students/dissertation_committee_item.html",
         {
-            "title": f"ПДС {committee.cipher}",
+            "title": f"{_('ПДС')} {committee.cipher}",
             "committee": committee,
         },
     )
@@ -473,7 +481,7 @@ def departments(request):
         request,
         "pages/academy/departments.html",
         {
-            "title": "Кафедры",
+            "title": _("Кафедры"),
             "departments": departments,
         },
     )
@@ -487,28 +495,28 @@ def department_item(request, name):
     department = get_object_or_404(DepartmentInfo, abbreviation=abb)
     bachelors = (
         StudyDirection.objects.filter(
-            profiles__faculty_field=department, profiles__study_level="Бакалавриат"
+            profiles__faculty_field=department, profiles__study_level=_("Бакалавриат")
         )
         .distinct()
         .all()
     )
     masters = (
         StudyDirection.objects.filter(
-            profiles__faculty_field=department, profiles__study_level="Магистратура"
+            profiles__faculty_field=department, profiles__study_level=_("Магистратура")
         )
         .distinct()
         .all()
     )
     specialty = (
         StudyDirection.objects.filter(
-            profiles__faculty_field=department, profiles__study_level="Специалитет"
+            profiles__faculty_field=department, profiles__study_level=_("Специалитет")
         )
         .distinct()
         .all()
     )
     postgraduates = (
         StudyDirection.objects.filter(
-            profiles__faculty_field=department, profiles__study_level="Аспирантура"
+            profiles__faculty_field=department, profiles__study_level=_("Аспирантура")
         )
         .distinct()
         .all()
@@ -537,6 +545,6 @@ def contacts(request):
         request,
         "pages/academy/contacts.html",
         {
-            "title": "Контакты",
+            "title": _("Контакты"),
         },
     )

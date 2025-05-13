@@ -37,6 +37,7 @@ class SeminarSpeaker(models.Model):
         blank=True,
         null=True,
     )
+    bio_en = RichTextUploadingField("Биография (англ.)", blank=True, null=True)
 
     class Meta:
         verbose_name = "Докладчик"
@@ -48,6 +49,7 @@ class SeminarSpeaker(models.Model):
 
 class SeminarReport(models.Model):
     name = models.TextField(verbose_name="Название")
+    name_en = models.TextField("Название (англ.)", blank=True, null=True)
     date_start = models.DateField(
         verbose_name="Дата начала",
         blank=True,
@@ -78,6 +80,7 @@ class SeminarReport(models.Model):
         blank=True,
         null=True,
     )
+    annotation_en = RichTextUploadingField("Аннотация (англ.)", blank=True, null=True)
 
     class Meta:
         verbose_name = "Доклад"
@@ -93,6 +96,7 @@ class SeminarReport(models.Model):
 
 class Seminar(models.Model):
     name = models.TextField(verbose_name="Название")
+    name_en = models.TextField("Название (англ.)", blank=True, null=True)
     chair1 = models.ForeignKey(
         "profiles.EmployeeProfile",
         verbose_name="Председатель",
@@ -113,7 +117,7 @@ class Seminar(models.Model):
         blank=True,
         null=True,
     )
-
+    description_en = RichTextUploadingField("Описание (англ.)", blank=True, null=True)
     image = models.ImageField(default= "default_seminar.jpg", upload_to="seminar_images/", null=True, blank=True)
 
     position = models.IntegerField(default=0, null=True)

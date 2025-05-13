@@ -5,6 +5,7 @@ from django.views.generic.edit import FormView
 from .forms import UpdateStudyProfilesForm
 from pages.models import Profile, ProfileDetails, DepartmentInfo, StudyDirection
 import csv
+from django.utils.translation import gettext_lazy as _
 
 
 class UpdateStudyProfilesView(FormView):
@@ -41,13 +42,14 @@ class UpdateStudyProfilesView(FormView):
                 name=item["Название профиля или специальности"],
             ).first()
             if profile is None:
-                profile_cipher = item["Шифр специальности"]
-                profile_cipher = profile_cipher if profile_cipher else None
+                profile_cipher = item["Шифр специальности"] or None
+
                 languages = []
                 if item["Русский"] == "ИСТИНА" or item["Русский"] == "":
-                    languages.append("Русский")
+                    languages.append("ru")
                 if item["Английский"] == "ИСТИНА":
-                    languages.append("Английский")
+                    languages.append("en")
+
                 profile = Profile(
                     name=item["Название профиля или специальности"],
                     cipher=profile_cipher,

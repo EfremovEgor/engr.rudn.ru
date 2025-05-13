@@ -1,92 +1,73 @@
 {% extends "components/base.html" %}
-{% load static %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block content %}
 
 <style>
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .card-wrapper {
-    display: block;
-    width: 390px;
-    height: 450px;
-  }
-
-  .direction_info-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--base-border-radius);
-  }
-
-
-  .department-text {
-    padding: 10px;
-    position: relative;
-    z-index: 2;
-    color: white;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .title-color {
-    color: white;
-  }
+  .cards-container{display:flex;flex-wrap:wrap;justify-content:flex-start}
+  .card-wrapper{display:block;width:390px;height:450px}
+  .direction_info-card{height:100%;display:flex;flex-direction:column;justify-content:space-between;
+                       background-size:cover;background-position:center;background-repeat:no-repeat;
+                       position:relative;overflow:hidden;border-radius:var(--base-border-radius)}
+  .department-text{padding:10px;position:relative;z-index:2;color:white;flex-grow:1;display:flex;
+                   flex-direction:column;justify-content:space-between}
+  .title-color{color:white}
 </style>
 
-
 <div class="uk-container">
-  <div style="margin-top: 50px; margin-bottom: 50px;">
-    <a href="/science/events" class="return-button">Научные мероприятия</a>
+  <div style="margin-top:50px;margin-bottom:50px;">
+    <a href="{% url 'pages:science_events' %}" class="return-button">
+      {% trans "Научные мероприятия" %}
+    </a>
   </div>
   <div class="page-name">{{ title }}</div>
 </div>
 
-<div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
+<div class="uk-container" style="margin-top:40px;margin-bottom:50px">
   <div class="cards-container uk-grid-small uk-grid-match" uk-grid>
     {% for seminar in seminars %}
-    <div class="card-wrapper">
-      <a href="{% url 'seminars:get_seminar' id=seminar.id %}"
-        style="display: block; text-decoration: none; color: inherit; width: 100%; height: 100%;">
-        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
-          style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100%;">
+      <div class="card-wrapper">
+        <a href="{% url 'seminars:seminar_detail' seminar.id %}"
+           style="display:block;text-decoration:none;color:inherit;width:100%;height:100%;">
 
-          {% if seminar.image %}
-          <div class="seminar-background"
-            style="background-image: url('{{ seminar.image.url }}'); background-size: cover; background-position: center; filter: blur(5px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
-          </div>
-          {% else %}
-          <div class="seminar-background"
-            style="background-image: 'default_seminar.jpg'; background-size: cover; background-position: center; filter: blur(5px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
-          </div>
-          {% endif %}
+          <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
+               style="background-size:cover;background-position:center;background-repeat:no-repeat;height:100%;">
 
-          <div
-            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(80, 80, 80, 0.5); z-index: 1;">
-          </div>
+            {% if seminar.image %}
+              <div class="seminar-background"
+               style="background-image: url('{{ seminar.image.url }}'); background-size: cover; background-position: center; filter: blur(5px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
+              </div>
+            {% else %}
+              <div class="seminar-background"
+                style="background-image: 'default_seminar.jpg'; background-size: cover; background-position: center; filter: blur(5px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
+              </div>
+            {% endif %}
 
-          <div class="department-text">
-            <h3 class="title-color"><b>{{ seminar.name|linebreaks }}</b></h3>
-            <br />
-            <div class="link-hover-underline red-link-hover-underline" target="_self">
-              <span class="show-uni-department__link-text" style="color: rgb(68, 168, 255);">Подробнее</span>
-              <i class="icon-ic_arrow"></i>
+            <div style="position:absolute;top:0;left:0;right:0;bottom:0;
+                        background-color:rgba(80,80,80,0.5);z-index:1;"></div>
+
+            <div class="department-text">
+              <h3 class="title-color">
+                <b>
+                  {% if LANGUAGE_CODE == 'en' and seminar.name_en %}
+                    {{ seminar.name_en|linebreaks }}
+                  {% else %}
+                    {{ seminar.name|linebreaks }}
+                  {% endif %}
+                </b>
+              </h3>
+              <br>
+              <div class="link-hover-underline red-link-hover-underline">
+                <span class="show-uni-department__link-text" style="color:#44A8FF;">
+                  {% trans "Подробнее" %}
+                </span>
+                <i class="icon-ic_arrow"></i>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-    </div>
+
+        </a>
+      </div>
     {% endfor %}
   </div>
 </div>

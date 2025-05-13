@@ -1,8 +1,11 @@
 from django.db import models
+from django.utils.translation import get_language
+from django.utils.translation import gettext as _
 
 
 class BaseDocument(models.Model):
     name = models.CharField(verbose_name="Название", max_length=255)
+    name_en = models.CharField(_("Название (EN)"), max_length=255, blank=True, null=True)
     file = models.FileField(
         max_length=255,
         verbose_name="Файл",
@@ -15,9 +18,12 @@ class BaseDocument(models.Model):
         abstract = True
         ordering = ["name"]
 
-    def __str__(self):
-        return self.name
+    @property
+    def title(self):
+        return self.name_en if get_language() == "en" and self.name_en else self.name
 
+    def __str__(self):
+        return self.title
 
 class ApplicantsCISNormativeDocument(BaseDocument):
     class Meta:

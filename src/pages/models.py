@@ -3,6 +3,8 @@ from django.contrib.postgres.fields import ArrayField as postgres_array_field
 from phonenumber_field.modelfields import PhoneNumberField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django_jsonform.models.fields import JSONField, ArrayField
+from django.utils.translation import gettext as _
+
 
 STUDY_LEVELS = [
     ("Бакалавриат", "Бакалавриат"),
@@ -61,6 +63,7 @@ class IndexContact(models.Model):
 
 class ProfileDetails(models.Model):
     name = models.TextField(verbose_name="Название")
+    name_en  = models.TextField(_("Название (EN)"), blank=True, null=True)
     budget_places = models.PositiveIntegerField(
         verbose_name="Количество бюджетных мест", null=True, blank=True
     )
@@ -142,6 +145,11 @@ class ProfileDetails(models.Model):
 
 class DepartmentInfo(models.Model):
     name = models.TextField(verbose_name="Название департамента")
+    name_en = models.TextField(
+        verbose_name="Название департамента (англ.)",
+        blank=True, null=True
+    )
+
     position = models.IntegerField(verbose_name="Позиция")
     abbreviation = models.CharField(
         verbose_name="Аббревиатура",
@@ -156,6 +164,10 @@ class DepartmentInfo(models.Model):
         max_length=255,
     )
     info = models.TextField(verbose_name="Информация о департаменте")
+    info_en = models.TextField(
+        verbose_name="Информация о департаменте (англ.)",
+        blank=True, null=True
+    )    
     head = models.ForeignKey(
         "profiles.DepartmentStaff",
         verbose_name="Руководитель",
@@ -190,6 +202,7 @@ class Profile(models.Model):
         return ["Русский"]
 
     name = models.TextField(verbose_name="Название")
+    name_en = models.TextField(_("Название (EN)"), blank=True, null=True)
     cipher = models.CharField(
         verbose_name="Шифр",
         max_length=255,
@@ -241,9 +254,10 @@ class Profile(models.Model):
         null=True,
     )
     content = RichTextUploadingField(verbose_name="Информация")
+    content_en  = RichTextUploadingField(_("Информация (EN)"), blank=True, null=True)
 
-    def __str__(self) -> str:
-        return f"{self.study_level} - {self.name}"
+    def __str__(self):
+        return f"{self.study_level} – {self.name or self.name_en}"
 
     class Meta:
         verbose_name = "Профиль направления"
@@ -252,14 +266,18 @@ class Profile(models.Model):
 
 class StudyDirection(models.Model):
     name = models.CharField(verbose_name="Название", max_length=255)
+    name_en = models.CharField(_("Название (EN)"), max_length=255, blank=True, null=True)
+
+
     study_level = models.CharField(
         verbose_name="Уровень обучения", max_length=255, choices=STUDY_LEVELS
     )
     cipher = models.CharField(verbose_name="Шифр", max_length=255)
     profiles = models.ManyToManyField(Profile, verbose_name="Профили", blank=True)
 
-    def __str__(self) -> str:
-        return f"{self.study_level} - [{self.cipher}] {self.name}"
+    def __str__(self):
+        return f"{self.study_level} – [{self.cipher}] {self.name or self.name_en}"
+
 
     class Meta:
         verbose_name = "Направление подготовки"
@@ -282,57 +300,87 @@ class AdministrationProfiles(models.Model):
 
 
 class ScientificSpecialty(models.Model):
-    cipher = models.CharField(verbose_name="Шифр", max_length=255)
-    name = models.TextField(verbose_name="Название")
+    cipher = models.CharField(_("Шифр"), max_length=255)
+    name = models.TextField(_("Название (RU)"))
+    name_en = models.TextField(_("Название (EN)"), blank=True, null=True)
 
-    def __str__(self) -> str:
-        return f"{self.cipher}  {self.name}"
+    def __str__(self):
+        return f"{self.cipher}  {self.name or self.name_en}"
 
     class Meta:
-        verbose_name = "Научное направлние"
-        verbose_name_plural = "Научные направления"
+        verbose_name = _("Научное направление")
+        verbose_name_plural = _("Научные направления")
         ordering = ["cipher", "name"]
 
 
 class DissertationCommittee(models.Model):
-    cipher = models.CharField(verbose_name="Шифр совета", max_length=255)
-    organization = models.CharField(
-        verbose_name="Организация",
-        max_length=255,
-        default="Российский университет дружбы народов",
-    )
-    faculty = models.CharField(
-        verbose_name="Факультет", max_length=255, default="Инженерная академия"
-    )
-    address = models.CharField(
-        verbose_name="Адрес",
-        max_length=255,
-        default="115419, Москва, улица Орджоникидзе, 3",
-    )
+    cipher = models.CharField(_("Шифр совета"), max_length=255)
+
+    organization = models.CharField(_("Организация (RU)"),
+                                        max_length=255,
+                                        default="Российский университет дружбы народов")
+    organization_en = models.CharField(_("Организация (EN)"),
+                                        max_length=255,
+                                        blank=True, null=True)                        
+
+    faculty = models.CharField(_("Факультет (RU)"),
+                                        max_length=255,
+                                        default="Инженерная академия")
+    faculty_en = models.CharField(_("Факультет (EN)"),
+                                        max_length=255,
+                                        blank=True, null=True)                        
+
+    address = models.CharField(_("Адрес (RU)"),
+                                    max_length=255,
+                                    default="115419, Москва, улица Орджоникидзе, 3")
+    address_en = models.CharField(_("Адрес (EN)"),
+                                    max_length=255,
+                                    blank=True, null=True)                            
+
     scientific_specialties = models.ManyToManyField(
-        ScientificSpecialty, verbose_name="Научные специальности", blank=True
-    )
-    chairman = models.CharField(verbose_name="Председатель", max_length=255)
-    deputy = models.CharField(verbose_name="Заместитель председателя", max_length=255)
-    secretary = models.CharField(verbose_name="Секретарь", max_length=255)
-    phone = PhoneNumberField(verbose_name="Телефон", blank=True, null=True)
-    email = models.EmailField(
-        verbose_name="Электронная почта", max_length=255, blank=True, null=True
-    )
-    composition = ArrayField(
-        models.CharField(verbose_name="Участник диссовета", max_length=255),
-        verbose_name="Cостав диссовета",
-        size=20,
-        blank=True,
-        null=True,
+        ScientificSpecialty,
+        verbose_name=_("Научные специальности"),
+        blank=True
     )
 
-    def __str__(self) -> str:
-        return f"{self.cipher}"
+    chairman = models.CharField(_("Председатель (RU)"), max_length=255)
+    chairman_en = models.CharField(_("Председатель (EN)"),
+                                    max_length=255,
+                                    blank=True, null=True)                            
+
+    deputy = models.CharField(_("Заместитель председателя (RU)"), max_length=255)
+    deputy_en = models.CharField(_("Заместитель председателя (EN)"),
+                                    max_length=255,
+                                    blank=True, null=True)                            
+
+    secretary = models.CharField(_("Секретарь (RU)"), max_length=255)
+    secretary_en = models.CharField(_("Секретарь (EN)"),
+                                    max_length=255,
+                                    blank=True, null=True)                            
+
+    phone = PhoneNumberField(_("Телефон"), blank=True, null=True)
+    email = models.EmailField(_("Электронная почта"), max_length=255,
+                              blank=True, null=True)
+
+    composition = ArrayField(
+        models.CharField(_("Участник диссовета (RU)"), max_length=255),
+        verbose_name=_("Состав диссовета"),
+        size=20,
+        blank=True, null=True
+    )
+    composition_en = ArrayField(                                                      
+        models.CharField(_("Участник диссовета (EN)"), max_length=255),
+        verbose_name=_("Состав диссовета (EN)"),
+        size=20,
+        blank=True, null=True
+    )
+
+    def __str__(self):
+        return self.cipher
 
     class Meta:
-        verbose_name = "Диссертационный совет"
-        verbose_name_plural = "Диссертационные советы"
+        verbose_name = _("Диссертационный совет")
+        verbose_name_plural = _("Диссертационные советы")
         ordering = ["cipher"]
 
 
@@ -398,11 +446,13 @@ class PartnerData(models.Model):
 
 class ScientificCenters(models.Model):
     name = models.TextField(verbose_name="Название")
+    name_en = models.TextField("Название (англ.)", blank=True, null=True)
     field_name = models.TextField(
         verbose_name="Сфера деятельности",
         blank=True,
         null=True,
     )
+    field_name_en = models.TextField("Сфера деятельности (англ.)", blank=True, null=True)
     position = models.IntegerField(verbose_name="Позиция")
     display = models.BooleanField("Видимость", default=True)
     page_url = models.CharField(
@@ -445,7 +495,7 @@ class ScientificCenters(models.Model):
         blank=True,
         null=True,
     )
-
+    brief_description_en = models.TextField("Краткое описание (англ.)", blank=True, null=True)
     def __str__(self) -> str:
         return f"{self.position}. {self.name}"
 

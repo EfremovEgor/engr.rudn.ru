@@ -1,141 +1,171 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/science/scitechforum.css' %}" />
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/science/scitechforum.css' %}">
+
 <div class="uk-container">
-    <a href="/science/events" class="return-button" style="margin-top: 40px;">Научные мероприятия</a>
-    <div class="page-name">5-й Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам</div>
+  <a href="{% url 'pages:science_events' %}" class="return-button" style="margin-top:40px;">
+    {% trans "Научные мероприятия" %}
+  </a>
+
+  <div class="page-name">
+    {% trans "5-й Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам" %}
+  </div>
 </div>
+
 <div class="parallax-container uk-visible@s">
-    <!-- <div uk-grid style="margin-bottom:-30px">
-        <img src="{% static "images/science/events/ras.webp" %}" width="100" height="64">
-        <img src="{% static "images/science/events/UFRJ.webp" %}" width="100" height="64">
-        <img src="{% static "images/science/events/RUDN.webp" %}" width="100" height="64">
-        <img src="{% static "images/science/events/SIU.png" %}" width="100" height="64">
-        <img src="{% static "images/science/events/Sjtu.webp" %}" width="100" height="64">
-        <img src="{% static "images/science/events/dut.webp" %}" width="120" height="64">
-    </div> -->
-
-  <p class="text-on-image" style="margin-bottom: -40px; font-size: 25px"> INTERNATIONAL SCIENTIFIC EVENT </p>
-  <p class="text-on-image" style="margin-top:0"> 5th BRICS SCITECH FORUM <span style="color:#00aeef">2024</span> </p>
-  <p class="text-on-image" style="font-size:20px; margin-top:-70px; color:#00aeef"> NOVEMBER 25-27, 2024 </p>
-
-
+  <p class="text-on-image" style="margin-bottom:-40px;font-size:25px">
+    INTERNATIONAL SCIENTIFIC EVENT
+  </p>
+  <p class="text-on-image" style="margin-top:0">
+    5th BRICS&nbsp;SCITECH&nbsp;FORUM <span style="color:#00aeef">2024</span>
+  </p>
+  <p class="text-on-image" style="font-size:20px;margin-top:-70px;color:#00aeef">
+    NOVEMBER&nbsp;25-27,&nbsp;2024
+  </p>
 </div>
-<div class="uk-container" style="margin-bottom: 50px; margin-top: 60px">
-    <div class="icons-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-5@m uk-flex-center" uk-grid>
-        <div>
-            <div class="badge-container">
-                <img src="{% static 'images/science/events/geo.jpeg' %}" alt="Location Icon">
-                <p>РУДН<br>Москва, Россия</p>
-            </div>
-        </div>
-        <div>
-            <div class="badge-container">
-                <img src="{% static 'icons/calendar.svg' %}" alt="Calendar Icon">
-                <p>25-27 ноября, 2024</p>
-            </div>
-        </div>
-        <div>
-            <div class="badge-container">
-                <img src="{% static 'images/science/events/people.png' %}" alt="People Icon">
-                <p>Очный<br>и дистанционный формат</p>
-            </div>
-        </div>
-        <div>
-            <div class="badge-container">
-                <img src="{% static 'icons/language.svg' %}" alt="Language Icon">
-                <p>Английский язык</p>
-            </div>
-        </div>
-        <div>
-            <div class="badge-container">
-                <img src="{% static 'images/science/events/clock.png' %}" alt="Deadline Icon">
-                <p>Подача тезисов<br>до 10 октября 2024 года</p>
-            </div>
-        </div>
+
+<div class="uk-container" style="margin-bottom:50px;margin-top:60px">
+  <div class="icons-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-5@m uk-flex-center" uk-grid>
+
+    <div>
+      <div class="badge-container">
+        <img src="{% static 'images/science/events/geo.jpeg' %}" alt="Location">
+        <p>{% trans "РУДН" %}<br>{% trans "Москва, Россия" %}</p>
+      </div>
     </div>
 
-    <div style="display: flex; justify-content: center;">
-        <div class="uk-visible@s">
-            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 20px;">
-                <a href="https://confchair.org/conferences/scitech2024/" target="_blank" class="return-button">Подать тезисы</a>
-                <a href="https://spaceflightmechanics.com/" target="_blank" class="return-button">Сайт конференции</a>
-            </div>  
-        </div>
-        
-        <div class="uk-hidden@s">
-            <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-                <a style="align-self:center" href="https://confchair.org/conferences/scitech2024/" target="_blank"  class="return-button">Подать тезисы</a>
-                <a style="align-self:center" href="https://spaceflightmechanics.com/" target="_blank" class="return-button">Сайт конференции</a>
-            </div>
-        </div>
-
+    <div>
+      <div class="badge-container">
+        <img src="{% static 'icons/calendar.svg' %}" alt="Calendar">
+        <p>{% trans "25-27 ноября&nbsp;2024" %}</p>
+      </div>
     </div>
-<div style="text-align: justify;">
-  <p class="heading">О конференции</p>
 
-    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-    <div style="margin-right: 2%;">
-
-
-
-    <p style="margin-bottom:-10px"><b>5-й Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам</b> проводится 25-27 ноября 2024 года. 
-        Организаторами Форума являются Российская академия наук и РУДН им. Патриса Лумумбы. Форум включает две конференции:
-        <ul class="uk-list uk-list-disc" style="line-height: 1;">
-            <li>5-ая Конференция по механике космических полетов</li>
-            <li>5-ая Конференция по космическим конструкциям и материалам</li>
-        </ul>
-        Форум проводится на площадке РУДН им. Патриса Лумумбы. Мы предлагаем участникам <b>гибридный формат участия</b>. 
-        Участники могут посетить все мероприятия Форума и выступить с докладом как в очном, так и в заочном формате. <b>Язык проведения Форума</b>: английский.
-        Доклады на конференцию будут отбираться по представленным авторами аннотациям, состоящим из 500 слов. 
-        Материалы Форума будут опубликованы Российским университетом дружбы народов имени Патриса Лумумбы. 
-        Лучшие статьи будут рекомендованы к публикации в специальном выпуске Acta Astronautica в виде исследовательской статьи.
-        </p>
-
-    <p class="heading">Порядок представления тезисов</p>
-    <p style="margin-bottom:-10px">
-        Тезисы оригинальных докладов принимаются для включения в программу Форума по следующим направлениям: 
-
-        <table class="uk-table uk-table-divider uk-table-small" style="margin: 1rem 0; font-size: 1.07rem;">
-          <tbody>
-            <tr>
-              <td style="border-right: 1px solid #e5e5e5; padding-right:0">
-                <b>Конференция по механике космических полетов</b>
-                <ul style="margin-top: -2px; padding-left: 20px">
-                  <li style="white-space: nowrap">Наведение, навигация и управление</li>
-                  <li>Орбитальная динамика</li>
-                  <li>Проектирование и оптимизация космических миссий</li>
-                  <li>Космические проекты и извлеченный опыт</li>
-                  <li>Космическая политика, право и экономика</li>
-                </ul>
-            </td>
-              <td>
-                <p style="margin-left: -8px"><b>Конференция по космическим конструкциям и материалам</b></p>
-                <ul style="margin-top: -22px; padding-left: 20px">
-                  <li>Современные космические материалы</li>
-                  <li>Космическая энергетика и двигательные установки</li>
-                  <li>Датчики, исполнительные механизмы и бортовое оборудование</li>
-                  <li>Космические сооружения на Луне и планетах</li>
-                  <li>Полезные ископаемые на Луне и астероидах: технические и правовые аспекты</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-          
-        <p>Чтобы облегчить процесс подачи заявки и последующий процесс обработки, пожалуйста, примите во внимание следующие рекомендации, информацию и сроки:</p>
-        <ul>
-            <li>Подача аннотаций будет открыта до 14 ноября 2024 года через вэб-приложение</li>
-            <li>Авторы выбирают предпочитаемое направление, на которое они подают тезисы</li>
-            <li>Авторы указывают предпочитаемый вид доклада (очный или онлайн)</li>
-            <li>Авторы указывают полное ФИО, организацию и электронный адрес, в том числе для всех соавторов</li>
-            <li>Аннотация должна быть написана открытым текстом, не более 500 слов, без включения таблиц, рисунков и фотографий</li>
-            <li>Название доклада должно содержать не более 30 слов</li>
-            <li>Текст аннотации должен быть ограничен 500 словами</li>
-            <li>Подача доклада подтверждает ваше согласие на публикацию тезисов в официальных материалах конференции</li>
-        </ul>
-    </p>
+    <div>
+      <div class="badge-container">
+        <img src="{% static 'images/science/events/people.png' %}" alt="Format">
+        <p>{% trans "Очный" %}<br>{% trans "и дистанционный формат" %}</p>
+      </div>
     </div>
+
+    <div>
+      <div class="badge-container">
+        <img src="{% static 'icons/language.svg' %}" alt="Language">
+        <p>{% trans "Английский язык" %}</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="badge-container">
+        <img src="{% static 'images/science/events/clock.png' %}" alt="Deadline">
+        <p>{% trans "Подача тезисов" %}<br>{% trans "до 10 октября 2024 года" %}</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:center;">
+    <div class="uk-visible@s">
+      <div style="display:flex;gap:20px;">
+        <a href="https://confchair.org/conferences/scitech2024/" target="_blank" class="return-button">
+          {% trans "Подать тезисы" %}
+        </a>
+        <a href="https://spaceflightmechanics.com/" target="_blank" class="return-button">
+          {% trans "Сайт конференции" %}
+        </a>
+      </div>
+    </div>
+
+    <div class="uk-hidden@s">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <a href="https://confchair.org/conferences/scitech2024/" target="_blank" class="return-button">
+          {% trans "Подать тезисы" %}
+        </a>
+        <a href="https://spaceflightmechanics.com/" target="_blank" class="return-button">
+          {% trans "Сайт конференции" %}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:justify;">
+    <p class="heading">{% trans "О конференции" %}</p>
+
+    {% blocktrans trimmed %}
+      <b>5-й Международный научно-технический форум по механике космического
+      полета и космическим конструкциям и материалам</b> проводится 25-27
+      ноября&nbsp;2024 года. Организаторами Форума являются Российская академия
+      наук и РУДН им.&nbsp;Патриса Лумумбы.
+    {% endblocktrans %}
+
+    <ul class="uk-list uk-list-disc" style="line-height:1;">
+      <li>{% trans "5-ая Конференция по механике космических полетов" %}</li>
+      <li>{% trans "5-ая Конференция по космическим конструкциям и материалам" %}</li>
+    </ul>
+
+    {% blocktrans trimmed %}
+      Форум проводится на площадке РУДН им.&nbsp;Патриса Лумумбы. Мы предлагаем
+      участникам <b>гибридный формат участия</b>. Участники могут посетить все
+      мероприятия Форума и выступить с докладом как в очном, так и в заочном
+      формате. <b>Язык проведения Форума</b>: английский.
+    {% endblocktrans %}
+
+    {% blocktrans trimmed %}
+      Доклады на конференцию будут отбираться по представленным авторами
+      аннотациям (до 500 слов). Материалы Форума будут опубликованы РУДН.
+      Лучшие статьи будут рекомендованы к публикации в специальном выпуске
+      <i>Acta Astronautica</i>.
+    {% endblocktrans %}
+
+    <p class="heading">{% trans "Порядок представления тезисов" %}</p>
+
+    {% blocktrans trimmed %}
+      Тезисы принимаются по следующим направлениям:
+    {% endblocktrans %}
+
+    <table class="uk-table uk-table-divider uk-table-small" style="margin:1rem 0;font-size:1.07rem;">
+      <tbody>
+        <tr>
+          <td style="border-right:1px solid #e5e5e5;padding-right:0">
+            <b>{% trans "Конференция по механике космических полетов" %}</b>
+            <ul style="margin-top:-2px;padding-left:20px">
+              <li>{% trans "Наведение, навигация и управление" %}</li>
+              <li>{% trans "Орбитальная динамика" %}</li>
+              <li>{% trans "Проектирование и оптимизация космических миссий" %}</li>
+              <li>{% trans "Космические проекты и извлеченный опыт" %}</li>
+              <li>{% trans "Космическая политика, право и экономика" %}</li>
+            </ul>
+          </td>
+          <td>
+            <p style="margin-left:-8px">
+              <b>{% trans "Конференция по космическим конструкциям и материалам" %}</b>
+            </p>
+            <ul style="margin-top:-22px;padding-left:20px">
+              <li>{% trans "Современные космические материалы" %}</li>
+              <li>{% trans "Космическая энергетика и двигательные установки" %}</li>
+              <li>{% trans "Датчики, исполнительные механизмы и бортовое оборудование" %}</li>
+              <li>{% trans "Космические сооружения на Луне и планетах" %}</li>
+              <li>{% trans "Полезные ископаемые на Луне и астероидах: технические и правовые аспекты" %}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>{% trans "Чтобы облегчить процесс подачи заявки и последующий процесс обработки, пожалуйста, примите во внимание следующие рекомендации, информацию и сроки:" %}</p>
+    <ul>
+      <li>{% trans "Подача аннотаций будет открыта до 14 ноября 2024 года через веб-приложение" %}</li>
+      <li>{% trans "Авторы выбирают предпочитаемое направление, на которое они подают тезисы" %}</li>
+      <li>{% trans "Авторы указывают предпочитаемый вид доклада (очный или онлайн)" %}</li>
+      <li>{% trans "Авторы указывают полное ФИО, организацию и электронный адрес для всех соавторов" %}</li>
+      <li>{% trans "Аннотация должна быть написана открытым текстом (до 500 слов) без таблиц и рисунков" %}</li>
+      <li>{% trans "Название доклада должно содержать не более 30 слов" %}</li>
+      <li>{% trans "Текст аннотации ограничен 500 словами" %}</li>
+      <li>{% trans "Подача доклада подтверждает согласие на публикацию тезисов в материалах конференции" %}</li>
+    </ul>
+
+  </div>
 </div>
-    <!-- <p class="heading">Спонсоры</p> -->
-    </div>
-</div> {% endblock %}
+
+{% endblock %}

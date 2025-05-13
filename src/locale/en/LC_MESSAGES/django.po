@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-16 20:10+0300\n"
+"POT-Creation-Date: 2025-05-13 17:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,2593 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\engr_rudn\settings.py:119
-msgid "English"
+
+#: documents/models.py:8 pages/models.py:66 pages/models.py:205
+#: pages/models.py:269 pages/models.py:305
+#, fuzzy
+#| msgid "Расписание"
+msgid "Название (EN)"
+msgstr "Schedule"
+
+#: pages/models.py:257
+#, fuzzy
+#| msgid "Организационный отдел"
+msgid "Информация (EN)"
+msgstr "Administrative Department"
+
+#: pages/models.py:303
+#: pages/templates/pages/students/dissertation_committee_item.html:21
+msgid "Шифр"
+msgstr "Cipher"
+
+#: pages/models.py:304
+#, fuzzy
+#| msgid "Расписание"
+msgid "Название (RU)"
+msgstr "Schedule"
+
+#: pages/models.py:311
+#, fuzzy
+#| msgid "Научные направления"
+msgid "Научное направление"
+msgstr "Research Directions"
+
+#: pages/models.py:312 pages/templates/components/footer.html:134
+#: pages/templates/components/header.html:178
+#: pages/templates/components/header.html:390
+#: pages/templates/pages/science/directions.html:8 pages/views.py:205
+msgid "Научные направления"
+msgstr "Research Directions"
+
+#: pages/models.py:317
+#: pages/templates/pages/students/dissertation_committees.html:45
+msgid "Шифр совета"
+msgstr "Council Code"
+
+#: pages/models.py:319
+#, fuzzy
+#| msgid "Организационный отдел"
+msgid "Организация (RU)"
+msgstr "Administrative Department"
+
+#: pages/models.py:322
+#, fuzzy
+#| msgid "Организационный отдел"
+msgid "Организация (EN)"
+msgstr "Administrative Department"
+
+#: pages/models.py:326
+msgid "Факультет (RU)"
 msgstr ""
 
-#: .\engr_rudn\settings.py:120
-msgid "Russian"
+#: pages/models.py:329
+msgid "Факультет (EN)"
 msgstr ""
 
-#: .\pages\templates\components\header.html:15
+#: pages/models.py:333
+#, fuzzy
+#| msgid "Адрес:"
+msgid "Адрес (RU)"
+msgstr "Address:"
+
+#: pages/models.py:336
+#, fuzzy
+#| msgid "Адрес:"
+msgid "Адрес (EN)"
+msgstr "Address:"
+
+#: pages/models.py:342
+#: pages/templates/pages/students/dissertation_committees.html:46
+msgid "Научные специальности"
+msgstr "Scientific Specialties"
+
+#: pages/models.py:346
+#, fuzzy
+#| msgid "Председатель"
+msgid "Председатель (RU)"
+msgstr "Chairperson"
+
+#: pages/models.py:347
+#, fuzzy
+#| msgid "Председатель"
+msgid "Председатель (EN)"
+msgstr "Chairperson"
+
+#: pages/models.py:351
+msgid "Заместитель председателя (RU)"
+msgstr ""
+
+#: pages/models.py:352
+msgid "Заместитель председателя (EN)"
+msgstr ""
+
+#: pages/models.py:356
+msgid "Секретарь (RU)"
+msgstr ""
+
+#: pages/models.py:357
+msgid "Секретарь (EN)"
+msgstr ""
+
+#: pages/models.py:361
+#: pages/templates/pages/students/dissertation_committee_item.html:70
+msgid "Телефон"
+msgstr "Telephone"
+
+#: pages/models.py:362
+#, fuzzy
+#| msgid "Электронная библиотека"
+msgid "Электронная почта"
+msgstr "E-Library"
+
+#: pages/models.py:366
+msgid "Участник диссовета (RU)"
+msgstr ""
+
+#: pages/models.py:367
+msgid "Состав диссовета"
+msgstr ""
+
+#: pages/models.py:372
+msgid "Участник диссовета (EN)"
+msgstr ""
+
+#: pages/models.py:373
+msgid "Состав диссовета (EN)"
+msgstr ""
+
+#: pages/models.py:382
+#, fuzzy
+#| msgid "Диссертационные советы"
+msgid "Диссертационный совет"
+msgstr "Dissertation Committee"
+
+#: pages/models.py:383 pages/templates/components/footer.html:143
+#: pages/templates/components/header.html:192
+#: pages/templates/components/header.html:400 pages/views.py:429
+msgid "Диссертационные советы"
+msgstr "Dissertation Committees"
+
+#: pages/template_tags/custom_tags.py:166
+#, python-format
+msgid "%(n)d‑й год и далее – %(p)s ₽"
+msgstr "%(n)d‑year and beyond – %(p)s ₽"
+
+#: pages/template_tags/custom_tags.py:172
+#, python-format
+msgid "%(n)d‑й год – %(p)s ₽"
+msgstr "%(n)d‑year – %(p)s ₽"
+
+#: pages/template_tags/custom_tags.py:209
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] "%(num)d year"
+msgstr[1] "%(num)d years"
+msgstr[2] "%(num)d years"
+
+#: pages/templates/components/footer.html:103
+#: pages/templates/components/header.html:114
+#: pages/templates/components/header.html:337
+msgid "Главная"
+msgstr "Home"
+
+#: pages/templates/components/footer.html:106
+#: pages/templates/components/header.html:119
+#: pages/templates/components/header.html:342 pages/views.py:55
+#: pages/views.py:94 pages/views.py:129
+msgid "Новости"
+msgstr "News"
+
+#: pages/templates/components/footer.html:111
+#: pages/templates/components/header.html:126
+#: pages/templates/components/header.html:346 pages/views.py:170
 msgid "Академия"
-msgstr ""
+msgstr "Academy"
 
-#: .\pages\templates\components\header.html:25
+#: pages/templates/components/footer.html:114
+#: pages/templates/components/header.html:132
+#: pages/templates/components/header.html:350 pages/views.py:184
+msgid "Дирекция"
+msgstr "Administration"
+
+#: pages/templates/components/footer.html:117
+#: pages/templates/components/header.html:137
+#: pages/templates/components/header.html:355
+#: pages/templates/pages/academy/department_item.html:10 pages/views.py:484
+msgid "Кафедры"
+msgstr "Departments"
+
+#: pages/templates/components/footer.html:120
+#: pages/templates/components/header.html:142
+#: pages/templates/components/header.html:360 pages/views.py:195
+msgid "История"
+msgstr "History"
+
+#: pages/templates/components/footer.html:123
+#: pages/templates/components/header.html:147
+#: pages/templates/components/header.html:365 pages/views.py:272
+#: pages/views.py:548
+msgid "Контакты"
+msgstr "Contacts"
+
+#: pages/templates/components/footer.html:128
+#: pages/templates/components/header.html:157
+#: pages/templates/components/header.html:375
 msgid "Наука"
-msgstr ""
+msgstr "Science"
 
-#: .\pages\templates\components\header.html:35
+#: pages/templates/components/footer.html:131
+#: pages/templates/components/header.html:171
+#: pages/templates/components/header.html:385
+#: pages/templates/pages/science/scientific_center_item.html:10
+#: pages/templates/pages/science/scientific_centers.html:9 pages/views.py:441
+msgid "Научные центры"
+msgstr "Research Centers"
+
+#: pages/templates/components/footer.html:137
+#: pages/templates/components/header.html:185
+#: pages/templates/components/header.html:395 pages/views.py:215
+msgid "Научные журналы"
+msgstr "Academic Journals"
+
+#: pages/templates/components/footer.html:140
+#: pages/templates/components/header.html:164
+#: pages/templates/components/header.html:380
+#: pages/templates/pages/science/events.html:11
+#: pages/templates/pages/science/scitechforum.html:9 pages/views.py:235
+#: seminars/templates/seminars/seminar_item.html:14
+#: seminars/templates/seminars/seminars.html:20
+msgid "Научные мероприятия"
+msgstr "Scientific Events"
+
+#: pages/templates/components/footer.html:148
+#: pages/templates/components/header.html:202
+#: pages/templates/components/header.html:410
 msgid "Абитуриентам"
+msgstr "Prospective Students"
+
+#: pages/templates/components/footer.html:151
+#: pages/templates/components/header.html:208
+#: pages/templates/components/header.html:415
+#: pages/templates/pages/direction.html:15 pages/views.py:363
+msgid "Направления подготовки"
+msgstr "Programs"
+
+#: pages/templates/components/footer.html:154
+#: pages/templates/components/header.html:213
+#: pages/templates/components/header.html:420
+#: pages/templates/pages/academy/contacts.html:17 pages/views.py:418
+msgid "Приемная комиссия"
+msgstr "Admissions Office"
+
+#: pages/templates/components/footer.html:157
+#: pages/templates/components/header.html:218
+#: pages/templates/components/header.html:425 pages/views.py:339
+msgid "Справочная информация"
+msgstr "Reference Information"
+
+#: pages/templates/components/footer.html:162
+#: pages/templates/components/header.html:228
+#: pages/templates/components/header.html:435
+msgid "Студентам и Аспирантам"
+msgstr "Students & Postgraduates"
+
+#: pages/templates/components/footer.html:165
+#: pages/templates/pages/students/schedule.html:7 pages/views.py:314
+msgid "Расписание"
+msgstr "Schedule"
+
+#: pages/templates/components/footer.html:168
+#: pages/templates/components/header.html:239
+#: pages/templates/components/header.html:445 pages/views.py:225
+msgid "Научное студенческое общество"
+msgstr "Student Research Society"
+
+#: pages/templates/components/footer.html:171
+#: pages/templates/components/header.html:244
+#: pages/templates/components/header.html:450
+#: pages/templates/pages/students/student_committee.html:8 pages/views.py:326
+msgid "Студенческий комитет"
+msgstr "Student Committee"
+
+#: pages/templates/components/footer.html:174
+#: pages/templates/components/header.html:249
+#: pages/templates/components/header.html:455 pages/views.py:282
+msgid "Электронная библиотека"
+msgstr "E-Library"
+
+#: pages/templates/components/footer.html:177
+#: pages/templates/components/header.html:254
+#: pages/templates/components/header.html:460 pages/views.py:303
+msgid "Образцы заявлений"
+msgstr "Application Forms"
+
+#: pages/templates/components/header.html:234
+#: pages/templates/components/header.html:440
+msgid "Расписание занятий"
+msgstr "Schedule"
+
+#: pages/templates/pages/academy/contacts.html:21
+msgid "Секретарь отборочной комиссии"
+msgstr "Secretary of the Admissions Board"
+
+#: pages/templates/pages/academy/contacts.html:28
+#: pages/templates/pages/academy/contacts.html:86
+#: pages/templates/pages/academy/contacts.html:110
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;403"
+msgstr "Moscow, Ordzhonikidze St 3, office 403"
+
+#: pages/templates/pages/academy/contacts.html:47
+msgid "Организационный отдел"
+msgstr "Administrative Department"
+
+#: pages/templates/pages/academy/contacts.html:51
+#: pages/templates/pages/academy/contacts.html:79
+#: pages/templates/pages/academy/contacts.html:133
+msgid "Начальник отдела"
+msgstr "Head of Department"
+
+#: pages/templates/pages/academy/contacts.html:57
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;444"
+msgstr "Moscow, Ordzhonikidze St 3, office 444"
+
+#: pages/templates/pages/academy/contacts.html:75
+msgid "Учебный отдел"
+msgstr "Academic Affairs Office"
+
+#: pages/templates/pages/academy/contacts.html:103
+msgid "Тьютор по учебной работе"
+msgstr "Academic Tutor"
+
+#: pages/templates/pages/academy/contacts.html:129
+msgid "Научно-инновационный отдел"
+msgstr "Research & Innovation Office"
+
+#: pages/templates/pages/academy/contacts.html:139
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;436"
+msgstr "Moscow, Ordzhonikidze St 3, office 436"
+
+#: pages/templates/pages/academy/contacts.html:156
+msgid "Ведущий специалист"
+msgstr "Lead Specialist"
+
+#: pages/templates/pages/academy/contacts.html:162
+msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;440"
+msgstr "Moscow, Ordzhonikidze St 3, office 440"
+
+#: pages/templates/pages/academy/department_item.html:97
+msgid "Контактное лицо"
+msgstr "Contact Person"
+
+#: pages/templates/pages/academy/department_item.html:163
+msgid "Направления подготовки и специальности"
+msgstr "Study Programs and Specialties"
+
+#: pages/templates/pages/academy/department_item.html:378
+msgid "Лабораторная база"
+msgstr "Laboratory Facilities"
+
+#: pages/templates/pages/academy/department_item.html:416
+msgid "Профессорско-преподавательский состав"
+msgstr "Faculty Staff"
+
+#: pages/templates/pages/academy/departments.html:38
+#: pages/templates/pages/science/journals.html:67
+#: pages/templates/pages/science/journals.html:157
+#: pages/templates/pages/science/scientific_centers.html:38
+#: seminars/templates/seminars/seminars.html:62
+msgid "Подробнее"
+msgstr "Read more"
+
+#: pages/templates/pages/academy/history.html:9
+msgid "История академии"
+msgstr "History of the Academy"
+
+#: pages/templates/pages/academy/history.html:231
+msgid "Создание Университета"
+msgstr "Establishment of the University"
+
+#: pages/templates/pages/academy/history.html:235
+msgid "5 февраля 1960"
+msgstr "February 5, 1960"
+
+#: pages/templates/pages/academy/history.html:237
+#: pages/templates/pages/academy/history.html:245
+msgid ""
+"Постановление ЦК КПСС и Совета Министров СССР «Об организации Университета "
+"дружбы народов», датированное 5 февраля 1960 года, извещало о том, что "
+"«Университет дружбы народов готовит инженеров, специалистов сельского "
+"хозяйства, учителей, врачей, экономистов и специалистов по другим отраслям "
+"знаний»."
+msgstr ""
+"The decree of the CPSU Central Committee and the Council of Ministers of the "
+"USSR \"On the Organization of the University of People's Friendship\", dated "
+"February 5, 1960, announced that \"The University of People's Friendship "
+"trains engineers, agricultural specialists, teachers, doctors, economists, "
+"and specialists in other fields of knowledge.\""
+
+#: pages/templates/pages/academy/history.html:243
+msgid "17 марта, 1960"
+msgstr "March 17, 1960"
+
+#: pages/templates/pages/academy/history.html:250
+msgid "Корпус на Орджоникидзе"
+msgstr "Building on Ordzhonikidze"
+
+#: pages/templates/pages/academy/history.html:258
+msgid "Первые специальности факультета"
+msgstr "The Faculty's First Specializations"
+
+#: pages/templates/pages/academy/history.html:262
+msgid "4 июня, 1960"
+msgstr "June 4, 1960"
+
+#: pages/templates/pages/academy/history.html:264
+msgid ""
+"Постановлением Совета Министров СССР № 604 от 14 июня 1960 года “О "
+"мероприятиях в связи с организацией Университета дружбы народов”, в разделе "
+"3 «Факультеты и специальности» были определены первые специальности на "
+"факультете – «Машиностроение», «Строительство», «Геология», «Разработка "
+"месторождений полезных ископаемых», «Паровые и газовые турбины»."
+msgstr ""
+"By the Decree of the Council of Ministers of the USSR No. 604 dated June 14, "
+"1960, \"On Measures Related to the Organization of the University of "
+"People's Friendship\", in Section 3 \"Faculties and Specializations\", the "
+"first specializations in the faculty were defined: \"Mechanical "
+"Engineering\", \"Construction\", \"Geology\", \"Development of Mineral "
+"Deposits\", \"Steam and Gas Turbines\"."
+
+#: pages/templates/pages/academy/history.html:271
+msgid "17 февраля, 1961"
+msgstr "February 17, 1961"
+
+#: pages/templates/pages/academy/history.html:273
+msgid ""
+"Работа по созданию инженерного факультета, составлению учебных планов и "
+"программ и подбору кадров была начата в 1961 г., когда 17 февраля первым "
+"деканом факультета был назначен выпускник механико-технологического "
+"факультета Московского высшего технического училища им. Баумана Михаил "
+"Сергеевич Шкаликов (1920 – 1996)."
+msgstr ""
+"The work on establishing the Engineering Faculty, developing curricula, "
+"programs, and recruiting staff began in 1961, when on February 17 the first "
+"dean of the faculty was appointed – a graduate of the Mechanical and "
+"Technological Faculty of Bauman Moscow State Technical University, Mikhail "
+"Sergeyevich Shkalikov (1920 – 1996)."
+
+#: pages/templates/pages/academy/history.html:278
+msgid "Основание инженерного факультета"
+msgstr "Founding of the Engineering Faculty"
+
+#: pages/templates/pages/applicants/committee.html:374
+#: pages/templates/pages/applicants/reference.html:16
+msgid "Открой Мир в одном Университете!"
+msgstr "Open the World at one University!"
+
+#: pages/templates/pages/applicants/committee.html:381
+msgid "Бакалавриат/Специалитет"
+msgstr "Bachelor/Specialist Degree"
+
+#: pages/templates/pages/applicants/committee.html:382
+#: pages/templates/pages/applicants/levels/masters.html:9
+#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:505
+msgid "Магистратура"
+msgstr "Master's Degree"
+
+#: pages/templates/pages/applicants/committee.html:383
+#: pages/templates/pages/applicants/levels/postgraduates.html:9
+#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:519
+msgid "Аспирантура"
+msgstr "Postgraduate Studies"
+
+#: pages/templates/pages/applicants/committee.html:388
+#: pages/templates/pages/applicants/committee.html:586
+#: pages/templates/pages/applicants/committee.html:761
+msgid "Ключевые даты"
+msgstr "Key dates"
+
+#: pages/templates/pages/applicants/committee.html:392
+#: pages/templates/pages/applicants/committee.html:590
+#: pages/templates/pages/applicants/committee.html:765
+msgid "Начало приёма"
+msgstr "Start of document submission"
+
+#: pages/templates/pages/applicants/committee.html:393
+#: pages/templates/pages/applicants/committee.html:591
+msgid "Начало приёма документов — 20 июня 2025 г."
+msgstr "Start of document submission - June 20, 2025"
+
+#: pages/templates/pages/applicants/committee.html:400
+msgid "Завершение подачи документов<br>на направление «Архитектура»"
+msgstr "Deadline for Architecture programme applications"
+
+#: pages/templates/pages/applicants/committee.html:401
+#: pages/templates/pages/applicants/committee.html:490
+#: pages/templates/pages/applicants/committee.html:497
+msgid "15 июля 2025 г."
+msgstr "July 15, 2025"
+
+#: pages/templates/pages/applicants/committee.html:406
+msgid "Завершение заявлений на бюджетные места"
+msgstr "End of applications for state-funded places"
+
+#: pages/templates/pages/applicants/committee.html:407
+#: pages/templates/pages/applicants/committee.html:504
+msgid "25 июля 2025 г."
+msgstr "July 25, 2025"
+
+#: pages/templates/pages/applicants/committee.html:412
+msgid "Публикация конкурсных списков"
+msgstr "Publication of competitive lists"
+
+#: pages/templates/pages/applicants/committee.html:413
+#: pages/templates/pages/applicants/committee.html:518
+msgid "27 июля 2025 г."
+msgstr "July 27, 2025"
+
+#: pages/templates/pages/applicants/committee.html:418
+msgid "Конец приёма документов на контракт"
+msgstr "Deadline for tuition-fee contract applications"
+
+#: pages/templates/pages/applicants/committee.html:419
+#: pages/templates/pages/applicants/committee.html:505
+msgid "25 августа 2025 г."
+msgstr "August 25, 2025"
+
+#: pages/templates/pages/applicants/committee.html:426
+#: pages/templates/pages/applicants/committee.html:618
+#: pages/templates/pages/applicants/committee.html:793
+msgid "Особые условия"
+msgstr "Special conditions"
+
+#: pages/templates/pages/applicants/committee.html:428
+msgid "Олимпиадники и высокобалльники"
+msgstr "Olympiad winners and high scorers"
+
+#: pages/templates/pages/applicants/committee.html:429
+#: pages/templates/pages/applicants/committee.html:620
+#: pages/templates/pages/applicants/committee.html:797
+msgid "Дополнительные баллы"
+msgstr "Additional points"
+
+#: pages/templates/pages/applicants/committee.html:430
+#: pages/templates/pages/applicants/committee.html:621
+#: pages/templates/pages/applicants/committee.html:795
+msgid "Целевое обучение"
+msgstr "Targeted training programme"
+
+#: pages/templates/pages/applicants/committee.html:431
+msgid "Особая квота"
+msgstr "Special quota"
+
+#: pages/templates/pages/applicants/committee.html:432
+msgid "Отдельная квота"
+msgstr "Separate quota"
+
+#: pages/templates/pages/applicants/committee.html:433
+msgid "Преимущественное право на зачисление"
+msgstr "Preferential admission right"
+
+#: pages/templates/pages/applicants/committee.html:434
+msgid "Сироты"
+msgstr "Orphans"
+
+#: pages/templates/pages/applicants/committee.html:439
+msgid "Прогноз поступления"
+msgstr "Admission forecast"
+
+#: pages/templates/pages/applicants/committee.html:441
+msgid "Калькулятор ЕГЭ"
+msgstr "Unified State Exam (USE) calculator"
+
+#: pages/templates/pages/applicants/committee.html:442
+msgid "Минимальные баллы на бюджет и контракт"
+msgstr "Minimum entrance scores"
+
+#: pages/templates/pages/applicants/committee.html:443
+msgid "Проходной балл прошлых лет"
+msgstr "Cutoff scores from previous years"
+
+#: pages/templates/pages/applicants/committee.html:444
+msgid "Тест на профориентацию"
+msgstr "Career Guidance Test"
+
+#: pages/templates/pages/applicants/committee.html:445
+msgid "Предварительный договор"
+msgstr "Preliminary agreement"
+
+#: pages/templates/pages/applicants/committee.html:450
+#: pages/templates/pages/applicants/committee.html:639
+#: pages/templates/pages/applicants/committee.html:811
+msgid "Приём 2025"
+msgstr "Admission 2025"
+
+#: pages/templates/pages/applicants/committee.html:452
+msgid "Выбери программу университетской академии"
+msgstr "Choose a university academy program"
+
+#: pages/templates/pages/applicants/committee.html:453
+msgid "Лиги-баттлы"
+msgstr "League battles"
+
+#: pages/templates/pages/applicants/committee.html:454
+#: pages/templates/pages/applicants/committee.html:642
+#: pages/templates/pages/applicants/committee.html:814
+msgid "Индивидуальные достижения"
+msgstr "Individual achievements"
+
+#: pages/templates/pages/applicants/committee.html:455
+msgid "Профессиональные испытания"
+msgstr "Professional tests"
+
+#: pages/templates/pages/applicants/committee.html:456
+msgid "Нормативы ГТО"
+msgstr "GTO fitness standards"
+
+#: pages/templates/pages/applicants/committee.html:457
+msgid "Электронные документы"
+msgstr "Electronic documents"
+
+#: pages/templates/pages/applicants/committee.html:458
+msgid "Сроки проведения практик"
+msgstr "Practice dates"
+
+#: pages/templates/pages/applicants/committee.html:463
+msgid "Сроки приёма в бакалавриат и специалитет в 2025 году"
+msgstr "Application deadlines for bachelor’s and specialist programmes in 2025"
+
+#: pages/templates/pages/applicants/committee.html:466
+#: pages/templates/pages/applicants/committee.html:655
+#: pages/templates/pages/applicants/committee.html:829
+msgid "Поступление на бюджетные места"
+msgstr "Admission to budget places"
+
+#: pages/templates/pages/applicants/committee.html:467
+#: pages/templates/pages/applicants/committee.html:656
+#: pages/templates/pages/applicants/committee.html:830
+msgid "Поступление на платные места"
+msgstr "Admission to fee-paying places"
+
+#: pages/templates/pages/applicants/committee.html:474
+#: pages/templates/pages/applicants/committee.html:664
+#: pages/templates/pages/applicants/committee.html:836
+msgid "Этап"
+msgstr "Stage"
+
+#: pages/templates/pages/applicants/committee.html:475
+#: pages/templates/pages/applicants/committee.html:665
+msgid "Форма обучения"
+msgstr "Form of study"
+
+#: pages/templates/pages/applicants/committee.html:478
+msgid "Очная, очно-заочная, заочная"
+msgstr "Full-time and part-time (blended) modes"
+
+#: pages/templates/pages/applicants/committee.html:479
+#: pages/templates/pages/applicants/committee.html:669
+msgid "Очная"
+msgstr "Full-time mode"
+
+#: pages/templates/pages/applicants/committee.html:480
+msgid "Очно-заочная, заочная"
+msgstr "Part-time (blended) mode"
+
+#: pages/templates/pages/applicants/committee.html:487
+msgid "Сроки приёма документов"
+msgstr "Deadlines for accepting documents"
+
+#: pages/templates/pages/applicants/committee.html:488
+msgid "Для направления Архитектура"
+msgstr "For the direction of Architecture"
+
+#: pages/templates/pages/applicants/committee.html:491
+#: pages/templates/pages/applicants/committee.html:498
+msgid "20 августа 2025 г."
+msgstr "August 20, 2025"
+
+#: pages/templates/pages/applicants/committee.html:492
+#: pages/templates/pages/applicants/committee.html:499
+msgid "20 сентября 2025 г."
+msgstr "September 20, 2025"
+
+#: pages/templates/pages/applicants/committee.html:496
+msgid "Для имеющих право сдавать экзамены в РУДН"
+msgstr "For those eligible to take exams at RUDN"
+
+#: pages/templates/pages/applicants/committee.html:503
+msgid "Для поступающих по ЕГЭ, БВИ"
+msgstr "For applicants via the USE or without entrance exams"
+
+#: pages/templates/pages/applicants/committee.html:506
+msgid "25 сентября 2025 г."
+msgstr "September 25, 2025"
+
+#: pages/templates/pages/applicants/committee.html:510
+msgid "Сроки проведения вступительных испытаний"
+msgstr "Deadlines for entrance examinations"
+
+#: pages/templates/pages/applicants/committee.html:511
+msgid "16 июля - 25 июля 2025 г."
+msgstr "July 16 - 25, 2025"
+
+#: pages/templates/pages/applicants/committee.html:512
+msgid "16 июля - 25 августа 2025 г."
+msgstr "July 16 - August 25, 2025"
+
+#: pages/templates/pages/applicants/committee.html:513
+msgid "16 июля - 25 сентября 2025 г."
+msgstr "July 16 - September 25, 2025"
+
+#: pages/templates/pages/applicants/committee.html:517
+msgid "Сроки объявления конкурсного списка (рейтинг)"
+msgstr "Deadline for announcing the competition list (rating)"
+
+#: pages/templates/pages/applicants/committee.html:519
+#: pages/templates/pages/applicants/committee.html:611
+msgid "26 августа 2025 г."
+msgstr "August 26, 2025"
+
+#: pages/templates/pages/applicants/committee.html:520
+msgid "26 сентября 2025 г."
+msgstr "September 26, 2025"
+
+#: pages/templates/pages/applicants/committee.html:525
+msgid ""
+"Сроки завершения предоставления согласия на зачисление — до 12:00 по МСК</"
+"b><br> <em>Для зачисления в рамках приоритетного этапа</em>"
+msgstr ""
+"Deadline for submitting consent to enrollment — by 12:00 MSK</b><br> <em>For "
+"enrollment during the priority stage</em>"
+
+#: pages/templates/pages/applicants/committee.html:531
+msgid "1 августа 2025 г."
+msgstr "August 1, 2025"
+
+#: pages/templates/pages/applicants/committee.html:536
+#: pages/templates/pages/applicants/committee.html:559
+msgid "Для зачисления в рамках основного этапа"
+msgstr "For enrollment within the main stage"
+
+#: pages/templates/pages/applicants/committee.html:538
+msgid "5 августа 2025 г."
+msgstr "August 5, 2025"
+
+#: pages/templates/pages/applicants/committee.html:543
+msgid "Завершение заключения договоров"
+msgstr "Completion of contracts"
+
+#: pages/templates/pages/applicants/committee.html:546
+msgid "27 августа 2025 г."
+msgstr "August 27, 2025"
+
+#: pages/templates/pages/applicants/committee.html:547
+msgid "27 сентября 2025 г."
+msgstr "September 27, 2025"
+
+#: pages/templates/pages/applicants/committee.html:552
+#: pages/templates/pages/applicants/committee.html:725
+msgid "Сроки зачисления (издание приказов)"
+msgstr "Enrollment deadlines (issue of orders)"
+
+#: pages/templates/pages/applicants/committee.html:553
+msgid "Для зачисления в рамках приоритетного этапа"
+msgstr "For enrollment within the priority phase"
+
+#: pages/templates/pages/applicants/committee.html:555
+msgid "2-3 августа 2025 г."
+msgstr "August 2-3, 2025"
+
+#: pages/templates/pages/applicants/committee.html:560
+msgid "6-7 августа 2025 г."
+msgstr "August 6-7, 2025"
+
+#: pages/templates/pages/applicants/committee.html:561
+msgid "30 августа 2025 г."
+msgstr "August 30, 2025"
+
+#: pages/templates/pages/applicants/committee.html:562
+msgid "30 сентября 2025 г."
+msgstr "September 30, 2025"
+
+#: pages/templates/pages/applicants/committee.html:567
+msgid "Основание для зачисления"
+msgstr "Basis for enrollment"
+
+#: pages/templates/pages/applicants/committee.html:568
+msgid "Согласие на зачисление"
+msgstr "Consent to enrollment"
+
+#: pages/templates/pages/applicants/committee.html:569
+msgid "Подтверждение факта оплаты"
+msgstr "Payment confirmation"
+
+#: pages/templates/pages/applicants/committee.html:573
+#: pages/templates/pages/applicants/committee.html:745
+msgid "Сроки начала учебного года"
+msgstr "Academic year start dates"
+
+#: pages/templates/pages/applicants/committee.html:574
+msgid "1 сентября 2025 г."
+msgstr "September 1, 2025"
+
+#: pages/templates/pages/applicants/committee.html:575
+msgid "1 октября 2025 г."
+msgstr "October 1, 2024"
+
+#: pages/templates/pages/applicants/committee.html:576
+msgid "1 декабря 2025 г."
+msgstr "December 1, 2025"
+
+#: pages/templates/pages/applicants/committee.html:598
+#: pages/templates/pages/applicants/committee.html:773
+msgid "Окончание приема документов на бюджетные места"
+msgstr "Deadline of acceptance for budget places"
+
+#: pages/templates/pages/applicants/committee.html:599
+msgid "12 августа 2025 г."
+msgstr "August 12, 2025"
+
+#: pages/templates/pages/applicants/committee.html:604
+msgid "Начало вступительных испытаний на бюджетные места"
+msgstr "Start of entrance exams for state-funded places"
+
+#: pages/templates/pages/applicants/committee.html:605
+msgid "13 августа 2025 г."
+msgstr "August 13, 2025"
+
+#: pages/templates/pages/applicants/committee.html:610
+msgid "Сроки зачисления (издание приказов) на бюджетные места"
+msgstr "Enrollment deadlines (issuance of orders) for state-funded places"
+
+#: pages/templates/pages/applicants/committee.html:622
+#: pages/templates/pages/applicants/committee.html:796
+msgid "Скидки"
+msgstr "Discounts"
+
+#: pages/templates/pages/applicants/committee.html:623
+msgid "Цифровая магистратура"
+msgstr "Digital Master's Degree"
+
+#: pages/templates/pages/applicants/committee.html:624
+msgid "Магистратура на иностранном языке"
+msgstr "Master’s programmes taught in a foreign language"
+
+#: pages/templates/pages/applicants/committee.html:625
+msgid "Проектная магистратура"
+msgstr "Project master's program"
+
+#: pages/templates/pages/applicants/committee.html:630
+msgid "Конкурсы для магистрантов"
+msgstr "Competitions for undergraduates"
+
+#: pages/templates/pages/applicants/committee.html:632
+msgid "Универсиада 'RUDN-ON'"
+msgstr "“RUDN-ON” Universiade"
+
+#: pages/templates/pages/applicants/committee.html:633
+msgid "Конкурс 'РАНЬШЕ-ЛУЧШЕ'"
+msgstr "“EARLIER-BETTER” contest"
+
+# #: pages/templates/pages/applicants/committee.html:645
+#: pages/templates/pages/applicants/committee.html:634
+msgid "Конкурс 'F5 обновление'"
+msgstr "“F5 Update” contest"
+
+#: pages/templates/pages/applicants/committee.html:641
+msgid "Выбери программу инженерной академии"
+msgstr "Choose an Engineering Academy programme"
+
+#: pages/templates/pages/applicants/committee.html:643
+#: pages/templates/pages/applicants/committee.html:815
+msgid "Расписание экзаменов"
+msgstr "Examination schedule"
+
+#: pages/templates/pages/applicants/committee.html:644
+#: pages/templates/pages/applicants/committee.html:816
+msgid "Нормативные документы"
+msgstr "Regulatory documents"
+
+#: pages/templates/pages/applicants/committee.html:645
+#: pages/templates/pages/applicants/committee.html:817
+msgid "Сроки проведения приёма"
+msgstr "Admissions timeline"
+
+#: pages/templates/pages/applicants/committee.html:650
+msgid "Сроки приёма в магистратуру в 2025 году"
+msgstr "Application deadlines for master’s programmes in 2025"
+
+#: pages/templates/pages/applicants/committee.html:668
+msgid "Очная, заочная"
+msgstr "Full-time, part-time modes"
+
+#: pages/templates/pages/applicants/committee.html:670
+msgid "Очно-заочная"
+msgstr "Blended mode"
+
+#: pages/templates/pages/applicants/committee.html:671
+msgid "Заочная"
+msgstr "Distance learning mode"
+
+#: pages/templates/pages/applicants/committee.html:677
+msgid "20 июня"
+msgstr "June 20"
+
+#: pages/templates/pages/applicants/committee.html:678
+#: pages/templates/pages/applicants/committee.html:679
+#: pages/templates/pages/applicants/committee.html:680
+#: pages/templates/pages/applicants/committee.html:846
+msgid "1 марта"
+msgstr "March 1"
+
+#: pages/templates/pages/applicants/committee.html:684
+msgid "Сроки завершения приёма документов"
+msgstr "Document submission deadlines"
+
+#: pages/templates/pages/applicants/committee.html:685
+msgid "12 августа"
+msgstr "August 12"
+
+#: pages/templates/pages/applicants/committee.html:686
+msgid "20 августа"
+msgstr "August 20"
+
+#: pages/templates/pages/applicants/committee.html:687
+#: pages/templates/pages/applicants/committee.html:688
+msgid "20 сентября"
+msgstr "September 29"
+
+#: pages/templates/pages/applicants/committee.html:692
+#: pages/templates/pages/applicants/committee.html:779
+#: pages/templates/pages/applicants/committee.html:856
+msgid "Сроки проведения (завершения) вступительных испытаний"
+msgstr "Dates for conducting (completion of) entrance examinations"
+
+#: pages/templates/pages/applicants/committee.html:693
+msgid "13 августа – 20 августа"
+msgstr "August 13 – 20"
+
+#: pages/templates/pages/applicants/committee.html:694
+msgid "2 марта – 25 августа"
+msgstr "March 2 – August 25"
+
+#: pages/templates/pages/applicants/committee.html:695
+#: pages/templates/pages/applicants/committee.html:696
+msgid "2 марта – 25 сентября"
+msgstr "March 2 – September 31"
+
+#: pages/templates/pages/applicants/committee.html:701
+msgid ""
+"Сроки завершения предоставления согласия на зачисление — до 12:00 по МСК<br> "
+"<em>Для зачисления в рамках целевой квоты</em>"
+msgstr ""
+"Deadline for submitting consent to enrollment — by 12:00 MSK<br><em>For "
+"enrollment under the targeted quota</em>"
+
+#: pages/templates/pages/applicants/committee.html:707
+#: pages/templates/pages/applicants/committee.html:717
+msgid "24 августа"
+msgstr "August 24"
+
+#: pages/templates/pages/applicants/committee.html:708
+#: pages/templates/pages/applicants/committee.html:718
+#: pages/templates/pages/applicants/committee.html:728
+#: pages/templates/pages/applicants/committee.html:738
+msgid "26 августа"
+msgstr "August 26"
+
+#: pages/templates/pages/applicants/committee.html:709
+#: pages/templates/pages/applicants/committee.html:710
+#: pages/templates/pages/applicants/committee.html:719
+#: pages/templates/pages/applicants/committee.html:720
+msgid "26 сентября"
+msgstr "September 26"
+
+#: pages/templates/pages/applicants/committee.html:715
+#: pages/templates/pages/applicants/committee.html:736
+msgid "Для зачисления места в рамках контрольных цифр"
+msgstr "For enrollment under state-funded allocations"
+
+#: pages/templates/pages/applicants/committee.html:726
+msgid "Для зачисления в рамках целевой квоты"
+msgstr "For enrollment under the targeted quota"
+
+#: pages/templates/pages/applicants/committee.html:729
+#: pages/templates/pages/applicants/committee.html:739
+msgid "27 августа"
+msgstr "August 27"
+
+#: pages/templates/pages/applicants/committee.html:730
+#: pages/templates/pages/applicants/committee.html:731
+#: pages/templates/pages/applicants/committee.html:740
+#: pages/templates/pages/applicants/committee.html:741
+#: pages/templates/pages/applicants/committee.html:864
+msgid "27 сентября"
+msgstr "September 27"
+
+#: pages/templates/pages/applicants/committee.html:747
+msgid "1 сентября — по очной форме обучения"
+msgstr "September 1 — for full-time studies"
+
+#: pages/templates/pages/applicants/committee.html:748
+msgid "1 октября — по заочной форме обучения"
+msgstr "October 1 — for distance studies"
+
+#: pages/templates/pages/applicants/committee.html:750
+msgid "1 сентября"
+msgstr "September 1"
+
+#: pages/templates/pages/applicants/committee.html:751
+#: pages/templates/pages/applicants/committee.html:899
+#: pages/templates/pages/applicants/committee.html:900
+msgid "1 октября"
+msgstr "October 1"
+
+#: pages/templates/pages/applicants/committee.html:752
+msgid "1 декабря"
+msgstr "December 1"
+
+#: pages/templates/pages/applicants/committee.html:766
+msgid "Начало приёма документов — 1 марта 2025 г."
+msgstr "Start of document submission — March 1, 2025"
+
+#: pages/templates/pages/applicants/committee.html:774
+msgid "22 июля 2025 г."
+msgstr "July 22, 2025"
+
+#: pages/templates/pages/applicants/committee.html:780
+msgid "2 марта - 31 июля 2025 г."
+msgstr "March 2 – July 31, 2025"
+
+#: pages/templates/pages/applicants/committee.html:785
+msgid "Сроки зачисления (издание приказов) на платные места"
+msgstr "Enrollment deadlines (issuance of orders) for fee-paying places"
+
+#: pages/templates/pages/applicants/committee.html:786
+msgid "29 сентября 2025 г."
+msgstr "September 29, 2025"
+
+#: pages/templates/pages/applicants/committee.html:802
+msgid "Дополнительные формы обучения"
+msgstr "Additional forms of study"
+
+#: pages/templates/pages/applicants/committee.html:804
+msgid "Прикрепление"
+msgstr "Attachment"
+
+#: pages/templates/pages/applicants/committee.html:805
+msgid "Аспирантура полного дня"
+msgstr "Full-time postgraduate studies"
+
+#: pages/templates/pages/applicants/committee.html:806
+msgid "Информация о диссоветах"
+msgstr "Information on dissertation councils"
+
+#: pages/templates/pages/applicants/committee.html:813
+msgid "Направления подготовки инженерной академии"
+msgstr "Engineering Academy fields of study"
+
+#: pages/templates/pages/applicants/committee.html:818
+msgid "Мониторинг приёма"
+msgstr "Admissions monitoring"
+
+#: pages/templates/pages/applicants/committee.html:823
+msgid "Сроки приёма в аспирантуру в 2025 году"
+msgstr "Admission deadlines for postgraduate programmes in 2025"
+
+#: pages/templates/pages/applicants/committee.html:825
+msgid ""
+"Публикация конкурсных списков на места в рамках КЦП — не позднее 1 августа"
+msgstr ""
+"Publication of competitive lists for state-funded places — no later than "
+"August 1"
+
+#: pages/templates/pages/applicants/committee.html:837
+msgid "Бюджетные места (КЦП)"
+msgstr "State-funded places (quota)"
+
+#: pages/templates/pages/applicants/committee.html:838
+msgid "Места с оплатой стоимости обучения"
+msgstr "Fee-paying places"
+
+#: pages/templates/pages/applicants/committee.html:844
+msgid "Начало приёма документов"
+msgstr "Start of document submission"
+
+#: pages/templates/pages/applicants/committee.html:845
+msgid "1 июня"
+msgstr "June 1"
+
+#: pages/templates/pages/applicants/committee.html:850
+msgid "Завершение приёма документов"
+msgstr "End of document submission"
+
+#: pages/templates/pages/applicants/committee.html:851
+msgid "22 июня"
+msgstr "June 22"
+
+#: pages/templates/pages/applicants/committee.html:852
+msgid "25 сентября"
+msgstr "September 25"
+
+#: pages/templates/pages/applicants/committee.html:857
+msgid "2 марта – 31 июля"
+msgstr "March 2 – July 31"
+
+#: pages/templates/pages/applicants/committee.html:858
+msgid "23 июля – 27 сентября"
+msgstr "July 23 – September 27"
+
+#: pages/templates/pages/applicants/committee.html:862
+msgid "Сроки размещения конкурсных списков"
+msgstr "Dates for publication of competitive lists"
+
+#: pages/templates/pages/applicants/committee.html:863
+msgid "1 августа"
+msgstr "August 1"
+
+#: pages/templates/pages/applicants/committee.html:869
+msgid ""
+"Завершение предоставления заявлений<br> о согласии и оригиналов<br> <em>до "
+"18:00 по московскому времени</em>"
+msgstr ""
+"Completion of submission of consent statements<br> and originals<br> <em>by "
+"18:00 Moscow time</em>"
+
+#: pages/templates/pages/applicants/committee.html:876
+msgid "3 августа"
+msgstr "August 3"
+
+#: pages/templates/pages/applicants/committee.html:877
+#: pages/templates/pages/applicants/committee.html:890
+msgid "в рамках целевой квоты"
+msgstr "under the targeted quota"
+
+#: pages/templates/pages/applicants/committee.html:878
+msgid "7 августа"
+msgstr "August 7"
+
+#: pages/templates/pages/applicants/committee.html:879
+msgid "остальные места в рамках КЦП"
+msgstr "remaining places within the state-funded quota"
+
+#: pages/templates/pages/applicants/committee.html:881
+msgid "28 сентября"
+msgstr "September 28"
+
+#: pages/templates/pages/applicants/committee.html:886
+msgid "Зачисление (издание приказов — до дня начала учебного года)"
+msgstr "Enrollment (issuance of orders — up to the start of the academic year)"
+
+#: pages/templates/pages/applicants/committee.html:889
+msgid "5 августа"
+msgstr "August 5"
+
+#: pages/templates/pages/applicants/committee.html:891
+msgid "8 августа"
+msgstr "August 8"
+
+#: pages/templates/pages/applicants/committee.html:892
+msgid "основные места в рамках КЦП"
+msgstr "No state-funded places"
+
+#: pages/templates/pages/applicants/committee.html:894
+msgid "29 сентября"
+msgstr "September 29"
+
+#: pages/templates/pages/applicants/committee.html:898
+msgid "Начало учебного года"
+msgstr "Head of Department"
+
+#: pages/templates/pages/applicants/levels/bachelor.html:14
+#: pages/templates/pages/applicants/study_directions.html:30
+msgid "Открытие новых горизонтов знаний!"
+msgstr "Opening new horizons of knowledge!"
+
+#: pages/templates/pages/applicants/levels/bachelor.html:19
+#: pages/templates/pages/applicants/levels/masters.html:19
+#: pages/templates/pages/applicants/levels/postgraduates.html:19
+#: pages/templates/pages/applicants/levels/specialists.html:27
+msgid "Программы подготовки"
+msgstr "Study programmes"
+
+#: pages/templates/pages/applicants/levels/bachelor.html:39
+#: pages/templates/pages/applicants/levels/masters.html:39
+#: pages/templates/pages/applicants/levels/postgraduates.html:39
+#: pages/templates/pages/applicants/levels/specialists.html:50
+msgid "Профиль:"
+msgstr "Profile:"
+
+#: pages/templates/pages/applicants/levels/masters.html:14
+#: pages/templates/pages/applicants/study_directions.html:56
+msgid "Углублённое изучение вашей специализации!"
+msgstr "Deepen your specialization!"
+
+#: pages/templates/pages/applicants/levels/postgraduates.html:14
+#: pages/templates/pages/applicants/study_directions.html:69
+msgid "Станьте экспертом в своей области!"
+msgstr "Become an expert in your field!"
+
+#: pages/templates/pages/applicants/levels/specialists.html:11
+#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:512
+msgid "Специалитет"
+msgstr "Specialist Degree"
+
+#: pages/templates/pages/applicants/levels/specialists.html:18
+#: pages/templates/pages/applicants/study_directions.html:43
+msgid "Превратите свои увлечения в профессию!"
+msgstr "Turn your passion into a profession!"
+
+#: pages/templates/pages/applicants/reference.html:10
+msgid "Справочная информация для абитуриентов"
+msgstr "Reference Information"
+
+#: pages/templates/pages/applicants/reference.html:22
+msgid ""
+"В данном разделе размещается нормативная документация с актуальными "
+"правилами и регламентами приёма и отбора для поступающих в бакалавриат, "
+"специалитет, магистратуру и аспирантуру — как граждан России, так и "
+"иностранных абитуриентов."
+msgstr ""
+"This section contains up-to-date regulations and admission rules for "
+"applicants to bachelor's, specialist, master's and postgraduate programmes — "
+"for both Russian and international students."
+
+#: pages/templates/pages/applicants/reference.html:26
+msgid "ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ ИНОСТРАННЫХ ГРАЖДАН:"
+msgstr "DOCUMENT LINKS FOR INTERNATIONAL APPLICANTS:"
+
+#: pages/templates/pages/applicants/reference.html:40
+#: pages/templates/pages/applicants/reference.html:59
+msgid "Нет документов"
+msgstr "No documents available"
+
+#: pages/templates/pages/applicants/reference.html:45
+msgid ""
+"ССЫЛКИ НА НОРМАТИВНЫЕ ДОКУМЕНТЫ ДЛЯ ГРАЖДАН РОССИЙСКОЙ ФЕДЕРАЦИИ И СТРАН СНГ:"
+msgstr ""
+"DOCUMENT LINKS FOR CITIZENS OF THE RUSSIAN FEDERATION AND CIS COUNTRIES:"
+
+#: pages/templates/pages/applicants/study_directions.html:13
+msgid "Ваш путь к успешной инженерной карьере начинается здесь"
+msgstr "Your path to a successful engineering career starts here"
+
+#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:498
+msgid "Бакалавриат"
+msgstr "Bachelor's Degree"
+
+#: pages/templates/pages/direction.html:91
+msgid "Очная форма"
+msgstr "Full-time mode"
+
+#: pages/templates/pages/direction.html:95
+#: pages/templates/pages/direction.html:139
+#: pages/templates/pages/direction.html:177
+msgid "Бюджетные места –"
+msgstr "State-funded places – "
+
+#: pages/templates/pages/direction.html:98
+#: pages/templates/pages/direction.html:142
+#: pages/templates/pages/direction.html:180
+msgid "Бюджетные места – нет"
+msgstr "No state-funded places"
+
+#: pages/templates/pages/direction.html:101
+#: pages/templates/pages/direction.html:145
+#: pages/templates/pages/direction.html:183
+msgid "Минимальные проходные баллы"
+msgstr "Minimum entrance scores"
+
+#: pages/templates/pages/direction.html:104
+msgid "Вступительные испытания"
+msgstr "Entrance examinations"
+
+#: pages/templates/pages/direction.html:106
+msgid "Обязательные предметы"
+msgstr "Required subjects"
+
+#: pages/templates/pages/direction.html:112
+#: pages/templates/pages/direction.html:150
+#: pages/templates/pages/direction.html:188
+msgid "Стоимость обучения по контракту"
+msgstr "Tuition fee (contract)"
+
+#: pages/templates/pages/direction.html:122
+#: pages/templates/pages/direction.html:160
+#: pages/templates/pages/direction.html:198
+msgid "Подать документы"
+msgstr "Apply now"
+
+#: pages/templates/pages/direction.html:135
+msgid "Очно-заочная форма"
+msgstr "Part-time (blended) mode"
+
+#: pages/templates/pages/direction.html:173
+msgid "Заочная форма"
+msgstr "Distance (extramural) mode"
+
+#: pages/templates/pages/index.html:274
+msgid "Все НОВОСТИ"
+msgstr "All News"
+
+#: pages/templates/pages/index.html:315
+msgid "Российский университет дружбы народов"
+msgstr "People's Friendship University of Russia"
+
+#: pages/templates/pages/index.html:317
+msgid "Инженерная академия"
+msgstr "Engineering Academy"
+
+#: pages/templates/pages/index.html:325 pages/views.py:37
+msgid "Инженерная академия РУДН"
+msgstr "Engineering Academy"
+
+#: pages/templates/pages/index.html:342
+msgid "115419, Москва, ул. Орджоникидзе, д. 3."
+msgstr "115419, Moscow, Ordzhonikidze st, 3"
+
+#: pages/templates/pages/index.html:349
+msgid "+7 (495) 955-09-66"
+msgstr "+7 (495) 955-09-66"
+
+#: pages/templates/pages/index.html:355
+msgid "+7 (495) 952-08-29 (приемная директора)"
+msgstr "+7 (495) 952-08-29 (Director's Reception)"
+
+#: pages/templates/pages/index.html:364
+msgid "engineering@rudn.ru"
+msgstr "engineering@rudn.ru"
+
+#: pages/templates/pages/science/digital_library.html:12
+msgid "Открой для себя новые возможности!"
+msgstr "Discover new opportunities!"
+
+#: pages/templates/pages/science/digital_library.html:19
+msgid "Электронно-библиотечные системы — Online libraries for learning"
+msgstr "Electronic Library Systems — Online Libraries for Learning"
+
+#: pages/templates/pages/science/digital_library.html:29
+msgid "Электронные ресурсы — Digital content for research"
+msgstr "Electronic Resources — Digital Content for Research"
+
+#: pages/templates/pages/science/digital_library.html:39
+msgid "Открытые электронные ресурсы — Open access"
+msgstr "Open Electronic Resources — Open Access"
+
+#: pages/templates/pages/science/digital_library.html:49
+msgid "Научные статьи и книги"
+msgstr "Scientific Articles and Books"
+
+#: pages/templates/pages/science/digital_library.html:59
+msgid "Видеолекции — Video lectures"
+msgstr "Video Lectures"
+
+#: pages/templates/pages/science/directions.html:13
+#: pages/templates/pages/students/applications.html:12
+msgid "Образование – ключ к успеху!"
+msgstr "Education is the key to success!"
+
+#: pages/templates/pages/science/directions.html:20
+msgid "Концептуальные направления научных исследований"
+msgstr "Conceptual research directions"
+
+#: pages/templates/pages/science/directions.html:31
+msgid ""
+"Цифровые технологии промышленного производства и управления промышленностью "
+"«Индустрия 4.0»"
+msgstr ""
+"Digital technologies for industrial production and management – “Industry "
+"4.0”"
+
+#: pages/templates/pages/science/directions.html:34
+msgid ""
+"\n"
+"            IT-технологии управления средствами и процессами производства "
+"промышленных изделий.\n"
+"            Технологии аддитивного производства и 3-D печати в "
+"машиностроении, приборостроении\n"
+"            и других отраслях промышленности. Проектирование технологических "
+"процессов,\n"
+"            математическое и физическое моделирование в машиностроении. "
+"Робототехнические\n"
+"            и интеллектуальные системы управления транспортной и инженерной "
+"инфраструктурой\n"
+"            больших районов и отдельных объектов. Цифровая экономика.\n"
+"          "
+msgstr ""
+"\n"
+"            IT-technologies for managing equipment and production processes "
+"of industrial goods.\n"
+"            Additive manufacturing and 3-D printing in mechanical, "
+"instrument and other industries.\n"
+"            Process design, mathematical and physical modelling in "
+"mechanical engineering.\n"
+"            Robotic and intelligent control systems for transport and civil "
+"infrastructure of large areas and individual facilities.\n"
+"            Digital economy.\n"
+"          "
+
+#: pages/templates/pages/science/directions.html:57
+msgid ""
+"Создание космической инфраструктуры нового поколения и её эффективное "
+"применение"
+msgstr "Next-generation space infrastructure and its effective application"
+
+#: pages/templates/pages/science/directions.html:60
+msgid ""
+"\n"
+"            Технологии проектирования орбитальных структур космических "
+"систем, включая крупные\n"
+"            орбитальные конструкции и тросовые системы. Технологии "
+"технического обслуживания\n"
+"            космических аппаратов на орбитах и обеспечения безопасности "
+"космической деятельности\n"
+"            в условиях «загрязнённости» космического пространства. "
+"Космические робототехнические\n"
+"            и интеллектуальные системы управления. Создание наноматериалов и "
+"технологий защиты\n"
+"            элементов космического аппарата. Повышение надёжности и "
+"радиационной стойкости\n"
+"            элементной базы. Применение космических технологий в "
+"промышленности, сельском\n"
+"            хозяйстве и рациональном природопользовании.\n"
+"          "
+msgstr ""
+"\n"
+"            Design technologies for orbital structures of space systems, "
+"including large\n"
+"            deployable and tether constructions. On-orbit servicing and "
+"space-debris safety.\n"
+"            Space robotic and intelligent control systems. Development of "
+"nanomaterials and\n"
+"            protection technologies for spacecraft components. Reliability "
+"and radiation-hardening\n"
+"            of semiconductor electronics. Industrial, agricultural and "
+"environmental applications\n"
+"            of space technologies.\n"
+"          "
+
+#: pages/templates/pages/science/directions.html:85
+msgid "Технологии рационального недропользования и природопользования"
+msgstr "Technologies for sustainable sub-soil and natural resource use"
+
+#: pages/templates/pages/science/directions.html:88
+msgid ""
+"\n"
+"            IT-технологии управления инфраструктурой месторождений и "
+"обеспечения технической\n"
+"            и экологической безопасности. Планирование комплексного "
+"недропользования с использованием\n"
+"            данных дистанционного зондирования Земли. Экоустойчивые "
+"технологии добычи. Разведка\n"
+"            полезных ископаемых с применением космических систем. Работа "
+"нефтяных скважин\n"
+"            в осложнённых условиях. Геомеханическое воздействие на залежи.\n"
+"          "
+msgstr ""
+"\n"
+"            IT-solutions for field-infrastructure management and techno-"
+"ecological safety.\n"
+"            Integrated mine planning based on Earth-observation data. Eco-"
+"friendly extraction\n"
+"            technologies. Prospecting with space systems. Operation of oil "
+"wells under\n"
+"            challenging conditions. Geomechanical stimulation of deposits.\n"
+"          "
+
+#: pages/templates/pages/science/directions.html:110
+msgid "Системная инженерия среды жизнедеятельности человека"
+msgstr "Systems engineering of the human living environment"
+
+#: pages/templates/pages/science/directions.html:113
+msgid ""
+"\n"
+"            IT-технологии и телематические сервисы для создания "
+"интеллектуальной среды.\n"
+"            Экоустойчивое строительство: градостроительные, архитектурные и "
+"инженерно-технические\n"
+"            решения. Инновационные композитные и нанокомпозитные материалы, "
+"аддитивные технологии.\n"
+"            Проектирование сооружений для миссий в открытом космосе и на "
+"планетах.\n"
+"            Цифровое моделирование инфраструктуры, виртуальная и дополненная "
+"реальность. «Умный дом» / Smart City.\n"
+"          "
+msgstr ""
+"\n"
+"            IT and telematics services for an intelligent living "
+"environment.\n"
+"            Eco-sustainable construction: urban-planning, architectural and "
+"engineering solutions\n"
+"            for comfortable habitats. Innovative composite and nanocomposite "
+"materials,\n"
+"            additive technologies. Design of facilities and infrastructure "
+"for missions in\n"
+"            outer space, on the Moon, Mars and other celestial bodies.\n"
+"            Digital modelling of construction objects and processes, virtual "
+"and augmented reality.\n"
+"            “Smart City / Smart Home”.\n"
+"          "
+
+#: pages/templates/pages/science/events.html:16
+msgid "Расширяй границы научных познаний и делись опытом"
+msgstr "Expand the frontiers of science and share your experience"
+
+#: pages/templates/pages/science/events.html:28
+msgid "Научные семинары и симпозиумы"
+msgstr "Scientific seminars and symposia"
+
+#: pages/templates/pages/science/events.html:31
+msgid "Совместно с мировыми учеными"
+msgstr "In partnership with leading scientists worldwide"
+
+#: pages/templates/pages/science/events.html:40
+#: pages/templates/pages/science/scitechforum.html:13
+msgid ""
+"5-й Международный научно-технический форум по механике космического полета и "
+"космическим конструкциям и материалам"
+msgstr ""
+"5th International Scientific and Technical Forum on Space-Flight Mechanics, "
+"Space Structures and Materials"
+
+#: pages/templates/pages/science/events.html:43
+msgid "Совместно с Российской академией наук и университетами стран БРИКС"
+msgstr "Together with the Russian Academy of Sciences and BRICS universities"
+
+#: pages/templates/pages/science/journals.html:12
+msgid "Знания – твой ключ к свободе!"
+msgstr "Knowledge is your key to freedom!"
+
+#: pages/templates/pages/science/journals.html:19
+msgid "Строительная механика инженерных конструкций и сооружений"
+msgstr "Structural Mechanics of Engineering Constructions and Buildings"
+
+#: pages/templates/pages/science/journals.html:32
+#: pages/templates/pages/science/journals.html:125
+msgid "Главный редактор:"
+msgstr "Editor-in-Chief:"
+
+#: pages/templates/pages/science/journals.html:33
+#: pages/templates/pages/science/journals.html:126
+msgid "доктор технических наук, профессор"
+msgstr "Doctor of Engineering Sciences, Professor"
+
+#: pages/templates/pages/science/journals.html:36
+#: pages/templates/pages/science/journals.html:129
+msgid "Индексация:"
+msgstr "Indexing:"
+
+#: pages/templates/pages/science/journals.html:45
+#: pages/templates/pages/science/journals.html:137
+msgid "Периодичность выхода:"
+msgstr "Publication frequency:"
+
+#: pages/templates/pages/science/journals.html:45
+msgid "выпусков в год"
+msgstr "issues per year"
+
+#: pages/templates/pages/science/journals.html:46
+#: pages/templates/pages/science/journals.html:138
+msgid "Открытый доступ:"
+msgstr "Open access:"
+
+#: pages/templates/pages/science/journals.html:47
+#: pages/templates/pages/science/journals.html:139
+msgid "Рецензирование:"
+msgstr "Peer-review:"
+
+#: pages/templates/pages/science/journals.html:47
+#: pages/templates/pages/science/journals.html:139
+msgid "двойное слепое"
+msgstr "double-blind"
+
+#: pages/templates/pages/science/journals.html:49
+msgid "Плата за публикацию:"
+msgstr "Publication fee:"
+
+#: pages/templates/pages/science/journals.html:49
+msgid "не взимается"
+msgstr "none"
+
+#: pages/templates/pages/science/journals.html:50
+msgid "Язык публикаций:"
+msgstr "Publication language:"
+
+#: pages/templates/pages/science/journals.html:50
+msgid "русский, английский"
+msgstr "Russian, English"
+
+#: pages/templates/pages/science/journals.html:51
+#: pages/templates/pages/science/journals.html:141
+msgid "Издатель:"
+msgstr "Publisher:"
+
+#: pages/templates/pages/science/journals.html:52
+#: pages/templates/pages/science/journals.html:142
+msgid "Российский университет дружбы народов имени Патриса Лумумбы"
+msgstr ""
+"Patrice Lumumba Peoples’ Friendship University of Russia (RUDN University)"
+
+#: pages/templates/pages/science/journals.html:54
+#: pages/templates/pages/science/journals.html:144
+msgid "Сайт журнала:"
+msgstr "Journal website:"
+
+#: pages/templates/pages/science/journals.html:71
+msgid ""
+"Международный научно-технический журнал «Строительная механика инженерных "
+"конструкций и сооружений» знакомит читателей с достижениями отечественных и "
+"зарубежных учёных."
+msgstr ""
+"The international scientific and technical journal “Structural Mechanics of "
+"Engineering Constructions and Buildings” acquaints readers with the "
+"achievements of Russian and foreign researchers."
+
+#: pages/templates/pages/science/journals.html:77
+msgid ""
+"Основные разделы журнала – «Расчёт строительных конструкций», «Динамика "
+"конструкций и сооружений», «Аналитические и численные методы расчёта», "
+"«Расчёт оболочек», «Проблемы теории упругости», «Расчёты на устойчивость», "
+"«Экспериментальные исследования», «Теория пластичности», «Механика жидкости» "
+"– отражают современный уровень исследований в области строительства и "
+"архитектуры."
+msgstr ""
+"The core sections – “Structural Analysis”, “Dynamics of Constructions and "
+"Structures”, “Analytical and Numerical Methods”, “Shell Analysis”, “Problems "
+"of Elasticity Theory”, “Stability Analysis”, “Experimental Research”, "
+"“Plasticity Theory”, “Fluid Mechanics” – reflect the current state of "
+"research in civil engineering and architecture."
+
+#: pages/templates/pages/science/journals.html:86
+msgid ""
+"Публикуются также статьи смежных направлений, материалы которых могут быть "
+"востребованы в перечисленных областях – например, работы по дифференциальным "
+"уравнениям."
+msgstr ""
+"The journal also publishes papers in related fields whose results may be "
+"applied in the areas above, for example studies on differential equations."
+
+#: pages/templates/pages/science/journals.html:92
+msgid ""
+"Журнал зарегистрирован Федеральной службой по надзору в сфере массовых "
+"коммуникаций (ПИ № ФС77-19706 от 13 апреля 2005 г.) и включён в перечень "
+"рецензируемых изданий Минобрнауки России."
+msgstr ""
+"The journal is registered with Roskomnadzor (PI No. FS77-19706 of 13 April "
+"2005) and is included in the list of peer-reviewed publications of the "
+"Russian Ministry of Education and Science."
+
+#: pages/templates/pages/science/journals.html:98
+msgid ""
+"Принимаются материалы по специальностям ВАК РФ: 2.1.1 «Строительные "
+"конструкции, здания и сооружения», 2.1.2 «Основания и фундаменты, подземные "
+"сооружения», 2.1.9 «Строительная механика»."
+msgstr ""
+"The journal accepts papers in VAK specialties 2.1.1 “Structural "
+"Engineering”, 2.1.2 “Soil Mechanics, Foundations and Underground "
+"Structures”, and 2.1.9 “Structural Mechanics”."
+
+#: pages/templates/pages/science/journals.html:109
+msgid "Вестник Российского университета дружбы народов"
+msgstr "RUDN University Bulletin"
+
+#: pages/templates/pages/science/journals.html:112
+msgid "Серия: Инженерные исследования"
+msgstr "Series: Engineering Research"
+
+#: pages/templates/pages/science/journals.html:137
+msgid "выпуска в год"
+msgstr "issues per year"
+
+#: pages/templates/pages/science/journals.html:161
+msgid ""
+"Международный научный журнал «Вестник Российского университета дружбы "
+"народов. Серия: Инженерные исследования» основан в 1993 году в Москве. "
+"Издание обсуждает актуальные проблемы машиностроения, управления и обработки "
+"информации в ракетно-космической технике и других наукоёмких областях."
+msgstr ""
+"The international scientific journal “RUDN University Bulletin. Series: "
+"Engineering Research” was founded in 1993 in Moscow. It addresses current "
+"issues of mechanical engineering, control and information processing in "
+"rocket-space technology and other high-tech industries."
+
+#: pages/templates/pages/science/journals.html:168
+msgid ""
+"Журнал входит в Перечень ведущих рецензируемых изданий ВАК, где должны "
+"публиковаться основные результаты диссертаций. С 25 мая 2022 г. учтён ВАК РФ "
+"по специальностям 2.3.1, 2.3.4, 2.5.6, 2.5.13, 2.5.14, 2.5.16."
+msgstr ""
+"The journal is included in the VAK list of leading peer-reviewed editions "
+"for publishing dissertation results and, since 25 May 2022, is recognised "
+"for specialties 2.3.1, 2.3.4, 2.5.6, 2.5.13, 2.5.14, 2.5.16."
+
+#: pages/templates/pages/science/journals.html:174
+msgid ""
+"История журнала связана с инженерным направлением РУДН. Издание вносит "
+"существенный вклад в развитие отечественных научных школ, поддерживает "
+"перспективные исследования и способствует их внедрению в практику."
+msgstr ""
+"The journal’s history is closely linked with RUDN’s engineering profile. It "
+"makes a significant contribution to Russian scientific schools, supports "
+"promising research and promotes its practical implementation."
+
+#: pages/templates/pages/science/scientific_center_item.html:21
+msgid "Структурное подразделение:"
+msgstr "Structural division:"
+
+#: pages/templates/pages/science/scientific_center_item.html:26
+msgid "Руководитель:"
+msgstr "Head:"
+
+#: pages/templates/pages/science/scientific_center_item.html:35
+msgid "Адрес:"
+msgstr "Address:"
+
+#: pages/templates/pages/science/scientific_center_item.html:39
+msgid "Тел.:"
+msgstr "Tel.:"
+
+#: pages/templates/pages/science/scientific_center_item.html:48
+msgid "Краткое описание"
+msgstr "Brief description"
+
+#: pages/templates/pages/science/scientific_center_item.html:62
+msgid "Команда ученых"
+msgstr "Research team"
+
+#: pages/templates/pages/science/scientific_center_item.html:69
+msgid "Ф.И.О., должность"
+msgstr "Full name & position"
+
+#: pages/templates/pages/science/scientific_center_item.html:70
+msgid "Ученая степень, ученое звание"
+msgstr "Academic degree & title"
+
+#: pages/templates/pages/science/scientific_center_item.html:71
+msgid "Область научных интересов"
+msgstr "Research interests / laboratory role"
+
+#: pages/templates/pages/science/scientific_center_item.html:89
+msgid "Научные направления (области исследования)"
+msgstr "Research directions (fields of study)"
+
+#: pages/templates/pages/science/scientific_center_item.html:100
+msgid "Достижения/результаты проектов-исследований"
+msgstr "Achievements / project results"
+
+#: pages/templates/pages/science/scientific_center_item.html:111
+msgid "Оборудование"
+msgstr "Equipment"
+
+#: pages/templates/pages/science/scientific_center_item.html:118
+msgid "Наименование оборудования"
+msgstr "Equipment name"
+
+#: pages/templates/pages/science/scientific_center_item.html:119
+msgid "Назначение"
+msgstr "Purpose"
+
+#: pages/templates/pages/science/scientific_center_item.html:145
+msgid "Сотрудничество, партнеры"
+msgstr "Collaboration and partners"
+
+#: pages/templates/pages/science/scientific_center_item.html:152
+msgid "Наименование организации"
+msgstr "Organisation"
+
+#: pages/templates/pages/science/scientific_center_item.html:153
+msgid "Предмет сотрудничества"
+msgstr "Collaboration field"
+
+#: pages/templates/pages/science/scientific_center_item.html:154
+msgid "Результат сотрудничества"
+msgstr "Result of collaboration"
+
+#: pages/templates/pages/science/scientific_center_item.html:155
+msgid "О партнёре"
+msgstr "About the partner"
+
+#: pages/templates/pages/science/scientific_centers.html:46
+msgid "Директор центра"
+msgstr "Center director"
+
+#: pages/templates/pages/science/scientific_student_society.html:12
+msgid "Изучай, твори, достигай!"
+msgstr "Learn, create and achieve!"
+
+#: pages/templates/pages/science/scientific_student_society.html:17
+msgid "Научные студенческие кружки"
+msgstr "Student Research Clubs"
+
+#: pages/templates/pages/science/scientific_student_society.html:29
+msgid "Информационные системы, искусственный интеллект, космические технологии"
+msgstr "Information Systems, Artificial Intelligence and Space Technologies"
+
+#: pages/templates/pages/science/scientific_student_society.html:32
+#: pages/templates/pages/science/scientific_student_society.html:66
+#: pages/templates/pages/science/scientific_student_society.html:101
+#: pages/templates/pages/science/scientific_student_society.html:134
+#: pages/templates/pages/science/scientific_student_society.html:166
+#: pages/templates/pages/science/scientific_student_society.html:200
+#: pages/templates/pages/science/scientific_student_society.html:232
+msgid "Руководитель кружка"
+msgstr "Club supervisor"
+
+#: pages/templates/pages/science/scientific_student_society.html:35
+msgid "Каратунов Максим Олегович"
+msgstr "Maksim Olegovich Karatunov"
+
+#: pages/templates/pages/science/scientific_student_society.html:38
+msgid "к.т.н., доцент кафедры механики и процессов управления"
+msgstr ""
+"PhD in Engineering, Associate Professor, Department of Mechanics and Control "
+"Processes"
+
+#: pages/templates/pages/science/scientific_student_society.html:42
+msgid ""
+"Студенты изучают программирование, проводят исследования в области "
+"современных проблем управления, занимаются разработкой эффективных "
+"вычислительных алгоритмов для решения сложных прикладных задач оптимизации "
+"и&nbsp;управления, визуализацией сложных графиков, готовятся "
+"к&nbsp;олимпиадам по&nbsp;инженерным профилям и&nbsp;алгоритмам "
+"программирования. Мы также проводим мастер-классы для школьников "
+"и&nbsp;студентов."
+msgstr ""
+"Students learn programming, research current control-theory problems, "
+"develop efficient computational algorithms for complex optimisation and "
+"control tasks, visualise advanced graphs, and prepare for engineering and "
+"programming competitions. We also run workshops for school pupils and "
+"university students."
+
+#: pages/templates/pages/science/scientific_student_society.html:64
+msgid "Удивительный потенциал нанотехнологий"
+msgstr "The Fascinating Potential of Nanotechnology"
+
+#: pages/templates/pages/science/scientific_student_society.html:69
+msgid "Агасиева Светлана Викторовна"
+msgstr "Svetlana Viktorovna Agasieva"
+
+#: pages/templates/pages/science/scientific_student_society.html:72
+msgid "к.т.н., доцент кафедры нанотехнологий и микросистемной техники"
+msgstr ""
+"PhD in Engineering, Associate Professor, Department of Nanotechnology and "
+"Microsystems Engineering"
+
+#: pages/templates/pages/science/scientific_student_society.html:76
+msgid ""
+"Студенты изучают передовые направления наноэлектроники, нанофотоники, "
+"наномедицины, занимаются исследованиями в области нанотехнологий, готовят "
+"статьи в научные журналы и доклады для конференций. Кружок сотрудничает с "
+"НИИ «Полюс» им.&nbsp;М.&nbsp;Ф.&nbsp;Стельмаха и регулярно проводит мастер-"
+"классы для школьников и студентов."
+msgstr ""
+"Students explore cutting-edge fields of nano-electronics, nano-photonics and "
+"nanomedicine, conduct research in nanotechnology, prepare journal papers and "
+"conference presentations. The club cooperates with the Polyus Research "
+"Institute named after M. F. Stelmach and regularly holds workshops for "
+"schoolchildren and students."
+
+#: pages/templates/pages/science/scientific_student_society.html:98
+msgid "Инновационные технологии в недропользовании и нефтегазовом деле"
+msgstr "Innovative Technologies in Mining and Oil & Gas Engineering"
+
+#: pages/templates/pages/science/scientific_student_society.html:104
+msgid "Воробьев Кирилл Александрович"
+msgstr "Kirill Aleksandrovich Vorobyev"
+
+#: pages/templates/pages/science/scientific_student_society.html:107
+msgid "учебный мастер кафедры недропользования и нефтегазового дела"
+msgstr "Teaching Specialist, Department of Mining and Oil & Gas Engineering"
+
+#: pages/templates/pages/science/scientific_student_society.html:111
+msgid ""
+"Цель кружка — создать условия для общения и сотрудничества студентов разных "
+"курсов, передавать опыт научно-исследовательской работы и повышать качество "
+"подготовки будущих специалистов горной и нефтяной промышленности. "
+"Обсуждаются современные тенденции геологии, горного и нефтегазового дела."
+msgstr ""
+"The club aims to encourage communication and cooperation between students of "
+"different years, share research experience and improve the training quality "
+"of future mining and oil-and-gas specialists. Current trends in geology, "
+"mining and petroleum engineering are discussed."
+
+#: pages/templates/pages/science/scientific_student_society.html:132
+msgid "Новые технологии в машиностроении"
+msgstr "New Technologies in Mechanical Engineering"
+
+#: pages/templates/pages/science/scientific_student_society.html:137
+msgid "Алленов Дмитрий Геннадьевич"
+msgstr "Dmitriy Gennadievich Allenov"
+
+#: pages/templates/pages/science/scientific_student_society.html:140
+msgid "к.т.н., доцент кафедры машиностроительных технологий"
+msgstr ""
+"PhD in Engineering, Associate Professor, Department of Manufacturing "
+"Technologies"
+
+#: pages/templates/pages/science/scientific_student_society.html:144
+msgid ""
+"Участники изучают высокотехнологичные инновации на стыке энергетики, IT "
+"и&nbsp;машиностроения, публикуют научные статьи, выступают на конференциях и "
+"проводят мастер-классы для детей и школьников."
+msgstr ""
+"Members explore high-tech innovations at the intersection of power "
+"engineering, IT and mechanical engineering, publish research papers, speak "
+"at conferences and host workshops for children and school students."
+
+#: pages/templates/pages/science/scientific_student_society.html:164
+msgid "Управление инновациями"
+msgstr "Innovation Management"
+
+#: pages/templates/pages/science/scientific_student_society.html:169
+msgid "Ковалева Екатерина Алексанровна"
+msgstr "Ekaterina Alexandrovna Kovaleva"
+
+#: pages/templates/pages/science/scientific_student_society.html:172
+msgid ""
+"к.э.н., доцент кафедры инновационного менеджмента в отраслях промышленности"
+msgstr ""
+"PhD in Economics, Associate Professor, Department of Innovation Management "
+"in Industry"
+
+#: pages/templates/pages/science/scientific_student_society.html:176
+msgid ""
+"Сфера интересов — управление инновациями в промышленности. Кружок "
+"сотрудничает с Университетом Тренто и УрГЭУ, участвует в международных "
+"конкурсах Challenge of Trento, Fresh Connection и других мероприятиях."
+msgstr ""
+"The club focuses on innovation management in industry. It partners with the "
+"University of Trento and Ural State University of Economics, and takes part "
+"in international contests such as the Challenge of Trento and Fresh "
+"Connection."
+
+#: pages/templates/pages/science/scientific_student_society.html:197
+msgid "Цифровое моделирование строительных объектов"
+msgstr "Digital Modelling of Construction Projects"
+
+#: pages/templates/pages/science/scientific_student_society.html:203
+msgid "Киреев Олег Леонидович"
+msgstr "Oleg Leonidovich Kireev"
+
+#: pages/templates/pages/science/scientific_student_society.html:206
+msgid "старший преподаватель кафедры строительства"
+msgstr "Senior Lecturer, Department of Construction Engineering"
+
+#: pages/templates/pages/science/scientific_student_society.html:210
+msgid ""
+"Кружок посвящён BIM-технологиям и цифровому моделированию зданий "
+"и&nbsp;сооружений. Участники строят информационные модели, изучают "
+"интеграцию с ГИС и CAD, проводят мастер-классы для школьников."
+msgstr ""
+"The club is devoted to BIM technologies and digital modelling of buildings "
+"and structures. Participants create information models, explore GIS and CAD "
+"integration, and hold workshops for school pupils."
+
+#: pages/templates/pages/science/scientific_student_society.html:230
+msgid "Дизайн архитектурной среды"
+msgstr "Architectural Environment Design"
+
+#: pages/templates/pages/science/scientific_student_society.html:235
+msgid "Бик Олег Витальевич"
+msgstr "Oleg Vitalievich Bik"
+
+#: pages/templates/pages/science/scientific_student_society.html:238
+msgid "к.арх., директор кафедры архитектуры"
+msgstr "PhD in Architecture, Head of the Department of Architecture"
+
+#: pages/templates/pages/science/scientific_student_society.html:242
+msgid ""
+"Участники регулярно выступают на конкурсах, выставках и конференциях, "
+"публикуют статьи на иностранных языках, проводят мастер-классы с "
+"приглашёнными дизайнерами, реставраторами и мозаичистами. Студенты принимают "
+"участие в ежегодном конкурсе «Дизайн&nbsp;– перспектива»."
+msgstr ""
+"Participants regularly present at competitions, exhibitions and conferences, "
+"publish articles in foreign languages, and run workshops with invited "
+"designers, restorers and mosaic artists. Students take part in the annual "
+"‘Design – Perspective’ competition."
+
+#: pages/templates/pages/science/scitechforum.html:35
+msgid "РУДН"
+msgstr "RUDN University"
+
+#: pages/templates/pages/science/scitechforum.html:35
+msgid "Москва, Россия"
+msgstr "Moscow, Russia"
+
+#: pages/templates/pages/science/scitechforum.html:42
+msgid "25-27 ноября&nbsp;2024"
+msgstr "25–27 November 2024"
+
+#: pages/templates/pages/science/scitechforum.html:49
+msgid "Очный"
+msgstr "On-site"
+
+#: pages/templates/pages/science/scitechforum.html:49
+msgid "и дистанционный формат"
+msgstr "and online format"
+
+#: pages/templates/pages/science/scitechforum.html:56
+msgid "Английский язык"
+msgstr "English"
+
+#: pages/templates/pages/science/scitechforum.html:63
+msgid "Подача тезисов"
+msgstr "Abstract submission"
+
+#: pages/templates/pages/science/scitechforum.html:63
+msgid "до 10 октября 2024 года"
+msgstr "until 10 October 2024"
+
+#: pages/templates/pages/science/scitechforum.html:72
+#: pages/templates/pages/science/scitechforum.html:83
+msgid "Подать тезисы"
+msgstr "Submit abstract"
+
+#: pages/templates/pages/science/scitechforum.html:75
+#: pages/templates/pages/science/scitechforum.html:86
+msgid "Сайт конференции"
+msgstr "Conference website"
+
+#: pages/templates/pages/science/scitechforum.html:93
+msgid "О конференции"
+msgstr "About the conference"
+
+#: pages/templates/pages/science/scitechforum.html:95
+msgid ""
+"<b>5-й Международный научно-технический форум по механике космического "
+"полета и космическим конструкциям и материалам</b> проводится 25-27 "
+"ноября&nbsp;2024 года. Организаторами Форума являются Российская академия "
+"наук и РУДН им.&nbsp;Патриса Лумумбы."
+msgstr ""
+"<b>The 5th International Scientific and Technical Forum on Space-Flight "
+"Mechanics and Space Structures & Materials</b> will be held on 25-27 "
+"November 2024. The Forum is organised by the Russian Academy of Sciences and "
+"RUDN University."
+
+#: pages/templates/pages/science/scitechforum.html:103
+msgid "5-ая Конференция по механике космических полетов"
+msgstr "5th Conference on Space-Flight Mechanics"
+
+#: pages/templates/pages/science/scitechforum.html:104
+msgid "5-ая Конференция по космическим конструкциям и материалам"
+msgstr "5th Conference on Space Structures and Materials"
+
+#: pages/templates/pages/science/scitechforum.html:107
+msgid ""
+"Форум проводится на площадке РУДН им.&nbsp;Патриса Лумумбы. Мы предлагаем "
+"участникам <b>гибридный формат участия</b>. Участники могут посетить все "
+"мероприятия Форума и выступить с докладом как в очном, так и в заочном "
+"формате. <b>Язык проведения Форума</b>: английский."
+msgstr ""
+"The Forum will take place at RUDN University. A <b>hybrid format</b> is "
+"offered: participants may attend and give presentations either on-site or "
+"online. <b>Working language:</b> English."
+
+#: pages/templates/pages/science/scitechforum.html:114
+msgid ""
+"Доклады на конференцию будут отбираться по представленным авторами "
+"аннотациям (до 500 слов). Материалы Форума будут опубликованы РУДН. Лучшие "
+"статьи будут рекомендованы к публикации в специальном выпуске <i>Acta "
+"Astronautica</i>."
+msgstr ""
+"Papers will be selected on the basis of 500-word abstracts submitted by the "
+"authors. The Forum proceedings will be published by RUDN University, and the "
+"best papers will be recommended for publication in a special issue of "
+"<i>Acta Astronautica</i>."
+
+#: pages/templates/pages/science/scitechforum.html:121
+msgid "Порядок представления тезисов"
+msgstr "Abstract submission guidelines"
+
+#: pages/templates/pages/science/scitechforum.html:123
+msgid "Тезисы принимаются по следующим направлениям:"
+msgstr "Abstracts are accepted in the following areas:"
+
+#: pages/templates/pages/science/scitechforum.html:131
+msgid "Конференция по механике космических полетов"
+msgstr "Conference on Space-Flight Mechanics"
+
+#: pages/templates/pages/science/scitechforum.html:133
+msgid "Наведение, навигация и управление"
+msgstr "Guidance, navigation and control"
+
+#: pages/templates/pages/science/scitechforum.html:134
+msgid "Орбитальная динамика"
+msgstr "Orbital dynamics"
+
+#: pages/templates/pages/science/scitechforum.html:135
+msgid "Проектирование и оптимизация космических миссий"
+msgstr "Space-mission design and optimisation"
+
+#: pages/templates/pages/science/scitechforum.html:136
+msgid "Космические проекты и извлеченный опыт"
+msgstr "Space projects and lessons learned"
+
+#: pages/templates/pages/science/scitechforum.html:137
+msgid "Космическая политика, право и экономика"
+msgstr "Space policy, law and economics"
+
+#: pages/templates/pages/science/scitechforum.html:142
+msgid "Конференция по космическим конструкциям и материалам"
+msgstr "Conference on Space Structures and Materials"
+
+#: pages/templates/pages/science/scitechforum.html:145
+msgid "Современные космические материалы"
+msgstr "Advanced space materials"
+
+#: pages/templates/pages/science/scitechforum.html:146
+msgid "Космическая энергетика и двигательные установки"
+msgstr "Space power and propulsion systems"
+
+#: pages/templates/pages/science/scitechforum.html:147
+msgid "Датчики, исполнительные механизмы и бортовое оборудование"
+msgstr "Sensors, actuators and on-board equipment"
+
+#: pages/templates/pages/science/scitechforum.html:148
+msgid "Космические сооружения на Луне и планетах"
+msgstr "Space structures on the Moon and other planets"
+
+#: pages/templates/pages/science/scitechforum.html:149
+msgid ""
+"Полезные ископаемые на Луне и астероидах: технические и правовые аспекты"
+msgstr "Lunar and asteroid resources: technical and legal aspects"
+
+#: pages/templates/pages/science/scitechforum.html:156
+msgid ""
+"Чтобы облегчить процесс подачи заявки и последующий процесс обработки, "
+"пожалуйста, примите во внимание следующие рекомендации, информацию и сроки:"
+msgstr ""
+"To facilitate submission and review, please note the following guidelines "
+"and deadlines:"
+
+#: pages/templates/pages/science/scitechforum.html:158
+msgid ""
+"Подача аннотаций будет открыта до 14 ноября 2024 года через веб-приложение"
+msgstr ""
+"Abstract submission is open until 14 November 2024 via the web application"
+
+#: pages/templates/pages/science/scitechforum.html:159
+msgid ""
+"Авторы выбирают предпочитаемое направление, на которое они подают тезисы"
+msgstr "Authors must select the preferred track for their abstract"
+
+#: pages/templates/pages/science/scitechforum.html:160
+msgid "Авторы указывают предпочитаемый вид доклада (очный или онлайн)"
+msgstr "Authors indicate preferred presentation mode (on-site or online)"
+
+#: pages/templates/pages/science/scitechforum.html:161
+msgid ""
+"Авторы указывают полное ФИО, организацию и электронный адрес для всех "
+"соавторов"
+msgstr "Full name, affiliation and e-mail must be provided for all co-authors"
+
+#: pages/templates/pages/science/scitechforum.html:162
+msgid ""
+"Аннотация должна быть написана открытым текстом (до 500 слов) без таблиц и "
+"рисунков"
+msgstr ""
+"Abstract text (max 500 words) must be plain text without tables or figures"
+
+#: pages/templates/pages/science/scitechforum.html:163
+msgid "Название доклада должно содержать не более 30 слов"
+msgstr "Paper title must not exceed 30 words"
+
+#: pages/templates/pages/science/scitechforum.html:164
+msgid "Текст аннотации ограничен 500 словами"
+msgstr "Abstract text is limited to 500 words"
+
+#: pages/templates/pages/science/scitechforum.html:165
+msgid ""
+"Подача доклада подтверждает согласие на публикацию тезисов в материалах "
+"конференции"
+msgstr ""
+"By submitting, authors consent to publication of the abstract in the "
+"conference proceedings"
+
+#: pages/templates/pages/students/dissertation_committee_item.html:26
+msgid "Организация"
+msgstr "Organization"
+
+#: pages/templates/pages/students/dissertation_committee_item.html:31
+msgid "Факультет"
+msgstr "Faculty"
+
+#: pages/templates/pages/students/dissertation_committee_item.html:36
+msgid "Адрес"
+msgstr "Address:"
+
+#: pages/templates/pages/students/dissertation_committee_item.html:41
+msgid "Специальности"
+msgstr "Specialties"
+
+#: pages/templates/pages/students/dissertation_committee_item.html:59
+#: seminars/templates/seminars/seminar_item.html:50
+msgid "Председатель"
+msgstr "Chairperson"
+
+#: pages/templates/pages/students/dissertation_committee_item.html:64
+msgid "Секретарь"
+msgstr "Secretary"
+
+#: pages/templates/pages/students/dissertation_committee_item.html:85
+msgid "Cостав диссовета"
+msgstr "Composition of the Dissertation Committee"
+
+#: pages/templates/pages/students/schedule.html:11
+msgid "Образование — путь к величию!"
+msgstr "Education is the key to success!"
+
+#: pages/templates/pages/students/schedule.html:15
+msgid "Актуальное расписание занятий в ТУИС"
+msgstr "Current class schedule in TUIS"
+
+#: pages/templates/pages/students/schedule.html:18
+msgid "Qr-код"
+msgstr "QR code"
+
+#: pages/templates/pages/students/schedule.html:19
+msgid "Ссылка"
+msgstr "Link"
+
+#: pages/templates/pages/students/schedule.html:38
+msgid "Пара 1"
+msgstr "Period 1"
+
+#: pages/templates/pages/students/schedule.html:40
+msgid "Пара 2"
+msgstr "Period 2"
+
+#: pages/templates/pages/students/schedule.html:46
+msgid "Пара 3"
+msgstr "Period 3"
+
+#: pages/templates/pages/students/schedule.html:48
+msgid "Пара 4"
+msgstr "Period 4"
+
+#: pages/templates/pages/students/schedule.html:54
+msgid "Пара 5"
+msgstr "Period 5"
+
+#: pages/templates/pages/students/schedule.html:56
+msgid "Пара 6"
+msgstr "Period 6"
+
+#: pages/templates/pages/students/schedule.html:62
+msgid "Пара 7"
+msgstr "Period 7"
+
+#: pages/templates/pages/students/schedule.html:64
+msgid "Пара 8"
+msgstr "Period 8"
+
+#: pages/templates/pages/students/schedule.html:72
+msgid "Чередование недель"
+msgstr "Week rotation"
+
+#: pages/templates/pages/students/schedule.html:77
+msgid "Числитель"
+msgstr "Numerator (odd-week)"
+
+#: pages/templates/pages/students/schedule.html:98
+msgid "Знаменатель"
+msgstr "Denominator (even-week)"
+
+#: pages/templates/pages/students/student_committee.html:12
+msgid "Присоединяйтесь к нам и меняйте мир!"
+msgstr "Join us and change the world!"
+
+#: pages/templates/pages/students/student_committee.html:16
+msgid "Миссия"
+msgstr "Mission"
+
+#: pages/templates/pages/students/student_committee.html:17
+#, python-format
+msgid ""
+"<p class=\"large_text\"> Создание общей экосистемы студентов на факультете."
+"<br> Создание системы, которая будет способна решить 100%% проблем "
+"обучающихся. </p>"
+msgstr ""
+"<p class=\"large_text\"> Building an integrated student ecosystem within the "
+"faculty.<br> Creating a system capable of solving 100%% of learners’ issues."
+"</p>"
+
+#: pages/templates/pages/students/student_committee.html:24
+msgid "Направления деятельности"
+msgstr "Areas of activity"
+
+#: pages/templates/pages/students/student_committee.html:26
+msgid ""
+"Проведение мероприятий на площадке факультета и других корпусов РУДН, "
+"формирование у активистов навыков работы в команде, лидерских качеств, а "
+"также повышение социализации (культурно-массовая комиссия)"
+msgstr ""
+"Organising events on the faculty site and across other PFUR buildings, "
+"developing teamwork and leadership skills in activists, and boosting "
+"socialisation (Cultural & Mass-Events Commission)."
+
+#: pages/templates/pages/students/student_committee.html:27
+msgid ""
+"Работа со старостами и кураторами, консультация всех студентов по учебным и "
+"бытовым вопросам, помощь с академическими задолженностями, решение "
+"конфликтов как внутри группы, так и между студентом и преподавателем "
+"(комиссия по качеству образования)"
+msgstr ""
+"Working with group monitors and mentors, advising students on academic and "
+"domestic matters, helping with academic arrears, and resolving conflicts "
+"within groups or between students and lecturers (Education-Quality "
+"Commission)."
+
+#: pages/templates/pages/students/student_committee.html:28
+msgid ""
+"Помощь иностранным студентам с адаптацией в группе, а также в общественной "
+"жизни университета (комиссия по работе с иностранными студентами)"
+msgstr ""
+"Supporting international students in adapting to the group and university "
+"community (International-Students Commission)."
+
+#: pages/templates/pages/students/student_committee.html:29
+msgid ""
+"Формирование бренда СК ИА, производство постов, фото- и видеосъёмка "
+"мероприятий, обучение студентов работе в таких программах, как Figma, Adobe "
+"Illustrator, Photoshop, Lightroom (информационная комиссия)"
+msgstr ""
+"Building the Student Committee brand, creating posts, photo/video coverage "
+"of events, and training students to work with tools such as Figma, Adobe "
+"Illustrator, Photoshop and Lightroom (Media & PR Commission)."
+
+#: pages/templates/pages/students/student_committee.html:30
+msgid ""
+"Помощь в организации мероприятий, патриотическая деятельность (волонтёрская "
+"комиссия)"
+msgstr ""
+"Assisting in event organisation and coordinating patriotic / volunteer "
+"activities (Volunteer Commission)."
+
+#: pages/templates/pages/students/student_committee.html:33
+msgid "Клубы:"
+msgstr "Clubs:"
+
+#: pages/templates/pages/students/student_committee.html:35
+msgid ""
+"Клуб настольных игр: встречи активистов, желающих поиграть в различные "
+"настольные игры"
+msgstr ""
+"Board-Games Club – gatherings for activists who want to play a variety of "
+"table-top games."
+
+#: pages/templates/pages/students/student_committee.html:36
+msgid ""
+"Книжный клуб: встречи читающих и слушающих активистов, желающих поделиться "
+"впечатлениями о прочитанных ими книгах"
+msgstr ""
+"Book Club – meet-ups for avid readers (or listeners) keen to share their "
+"impressions of recently read books."
+
+#: pages/templates/pages/students/student_committee.html:39
+msgid "Как вступить"
+msgstr "How to join"
+
+#: pages/templates/pages/students/student_committee.html:41
+msgid ""
+"Перейти в группу <a href=\"https://vk.com/skia.rudn\">ВКонтакте</a> и нажать "
+"на кнопку «ВСТУПИТЬ В СК!»"
+msgstr ""
+"Go to our <a href=\"https://vk.com/skia.rudn\">VK group</a> and click the "
+"button “JOIN THE SC!”"
+
+#: pages/templates/pages/students/student_committee.html:46
+#, fuzzy
+#| msgid "Председатель"
+msgid "Председатель комитета"
+msgstr "Chairperson"
+
+#: pages/templates/pages/students/student_committee.html:143
+#, fuzzy
+#| msgid "Cостав диссовета"
+msgid "Состав комитета"
+msgstr "Composition of the Dissertation Committee"
+
+#: pages/templates/pages/students/student_committee.html:149
+#: profiles/models.py:11
+msgid "ФИО"
+msgstr "Full name"
+
+#: pages/templates/pages/students/student_committee.html:150
+msgid "Должность"
+msgstr "Position"
+
+#: pages/templates/pages/students/student_committee.html:151
+msgid "Почта"
+msgstr "Mail"
+
+#: pages/views.py:108
+msgid "Untitled"
 msgstr ""
 
-#: .\pages\templates\components\header.html:45
-msgid "Студентам"
-msgstr ""
+#: pages/views.py:110
+msgid "Без названия"
+msgstr "Untitled"
 
-#: .\pages\templates\components\header.html:55
-msgid "Аспирантам"
+#: pages/views.py:244 seminars/templates/seminars/seminar_item.html:17
+#: seminars/views.py:18
+msgid "Научные семинары"
+msgstr "Scientific Seminars"
+
+#: pages/views.py:253
+msgid "Конференция по информационным и техническим системам"
+msgstr "Conference on Information and Technical Systems"
+
+#: pages/views.py:262
+msgid ""
+"Международный научно-технический форум по механике космического полета и "
+"космическим конструкциям и материалам"
 msgstr ""
+"International Scientific and Technical Forum on Space Flight Mechanics and "
+"Space Structures and Materials"
+
+#: pages/views.py:292
+#, fuzzy
+#| msgid "Диссертационные советы"
+msgid "Тематики диссертационных исследований"
+msgstr "Dissertation Committees"
+
+#: pages/views.py:347
+msgid "Презентация"
+msgstr "Presentation"
+
+#: pages/views.py:352
+msgid "Дни открытых дверей"
+msgstr "Open Days"
+
+#: pages/views.py:472
+msgid "ПДС"
+msgstr "Dissertation Committee"
+
+#: profiles/models.py:12
+msgid "ФИО (англ.)"
+msgstr "Full name (English)"
+
+#: profiles/models.py:27
+msgid "Должность/Звание (англ.)"
+msgstr "Position/Title (English)"
+
+#: profiles/models.py:28
+msgid "Должности/Звания (англ.)"
+msgstr "Positions/Titles (English)"
+
+#: seminars/templates/seminars/seminar_item.html:31
+msgid "Семинар проводится в рамках"
+msgstr "The seminar is held within the framework of"
+
+#: seminars/templates/seminars/seminar_item.html:53
+msgid "Доклады"
+msgstr "Reports"
+
+#: seminars/templates/seminars/seminar_item.html:62
+msgid "Предстоящие доклады не запланированы"
+msgstr "No upcoming reports scheduled"
+
+#: seminars/templates/seminars/seminar_item.html:103
+msgid "Прошедшие"
+msgstr "Past"
+
+#: seminars/templates/seminars/seminar_item.html:106
+msgid "Прошедшие доклады отсутствуют"
+msgstr "No past reports"
+
+#: seminars/templates/seminars/seminar_report.html:80
+msgid "Краткая биография"
+msgstr "Short biography"
+
+#~ msgid "Russian"
+#~ msgstr "Russian"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "15 июля"
+#~ msgstr "15 July"
+
+#~ msgid "27 июля"
+#~ msgstr "27 July"
+
+#~ msgid "Издание приказов о зачислении осуществляется:"
+#~ msgstr "Enrolment orders are issued on:"
+
+#~ msgid "Этап приоритетного зачисления"
+#~ msgstr "Priority enrolment stage"
+
+#~ msgid "30 июля"
+#~ msgstr "30 July"
+
+#~ msgid ""
+#~ "Приём документов от иностранных граждан по договорам начинается 1 апреля "
+#~ "и заканчивается:"
+#~ msgstr ""
+#~ "Submission of documents by international applicants under tuition-fee "
+#~ "contracts starts on 1 April and ends on:"
+
+#~ msgid "26 ноября"
+#~ msgstr "26 November"
+
+#~ msgid "Личная подача документов"
+#~ msgstr "Submitting documents in person"
+
+#~ msgid "г. Москва, ул. Миклухо-Маклая, д. 6, каб. 168"
+#~ msgstr "Moscow, Miklukho-Maklaya St 6, office 168"
+
+#~ msgid "Онлайн-подача документов на сайте РУДН"
+#~ msgstr "Online submission on the RUDN website"
+
+#~ msgid "Перечень"
+#~ msgstr "List"
+
+#~ msgid "Зачисление иностранных граждан проводится:"
+#~ msgstr "International applicants are enrolled:"
+
+#~ msgid ""
+#~ "Этап приоритетного зачисления: без вступительных испытаний и по квотам"
+#~ msgstr "Priority stage: applicants without exams and quota places"
+
+#~ msgid "Важные даты для зачисленных:"
+#~ msgstr "Important dates for admitted students:"
+
+#~ msgid "На почту абитуриентов будет отправлено письмо с результатами"
+#~ msgstr "An e-mail with admission results will be sent to applicants"
+
+#~ msgid "19 августа в 15:00"
+#~ msgstr "19 August at 15:00"
+
+#~ msgid ""
+#~ "Организационная онлайн-встреча для первокурсников (ссылка придёт на почту)"
+#~ msgstr ""
+#~ "Introductory online meeting for first-year students (link by e-mail)"
+
+#~ msgid "Надежда Александровна Сташевская"
+#~ msgstr "Nadezhda A. Stashevskaya"
+
+#~ msgid "Москва, ул. Орджоникидзе, д. 3, каб. 403"
+#~ msgstr "Moscow, Ordzhonikidze St 3, office 403"
+
+#~ msgid "на"
+#~ msgstr "in"
+
+#~ msgid "и"
+#~ msgstr "and"
+
+#~ msgid "языках"
+#~ msgstr "languages"
+
+#~ msgid "языке"
+#~ msgstr "language"
+
+#, fuzzy
+#~| msgid "Специальности"
+#~ msgid "Специальность:"
+#~ msgstr "Specialties"
+
+#, fuzzy
+#~| msgid "Кафедры"
+#~ msgid "кафедры"
+#~ msgstr "Departments"
+
+#, fuzzy
+#~| msgid "Кафедры"
+#~ msgid "кафедрой"
+#~ msgstr "Departments"
+
+#, fuzzy
+#~| msgid "Сайт конференции"
+#~ msgid "на контракт"
+#~ msgstr "Conference website"
+
+#~ msgid "Образование - ключ к успеху!"
+#~ msgstr "Education is the key to success!"
+
+#~ msgid "Предстоящие"
+#~ msgstr "Upcoming"
+
+#~ msgid "Аннотация"
+#~ msgstr "Abstract"

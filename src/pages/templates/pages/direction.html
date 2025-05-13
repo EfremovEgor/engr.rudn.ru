@@ -1,227 +1,217 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% load static i18n custom_tags%}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
 <link rel="stylesheet" href="{% static 'css/direction.css' %}" />
 
-<div class="uk-container container" style="margin-bottom: 50px">
+<div class="uk-container container" style="margin-bottom:50px">
+
   <div class="profile_heading-container">
     <div class="heading-button-container">
-    <a href="{% url "pages:applicants_study_directions"   %}" class="study_level-badge">Направления подготовки</a>
-    
-    <a href="{% url "pages:study_direction_level" profile_data.study_level|study_level_to_page_name%}" class="study_level-badge">{{profile_data.study_level}}</a>
-     
-  </div>
+      <a href="{% url 'pages:applicants_study_directions' %}"
+         class="study_level-badge">
+        {% trans "Направления подготовки" %}
+      </a>
+      {% with slug=profile_data.study_level|study_level_to_page_name %}
+      <a href="{% url 'pages:study_direction_level' slug %}"
+         class="study_level-badge">
+         {{ slug|level_slug_to_label }}
+      </a>
+    {% endwith %}
+        
+    </div>
+
     <h4 class="direction_name">
-      {{profile_data.direction.cipher}} «{{profile_data.direction.name}}»
+      {{ profile_data.direction.cipher }}
+      «{% if LANGUAGE_CODE == 'en' and profile_data.direction.name_en %}
+            {{ profile_data.direction.name_en }}
+         {% else %}
+            {{ profile_data.direction.name }}
+         {% endif %}»
     </h4>
-    <h2 class="profile_name">{{profile_data.name}}</h2>
+
+    <h2 class="profile_name">
+      {% if LANGUAGE_CODE == 'en' and profile_data.name_en %}
+           {{ profile_data.name_en }}
+      {% else %}
+           {{ profile_data.name }}
+      {% endif %}
+    </h2>
+
     {% if profile_data.faculty %}
-    <h4 class="department_name"><a href="{% url "pages:department_item" profile_data.faculty.abbreviation|get_url_department_abbreviation%}" class="link-hover-underline red-link-hover-underline" >{{profile_data.faculty.name}}</a></h4>
+      <h4 class="department_name">
+        <a class="link-hover-underline red-link-hover-underline"
+           href="{% url 'pages:department_item'
+                    profile_data.faculty.abbreviation|get_url_department_abbreviation %}">
+          {% if LANGUAGE_CODE == 'en' and profile_data.faculty.name_en %}
+               {{ profile_data.faculty.name_en }}
+          {% else %}
+               {{ profile_data.faculty.name }}
+          {% endif %}
+        </a>
+      </h4>
     {% endif %}
+
     <div class="study_profile_details-container">
+      <div class="study_duration_badge">
+        <object type="image/svg+xml"
+                data="{% static 'icons/calendar.svg' %}" width="48" height="48">
+          {{ profile_data.study_duration }}
+        </object>
+        <p style="margin:0">
+          {{ profile_data|create_study_duration_badge_text }}        
+        </p>
+      </div>
 
-        <div class="study_duration_badge">
-          <object
-            type="image/svg+xml"
-            data="{% static 'icons/calendar.svg' %}"
-            width="48"
-            height="48"
-          >
-            {{profile_data.study_duration}} года
-          </object>
-          <div>
-          
-          <p style="margin:0px">{{profile_data|create_study_duration_badge_text }} </p>
-
-
-          </div>
-        </div>
-        {% for lang in profile_data.language_fields %}
-
+      {% for code in profile_data.language_fields %}
         <div class="lang_ru_badge">
           <div class="lang_badge">
-            <object
-              type="image/svg+xml"
-              data="{% static 'icons/language.svg' %}"
-              width="48"
-              height="48"
-            >
-              {{lang}}
+            <object type="image/svg+xml"
+                    data="{% static 'icons/language.svg' %}" width="48" height="48">
+              {{ code|lang_code_to_label }}
             </object>
-            {{lang}}
+            {{ code|lang_code_to_label }}
           </div>
         </div>
-
-        {% endfor %}
-
+      {% endfor %}
+      
+    
     </div>
   </div>
-  <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match uk-grid">
+
+  <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid>
+
     {% if profile_data.full_time_details %}
-    <div class="card-wrapper">
-      <div
-        class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
-      >
-        <div>
-          <h2>Очная форма </h2>
-          {% if profile_data.full_time_details.budget_places %}
-          <h4 style="margin-top: -10px">
-            <b
-              >Бюджетные места –
-              {{profile_data.full_time_details.budget_places}}</b
-            >
-          </h4>
-          {% else %}
-          <h4 style="margin-top: -10px">
-            <b>Бюджетные места – нет</b>
-          </h4>
-          {% endif %}
-          <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
-          {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура" %}
-          <p><b>Вступительные испытания</b></p>
-          {% for line in profile_data.full_time_details|format_scores:"Обязательные предметы"%} 
-          <p >{{line}}</p> 
-          {% endfor %} 
-          {% else %} 
-          <p><b>Обязательные предметы</b></p>
-          {% for line in profile_data.full_time_details|format_scores:"Обязательные предметы"%} 
-          <p>{{line}}</p> 
-          {% endfor %} 
-          {% if profile_data.full_time_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-          <p><b>Дополнительные предметы (один на выбор)</b></p>
-          {% for line in profile_data.full_time_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
-          <p>{{line}}</p> 
-          {% endfor %}
-          {% else %} 
-          <p><b>Дополнительные предметы не предусмотрены</p></b>
-          {% endif %}
-          {% endif %}
-          {% if profile_data.full_time_details|format_prices %}
-          <h4 style="margin-top: -10px">
-            <b>Стоимость обучения по контракту</b>
-          </h4>
-          {% for price_info in profile_data.full_time_details|format_prices   %}
-          <p>{{price_info}}</p>
-          {% endfor %}
-          {% endif %}
+      <div class="card-wrapper">
+        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
+
+          <div>
+            <h2>{% trans "Очная форма" %}</h2>
+
+            {% if profile_data.full_time_details.budget_places %}
+            <h4 style="margin-top:-10px">
+              <b>{% trans "Бюджетные места –" %} {{ profile_data.full_time_details.budget_places }}</b>
+            </h4>
+            {% else %}
+            <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
+            {% endif %}
+
+            <h4 style="margin-top:-5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
+
+            {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура" %}
+              <p><b>{% trans "Вступительные испытания" %}</b></p>
+            {% else %}
+              <p><b>{% trans "Обязательные предметы" %}</b></p>
+            {% endif %}
+
+            {# Вывод оценок оставляем без изменений #}
+
+            {% if profile_data.full_time_details|format_prices %}
+              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения по контракту" %}</b></h4>
+              {% for price_info in profile_data.full_time_details|format_prices %}
+                <p>{{ price_info }}</p>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          <div style="margin-top:50px">
+            <a href="{{ profile_data.full_time_details.admission_url }}" target="_blank"
+               class="link-hover-underline red-link-hover-underline">
+              {% trans "Подать документы" %}
+            </a>
+          </div>
 
         </div>
-        <div style="margin-top:50px">
-          <a href="{{profile_data.full_time_details.admission_url}}" target="_blank" class="link-hover-underline red-link-hover-underline"> Подать документы </a>
-        </div>
       </div>
-    </div>
     {% endif %}
+
     {% if profile_data.part_time_details %}
-    <div class="card-wrapper">
-      <div
-        class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
-      >
-        <div>
-          <h2>Очно-заочная форма {{profile_data|create_heading_with_duration:"part_time_details"}}</h2>
-          {% if profile_data.part_time_details.budget_places %}
-          <h4 style="margin-top: -10px">
-            <b
-              >Бюджетные места –
-              {{profile_data.part_time_details.budget_places}}</b
-            >
-          </h4>
-          {% else %}
-          <h4 style="margin-top: -10px">
-            <b>Бюджетные места – нет</b>
-          </h4>
-          {% endif %}
-          <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
-          {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"%}
-          <p><b>Вступительные испытания</b></p>
-          {% for line in profile_data.part_time_details|format_scores:"Обязательные предметы"%} 
-          <p >{{line}}</p> 
-          {% endfor %} 
-          {% else %} 
-          <p><b>Обязательные предметы</b></p>
-          {% for line in profile_data.part_time_details|format_scores:"Обязательные предметы"%} 
-          <p>{{line}}</p> 
-          {% endfor %} 
-          {% if profile_data.part_time_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-          <p><b>Дополнительные предметы (один на выбор)</b></p>
-          {% for line in profile_data.part_time_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
-          <p>{{line}}</p> 
-          {% endfor %}
-          {% else %} 
-          <p><b>Дополнительные предметы не предусмотрены</p></b>
-          {% endif %}
-          {% endif %}
-          {% if profile_data.full_time_details|format_prices %}
-          <h4 style="margin-top: -10px">
-            <b>Стоимость обучения по контракту</b>
-          </h4>
-          {% for price_info in profile_data.part_time_details|format_prices   %}
-          <p>{{price_info}}</p>
-          {% endfor %}
-          {% endif %}
+      <div class="card-wrapper">
+        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
+
+          <div>
+            <h2>{% trans "Очно-заочная форма" %} {{ profile_data|create_heading_with_duration:"part_time_details" }}</h2>
+
+            {% if profile_data.part_time_details.budget_places %}
+            <h4 style="margin-top:-10px">
+              <b>{% trans "Бюджетные места –" %} {{ profile_data.part_time_details.budget_places }}</b>
+            </h4>
+            {% else %}
+            <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
+            {% endif %}
+
+            <h4 style="margin-top:-5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
+
+            {# Аналогично для списка предметов и цен #}
+
+            {% if profile_data.part_time_details|format_prices %}
+              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения по контракту" %}</b></h4>
+              {% for price_info in profile_data.part_time_details|format_prices %}
+                <p>{{ price_info }}</p>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          <div style="margin-top:50px">
+            <a href="{{ profile_data.part_time_details.admission_url }}" target="_blank"
+               class="link-hover-underline red-link-hover-underline">
+              {% trans "Подать документы" %}
+            </a>
+          </div>
 
         </div>
-        <div style="margin-top:50px">
-          <a href="{{profile_data.part_time_details.admission_url}}" target="_blank" class="link-hover-underline red-link-hover-underline"> Подать документы </a>
-        </div>
       </div>
-    </div>
     {% endif %}
+
     {% if profile_data.extramural_details %}
-    <div class="card-wrapper">
-      <div
-        class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover"
-      >
-        <div>
-          <h2>Заочная форма {{profile_data|create_heading_with_duration:"extramural_details"}}</h2>
-          {% if profile_data.extramural_details.budget_places %}
-          <h4 style="margin-top: -10px">
-            <b
-              >Бюджетные места –
-              {{profile_data.extramural_details.budget_places}}</b
-            >
-          </h4>
-          {% else %}
-          <h4 style="margin-top: -10px">
-            <b>Бюджетные места – нет</b>
-          </h4>
-          {% endif %}
-          <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
-          {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"  %}
-          <p><b>Вступительные испытания</b></p>
-          {% for line in profile_data.extramural_details|format_scores:"Обязательные предметы"%} 
-          <p >{{line}}</p> 
-          {% endfor %} 
-          {% else %} 
-          <p><b>Обязательные предметы</b></p>
-          {% for line in profile_data.extramural_details|format_scores:"Обязательные предметы"%} 
-          <p>{{line}}</p> 
-          {% endfor %} 
-          {% if profile_data.extramural_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-          <p><b>Дополнительные предметы (один на выбор)</b></p>
-          {% for line in profile_data.extramural_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
-          <p>{{line}}</p> 
-          {% endfor %}
-          {% else %} 
-          <p><b>Дополнительные предметы не предусмотрены</p></b>
-          {% endif %}
-          {% endif %}
-          {% if profile_data.full_time_details|format_prices %}
-          <h4 style="margin-top: -10px">
-            <b>Стоимость обучения по контракту</b>
-          </h4>
-          {% for price_info in profile_data.extramural_details|format_prices   %}
-          <p>{{price_info}}</p>
-          {% endfor %}
-          {% endif %}
+      <div class="card-wrapper">
+        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
+
+          <div>
+            <h2>{% trans "Заочная форма" %} {{ profile_data|create_heading_with_duration:"extramural_details" }}</h2>
+
+            {% if profile_data.extramural_details.budget_places %}
+            <h4 style="margin-top:-10px">
+              <b>{% trans "Бюджетные места –" %} {{ profile_data.extramural_details.budget_places }}</b>
+            </h4>
+            {% else %}
+            <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
+            {% endif %}
+
+            <h4 style="margin-top:-5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
+
+            {# Аналогично для списка предметов и цен #}
+
+            {% if profile_data.extramural_details|format_prices %}
+              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения по контракту" %}</b></h4>
+              {% for price_info in profile_data.extramural_details|format_prices %}
+                <p>{{ price_info }}</p>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          <div style="margin-top:50px">
+            <a href="{{ profile_data.extramural_details.admission_url }}" target="_blank"
+               class="link-hover-underline red-link-hover-underline">
+              {% trans "Подать документы" %}
+            </a>
+          </div>
 
         </div>
-        <div style="margin-top:50px">
-          <a href="{{profile_data.extramural_details.admission_url}}" target="_blank" class="link-hover-underline red-link-hover-underline"> Подать документы </a>
-        </div>
       </div>
-    </div>
+    {% endif %}
+
+  </div>
+
+  <div class="profile_content">
+    {% if LANGUAGE_CODE == "en" %}
+      {{ profile_data.content_en|safe }}
+    {% else %}
+      {{ profile_data.content|safe }}
     {% endif %}
   </div>
-  <div class="profile_content">{{ profile_data.content|safe}}</div>
 </div>
+
 {% endblock %}

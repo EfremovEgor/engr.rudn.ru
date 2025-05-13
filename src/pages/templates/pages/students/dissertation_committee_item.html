@@ -1,79 +1,92 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% load compress %}
+{% block content %}
+
 {% compress css %}
-<link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}" />
-<link
-  rel="stylesheet"
-  href="{% static 'css/students/dissertation_committees.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}">
+<link rel="stylesheet" href="{% static 'css/students/dissertation_committees.css' %}">
 {% endcompress %}
 
 <div class="uk-container">
-  <div class="page-name">{{title}}</div>
+  <div class="page-name">{{ title }}</div>
 </div>
-{% comment %}
-<div class="parallax-container_2">
-  <p class="text-on-image">Нужна ли эта надпись</p>
-</div>
-{% endcomment %}
-<div class="uk-container" style="margin-top: 40px; margin-bottom: 50px">
+
+<div class="uk-container" style="margin-top:40px;margin-bottom:50px">
   <div class="uk-overflow-auto">
     <table class="uk-table uk-table-small uk-table-divider">
       <tbody>
         <tr>
-          <td class="uk-table-shrink uk-text-nowrap">Шифр</td>
-          <td>{{committee.cipher}}</td>
+          <td class="uk-table-shrink uk-text-nowrap">{% trans "Шифр" %}</td>
+          <td>{{ committee.cipher }}</td>
         </tr>
+
         <tr>
-          <td class="uk-text-nowrap">Организация</td>
-          <td>{{committee.organization}}</td>
+          <td class="uk-text-nowrap">{% trans "Организация" %}</td>
+          <td>{{ committee.organization }}</td>
         </tr>
+
         <tr>
-          <td class="uk-text-nowrap">Факультет</td>
-          <td>{{committee.faculty}}</td>
+          <td class="uk-text-nowrap">{% trans "Факультет" %}</td>
+          <td>{{ committee.faculty }}</td>
         </tr>
+
         <tr>
-          <td class="uk-text-nowrap">Адрес</td>
-          <td>{{committee.address}}</td>
+          <td class="uk-text-nowrap">{% trans "Адрес" %}</td>
+          <td>{{ committee.address }}</td>
         </tr>
+
         <tr>
-          <td class="uk-text-nowrap">Специальности</td>
+          <td class="uk-text-nowrap">{% trans "Специальности" %}</td>
           <td>
             <div class="scientific_specialties">
               {% for spec in committee.scientific_specialties.all %}
-              <span><b>{{spec.cipher}}.</b> {{spec.name}}</span>
+                <span>
+                  <b>{{ spec.cipher }}.</b>
+                  {% if LANGUAGE_CODE == 'en' and spec.name_en %}
+                    {{ spec.name_en }}
+                  {% else %}
+                    {{ spec.name }}
+                  {% endif %}
+                </span>
               {% endfor %}
             </div>
           </td>
         </tr>
+
         <tr>
-          <td class="uk-text-nowrap">Председатель</td>
-          <td>{{committee.chairman}}</td>
+          <td class="uk-text-nowrap">{% trans "Председатель" %}</td>
+          <td>{{ committee.chairman }}</td>
         </tr>
+
         <tr>
-          <td class="uk-text-nowrap">Секретарь</td>
-          <td>{{committee.secretary}}</td>
+          <td class="uk-text-nowrap">{% trans "Секретарь" %}</td>
+          <td>{{ committee.secretary }}</td>
         </tr>
-        {% if committee.phohe %}
-        <tr>
-          <td class="uk-text-nowrap">Телефон</td>
-          <td>{{committee.phohe}}</td>
-        </tr>
+
+        {% if committee.phone %}
+          <tr>
+            <td class="uk-text-nowrap">{% trans "Телефон" %}</td>
+            <td>{{ committee.phone }}</td>
+          </tr>
         {% endif %}
+
         <tr>
           <td class="uk-text-nowrap">E-mail</td>
-          <td>{{committee.email}}</td>
+          <td>{{ committee.email }}</td>
         </tr>
+
         <tr class="hover">
           <td colspan="2">
             <ul uk-accordion>
               <li>
-                <a class="uk-accordion-title uk-text-nowrap" href
-                  >Cостав диссовета</a
-                >
+                <a class="uk-accordion-title uk-text-nowrap" href>
+                  {% trans "Cостав диссовета" %}
+                </a>
                 <div class="uk-accordion-content committee_members">
                   {% for person in committee.composition %}
-                  <span>{{person}}</span>
+                    <span>{{ person }}</span>
                   {% endfor %}
                 </div>
               </li>
@@ -84,4 +97,5 @@
     </table>
   </div>
 </div>
-{%endblock %}
+
+{% endblock %}

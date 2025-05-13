@@ -1,11 +1,16 @@
-{% extends 'components/base.html' %} {% block content %} {% load static %}
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
 
 <link rel="stylesheet" href="{% static 'css/news.css' %}" />
 <link rel="stylesheet" href="{% static 'js/news.js' %}" />
 <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+
 <div class="uk-container" style="margin-bottom: 40px">
   <div class="page-name">{{title}}</div>
 </div>
+
 <div class="uk-container" style="margin-bottom: 50px">
   <div class="uk-form-stacked uk-margin">
     <datalist id="suggestions">
@@ -54,42 +59,37 @@
       </div>
     </form>
   </div>
+
   <div class="news-cards-wrapper">
     <div class="uk-flex-between@m uk-flex-center news-cards uk-flex-wrap">
-      {% for item in news %} {% if item.preview_image %}
-      <div class="news-card-container">
-        <a href="/news/{{item.id}}" class="uk-link-toggle">
-          <div
-            class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
-            style="background-color: rgb(246, 246, 246); border-radius: 20px;"
-          >
-            <div class="uk-card-media-top">
-              <img src="{{item.preview_image.url}}" alt="" style="border-radius: 20px;"/>
-            </div>
-            <div class="uk-card-body">
-              <div style="text-transform: lowercase!important;" class="uk-card-badge uk-label uk-visible@m">
-                {{item.creation_date|date:"d.m.Y"}}
+      {% for item in news %}
+        <div class="news-card-container">
+          <a href="/news/{{item.id}}" class="uk-link-toggle">
+            <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
+                 style="background-color: rgb(246, 246, 246); border-radius: 20px;">
+              
+              {% if item.preview_image %}
+                <div class="uk-card-media-top">
+                  <img src="{{item.preview_image.url}}" alt="" style="border-radius: 20px;" />
+                </div>
+              {% endif %}
+
+              <div class="uk-card-body">
+                <div style="text-transform: lowercase!important;" class="uk-card-badge uk-label uk-visible@m">
+                  {{ item.creation_date|date:"d.m.Y" }}
+                </div>
+
+                {% if LANGUAGE_CODE == "en" %}
+                  <h3 class="uk-card-title news-title">{{ item.title_en }}</h3>
+                {% else %}
+                  <h3 class="uk-card-title news-title">{{ item.title_ru }}</h3>
+                {% endif %}
+
               </div>
-              <h3 class="uk-card-title news-title">{{item.title}}</h3>
             </div>
-          </div>
-        </a>
-      </div>
-      {% else %}
-      <div class="news-card-container">
-        <a href="/news/{{item.id}}" class="uk-link-toggle">
-          <div
-            class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-hover uk-card-small news-card-no-image news-card"
-            style="background-color: rgb(246, 246, 246)"
-          >
-            <div style="text-transform: lowercase!important;" class="uk-card-badge uk-label uk-visible@m">
-              {{item.creation_date}}
-            </div>
-            <h3 class="uk-card-title news-title-no-image">{{item.title}}</h3>
-          </div>
-        </a>
-      </div>
-      {% endif %} {% endfor %}
+          </a>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>

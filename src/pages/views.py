@@ -107,7 +107,7 @@ class NewsItemView(View):
         if request.LANGUAGE_CODE == 'en':
             page_title = news_item.title_en or _("Untitled")
         else:
-            page_title = news_item.title_ru or _("Без названия")
+            page_title = news_item.title or _("Без названия")
 
         return render(
             request,

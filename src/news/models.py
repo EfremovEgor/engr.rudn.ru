@@ -47,8 +47,8 @@ class NewsItem(models.Model):
 
     def __str__(self):
         # Fallback to RU or EN as you prefer:
-        if self.title_ru:
-            return self.title_ru
+        if self.title:
+            return self.title
         elif self.title_en:
             return self.title_en
         return "Untitled"

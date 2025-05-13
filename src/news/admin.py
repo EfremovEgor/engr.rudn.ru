@@ -9,7 +9,5 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(NewsItem)
 class NewsItemAdmin(admin.ModelAdmin):
-    list_display = ("title_ru", "title_en", "creation_date")
-    search_fields = ("title_ru", "title_en", "content_ru", "content_en")
-    # remove or rename content references, e.g.:
-    # fields = ("title_ru", "content") -> fields = ("title_ru", "content_ru") 
+    list_display = ("title", "title_en", "creation_date")
+    search_fields = ("title", "title_en", "content", "content_en")

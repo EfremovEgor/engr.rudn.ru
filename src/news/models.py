@@ -18,7 +18,7 @@ class Tag(models.Model):
 
 
 class NewsItem(models.Model):
-    title_ru = models.TextField(verbose_name="Название", unique=True, null=True, blank=True)
+    title = models.TextField(verbose_name="Название", unique=True)
     title_en = models.TextField(verbose_name="Name", unique=True, null=True, blank=True)
 
     preview_image = models.ImageField(
@@ -28,9 +28,9 @@ class NewsItem(models.Model):
         blank=True,
     )
     tags = models.ManyToManyField(Tag, verbose_name="Тэги")
-    content_ru = RichTextUploadingField(
+    content = RichTextUploadingField(
         verbose_name="Информация",
-        null=True, blank=True
+        null=False, blank=False
     )
     content_en = RichTextUploadingField(
         verbose_name="Content",

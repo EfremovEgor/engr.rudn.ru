@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-15 18:19+0300\n"
+"POT-Creation-Date: 2025-05-15 20:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -372,22 +372,100 @@ msgstr "Lead Specialist"
 msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;440"
 msgstr "Moscow, Ordzhonikidze St 3, office 440"
 
-#: pages/templates/pages/academy/department_item.html:97
+#: pages/templates/pages/academy/department_item.html:94
 msgid "Контактное лицо"
 msgstr "Contact Person"
 
-#: pages/templates/pages/academy/department_item.html:163
+#: pages/templates/pages/academy/department_item.html:159
 msgid "Направления подготовки и специальности"
 msgstr "Study Programs and Specialties"
 
-#: pages/templates/pages/academy/department_item.html:378
+#: pages/templates/pages/academy/department_item.html:166
+#: pages/templates/pages/academy/department_item.html:188
+#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:498
+msgid "Бакалавриат"
+msgstr "Bachelor's Degree"
+
+#: pages/templates/pages/academy/department_item.html:176
+#: pages/templates/pages/academy/department_item.html:198
+#: pages/templates/pages/academy/department_item.html:278
+#: pages/templates/pages/academy/department_item.html:305
+#: pages/templates/pages/applicants/levels/bachelor.html:39
+#: pages/templates/pages/applicants/levels/masters.html:39
+#: pages/templates/pages/applicants/levels/postgraduates.html:39
+#: pages/templates/pages/applicants/levels/specialists.html:50
+msgid "Профиль:"
+msgstr "Profile:"
+
+#: pages/templates/pages/academy/department_item.html:217
+#: pages/templates/pages/academy/department_item.html:239
+#: pages/templates/pages/applicants/levels/specialists.html:11
+#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:512
+msgid "Специалитет"
+msgstr "Specialist Degree"
+
+#: pages/templates/pages/academy/department_item.html:227
+#: pages/templates/pages/academy/department_item.html:249
+#: pages/templates/pages/academy/department_item.html:339
+#: pages/templates/pages/academy/department_item.html:366
+#, fuzzy
+#| msgid "Специальности"
+msgid "Специальность:"
+msgstr "Specialties"
+
+#: pages/templates/pages/academy/department_item.html:268
+#: pages/templates/pages/academy/department_item.html:295
+#: pages/templates/pages/applicants/committee.html:382
+#: pages/templates/pages/applicants/levels/masters.html:9
+#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:505
+msgid "Магистратура"
+msgstr "Master's Degree"
+
+#: pages/templates/pages/academy/department_item.html:280
+#: pages/templates/pages/academy/department_item.html:282
+#: pages/templates/pages/academy/department_item.html:307
+#: pages/templates/pages/academy/department_item.html:309
+#: pages/templates/pages/academy/department_item.html:341
+#: pages/templates/pages/academy/department_item.html:343
+#: pages/templates/pages/academy/department_item.html:368
+#: pages/templates/pages/academy/department_item.html:370
+msgid "на"
+msgstr "in"
+
+#: pages/templates/pages/academy/department_item.html:280
+#: pages/templates/pages/academy/department_item.html:307
+#: pages/templates/pages/academy/department_item.html:341
+#: pages/templates/pages/academy/department_item.html:368
+msgid "и"
+msgstr "and"
+
+#: pages/templates/pages/academy/department_item.html:280
+#: pages/templates/pages/academy/department_item.html:307
+#: pages/templates/pages/academy/department_item.html:341
+#: pages/templates/pages/academy/department_item.html:368
+msgid "языках"
+msgstr "languages"
+
+#: pages/templates/pages/academy/department_item.html:282
+#: pages/templates/pages/academy/department_item.html:309
+#: pages/templates/pages/academy/department_item.html:343
+#: pages/templates/pages/academy/department_item.html:370
+msgid "языке"
+msgstr "language"
+
+#: pages/templates/pages/academy/department_item.html:329
+#: pages/templates/pages/academy/department_item.html:356
+#: pages/templates/pages/applicants/committee.html:383
+#: pages/templates/pages/applicants/levels/postgraduates.html:9
+#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:519
+msgid "Аспирантура"
+msgstr "Postgraduate Studies"
+
+#: pages/templates/pages/academy/department_item.html:386
 msgid "Лабораторная база"
 msgstr "Laboratory Facilities"
 
-#: pages/templates/pages/academy/department_item.html:416
-msgid "Профессорско-преподавательский состав"
-msgstr "Faculty Staff"
-
+#: pages/templates/pages/academy/department_item.html:397
 #: pages/templates/pages/academy/departments.html:38
 #: pages/templates/pages/science/journals.html:67
 #: pages/templates/pages/science/journals.html:157
@@ -395,6 +473,10 @@ msgstr "Faculty Staff"
 #: seminars/templates/seminars/seminars.html:62
 msgid "Подробнее"
 msgstr "Read more"
+
+#: pages/templates/pages/academy/department_item.html:404
+msgid "Профессорско-преподавательский состав"
+msgstr "Faculty and Teaching Staff"
 
 #: pages/templates/pages/academy/history.html:9
 msgid "История академии"
@@ -484,18 +566,6 @@ msgstr "Open the World at one University!"
 #: pages/templates/pages/applicants/committee.html:381
 msgid "Бакалавриат/Специалитет"
 msgstr "Bachelor/Specialist Degree"
-
-#: pages/templates/pages/applicants/committee.html:382
-#: pages/templates/pages/applicants/levels/masters.html:9
-#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:505
-msgid "Магистратура"
-msgstr "Master's Degree"
-
-#: pages/templates/pages/applicants/committee.html:383
-#: pages/templates/pages/applicants/levels/postgraduates.html:9
-#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:519
-msgid "Аспирантура"
-msgstr "Postgraduate Studies"
 
 #: pages/templates/pages/applicants/committee.html:388
 #: pages/templates/pages/applicants/committee.html:586
@@ -1208,13 +1278,6 @@ msgstr "Opening new horizons of knowledge!"
 msgid "Программы подготовки"
 msgstr "Study programmes"
 
-#: pages/templates/pages/applicants/levels/bachelor.html:39
-#: pages/templates/pages/applicants/levels/masters.html:39
-#: pages/templates/pages/applicants/levels/postgraduates.html:39
-#: pages/templates/pages/applicants/levels/specialists.html:50
-msgid "Профиль:"
-msgstr "Profile:"
-
 #: pages/templates/pages/applicants/levels/masters.html:14
 #: pages/templates/pages/applicants/study_directions.html:56
 msgid "Углублённое изучение вашей специализации!"
@@ -1224,11 +1287,6 @@ msgstr "Deepen your specialization!"
 #: pages/templates/pages/applicants/study_directions.html:69
 msgid "Станьте экспертом в своей области!"
 msgstr "Become an expert in your field!"
-
-#: pages/templates/pages/applicants/levels/specialists.html:11
-#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:512
-msgid "Специалитет"
-msgstr "Specialist Degree"
 
 #: pages/templates/pages/applicants/levels/specialists.html:18
 #: pages/templates/pages/applicants/study_directions.html:43
@@ -1268,10 +1326,6 @@ msgstr ""
 #: pages/templates/pages/applicants/study_directions.html:13
 msgid "Ваш путь к успешной инженерной карьере начинается здесь"
 msgstr "Your path to a successful engineering career starts here"
-
-#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:498
-msgid "Бакалавриат"
-msgstr "Bachelor's Degree"
 
 #: pages/templates/pages/direction.html:91
 msgid "Очная форма"
@@ -2583,23 +2637,6 @@ msgstr "Short biography"
 
 #~ msgid "Москва, ул. Орджоникидзе, д. 3, каб. 403"
 #~ msgstr "Moscow, Ordzhonikidze St 3, office 403"
-
-#~ msgid "на"
-#~ msgstr "in"
-
-#~ msgid "и"
-#~ msgstr "and"
-
-#~ msgid "языках"
-#~ msgstr "languages"
-
-#~ msgid "языке"
-#~ msgstr "language"
-
-#, fuzzy
-#~| msgid "Специальности"
-#~ msgid "Специальность:"
-#~ msgstr "Specialties"
 
 #, fuzzy
 #~| msgid "Кафедры"

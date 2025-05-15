@@ -47,10 +47,7 @@
                     href="/profile/{{department.head.related_profile.id}}">{{department.head.related_profile.full_name}}</a>
                 </h3>
                 <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
-
-
                   <li><span> {{department.head.department_responsibilities.1}}</span></li>
-
                 </ul>
               </div>
             </div>
@@ -61,23 +58,23 @@
               <li>
                 <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
                   <span uk-icon="icon: location; ratio: 1"></span>
-
                   <span>{{department.head.department_office}}</span>
                 </h5>
               </li>
-              {% endif %} {% if department.head.related_profile.phone_numbers %}
+              {% endif %} 
+              {% if department.head.related_profile.phone_numbers %}
               <li>
                 <h5>
                   {% for phone in department.head.related_profile.phone_numbers %}
                   <span uk-icon="icon: receiver; ratio: 1"></span>
-
                   <a href="tel:{{phone}}" class="uk-link-heading card-link">
                     {{phone.as_international}} <br />
                   </a>
                   {% endfor %}
                 </h5>
               </li>
-              {% endif %} {% if department.head.related_profile.emails %}
+              {% endif %} 
+              {% if department.head.related_profile.emails %}
               <li>
                 <h5>
                   {% for email in department.head.related_profile.emails %}
@@ -111,11 +108,9 @@
                     href="/profile/{{department.contact_employee.related_profile.id}}">{{department.contact_employee.related_profile.full_name}}</a>
                 </h3>
                 <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
-                  <!-- <li><span>{{department.contact_employee.department_responsibilities.0}}</span></li> -->
                   {% for title in department.contact_employee.department_responsibilities %}
                   <li><span>{{title}}</span></li>
                   {% endfor %}
-
                 </ul>
               </div>
             </div>
@@ -126,23 +121,23 @@
               <li>
                 <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
                   <span uk-icon="icon: location; ratio: 1"></span>
-
                   <span>{{department.contact_employee.department_office}}</span>
                 </h5>
               </li>
-              {% endif %} {% if department.contact_employee.related_profile.phone_numbers %}
+              {% endif %} 
+              {% if department.contact_employee.related_profile.phone_numbers %}
               <li>
                 <h5>
                   {% for phone in department.contact_employee.related_profile.phone_numbers %}
                   <span uk-icon="icon: receiver; ratio: 1"></span>
-
                   <a href="tel:{{phone}}" class="uk-link-heading card-link">
                     {{phone.as_international}} <br />
                   </a>
                   {% endfor %}
                 </h5>
               </li>
-              {% endif %} {% if department.contact_employee.related_profile.emails %}
+              {% endif %} 
+              {% if department.contact_employee.related_profile.emails %}
               <li>
                 <h5>
                   {% for email in department.contact_employee.related_profile.emails %}
@@ -160,14 +155,15 @@
     </div>
     {% endif %}
   </div>
+
   <h2 class="sub-heading">{% trans "Направления подготовки и специальности" %}</h2>
   
   <div class="uk-container" style="margin-bottom: 50px">
-    {% if bachelors%}
+    {% if bachelors %}
     <div class="level_accordion-wrapper uk-card uk-card-default uk-card-hover uk-card-body">
       <ul class="level-accordion" uk-accordion="multiple: true">
         <li class="uk-open uk-visible@s">
-          <a class="uk-accordion-title" href=""><b>Бакалавриат</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Бакалавриат" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -176,8 +172,9 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Профиль:</b>
-                      {{profile.name}}</a>
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Профиль:" %}</b> {{profile.name}}
+                    </a>
                     <br />
                     {% endfor %}
                   </div>
@@ -188,7 +185,7 @@
           </div>
         </li>
         <li class="uk-hidden@s">
-          <a class="uk-accordion-title" href=""><b>Бакалавриат</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Бакалавриат" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -197,8 +194,9 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Профиль:</b>
-                      {{profile.name}}</a>
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Профиль:" %}</b> {{profile.name}}
+                    </a>
                     <br />
                     {% endfor %}
                   </div>
@@ -211,11 +209,12 @@
       </ul>
     </div>
     {% endif %}
-    {% if specialty%}
+
+    {% if specialty %}
     <div class="level_accordion-wrapper uk-card uk-card-default uk-card-hover uk-card-body uk-margin-top">
       <ul class="level-accordion" uk-accordion="multiple: true">
         <li class="uk-open uk-visible@s">
-          <a class="uk-accordion-title" href=""><b>Специалитет</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Специалитет" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -224,8 +223,9 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Специальность:</b>
-                      {{profile.name}}</a>
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Специальность:" %}</b> {{profile.name}}
+                    </a>
                     <br />
                     {% endfor %}
                   </div>
@@ -236,7 +236,7 @@
           </div>
         </li>
         <li class="uk-hidden@s">
-          <a class="uk-accordion-title" href=""><b>Специалитет</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Специалитет" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -245,8 +245,9 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Специальность:</b>
-                      {{profile.name}}</a>
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Специальность:" %}</b> {{profile.name}}
+                    </a>
                     <br />
                     {% endfor %}
                   </div>
@@ -259,11 +260,12 @@
       </ul>
     </div>
     {% endif %}
-    {% if masters%}
+
+    {% if masters %}
     <div class="level_accordion-wrapper uk-card uk-card-default uk-card-hover uk-card-body uk-margin-top">
       <ul class="level-accordion" uk-accordion="multiple: true">
         <li class="uk-open uk-visible@s">
-          <a class="uk-accordion-title" href=""><b>Магистратура</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Магистратура" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -272,13 +274,14 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Профиль:</b>
-                      {{profile.name}}
-                      {%if profile.language_fields|length == 2 %}(на
-                      {{profile.language_fields.0|get_alias_lang}} и
-                      {{profile.language_fields.1|get_alias_lang}}
-                      языках){%else%}(на
-                      {{profile.language_fields.0|get_alias_lang}} языке){% endif%}</a>
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Профиль:" %}</b> {{profile.name}}
+                      {% if profile.language_fields|length == 2 %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
+                      {% else %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
+                      {% endif %}
+                    </a>
                     <br />
                     {% endfor %}
                   </div>
@@ -289,7 +292,7 @@
           </div>
         </li>
         <li class="uk-hidden@s">
-          <a class="uk-accordion-title" href=""><b>Магистратура</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Магистратура" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -298,13 +301,14 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Профиль:</b>
-                      {{profile.name}}
-                      {%if profile.language_fields|length == 2 %}(на
-                      {{profile.language_fields.0|get_alias_lang}} и
-                      {{profile.language_fields.1|get_alias_lang}}
-                      языках){%else%}(на
-                      {{profile.language_fields.0|get_alias_lang}} языке){% endif%}</a>
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Профиль:" %}</b> {{profile.name}}
+                      {% if profile.language_fields|length == 2 %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
+                      {% else %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
+                      {% endif %}
+                    </a>
                     <br />
                     {% endfor %}
                   </div>
@@ -317,11 +321,12 @@
       </ul>
     </div>
     {% endif %}
-    {% if postgraduates%}
+
+    {% if postgraduates %}
     <div class="level_accordion-wrapper uk-card uk-card-default uk-card-hover uk-card-body uk-margin-top">
       <ul class="levels-accordion" uk-accordion="multiple: true">
         <li class="uk-open uk-visible@s">
-          <a class="uk-accordion-title" href=""><b>Аспирантура</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Аспирантура" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -330,12 +335,13 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Специальность:</b>
-                      {{profile.cipher}}
-                      «{{profile.name|replace_quotes}}» {%if profile.language_fields|length == 2%}(на
-                      {{profile.language_fields.0|get_alias_lang}} и
-                      {{profile.language_fields.1|get_alias_lang}} языках){% else%}(на
-                      {{profile.language_fields.0|get_alias_lang}} языке){%endif %}
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Специальность:" %}</b> {{profile.cipher}} «{{profile.name|replace_quotes}}»
+                      {% if profile.language_fields|length == 2 %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
+                      {% else %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
+                      {% endif %}
                     </a>
                     <br />
                     {% endfor %}
@@ -347,7 +353,7 @@
           </div>
         </li>
         <li class="uk-hidden@s">
-          <a class="uk-accordion-title" href=""><b>Аспирантура</b></a>
+          <a class="uk-accordion-title" href=""><b>{% trans "Аспирантура" %}</b></a>
           <div class="uk-accordion-content">
             <div class="naprs" style="margin-left: 20px">
               <ul uk-accordion="multiple: true">
@@ -356,12 +362,13 @@
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
                     {% for profile in direction.profiles.all %}
-                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}"><b>Специальность:</b>
-                      {{profile.cipher}}
-                      «{{profile.name|replace_quotes}}» {%if profile.language_fields|length == 2%}(на
-                      {{profile.language_fields.0|get_alias_lang}} и
-                      {{profile.language_fields.1|get_alias_lang}} языках){% else%}(на
-                      {{profile.language_fields.0|get_alias_lang}} языке){%endif %}
+                    <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
+                      <b>{% trans "Специальность:" %}</b> {{profile.cipher}} «{{profile.name|replace_quotes}}»
+                      {% if profile.language_fields|length == 2 %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
+                      {% else %}
+                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
+                      {% endif %}
                     </a>
                     <br />
                     {% endfor %}
@@ -375,7 +382,8 @@
       </ul>
     </div>
     {% endif %}
-    <h2 class="sub-heading">{% trans "Лабораторная база" %}</h2>    
+
+    <h2 class="sub-heading">{% trans "Лабораторная база" %}</h2>
     <ul uk-accordion="multiple: true">
       {% for center in scientific_centers %}
       <li>
@@ -385,37 +393,17 @@
             {{center.brief_description}}
           </div>
 
-          <a style="margin-top:20px" class="link-hover-underline red-link-hover-underline" href="{% url "
-            pages:scientific_center_item" center.page_url %}">Подробнее</a>
+          <a style="margin-top:20px" class="link-hover-underline red-link-hover-underline" href="{% url 'pages:scientific_center_item' center.page_url %}">
+            {% trans "Подробнее" %}
+          </a>
         </div>
-        </a>
       </li>
       {% endfor %}
     </ul>
-    {% comment %} </ul>
-    <ul style="list-style-type: none">
 
-
-
-
-      <li style="
-    margin-top:20px;
-    ">
-        <a style="
-        margin-left: -30px;
-        font-size: 1.25rem;
-        line-height: 1.4;
-        color: #333333 !important;
-        color: inherit; 
-        text-decoration: inherit; 
-        " href="{% url " pages:scientific_center_item" center.id %}"><b>{{center.name}}</b></a>
-      </li>
-
-    </ul> {% endcomment %}
-    <h2 class="sub-heading">{% trans "Профессорско-преподавательский состав" %}</h2>    
+    <h2 class="sub-heading">{% trans "Профессорско-преподавательский состав" %}</h2>
     <div class="employee_cards">
       {% for teacher in staff %}
-
       <div class="employee-card-wrapper">
         <article style="background-color: transparent"
           class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"
@@ -433,8 +421,7 @@
                 </h3>
                 <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
                   {% for title in teacher.department_responsibilities %}
-
-                  <li><span> {{title}}</span></li>
+                  <li><span>{{title}}</span></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -442,36 +429,12 @@
           </header>
           <div class="uk-comment-body">
             <ul class="uk-list">
-              {% comment %} {% if teacher.department_office %}
-              <li>
-                <h5 target="_blank" rel="noreferrer noopener" class="uk-link-heading card-link">
-                  <span uk-icon="icon: location; ratio: 1"></span>
-
-                  <span>{{teacher.department_office }}</span>
-                </h5>
-              </li>
-              {% endif %} {% endcomment %}
-              {% comment %} {% if teacher.related_profile.phone_numbers %}
-              <li>
-                <h5>
-                  {% for phone in teacher.related_profile.phone_numbers %}
-                  <span uk-icon="icon: receiver; ratio: 1"></span>
-
-                  <a href="tel:{{phone}}" class="uk-link-heading card-link">
-                    {{phone.as_international}} <br />
-                  </a>
-                  {% endfor %}
-                </h5>
-              </li>
-              {% endif %}
-              {% endcomment %}
               {% if teacher.related_profile.emails %}
               <li>
                 <h5>
                   {% for email in teacher.related_profile.emails %}
                   <span uk-icon="icon: mail; ratio: 1"></span>
-                  <a href="mailto:{{email}}" class="uk-link-heading card-link">{{email}}
-                  </a>
+                  <a href="mailto:{{email}}" class="uk-link-heading card-link">{{email}}</a>
                   {% endfor %}
                 </h5>
               </li>
@@ -480,10 +443,9 @@
           </div>
         </article>
       </div>
-
       {% endfor %}
     </div>
   </div>
 </div>
 </div>
-{%endblock %}
+{% endblock %}

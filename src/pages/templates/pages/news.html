@@ -22,7 +22,7 @@
       {% csrf_token %}
       <div>
         <label or="tags" class="uk-form-label" style="font-size: 20px"
-          >Тэг:</label
+          >{% trans "Тэг:" %}</label
         >
         <input
           style="border-radius: var(--base-border-radius);"
@@ -36,7 +36,7 @@
       </div>
       <div>
         <label for="title" class="uk-form-label" style="font-size: 20px"
-          >Название:</label
+          >{% trans "Название:" %}</label
         >
         <input
           style="border-radius: var(--base-border-radius);"
@@ -54,7 +54,7 @@
           style="width: 50%; height: 40px; margin-top: auto;border-radius: var(--base-border-radius);"
           type="submit"
         >
-          Поиск
+          {% trans "Поиск" %}
         </button>
       </div>
     </form>

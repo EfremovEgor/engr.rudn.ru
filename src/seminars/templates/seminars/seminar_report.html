@@ -76,6 +76,17 @@
       </div>
     {% endif %}
 
+    {% if report.annotation or report.annotation_en %}
+      <h3 style="margin-top:10px">{% trans "Аннотация" %}</h3>
+      <div style="margin-top:-20px; text-align:justify;">
+      {% if LANGUAGE_CODE == 'en' and report.annotation_en %}
+        {{ report.annotation_en|safe }}
+      {% else %}
+        {{ report.annotation|safe }}
+      {% endif %}
+      </div>
+    {% endif %}
+
     {% if report.speaker.bio or report.speaker.bio_en %}
       <h3 style="margin-top:10px">{% trans "Краткая биография" %}</h3>
       <div style="margin-top:-20px; text-align:justify;">

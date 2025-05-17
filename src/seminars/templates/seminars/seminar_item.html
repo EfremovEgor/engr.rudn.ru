@@ -121,8 +121,7 @@
           {% if not report.is_past_due %}
           <div>
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-              <div class="uk-card-badge uk-label">{{ report.date_start|date:"j/m/o" }} {{ report.time_start|date:"H:i"
-                }}</div>
+              <div class="uk-card-badge uk-label">{{ report.date_start|date:"j/m/o" }} {{ report.time_start|date:"H:i" }}</div>
               <h3 class="uk-card-title uk-margin-remove">
                 <a class="uk-link-reset" href="/science/seminars/{{ seminar.id }}/reports/{{ report.id }}"
                   style="font-weight: 500">
@@ -173,8 +172,7 @@
               {% else %}
               {{ report }}
               {% endif %} »
-              ({{ report.speaker.last_name }} {{ report.speaker.first_name.0 }}.{% if report.speaker.middle_name %}{{
-              report.speaker.middle_name.0 }}.{% endif %})
+              ({{ report.speaker.last_name }} {{ report.speaker.first_name.0 }}.{% if report.speaker.middle_name %}{{report.speaker.middle_name.0 }}.{% endif %})
             </a>
           </div>
           {% endif %}

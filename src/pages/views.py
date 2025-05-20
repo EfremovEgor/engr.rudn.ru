@@ -452,6 +452,14 @@ def scientific_center_item(request, name):
     else:
         page_title = center.name
 
+    alias = aliases.scientific_center_name_to_page.get(
+        " ".join(word.strip() for word in center.name.split())
+    )
+
+    if alias is None:
+        raise Http404
+
+
     return render(
         request,
         f"pages/science/scientific_centers/{alias}",

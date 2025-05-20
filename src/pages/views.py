@@ -454,9 +454,9 @@ def scientific_center_item(request, name):
 
     return render(
         request,
-        "pages/science/scientific_centers/scientific_center_item.html",
+        f"pages/science/scientific_centers/{alias}",
         {
-            "title": page_title,
+            "title": center.name,
             "center": center,
         },
     )

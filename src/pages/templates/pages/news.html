@@ -64,7 +64,7 @@
     <div class="uk-flex-between@m uk-flex-center news-cards uk-flex-wrap">
       {% for item in news %}
         <div class="news-card-container">
-          <a href="/news/{{item.id}}" class="uk-link-toggle">
+          <a href="{% url 'pages:news_item' item.id %}" class="uk-link-toggle">
             <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
                  style="background-color: rgb(246, 246, 246); border-radius: 20px;">
               

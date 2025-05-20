@@ -185,7 +185,7 @@
     }
 
     .timeline-table th {
-        text-align: left;
+        text-align: center;
         font-weight: 600;
         font-size: .88rem;
     }
@@ -336,34 +336,40 @@
         margin-bottom: 20px;
     }
 
-    /* -------------------------------------------------------
-   Две статичные «кнопки-пилюли» (синие → белые при hover)
--------------------------------------------------------*/
-    .mode-pills {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin: 0 0 1.75rem;
-    }
-
     .mode-pill {
-        padding: .55rem 1.5rem;
         background: var(--clr-primary);
-        /* всегда синий */
         color: #fff;
         font-size: .9rem;
-        border: 2px solid var(--clr-primary);
+        /* border: 2px solid var(--clr-primary); */
         border-radius: 9999px;
-        cursor: default;
-        transition: background .2s ease, color .2s ease;
+        padding: 8px 15px;
+        border-radius: 20px;    
     }
 
-    .mode-pill:hover {
-        background: #fff;
-        /* при наведении белый фон… */
-        color: var(--clr-primary);
-        /* …и синий текст/рамка */
+    th {
+        text-align: center;
+        vertical-align: middle;
     }
+
+    em {
+        color: #808080;
+        font-style: italic;
+        font-size: smaller;
+    }
+
+    .karta {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .karta {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
 </style>
 
 <div class="uk-container">
@@ -462,17 +468,13 @@
 
         <h2 class="section-heading">{% trans "Сроки приёма в бакалавриат и специалитет в 2025 году" %}</h2>
 
-        <div class="mode-pills">
-            <span class="mode-pill">{% trans "Поступление на бюджетные места" %}</span>
-            <span class="mode-pill">{% trans "Поступление на платные места" %}</span>
-        </div>
-
         <table class="timeline-table" id="timelineTableMaster">
 
             <thead>
                 <tr>
                     <th rowspan="2">{% trans "Этап" %}</th>
-                    <th colspan="4" style="text-align:center">{% trans "Форма обучения" %}</th>
+                    <th colspan="1" class="mode-pill">{% trans "Поступление на бюджетные места" %}</th>
+                    <th colspan="2" class="mode-pill">{% trans "Поступление на платные места" %}</th>
                 </tr>
                 <tr>
                     <th>{% trans "Очная, очно-заочная, заочная" %}</th>
@@ -650,18 +652,13 @@
         <h2 class="section-heading">{% trans "Сроки приёма в магистратуру в 2025 году" %}</h2>
         <p style="font-size:.85rem;color:var(--clr-primary);margin:-.5rem 0 1.75rem">{% trans "Публикация конкурсных списков на места в рамках КЦП — не позднее 1 августа" %}</p>
 
-        <div class="mode-pills">
-            <span class="mode-pill">{% trans "Поступление на бюджетные места" %}</span>
-            <span class="mode-pill">{% trans "Поступление на платные места" %}</span>
-        </div>
-
-
         <table class="timeline-table" id="timelineTableMaster">
 
             <thead>
                 <tr>
                     <th rowspan="2">{% trans "Этап" %}</th>
-                    <th colspan="4" style="text-align:center">{% trans "Форма обучения" %}</th>
+                    <th colspan="1" class="mode-pill">{% trans "Поступление на бюджетные места" %}</th>
+                    <th colspan="3" class="mode-pill">{% trans "Поступление на платные места" %}</th>
                 </tr>
                 <tr>
                     <th>{% trans "Очная, заочная" %}</th>
@@ -824,17 +821,12 @@
             {% trans "Публикация конкурсных списков на места в рамках КЦП — не позднее 1 августа" %}
         </p>
 
-        <div class="mode-pills">
-            <span class="mode-pill">{% trans "Поступление на бюджетные места" %}</span>
-            <span class="mode-pill">{% trans "Поступление на платные места" %}</span>
-        </div>
-
         <table class="timeline-table">
             <thead>
                 <tr>
-                    <th>{% trans "Этап" %}</th>
-                    <th>{% trans "Бюджетные места (КЦП)" %}</th>
-                    <th>{% trans "Места с оплатой стоимости обучения" %}</th>
+                    <th rowspan="2">{% trans "Этап" %}</th>
+                    <th colspan="1" class="mode-pill">{% trans "Бюджетные места (КЦП)" %}</th>
+                    <th colspan="2" class="mode-pill">{% trans "Места с оплатой стоимости обучения" %}</th>
                 </tr>
             </thead>
 
@@ -903,6 +895,31 @@
         </table>
     </section>
 
+    <div class="uk-card uk-card-default uk-card-hover uk-card-body karta" style="display:flex;flex-direction:column;justify-content:center;align-items:center;margin-top:28px;">
+        <h4 class="uk-margin-remove-bottom">Надежда Александровна Сташевская</h4>
+        <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove">
+            <li><span>{% trans "Секретарь отборочной комиссии" %}</span></li>
+        </ul>
+
+        <ul class="uk-list uk-margin-remove-bottom">
+            <li>
+            <a href="https://yandex.ru/maps/-/CDXvMvs" target="_blank" rel="noopener noreferrer" class="uk-link-heading card-link">
+                <span uk-icon="location"></span>
+                <span>{% trans "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;403" %}</span>
+            </a>
+            </li>
+            <li>
+            <a href="tel:+74959550913" class="uk-link-heading card-link">
+                <span uk-icon="receiver"></span> +7&nbsp;(495)&nbsp;955-09-13
+            </a>
+            </li>
+            <li>
+            <a href="mailto:stashevskaya-na@rudn.ru" class="uk-link-heading card-link">
+                <span uk-icon="mail"></span> stashevskaya-na@rudn.ru
+            </a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <script>

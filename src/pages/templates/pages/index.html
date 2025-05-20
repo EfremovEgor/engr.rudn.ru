@@ -191,7 +191,7 @@
             {% for item in news %}
               {% if item.preview_image %}
                 <li class="news-card-container">
-                  <a href="/news/{{ item.id }}" class="uk-link-toggle">
+                  <a href="{% url 'pages:news_item' item.id %}" class="uk-link-toggle">
                     <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card">
                       <div class="uk-card-media-top">
                         <img
@@ -204,7 +204,7 @@
                         <div class="uk-card-badge uk-label uk-visible@m">
                           {{ item.creation_date|date:"d.m.Y" }}
                         </div>
-                        {% if LANGUAGE_CODE == "en" %}
+                        {% if LANGUAGE_CODE == "en" and item.title_en %}
                           <h3 class="uk-card-title news-title">{{ item.title_en }}</h3>
                         {% else %}
                           <h3 class="uk-card-title news-title">{{ item.title }}</h3>
@@ -270,8 +270,8 @@
     </div>
 
     <div class="show-uni-news__wrap">
-      <a href="/news" class="show-uni-news__link" target="_self">
-        <span class="show-uni-news__link-text">{% trans "Все НОВОСТИ" %}</span>
+      <a href="{% url 'pages:news' %}" class="show-uni-news__link" target="_self">
+        <span class="show-uni-news__link-text">{% trans "ВСЕ НОВОСТИ" %}</span>
         <i class="icon-ic_arrow"></i>
       </a>
     </div>

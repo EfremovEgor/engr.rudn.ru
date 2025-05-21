@@ -10,7 +10,7 @@
 <div class="uk-container" style="margin-bottom: 40px">
   <div class="news-items-date">{{ content.creation_date|date:"d.m.Y" }}</div>
   
-  {% if LANGUAGE_CODE == "en" %}
+  {% if LANGUAGE_CODE == "en" and content.title_en %}
     <div class="page-name" style="margin-top: 0px !important;">{{ content.title_en }}</div>
   {% else %}
     <div class="page-name" style="margin-top: 0px !important;">{{ content.title }}</div>
@@ -41,7 +41,7 @@
   {% endif %}
 
   <div class="news_content uk-margin">
-    {% if LANGUAGE_CODE == "en" %}
+    {% if LANGUAGE_CODE == "en" and content.content_en %}
       {{ content.content_en|safe }}
     {% else %}
       {{ content.content|safe }}

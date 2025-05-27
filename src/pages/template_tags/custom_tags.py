@@ -73,6 +73,17 @@ _EN_LEVEL = {
     "phd": "PhD",
 }
 
+TRANSLATIONS = {
+    "Директор кафедры": {
+        "ru": "Директор кафедрой",
+        "en": "Head of Department",
+    },
+    "Заведующий кафедры": {
+        "ru": "Заведующим кафедрой",
+        "en": "Head of Department",
+    },
+}
+
 @register.filter
 def get_item(dictionary, key):
     print(dictionary)
@@ -96,8 +107,11 @@ def replace_quotes(phrase):
 
 @register.filter
 def temp_replace_head_department(phrase: str):
-    return phrase.replace("кафедры", "кафедрой")
-
+    lang = get_language()
+    translations = TRANSLATIONS.get(phrase)
+    if translations:
+        return translations.get(lang, phrase)
+    return phrase
 
 @register.filter
 def get_corresponding_scores(data: list, key: str):
@@ -183,13 +197,21 @@ def get_url_department_abbreviation(name: str):
             return k
 
 
-def get_duration_suffix(duration: float):
-    if duration in [2, 3, 4]:
-        suffix = "года"
-    if duration == 1:
-        suffix = "год"
-    if duration > 4:
-        suffix = "лет"
+def get_duration_suffix(years: int) -> str:
+    lang = get_language()
+    if lang == 'ru':
+        if 11 <= years % 100 <= 14:
+            suffix = _("лет")
+        else:
+            last_digit = years % 10
+            if last_digit == 1:
+                suffix = _("год")
+            elif 2 <= last_digit <= 4:
+                suffix = _("года")
+            else:
+                suffix = _("лет")
+    else:
+        suffix = _("year") if years == 1 else _("years")
     return suffix
 
 
@@ -213,18 +235,23 @@ def create_study_duration_badge_text(profile_data: dict) -> str:
 
 @register.filter
 def create_heading_with_duration(data: dict, details_type: str):
-    if details_type == "part_time_details":
-        if data["full_time_details"] is not None:
-            return f"({data['part_time_details']['study_duration']} {get_duration_suffix(data['part_time_details']['study_duration'])})"
+    mode_names = {
+        "full_time_details": _("Full-time mode"),
+        "part_time_details": _("Part-time (blended) mode"),
+        "extramural_details": _("Distance (extramural) mode"),
+    }
 
-    if details_type == "extramural_details":
-        if (
-            data["full_time_details"] is not None
-            or data["part_time_details"] is not None
-        ):
-            return f"({data['extramural_details']['study_duration']} {get_duration_suffix(data['extramural_details']['study_duration'])})"
+    if details_type not in mode_names or details_type not in data or data[details_type] is None:
+        return ""
 
-    return ""
+    duration = data[details_type].get("study_duration")
+    if not duration:
+        return mode_names[details_type]
+
+    suffix = get_duration_suffix(duration)
+
+    return f"{mode_names[details_type]} ({duration} {suffix})"
+
 
 
 @register.filter

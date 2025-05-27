@@ -3,8 +3,7 @@ from django.contrib.postgres.fields import ArrayField as postgres_array_field
 from phonenumber_field.modelfields import PhoneNumberField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django_jsonform.models.fields import JSONField, ArrayField
-from django.utils.translation import gettext as _
-
+from django.utils.translation import gettext_lazy as _
 
 STUDY_LEVELS = [
     ("Бакалавриат", "Бакалавриат"),
@@ -20,8 +19,8 @@ LANGUAGES = [
 ]
 
 DEPARTMENT_JOB_TITLES = [
-    ("Директор департамента", "Директор департамента"),
-    ("Заведующий кафедры", "Заведующий кафедры"),
+    ("director", _("Director of Department")),
+    ("head",     _("Head of Department")),
 ]
 
 
@@ -158,10 +157,10 @@ class DepartmentInfo(models.Model):
         null=True,
     )
     job_title = models.CharField(
-        verbose_name="Должность руководителя",
+        verbose_name=_("Job title of head"),
         choices=DEPARTMENT_JOB_TITLES,
-        default="Директор департамента",
-        max_length=255,
+        default="director",
+        max_length=50,
     )
     info = models.TextField(verbose_name="Информация о департаменте")
     info_en = models.TextField(

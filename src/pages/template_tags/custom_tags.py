@@ -5,6 +5,7 @@ from django.utils.translation import ngettext
 from django import template
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language, get_language_info
+from decimal import Decimal
 
 RU_LABELS = {
     "ru": "Русский",
@@ -182,15 +183,22 @@ def get_url_department_abbreviation(name: str):
         if v == name:
             return k
 
+def format_duration(value: float) -> str:
+    return ("%.1f" % value).rstrip("0").rstrip(".")
 
-def get_duration_suffix(duration: float):
-    if duration in [2, 3, 4]:
-        suffix = "года"
-    if duration == 1:
-        suffix = "год"
-    if duration > 4:
-        suffix = "лет"
-    return suffix
+def get_duration_suffix(duration: float) -> str:
+    if duration % 1:
+        return "года"
+
+    num = int(Decimal(str(duration))) % 100
+    if 11 <= num <= 14:
+        return "лет"
+    last = num % 10
+    if last == 1:
+        return "год"
+    if last in (2, 3, 4):
+        return "года"
+    return "лет"
 
 @register.filter
 def create_study_duration_badge_text(profile_data: dict) -> str:

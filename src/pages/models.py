@@ -88,7 +88,7 @@ class ProfileDetails(models.Model):
     price_sixth_year = models.PositiveIntegerField(
         verbose_name="Стоимость обучения по контракту(6 год)", null=True, blank=True
     )
-    study_duration = models.IntegerField(
+    study_duration = models.FloatField(
         "Продолжительность обучения", null=True, blank=True
     )
     admission_url = models.URLField(

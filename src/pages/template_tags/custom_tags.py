@@ -192,7 +192,6 @@ def get_duration_suffix(duration: float):
         suffix = "лет"
     return suffix
 
-
 @register.filter
 def create_study_duration_badge_text(profile_data: dict) -> str:
     details = (
@@ -203,28 +202,18 @@ def create_study_duration_badge_text(profile_data: dict) -> str:
     if not details:
         return ""
 
-    duration = int(details["study_duration"])
+    duration = details["study_duration"] 
+    return f"{format_duration(duration)} {get_duration_suffix(duration)}"
 
-    return ngettext(
-        "%(num)d year",
-        "%(num)d years",
-        duration
-    ) % {"num": duration}
 
 @register.filter
-def create_heading_with_duration(data: dict, details_type: str):
-    if details_type == "part_time_details":
-        if data["full_time_details"] is not None:
-            return f"({data['part_time_details']['study_duration']} {get_duration_suffix(data['part_time_details']['study_duration'])})"
+def create_heading_with_duration(data: dict, details_type: str) -> str:
+    block = data.get(details_type)
+    if not block:
+        return ""
 
-    if details_type == "extramural_details":
-        if (
-            data["full_time_details"] is not None
-            or data["part_time_details"] is not None
-        ):
-            return f"({data['extramural_details']['study_duration']} {get_duration_suffix(data['extramural_details']['study_duration'])})"
-
-    return ""
+    dur = block["study_duration"]
+    return f"({format_duration(dur)} {get_duration_suffix(dur)})"
 
 
 @register.filter

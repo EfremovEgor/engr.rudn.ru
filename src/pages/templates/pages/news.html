@@ -79,7 +79,7 @@
                   {{ item.creation_date|date:"d.m.Y" }}
                 </div>
 
-                {% if LANGUAGE_CODE == "en" %}
+                {% if LANGUAGE_CODE == "en" and item.title_en%}
                   <h3 class="uk-card-title news-title">{{ item.title_en }}</h3>
                 {% else %}
                   <h3 class="uk-card-title news-title">{{ item.title }}</h3>

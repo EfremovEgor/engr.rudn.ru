@@ -168,7 +168,8 @@
 
     .timeline-table {
         width: 100%;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 15px;
         margin-top: 2rem;
     }
 
@@ -184,6 +185,7 @@
     }
 
     .timeline-table td {
+        text-align: center;
     }
 
     .timeline-table tr:nth-child(even) {
@@ -863,7 +865,7 @@
         </table>
     </section>
 
-    <div class="uk-card uk-card-default uk-card-hover uk-card-body karta" style="display:flex;flex-direction:column;justify-content:center;align-items:center;margin-top:28px;">
+    <div class="uk-card uk-card-default uk-card-hover uk-card-body karta" style="display:flex;flex-direction:column;justify-content:center;align-items:center;margin-top:28px;border-radius:20px;">
         <h4 class="uk-margin-remove-bottom">Надежда Александровна Сташевская</h4>
         <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove">
             <li><span>{% trans "Секретарь отборочной комиссии" %}</span></li>

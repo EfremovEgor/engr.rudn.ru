@@ -24,12 +24,7 @@
         <li>
           <a class="uk-accordion-title" href="#">
             <b>
-              {{ direction.cipher }}
-              «{% if LANGUAGE_CODE == "en" and direction.name_en %}
-                   {{ direction.name_en }}
-                 {% else %}
-                   {{ direction.name }}
-                 {% endif %}»
+              {{ direction.cipher }}&nbsp;«{% if LANGUAGE_CODE == 'en' and direction.name_en %}{{ direction.name_en }}{% else %}{{ direction.name }}{% endif %}»
             </b>
           </a>
 

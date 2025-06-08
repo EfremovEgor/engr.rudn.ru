@@ -24,12 +24,7 @@
     </div>
 
     <h4 class="direction_name">
-      {{ profile_data.direction.cipher }}
-      «{% if LANGUAGE_CODE == 'en' and profile_data.direction.name_en %}
-            {{ profile_data.direction.name_en }}
-         {% else %}
-            {{ profile_data.direction.name }}
-         {% endif %}»
+      {{ profile_data.direction.cipher }}&nbsp;«{% if LANGUAGE_CODE == 'en' and profile_data.direction.name_en %}{{ profile_data.direction.name_en }}{% else %}{{ profile_data.direction.name }}{% endif %}»
     </h4>
 
     <h2 class="profile_name">

@@ -187,18 +187,26 @@ def format_duration(value: float) -> str:
     return ("%.1f" % value).rstrip("0").rstrip(".")
 
 def get_duration_suffix(duration: float) -> str:
-    if duration % 1:
-        return "года"
+    lang = get_language()
 
-    num = int(Decimal(str(duration))) % 100
-    if 11 <= num <= 14:
+    if duration % 1:
+        return "лет" if lang == "ru" else "years"
+
+    whole = int(Decimal(str(duration)))
+
+    if lang == "ru":
+        num = whole % 100
+        if 11 <= num <= 14:
+            return "лет"
+        last = num % 10
+        if last == 1:
+            return "год"
+        if last in (2, 3, 4):
+            return "года"
         return "лет"
-    last = num % 10
-    if last == 1:
-        return "год"
-    if last in (2, 3, 4):
-        return "года"
-    return "лет"
+    else:
+        return "year" if whole == 1 else "years"
+
 
 @register.filter
 def create_study_duration_badge_text(profile_data: dict) -> str:

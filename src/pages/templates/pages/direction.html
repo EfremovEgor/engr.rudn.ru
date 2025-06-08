@@ -93,24 +93,24 @@
             <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
             {% endif %}
 
-            <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
+            <h4 style="margin-top: -5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
             {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура" %}
             <p><b>Вступительные испытания</b></p>
             {% for line in profile_data.full_time_details|format_scores:"Обязательные предметы"%} 
             <p >{{line}}</p> 
             {% endfor %} 
             {% else %} 
-            <p><b>Обязательные предметы</b></p>
+            <p><b>{% trans "Обязательные предметы" %}</b></p>
             {% for line in profile_data.full_time_details|format_scores:"Обязательные предметы"%} 
             <p>{{line}}</p> 
             {% endfor %} 
             {% if profile_data.full_time_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-            <p><b>Дополнительные предметы (один на выбор)</b></p>
+            <p><b>{% trans "Дополнительные предметы (один на выбор)" %}</b></p>
             {% for line in profile_data.full_time_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
             <p>{{line}}</p> 
             {% endfor %}
             {% else %} 
-            <p><b>Дополнительные предметы не предусмотрены</p></b>
+            <p><b>{% trans "Дополнительные предметы не предусмотрены" %}</p></b>
             {% endif %}
             {% endif %}
             {% if profile_data.full_time_details|format_prices %}
@@ -147,24 +147,24 @@
             <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
             {% endif %}
 
-            <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
+            <h4 style="margin-top: -5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
             {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"%}
             <p><b>Вступительные испытания</b></p>
             {% for line in profile_data.part_time_details|format_scores:"Обязательные предметы"%} 
             <p >{{line}}</p> 
             {% endfor %} 
             {% else %} 
-            <p><b>Обязательные предметы</b></p>
+            <p><b>{% trans "Обязательные предметы" %}</b></p>
             {% for line in profile_data.part_time_details|format_scores:"Обязательные предметы"%} 
             <p>{{line}}</p> 
             {% endfor %} 
             {% if profile_data.part_time_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-            <p><b>Дополнительные предметы (один на выбор)</b></p>
+            <p><b>{% trans "Дополнительные предметы (один на выбор)" %}</b></p>
             {% for line in profile_data.part_time_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
             <p>{{line}}</p> 
             {% endfor %}
             {% else %} 
-            <p><b>Дополнительные предметы не предусмотрены</p></b>
+            <p><b>{% trans "Дополнительные предметы не предусмотрены" %}</p></b>
             {% endif %}
             {% endif %}
             {% if profile_data.part_time_details|format_prices %}
@@ -201,24 +201,24 @@
             <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
             {% endif %}
 
-            <h4 style="margin-top: -5px"><b>Минимальные проходные баллы</b></h4>
+            <h4 style="margin-top: -5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
             {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"  %}
             <p><b>Вступительные испытания</b></p>
             {% for line in profile_data.extramural_details|format_scores:"Обязательные предметы"%} 
             <p >{{line}}</p> 
             {% endfor %} 
             {% else %} 
-            <p><b>Обязательные предметы</b></p>
+            <p><b>{% trans "Обязательные предметы" %}</b></p>
             {% for line in profile_data.extramural_details|format_scores:"Обязательные предметы"%} 
             <p>{{line}}</p> 
             {% endfor %} 
             {% if profile_data.extramural_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-            <p><b>Дополнительные предметы (один на выбор)</b></p>
+            <p><b>{% trans "Дополнительные предметы (один на выбор)" %}</b></p>
             {% for line in profile_data.extramural_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
             <p>{{line}}</p> 
             {% endfor %}
             {% else %} 
-            <p><b>Дополнительные предметы не предусмотрены</p></b>
+            <p><b>{% trans "Дополнительные предметы не предусмотрены" %}</p></b>
             {% endif %}
             {% endif %}
             {% if profile_data.extramural_details|format_prices %}

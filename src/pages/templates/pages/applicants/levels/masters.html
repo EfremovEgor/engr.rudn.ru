@@ -38,9 +38,11 @@
                   {{ profile.name }}
                 {% endif %}
           
-                {% if profile.language_fields|length >= 2 %}
-                  {{ profile.language_fields|langs_phrase }}
-                {% endif %}
+                {% if profile.language_fields|length == 2 %}
+                  (на {{ profile.language_fields.0|get_alias_lang }} и {{ profile.language_fields.1|get_alias_lang }} языках)
+                {% elif profile.language_fields.0 == "Английский" %}
+                  (на {{ profile.language_fields.0|get_alias_lang }} языке)
+                {% endif %}              
             </a><br>
             {% endfor %}
           </div>

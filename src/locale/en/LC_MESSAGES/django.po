@@ -1375,8 +1375,6 @@ msgid "Заочная форма"
 msgstr "Distance (extramural) mode"
 
 #: pages/templates/pages/index.html:274
-#, fuzzy
-#| msgid "Все НОВОСТИ"
 msgid "ВСЕ НОВОСТИ"
 msgstr "All News"
 

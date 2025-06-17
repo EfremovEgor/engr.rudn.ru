@@ -103,6 +103,15 @@ class Seminar(models.Model):
         on_delete=models.CASCADE,
         blank=True,
         null=True,
+        related_name='seminar_chairman'
+    )
+    organizer1 = models.ForeignKey(
+        "profiles.EmployeeProfile",
+        verbose_name="Организатор",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name='seminar_organizer'
     )
     department = models.ForeignKey(
         DepartmentInfo,

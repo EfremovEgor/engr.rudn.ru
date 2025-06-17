@@ -97,6 +97,9 @@ class ProfileDetails(models.Model):
     admission_url = models.URLField(
         "Ссылка на admission.rudn", max_length=255, null=True, blank=True
     )
+    note = models.TextField(
+        "Примечание", blank=True, default='', null=False
+    )
 
     SCORES_SCHEMA = {
         "type": "dict",  # or 'object'

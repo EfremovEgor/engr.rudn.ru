@@ -3,6 +3,20 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% block content %}
 
+<style>
+  .red-star {
+      color: #dc3545;
+  }
+
+  .red-box {
+      color: #666;
+      display: inline-block;
+      font-weight: bolder;
+  }
+
+
+</style>
+
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
 <link rel="stylesheet" href="{% static 'css/direction.css' %}" />
 
@@ -84,11 +98,20 @@
 
           <div>
             <h2>{% trans "Очная форма" %}</h2>
-
             {% if profile_data.full_time_details.budget_places %}
-            <h4 style="margin-top:-10px">
-              <b>{% trans "Бюджетные места –" %} {{ profile_data.full_time_details.budget_places }}</b>
-            </h4>
+
+              {% if profile_data.full_time_details.note %}
+                <h4 style="margin-top:-10px">
+                  <b>{% trans 'Бюджетные места' %}<sup class="red-star">*</sup> – 
+                    {{ profile_data.full_time_details.budget_places }}</b>
+                </h4>
+              {% else %}
+                <h4 style="margin-top:-10px">
+                  <b>{% trans 'Бюджетные места –' %} 
+                    {{ profile_data.full_time_details.budget_places }}</b>
+                </h4>
+              {% endif %}
+
             {% else %}
             <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
             {% endif %}
@@ -120,7 +143,9 @@
               {% endfor %}
             {% endif %}
           </div>
-
+          {% if profile_data.full_time_details.note %}
+          <span class="red-box">{{profile_data.full_time_details.note}}</span>
+          {% endif %}
           <div style="margin-top:50px">
             <a href="{{ profile_data.full_time_details.admission_url }}" target="_blank"
                class="link-hover-underline red-link-hover-underline">

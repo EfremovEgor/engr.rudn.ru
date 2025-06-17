@@ -100,7 +100,7 @@
             <h2>{% trans "Очная форма" %}</h2>
             {% if profile_data.full_time_details.budget_places %}
 
-              {% if profile_data.full_time_details.note %}
+              {% if profile_data.note %}
                 <h4 style="margin-top:-10px">
                   <b>{% trans 'Бюджетные места' %}<sup class="red-star">*</sup> – 
                     {{ profile_data.full_time_details.budget_places }}</b>
@@ -143,8 +143,8 @@
               {% endfor %}
             {% endif %}
           </div>
-          {% if profile_data.full_time_details.note %}
-          <span class="red-box">{{profile_data.full_time_details.note}}</span>
+          {% if profile_data.note %}
+            <span class="red-box">{{profile_data.note}}</span>
           {% endif %}
           <div style="margin-top:50px">
             <a href="{{ profile_data.full_time_details.admission_url }}" target="_blank"
@@ -165,9 +165,19 @@
             <h2>{% trans "Очно-заочная форма" %} {{ profile_data|create_heading_with_duration:"part_time_details" }}</h2>
 
             {% if profile_data.part_time_details.budget_places %}
-            <h4 style="margin-top:-10px">
-              <b>{% trans "Бюджетные места –" %} {{ profile_data.part_time_details.budget_places }}</b>
-            </h4>
+
+              {% if profile_data.note %}
+                <h4 style="margin-top:-10px">
+                  <b>{% trans 'Бюджетные места' %}<sup class="red-star">*</sup> – 
+                    {{ profile_data.part_time_details.budget_places }}</b>
+                </h4>
+              {% else %}
+                <h4 style="margin-top:-10px">
+                  <b>{% trans 'Бюджетные места –' %} 
+                    {{ profile_data.part_time_details.budget_places }}</b>
+                </h4>
+              {% endif %}
+
             {% else %}
             <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
             {% endif %}
@@ -199,7 +209,9 @@
               {% endfor %}
             {% endif %}
           </div>
-
+          {% if profile_data.note %}
+            <span class="red-box">{{profile_data.note}}</span>
+          {% endif %}
           <div style="margin-top:50px">
             <a href="{{ profile_data.part_time_details.admission_url }}" target="_blank"
                class="link-hover-underline red-link-hover-underline">
@@ -219,9 +231,19 @@
             <h2>{% trans "Заочная форма" %} {{ profile_data|create_heading_with_duration:"extramural_details" }}</h2>
 
             {% if profile_data.extramural_details.budget_places %}
-            <h4 style="margin-top:-10px">
-              <b>{% trans "Бюджетные места –" %} {{ profile_data.extramural_details.budget_places }}</b>
-            </h4>
+        
+              {% if profile_data.note %}
+                <h4 style="margin-top:-10px">
+                  <b>{% trans 'Бюджетные места' %}<sup class="red-star">*</sup> – 
+                    {{ profile_data.part_time_details.budget_places }}</b>
+                </h4>
+              {% else %}
+                <h4 style="margin-top:-10px">
+                  <b>{% trans 'Бюджетные места –' %} 
+                    {{ profile_data.part_time_details.budget_places }}</b>
+                </h4>
+              {% endif %}
+
             {% else %}
             <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
             {% endif %}
@@ -253,7 +275,9 @@
               {% endfor %}
             {% endif %}
           </div>
-
+          {% if profile_data.note %}
+            <span class="red-box">{{profile_data.note}}</span>
+          {% endif %}
           <div style="margin-top:50px">
             <a href="{{ profile_data.extramural_details.admission_url }}" target="_blank"
                class="link-hover-underline red-link-hover-underline">

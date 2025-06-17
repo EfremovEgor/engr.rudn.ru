@@ -155,6 +155,11 @@ def directions(request, id):
         if profile_data["extramural_details"] is not None
         else None
     )
+    profile_data["note"] = (
+        profile_object.full_time_details.note
+        if profile_object.full_time_details and profile_object.full_time_details.note
+        else ''
+    )
     return render(
         request,
         "pages/direction.html",

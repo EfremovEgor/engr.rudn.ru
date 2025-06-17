@@ -102,8 +102,8 @@
 
               {% if profile_data.note %}
                 <h4 style="margin-top:-10px">
-                  <b>{% trans 'Бюджетные места' %}<sup class="red-star">*</sup> – 
-                    {{ profile_data.full_time_details.budget_places }}</b>
+                  <b>{% trans 'Бюджетные места' %} – 
+                    {{ profile_data.full_time_details.budget_places }}<sup class="red-star">*</sup></b>
                 </h4>
               {% else %}
                 <h4 style="margin-top:-10px">
@@ -144,7 +144,7 @@
             {% endif %}
           </div>
           {% if profile_data.note %}
-            <span class="red-box">{{profile_data.note}}</span>
+            <span class="red-box"><br><sup class="red-star">*</sup>{{profile_data.note}}</span>
           {% endif %}
           <div style="margin-top:50px">
             <a href="{{ profile_data.full_time_details.admission_url }}" target="_blank"

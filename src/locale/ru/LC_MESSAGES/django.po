@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-04 17:08+0300\n"
+"POT-Creation-Date: 2025-06-10 16:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,144 +20,137 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: documents/models.py:8 pages/models.py:66 pages/models.py:205
-#: pages/models.py:269 pages/models.py:305
+#: documents/models.py:8 pages/models.py:66 pages/models.py:208
+#: pages/models.py:272 pages/models.py:308
 msgid "Название (EN)"
 msgstr ""
 
-#: pages/models.py:257
+#: pages/models.py:260
 msgid "Информация (EN)"
 msgstr ""
 
-#: pages/models.py:303
+#: pages/models.py:306
 #: pages/templates/pages/students/dissertation_committee_item.html:21
 msgid "Шифр"
 msgstr ""
 
-#: pages/models.py:304
+#: pages/models.py:307
 msgid "Название (RU)"
 msgstr ""
 
-#: pages/models.py:311
+#: pages/models.py:314
 msgid "Научное направление"
 msgstr ""
 
-#: pages/models.py:312 pages/templates/components/footer.html:134
+#: pages/models.py:315 pages/templates/components/footer.html:134
 #: pages/templates/components/header.html:178
 #: pages/templates/components/header.html:390
 #: pages/templates/pages/science/directions.html:8 pages/views.py:205
 msgid "Научные направления"
 msgstr ""
 
-#: pages/models.py:317
+#: pages/models.py:320
 #: pages/templates/pages/students/dissertation_committees.html:45
 msgid "Шифр совета"
 msgstr ""
 
-#: pages/models.py:319
+#: pages/models.py:322
 msgid "Организация (RU)"
 msgstr ""
 
-#: pages/models.py:322
+#: pages/models.py:325
 msgid "Организация (EN)"
 msgstr ""
 
-#: pages/models.py:326
+#: pages/models.py:329
 msgid "Факультет (RU)"
 msgstr ""
 
-#: pages/models.py:329
+#: pages/models.py:332
 msgid "Факультет (EN)"
 msgstr ""
 
-#: pages/models.py:333
+#: pages/models.py:336
 msgid "Адрес (RU)"
 msgstr ""
 
-#: pages/models.py:336
+#: pages/models.py:339
 msgid "Адрес (EN)"
 msgstr ""
 
-#: pages/models.py:342
+#: pages/models.py:345
 #: pages/templates/pages/students/dissertation_committees.html:46
 msgid "Научные специальности"
 msgstr ""
 
-#: pages/models.py:346
+#: pages/models.py:349
 msgid "Председатель (RU)"
 msgstr ""
 
-#: pages/models.py:347
+#: pages/models.py:350
 msgid "Председатель (EN)"
 msgstr ""
 
-#: pages/models.py:351
+#: pages/models.py:354
 msgid "Заместитель председателя (RU)"
 msgstr ""
 
-#: pages/models.py:352
+#: pages/models.py:355
 msgid "Заместитель председателя (EN)"
 msgstr ""
 
-#: pages/models.py:356
+#: pages/models.py:359
 msgid "Секретарь (RU)"
 msgstr ""
 
-#: pages/models.py:357
+#: pages/models.py:360
 msgid "Секретарь (EN)"
 msgstr ""
 
-#: pages/models.py:361
+#: pages/models.py:364
 #: pages/templates/pages/students/dissertation_committee_item.html:70
 msgid "Телефон"
 msgstr ""
 
-#: pages/models.py:362
+#: pages/models.py:365
 msgid "Электронная почта"
 msgstr ""
 
-#: pages/models.py:366
+#: pages/models.py:369
 msgid "Участник диссовета (RU)"
 msgstr ""
 
-#: pages/models.py:367
+#: pages/models.py:370
 msgid "Состав диссовета"
 msgstr ""
 
-#: pages/models.py:372
+#: pages/models.py:375
 msgid "Участник диссовета (EN)"
 msgstr ""
 
-#: pages/models.py:373
+#: pages/models.py:376
 msgid "Состав диссовета (EN)"
 msgstr ""
 
-#: pages/models.py:382
+#: pages/models.py:385
 msgid "Диссертационный совет"
 msgstr ""
 
-#: pages/models.py:383 pages/templates/components/footer.html:143
+#: pages/models.py:386 pages/templates/components/footer.html:143
 #: pages/templates/components/header.html:192
 #: pages/templates/components/header.html:400 pages/views.py:429
 msgid "Диссертационные советы"
 msgstr ""
 
-#: pages/template_tags/custom_tags.py:99
+#: pages/template_tags/custom_tags.py:167
 #, python-format
 msgid "%(n)d‑й год и далее – %(p)s ₽"
 msgstr ""
 
-#: pages/template_tags/custom_tags.py:105
+#: pages/template_tags/custom_tags.py:173
 #, python-format
 msgid "%(n)d‑й год – %(p)s ₽"
 msgstr ""
-
-#: pages/template_tags/custom_tags.py:142
-#, python-format
-msgid "%(num)d year"
-msgid_plural "%(num)d years"
-msgstr[0] ""
-msgstr[1] ""
 
 #: pages/templates/components/footer.html:103
 #: pages/templates/components/header.html:114
@@ -187,7 +180,7 @@ msgstr ""
 #: pages/templates/components/footer.html:117
 #: pages/templates/components/header.html:137
 #: pages/templates/components/header.html:355
-#: pages/templates/pages/academy/department_item.html:10 pages/views.py:484
+#: pages/templates/pages/academy/department_item.html:10 pages/views.py:493
 msgid "Кафедры"
 msgstr ""
 
@@ -199,9 +192,8 @@ msgstr ""
 
 #: pages/templates/components/footer.html:123
 #: pages/templates/components/header.html:147
-#: pages/templates/components/header.html:365
-#: pages/templates/pages/applicants/committee.html:311 pages/views.py:272
-#: pages/views.py:548
+#: pages/templates/components/header.html:365 pages/views.py:272
+#: pages/views.py:557
 msgid "Контакты"
 msgstr ""
 
@@ -244,7 +236,7 @@ msgstr ""
 #: pages/templates/components/footer.html:151
 #: pages/templates/components/header.html:208
 #: pages/templates/components/header.html:415
-#: pages/templates/pages/direction.html:18 pages/views.py:363
+#: pages/templates/pages/direction.html:15 pages/views.py:363
 msgid "Направления подготовки"
 msgstr ""
 
@@ -303,13 +295,14 @@ msgid "Расписание занятий"
 msgstr ""
 
 #: pages/templates/pages/academy/contacts.html:21
-#: pages/templates/pages/applicants/committee.html:322
+#: pages/templates/pages/applicants/committee.html:871
 msgid "Секретарь отборочной комиссии"
 msgstr ""
 
 #: pages/templates/pages/academy/contacts.html:28
 #: pages/templates/pages/academy/contacts.html:86
 #: pages/templates/pages/academy/contacts.html:110
+#: pages/templates/pages/applicants/committee.html:878
 msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;403"
 msgstr ""
 
@@ -351,28 +344,108 @@ msgstr ""
 msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;440"
 msgstr ""
 
-#: pages/templates/pages/academy/department_item.html:97
+#: pages/templates/pages/academy/department_item.html:94
 msgid "Контактное лицо"
 msgstr ""
 
-#: pages/templates/pages/academy/department_item.html:163
+#: pages/templates/pages/academy/department_item.html:159
 msgid "Направления подготовки и специальности"
 msgstr ""
 
-#: pages/templates/pages/academy/department_item.html:378
+#: pages/templates/pages/academy/department_item.html:166
+#: pages/templates/pages/academy/department_item.html:188
+#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:507
+msgid "Бакалавриат"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:176
+#: pages/templates/pages/academy/department_item.html:198
+#: pages/templates/pages/academy/department_item.html:278
+#: pages/templates/pages/academy/department_item.html:305
+#: pages/templates/pages/applicants/levels/bachelor.html:34
+#: pages/templates/pages/applicants/levels/masters.html:34
+#: pages/templates/pages/applicants/levels/postgraduates.html:34
+#: pages/templates/pages/applicants/levels/specialists.html:43
+msgid "Профиль:"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:217
+#: pages/templates/pages/academy/department_item.html:239
+#: pages/templates/pages/applicants/levels/specialists.html:11
+#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:521
+msgid "Специалитет"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:227
+#: pages/templates/pages/academy/department_item.html:249
+#: pages/templates/pages/academy/department_item.html:339
+#: pages/templates/pages/academy/department_item.html:366
+msgid "Специальность:"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:268
+#: pages/templates/pages/academy/department_item.html:295
+#: pages/templates/pages/applicants/committee.html:358
+#: pages/templates/pages/applicants/levels/masters.html:9
+#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:514
+msgid "Магистратура"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:280
+#: pages/templates/pages/academy/department_item.html:282
+#: pages/templates/pages/academy/department_item.html:307
+#: pages/templates/pages/academy/department_item.html:309
+#: pages/templates/pages/academy/department_item.html:341
+#: pages/templates/pages/academy/department_item.html:343
+#: pages/templates/pages/academy/department_item.html:368
+#: pages/templates/pages/academy/department_item.html:370
+msgid "на"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:280
+#: pages/templates/pages/academy/department_item.html:307
+#: pages/templates/pages/academy/department_item.html:341
+#: pages/templates/pages/academy/department_item.html:368
+msgid "и"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:280
+#: pages/templates/pages/academy/department_item.html:307
+#: pages/templates/pages/academy/department_item.html:341
+#: pages/templates/pages/academy/department_item.html:368
+msgid "языках"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:282
+#: pages/templates/pages/academy/department_item.html:309
+#: pages/templates/pages/academy/department_item.html:343
+#: pages/templates/pages/academy/department_item.html:370
+msgid "языке"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:329
+#: pages/templates/pages/academy/department_item.html:356
+#: pages/templates/pages/applicants/committee.html:359
+#: pages/templates/pages/applicants/levels/postgraduates.html:9
+#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:528
+msgid "Аспирантура"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:386
 msgid "Лабораторная база"
 msgstr ""
 
-#: pages/templates/pages/academy/department_item.html:416
-msgid "Профессорско-преподавательский состав"
-msgstr ""
-
+#: pages/templates/pages/academy/department_item.html:397
 #: pages/templates/pages/academy/departments.html:38
 #: pages/templates/pages/science/journals.html:67
 #: pages/templates/pages/science/journals.html:157
 #: pages/templates/pages/science/scientific_centers.html:38
 #: seminars/templates/seminars/seminars.html:62
 msgid "Подробнее"
+msgstr ""
+
+#: pages/templates/pages/academy/department_item.html:404
+msgid "Профессорско-преподавательский состав"
 msgstr ""
 
 #: pages/templates/pages/academy/history.html:9
@@ -439,191 +512,696 @@ msgstr ""
 msgid "Основание инженерного факультета"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:95
+#: pages/templates/pages/applicants/committee.html:350
 #: pages/templates/pages/applicants/reference.html:16
 msgid "Открой Мир в одном Университете!"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:99
+#: pages/templates/pages/applicants/committee.html:357
+msgid "Бакалавриат/Специалитет"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:364
+#: pages/templates/pages/applicants/committee.html:558
+#: pages/templates/pages/applicants/committee.html:727
 msgid "Ключевые даты"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:108
-msgid "Начало приёма документов"
+#: pages/templates/pages/applicants/committee.html:368
+#: pages/templates/pages/applicants/committee.html:562
+#: pages/templates/pages/applicants/committee.html:731
+msgid "Начало приёма"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:109
-msgid "20 июня"
+#: pages/templates/pages/applicants/committee.html:369
+#: pages/templates/pages/applicants/committee.html:563
+msgid "Начало приёма документов — 20 июня 2025 г."
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:119
-msgid "Окончание подачи документов на направление “Архитектура”"
+#: pages/templates/pages/applicants/committee.html:376
+msgid "Завершение подачи документов<br>на направление «Архитектура»"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:121
-msgid "15 июля"
+#: pages/templates/pages/applicants/committee.html:377
+#: pages/templates/pages/applicants/committee.html:462
+#: pages/templates/pages/applicants/committee.html:469
+msgid "15 июля 2025 г."
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:130
-msgid "Завершение приёма заявлений на бюджет"
+#: pages/templates/pages/applicants/committee.html:382
+msgid "Завершение заявлений на бюджетные места"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:131
-msgid "25 июля"
+#: pages/templates/pages/applicants/committee.html:383
+#: pages/templates/pages/applicants/committee.html:476
+msgid "25 июля 2025 г."
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:140
+#: pages/templates/pages/applicants/committee.html:388
 msgid "Публикация конкурсных списков"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:141
-msgid "27 июля"
+#: pages/templates/pages/applicants/committee.html:389
+#: pages/templates/pages/applicants/committee.html:490
+msgid "27 июля 2025 г."
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:150
-msgid "Конец подачи документов на контракт"
+#: pages/templates/pages/applicants/committee.html:394
+msgid "Конец приёма документов на контракт"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:151
-msgid "25 августа"
+#: pages/templates/pages/applicants/committee.html:395
+#: pages/templates/pages/applicants/committee.html:477
+msgid "25 августа 2025 г."
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:159
-msgid "Издание приказов о зачислении осуществляется:"
+#: pages/templates/pages/applicants/committee.html:402
+#: pages/templates/pages/applicants/committee.html:590
+#: pages/templates/pages/applicants/committee.html:759
+msgid "Особые условия"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:166
-msgid "Этап приоритетного зачисления"
+#: pages/templates/pages/applicants/committee.html:404
+msgid "Олимпиадники и высокобалльники"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:167
-msgid "30 июля"
+#: pages/templates/pages/applicants/committee.html:405
+#: pages/templates/pages/applicants/committee.html:592
+#: pages/templates/pages/applicants/committee.html:763
+msgid "Дополнительные баллы"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:175
-msgid "Основной этап зачисления"
+#: pages/templates/pages/applicants/committee.html:406
+#: pages/templates/pages/applicants/committee.html:593
+#: pages/templates/pages/applicants/committee.html:761
+msgid "Целевое обучение"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:176
-msgid "4–9 августа"
+#: pages/templates/pages/applicants/committee.html:407
+msgid "Особая квота"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:183
+#: pages/templates/pages/applicants/committee.html:408
+msgid "Отдельная квота"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:409
+msgid "Преимущественное право на зачисление"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:410
+msgid "Сироты"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:415
+msgid "Прогноз поступления"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:417
+msgid "Калькулятор ЕГЭ"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:418
+msgid "Минимальные баллы на бюджет и контракт"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:419
+msgid "Проходной балл прошлых лет"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:420
+msgid "Тест на профориентацию"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:421
+msgid "Предварительный договор"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:426
+#: pages/templates/pages/applicants/committee.html:611
+#: pages/templates/pages/applicants/committee.html:777
+msgid "Приём 2025"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:428
+msgid "Выбери программу университетской академии"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:429
+msgid "Лиги-баттлы"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:430
+#: pages/templates/pages/applicants/committee.html:614
+#: pages/templates/pages/applicants/committee.html:780
+msgid "Индивидуальные достижения"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:431
+msgid "Профессиональные испытания"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:432
+msgid "Нормативы ГТО"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:433
+msgid "Электронные документы"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:434
+msgid "Сроки проведения практик"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:439
+msgid "Сроки приёма в бакалавриат и специалитет в 2025 году"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:445
+#: pages/templates/pages/applicants/committee.html:629
+#: pages/templates/pages/applicants/committee.html:797
+msgid "Этап"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:446
+#: pages/templates/pages/applicants/committee.html:630
+msgid "Поступление на бюджетные места"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:447
+#: pages/templates/pages/applicants/committee.html:631
+msgid "Поступление на платные места"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:450
+msgid "Очная, очно-заочная, заочная"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:451
+#: pages/templates/pages/applicants/committee.html:635
+msgid "Очная"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:452
+msgid "Очно-заочная, заочная"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:459
+msgid "Сроки приёма документов"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:460
+msgid "Для направления Архитектура"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:463
+#: pages/templates/pages/applicants/committee.html:470
+msgid "20 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:464
+#: pages/templates/pages/applicants/committee.html:471
+msgid "20 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:468
+msgid "Для имеющих право сдавать экзамены в РУДН"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:475
+msgid "Для поступающих по ЕГЭ, БВИ"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:478
+msgid "25 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:482
+msgid "Сроки проведения вступительных испытаний"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:483
+msgid "16 июля - 25 июля 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:484
+msgid "16 июля - 25 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:485
+msgid "16 июля - 25 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:489
+msgid "Сроки объявления конкурсного списка (рейтинг)"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:491
+#: pages/templates/pages/applicants/committee.html:583
+msgid "26 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:492
+msgid "26 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:497
 msgid ""
-"Приём документов от иностранных граждан по договорам начинается 1 апреля и "
-"заканчивается:"
+"Сроки завершения предоставления согласия на зачисление — до 12:00 по МСК</"
+"b><br> <em>Для зачисления в рамках приоритетного этапа</em>"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:190
-#: pages/templates/pages/applicants/committee.html:251
-msgid "Очная и очно-заочная формы"
+#: pages/templates/pages/applicants/committee.html:503
+msgid "1 августа 2025 г."
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:191
+#: pages/templates/pages/applicants/committee.html:508
+#: pages/templates/pages/applicants/committee.html:531
+msgid "Для зачисления в рамках основного этапа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:510
+msgid "5 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:515
+msgid "Завершение заключения договоров"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:518
+msgid "27 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:519
+msgid "27 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:524
+#: pages/templates/pages/applicants/committee.html:691
+msgid "Сроки зачисления (издание приказов)"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:525
+msgid "Для зачисления в рамках приоритетного этапа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:527
+msgid "2-3 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:532
+msgid "6-7 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:533
+msgid "30 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:534
+msgid "30 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:539
+msgid "Основание для зачисления"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:540
+msgid "Согласие на зачисление"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:541
+msgid "Подтверждение факта оплаты"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:545
+#: pages/templates/pages/applicants/committee.html:711
+msgid "Сроки начала учебного года"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:546
+msgid "1 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:547
+msgid "1 октября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:548
+msgid "1 декабря 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:570
+#: pages/templates/pages/applicants/committee.html:739
+msgid "Окончание приема документов на бюджетные места"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:571
+msgid "12 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:576
+msgid "Начало вступительных испытаний на бюджетные места"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:577
+msgid "13 августа 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:582
+msgid "Сроки зачисления (издание приказов) на бюджетные места"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:594
+#: pages/templates/pages/applicants/committee.html:762
+msgid "Скидки"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:595
+msgid "Цифровая магистратура"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:596
+msgid "Магистратура на иностранном языке"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:597
+msgid "Проектная магистратура"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:602
+msgid "Конкурсы для магистрантов"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:604
+msgid "Универсиада 'RUDN-ON'"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:605
+msgid "Конкурс 'РАНЬШЕ-ЛУЧШЕ'"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:606
+msgid "Конкурс 'F5 обновление'"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:613
+msgid "Выбери программу инженерной академии"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:615
+#: pages/templates/pages/applicants/committee.html:781
+msgid "Расписание экзаменов"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:616
+#: pages/templates/pages/applicants/committee.html:782
+msgid "Нормативные документы"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:617
+#: pages/templates/pages/applicants/committee.html:783
+msgid "Сроки проведения приёма"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:622
+msgid "Сроки приёма в магистратуру в 2025 году"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:623
+#: pages/templates/pages/applicants/committee.html:791
+msgid ""
+"Публикация конкурсных списков на места в рамках КЦП — не позднее 1 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:634
+msgid "Очная, заочная"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:636
+msgid "Очно-заочная"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:637
+msgid "Заочная"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:643
+msgid "20 июня"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:644
+#: pages/templates/pages/applicants/committee.html:645
+#: pages/templates/pages/applicants/committee.html:646
+#: pages/templates/pages/applicants/committee.html:807
+msgid "1 марта"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:650
+msgid "Сроки завершения приёма документов"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:651
+msgid "12 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:652
+msgid "20 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:653
+#: pages/templates/pages/applicants/committee.html:654
+msgid "20 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:658
+#: pages/templates/pages/applicants/committee.html:745
+#: pages/templates/pages/applicants/committee.html:817
+msgid "Сроки проведения (завершения) вступительных испытаний"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:659
+msgid "13 августа – 20 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:660
+msgid "2 марта – 25 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:661
+#: pages/templates/pages/applicants/committee.html:662
+msgid "2 марта – 25 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:667
+msgid ""
+"Сроки завершения предоставления согласия на зачисление — до 12:00 по МСК<br> "
+"<em>Для зачисления в рамках целевой квоты</em>"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:673
+#: pages/templates/pages/applicants/committee.html:683
+msgid "24 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:674
+#: pages/templates/pages/applicants/committee.html:684
+#: pages/templates/pages/applicants/committee.html:694
+#: pages/templates/pages/applicants/committee.html:704
+msgid "26 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:675
+#: pages/templates/pages/applicants/committee.html:676
+#: pages/templates/pages/applicants/committee.html:685
+#: pages/templates/pages/applicants/committee.html:686
+msgid "26 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:681
+#: pages/templates/pages/applicants/committee.html:702
+msgid "Для зачисления места в рамках контрольных цифр"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:692
+msgid "Для зачисления в рамках целевой квоты"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:695
+#: pages/templates/pages/applicants/committee.html:705
+msgid "27 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:696
+#: pages/templates/pages/applicants/committee.html:697
+#: pages/templates/pages/applicants/committee.html:706
+#: pages/templates/pages/applicants/committee.html:707
+#: pages/templates/pages/applicants/committee.html:825
+msgid "27 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:713
+msgid "1 сентября — по очной форме обучения"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:714
+msgid "1 октября — по заочной форме обучения"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:716
+msgid "1 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:717
+#: pages/templates/pages/applicants/committee.html:860
+#: pages/templates/pages/applicants/committee.html:861
+msgid "1 октября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:718
+msgid "1 декабря"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:732
+msgid "Начало приёма документов — 1 марта 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:740
+msgid "22 июля 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:746
+msgid "2 марта - 31 июля 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:751
+msgid "Сроки зачисления (издание приказов) на платные места"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:752
+msgid "29 сентября 2025 г."
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:768
+msgid "Дополнительные формы обучения"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:770
+msgid "Прикрепление"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:771
+msgid "Аспирантура полного дня"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:772
+msgid "Информация о диссоветах"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:779
+msgid "Направления подготовки инженерной академии"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:784
+msgid "Мониторинг приёма"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:789
+msgid "Сроки приёма в аспирантуру в 2025 году"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:798
+msgid "Бюджетные места (КЦП)"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:799
+msgid "Места с оплатой стоимости обучения"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:805
+msgid "Начало приёма документов"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:806
+msgid "1 июня"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:811
+msgid "Завершение приёма документов"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:812
+msgid "22 июня"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:813
+msgid "25 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:818
+msgid "2 марта – 31 июля"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:819
+msgid "23 июля – 27 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:823
+msgid "Сроки размещения конкурсных списков"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:824
+msgid "1 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:830
+msgid ""
+"Завершение предоставления заявлений<br> о согласии и оригиналов<br> <em>до "
+"18:00 по московскому времени</em>"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:837
+msgid "3 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:838
+#: pages/templates/pages/applicants/committee.html:851
+msgid "в рамках целевой квоты"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:839
+msgid "7 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:840
+msgid "остальные места в рамках КЦП"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:842
+msgid "28 сентября"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:847
+msgid "Зачисление (издание приказов — до дня начала учебного года)"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:850
+msgid "5 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:852
+msgid "8 августа"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:853
+msgid "основные места в рамках КЦП"
+msgstr ""
+
+#: pages/templates/pages/applicants/committee.html:855
 msgid "29 сентября"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:199
-#: pages/templates/pages/applicants/committee.html:260
-#: pages/templates/pages/direction.html:174
-msgid "Заочная форма"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:200
-msgid "26 ноября"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:206
-msgid "Порядок поступления и подачи документов"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:215
-msgid "Личная подача документов"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:219
-msgid "г. Москва, ул. Миклухо-Маклая, д. 6, каб. 168"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:229
-msgid "Онлайн-подача документов на сайте РУДН"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:240
-msgid "Перечень"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:240
-msgid "документов для поступления"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:241
-msgid "Направления подготовки Инженерной академии"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:244
-msgid "Порядок зачисления"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:245
-msgid "Зачисление иностранных граждан проводится:"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:252
-msgid "до 1 октября"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:261
-msgid "до 1 декабря"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:267
-msgid "Зачисление проводится в 2 этапа:"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:273
-msgid "28 июля – 30 июля"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:274
-msgid "Этап приоритетного зачисления: без вступительных испытаний и по квотам"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:282
-msgid "3 августа – 9 августа"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:283
-msgid "Основной этап зачисления: по результатам вступительных испытаний"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:289
-msgid "Важные даты для зачисленных:"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:295
-msgid "3–9 августа"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:296
-msgid "На почту абитуриентов будет отправлено письмо с результатами"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:304
-msgid "19 августа в 15:00"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:305
-msgid ""
-"Организационная онлайн-встреча для первокурсников (ссылка придёт на почту)"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:320
-msgid "Надежда Александровна Сташевская"
-msgstr ""
-
-#: pages/templates/pages/applicants/committee.html:332
-msgid "Москва, ул. Орджоникидзе, д. 3, каб. 403"
+#: pages/templates/pages/applicants/committee.html:859
+msgid "Начало учебного года"
 msgstr ""
 
 #: pages/templates/pages/applicants/levels/bachelor.html:14
@@ -632,72 +1210,24 @@ msgid "Открытие новых горизонтов знаний!"
 msgstr ""
 
 #: pages/templates/pages/applicants/levels/bachelor.html:19
-#: pages/templates/pages/applicants/levels/masters.html:18
+#: pages/templates/pages/applicants/levels/masters.html:19
 #: pages/templates/pages/applicants/levels/postgraduates.html:19
 #: pages/templates/pages/applicants/levels/specialists.html:27
 msgid "Программы подготовки"
 msgstr ""
 
-#: pages/templates/pages/applicants/levels/bachelor.html:39
-#: pages/templates/pages/applicants/levels/masters.html:39
-#: pages/templates/pages/applicants/levels/specialists.html:51
-msgid "Профиль:"
+#: pages/templates/pages/applicants/levels/bachelor.html:56
+msgid "Hello, world!"
 msgstr ""
 
-#: pages/templates/pages/applicants/levels/bachelor.html:47
-#: pages/templates/pages/applicants/levels/bachelor.html:50
-#: pages/templates/pages/applicants/levels/masters.html:47
-#: pages/templates/pages/applicants/levels/masters.html:51
-#: pages/templates/pages/applicants/levels/postgraduates.html:48
-#: pages/templates/pages/applicants/levels/postgraduates.html:52
-msgid "на"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/bachelor.html:47
-#: pages/templates/pages/applicants/levels/masters.html:48
-#: pages/templates/pages/applicants/levels/postgraduates.html:49
-msgid "и"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/bachelor.html:48
-#: pages/templates/pages/applicants/levels/masters.html:49
-#: pages/templates/pages/applicants/levels/postgraduates.html:50
-msgid "языках"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/bachelor.html:50
-#: pages/templates/pages/applicants/levels/masters.html:52
-#: pages/templates/pages/applicants/levels/postgraduates.html:53
-msgid "языке"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/masters.html:8
-#: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:505
-msgid "Магистратура"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/masters.html:13
+#: pages/templates/pages/applicants/levels/masters.html:14
 #: pages/templates/pages/applicants/study_directions.html:56
 msgid "Углублённое изучение вашей специализации!"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/postgraduates.html:9
-#: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:519
-msgid "Аспирантура"
 msgstr ""
 
 #: pages/templates/pages/applicants/levels/postgraduates.html:14
 #: pages/templates/pages/applicants/study_directions.html:69
 msgid "Станьте экспертом в своей области!"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/postgraduates.html:40
-msgid "Специальность:"
-msgstr ""
-
-#: pages/templates/pages/applicants/levels/specialists.html:11
-#: pages/templates/pages/applicants/study_directions.html:40 pages/views.py:512
-msgid "Специалитет"
 msgstr ""
 
 #: pages/templates/pages/applicants/levels/specialists.html:18
@@ -735,58 +1265,68 @@ msgstr ""
 msgid "Ваш путь к успешной инженерной карьере начинается здесь"
 msgstr ""
 
-#: pages/templates/pages/applicants/study_directions.html:27 pages/views.py:498
-msgid "Бакалавриат"
-msgstr ""
-
-#: pages/templates/pages/direction.html:92
+#: pages/templates/pages/direction.html:86
 msgid "Очная форма"
 msgstr ""
 
-#: pages/templates/pages/direction.html:96
-#: pages/templates/pages/direction.html:140
-#: pages/templates/pages/direction.html:178
+#: pages/templates/pages/direction.html:90
+#: pages/templates/pages/direction.html:144
+#: pages/templates/pages/direction.html:198
 msgid "Бюджетные места –"
 msgstr ""
 
-#: pages/templates/pages/direction.html:99
-#: pages/templates/pages/direction.html:143
-#: pages/templates/pages/direction.html:181
+#: pages/templates/pages/direction.html:93
+#: pages/templates/pages/direction.html:147
+#: pages/templates/pages/direction.html:201
 msgid "Бюджетные места – нет"
 msgstr ""
 
-#: pages/templates/pages/direction.html:102
-#: pages/templates/pages/direction.html:146
-#: pages/templates/pages/direction.html:184
+#: pages/templates/pages/direction.html:96
+#: pages/templates/pages/direction.html:150
+#: pages/templates/pages/direction.html:204
 msgid "Минимальные проходные баллы"
 msgstr ""
 
-#: pages/templates/pages/direction.html:105
-msgid "Вступительные испытания"
-msgstr ""
-
-#: pages/templates/pages/direction.html:107
+#: pages/templates/pages/direction.html:103
+#: pages/templates/pages/direction.html:157
+#: pages/templates/pages/direction.html:211
 msgid "Обязательные предметы"
 msgstr ""
 
+#: pages/templates/pages/direction.html:108
+#: pages/templates/pages/direction.html:162
+#: pages/templates/pages/direction.html:216
+msgid "Дополнительные предметы (один на выбор)"
+msgstr ""
+
 #: pages/templates/pages/direction.html:113
-#: pages/templates/pages/direction.html:151
-#: pages/templates/pages/direction.html:189
+#: pages/templates/pages/direction.html:167
+#: pages/templates/pages/direction.html:221
+msgid "Дополнительные предметы не предусмотрены"
+msgstr ""
+
+#: pages/templates/pages/direction.html:117
+#: pages/templates/pages/direction.html:171
+#: pages/templates/pages/direction.html:225
 msgid "Стоимость обучения по контракту"
 msgstr ""
 
-#: pages/templates/pages/direction.html:123
-#: pages/templates/pages/direction.html:161
-#: pages/templates/pages/direction.html:199
+#: pages/templates/pages/direction.html:127
+#: pages/templates/pages/direction.html:181
+#: pages/templates/pages/direction.html:235
 msgid "Подать документы"
 msgstr ""
 
-#: pages/templates/pages/direction.html:136
+#: pages/templates/pages/direction.html:140
 msgid "Очно-заочная форма"
 msgstr ""
 
+#: pages/templates/pages/direction.html:194
+msgid "Заочная форма"
+msgstr ""
+
 #: pages/templates/pages/index.html:274
-msgid "Все НОВОСТИ"
+msgid "ВСЕ НОВОСТИ"
 msgstr ""
 
 #: pages/templates/pages/index.html:315
@@ -815,6 +1355,18 @@ msgstr ""
 
 #: pages/templates/pages/index.html:364
 msgid "engineering@rudn.ru"
+msgstr ""
+
+#: pages/templates/pages/news.html:25
+msgid "Тэг:"
+msgstr ""
+
+#: pages/templates/pages/news.html:39
+msgid "Название:"
+msgstr ""
+
+#: pages/templates/pages/news.html:57
+msgid "Поиск"
 msgstr ""
 
 #: pages/templates/pages/science/digital_library.html:12
@@ -1758,7 +2310,7 @@ msgstr ""
 msgid "Дни открытых дверей"
 msgstr ""
 
-#: pages/views.py:472
+#: pages/views.py:481
 msgid "ПДС"
 msgstr ""
 
@@ -1778,40 +2330,42 @@ msgstr ""
 msgid "Семинар проводится в рамках"
 msgstr ""
 
-#: seminars/templates/seminars/seminar_item.html:53
+#: seminars/templates/seminars/seminar_item.html:108
 msgid "Доклады"
 msgstr ""
 
-#: seminars/templates/seminars/seminar_item.html:62
+#: seminars/templates/seminars/seminar_item.html:117
 msgid "Предстоящие доклады не запланированы"
 msgstr ""
 
-#: seminars/templates/seminars/seminar_item.html:103
+#: seminars/templates/seminars/seminar_item.html:158
 msgid "Прошедшие"
 msgstr ""
 
-#: seminars/templates/seminars/seminar_item.html:106
+#: seminars/templates/seminars/seminar_item.html:162
 msgid "Прошедшие доклады отсутствуют"
 msgstr ""
 
 #: seminars/templates/seminars/seminar_report.html:80
+msgid "Аннотация"
+msgstr ""
+
+#: seminars/templates/seminars/seminar_report.html:91
 msgid "Краткая биография"
 msgstr ""
 
 # msgid "Russian"
 # msgstr "Русский"
-
 # msgid "English"
 # msgstr "Английский"
+#~ msgid "bachelor"
+#~ msgstr "Бакалавриат"
 
-msgid "bachelor"
-msgstr "Бакалавриат"
+#~ msgid "master"
+#~ msgstr "Магистратура"
 
-msgid "master"
-msgstr "Магистратура"
+#~ msgid "specialist"
+#~ msgstr "Специалитет"
 
-msgid "specialist"
-msgstr "Специалитет"
-
-msgid "phd"
-msgstr "Аспирантура"
+#~ msgid "phd"
+#~ msgstr "Аспирантура"

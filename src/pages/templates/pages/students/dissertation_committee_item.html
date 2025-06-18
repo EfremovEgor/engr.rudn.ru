@@ -1,101 +1,134 @@
-{% extends 'components/base.html' %}
-{% load static i18n %}
+{% extends "components/base.html" %}
+{% load static i18n compress %}
 {% get_current_language as LANGUAGE_CODE %}
-{% load compress %}
+
+{% block extra_css %}
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}">
+    <link rel="stylesheet" href="{% static 'css/students/dissertation_committees.css' %}">
+  {% endcompress %}
+{% endblock %}
+
 {% block content %}
-
-{% compress css %}
-<link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}">
-<link rel="stylesheet" href="{% static 'css/students/dissertation_committees.css' %}">
-{% endcompress %}
-
-<div class="uk-container">
-  <div class="page-name">{{ title }}</div>
-</div>
-
-<div class="uk-container" style="margin-top:40px;margin-bottom:50px">
-  <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-small uk-table-divider">
-      <tbody>
-        <tr>
-          <td class="uk-table-shrink uk-text-nowrap">{% trans "Шифр" %}</td>
-          <td>{{ committee.cipher }}</td>
-        </tr>
-
-        <tr>
-          <td class="uk-text-nowrap">{% trans "Организация" %}</td>
-          <td>{{ committee.organization }}</td>
-        </tr>
-
-        <tr>
-          <td class="uk-text-nowrap">{% trans "Факультет" %}</td>
-          <td>{{ committee.faculty }}</td>
-        </tr>
-
-        <tr>
-          <td class="uk-text-nowrap">{% trans "Адрес" %}</td>
-          <td>{{ committee.address }}</td>
-        </tr>
-
-        <tr>
-          <td class="uk-text-nowrap">{% trans "Специальности" %}</td>
-          <td>
-            <div class="scientific_specialties">
-              {% for spec in committee.scientific_specialties.all %}
-                <span>
-                  <b>{{ spec.cipher }}.</b>
-                  {% if LANGUAGE_CODE == 'en' and spec.name_en %}
-                    {{ spec.name_en }}
-                  {% else %}
-                    {{ spec.name }}
-                  {% endif %}
-                </span>
-              {% endfor %}
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="uk-text-nowrap">{% trans "Председатель" %}</td>
-          <td>{{ committee.chairman }}</td>
-        </tr>
-
-        <tr>
-          <td class="uk-text-nowrap">{% trans "Секретарь" %}</td>
-          <td>{{ committee.secretary }}</td>
-        </tr>
-
-        {% if committee.phone %}
-          <tr>
-            <td class="uk-text-nowrap">{% trans "Телефон" %}</td>
-            <td>{{ committee.phone }}</td>
-          </tr>
-        {% endif %}
-
-        <tr>
-          <td class="uk-text-nowrap">E-mail</td>
-          <td>{{ committee.email }}</td>
-        </tr>
-
-        <tr class="hover">
-          <td colspan="2">
-            <ul uk-accordion>
-              <li>
-                <a class="uk-accordion-title uk-text-nowrap" href>
-                  {% trans "Cостав диссовета" %}
-                </a>
-                <div class="uk-accordion-content committee_members">
-                  {% for person in committee.composition %}
-                    <span>{{ person }}</span>
-                  {% endfor %}
-                </div>
-              </li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="uk-container">
+    <div class="page-name">
+      {% if LANGUAGE_CODE == 'en' and title_en %}
+        {{ title_en }}
+      {% else %}
+        {{ title }}
+      {% endif %}
+    </div>
   </div>
-</div>
 
+  <div class="uk-container" style="margin-top:40px;margin-bottom:50px">
+    <div class="uk-overflow-auto">
+      <table class="uk-table uk-table-small uk-table-divider">
+        <tbody>
+          <tr>
+            <td class="uk-table-shrink uk-text-nowrap">{% trans "Шифр" %}</td>
+            <td>{{ committee.cipher }}</td>
+          </tr>
+          <tr>
+            <td class="uk-text-nowrap">{% trans "Организация" %}</td>
+            <td>
+              {% if LANGUAGE_CODE == 'en' and committee.organization_en %}
+                {{ committee.organization_en }}
+              {% else %}
+                {{ committee.organization }}
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-text-nowrap">{% trans "Факультет" %}</td>
+            <td>
+              {% if LANGUAGE_CODE == 'en' and committee.faculty_en %}
+                {{ committee.faculty_en }}
+              {% else %}
+                {{ committee.faculty }}
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-text-nowrap">{% trans "Адрес" %}</td>
+            <td>
+              {% if LANGUAGE_CODE == 'en' and committee.address_en %}
+                {{ committee.address_en }}
+              {% else %}
+                {{ committee.address }}
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-text-nowrap">{% trans "Специальности" %}</td>
+            <td>
+              <div class="scientific_specialties">
+                {% for spec in committee.scientific_specialties.all %}
+                  <span>
+                    <b>{{ spec.cipher }}.</b>
+                    {% if LANGUAGE_CODE == 'en' and spec.name_en %}
+                      {{ spec.name_en }}
+                    {% else %}
+                      {{ spec.name }}
+                    {% endif %}
+                  </span>
+                {% endfor %}
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-text-nowrap">{% trans "Председатель" %}</td>
+            <td>
+              {% if LANGUAGE_CODE == 'en' and committee.chairman_en %}
+                {{ committee.chairman_en }}
+              {% else %}
+                {{ committee.chairman }}
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-text-nowrap">{% trans "Секретарь" %}</td>
+            <td>
+              {% if LANGUAGE_CODE == 'en' and committee.secretary_en %}
+                {{ committee.secretary_en }}
+              {% else %}
+                {{ committee.secretary }}
+              {% endif %}
+            </td>
+          </tr>
+          {% if committee.phone %}
+            <tr>
+              <td class="uk-text-nowrap">{% trans "Телефон" %}</td>
+              <td>{{ committee.phone }}</td>
+            </tr>
+          {% endif %}
+          <tr>
+            <td class="uk-text-nowrap">E-mail</td>
+            <td>{{ committee.email }}</td>
+          </tr>
+          <tr class="hover">
+            <td colspan="2">
+              <ul uk-accordion>
+                <li>
+                  <a class="uk-accordion-title uk-text-nowrap" href>
+                    {% trans "Cостав диссовета" %}
+                  </a>
+                  <div class="uk-accordion-content committee_members">
+                    {% if LANGUAGE_CODE == 'en' and committee.composition_en %}
+                      {% for person in committee.composition_en %}
+                        <span>{{ person }}<br></span>
+                      {% endfor %}
+                    {% else %}
+                      {% for person in committee.composition %}
+                        <span>{{ person }}<br></span>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 {% endblock %}

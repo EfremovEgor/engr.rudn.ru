@@ -20,7 +20,9 @@
   <p style="margin-top:-20px">
     {{ report.date_start }} - {{ report.time_start }} – {{ report.time_end }}
   </p>
-  <p>Ссылка на конференцию: <a href="{{report.online_meeting_url}}" target="_blank">{{report.online_meeting_url}}</a></p>
+  {% if report.online_meeting_url %}
+    <p>Ссылка на конференцию: <a href="{{report.online_meeting_url}}" target="_blank">{{report.online_meeting_url}}</a></p>
+  {% endif %}
   <div class="speaker-container">
     {% if report.speaker %}
       <div class="speaker-info uk-visible@s">
@@ -98,8 +100,12 @@
       </div>
     {% endif %}
   </div>
-  {{report.video_recording|safe}}
-  {{report.presentation_file|safe}}
+  {% if report.video_recording %}
+    {{report.video_recording|safe}}
+  {% endif %}
+  {% if report.presentation_file %}
+    {{report.presentation_file|safe}}
+  {% endif %}
 
 </div>
 

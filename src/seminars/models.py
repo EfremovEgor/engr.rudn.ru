@@ -75,6 +75,19 @@ class SeminarReport(models.Model):
         null=True,
         on_delete=models.CASCADE,
     )
+    online_meeting_url = models.URLField(
+        verbose_name="Ссылка на онлайн-конференцию",
+        blank=True,
+        null=True,
+    )
+    video_recording = RichTextUploadingField(
+        verbose_name="Video recording URL",
+        blank=True, null=True
+    )
+    presentation_file = RichTextUploadingField(
+        verbose_name="Presentation (PDF / PPT)",
+        blank=True, null=True
+    )
     annotation = RichTextUploadingField(
         verbose_name="Аннотация",
         blank=True,

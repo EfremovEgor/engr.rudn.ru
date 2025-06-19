@@ -10,7 +10,7 @@
     :root {
         --clr-primary: #0b7de5;
         --clr-primary-light: #eff7ff;
-        --clr-text: #0d0d0d;
+        --clr-text: #333333;
         --clr-muted: #666;
         --radius: 8px;
         --fs-h1: 1.8rem;
@@ -166,6 +166,10 @@
         margin-top: .25rem
     }
 
+    .info-box li {
+        margin-bottom: 5px;
+    }
+
     .timeline-table {
         width: 100%;
         border-collapse: separate;
@@ -186,6 +190,7 @@
 
     .timeline-table td {
         text-align: center;
+        font-size: smaller;
     }
 
     .timeline-table tr:nth-child(even) {
@@ -373,7 +378,7 @@
 
             <div class="date-tile">
                 <img src="{% static 'images/applicants/committee/online_1575516 1.svg' %}" alt="">
-                <div class="tile-title">{% trans "Завершение подачи документов<br>на направление «Архитектура»" %}</div>
+                <div class="tile-title">{% trans "Завершение приема документов<br>на направление «Архитектура»" %}</div>
                 <div class="tile-date">{% trans "15 июля 2025 г." %}</div>
             </div>
 
@@ -401,37 +406,36 @@
             <div class="info-box">
                 <h3>{% trans "Особые условия" %}</h3>
                 <ul>
-                    <li>{% trans "Олимпиадники и высокобалльники" %}</li>
-                    <li>{% trans "Дополнительные баллы" %}</li>
-                    <li>{% trans "Целевое обучение" %}</li>
-                    <li>{% trans "Особая квота" %}</li>
-                    <li>{% trans "Отдельная квота" %}</li>
-                    <li>{% trans "Преимущественное право на зачисление" %}</li>
-                    <li>{% trans "Сироты" %}</li>
+                    <a href="https://priem.rudn.ru/olympiady" target="_blank"><li>{% trans "Олимпиадники и высокобалльники" %}</li></a>
+                    <a href="https://admission.rudn.ru/undergraduate/#achievements" target="_blank"><li>{% trans "Дополнительные баллы" %}</li></a>
+                    <a href="https://admission.rudn.ru/tselevoe-obuchenie/" target="_blank"><li>{% trans "Целевое обучение" %}</li></a>
+                    <a href="https://admission.rudn.ru/benefits/#special-quota" target="_blank"><li>{% trans "Особая квота" %}</li></a>
+                    <a href="https://admission.rudn.ru/benefits/#separate-quota" target="_blank"><li>{% trans "Отдельная квота" %}</li></a>
+                    <a href="https://admission.rudn.ru/benefits/#pre-emptive-right" target="_blank"><li>{% trans "Преимущественное право на зачисление" %}</li></a>
+                    <a href="https://admission.rudn.ru/undergraduate/sale/" target="_blank"><li>{% trans "Скидки" %}</li></a>
                 </ul>
             </div>
 
             <div class="info-box">
                 <h3>{% trans "Прогноз поступления" %}</h3>
                 <ul>
-                    <li>{% trans "Калькулятор ЕГЭ" %}</li>
-                    <li>{% trans "Минимальные баллы на бюджет и контракт" %}</li>
-                    <li>{% trans "Проходной балл прошлых лет" %}</li>
-                    <li>{% trans "Тест на профориентацию" %}</li>
-                    <li>{% trans "Предварительный договор" %}</li>
+                    <a href="https://admission.rudn.ru/score_calculator/" target="_blank"><li>{% trans "Калькулятор ЕГЭ" %}</li></a>
+                    <a href="https://admission.rudn.ru/#" target="_blank"><li>{% trans "Минимальные баллы на бюджет и контракт" %}</li></a>
+                    <a href="https://admission.rudn.ru/#" target="_blank"><li>{% trans "Проходной балл прошлых лет" %}</li></a>
+                    <a href="https://admission.rudn.ru/#quiz-row" target="_blank"><li>{% trans "Тест на профориентацию" %}</li></a>
+                    <a href="https://admission.rudn.ru/predvaritelnyy-dogovor/" target="_blank"><li>{% trans "Предварительный договор" %}</li></a>
                 </ul>
             </div>
 
             <div class="info-box">
                 <h3>{% trans "Приём 2025" %}</h3>
                 <ul>
-                    <li>{% trans "Выбери программу университетской академии" %}</li>
-                    <li>{% trans "Лиги-баттлы" %}</li>
-                    <li>{% trans "Индивидуальные достижения" %}</li>
-                    <li>{% trans "Профессиональные испытания" %}</li>
-                    <li>{% trans "Нормативы ГТО" %}</li>
-                    <li>{% trans "Электронные документы" %}</li>
-                    <li>{% trans "Сроки проведения практик" %}</li>
+                    <a href="https://admission.rudn.ru/undergraduate/directions/" target="_blank"><li>{% trans "Выбери программу университетской академии" %}</li></a>
+                    <a href="https://admission.rudn.ru/postgraduate/#achievements" target="_blank"><li>{% trans "Индивидуальные достижения" %}</li></a>
+                    <a href="https://admission.rudn.ru/postgraduate/timetable/" target="_blank"><li>{% trans "Расписание экзаменов" %}</li></a>
+                    <a href="https://admission.rudn.ru/postgraduate/conditions/" target="_blank"><li>{% trans "Нормативные документы" %}</li></a>
+                    <a href="https://admission.rudn.ru/postgraduate/timing/" target="_blank"><li>{% trans "Сроки проведения приема" %}</li></a>
+                    <a href="https://admission.rudn.ru/postgraduate/#admission-monitoring" target="_blank"><li>{% trans "Мониторинг приема" %}</li></a>
                 </ul>
             </div>
         </div>
@@ -459,37 +463,37 @@
                         <b>{% trans "Сроки приёма документов" %}</b><br>
                         <em>{% trans "Для направления Архитектура"%}</em>
                     </td>
-                    <td>{% trans "15 июля 2025 г." %}</td>
-                    <td>{% trans "20 августа 2025 г." %}</td>
-                    <td>{% trans "20 сентября 2025 г." %}</td>
+                    <td>{% trans "15 июля" %}</td>
+                    <td>{% trans "20 августа" %}</td>
+                    <td>{% trans "20 сентября" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
                     <td><em>{% trans "Для имеющих право сдавать экзамены в РУДН" %}</em></td>
-                    <td>{% trans "15 июля 2025 г." %}</td>
-                    <td>{% trans "20 августа 2025 г." %}</td>
-                    <td>{% trans "20 сентября 2025 г." %}</td>
+                    <td>{% trans "15 июля" %}</td>
+                    <td>{% trans "20 августа" %}</td>
+                    <td>{% trans "20 сентября" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
                     <td><em>{% trans "Для поступающих по ЕГЭ, БВИ" %}</em></td>
-                    <td>{% trans "25 июля 2025 г." %}</td>
-                    <td>{% trans "25 августа 2025 г." %}</td>
-                    <td>{% trans "25 сентября 2025 г." %}</td>
+                    <td>{% trans "25 июля" %}</td>
+                    <td>{% trans "25 августа" %}</td>
+                    <td>{% trans "25 сентября" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
                     <td><b>{% trans "Сроки проведения вступительных испытаний" %}</b></td>
-                    <td>{% trans "16 июля - 25 июля 2025 г." %}</td>
-                    <td>{% trans "16 июля - 25 августа 2025 г." %}</td>
-                    <td>{% trans "16 июля - 25 сентября 2025 г." %}</td>
+                    <td>{% trans "16 - 25 июля" %}</td>
+                    <td>{% trans "16 июля - 25 августа" %}</td>
+                    <td>{% trans "16 июля - 25 сентября" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
                     <td><b>{% trans "Сроки объявления конкурсного списка (рейтинг)" %}</b></td>
-                    <td>{% trans "27 июля 2025 г." %}</td>
-                    <td>{% trans "26 августа 2025 г." %}</td>
-                    <td>{% trans "26 сентября 2025 г." %}</td>
+                    <td>{% trans "27 июля" %}</td>
+                    <td>{% trans "26 августа" %}</td>
+                    <td>{% trans "26 сентября" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
@@ -500,14 +504,14 @@
                         <em>Для зачисления в рамках приоритетного этапа</em>
                         {% endblocktrans %}
                     </td>
-                    <td>{% trans "1 августа 2025 г." %}</td>
+                    <td>{% trans "1 августа" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
                     <td>
                         <em>{% trans "Для зачисления в рамках основного этапа" %}</em>
                     </td>
-                    <td>{% trans "5 августа 2025 г." %}</td>
+                    <td>{% trans "5 августа" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
@@ -515,8 +519,8 @@
                         <em>{% trans "Завершение заключения договоров" %}</em>
                     </td>
                     <td></td>
-                    <td>{% trans "27 августа 2025 г." %}</td>
-                    <td>{% trans "27 сентября 2025 г." %}</td>
+                    <td>{% trans "27 августа" %}</td>
+                    <td>{% trans "27 сентября" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
@@ -524,28 +528,28 @@
                         <b>{% trans "Сроки зачисления (издание приказов)" %}</b><br>
                         <em>{% trans "Для зачисления в рамках приоритетного этапа" %}</em>
                     </td>
-                    <td>{% trans "2-3 августа 2025 г." %}</td>
+                    <td>{% trans "2-3 августа" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
                     <td><em>{% trans "Для зачисления в рамках основного этапа" %}</em></td>
-                    <td>{% trans "6-7 августа 2025 г." %}</td>
-                    <td>{% trans "30 августа 2025 г." %}</td>
-                    <td>{% trans "30 сентября 2025 г." %}</td>
+                    <td>{% trans "6-7 августа" %}</td>
+                    <td>{% trans "30 августа" %}</td>
+                    <td>{% trans "30 сентября" %}</td>
                 </tr>
 
 
                 <tr data-mode="budget">
                     <td><b>{% trans "Основание для зачисления" %}</b></td>
                     <td>{% trans "Согласие на зачисление" %}</td>
-                    <td>{% trans "Подтверждение факта оплаты" %}</td>
+                    <td colspan="2">{% trans "Подтверждение факта оплаты" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
                     <td><b>{% trans "Сроки начала учебного года" %}</b></td>
-                    <td>{% trans "1 сентября 2025 г." %}</td>
-                    <td>{% trans "1 октября 2025 г." %}</td>
-                    <td>{% trans "1 декабря 2025 г." %}</td>
+                    <td>{% trans "1 сентября" %}</td>
+                    <td>{% trans "1 октября" %}</td>
+                    <td>{% trans "1 декабря" %}</td>
                 </tr>
 
             </tbody>
@@ -644,6 +648,7 @@
                     <td>{% trans "1 марта" %}</td>
                     <td>{% trans "1 марта" %}</td>
                     <td>{% trans "1 марта" %}</td>
+                    <td>{% trans "1 марта" %}</td>
                 </tr>
 
                 <tr data-mode="budget">
@@ -656,7 +661,7 @@
 
                 <tr data-mode="budget">
                     <td>{% trans "Сроки проведения (завершения) вступительных испытаний" %}</td>
-                    <td>{% trans "13 августа – 20 августа" %}</td>
+                    <td>{% trans "13 – 20 августа" %}</td>
                     <td>{% trans "2 марта – 25 августа" %}</td>
                     <td>{% trans "2 марта – 25 сентября" %}</td>
                     <td>{% trans "2 марта – 25 сентября" %}</td>

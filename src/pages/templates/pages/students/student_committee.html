@@ -46,7 +46,7 @@
   <h2 class="sub-heading">{% trans "Председатель комитета" %}</h2>
 
   <h2 class="sub-heading">
-    {{ department.job_title|temp_replace_head_department }}
+    {{ department.get_job_title_display }}  
   </h2>
 
   <div style="max-width: fit-content">

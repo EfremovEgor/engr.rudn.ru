@@ -96,8 +96,8 @@ def replace_quotes(phrase):
 
 
 @register.filter
-def temp_replace_head_department(phrase: str):
-    return phrase.replace("кафедры", "кафедрой")
+def temp_replace_head_department(phrase: str) -> str:
+    return phrase.replace(_("кафедры"), _("кафедрой"))
 
 
 @register.filter

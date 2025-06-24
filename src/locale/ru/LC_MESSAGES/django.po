@@ -626,8 +626,8 @@ msgid "Минимальные баллы на бюджет и контракт"
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:419
-msgid "Проходной балл прошлых лет"
-msgstr ""
+msgid "Проходные баллы прошлых лет"
+msgstr "Passing scores from previous years"
 
 #: pages/templates/pages/applicants/committee.html:420
 msgid "Тест на профориентацию"

@@ -33,6 +33,11 @@ class EmployeeProfile(models.Model):
         blank=True,
         null=True,
     )
+    office_en = models.TextField(
+        verbose_name="Кабинет (en)",
+        blank=True,
+        null=True,
+    )
     emails = ArrayField(
         models.EmailField(verbose_name="Электронный адрес", max_length=255),
         verbose_name="Электронные адреса",

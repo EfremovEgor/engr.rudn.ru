@@ -52,7 +52,9 @@
         <div class="uk-comment-body">
           <ul class="uk-list">
 
-            {% if profile.office %}
+            {% if LANGUAGE_CODE == "en" and profile.office_en %}
+              <li><span uk-icon="location"></span> {{ profile.office_en }}</li>
+            {% else %}
               <li><span uk-icon="location"></span> {{ profile.office }}</li>
             {% endif %}
 

@@ -383,6 +383,14 @@ html {
 }
 
 .main-slider {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.main-slider > ul,
+.main-slider > ul > li,
+.main-slider .uk-cover-container {
   border-radius: 20px;
   overflow: hidden;
 }
@@ -393,13 +401,6 @@ html {
   min-height: 450px;
   object-fit: cover;
   object-position: center bottom;
-  border-radius: 0; /* corners now inherited from .main-slider */
-}
-
-.main-slider > ul > li,
-.uk-cover-container {
-  border-radius: 0;
-  overflow: hidden;
 }
 
 @media (min-width: 960px) {
@@ -426,7 +427,6 @@ html {
     object-position: center center;
   }
 }
-
 
 .news-card>.uk-card-body,
 .news-card-no-image,

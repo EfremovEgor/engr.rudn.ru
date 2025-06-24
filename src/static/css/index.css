@@ -384,31 +384,38 @@ html {
 
 .main-slider-image {
   width: 100%;
-  min-height: 450px;
   height: auto;
+  min-height: 450px;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center bottom;
   border-radius: 20px;
 }
 
-@media screen and (min-width: 960px) {
-  .main-slider>ul>li>img {
+@media (min-width: 960px) {
+  .main-slider > ul > li > img {
     transition: all 0.5s;
     cursor: pointer;
   }
 
-  .main-slider:hover>ul>li>img {
+  .main-slider:hover > ul > li > img {
     filter: brightness(70%);
   }
 }
 
-@media screen and (max-width: 960px) {
+@media (max-width: 960px) {
   .main-slider-image {
     min-height: unset;
     width: 100%;
     height: auto;
     object-fit: contain;
-    object-position: bottom;
+    object-position: center center;
+  }
+}
+
+@media (max-height: 900px) and (min-width: 961px) {
+  .main-slider-image {
+    object-fit: contain;
+    object-position: center center;
   }
 }
 

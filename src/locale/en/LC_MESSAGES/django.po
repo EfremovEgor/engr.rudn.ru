@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 12:40+0300\n"
+"POT-Creation-Date: 2025-06-24 15:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -357,14 +357,14 @@ msgid "Расписание занятий"
 msgstr "Schedule"
 
 #: pages/templates/pages/academy/contacts.html:21
-#: pages/templates/pages/applicants/committee.html:875
+#: pages/templates/pages/applicants/committee.html:876
 msgid "Секретарь отборочной комиссии"
 msgstr "Secretary of the Admissions Board"
 
 #: pages/templates/pages/academy/contacts.html:28
 #: pages/templates/pages/academy/contacts.html:86
 #: pages/templates/pages/academy/contacts.html:110
-#: pages/templates/pages/applicants/committee.html:882
+#: pages/templates/pages/applicants/committee.html:883
 msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;403"
 msgstr "Moscow, Ordzhonikidze St 3, office 403"
 
@@ -443,7 +443,7 @@ msgstr "Specialty:"
 
 #: pages/templates/pages/academy/department_item.html:268
 #: pages/templates/pages/academy/department_item.html:295
-#: pages/templates/pages/applicants/committee.html:363
+#: pages/templates/pages/applicants/committee.html:364
 #: pages/templates/pages/applicants/levels/masters.html:9
 #: pages/templates/pages/applicants/study_directions.html:53 pages/views.py:519
 msgid "Магистратура"
@@ -483,7 +483,7 @@ msgstr "language"
 
 #: pages/templates/pages/academy/department_item.html:329
 #: pages/templates/pages/academy/department_item.html:356
-#: pages/templates/pages/applicants/committee.html:364
+#: pages/templates/pages/applicants/committee.html:365
 #: pages/templates/pages/applicants/levels/postgraduates.html:9
 #: pages/templates/pages/applicants/study_directions.html:66 pages/views.py:533
 msgid "Аспирантура"
@@ -586,285 +586,286 @@ msgstr ""
 msgid "Основание инженерного факультета"
 msgstr "Founding of the Engineering Faculty"
 
-#: pages/templates/pages/applicants/committee.html:355
+#: pages/templates/pages/applicants/committee.html:356
 #: pages/templates/pages/applicants/reference.html:16
 msgid "Открой Мир в одном Университете!"
 msgstr "Open the World at one University!"
 
-#: pages/templates/pages/applicants/committee.html:362
+#: pages/templates/pages/applicants/committee.html:363
 msgid "Бакалавриат/Специалитет"
 msgstr "Bachelor/Specialist Degree"
 
-#: pages/templates/pages/applicants/committee.html:369
-#: pages/templates/pages/applicants/committee.html:562
-#: pages/templates/pages/applicants/committee.html:732
+#: pages/templates/pages/applicants/committee.html:370
+#: pages/templates/pages/applicants/committee.html:563
+#: pages/templates/pages/applicants/committee.html:733
 msgid "Ключевые даты"
 msgstr "Key dates"
 
-#: pages/templates/pages/applicants/committee.html:373
-#: pages/templates/pages/applicants/committee.html:566
-#: pages/templates/pages/applicants/committee.html:736
+#: pages/templates/pages/applicants/committee.html:374
+#: pages/templates/pages/applicants/committee.html:567
+#: pages/templates/pages/applicants/committee.html:737
 msgid "Начало приёма"
 msgstr "Start of document submission"
 
-#: pages/templates/pages/applicants/committee.html:374
-#: pages/templates/pages/applicants/committee.html:567
+#: pages/templates/pages/applicants/committee.html:375
+#: pages/templates/pages/applicants/committee.html:568
 msgid "Начало приёма документов — 20 июня 2025 г."
 msgstr "Start of document submission - June 20, 2025"
 
-#: pages/templates/pages/applicants/committee.html:381
+#: pages/templates/pages/applicants/committee.html:382
 msgid "Завершение приема документов<br>на направление «Архитектура»"
 msgstr "Deadline for Architecture programme applications"
 
-#: pages/templates/pages/applicants/committee.html:382
+#: pages/templates/pages/applicants/committee.html:383
 msgid "15 июля 2025 г."
 msgstr "July 15, 2025"
 
-#: pages/templates/pages/applicants/committee.html:387
+#: pages/templates/pages/applicants/committee.html:388
 msgid "Завершение заявлений на бюджетные места"
 msgstr "End of applications for state-funded places"
 
-#: pages/templates/pages/applicants/committee.html:388
+#: pages/templates/pages/applicants/committee.html:389
 msgid "25 июля 2025 г."
 msgstr "July 25, 2025"
 
-#: pages/templates/pages/applicants/committee.html:393
+#: pages/templates/pages/applicants/committee.html:394
 msgid "Публикация конкурсных списков"
 msgstr "Publication of competitive lists"
 
-#: pages/templates/pages/applicants/committee.html:394
+#: pages/templates/pages/applicants/committee.html:395
 msgid "27 июля 2025 г."
 msgstr "July 27, 2025"
 
-#: pages/templates/pages/applicants/committee.html:399
+#: pages/templates/pages/applicants/committee.html:400
 msgid "Конец приёма документов на контракт"
 msgstr "Deadline for tuition-fee contract applications"
 
-#: pages/templates/pages/applicants/committee.html:400
+#: pages/templates/pages/applicants/committee.html:401
 msgid "25 августа 2025 г."
 msgstr "August 25, 2025"
 
-#: pages/templates/pages/applicants/committee.html:407
-#: pages/templates/pages/applicants/committee.html:594
-#: pages/templates/pages/applicants/committee.html:764
+#: pages/templates/pages/applicants/committee.html:408
+#: pages/templates/pages/applicants/committee.html:595
+#: pages/templates/pages/applicants/committee.html:765
 msgid "Особые условия"
 msgstr "Special conditions"
 
-#: pages/templates/pages/applicants/committee.html:409
-msgid "Олимпиадники и высокобалльники"
-msgstr "Olympiad winners and high scorers"
-
 #: pages/templates/pages/applicants/committee.html:410
-#: pages/templates/pages/applicants/committee.html:596
-#: pages/templates/pages/applicants/committee.html:768
-msgid "Дополнительные баллы"
-msgstr "Additional points"
+msgid "Олимпиадникам и высокобалльниками"
+msgstr "Olympiad winners and high scorers"
 
 #: pages/templates/pages/applicants/committee.html:411
 #: pages/templates/pages/applicants/committee.html:597
-#: pages/templates/pages/applicants/committee.html:766
+#: pages/templates/pages/applicants/committee.html:767
+msgid "Дополнительные баллы"
+msgstr "Additional points"
+
+#: pages/templates/pages/applicants/committee.html:412
+#: pages/templates/pages/applicants/committee.html:598
+#: pages/templates/pages/applicants/committee.html:768
 msgid "Целевое обучение"
 msgstr "Targeted training programme"
 
-#: pages/templates/pages/applicants/committee.html:412
+#: pages/templates/pages/applicants/committee.html:413
 msgid "Особая квота"
 msgstr "Special quota"
 
-#: pages/templates/pages/applicants/committee.html:413
+#: pages/templates/pages/applicants/committee.html:414
 msgid "Отдельная квота"
 msgstr "Separate quota"
 
-#: pages/templates/pages/applicants/committee.html:414
+#: pages/templates/pages/applicants/committee.html:415
 msgid "Преимущественное право на зачисление"
 msgstr "Preferential admission right"
 
-#: pages/templates/pages/applicants/committee.html:415
-#: pages/templates/pages/applicants/committee.html:598
-#: pages/templates/pages/applicants/committee.html:767
+#: pages/templates/pages/applicants/committee.html:416
+#: pages/templates/pages/applicants/committee.html:599
+#: pages/templates/pages/applicants/committee.html:769
 msgid "Скидки"
 msgstr "Discounts"
 
-#: pages/templates/pages/applicants/committee.html:420
+#: pages/templates/pages/applicants/committee.html:421
 msgid "Прогноз поступления"
 msgstr "Admission forecast"
 
-#: pages/templates/pages/applicants/committee.html:422
+#: pages/templates/pages/applicants/committee.html:423
 msgid "Калькулятор ЕГЭ"
 msgstr "Unified State Exam (USE) calculator"
 
-#: pages/templates/pages/applicants/committee.html:423
+#: pages/templates/pages/applicants/committee.html:424
 msgid "Минимальные баллы на бюджет и контракт"
 msgstr "Minimum entrance scores"
 
-#: pages/templates/pages/applicants/committee.html:424
-msgid "Проходной балл прошлых лет"
+#: pages/templates/pages/applicants/committee.html:425
+msgid "Проходные баллы прошлых лет"
 msgstr "Cutoff scores from previous years"
 
-#: pages/templates/pages/applicants/committee.html:425
+#: pages/templates/pages/applicants/committee.html:426
 msgid "Тест на профориентацию"
 msgstr "Career Guidance Test"
 
-#: pages/templates/pages/applicants/committee.html:426
+#: pages/templates/pages/applicants/committee.html:427
 msgid "Предварительный договор"
 msgstr "Preliminary agreement"
 
-#: pages/templates/pages/applicants/committee.html:431
-#: pages/templates/pages/applicants/committee.html:615
-#: pages/templates/pages/applicants/committee.html:781
+#: pages/templates/pages/applicants/committee.html:432
+#: pages/templates/pages/applicants/committee.html:616
+#: pages/templates/pages/applicants/committee.html:782
 msgid "Приём 2025"
 msgstr "Admission 2025"
 
-#: pages/templates/pages/applicants/committee.html:433
-msgid "Выбери программу университетской академии"
-msgstr "Choose a university academy program"
-
 #: pages/templates/pages/applicants/committee.html:434
 #: pages/templates/pages/applicants/committee.html:618
-#: pages/templates/pages/applicants/committee.html:784
-msgid "Индивидуальные достижения"
-msgstr "Individual achievements"
+msgid "Выбрать программу инженерной академии"
+msgstr "Choose an Engineering Academy programme"
 
 #: pages/templates/pages/applicants/committee.html:435
 #: pages/templates/pages/applicants/committee.html:619
 #: pages/templates/pages/applicants/committee.html:785
-msgid "Расписание экзаменов"
-msgstr "Examination schedule"
+msgid "Индивидуальные достижения"
+msgstr "Individual achievements"
 
 #: pages/templates/pages/applicants/committee.html:436
 #: pages/templates/pages/applicants/committee.html:620
 #: pages/templates/pages/applicants/committee.html:786
+msgid "Расписание экзаменов"
+msgstr "Examination schedule"
+
+#: pages/templates/pages/applicants/committee.html:437
+#: pages/templates/pages/applicants/committee.html:621
+#: pages/templates/pages/applicants/committee.html:787
 msgid "Нормативные документы"
 msgstr "Regulatory documents"
 
-#: pages/templates/pages/applicants/committee.html:437
+#: pages/templates/pages/applicants/committee.html:438
 msgid "Сроки проведения приема"
 msgstr "Admissions timeline"
 
-#: pages/templates/pages/applicants/committee.html:438
+#: pages/templates/pages/applicants/committee.html:439
 msgid "Мониторинг приема"
 msgstr "Admissions monitoring"
 
-#: pages/templates/pages/applicants/committee.html:443
+#: pages/templates/pages/applicants/committee.html:444
 msgid "Сроки приёма в бакалавриат и специалитет в 2025 году"
 msgstr "Application deadlines for bachelor’s and specialist programmes in 2025"
 
-#: pages/templates/pages/applicants/committee.html:449
-#: pages/templates/pages/applicants/committee.html:633
-#: pages/templates/pages/applicants/committee.html:801
+#: pages/templates/pages/applicants/committee.html:450
+#: pages/templates/pages/applicants/committee.html:634
+#: pages/templates/pages/applicants/committee.html:802
 msgid "Этап"
 msgstr "Stage"
 
-#: pages/templates/pages/applicants/committee.html:450
-#: pages/templates/pages/applicants/committee.html:634
+#: pages/templates/pages/applicants/committee.html:451
+#: pages/templates/pages/applicants/committee.html:635
 msgid "Поступление на бюджетные места"
 msgstr "Admission to budget places"
 
-#: pages/templates/pages/applicants/committee.html:451
-#: pages/templates/pages/applicants/committee.html:635
+#: pages/templates/pages/applicants/committee.html:452
+#: pages/templates/pages/applicants/committee.html:636
 msgid "Поступление на платные места"
 msgstr "Admission to fee-paying places"
 
-#: pages/templates/pages/applicants/committee.html:454
+#: pages/templates/pages/applicants/committee.html:455
 msgid "Очная, очно-заочная, заочная"
 msgstr "Full-time and part-time (blended) modes"
 
-#: pages/templates/pages/applicants/committee.html:455
-#: pages/templates/pages/applicants/committee.html:639
+#: pages/templates/pages/applicants/committee.html:456
+#: pages/templates/pages/applicants/committee.html:640
 msgid "Очная"
 msgstr "Full-time mode"
 
-#: pages/templates/pages/applicants/committee.html:456
+#: pages/templates/pages/applicants/committee.html:457
 msgid "Очно-заочная, заочная"
 msgstr "Part-time (blended) mode"
 
-#: pages/templates/pages/applicants/committee.html:463
+#: pages/templates/pages/applicants/committee.html:464
 msgid "Сроки приёма документов"
 msgstr "Deadlines for accepting documents"
 
-#: pages/templates/pages/applicants/committee.html:464
+#: pages/templates/pages/applicants/committee.html:465
 msgid "Для направления Архитектура"
 msgstr "For the direction of Architecture"
 
-#: pages/templates/pages/applicants/committee.html:466
-#: pages/templates/pages/applicants/committee.html:473
-msgid "15 июля"
-msgstr "15 July"
-
 #: pages/templates/pages/applicants/committee.html:467
 #: pages/templates/pages/applicants/committee.html:474
-#: pages/templates/pages/applicants/committee.html:657
-msgid "20 августа"
-msgstr "August 20"
+msgid "15 июля"
+msgstr "15 July"
 
 #: pages/templates/pages/applicants/committee.html:468
 #: pages/templates/pages/applicants/committee.html:475
 #: pages/templates/pages/applicants/committee.html:658
+msgid "20 августа"
+msgstr "August 20"
+
+#: pages/templates/pages/applicants/committee.html:469
+#: pages/templates/pages/applicants/committee.html:476
 #: pages/templates/pages/applicants/committee.html:659
+#: pages/templates/pages/applicants/committee.html:660
 msgid "20 сентября"
 msgstr "September 29"
 
-#: pages/templates/pages/applicants/committee.html:472
+#: pages/templates/pages/applicants/committee.html:473
 msgid "Для имеющих право сдавать экзамены в РУДН"
 msgstr "For those eligible to take exams at RUDN"
 
-#: pages/templates/pages/applicants/committee.html:479
+#: pages/templates/pages/applicants/committee.html:480
 msgid "Для поступающих по ЕГЭ, БВИ"
 msgstr "For applicants via the USE or without entrance exams"
 
-#: pages/templates/pages/applicants/committee.html:480
+#: pages/templates/pages/applicants/committee.html:481
 msgid "25 июля"
 msgstr "July 25"
 
-#: pages/templates/pages/applicants/committee.html:481
+#: pages/templates/pages/applicants/committee.html:482
 msgid "25 августа"
 msgstr "August 25"
 
-#: pages/templates/pages/applicants/committee.html:482
-#: pages/templates/pages/applicants/committee.html:817
+#: pages/templates/pages/applicants/committee.html:483
+#: pages/templates/pages/applicants/committee.html:818
 msgid "25 сентября"
 msgstr "September 25"
 
-#: pages/templates/pages/applicants/committee.html:486
+#: pages/templates/pages/applicants/committee.html:487
 msgid "Сроки проведения вступительных испытаний"
 msgstr "Deadlines for entrance examinations"
 
-#: pages/templates/pages/applicants/committee.html:487
+#: pages/templates/pages/applicants/committee.html:488
 msgid "16 - 25 июля"
 msgstr "July 16 - 25"
 
-#: pages/templates/pages/applicants/committee.html:488
+#: pages/templates/pages/applicants/committee.html:489
 msgid "16 июля - 25 августа"
 msgstr "July 16 - August 25"
 
-#: pages/templates/pages/applicants/committee.html:489
+#: pages/templates/pages/applicants/committee.html:490
 msgid "16 июля - 25 сентября"
 msgstr "July 16 - September 25"
 
-#: pages/templates/pages/applicants/committee.html:493
+#: pages/templates/pages/applicants/committee.html:494
 msgid "Сроки объявления конкурсного списка (рейтинг)"
 msgstr "Deadline for announcing the competition list (rating)"
 
-#: pages/templates/pages/applicants/committee.html:494
+#: pages/templates/pages/applicants/committee.html:495
 msgid "27 июля"
 msgstr "27 July"
 
-#: pages/templates/pages/applicants/committee.html:495
-#: pages/templates/pages/applicants/committee.html:679
-#: pages/templates/pages/applicants/committee.html:689
-#: pages/templates/pages/applicants/committee.html:699
-#: pages/templates/pages/applicants/committee.html:709
+#: pages/templates/pages/applicants/committee.html:496
+#: pages/templates/pages/applicants/committee.html:680
+#: pages/templates/pages/applicants/committee.html:690
+#: pages/templates/pages/applicants/committee.html:700
+#: pages/templates/pages/applicants/committee.html:710
 msgid "26 августа"
 msgstr "August 26"
 
-#: pages/templates/pages/applicants/committee.html:496
-#: pages/templates/pages/applicants/committee.html:680
+#: pages/templates/pages/applicants/committee.html:497
 #: pages/templates/pages/applicants/committee.html:681
-#: pages/templates/pages/applicants/committee.html:690
+#: pages/templates/pages/applicants/committee.html:682
 #: pages/templates/pages/applicants/committee.html:691
+#: pages/templates/pages/applicants/committee.html:692
 msgid "26 сентября"
 msgstr "September 26"
 
-#: pages/templates/pages/applicants/committee.html:501
+#: pages/templates/pages/applicants/committee.html:502
 msgid ""
 "Сроки завершения предоставления согласия на зачисление — до 12:00 по МСК</"
 "b><br> <em>Для зачисления в рамках приоритетного этапа</em>"
@@ -872,226 +873,222 @@ msgstr ""
 "Deadline for submitting consent to enrollment — by 12:00 MSK</b><br> <em>For "
 "enrollment during the priority stage</em>"
 
-#: pages/templates/pages/applicants/committee.html:507
-#: pages/templates/pages/applicants/committee.html:828
+#: pages/templates/pages/applicants/committee.html:508
+#: pages/templates/pages/applicants/committee.html:829
 msgid "1 августа"
 msgstr "August 1"
 
-#: pages/templates/pages/applicants/committee.html:512
-#: pages/templates/pages/applicants/committee.html:535
+#: pages/templates/pages/applicants/committee.html:513
+#: pages/templates/pages/applicants/committee.html:536
 msgid "Для зачисления в рамках основного этапа"
 msgstr "For enrollment within the main stage"
 
-#: pages/templates/pages/applicants/committee.html:514
-#: pages/templates/pages/applicants/committee.html:854
+#: pages/templates/pages/applicants/committee.html:515
+#: pages/templates/pages/applicants/committee.html:855
 msgid "5 августа"
 msgstr "August 5"
 
-#: pages/templates/pages/applicants/committee.html:519
+#: pages/templates/pages/applicants/committee.html:520
 msgid "Завершение заключения договоров"
 msgstr "Completion of contracts"
 
-#: pages/templates/pages/applicants/committee.html:522
-#: pages/templates/pages/applicants/committee.html:700
-#: pages/templates/pages/applicants/committee.html:710
+#: pages/templates/pages/applicants/committee.html:523
+#: pages/templates/pages/applicants/committee.html:701
+#: pages/templates/pages/applicants/committee.html:711
 msgid "27 августа"
 msgstr "August 27"
 
-#: pages/templates/pages/applicants/committee.html:523
-#: pages/templates/pages/applicants/committee.html:701
+#: pages/templates/pages/applicants/committee.html:524
 #: pages/templates/pages/applicants/committee.html:702
-#: pages/templates/pages/applicants/committee.html:711
+#: pages/templates/pages/applicants/committee.html:703
 #: pages/templates/pages/applicants/committee.html:712
-#: pages/templates/pages/applicants/committee.html:829
+#: pages/templates/pages/applicants/committee.html:713
+#: pages/templates/pages/applicants/committee.html:830
 msgid "27 сентября"
 msgstr "September 27"
 
-#: pages/templates/pages/applicants/committee.html:528
-#: pages/templates/pages/applicants/committee.html:696
+#: pages/templates/pages/applicants/committee.html:529
+#: pages/templates/pages/applicants/committee.html:697
 msgid "Сроки зачисления (издание приказов)"
 msgstr "Enrollment deadlines (issue of orders)"
 
-#: pages/templates/pages/applicants/committee.html:529
+#: pages/templates/pages/applicants/committee.html:530
 msgid "Для зачисления в рамках приоритетного этапа"
 msgstr "For enrollment within the priority phase"
 
-#: pages/templates/pages/applicants/committee.html:531
+#: pages/templates/pages/applicants/committee.html:532
 msgid "2-3 августа"
 msgstr "August 2 - 3"
 
-#: pages/templates/pages/applicants/committee.html:536
+#: pages/templates/pages/applicants/committee.html:537
 msgid "6-7 августа"
 msgstr "August 6 - 7"
 
-#: pages/templates/pages/applicants/committee.html:537
+#: pages/templates/pages/applicants/committee.html:538
 msgid "30 августа"
 msgstr "August 30"
 
-#: pages/templates/pages/applicants/committee.html:538
+#: pages/templates/pages/applicants/committee.html:539
 msgid "30 сентября"
 msgstr "September 30"
 
-#: pages/templates/pages/applicants/committee.html:543
+#: pages/templates/pages/applicants/committee.html:544
 msgid "Основание для зачисления"
 msgstr "Basis for enrollment"
 
-#: pages/templates/pages/applicants/committee.html:544
+#: pages/templates/pages/applicants/committee.html:545
 msgid "Согласие на зачисление"
 msgstr "Consent to enrollment"
 
-#: pages/templates/pages/applicants/committee.html:545
+#: pages/templates/pages/applicants/committee.html:546
 msgid "Подтверждение факта оплаты"
 msgstr "Payment confirmation"
 
-#: pages/templates/pages/applicants/committee.html:549
-#: pages/templates/pages/applicants/committee.html:716
+#: pages/templates/pages/applicants/committee.html:550
+#: pages/templates/pages/applicants/committee.html:717
 msgid "Сроки начала учебного года"
 msgstr "Academic year start dates"
 
-#: pages/templates/pages/applicants/committee.html:550
-#: pages/templates/pages/applicants/committee.html:721
+#: pages/templates/pages/applicants/committee.html:551
+#: pages/templates/pages/applicants/committee.html:722
 msgid "1 сентября"
 msgstr "September 1"
 
-#: pages/templates/pages/applicants/committee.html:551
-#: pages/templates/pages/applicants/committee.html:722
-#: pages/templates/pages/applicants/committee.html:864
+#: pages/templates/pages/applicants/committee.html:552
+#: pages/templates/pages/applicants/committee.html:723
 #: pages/templates/pages/applicants/committee.html:865
+#: pages/templates/pages/applicants/committee.html:866
 msgid "1 октября"
 msgstr "October 1"
 
-#: pages/templates/pages/applicants/committee.html:552
-#: pages/templates/pages/applicants/committee.html:723
+#: pages/templates/pages/applicants/committee.html:553
+#: pages/templates/pages/applicants/committee.html:724
 msgid "1 декабря"
 msgstr "December 1"
 
-#: pages/templates/pages/applicants/committee.html:574
-#: pages/templates/pages/applicants/committee.html:744
+#: pages/templates/pages/applicants/committee.html:575
+#: pages/templates/pages/applicants/committee.html:745
 msgid "Окончание приема документов на бюджетные места"
 msgstr "Deadline of acceptance for budget places"
 
-#: pages/templates/pages/applicants/committee.html:575
+#: pages/templates/pages/applicants/committee.html:576
 msgid "12 августа 2025 г."
 msgstr "August 12, 2025"
 
-#: pages/templates/pages/applicants/committee.html:580
+#: pages/templates/pages/applicants/committee.html:581
 msgid "Начало вступительных испытаний на бюджетные места"
 msgstr "Start of entrance exams for state-funded places"
 
-#: pages/templates/pages/applicants/committee.html:581
+#: pages/templates/pages/applicants/committee.html:582
 msgid "13 августа 2025 г."
 msgstr "August 13, 2025"
 
-#: pages/templates/pages/applicants/committee.html:586
+#: pages/templates/pages/applicants/committee.html:587
 msgid "Сроки зачисления (издание приказов) на бюджетные места"
 msgstr "Enrollment deadlines (issuance of orders) for state-funded places"
 
-#: pages/templates/pages/applicants/committee.html:587
+#: pages/templates/pages/applicants/committee.html:588
 msgid "26 августа 2025 г."
 msgstr "August 26, 2025"
 
-#: pages/templates/pages/applicants/committee.html:599
+#: pages/templates/pages/applicants/committee.html:600
 msgid "Цифровая магистратура"
 msgstr "Digital Master's Degree"
 
-#: pages/templates/pages/applicants/committee.html:600
+#: pages/templates/pages/applicants/committee.html:601
 msgid "Магистратура на иностранном языке"
 msgstr "Master’s programmes taught in a foreign language"
 
-#: pages/templates/pages/applicants/committee.html:601
+#: pages/templates/pages/applicants/committee.html:602
 msgid "Проектная магистратура"
 msgstr "Project master's program"
 
-#: pages/templates/pages/applicants/committee.html:606
+#: pages/templates/pages/applicants/committee.html:607
 msgid "Конкурсы для магистрантов"
 msgstr "Competitions for undergraduates"
 
-#: pages/templates/pages/applicants/committee.html:608
+#: pages/templates/pages/applicants/committee.html:609
 msgid "Универсиада 'RUDN-ON'"
 msgstr "“RUDN-ON” Universiade"
 
-#: pages/templates/pages/applicants/committee.html:609
+#: pages/templates/pages/applicants/committee.html:610
 msgid "Конкурс 'РАНЬШЕ-ЛУЧШЕ'"
 msgstr "“EARLIER-BETTER” contest"
 
 # #: pages/templates/pages/applicants/committee.html:645
-#: pages/templates/pages/applicants/committee.html:610
+#: pages/templates/pages/applicants/committee.html:611
 msgid "Конкурс 'F5 обновление'"
 msgstr "“F5 Update” contest"
 
-#: pages/templates/pages/applicants/committee.html:617
-msgid "Выбери программу инженерной академии"
-msgstr "Choose an Engineering Academy programme"
-
-#: pages/templates/pages/applicants/committee.html:621
-#: pages/templates/pages/applicants/committee.html:787
+#: pages/templates/pages/applicants/committee.html:622
+#: pages/templates/pages/applicants/committee.html:788
 msgid "Сроки проведения приёма"
 msgstr "Admissions timeline"
 
-#: pages/templates/pages/applicants/committee.html:626
+#: pages/templates/pages/applicants/committee.html:627
 msgid "Сроки приёма в магистратуру в 2025 году"
 msgstr "Application deadlines for master’s programmes in 2025"
 
-#: pages/templates/pages/applicants/committee.html:627
-#: pages/templates/pages/applicants/committee.html:795
+#: pages/templates/pages/applicants/committee.html:628
+#: pages/templates/pages/applicants/committee.html:796
 msgid ""
 "Публикация конкурсных списков на места в рамках КЦП — не позднее 1 августа"
 msgstr ""
 "Publication of competitive lists for state-funded places — no later than "
 "August 1"
 
-#: pages/templates/pages/applicants/committee.html:638
+#: pages/templates/pages/applicants/committee.html:639
 msgid "Очная, заочная"
 msgstr "Full-time, part-time modes"
 
-#: pages/templates/pages/applicants/committee.html:640
+#: pages/templates/pages/applicants/committee.html:641
 msgid "Очно-заочная"
 msgstr "Blended mode"
 
-#: pages/templates/pages/applicants/committee.html:641
+#: pages/templates/pages/applicants/committee.html:642
 msgid "Заочная"
 msgstr "Distance learning mode"
 
-#: pages/templates/pages/applicants/committee.html:647
+#: pages/templates/pages/applicants/committee.html:648
 msgid "20 июня"
 msgstr "June 20"
 
-#: pages/templates/pages/applicants/committee.html:648
 #: pages/templates/pages/applicants/committee.html:649
 #: pages/templates/pages/applicants/committee.html:650
 #: pages/templates/pages/applicants/committee.html:651
-#: pages/templates/pages/applicants/committee.html:811
+#: pages/templates/pages/applicants/committee.html:652
+#: pages/templates/pages/applicants/committee.html:812
 msgid "1 марта"
 msgstr "March 1"
 
-#: pages/templates/pages/applicants/committee.html:655
+#: pages/templates/pages/applicants/committee.html:656
 msgid "Сроки завершения приёма документов"
 msgstr "Document submission deadlines"
 
-#: pages/templates/pages/applicants/committee.html:656
+#: pages/templates/pages/applicants/committee.html:657
 msgid "12 августа"
 msgstr "August 12"
 
-#: pages/templates/pages/applicants/committee.html:663
-#: pages/templates/pages/applicants/committee.html:750
-#: pages/templates/pages/applicants/committee.html:821
+#: pages/templates/pages/applicants/committee.html:664
+#: pages/templates/pages/applicants/committee.html:751
+#: pages/templates/pages/applicants/committee.html:822
 msgid "Сроки проведения (завершения) вступительных испытаний"
 msgstr "Dates for conducting (completion of) entrance examinations"
 
-#: pages/templates/pages/applicants/committee.html:664
+#: pages/templates/pages/applicants/committee.html:665
 msgid "13 – 20 августа"
 msgstr "August 13 - 20"
 
-#: pages/templates/pages/applicants/committee.html:665
+#: pages/templates/pages/applicants/committee.html:666
 msgid "2 марта – 25 августа"
 msgstr "March 2 – August 25"
 
-#: pages/templates/pages/applicants/committee.html:666
 #: pages/templates/pages/applicants/committee.html:667
+#: pages/templates/pages/applicants/committee.html:668
 msgid "2 марта – 25 сентября"
 msgstr "March 2 – September 31"
 
-#: pages/templates/pages/applicants/committee.html:672
+#: pages/templates/pages/applicants/committee.html:673
 msgid ""
 "Сроки завершения предоставления согласия на зачисление — до 12:00 по МСК<br> "
 "<em>Для зачисления в рамках целевой квоты</em>"
@@ -1099,109 +1096,109 @@ msgstr ""
 "Deadline for submitting consent to enrollment — by 12:00 MSK<br><em>For "
 "enrollment under the targeted quota</em>"
 
-#: pages/templates/pages/applicants/committee.html:678
-#: pages/templates/pages/applicants/committee.html:688
+#: pages/templates/pages/applicants/committee.html:679
+#: pages/templates/pages/applicants/committee.html:689
 msgid "24 августа"
 msgstr "August 24"
 
-#: pages/templates/pages/applicants/committee.html:686
-#: pages/templates/pages/applicants/committee.html:707
+#: pages/templates/pages/applicants/committee.html:687
+#: pages/templates/pages/applicants/committee.html:708
 msgid "Для зачисления места в рамках контрольных цифр"
 msgstr "For enrollment under state-funded allocations"
 
-#: pages/templates/pages/applicants/committee.html:697
+#: pages/templates/pages/applicants/committee.html:698
 msgid "Для зачисления в рамках целевой квоты"
 msgstr "For enrollment under the targeted quota"
 
-#: pages/templates/pages/applicants/committee.html:718
+#: pages/templates/pages/applicants/committee.html:719
 msgid "1 сентября — по очной форме обучения"
 msgstr "September 1 — for full-time studies"
 
-#: pages/templates/pages/applicants/committee.html:719
+#: pages/templates/pages/applicants/committee.html:720
 msgid "1 октября — по заочной форме обучения"
 msgstr "October 1 — for distance studies"
 
-#: pages/templates/pages/applicants/committee.html:737
+#: pages/templates/pages/applicants/committee.html:738
 msgid "Начало приёма документов — 1 марта 2025 г."
 msgstr "Start of document submission — March 1, 2025"
 
-#: pages/templates/pages/applicants/committee.html:745
+#: pages/templates/pages/applicants/committee.html:746
 msgid "22 июля 2025 г."
 msgstr "July 22, 2025"
 
-#: pages/templates/pages/applicants/committee.html:751
+#: pages/templates/pages/applicants/committee.html:752
 msgid "2 марта - 31 июля 2025 г."
 msgstr "March 2 – July 31, 2025"
 
-#: pages/templates/pages/applicants/committee.html:756
+#: pages/templates/pages/applicants/committee.html:757
 msgid "Сроки зачисления (издание приказов) на платные места"
 msgstr "Enrollment deadlines (issuance of orders) for fee-paying places"
 
-#: pages/templates/pages/applicants/committee.html:757
+#: pages/templates/pages/applicants/committee.html:758
 msgid "29 сентября 2025 г."
 msgstr "September 29, 2025"
 
-#: pages/templates/pages/applicants/committee.html:773
+#: pages/templates/pages/applicants/committee.html:774
 msgid "Дополнительные формы обучения"
 msgstr "Additional forms of study"
 
-#: pages/templates/pages/applicants/committee.html:775
+#: pages/templates/pages/applicants/committee.html:776
 msgid "Прикрепление"
 msgstr "Attachment"
 
-#: pages/templates/pages/applicants/committee.html:776
+#: pages/templates/pages/applicants/committee.html:777
 msgid "Аспирантура полного дня"
 msgstr "Full-time postgraduate studies"
 
-#: pages/templates/pages/applicants/committee.html:783
+#: pages/templates/pages/applicants/committee.html:784
 msgid "Направления подготовки инженерной академии"
 msgstr "Engineering Academy fields of study"
 
-#: pages/templates/pages/applicants/committee.html:788
+#: pages/templates/pages/applicants/committee.html:789
 msgid "Мониторинг приёма"
 msgstr "Admissions monitoring"
 
-#: pages/templates/pages/applicants/committee.html:793
+#: pages/templates/pages/applicants/committee.html:794
 msgid "Сроки приёма в аспирантуру в 2025 году"
 msgstr "Admission deadlines for postgraduate programmes in 2025"
 
-#: pages/templates/pages/applicants/committee.html:802
+#: pages/templates/pages/applicants/committee.html:803
 msgid "Бюджетные места (КЦП)"
 msgstr "State-funded places (quota)"
 
-#: pages/templates/pages/applicants/committee.html:803
+#: pages/templates/pages/applicants/committee.html:804
 msgid "Места с оплатой стоимости обучения"
 msgstr "Fee-paying places"
 
-#: pages/templates/pages/applicants/committee.html:809
+#: pages/templates/pages/applicants/committee.html:810
 msgid "Начало приёма документов"
 msgstr "Start of document submission"
 
-#: pages/templates/pages/applicants/committee.html:810
+#: pages/templates/pages/applicants/committee.html:811
 msgid "1 июня"
 msgstr "June 1"
 
-#: pages/templates/pages/applicants/committee.html:815
+#: pages/templates/pages/applicants/committee.html:816
 msgid "Завершение приёма документов"
 msgstr "End of document submission"
 
-#: pages/templates/pages/applicants/committee.html:816
+#: pages/templates/pages/applicants/committee.html:817
 msgid "22 июня"
 msgstr "June 22"
 
-#: pages/templates/pages/applicants/committee.html:822
+#: pages/templates/pages/applicants/committee.html:823
 msgid "2 марта – 31 июля"
 msgstr "March 2 – July 31"
 
-#: pages/templates/pages/applicants/committee.html:823
+#: pages/templates/pages/applicants/committee.html:824
 msgid "23 июля – 27 сентября"
 msgstr "July 23 – September 27"
 
-#: pages/templates/pages/applicants/committee.html:827
+#: pages/templates/pages/applicants/committee.html:828
 msgid "Сроки размещения конкурсных списков"
 msgstr "Dates for publication of competitive lists"
 
-#: pages/templates/pages/applicants/committee.html:834
+#: pages/templates/pages/applicants/committee.html:835
 msgid ""
 "Завершение предоставления заявлений<br> о согласии и оригиналов<br> <em>до "
 "18:00 по московскому времени</em>"
@@ -1209,48 +1206,48 @@ msgstr ""
 "Completion of submission of consent statements<br> and originals<br> <em>by "
 "18:00 Moscow time</em>"
 
-#: pages/templates/pages/applicants/committee.html:841
+#: pages/templates/pages/applicants/committee.html:842
 msgid "3 августа"
 msgstr "August 3"
 
-#: pages/templates/pages/applicants/committee.html:842
-#: pages/templates/pages/applicants/committee.html:855
+#: pages/templates/pages/applicants/committee.html:843
+#: pages/templates/pages/applicants/committee.html:856
 msgid "в рамках целевой квоты"
 msgstr "under the targeted quota"
 
-#: pages/templates/pages/applicants/committee.html:843
+#: pages/templates/pages/applicants/committee.html:844
 msgid "7 августа"
 msgstr "August 7"
 
-#: pages/templates/pages/applicants/committee.html:844
+#: pages/templates/pages/applicants/committee.html:845
 msgid "остальные места в рамках КЦП"
 msgstr "remaining places within the state-funded quota"
 
-#: pages/templates/pages/applicants/committee.html:846
+#: pages/templates/pages/applicants/committee.html:847
 msgid "28 сентября"
 msgstr "September 28"
 
-#: pages/templates/pages/applicants/committee.html:851
+#: pages/templates/pages/applicants/committee.html:852
 msgid "Зачисление (издание приказов — до дня начала учебного года)"
 msgstr "Enrollment (issuance of orders — up to the start of the academic year)"
 
-#: pages/templates/pages/applicants/committee.html:856
+#: pages/templates/pages/applicants/committee.html:857
 msgid "8 августа"
 msgstr "August 8"
 
-#: pages/templates/pages/applicants/committee.html:857
+#: pages/templates/pages/applicants/committee.html:858
 msgid "основные места в рамках КЦП"
 msgstr "No state-funded places"
 
-#: pages/templates/pages/applicants/committee.html:859
+#: pages/templates/pages/applicants/committee.html:860
 msgid "29 сентября"
 msgstr "September 29"
 
-#: pages/templates/pages/applicants/committee.html:863
+#: pages/templates/pages/applicants/committee.html:864
 msgid "Начало учебного года"
 msgstr "Head of Department"
 
-#: pages/templates/pages/applicants/committee.html:873
+#: pages/templates/pages/applicants/committee.html:874
 msgid "Надежда Александровна Сташевская"
 msgstr "Nadezhda Aleksandrovna Stashevskaya"
 
@@ -2569,6 +2566,9 @@ msgstr "Annotation"
 #: seminars/templates/seminars/seminar_report.html:93
 msgid "Краткая биография"
 msgstr "Short biography"
+
+#~ msgid "Выбери программу университетской академии"
+#~ msgstr "Choose a university academy program"
 
 #~ msgid "Сироты"
 #~ msgstr "Orphans"

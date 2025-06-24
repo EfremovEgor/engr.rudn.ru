@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 15:28+0300\n"
+"POT-Creation-Date: 2025-06-24 16:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -356,6 +356,11 @@ msgstr "Application Forms"
 msgid "Расписание занятий"
 msgstr "Schedule"
 
+#: pages/templates/pages/academy/contacts.html:19
+#: pages/templates/pages/applicants/committee.html:874
+msgid "Надежда Александровна Сташевская"
+msgstr "Nadezhda Aleksandrovna Stashevskaya"
+
 #: pages/templates/pages/academy/contacts.html:21
 #: pages/templates/pages/applicants/committee.html:876
 msgid "Секретарь отборочной комиссии"
@@ -372,6 +377,10 @@ msgstr "Moscow, Ordzhonikidze St 3, office 403"
 msgid "Организационный отдел"
 msgstr "Administrative Department"
 
+#: pages/templates/pages/academy/contacts.html:49
+msgid "Пудовкина&nbsp;Людмила&nbsp;Викторовна"
+msgstr "Pudovkina&nbsp;Lyudmila&nbsp;Viktorovna"
+
 #: pages/templates/pages/academy/contacts.html:51
 #: pages/templates/pages/academy/contacts.html:79
 #: pages/templates/pages/academy/contacts.html:133
@@ -386,6 +395,14 @@ msgstr "Moscow, Ordzhonikidze St 3, office 444"
 msgid "Учебный отдел"
 msgstr "Academic Affairs Office"
 
+#: pages/templates/pages/academy/contacts.html:77
+msgid "Бекбулатова&nbsp;Айгуль&nbsp;Сарсеновна"
+msgstr "Bekbulatova&nbsp;Aigul&nbsp;Sarsenovna"
+
+#: pages/templates/pages/academy/contacts.html:101
+msgid "Жандарова&nbsp;Анна&nbsp;Сергеевна"
+msgstr "Zhandarova&nbsp;Anna&nbsp;Sergeevna"
+
 #: pages/templates/pages/academy/contacts.html:103
 msgid "Тьютор по учебной работе"
 msgstr "Academic Tutor"
@@ -394,9 +411,17 @@ msgstr "Academic Tutor"
 msgid "Научно-инновационный отдел"
 msgstr "Research & Innovation Office"
 
+#: pages/templates/pages/academy/contacts.html:131
+msgid "Туманов&nbsp;Антон&nbsp;Александрович"
+msgstr "Tumanov&nbsp;Anton&nbsp;Alexandrovich"
+
 #: pages/templates/pages/academy/contacts.html:139
 msgid "Москва, ул.&nbsp;Орджоникидзе, д.&nbsp;3, каб.&nbsp;436"
 msgstr "Moscow, Ordzhonikidze St 3, office 436"
+
+#: pages/templates/pages/academy/contacts.html:154
+msgid "Пилюгина&nbsp;Елена&nbsp;Владимировна"
+msgstr "Pilyugina&nbsp;Elena&nbsp;Vladimirovna"
 
 #: pages/templates/pages/academy/contacts.html:156
 msgid "Ведущий специалист"
@@ -1247,10 +1272,6 @@ msgstr "September 29"
 msgid "Начало учебного года"
 msgstr "Head of Department"
 
-#: pages/templates/pages/applicants/committee.html:874
-msgid "Надежда Александровна Сташевская"
-msgstr "Nadezhda Aleksandrovna Stashevskaya"
-
 #: pages/templates/pages/applicants/levels/bachelor.html:14
 #: pages/templates/pages/applicants/study_directions.html:30
 msgid "Открытие новых горизонтов знаний!"
@@ -1378,35 +1399,35 @@ msgstr "Part-time (blended) mode"
 msgid "Заочная форма"
 msgstr "Distance (extramural) mode"
 
-#: pages/templates/pages/index.html:274
+#: pages/templates/pages/index.html:281
 msgid "ВСЕ НОВОСТИ"
 msgstr "All News"
 
-#: pages/templates/pages/index.html:315
+#: pages/templates/pages/index.html:322
 msgid "Российский университет дружбы народов"
 msgstr "People's Friendship University of Russia"
 
-#: pages/templates/pages/index.html:317
+#: pages/templates/pages/index.html:324
 msgid "Инженерная академия"
 msgstr "Engineering Academy"
 
-#: pages/templates/pages/index.html:325 pages/views.py:37
+#: pages/templates/pages/index.html:332 pages/views.py:37
 msgid "Инженерная академия РУДН"
 msgstr "Engineering Academy"
 
-#: pages/templates/pages/index.html:342
+#: pages/templates/pages/index.html:349
 msgid "115419, Москва, ул. Орджоникидзе, д. 3."
 msgstr "115419, Moscow, Ordzhonikidze st, 3"
 
-#: pages/templates/pages/index.html:349
+#: pages/templates/pages/index.html:356
 msgid "+7 (495) 955-09-66"
 msgstr "+7 (495) 955-09-66"
 
-#: pages/templates/pages/index.html:355
+#: pages/templates/pages/index.html:362
 msgid "+7 (495) 952-08-29 (приемная директора)"
 msgstr "+7 (495) 952-08-29 (Director's Reception)"
 
-#: pages/templates/pages/index.html:364
+#: pages/templates/pages/index.html:371
 msgid "engineering@rudn.ru"
 msgstr "engineering@rudn.ru"
 

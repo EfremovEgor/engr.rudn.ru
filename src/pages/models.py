@@ -543,6 +543,18 @@ class MainSlider(models.Model):
         blank=True,
         null=True,
     )
+    image_full_en = models.ImageField(
+        verbose_name="Фотография полноразмерная (en)",
+        upload_to="main_slider_full_en",
+        blank=True,
+        null=True,
+    )
+    image_mobile_en = models.ImageField(
+        verbose_name="Фотография мобильная (en)",
+        upload_to="main_slider_mobile_en",
+        blank=True,
+        null=True,
+    )
 
     def __str__(self) -> str:
         return f"{self.position}. {self.name}"

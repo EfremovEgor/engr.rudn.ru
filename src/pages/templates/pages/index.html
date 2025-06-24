@@ -28,10 +28,17 @@
 >
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
-      <li onclick="window.open('{{image.url}}', '_blank').focus()">
-        <img class="uk-visible@m main-slider-image" src="{{image.image_full.url}}" alt="">
-        <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile.url}}" alt="">
-      </li>
+      {% if LANGUAGE_CODE == "en" and image_full_en %}
+        <li onclick="window.open('{{image.url}}', '_blank').focus()">
+          <img class="uk-visible@m main-slider-image" src="{{image.image_full_en.url}}" alt="">
+          <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile_en.url}}" alt="">
+        </li>
+      {% else %}
+        <li onclick="window.open('{{image.url}}', '_blank').focus()">
+          <img class="uk-visible@m main-slider-image" src="{{image.image_full.url}}" alt="">
+          <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile.url}}" alt="">
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 

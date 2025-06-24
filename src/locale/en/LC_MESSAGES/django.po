@@ -25,7 +25,7 @@ msgstr "Name (en)"
 
 #: pages/models.py:154
 msgid "Директор департамента"
-msgstr "Department director"
+msgstr "Director"
 
 #: pages/models.py:155
 msgid "Заведующий кафедры"

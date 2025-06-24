@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 16:30+0300\n"
+"POT-Creation-Date: 2025-06-24 16:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -293,7 +293,7 @@ msgstr "Scientific Events"
 #: pages/templates/components/header.html:202
 #: pages/templates/components/header.html:410
 msgid "Абитуриентам"
-msgstr "Prospective Students"
+msgstr "For Applicants"
 
 #: pages/templates/components/footer.html:151
 #: pages/templates/components/header.html:208
@@ -614,7 +614,7 @@ msgstr "Founding of the Engineering Faculty"
 #: pages/templates/pages/applicants/committee.html:356
 #: pages/templates/pages/applicants/reference.html:16
 msgid "Открой Мир в одном Университете!"
-msgstr "Open the World at one University!"
+msgstr "Discover the World in one University!"
 
 #: pages/templates/pages/applicants/committee.html:363
 msgid "Бакалавриат/Специалитет"
@@ -2334,6 +2334,10 @@ msgstr "QR code"
 #: pages/templates/pages/students/schedule.html:19
 msgid "Ссылка"
 msgstr "Link"
+
+#: pages/templates/pages/students/schedule.html:33
+msgid "Время начала / окончания занятий"
+msgstr "Start / end time of classes"
 
 #: pages/templates/pages/students/schedule.html:38
 msgid "Пара 1"

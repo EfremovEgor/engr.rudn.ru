@@ -1,3 +1,6 @@
+from django.forms import model_to_dict
+from django.shortcuts import get_object_or_404, render
+from .models import EmployeeProfile
 from django.utils.translation import get_language
 ...
 def profiles(request, id):

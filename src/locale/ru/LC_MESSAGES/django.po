@@ -1308,7 +1308,7 @@ msgstr ""
 #: pages/templates/pages/direction.html:117
 #: pages/templates/pages/direction.html:171
 #: pages/templates/pages/direction.html:225
-msgid "Стоимость обучения по контракту"
+msgid "Стоимость обучения"
 msgstr ""
 
 #: pages/templates/pages/direction.html:127

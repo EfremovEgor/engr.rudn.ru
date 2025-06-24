@@ -1382,7 +1382,7 @@ msgstr "No additional subjects are provided"
 #: pages/templates/pages/direction.html:140
 #: pages/templates/pages/direction.html:206
 #: pages/templates/pages/direction.html:269
-msgid "Стоимость обучения по контракту"
+msgid "Стоимость обучения"
 msgstr "Tuition fee (contract)"
 
 #: pages/templates/pages/direction.html:152

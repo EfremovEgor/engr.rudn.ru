@@ -382,18 +382,23 @@ html {
   padding: 0px 30px 15px;
 }
 
+.main-slider {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 .main-slider-image {
   width: 100%;
   height: auto;
   min-height: 450px;
   object-fit: cover;
   object-position: center bottom;
-  border-radius: 20px;
+  border-radius: 0; /* corners now inherited from .main-slider */
 }
 
 .main-slider > ul > li,
 .uk-cover-container {
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
 }
 

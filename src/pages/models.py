@@ -21,7 +21,7 @@ LANGUAGES = [
 
 DEPARTMENT_JOB_TITLES = [
     ("Директор департамента", "Директор департамента"),
-    ("Заведующий кафедры", "Заведующий кафедры"),
+    ("Заведующий кафедрой", "Заведующий кафедрой"),
 ]
 
 
@@ -152,7 +152,7 @@ class ProfileDetails(models.Model):
 class DepartmentInfo(models.Model):
     class JobTitle(models.TextChoices):
         DIRECTOR = "director", _("Директор департамента")
-        HEAD = "head", _("Заведующий кафедры")
+        HEAD = "head", _("Заведующий кафедрой")
 
     name = models.TextField(_("Название департамента"))
     name_en = models.TextField(

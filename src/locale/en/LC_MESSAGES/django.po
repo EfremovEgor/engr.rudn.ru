@@ -28,7 +28,7 @@ msgid "Директор департамента"
 msgstr "Director"
 
 #: pages/models.py:155
-msgid "Заведующий кафедры"
+msgid "Заведующий кафедрой"
 msgstr "Head"
 
 #: pages/models.py:157

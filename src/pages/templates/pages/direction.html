@@ -137,7 +137,7 @@
             {% endif %}
             {% endif %}
             {% if profile_data.full_time_details|format_prices %}
-              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения по контракту" %}</b></h4>
+              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения" %}</b></h4>
               {% for price_info in profile_data.full_time_details|format_prices %}
                 <p>{{ price_info }}</p>
               {% endfor %}
@@ -203,7 +203,7 @@
             {% endif %}
             {% endif %}
             {% if profile_data.part_time_details|format_prices %}
-              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения по контракту" %}</b></h4>
+              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения" %}</b></h4>
               {% for price_info in profile_data.part_time_details|format_prices %}
                 <p>{{ price_info }}</p>
               {% endfor %}
@@ -266,7 +266,7 @@
             {% endif %}
             {% endif %}
             {% if profile_data.extramural_details|format_prices %}
-              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения по контракту" %}</b></h4>
+              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения" %}</b></h4>
               {% for price_info in profile_data.extramural_details|format_prices %}
                 <p>{{ price_info }}</p>
               {% endfor %}

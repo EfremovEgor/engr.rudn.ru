@@ -30,7 +30,7 @@
   <div class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
     {% if department.head %}
     <div>
-      <h2 class="sub-heading">{{department.job_title|temp_replace_head_department}}</h2>
+      <h2 class="sub-heading">{% trans department.job_title|temp_replace_head_department %}</h2>
       <div class="employee-card-wrapper">
         <article style="background-color: transparent"
           class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card"

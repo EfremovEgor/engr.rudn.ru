@@ -142,9 +142,22 @@ class DepartmentStaff(models.Model):
         blank=True,
         null=True,
     )
+    department_responsibilities_en = ArrayField(
+        models.CharField(verbose_name="Должность/Звание (en)", max_length=255),
+        verbose_name="Должности/Звания (en)",
+        size=20,
+        blank=True,
+        null=True,
+    )
     department_office = models.TextField(
         default="Москва, ул. Орджоникидзе, д. 3., каб",
         verbose_name="Кабинет департамента",
+        blank=True,
+        null=True,
+    )
+    department_office_en = models.TextField(
+        default="Moscow, Ordzhonikidze st, 3, cab.",
+        verbose_name="Cabinet of the department",
         blank=True,
         null=True,
     )

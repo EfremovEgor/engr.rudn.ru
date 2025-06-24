@@ -3,7 +3,7 @@ from django.contrib.postgres.fields import ArrayField as postgres_array_field
 from phonenumber_field.modelfields import PhoneNumberField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django_jsonform.models.fields import JSONField, ArrayField
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 
 STUDY_LEVELS = [
@@ -150,33 +150,42 @@ class ProfileDetails(models.Model):
 
 
 class DepartmentInfo(models.Model):
-    name = models.TextField(verbose_name="Название департамента")
+    class JobTitle(models.TextChoices):
+        DIRECTOR = "director", _("Директор департамента")
+        HEAD = "head", _("Заведующий кафедры")
+
+    name = models.TextField(_("Название департамента"))
     name_en = models.TextField(
-        verbose_name="Название департамента (англ.)",
-        blank=True, null=True
+        _("Название департамента (англ.)"),
+        blank=True,
+        null=True,
     )
 
-    position = models.IntegerField(verbose_name="Позиция")
+    position = models.IntegerField(_("Позиция"))
     abbreviation = models.CharField(
-        verbose_name="Аббревиатура",
+        _("Аббревиатура"),
         max_length=255,
         blank=True,
         null=True,
     )
+
     job_title = models.CharField(
-        verbose_name="Должность руководителя",
-        choices=DEPARTMENT_JOB_TITLES,
-        default="Директор департамента",
-        max_length=255,
+        _("Должность руководителя"),
+        choices=JobTitle.choices,
+        default=JobTitle.DIRECTOR,
+        max_length=32,
     )
-    info = models.TextField(verbose_name="Информация о департаменте")
+
+    info = models.TextField(_("Информация о департаменте"))
     info_en = models.TextField(
-        verbose_name="Информация о департаменте (англ.)",
-        blank=True, null=True
-    )    
+        _("Информация о департаменте (англ.)"),
+        blank=True,
+        null=True,
+    )
+
     head = models.ForeignKey(
         "profiles.DepartmentStaff",
-        verbose_name="Руководитель",
+        verbose_name=_("Руководитель"),
         related_name="head_of_department",
         blank=True,
         null=True,
@@ -184,22 +193,24 @@ class DepartmentInfo(models.Model):
     )
     contact_employee = models.ForeignKey(
         "profiles.DepartmentStaff",
-        verbose_name="Контактное лицо",
+        verbose_name=_("Контактное лицо"),
         related_name="contact_employee",
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
     )
     staff = models.ManyToManyField(
-        "profiles.DepartmentStaff", verbose_name="Сотрудники департамента", blank=True
+        "profiles.DepartmentStaff",
+        verbose_name=_("Сотрудники департамента"),
+        blank=True,
     )
 
     def __str__(self) -> str:
         return f"{self.position}. {self.name}"
 
     class Meta:
-        verbose_name = "Департамен"
-        verbose_name_plural = "Департаменты"
+        verbose_name = _("Департамент")
+        verbose_name_plural = _("Департаменты")
         ordering = ["position"]
 
 

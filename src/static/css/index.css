@@ -419,6 +419,12 @@ html {
   }
 }
 
+.main-slider > ul > li {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
 .news-card>.uk-card-body,
 .news-card-no-image,
 .news-card {

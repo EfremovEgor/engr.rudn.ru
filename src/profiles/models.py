@@ -150,13 +150,13 @@ class DepartmentStaff(models.Model):
         null=True,
     )
     department_office = models.TextField(
-        default="Москва, ул. Орджоникидзе, д. 3., каб",
+        default="Москва, ул. Орджоникидзе, д. 3., каб. ",
         verbose_name="Кабинет департамента",
         blank=True,
         null=True,
     )
     department_office_en = models.TextField(
-        default="Moscow, Ordzhonikidze st, 3, cab.",
+        default="Moscow, Ordzhonikidze st, 3, office ",
         verbose_name="Cabinet of the department",
         blank=True,
         null=True,

@@ -43,7 +43,11 @@
           
           {% if department.head %}
           <div>
-            <h4 class="head-text">{{ department.job_title|temp_replace_head_department }}</h4>
+
+            <h4 class="head-text">
+                {% trans department.job_title|temp_replace_head_department %}
+            </h4>
+
             <article style="background-color:transparent"
                      class="employee-card" role="comment">
 

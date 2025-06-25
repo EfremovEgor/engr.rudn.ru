@@ -646,7 +646,7 @@ msgid "15 июля 2025 г."
 msgstr "July 15, 2025"
 
 #: pages/templates/pages/applicants/committee.html:388
-msgid "Завершение заявлений на бюджетные места"
+msgid "Завершение приема заявлений на бюджетную форму обучения"
 msgstr "End of applications for state-funded places"
 
 #: pages/templates/pages/applicants/committee.html:389
@@ -662,7 +662,7 @@ msgid "27 июля 2025 г."
 msgstr "July 27, 2025"
 
 #: pages/templates/pages/applicants/committee.html:400
-msgid "Конец приёма документов на контракт"
+msgid "Завершение приёма документов на контрактную форму"
 msgstr "Deadline for tuition-fee contract applications"
 
 #: pages/templates/pages/applicants/committee.html:401

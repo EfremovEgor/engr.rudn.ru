@@ -16,12 +16,18 @@
 </div>
 
 <div class="uk-container content" style="margin-top: 40px; margin-bottom: 50px">
-  <h3 style="font-weight: bold;">{{ report.name }}</h3>
+  <h3 style="font-weight: bold;">
+    {% if LANGUAGE_CODE == 'en' and report.name_en %}
+      {{ report.name_en }}
+    {% else %}
+      {{ report.name }}
+    {% endif %}
+  </h3>
   <p style="margin-top:-20px">
     {{ report.date_start }} - {{ report.time_start }} – {{ report.time_end }}
   </p>
   {% if report.online_meeting_url %}
-    <p>Ссылка на конференцию: <a href="{{report.online_meeting_url}}" target="_blank">{{report.online_meeting_url}}</a></p>
+    <p>{% trans "Ссылка на конференцию: " %}<a href="{{report.online_meeting_url}}" target="_blank">{{report.online_meeting_url}}</a></p>
   {% endif %}
   <div class="speaker-container">
     {% if report.speaker %}
@@ -101,10 +107,10 @@
     {% endif %}
   </div>
   {% if report.video_recording %}
-    {{report.video_recording|safe}}
+    {% trans "Запись: "%}{{report.video_recording|safe}}
   {% endif %}
   {% if report.presentation_file %}
-    {{report.presentation_file|safe}}
+    {% trans "Презентация: "%}{{report.presentation_file|safe}}
   {% endif %}
 
 </div>

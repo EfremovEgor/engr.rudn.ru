@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-24 16:54+0300\n"
+"POT-Creation-Date: 2025-06-27 15:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -638,7 +638,7 @@ msgid "Начало приёма документов — 20 июня 2025 г."
 msgstr "Start of document submission - June 20, 2025"
 
 #: pages/templates/pages/applicants/committee.html:382
-msgid "Завершение приема документов<br>на направление «Архитектура»"
+msgid "Завершение приёма документов<br>на направление «Архитектура»"
 msgstr "Deadline for Architecture programme applications"
 
 #: pages/templates/pages/applicants/committee.html:383
@@ -646,7 +646,7 @@ msgid "15 июля 2025 г."
 msgstr "July 15, 2025"
 
 #: pages/templates/pages/applicants/committee.html:388
-msgid "Завершение приема заявлений на бюджетную форму обучения"
+msgid "Завершение приёма заявлений на бюджетную форму обучения"
 msgstr "End of applications for state-funded places"
 
 #: pages/templates/pages/applicants/committee.html:389
@@ -2584,6 +2584,10 @@ msgstr "Past"
 msgid "Прошедшие доклады отсутствуют"
 msgstr "No past reports"
 
+#: seminars/templates/seminars/seminar_report.html:24
+msgid "Ссылка на конференцию: "
+msgstr "Conference link: "
+
 #: seminars/templates/seminars/seminar_report.html:82
 msgid "Аннотация"
 msgstr "Annotation"
@@ -2591,6 +2595,14 @@ msgstr "Annotation"
 #: seminars/templates/seminars/seminar_report.html:93
 msgid "Краткая биография"
 msgstr "Short biography"
+
+#: seminars/templates/seminars/seminar_report.html:104
+msgid "Запись: "
+msgstr "Recording: "
+
+#: seminars/templates/seminars/seminar_report.html:107
+msgid "Презентация: "
+msgstr "Presentation: "
 
 #~ msgid "Выбери программу университетской академии"
 #~ msgstr "Choose a university academy program"

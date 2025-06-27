@@ -107,10 +107,10 @@
     {% endif %}
   </div>
   {% if report.video_recording %}
-    {% trans "Запись: "%}{{report.video_recording|safe}}
+    <span><strong>{% trans "Запись: " %}</strong>{{ report.video_recording|striptags }}</br></span>
   {% endif %}
   {% if report.presentation_file %}
-    {% trans "Презентация: "%}{{report.presentation_file|safe}}
+    <span><strong>{% trans "Презентация: " %}</strong>{{ report.presentation_file|striptags }}</span>
   {% endif %}
 
 </div>

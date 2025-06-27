@@ -84,7 +84,7 @@ class SeminarReport(models.Model):
         verbose_name="Video recording URL",
         blank=True, null=True
     )
-    presentation_file = models.URLField(
+    presentation_file = RichTextUploadingField(
         verbose_name="Presentation URL",
         blank=True, null=True
     )

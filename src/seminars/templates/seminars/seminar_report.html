@@ -115,7 +115,7 @@
   {% if report.presentation_file %}
     <span>
       <strong>{% trans "Презентация:" %}</strong>
-      <a href="{{ report.presentation_file }}" target="_blank">{{ report.presentation_file }}</a>
+      {{ report.presentation_file|safe|cut:'<p>'|cut:'</p>' }}
     </span>
   {% endif %}
 </div>

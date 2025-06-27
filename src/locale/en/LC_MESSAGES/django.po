@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-27 15:24+0300\n"
+"POT-Creation-Date: 2025-06-27 16:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2584,24 +2584,24 @@ msgstr "Past"
 msgid "Прошедшие доклады отсутствуют"
 msgstr "No past reports"
 
-#: seminars/templates/seminars/seminar_report.html:24
+#: seminars/templates/seminars/seminar_report.html:30
 msgid "Ссылка на конференцию: "
 msgstr "Conference link: "
 
-#: seminars/templates/seminars/seminar_report.html:82
+#: seminars/templates/seminars/seminar_report.html:88
 msgid "Аннотация"
 msgstr "Annotation"
 
-#: seminars/templates/seminars/seminar_report.html:93
+#: seminars/templates/seminars/seminar_report.html:99
 msgid "Краткая биография"
 msgstr "Short biography"
 
-#: seminars/templates/seminars/seminar_report.html:104
-msgid "Запись: "
+#: seminars/templates/seminars/seminar_report.html:111
+msgid "Запись:"
 msgstr "Recording: "
 
-#: seminars/templates/seminars/seminar_report.html:107
-msgid "Презентация: "
+#: seminars/templates/seminars/seminar_report.html:117
+msgid "Презентация:"
 msgstr "Presentation: "
 
 #~ msgid "Выбери программу университетской академии"

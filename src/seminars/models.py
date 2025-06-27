@@ -80,12 +80,12 @@ class SeminarReport(models.Model):
         blank=True,
         null=True,
     )
-    video_recording = RichTextUploadingField(
+    video_recording = models.URLField(
         verbose_name="Video recording URL",
         blank=True, null=True
     )
-    presentation_file = RichTextUploadingField(
-        verbose_name="Presentation (PDF / PPT)",
+    presentation_file = models.URLField(
+        verbose_name="Presentation URL",
         blank=True, null=True
     )
     annotation = RichTextUploadingField(

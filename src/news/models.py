@@ -19,7 +19,7 @@ class Tag(models.Model):
 
 class NewsItem(models.Model):
     title = models.TextField(verbose_name="Название", unique=False, null=True)
-    title_en = models.TextField(verbose_name="Name", unique=True, null=True, blank=True)
+    title_en = models.TextField(verbose_name="Name", unique=False, null=True, blank=True)
 
     preview_image = models.ImageField(
         verbose_name="Фотография",

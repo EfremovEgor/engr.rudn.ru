@@ -136,42 +136,34 @@ a.uk-link-heading:hover {
   font-size: 18px;
   font-weight: 600;
   color: var(--primary-color);
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
 }
 
-.link-hover-underline:hover {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--primary-color);
-  text-decoration: none;
-}
+.red-link-hover-underline:hover { color: var(--tertiary-color); }
 
-.link-hover-underline:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: -5px;
-  content: "";
-  display: block;
-  height: 3px;
-  left: 50%;
-  position: absolute;
-  background: var(--primary-color);
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-
-.link-hover-underline:hover:after {
-  width: 100%;
-  left: 0;
-}
-
-.link-hover-underline {
+.show-uni-department__link-text {
   position: relative;
+  display: inline-block;
 }
 
-.red-link-hover-underline:hover {
-  color: var(--tertiary-color);
+.show-uni-department__link-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: var(--primary-color);
+  transition: width .3s ease;
 }
 
-.red-link-hover-underline:after {
+.link-hover-underline:hover .show-uni-department__link-text::after {
+  width: 100%;
+}
+
+.red-link-hover-underline:hover .show-uni-department__link-text::after {
   background: var(--tertiary-color);
 }
 

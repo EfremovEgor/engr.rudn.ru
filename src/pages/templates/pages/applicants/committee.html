@@ -349,7 +349,16 @@
 </style>
 
 <div class="uk-container">
-    <div class="page-name">{{ title }}</div>
+    <div class="uk-flex uk-flex-between uk-flex-middle uk-flex-nowrap" style="margin-top: 40px;">
+        <h1 class="page-name uk-margin-remove">{{ title }}</h1>
+
+        <a href="https://international.rudn.ru/"
+           class="uk-button uk-button-primary uk-margin-remove"
+           style="border-radius: var(--radius);"
+           aria-label="Admission information for international applicants">
+            <b>{% trans "Иностранным абитуриентам" %}</b>
+        </a>
+    </div>
 </div>
 
 <div class="parallax-container_2 uk-visible@s">
@@ -870,7 +879,7 @@
         </table>
     </section>
 
-    <div class="uk-card uk-card-default uk-card-hover uk-card-body karta" style="display:flex;flex-direction:column;justify-content:center;align-items:center;margin-top:28px;border-radius:25px;">
+    <div class="uk-card uk-card-default uk-card-hover uk-card-body karta" style="display:flex;flex-direction:column;justify-content:center;align-items:center;margin-top:28px;border-radius:var(--radius);">
         <h4 class="uk-margin-remove-bottom">{% trans "Надежда Александровна Сташевская" %}</h4>
         <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove">
             <li><span>{% trans "Секретарь отборочной комиссии" %}</span></li>

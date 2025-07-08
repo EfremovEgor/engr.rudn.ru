@@ -403,7 +403,7 @@
       {% endfor %}
     </ul>
     {% endif %}
-
+  {% endif %}
     <h2 class="sub-heading">{% trans "Профессорско-преподавательский состав" %}</h2>
     <div class="employee_cards">
       {% for teacher in staff %}
@@ -449,7 +449,6 @@
       {% endfor %}
     </div>
   </div>
-  {% endif %}
 </div>
 </div>
 {% endblock %}

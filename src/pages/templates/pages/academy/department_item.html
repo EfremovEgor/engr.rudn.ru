@@ -156,6 +156,7 @@
     {% endif %}
   </div>
 
+  {% if bachelors or specialty or masters or postgraduates %}
   <h2 class="sub-heading">{% trans "Направления подготовки и специальности" %}</h2>
   
   <div class="uk-container" style="margin-bottom: 50px">
@@ -382,7 +383,8 @@
       </ul>
     </div>
     {% endif %}
-
+    
+    {% if scientific_centers %}
     <h2 class="sub-heading">{% trans "Лабораторная база" %}</h2>
     <ul uk-accordion="multiple: true">
       {% for center in scientific_centers %}
@@ -400,6 +402,7 @@
       </li>
       {% endfor %}
     </ul>
+    {% endif %}
 
     <h2 class="sub-heading">{% trans "Профессорско-преподавательский состав" %}</h2>
     <div class="employee_cards">
@@ -446,6 +449,7 @@
       {% endfor %}
     </div>
   </div>
+  {% endif %}
 </div>
 </div>
 {% endblock %}

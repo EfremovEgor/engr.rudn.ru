@@ -26,6 +26,10 @@ from .utils import aliases, functions
 from django.utils.translation import gettext as _
 import re
 from django.utils.translation import get_language
+from django.utils import translation
+from django.db.models import Q
+
+lang = translation.get_language()
 
 def index(request):
     slider_images = MainSlider.objects.all()
@@ -45,9 +49,43 @@ def index(request):
 class NewsView(View):
     template_name = "pages/news.html"
 
-    def get(self, request):
-        news = NewsItem.objects.prefetch_related().order_by("-creation_date")[:30]        
-        tags = Tag.objects.filter(newsitem__tags__isnull=False).distinct()
+    @staticmethod
+    def _tags_cloud(lang: str):
+        return (
+            Tag.objects.filter(news_items_en__isnull=False).distinct()
+            if lang == "en"
+            else Tag.objects.filter(news_items_ru__isnull=False).distinct()
+        )
+
+    @staticmethod
+    def _news_queryset(lang: str, title_q: str = "", tag_q: str = ""):
+        qs = NewsItem.objects.all()
+
+        if title_q:
+            if lang == "en":
+                qs = qs.filter(title_en__icontains=title_q)
+            else:
+                qs = qs.filter(title__icontains=title_q)
+
+        if tag_q:
+            tag = Tag.objects.filter(name=tag_q).first()
+            if tag:
+                qs = qs.filter(
+                    Q(tags=tag) | Q(tags_en=tag)
+                )
+            else:
+                qs = qs.none()
+
+        return qs.order_by("-creation_date")
+
+    def get(self, request, *args, **kwargs):
+        lang       = get_language()
+        title_q    = request.GET.get("title", "").strip()
+        tag_q      = request.GET.get("tag", "").strip()
+
+        news = self._news_queryset(lang, title_q, tag_q)
+        tags = self._tags_cloud(lang)
+
         return render(
             request,
             self.template_name,
@@ -55,49 +93,30 @@ class NewsView(View):
                 "title": _("Новости"),
                 "news": news,
                 "tags": tags,
+                "searched_title": title_q,
+                "searched_tags": tag_q,
             },
         )
 
     def post(self, request, *args, **kwargs):
-        search_details = {
-            "searched_title": (
-                request.POST.get("title") if request.POST.get("title") else ""
-            ),
-            "searched_tags": (
-                request.POST.get("tags") if request.POST.get("tags") else ""
-            ),
-        }
+        lang       = get_language()
+        title_q    = request.POST.get("title", "").strip()
+        tag_q      = request.POST.get("tags", "").strip()
 
-        to_search = {}
-        if title := request.POST.get("title"):
-            to_search["title__icontains"] = title
-
-        if tag := request.POST.get("tags"):
-            if tag:
-                tag = Tag.objects.filter(name=tag).first()
-                if tag is not None:
-                    to_search["tags__in"] = [tag]
-                else:
-                    to_search["tags__in"] = []
-        news = (
-            NewsItem.objects.prefetch_related()
-            .filter(**to_search)
-            .order_by("creation_date")
-        )
-
-        tags = Tag.objects.filter(newsitem__tags__isnull=False).distinct()
+        news = self._news_queryset(lang, title_q, tag_q)
+        tags = self._tags_cloud(lang)
 
         return render(
             request,
-            "pages/news.html",
+            self.template_name,
             {
                 "title": _("Новости"),
                 "news": news,
                 "tags": tags,
-                **search_details,
+                "searched_title": title_q,
+                "searched_tags": tag_q,
             },
         )
-
 
 class NewsItemView(View):
     template_name = "pages/news_item_page.html"

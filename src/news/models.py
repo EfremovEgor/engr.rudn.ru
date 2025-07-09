@@ -27,7 +27,18 @@ class NewsItem(models.Model):
         null=True,
         blank=True,
     )
-    tags = models.ManyToManyField(Tag, verbose_name="Тэги")
+    tags = models.ManyToManyField(
+        Tag,
+        verbose_name="Тэги",
+        related_name="news_items_ru",
+        blank=True,
+    )
+    tags_en = models.ManyToManyField(
+        Tag,
+        verbose_name="Тэги (eng)",
+        related_name="news_items_en",
+        blank=True,
+    )
     content = RichTextUploadingField(
         verbose_name="Информация",
         null=True, blank=False

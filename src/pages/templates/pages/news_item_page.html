@@ -1,51 +1,72 @@
 {% extends 'components/base.html' %}
 {% load static i18n %}
 {% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/news.css' %}" />
-<link rel="stylesheet" href="{% static 'js/news.js' %}" />
-<link rel="stylesheet" href="{% static 'css/global.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
+  <link rel="stylesheet" href="{% static 'css/global.css' %}">
+  <script src="{% static 'js/news.js' %}"></script>
 
-<div class="uk-container" style="margin-bottom: 40px">
-  <div class="news-items-date">{{ content.creation_date|date:"d.m.Y" }}</div>
-  
-  {% if LANGUAGE_CODE == "en" and content.title_en %}
+  <div class="uk-container" style="margin-bottom:40px">
+    <div class="news-items-date">{{ content.creation_date|date:"d.m.Y" }}</div>
+
+    {% if LANGUAGE_CODE == "en" and content.title_en %}
     <div class="page-name" style="margin-top: 0px !important;">{{ content.title_en }}</div>
-  {% else %}
-    <div class="page-name" style="margin-top: 0px !important;">{{ content.title }}</div>
-  {% endif %}
-</div>
-
-<div class="uk-container" style="margin-bottom: 50px">
-
-  <div class="hashtags uk-flex">
-    <form action="/news" class="uk-margin" method="POST">
-      {% csrf_token %}
-      {% for item in content.tags.all %}
-        <button
-          class="uk-button-link"
-          style="border: 0px; cursor: pointer; font-size: 18px"
-          type="submit"
-          name="tags"
-          value="{{ item.name }}"
-        >
-          #{{ item.name }}
-        </button>
-      {% endfor %}
-    </form>
-  </div>
-
-  {% if content.preview_image %}
-    <img src="{{ content.preview_image.url }}" class="news-item-image" alt="" />
-  {% endif %}
-
-  <div class="news_content uk-margin">
-    {% if LANGUAGE_CODE == "en" and content.content_en %}
-      {{ content.content_en|safe }}
     {% else %}
-      {{ content.content|safe }}
+    <div class="page-name" style="margin-top: 0px !important;">{{ content.title }}</div>
     {% endif %}
   </div>
-</div>
+
+  <div class="uk-container" style="margin-bottom:50px">
+    {% if LANGUAGE_CODE == "en" %}
+        {% with tag_list=content.tags_en.all %}
+            {% if tag_list %}
+              <div class="hashtags uk-flex">
+                <form action="{% url 'pages:news' %}" method="get" class="uk-margin">
+                  <input type="hidden" name="tag">
+                  {% for tag in tag_list %}
+                    <button
+                      type="submit"
+                      onclick="this.form.tag.value='{{ tag.name }}'"
+                      class="uk-button-link"
+                      style="border:0;cursor:pointer;font-size:18px"
+                    >#{{ tag.name }}</button>
+                  {% endfor %}
+                </form>
+              </div>
+            {% endif %}
+        {% endwith %}
+    {% else %}
+        {% with tag_list=content.tags.all %}
+            {% if tag_list %}
+              <div class="hashtags uk-flex">
+                <form action="{% url 'pages:news' %}" method="get" class="uk-margin">
+                  <input type="hidden" name="tag">
+                  {% for tag in tag_list %}
+                    <button
+                      type="submit"
+                      onclick="this.form.tag.value='{{ tag.name }}'"
+                      class="uk-button-link"
+                      style="border:0;cursor:pointer;font-size:18px"
+                    >#{{ tag.name }}</button>
+                  {% endfor %}
+                </form>
+              </div>
+            {% endif %}
+        {% endwith %}
+    {% endif %}
+
+    {% if content.preview_image %}
+      <img src="{{ content.preview_image.url }}" alt="" class="news-item-image">
+    {% endif %}
+
+    <div class="news_content uk-margin">
+      {% if LANGUAGE_CODE == "en" and content.content_en %}
+        {{ content.content_en|safe }}
+      {% else %}
+        {{ content.content|safe }}
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}

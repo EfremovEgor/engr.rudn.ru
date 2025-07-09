@@ -1,96 +1,104 @@
-{% extends 'components/base.html' %}
+{% extends "components/base.html" %}
 {% load static i18n %}
 {% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/news.css' %}" />
-<link rel="stylesheet" href="{% static 'js/news.js' %}" />
-<link rel="stylesheet" href="{% static 'css/global.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
+  <link rel="stylesheet" href="{% static 'css/global.css' %}">
+  <script src="{% static 'js/news.js' %}"></script>
 
-<div class="uk-container" style="margin-bottom: 40px">
-  <div class="page-name">{{title}}</div>
-</div>
-
-<div class="uk-container" style="margin-bottom: 50px">
-  <div class="uk-form-stacked uk-margin">
-    <datalist id="suggestions">
-      {% for item in tags %}
-      <option>{{item.name}}</option>
-      {% endfor %}
-    </datalist>
-    <form method="POST" class="uk-child-width-1-3@m uk-grid-match" uk-grid>
-      {% csrf_token %}
-      <div>
-        <label or="tags" class="uk-form-label" style="font-size: 20px"
-          >{% trans "Тэг:" %}</label
-        >
-        <input
-          style="border-radius: var(--base-border-radius);"
-          type="text"
-          class="uk-input uk-form-width-medium"
-          list="suggestions"
-          id="tags"
-          name="tags"
-          value="{{searched_tags}}"
-        />
-      </div>
-      <div>
-        <label for="title" class="uk-form-label" style="font-size: 20px"
-          >{% trans "Название:" %}</label
-        >
-        <input
-          style="border-radius: var(--base-border-radius);"
-          type="text"
-          class="uk-input uk-form-width-medium"
-          autocomplete="on"
-          id="title"
-          name="title"
-          value="{{searched_title}}"
-        />
-      </div>
-      <div>
-        <button
-          class="uk-button uk-button-secondary"
-          style="width: 50%; height: 40px; margin-top: auto;border-radius: var(--base-border-radius);"
-          type="submit"
-        >
-          {% trans "Поиск" %}
-        </button>
-      </div>
-    </form>
+  <div class="uk-container" style="margin-bottom:40px">
+    <div class="page-name">{{ title }}</div>
   </div>
 
-  <div class="news-cards-wrapper">
-    <div class="uk-flex-between@m uk-flex-center news-cards uk-flex-wrap">
-      {% for item in news %}
-        <div class="news-card-container">
-          <a href="{% url 'pages:news_item' item.id %}" class="uk-link-toggle">
-            <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
-                 style="background-color: rgb(246, 246, 246); border-radius: 20px;">
-              
-              {% if item.preview_image %}
-                <div class="uk-card-media-top">
-                  <img src="{{item.preview_image.url}}" alt="" style="border-radius: 20px;" />
-                </div>
-              {% endif %}
+  <div class="uk-container" style="margin-bottom:50px">
 
-              <div class="uk-card-body">
-                <div style="text-transform: lowercase!important;" class="uk-card-badge uk-label uk-visible@m">
-                  {{ item.creation_date|date:"d.m.Y" }}
-                </div>
+    <div class="uk-form-stacked uk-margin">
 
-                {% if LANGUAGE_CODE == "en" and item.title_en%}
-                  <h3 class="uk-card-title news-title">{{ item.title_en }}</h3>
-                {% else %}
-                  <h3 class="uk-card-title news-title">{{ item.title }}</h3>
+      <datalist id="suggestions">
+        {% for tag in tags %}
+          <option value="{{ tag.name }}"></option>
+        {% endfor %}
+      </datalist>
+
+      <form
+        action=""  
+        method="get"
+        class="uk-child-width-1-3@m uk-grid-match"
+        uk-grid
+      >
+        <div>
+          <label for="tag" class="uk-form-label" style="font-size:20px">
+            {% trans "Тэг:" %}
+          </label>
+          <input
+            id="tag"
+            name="tag"
+            type="text"
+            list="suggestions"
+            class="uk-input uk-form-width-medium"
+            style="border-radius:var(--base-border-radius);"
+            value="{{ request.GET.tag }}"
+          >
+        </div>
+
+        <div>
+          <label for="title" class="uk-form-label" style="font-size:20px">
+            {% trans "Название:" %}
+          </label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            class="uk-input uk-form-width-medium"
+            style="border-radius:var(--base-border-radius);"
+            value="{{ request.GET.title }}"
+          >
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="uk-button uk-button-secondary"
+            style="width:50%;height:40px;margin-top:auto;border-radius:var(--base-border-radius);"
+          >
+            {% trans "Поиск" %}
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="news-cards-wrapper">
+      <div class="uk-flex-between@m uk-flex-center news-cards uk-flex-wrap">
+        {% for item in news %}
+          <div class="news-card-container">
+            <a href="{% url 'pages:news_item' item.id %}" class="uk-link-toggle">
+              <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card"
+                   style="background-color:#f6f6f6;border-radius:20px">
+
+                {% if item.preview_image %}
+                  <div class="uk-card-media-top">
+                    <img src="{{ item.preview_image.url }}" alt="" style="border-radius:20px">
+                  </div>
                 {% endif %}
 
+                <div class="uk-card-body">
+                  <div class="uk-card-badge uk-label uk-visible@m" style="text-transform:lowercase">
+                    {{ item.creation_date|date:"d.m.Y" }}
+                  </div>
+
+                  {% if LANGUAGE_CODE == "en" and item.title_en %}
+                    <h3 class="uk-card-title news-title">{{ item.title_en }}</h3>
+                  {% else %}
+                    <h3 class="uk-card-title news-title">{{ item.title }}</h3>
+                  {% endif %}
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-      {% endfor %}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}

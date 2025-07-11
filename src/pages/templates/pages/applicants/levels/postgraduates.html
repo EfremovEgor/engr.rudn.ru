@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{% static 'css/applicants/study_directions.css' %}" />
 
 <div class="uk-container">
-  <div class="page-name">{% trans "Аспирантура" %}</div>
+  <div class="page-name">{{ title }}</div>
 </div>
 
 <div class="parallax-container_5">
@@ -17,33 +17,16 @@
 
 <div class="uk-container" style="margin-bottom:50px">
   <h2 class="sub-heading">{% trans "Программы подготовки" %}</h2>
-
   <div class="naprs" style="margin-top:40px">
     <ul uk-accordion="multiple:true">
       {% for direction in directions %}
         <li>
-          <a class="uk-accordion-title" href="#">
-            <b>
-              {{ direction.cipher }}&nbsp;«{% if LANGUAGE_CODE == 'en' and direction.name_en %}{{ direction.name_en }}{% else %}{{ direction.name }}{% endif %}»
-            </b>
-          </a>
-
+          <a class="uk-accordion-title" href="#"><b>{{direction.cipher}} «{% if LANGUAGE_CODE == 'en' and direction.name_en %}{{direction.name_en}}{% else %}{{direction.name}}{% endif %}»</b></a>
           <div class="uk-accordion-content">
-            {% for profile in direction.profiles.all %}
-            <a class="uk-link-text" href="{% url 'pages:study_direction_profile' profile.id %}">
-                         <b>{% trans "Профиль:" %}</b>
-                {% if LANGUAGE_CODE == 'en' and profile.name_en %}
-                  {{ profile.name_en }}
-                {% else %}
-                  {{ profile.name }}
-                {% endif %}
-
-                {% if profile.language_fields|length == 2 %}
-                  (на {{ profile.language_fields.0|get_alias_lang }} и {{ profile.language_fields.1|get_alias_lang }} языках)
-                {% elif profile.language_fields.0 == "Английский" %}
-                  (на {{ profile.language_fields.0|get_alias_lang }} языке)
-                {% endif %}                    
-              </a><br>
+            {% for profile in direction.sorted_profiles %}
+              <a class="uk-link-text" href="{% url 'pages:study_direction_profile' profile.id %}"><b>{% trans "Профиль:" %}</b>&nbsp;{% if LANGUAGE_CODE == 'en' and profile.name_en %}{{profile.name_en}}{% else %}{{profile.name}}{% endif %} {{profile.language_fields|langs_phrase}}</a><br>
+            {% empty %}
+              <p>{% trans "Нет программ на выбранном языке." %}</p>
             {% endfor %}
           </div>
         </li>

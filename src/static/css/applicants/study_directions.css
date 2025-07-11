@@ -127,3 +127,34 @@
 
   background-image: url(/static/icons/chevron_down.svg);
 }
+
+.tabs {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 2px solid #eff7ff;
+}
+
+.tabs button {
+    position: relative;
+    background: none;
+    border: none;
+    padding: .75rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.tabs button.active,
+.tabs button:hover {
+    color:#0b7de5;
+}
+
+.tabs button.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #0b7de5;
+}

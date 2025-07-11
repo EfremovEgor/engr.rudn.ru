@@ -16,60 +16,61 @@
 
 <div class="uk-container content" style="margin-top:40px; margin-bottom:50px">
 
+  <nav class="tabs" id="langTabs" style="margin-bottom: 30px;">
+    <button
+      class="{% if current_lang == 'ru' %}active{% endif %}"
+      data-tab="tab-ru"
+      onclick="window.location.href='?prog_lang=ru'">
+      {% trans "Направления на русском языке" %}
+    </button>
+    <button
+      class="{% if current_lang == 'en' %}active{% endif %}"
+      data-tab="tab-en"
+      onclick="window.location.href='?prog_lang=en'">
+      {% trans "Направления на английском языке" %}
+    </button>
+  </nav>
+
   <div class="uk-child-width-1-2@s uk-grid-match uk-flex-center" uk-grid>
-
-    <div>
-      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
-           style="border-radius:var(--base-border-radius);">
-        <h3 class="uk-card-title">
-          <a class="uk-link-heading"
-             href="{% url 'pages:study_direction_level' 'bachelor' %}">
-            {% trans "Бакалавриат" %}
-          </a>
-        </h3>
-        <p>{% trans "Открытие новых горизонтов знаний!" %}</p>
+    {% for sec in sections %}
+      <div>
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle" style="border-radius:var(--base-border-radius);">
+          <h3 class="uk-card-title">
+            <a class="uk-link-heading"
+              href="{% url 'pages:study_direction_level' sec.slug %}?prog_lang={{ current_lang }}">
+              {{ sec.title }}
+            </a>
+          </h3>
+          <p>{{ sec.desc }}</p>
+        </div>
       </div>
-    </div>
-
-    <div>
-      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
-           style="border-radius:var(--base-border-radius);">
-        <h3 class="uk-card-title">
-          <a class="uk-link-heading"
-             href="{% url 'pages:study_direction_level' 'specialists' %}">
-            {% trans "Специалитет" %}
-          </a>
-        </h3>
-        <p>{% trans "Превратите свои увлечения в профессию!" %}</p>
-      </div>
-    </div>
-
-    <div>
-      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
-           style="border-radius:var(--base-border-radius);">
-        <h3 class="uk-card-title">
-          <a class="uk-link-heading"
-             href="{% url 'pages:study_direction_level' 'masters' %}">
-            {% trans "Магистратура" %}
-          </a>
-        </h3>
-        <p>{% trans "Углублённое изучение вашей специализации!" %}</p>
-      </div>
-    </div>
-
-    <div>
-      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
-           style="border-radius:var(--base-border-radius);">
-        <h3 class="uk-card-title">
-          <a class="uk-link-heading"
-             href="{% url 'pages:study_direction_level' 'postgraduates' %}">
-            {% trans "Аспирантура" %}
-          </a>
-        </h3>
-        <p>{% trans "Станьте экспертом в своей области!" %}</p>
-      </div>
-    </div>
-
+    {% endfor %}
   </div>
 </div>
+
+<script>
+document.querySelectorAll('#degreeTabs button').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+      document.querySelector('#degreeTabs button.active').classList.remove('active');
+      btn.classList.add('active');
+      document.querySelectorAll('.tab-panel').forEach(p=>p.hidden=true);
+      document.getElementById(btn.dataset.tab).hidden=false;
+  });
+});
+
+document.querySelectorAll('#modeSwitch button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+      document.querySelector('#modeSwitch button.active').classList.remove('active');
+      btn.classList.add('active');
+      const mode=btn.dataset.mode;
+      document.querySelectorAll('#timelineTable tbody tr').forEach(row=>{
+          row.style.display=row.dataset.mode===mode ? '' : 'none';
+      });
+  });
+});
+document.querySelectorAll('#timelineTable tbody tr').forEach(row=>{
+  if(row.dataset.mode!=='budget'){row.style.display='none';}
+});
+</script>
+
 {% endblock %}

@@ -378,18 +378,85 @@ def open_days(request):
         },
     )
 
+TITLE_MAP = {
+    'bachelor': {
+        'ru': _('Бакалавриат'),
+        'en': _('Bachelor'),
+    },
+    'specialists': {
+        'ru': _('Специалитет'),
+        'en': _('Specialist'),
+    },
+    'masters': {
+        'ru': _('Магистратура'),
+        'en': _('Master'),
+    },
+    'postgraduates': {
+        'ru': _('Аспирантура'),
+        'en': _('PhD'),
+    },
+}
+
+DESC_MAP = {
+    'bachelor': {
+        'ru': _('Открытие новых горизонтов знаний!'),
+        'en': _('Discover new frontiers of knowledge!'),
+    },
+    'specialists': {
+        'ru': _('Превратите свои увлечения в профессию!'),
+        'en': _('Turn your passions into a profession!'),
+    },
+    'masters': {
+        'ru': _('Углублённое изучение вашей специализации!'),
+        'en': _('Deepen your specialization studies!'),
+    },
+    'postgraduates': {
+        'ru': _('Станьте экспертом в своей области!'),
+        'en': _('Become an expert in your field!'),
+    },
+}
+
+DB_LEVELS = {
+    'bachelor':    'Бакалавриат',
+    'specialists': 'Специалитет',
+    'masters':     'Магистратура',
+    'postgraduates': 'Аспирантура',
+}
+
+LANG_MAP = {'ru': 'Русский', 'en': 'Английский'}
 
 def study_directions(request):
-    return render(
-        request,
-        "pages/applicants/study_directions.html",
-        {
-            "title": _("Направления подготовки"),
-        },
-    )
+    site_lang    = request.LANGUAGE_CODE
+    filter_lang  = request.GET.get('prog_lang', 'ru')
+    filter_value = LANG_MAP[filter_lang]
 
+    sections = []
+    for slug in ['bachelor','specialists','masters','postgraduates']:
+        has_en = Profile.objects.filter(
+            study_level=DB_LEVELS[slug],
+            language_fields__contains=[filter_value if filter_lang=='ru' else 'Английский']
+        ).exists()
+        sections.append({
+            'slug':    slug,
+            'title':   TITLE_MAP[slug][site_lang],
+            'desc':    DESC_MAP[slug][site_lang],
+            'has_en':  has_en,
+        })
 
-def levels_of_study(request, level: str):    
+    if filter_lang == 'en':
+        sections = [s for s in sections if s['has_en']]
+
+    sections.sort(key=lambda s: not s['has_en'])
+
+    return render(request,
+                  'pages/applicants/study_directions.html',
+                  {
+                    'sections':     sections,
+                    'current_lang': filter_lang,
+                    'title':        _('Программы подготовки'),
+                  })
+
+def levels_of_study(request, level: str):
     LEVELS = {
         "bachelor":      ("Бакалавриат",   "Bachelor’s Degree"),
         "masters":       ("Магистратура",  "Master’s Degree"),
@@ -401,13 +468,14 @@ def levels_of_study(request, level: str):
         raise Http404
 
     ru_level, en_level = LEVELS[level]
-    lang_code          = get_language()
 
-    directions = list(
-        StudyDirection.objects
-        .filter(study_level=ru_level)
-        .prefetch_related("profiles")
-    )
+    filter_lang  = request.GET.get('prog_lang', 'ru')
+    LANG_MAP     = {"ru": "Русский", "en": "Английский"}
+    filter_value = LANG_MAP.get(filter_lang, "Русский")
+
+    qs = StudyDirection.objects.filter(
+        study_level=ru_level
+    ).prefetch_related("profiles")
 
     def natural_key(obj):
         return [
@@ -415,21 +483,29 @@ def levels_of_study(request, level: str):
             for t in re.split(r"(\d+)", obj.cipher or "")
         ]
 
-    directions.sort(key=natural_key)
+    directions = sorted(qs, key=natural_key)
 
+    filtered_dirs = []
     for direction in directions:
-        profiles = list(direction.profiles.all())
-        profiles.sort(key=natural_key)
-        direction.sorted_profiles = profiles
+        prof_qs = direction.profiles.filter(
+            language_fields__overlap=[filter_value]
+        )
+        if not prof_qs.exists():
+            continue
+        sorted_profs = sorted(prof_qs, key=natural_key)
+        direction.sorted_profiles = sorted_profs
+        filtered_dirs.append(direction)
 
-    page_title = en_level if lang_code == "en" else ru_level
+    page_lang = get_language()
+    page_title = en_level if page_lang == "en" else ru_level
 
     return render(
         request,
         f"pages/applicants/levels/{level}.html",
         {
-            "title":      page_title,
-            "directions": directions,
+            "title":        page_title,
+            "directions":   filtered_dirs,
+            "current_lang": filter_lang,
         },
     )
 

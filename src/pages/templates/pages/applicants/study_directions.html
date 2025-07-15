@@ -32,18 +32,34 @@
   </nav>
 
   <div class="uk-child-width-1-2@s uk-grid-match uk-flex-center" uk-grid>
-    {% for sec in sections %}
-      <div>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle" style="border-radius:var(--base-border-radius);">
-          <h3 class="uk-card-title">
-            <a class="uk-link-heading"
-              href="{% url 'pages:study_direction_level' sec.slug %}?prog_lang={{ current_lang }}">
-              {{ sec.title }}
-            </a>
-          </h3>
-          <p>{{ sec.desc }}</p>
-        </div>
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
+          style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading"
+            href="{% url 'pages:study_direction_level' 'bachelor' %}?prog_lang={{ current_lang }}">
+            {% trans "Бакалавриат/Специалитет" %}
+          </a>
+        </h3>
+        <p>{% trans "Открытие новых горизонтов знаний!" %}</p>
       </div>
+    </div>
+
+    {% for sec in sections %}
+      {% if sec.slug != 'bachelor' and sec.slug != 'specialists' %}
+        <div>
+          <div class="uk-card uk-card-default uk-card-hover uk-card-body back-c uk-link-toggle"
+              style="border-radius:var(--base-border-radius);">
+            <h3 class="uk-card-title">
+              <a class="uk-link-heading"
+                href="{% url 'pages:study_direction_level' sec.slug %}?prog_lang={{ current_lang }}">
+                {{ sec.title }}
+              </a>
+            </h3>
+            <p>{{ sec.desc }}</p>
+          </div>
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 </div>

@@ -468,13 +468,21 @@ def levels_of_study(request, level: str):
         raise Http404
 
     ru_level, en_level = LEVELS[level]
+    page_lang = get_language()
 
     filter_lang  = request.GET.get('prog_lang', 'ru')
     LANG_MAP     = {"ru": "Русский", "en": "Английский"}
     filter_value = LANG_MAP.get(filter_lang, "Русский")
 
+    if level == "bachelor":
+        ru_bachelor   = LEVELS["bachelor"][0]
+        ru_specialist = LEVELS["specialists"][0]
+        ru_levels     = [ru_bachelor, ru_specialist]
+    else:
+        ru_levels = [ru_level]
+
     qs = StudyDirection.objects.filter(
-        study_level=ru_level
+        study_level__in=ru_levels
     ).prefetch_related("profiles")
 
     def natural_key(obj):
@@ -483,20 +491,25 @@ def levels_of_study(request, level: str):
             for t in re.split(r"(\d+)", obj.cipher or "")
         ]
 
-    directions = sorted(qs, key=natural_key)
+    all_dirs = list(qs)
+    if level == "bachelor":
+        bachelor_dirs = [d for d in all_dirs if d.study_level == ru_bachelor]
+        spec_dirs     = [d for d in all_dirs if d.study_level == ru_specialist]
+        bachelor_dirs.sort(key=natural_key)
+        spec_dirs.sort(key=natural_key)
+        directions = bachelor_dirs + spec_dirs
+    else:
+        directions = sorted(all_dirs, key=natural_key)
 
-    filtered_dirs = []
+    filtered = []
     for direction in directions:
         prof_qs = direction.profiles.filter(
             language_fields__overlap=[filter_value]
         )
         if not prof_qs.exists():
             continue
-        sorted_profs = sorted(prof_qs, key=natural_key)
-        direction.sorted_profiles = sorted_profs
-        filtered_dirs.append(direction)
-
-    page_lang = get_language()
+        direction.sorted_profiles = sorted(prof_qs, key=natural_key)
+        filtered.append(direction)
     page_title = en_level if page_lang == "en" else ru_level
 
     return render(
@@ -504,7 +517,7 @@ def levels_of_study(request, level: str):
         f"pages/applicants/levels/{level}.html",
         {
             "title":        page_title,
-            "directions":   filtered_dirs,
+            "directions":   filtered,
             "current_lang": filter_lang,
         },
     )

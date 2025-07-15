@@ -38,9 +38,11 @@
 .parallax-container_2,
 .parallax-container_1,
 .parallax-container_5 {
-  margin: unset !important;
   margin-top: 45px !important;
   min-height: 25vh !important;
+  border-radius: 30px;
+  margin-left: var(--base-margin);
+  margin-right: var(--base-margin);
 }
 
 .page-name {

@@ -25,16 +25,22 @@
   <div class="profile_heading-container">
     <div class="heading-button-container">
       <a href="{% url 'pages:applicants_study_directions' %}"
-         class="study_level-badge">
+        class="study_level-badge">
         {% trans "Направления подготовки" %}
       </a>
       {% with slug=profile_data.study_level|study_level_to_page_name %}
-      <a href="{% url 'pages:study_direction_level' slug %}"
-         class="study_level-badge">
-         {{ slug|level_slug_to_label }}
-      </a>
-    {% endwith %}
-        
+        {% if slug == 'bachelor' or slug == 'specialists' %}
+          <a href="{% url 'pages:study_direction_level' 'bachelor' %}"
+            class="study_level-badge">
+            {% trans "Бакалавриат/Специалитет" %}
+          </a>
+        {% else %}
+          <a href="{% url 'pages:study_direction_level' slug %}"
+            class="study_level-badge">
+            {{ slug|level_slug_to_label }}
+          </a>
+        {% endif %}
+      {% endwith %}
     </div>
 
     <h4 class="direction_name">

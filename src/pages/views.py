@@ -475,9 +475,9 @@ def levels_of_study(request, level: str):
     filter_value = LANG_MAP.get(filter_lang, "Русский")
 
     if level == "bachelor":
-        ru_bachelor   = LEVELS["bachelor"][0]
-        ru_specialist = LEVELS["specialists"][0]
-        ru_levels     = [ru_bachelor, ru_specialist]
+        ru_bachelor, en_bachelor = LEVELS["bachelor"]
+        ru_specialist, en_specialist = LEVELS["specialists"]
+        ru_levels = [ru_bachelor, ru_specialist]
     else:
         ru_levels = [ru_level]
 
@@ -510,7 +510,14 @@ def levels_of_study(request, level: str):
             continue
         direction.sorted_profiles = sorted(prof_qs, key=natural_key)
         filtered.append(direction)
-    page_title = en_level if page_lang == "en" else ru_level
+
+    if level == "bachelor":
+        if page_lang == "en":
+            page_title = f"{en_bachelor}/{en_specialist}"
+        else:
+            page_title = f"{ru_bachelor}/{ru_specialist}"
+    else:
+        page_title = en_level if page_lang == "en" else ru_level
 
     return render(
         request,

@@ -13,8 +13,6 @@
       display: inline-block;
       font-weight: bolder;
   }
-
-
 </style>
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
@@ -150,7 +148,9 @@
             {% endif %}
           </div>
           {% if profile_data.note %}
-            <span class="red-box"><br><sup class="red-star">*</sup>{{profile_data.note}}</span>
+            <span class="red-box" style="display: inline-flex; align-items: baseline;">
+              <sup class="red-star">*</sup>&nbsp;{{ profile_data.note|safe }}
+            </span>
           {% endif %}
           <div style="margin-top:50px">
             <a href="{{ profile_data.full_time_details.admission_url }}" target="_blank"

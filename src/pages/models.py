@@ -97,7 +97,7 @@ class ProfileDetails(models.Model):
     admission_url = models.URLField(
         "Ссылка на admission.rudn", max_length=255, null=True, blank=True
     )
-    note = models.TextField(
+    note = RichTextUploadingField(
         "Примечание", blank=True, default='', null=False
     )
 

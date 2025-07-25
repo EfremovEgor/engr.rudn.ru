@@ -35,24 +35,6 @@
         </ul>
       {% endif %}
     {% endfor %}
-
-    <h2 class="sub-heading">{% trans "Направления и программы подготовки специалитета" %}</h2>
-    {% for direction in directions %}
-      {% if direction.study_level == "Специалитет" %}
-        <ul uk-accordion="multiple: true;active:1">
-          <li>
-            <a class="uk-accordion-title" href="#"><b>{{direction.cipher}} «{% if LANGUAGE_CODE == 'en' and direction.name_en %}{{direction.name_en}}{% else %}{{direction.name}}{% endif %}»</b></a>
-            <div class="uk-accordion-content">
-              {% for profile in direction.sorted_profiles %}
-                <a class="uk-link-text" href="{% url 'pages:study_direction_profile' profile.id %}"><b>{% trans "Профиль:" %}</b>&nbsp;{% if LANGUAGE_CODE == 'en' and profile.name_en %}{{profile.name_en}}{% else %}{{profile.name}}{% endif %}</a><br>
-              {% empty %}
-                <p>{% trans "Нет программ на выбранном языке." %}</p>
-              {% endfor %}
-            </div>
-          </li>
-        </ul>
-      {% endif %}
-    {% endfor %}
   </div>
 </div>
 {% endblock %}

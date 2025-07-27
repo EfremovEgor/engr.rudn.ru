@@ -1,0 +1,41 @@
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% block content %}
+
+
+<div class="uk-container">
+  <div class="page-name">
+    {{title}}
+  </div>
+</div>
+
+
+<div class="uk-container" style="margin-bottom:50px;margin-top:60px">
+  <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="{% url 'pages:translator_module' %}">
+            {% trans "Модуль переводчика" %}
+          </a>
+        </h3>
+      </div>
+    </div>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small back-c uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="{% url 'pages:additional_professional_education' %}">
+            {% trans "Дополнительное профессиональное образование" %}
+          </a>
+        </h3>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

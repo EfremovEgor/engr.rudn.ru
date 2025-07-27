@@ -378,6 +378,33 @@ def open_days(request):
         },
     )
 
+def additional_education(request):
+    return render(
+        request,
+        "pages/applicants/additional_education.html",
+        {
+            "title": _("Дополнительное образование"),
+        },
+    )
+
+def translator_module(request):
+    return render(
+        request,
+        "pages/applicants/additional_education/translator_module.html",
+        {
+            "title": _("Модуль переводчика"),
+        },
+    )
+
+def additional_professional_education(request):
+    return render(
+        request,
+        "pages/applicants/additional_education/additional_professional_education.html",
+        {
+            "title": _("Дополнительное профессиональное образование"),
+        },
+    )
+
 TITLE_MAP = {
     'bachelor': {
         'ru': _('Бакалавриат'),

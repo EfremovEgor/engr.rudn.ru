@@ -29,6 +29,13 @@ urlpatterns = [
         views.levels_of_study,
         name="study_direction_level",
     ),
+    path(
+        "applicants/additional_education",
+        views.additional_education,
+        name="additional_education",
+    ),
+    path('applicants/additional_education/translator_module', views.translator_module, name='translator_module'),
+    path('applicants/additional_education/additional_professional_education', views.additional_professional_education, name='additional_professional_education'),
     path("academy/history", views.history, name="history"),
     path("science/directions", views.science_directions, name="science_directions"),
     path("science/journals", views.science_journals, name="science_journals"),

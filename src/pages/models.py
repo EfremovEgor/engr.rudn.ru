@@ -280,6 +280,27 @@ class Profile(models.Model):
         verbose_name = "Профиль направления"
         verbose_name_plural = "Профили направления"
 
+class AdditionalEducation(models.Model):
+    contact_employee1 = models.ForeignKey(
+        "profiles.DepartmentStaff",
+        verbose_name=_("Контактное лицо 1"),
+        related_name="contact_employee1",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+    contact_employee2 = models.ForeignKey(
+        "profiles.DepartmentStaff",
+        verbose_name=_("Контактное лицо 2"),
+        related_name="contact_employee2",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+    
+    class Meta:
+        verbose_name = "Дополнительное образование"
+        verbose_name_plural = "Дополнительное образование"
 
 class StudyDirection(models.Model):
     name = models.CharField(verbose_name="Название", max_length=255)

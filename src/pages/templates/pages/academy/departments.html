@@ -31,11 +31,11 @@
             {% else %}
               {{ department.info|safe }}
             {% endif %}
-
-            <div style="margin-top:10px">
-              <a href="{% url 'pages:department_item' department.abbreviation|get_url_department_abbreviation %}"
-                 class="link-hover-underline red-link-hover-underline">
-                <span class="show-uni-department__link-text">{% trans "Подробнее" %}</span>
+            </br>
+            
+            <div class="link-hover-underline red-link-hover-underline" style="margin-top:10px">
+              <a href="{% url 'pages:department_item' department.abbreviation|get_url_department_abbreviation %}">
+                <span class="show-uni-department__link-text" style="color:#0079c1;">{% trans "Подробнее" %}</span>
                 <i class="icon-ic_arrow"></i>
               </a>
             </div>

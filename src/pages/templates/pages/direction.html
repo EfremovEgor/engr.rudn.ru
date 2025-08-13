@@ -148,8 +148,8 @@
             {% endif %}
           </div>
           {% if profile_data.note %}
-            <span class="red-box" style="display: inline-flex; flex-direction: column; align-items: flex-start;">
-              <sup class="red-star">*</sup>&nbsp;{{ profile_data.note|safe }}
+            <span class="red-box" style="display: inline-flex; align-items: baseline;">
+              <sup class="red-star" style="position: relative; top: -2px;">*</sup>&nbsp;{{ profile_data.note|safe }}
             </span>
           {% endif %}
           <div style="margin-top:50px">

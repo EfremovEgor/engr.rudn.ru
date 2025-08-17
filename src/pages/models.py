@@ -302,6 +302,79 @@ class AdditionalEducation(models.Model):
         verbose_name = "Дополнительное образование"
         verbose_name_plural = "Дополнительное образование"
 
+class AdditionalEducationItem(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Название программы"
+    )
+
+    description = models.TextField(
+        blank=True, 
+        null=True,
+        verbose_name="Краткое описание"
+    )
+
+    department = models.ForeignKey(
+        'DepartmentInfo',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Кафедра"
+    )
+
+    program_director = models.ForeignKey(
+        "profiles.DepartmentStaff",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='directed_programs',
+        verbose_name="Руководитель программы"
+    )
+
+    contact_person = models.ForeignKey(
+        "profiles.DepartmentStaff",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='contact_for_programs',
+        verbose_name="Контактное лицо"
+    )
+
+    volume = models.CharField(
+        max_length=100,
+        verbose_name="Объем",
+        help_text="Например, '72 академических часа' или '3 зачетные единицы'"
+    )
+    
+    study_mode = models.CharField(
+        max_length=100,
+        verbose_name="Форма обучения"
+    )
+
+    language = models.CharField(
+        max_length=100,
+        verbose_name="Язык обучения"
+    )
+    
+    cost = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Стоимость",
+        help_text="Стоимость в рублях"
+    )
+    
+    information = RichTextUploadingField(
+        verbose_name="Дополнительная информация",
+        blank=True
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Программа ДПО"
+        verbose_name_plural = "Программы ДПО"
+
 class StudyDirection(models.Model):
     name = models.CharField(verbose_name="Название", max_length=255)
     name_en = models.CharField(_("Название (EN)"), max_length=255, blank=True, null=True)

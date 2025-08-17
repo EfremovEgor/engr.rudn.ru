@@ -10,6 +10,7 @@ from .models import (
     ScientificCenters,
     MainSlider,
     AdditionalEducation,
+    AdditionalEducationItem,
 )
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404
@@ -400,20 +401,24 @@ def translator_module(request):
     )
 
 def additional_professional_education(request):
+    programs = AdditionalEducationItem.objects.all()
     return render(
         request,
         "pages/applicants/additional_education/additional_professional_education.html",
         {
             "title": _("Дополнительное профессиональное образование"),
+            "programs": programs,
         },
     )
 
-def ae_item(request):
+def ae_item(request, pk):
+    item = get_object_or_404(AdditionalEducationItem, pk=pk)
     return render(
         request,
         "pages/applicants/additional_education/ae_item.html",
         {
-            "title": _("Дополнительное профессиональное образование - подробнее"),
+            "title": item.title,
+            "item": item,
         },
     )
 

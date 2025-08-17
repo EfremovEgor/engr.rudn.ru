@@ -36,6 +36,9 @@ urlpatterns = [
     ),
     path('applicants/additional_education/translator_module', views.translator_module, name='translator_module'),
     path('applicants/additional_education/additional_professional_education', views.additional_professional_education, name='additional_professional_education'),
+    path(
+        "applicants/additional_education/additional_professional_education/<int:pk>", views.ae_item, name="ae_item"
+    ),
     path("academy/history", views.history, name="history"),
     path("science/directions", views.science_directions, name="science_directions"),
     path("science/journals", views.science_journals, name="science_journals"),

@@ -215,11 +215,12 @@
                 <li><span>{{ report.speaker.academic_title }}</span></li>
                 {% endif %}
               </ul>
-              <a href="/science/seminars/{{ seminar.id }}/reports/{{ report.id }}"
-                class="link-hover-underline red-link-hover-underline" target="_self">
-                <span class="show-uni-department__link-text">Подробнее</span>
-                <i class="icon-ic_arrow"></i>
-              </a>
+              <div class="link-hover-underline red-link-hover-underline" style="margin-top:10px">
+                <a href="/science/seminars/{{ seminar.id }}/reports/{{ report.id }}">
+                  <span class="show-uni-department__link-text">{% trans "Подробнее" %}</span>
+                  <i class="icon-ic_arrow"></i>
+                </a>
+              </div>
             </div>
           </div>
           {% endif %}

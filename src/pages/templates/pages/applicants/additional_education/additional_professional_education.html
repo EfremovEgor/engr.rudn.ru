@@ -5,7 +5,12 @@
 
 <link rel="stylesheet" href="{% static 'css/academy/program-list.css' %}" />
 
-<div class="uk-container">
+
+<div class="uk-container" style="margin-top:40px; margin-bottom:50px;">
+  <a class="return-button" href="{% url 'pages:additional_education' %}">
+    {% trans "Дополнительное образование" %}
+  </a>
+
   <div class="page-name">{{ title }}</div>
 </div>
 

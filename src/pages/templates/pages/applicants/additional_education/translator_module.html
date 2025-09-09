@@ -2,12 +2,14 @@
 {% load static i18n %}
 {% block content %}
 
-
-<div class="uk-container">
-  <div class="page-name">
-    {{title}}
-  </div>
+<div class="uk-container" style="margin-top:40px; margin-bottom:50px;">
+  <a class="return-button" href="{% url 'pages:additional_education' %}">
+    {% trans "Дополнительное образование" %}
+  </a>
+  
+  <div class="page-name">{{ title }}</div>
 </div>
+
 
 <div class="uk-container" style="margin-top:40px; margin-bottom:50px; text-align: justify;">
   <p>{% trans "Кафедра иностранных языков инженерной академии РУДН разработала и реализует программу дополнительного профессионального образования «Переводчик по инженерным направлениям и специальностям»." %}

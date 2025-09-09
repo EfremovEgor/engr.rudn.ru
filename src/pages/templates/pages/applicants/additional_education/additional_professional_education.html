@@ -27,7 +27,7 @@
             </a>
           </h3>
 
-          <p>{{ program.description|safe|truncatewords:30 }}</p>
+          <p style="text-align: justify;">{{ program.description|safe|truncatewords:30 }}</p>
 
           <div class="link-hover-underline red-link-hover-underline">
             <a href="{% url 'pages:ae_item' program.pk %}">

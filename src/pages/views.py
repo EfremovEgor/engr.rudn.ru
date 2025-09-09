@@ -406,7 +406,7 @@ def additional_professional_education(request):
         request,
         "pages/applicants/additional_education/additional_professional_education.html",
         {
-            "title": _("Дополнительное профессиональное образование"),
+            "title": _("Программы дополнительного профессионального образования"),
             "programs": programs,
         },
     )

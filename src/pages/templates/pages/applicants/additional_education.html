@@ -1,7 +1,10 @@
 {% extends 'components/base.html' %}
-{% load static i18n %}
+{% load static i18n compress %}
 {% block content %}
 
+{% compress css %}
+<link rel="stylesheet" href="{% static 'css/applicants/additional_education.css' %}">
+{% endcompress %}
 
 <div class="uk-container">
   <div class="page-name">
@@ -9,6 +12,11 @@
   </div>
 </div>
 
+<div class="parallax-container uk-visible@s">
+  <p class="text-on-image">
+    {% trans "Расширяй границы научных познаний и делись опытом" %}
+  </p>
+</div>  
 
 <div class="uk-container" style="margin-bottom:50px;margin-top:60px">
   <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>

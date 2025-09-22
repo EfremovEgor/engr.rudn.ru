@@ -210,3 +210,25 @@
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-image {
+  width: 60vw;
+  max-width: 180px;
+  display: block;
+}
+
+.language-switcher button {
+  background-color: rgb(210, 232, 255);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 12px;
+  cursor: pointer;
+  color: #333;
+  font-size: 0.9rem;
+}

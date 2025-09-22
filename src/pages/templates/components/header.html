@@ -16,7 +16,7 @@
         <div class="uk-container second_part-container">
           <div class="second_part-image-container">
 
-            <!-- {% if LANGUAGE_CODE == "ru" %}
+            {% if LANGUAGE_CODE == "ru" %}
               <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
                 {% csrf_token %}
                 <input type="hidden" name="language" value="en">
@@ -44,7 +44,7 @@
                 font-size: large;
                 ">RUS</button>              
               </form>
-            {% endif %} -->
+            {% endif %}
 
             {% if LANGUAGE_CODE == "ru" %}
               <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
@@ -274,60 +274,26 @@
        style="background-color: var(--primary-color); margin-left: var(--base-margin) !important; margin-right: var(--base-margin) !important;">
     <div class="uk-container">
       <div uk-navbar="dropbar: true; dropbar-anchor: !.uk-navbar-container; target-y: !.uk-navbar-container;">
-        <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
-          <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
-            <li>
-              <a class="uk-link-reset header-image" target="_blank" style="width: 80%;">
-                <img class="no-background mobile-image"
-                     src="{% static 'images/header/logo_2_imgs.png' %}"
-                     width="60vw"
-                     alt="" />
-              </a>
+        <div class="logo-container">
 
-            </li>
+          <a href="/" class="logo-link">
+            <img src="{% static 'images/header/logo_2_imgs.png' %}" alt="Логотип" class="logo-image" />
+          </a>
 
-            {% if LANGUAGE_CODE == "ru" %}
-            <form action="{% url 'set_language' %}" method="POST" style="
-              position: absolute; 
-              right: 50px; 
-              bottom: 29px; 
-              border: 0px solid #ffffff; 
-              border-radius: 10px;
-              background-color: rgb(210, 232, 255);
-              padding: 3px 9px; 
-              cursor: pointer;
-              pointer-events: auto;
-              ">
+          <form action="{% url 'set_language' %}" method="POST" class="language-switcher">
               {% csrf_token %}
-              <input type="hidden" name="language" value="en">
-              <input type="hidden" name="next" value="{{ request.get_full_path }}">
-              <button type="submit" style="background:none; border:none;">
-                ENG
-              </button>
-            </form>
-            {% elif LANGUAGE_CODE == "en" %}
-            <form action="{% url 'set_language' %}" method="POST" style="
-              position: absolute; 
-              right: 50px; 
-              bottom: 29px; 
-              border: 0px solid #ffffff; 
-              border-radius: 10px;
-              background-color: rgb(210, 232, 255);
-              padding: 3px 9px; 
-              cursor: pointer;
-              pointer-events: auto;
-              ">
-              {% csrf_token %}
-              <input type="hidden" name="language" value="ru">
-              <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
-              <button type="submit" style="background:none; border:none;">
-                RUS
-              </button>
-            </form>
-            {% endif %}
-          </ul>
+              {% if LANGUAGE_CODE == "ru" %}
+                  <input type="hidden" name="language" value="en">
+                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                  <button type="submit">ENG</button>
+              {% else %}
+                  <input type="hidden" name="language" value="ru">
+                  <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+                  <button type="submit">RUS</button>
+              {% endif %}
+          </form>
+
         </div>
-
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
             <li>

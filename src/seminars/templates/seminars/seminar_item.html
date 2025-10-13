@@ -32,11 +32,11 @@
 
     <a href="/academy/departments/{{ seminar.department.abbreviation|get_url_department_abbreviation }}">
       {% if LANGUAGE_CODE == 'en' and seminar.department.name_en %}
-      {{ seminar.department.name_en|slice:"8:50" }}
+      {{ seminar.department.name_en|slice:"8:80" }}
       {% else %}
-      кафедры {{ seminar.department.name|slice:"8:50" }}
+      кафедры {{ seminar.department.name|slice:"8:80" }}
       {% endif %}
-    </a>.
+    </a>
 
     <span style="margin-top:-20px;text-align:justify;">
       {% if LANGUAGE_CODE == 'en' and seminar.description_en %}

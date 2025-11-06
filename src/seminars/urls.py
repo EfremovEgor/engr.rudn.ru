@@ -10,14 +10,14 @@ urlpatterns = [
     ),
 
     path(
-        "science/seminars/<int:id>/",
-        views.get_seminar,
+        "science/seminars/<int:seminar_id>/",
+        views.seminar_detail,
         name="seminar_detail"
     ),
 
     path(
-        "science/seminars/<int:seminar_id>/reports/<int:id>/",
-        views.get_seminar_report,
+        "science/seminars/<int:seminar_id>/reports/<uuid:report_uuid>/",
+        views.seminar_report_detail,
         name="seminar_report_detail"
     ),
 

@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.postgres.fields import ArrayField, DateRangeField
 from pages.models import DepartmentInfo
@@ -95,6 +96,14 @@ class SeminarReport(models.Model):
     )
     annotation_en = RichTextUploadingField("Аннотация (англ.)", blank=True, null=True)
 
+    uuid = models.UUIDField(
+        default=uuid.uuid4,
+        editable=False,
+        unique=True,
+        db_index=True,
+        verbose_name="UUID for URL"
+    )
+
     class Meta:
         verbose_name = "Доклад"
         verbose_name_plural = "Доклады"
@@ -147,7 +156,7 @@ class Seminar(models.Model):
     reports = models.ManyToManyField(SeminarReport, verbose_name="Доклады", blank=True)
 
     def __str__(self) -> str:
-        return self.heading
+        return self.name
 
     class Meta:
         verbose_name = "Научный семинар"

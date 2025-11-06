@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.forms.models import model_to_dict
 from django.db.models.fields.related import ManyToManyField
 from django.utils.translation import gettext as _
+from datetime import date
 
 
 def seminars(request):
@@ -19,33 +20,31 @@ def seminars(request):
     )
 
 
-def get_seminar(request, id):
-    seminar = get_object_or_404(Seminar, id=id)
-    reports = seminar.reports.order_by("-date_start").all()
-    past_reports = []
-    upcoming_reports = []
-    for report in reports:
-        if report.is_past_due:
-            past_reports.append(report)
-        else:
-            upcoming_reports.append(report)
-    print(len(past_reports))
+def seminar_detail(request, seminar_id):
+    seminar = get_object_or_404(Seminar, id=seminar_id)
+    
+    all_reports = seminar.reports.order_by("date_start").all()
+    today = date.today()
+    
+    past_reports = [r for r in all_reports if r.date_start and r.date_start < today]
+    upcoming_reports = [r for r in all_reports if not r.date_start or r.date_start >= today]
+
     return render(
         request,
         "seminars/seminar_item.html",
         {
             "title": seminar.name,
             "seminar": seminar,
-            "reports": reports,
+            "reports": all_reports,
             "past_reports": past_reports,
             "upcoming_reports": upcoming_reports,
         },
     )
 
 
-def get_seminar_report(request, seminar_id, id):
+def seminar_report_detail(request, seminar_id, report_uuid):
     seminar = get_object_or_404(Seminar, id=seminar_id)
-    report = get_object_or_404(SeminarReport, id=id)
+    report = get_object_or_404(seminar.reports.all(), uuid=report_uuid)
 
     return render(
         request,

@@ -23,7 +23,7 @@ def seminars(request):
 def seminar_detail(request, seminar_id):
     seminar = get_object_or_404(Seminar, id=seminar_id)
     
-    all_reports = seminar.reports.order_by("date_start").all()
+    all_reports = seminar.reports.order_by("-date_start").all()
     today = date.today()
     
     past_reports = [r for r in all_reports if r.date_start and r.date_start < today]

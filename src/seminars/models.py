@@ -10,6 +10,21 @@ class SeminarSpeaker(models.Model):
     first_name = models.TextField(verbose_name="Имя")
     last_name = models.TextField(verbose_name="Фамилия")
     middle_name = models.TextField(verbose_name="Отчество", blank=True, null=True)
+    first_name_en = models.TextField(
+        verbose_name="Имя (EN)",
+        null=True,
+        blank=True
+    )
+    last_name_en = models.TextField(
+        verbose_name="Фамилия (EN)",
+        null=True,
+        blank=True
+    )
+    middle_name_en = models.TextField(
+        verbose_name="Отчество (EN)",
+        blank=True,
+        null=True
+    )
     image = models.ImageField(
         verbose_name="Фотография",
         upload_to="seminar_speakers",
@@ -32,6 +47,23 @@ class SeminarSpeaker(models.Model):
 
     academic_degree = models.CharField(
         verbose_name="Ученая степень", max_length=255, blank=True, null=True
+    )
+    job_title_en = ArrayField(
+        models.CharField(
+            verbose_name="Должность/Звание + Название организации (ENG)", max_length=255
+        ),
+        verbose_name="Должности/Звания (ENG)",
+        size=20,
+        blank=True,
+        null=True,
+    )
+
+    academic_title_en = models.CharField(
+        verbose_name="Ученое звание (ENG)", max_length=255, blank=True, null=True
+    )
+
+    academic_degree_en = models.CharField(
+        verbose_name="Ученая степень (ENG)", max_length=255, blank=True, null=True
     )
     bio = RichTextUploadingField(
         verbose_name="Биография",

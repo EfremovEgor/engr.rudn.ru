@@ -2955,11 +2955,11 @@ msgstr "Conference link: "
 
 #: seminars/templates/seminars/seminar_report.html:88
 msgid "Аннотация"
-msgstr "Annotation"
+msgstr "Abstract"
 
 #: seminars/templates/seminars/seminar_report.html:99
 msgid "Краткая биография"
-msgstr "Short biography"
+msgstr "Short Bio"
 
 #: seminars/templates/seminars/seminar_report.html:111
 msgid "Запись:"

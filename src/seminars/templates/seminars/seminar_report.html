@@ -43,20 +43,47 @@
             </td>
             <td>
               <h3>
-                {{ report.speaker.last_name }}
-                {{ report.speaker.first_name }}
-                {{ report.speaker.middle_name }}
+                {% if LANGUAGE_CODE == 'en' and report.speaker.last_name_en %}
+                  {{ report.speaker.last_name_en }}
+                  {{ report.speaker.first_name_en }}
+                  {{ report.speaker.middle_name_en }}
+                {% else %}
+                  {{ report.speaker.last_name }}
+                  {{ report.speaker.first_name }}
+                  {{ report.speaker.middle_name }}
+                {% endif %}
               </h3>
-              {% if report.speaker.academic_degree %}
-                <p style="margin-top: -20px">{{ report.speaker.academic_degree }}</p>
+
+              {% if report.speaker.academic_degree or report.speaker.academic_degree_en %}
+                <p style="margin-top: -20px">
+                  {% if LANGUAGE_CODE == 'en' and report.speaker.academic_degree_en %}
+                    {{ report.speaker.academic_degree_en }}
+                  {% else %}
+                    {{ report.speaker.academic_degree }}
+                  {% endif %}
+                </p>
               {% endif %}
-              {% if report.speaker.job_title %}
-                <p style="margin-top: -20px">{{ report.speaker.job_title.0 }}</p>
+              
+              {% if report.speaker.job_title or report.speaker.job_title_en %}
+                <p style="margin-top: -20px">
+                  {% if LANGUAGE_CODE == 'en' and report.speaker.job_title_en %}
+                    {{ report.speaker.job_title_en.0 }}
+                  {% else %}
+                    {{ report.speaker.job_title.0 }}
+                  {% endif %}
+                </p>
               {% endif %}
-              {% if report.speaker.academic_title %}
-                <p style="margin-top: -20px">{{ report.speaker.academic_title }}</p>
+              
+              {% if report.speaker.academic_title or report.speaker.academic_title_en %}
+                <p style="margin-top: -20px">
+                  {% if LANGUAGE_CODE == 'en' and report.speaker.academic_title_en %}
+                    {{ report.speaker.academic_title_en }}
+                  {% else %}
+                    {{ report.speaker.academic_title }}
+                  {% endif %}
+                </p>
               {% endif %}
-            </td>
+              </td>
           </tr>
         </table>
       </div>
@@ -68,20 +95,47 @@
           width="150" height="150"
         />
         <h3 style="margin-top:20px">
-          {{ report.speaker.last_name }}
-          {{ report.speaker.first_name }}
-          {{ report.speaker.middle_name }}
+          {% if LANGUAGE_CODE == 'en' and report.speaker.last_name_en %}
+            {{ report.speaker.last_name_en }}
+            {{ report.speaker.first_name_en }}
+            {{ report.speaker.middle_name_en }}
+          {% else %}
+            {{ report.speaker.last_name }}
+            {{ report.speaker.first_name }}
+            {{ report.speaker.middle_name }}
+          {% endif %}
         </h3>
-        {% if report.speaker.job_title %}
-          <p style="margin-top: -20px">{{ report.speaker.job_title.0 }}</p>
+
+        {% if report.speaker.job_title or report.speaker.job_title_en %}
+          <p style="margin-top: -20px">
+            {% if LANGUAGE_CODE == 'en' and report.speaker.job_title_en %}
+              {{ report.speaker.job_title_en.0 }}
+            {% else %}
+              {{ report.speaker.job_title.0 }}
+            {% endif %}
+          </p>
         {% endif %}
-        {% if report.speaker.academic_title %}
-          <p style="margin-top: -20px">{{ report.speaker.academic_title }}</p>
+        
+        {% if report.speaker.academic_title or report.speaker.academic_title_en %}
+          <p style="margin-top: -20px">
+            {% if LANGUAGE_CODE == 'en' and report.speaker.academic_title_en %}
+              {{ report.speaker.academic_title_en }}
+            {% else %}
+              {{ report.speaker.academic_title }}
+            {% endif %}
+          </p>
         {% endif %}
-        {% if report.speaker.academic_degree %}
-          <p style="margin-top: -20px">{{ report.speaker.academic_degree }}</p>
+        
+        {% if report.speaker.academic_degree or report.speaker.academic_degree_en %}
+          <p style="margin-top: -20px">
+            {% if LANGUAGE_CODE == 'en' and report.speaker.academic_degree_en %}
+              {{ report.speaker.academic_degree_en }}
+            {% else %}
+              {{ report.speaker.academic_degree }}
+            {% endif %}
+          </p>
         {% endif %}
-      </div>
+        </div>
     {% endif %}
 
     {% if report.annotation or report.annotation_en %}

@@ -59,11 +59,11 @@
 </div>
 
 <div class="video-card-section" style="margin-top: var(--base-top-margin); margin-left: var(--base-margin); margin-right: var(--base-margin);">
-  <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-grid video-card" uk-grid="">
+  <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-grid uk-flex-middle video-card" uk-grid="">
     <div class="uk-first-column uk-cover-container video-card-media">
       <video src="{% static 'videos/IMG_8663.MP4' %}" autoplay muted loop playsinline controls class="video-card-video"></video>
     </div>
-    <div>
+    <div class="video-card-content">
       <div class="uk-card-body video-card-body">
         <h3 class="uk-card-title video-card-title">
           {% trans "Международное сотрудничество" %}

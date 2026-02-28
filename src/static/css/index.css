@@ -426,6 +426,7 @@ html {
 .video-card-media {
   display: flex;
   align-items: stretch;
+  align-self: stretch;
 }
 
 .video-card-video {
@@ -436,23 +437,25 @@ html {
   min-height: 300px;
 }
 
-.video-card-body {
+.video-card-content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  align-items: center;
+}
+
+.video-card-body {
   padding: 40px;
 }
 
 .video-card-title {
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
 }
 
 .video-card-text {
   font-size: 16px;
   line-height: 1.6;
   color: #555;
+  text-align: justify;
 }
 
 @media screen and (max-width: 959px) {

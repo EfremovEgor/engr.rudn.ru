@@ -113,6 +113,12 @@ class SeminarReport(models.Model):
         blank=True,
         null=True,
     )
+    video = models.FileField(
+        upload_to="videos/",
+        verbose_name="Видеозапись (файл)",
+        blank=True,
+        null=True,
+    )
     video_recording = models.URLField(
         verbose_name="Video recording URL",
         blank=True, null=True

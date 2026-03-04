@@ -160,6 +160,12 @@
       </div>
     {% endif %}
   </div>
+  {% if report.video %}
+    <h3 style="margin-top:20px">{% trans "Видеозапись" %}</h3>
+    <video controls style="max-width:100%; margin-top:-10px;">
+      <source src="{{ report.video.url }}">
+    </video>
+  {% endif %}
   {% if report.video_recording %}
     <span>
       <strong>{% trans "Запись:" %}</strong>

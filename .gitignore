@@ -164,6 +164,7 @@ staticfiles/
 **/uploads/student_committee_profiles/
 **/uploads/seminar_speakers/
 **/uploads/seminar_images/
+**/uploads/videos/
 .DS_Store
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

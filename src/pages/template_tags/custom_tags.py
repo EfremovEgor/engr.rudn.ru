@@ -308,5 +308,5 @@ def level_slug_to_label(raw: str) -> str:
 
 @register.filter
 def format_phone_number(phone: str):
-    phone = ",".join(phone.split("|"))
-    return PhoneNumber.from_string(phone).as_international
+    phone, ext = phone.split("|", 1)
+    return PhoneNumber.from_string(phone).as_international + f" ({ext[0:2]}-{ext[2:]})"

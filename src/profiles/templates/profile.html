@@ -49,7 +49,7 @@
                 href="tel:{{phone}}"
                 class="uk-link-heading card-link"
               >
-                {{phone.as_international}} <br />
+                {{phone|format_phone_number}} <br />
               </a>
               {% endfor %}
             </h4>

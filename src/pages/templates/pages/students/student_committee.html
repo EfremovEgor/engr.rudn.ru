@@ -115,7 +115,7 @@
               <span uk-icon="icon: receiver; ratio: 1"></span>
 
               <a href="tel:{{phone_number}}" class="uk-link-heading card-link">
-                {{profiles.0.phone_number.as_international}} <br />
+                {{profiles.0.phone_number|format_phone_number}} <br />
               </a>
 
             </h5>

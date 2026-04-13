@@ -93,7 +93,7 @@
                 <h5>
                   {% for phone in seminar.chair1.phone_numbers %}
                     <span uk-icon="icon: receiver; ratio: 1"></span>
-                    <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone.as_international }}</a><br>
+                    <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone|format_phone_number }}</a><br>
                   {% endfor %}
                 </h5>
               </li>
@@ -154,7 +154,7 @@
                   <h5>
                     {% for phone in seminar.organizer1.phone_numbers %}
                       <span uk-icon="icon: receiver; ratio: 1"></span>
-                      <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone.as_international }}</a><br>
+                      <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone|format_phone_number }}</a><br>
                     {% endfor %}
                   </h5>
                 </li>

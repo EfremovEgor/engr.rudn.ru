@@ -68,7 +68,7 @@
                   {% for phone in department.head.related_profile.phone_numbers %}
                   <span uk-icon="icon: receiver; ratio: 1"></span>
                   <a href="tel:{{phone}}" class="uk-link-heading card-link">
-                    {{phone.as_international}} <br />
+                    {{phone|format_phone_number}} <br />
                   </a>
                   {% endfor %}
                 </h5>
@@ -131,7 +131,7 @@
                   {% for phone in department.contact_employee.related_profile.phone_numbers %}
                   <span uk-icon="icon: receiver; ratio: 1"></span>
                   <a href="tel:{{phone}}" class="uk-link-heading card-link">
-                    {{phone.as_international}} <br />
+                    {{phone|format_phone_number}} <br />
                   </a>
                   {% endfor %}
                 </h5>

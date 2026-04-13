@@ -67,7 +67,7 @@
                   {% for phone in item.program_director.related_profile.phone_numbers %}
                   <span uk-icon="icon: receiver; ratio: 1"></span>
                   <a href="tel:{{phone}}" class="uk-link-heading card-link">
-                    {{phone.as_international}} <br />
+                    {{phone|format_phone_number}} <br />
                   </a>
                   {% endfor %}
                 </h5>
@@ -132,7 +132,7 @@
                   {% for phone in item.contact_person.related_profile.phone_numbers %}
                   <span uk-icon="icon: receiver; ratio: 1"></span>
                   <a href="tel:{{phone}}" class="uk-link-heading card-link">
-                    {{phone.as_international}} <br />
+                    {{phone|format_phone_number}} <br />
                   </a>
                   {% endfor %}
                 </h5>

@@ -94,7 +94,7 @@
                     <li>
                       <span uk-icon="receiver"></span>
                       {% for phone in department.head.related_profile.phone_numbers %}
-                        <a href="tel:{{ phone }}">{{ phone.as_international }}</a><br>
+                        <a href="tel:{{ phone }}">{{ phone|format_phone_number }}</a><br>
                       {% endfor %}
                     </li>
                   {% endif %}

@@ -6,6 +6,7 @@ from django import template
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language, get_language_info
 from decimal import Decimal
+from phonenumber_field.phonenumber import PhoneNumber
 
 RU_LABELS = {
     "ru": "Русский",
@@ -13,8 +14,14 @@ RU_LABELS = {
 }
 
 CANON = {
-    "ru": "ru", "рус": "ru", "русский": "ru", "russian": "ru",
-    "en": "en", "анг": "en", "английский": "en", "english": "en",
+    "ru": "ru",
+    "рус": "ru",
+    "русский": "ru",
+    "russian": "ru",
+    "en": "en",
+    "анг": "en",
+    "английский": "en",
+    "english": "en",
 }
 
 _LEVEL_CANON = {
@@ -22,19 +29,16 @@ _LEVEL_CANON = {
     "bachelors": "bachelor",
     "бакалавриат": "bachelor",
     "бакалавриаты": "bachelor",
-
     "specialist": "specialist",
     "specialists": "specialist",
     "specialitet": "specialist",
     "speciality": "specialist",
     "специалитет": "specialist",
     "специалитеты": "specialist",
-
     "master": "master",
     "masters": "master",
     "магистратура": "master",
     "магистратуры": "master",
-
     "phd": "phd",
     "postgraduate": "phd",
     "postgraduates": "phd",
@@ -46,8 +50,14 @@ _LEVEL_CANON = {
 }
 
 _TO_CODE = {
-    "ru": "ru", "рус": "ru", "русский": "ru", "russian": "ru",
-    "en": "en", "англ": "en", "английский": "en", "english": "en",
+    "ru": "ru",
+    "рус": "ru",
+    "русский": "ru",
+    "russian": "ru",
+    "en": "en",
+    "англ": "en",
+    "английский": "en",
+    "english": "en",
 }
 
 _RU_LOC = {
@@ -73,6 +83,7 @@ _EN_LEVEL = {
     "master": "Master",
     "phd": "PhD",
 }
+
 
 @register.filter
 def get_item(dictionary, key):
@@ -157,22 +168,18 @@ def format_prices(profile_data: dict) -> list[str]:
         year_num = idx + 1
 
         is_last = (
-            year_num == 5                                        
-            or year_num == max_year                        
+            year_num == 5
+            or year_num == max_year
             or (idx + 1 < len(prices) and prices[idx + 1] is None)
         )
 
         if is_last:
             rows.append(
-                _("%(n)d‑й год и далее – %(p)s ₽")
-                % {"n": year_num, "p": price}
+                _("%(n)d‑й год и далее – %(p)s ₽") % {"n": year_num, "p": price}
             )
             break
 
-        rows.append(
-            _("%(n)d‑й год – %(p)s ₽")
-            % {"n": year_num, "p": price}
-        )
+        rows.append(_("%(n)d‑й год – %(p)s ₽") % {"n": year_num, "p": price})
 
     return rows
 
@@ -183,8 +190,10 @@ def get_url_department_abbreviation(name: str):
         if v == name:
             return k
 
+
 def format_duration(value: float) -> str:
     return ("%.1f" % value).rstrip("0").rstrip(".")
+
 
 def get_duration_suffix(duration: float) -> str:
     lang = get_language()
@@ -218,7 +227,7 @@ def create_study_duration_badge_text(profile_data: dict) -> str:
     if not details:
         return ""
 
-    duration = details["study_duration"] 
+    duration = details["study_duration"]
     return f"{format_duration(duration)} {get_duration_suffix(duration)}"
 
 
@@ -246,6 +255,7 @@ def get_server_uri(_):
 def truncate_url(url: str):
     return url[:-1] if url[-1] == "/" else url
 
+
 @register.filter
 def lang_code_to_label(raw_value: str) -> str:
     if not raw_value:
@@ -262,6 +272,7 @@ def lang_code_to_label(raw_value: str) -> str:
         return get_language_info(code)["name"]
     except KeyError:
         return raw_value
+
 
 @register.filter
 def langs_phrase(raw_list) -> str:
@@ -282,7 +293,6 @@ def langs_phrase(raw_list) -> str:
     return f"(in {_EN_NAME.get(codes[0])} language)"
 
 
-
 @register.filter
 def level_slug_to_label(raw: str) -> str:
     if not raw:
@@ -294,3 +304,9 @@ def level_slug_to_label(raw: str) -> str:
     if ui == "ru":
         return _RU_LEVEL.get(slug, raw)
     return _EN_LEVEL.get(slug, slug.capitalize())
+
+
+@register.filter
+def format_phone_number(phone: str):
+    phone = ",".join(phone.split("|"))
+    return PhoneNumber.from_string(phone).as_international

@@ -8,8 +8,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class EmployeeProfile(models.Model):
-    full_name       = models.TextField(_("ФИО"))
-    full_name_en    = models.TextField(_("ФИО (англ.)"), blank=True, null=True)
+    full_name = models.TextField(_("ФИО"))
+    full_name_en = models.TextField(_("ФИО (англ.)"), blank=True, null=True)
     image = models.ImageField(
         verbose_name="Фотография",
         upload_to="profiles",
@@ -26,8 +26,10 @@ class EmployeeProfile(models.Model):
     job_title_en = ArrayField(
         models.CharField(_("Должность/Звание (англ.)"), max_length=255),
         verbose_name=_("Должности/Звания (англ.)"),
-        size=20, blank=True, null=True,
-    )    
+        size=20,
+        blank=True,
+        null=True,
+    )
     office = models.TextField(
         verbose_name="Кабинет",
         blank=True,
@@ -46,7 +48,7 @@ class EmployeeProfile(models.Model):
         null=True,
     )
     phone_numbers = postgres_array_field(
-        PhoneNumberField(verbose_name="Номер телефона"),
+        models.TextField(verbose_name="Номер телефона"),
         verbose_name="Номера телефонов",
         size=10,
         blank=True,

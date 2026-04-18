@@ -416,6 +416,10 @@ msgstr "Bekbulatova&nbsp;Aigul&nbsp;Sarsenovna"
 msgid "Жандарова&nbsp;Анна&nbsp;Сергеевна"
 msgstr "Zhandarova&nbsp;Anna&nbsp;Sergeevna"
 
+#: pages/templates/pages/academy/contacts.html
+msgid "Отдел дневного обучения"
+msgstr "Department of Daytime Education"
+
 #: pages/templates/pages/academy/contacts.html:106
 msgid "Тьютор по учебной работе"
 msgstr "Academic Tutor"

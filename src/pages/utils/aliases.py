@@ -19,6 +19,7 @@ department_abbreviation_to_name = {
     "kimop": "КИМОП",
     "knmt": "КНМТ",
     "kiya": "КИЯ",
+    "kpad": "КПАД",
 }
 scientific_center_name_to_page = {
     "Научный центр нейротехнологий и процессов управления": "neural_technologies.html",

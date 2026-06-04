@@ -33,6 +33,7 @@ from django.db.models import Q
 
 lang = translation.get_language()
 
+
 def index(request):
     slider_images = MainSlider.objects.all()
     news = NewsItem.objects.prefetch_related().order_by("-creation_date")[:10]
@@ -72,18 +73,16 @@ class NewsView(View):
         if tag_q:
             tag = Tag.objects.filter(name=tag_q).first()
             if tag:
-                qs = qs.filter(
-                    Q(tags=tag) | Q(tags_en=tag)
-                )
+                qs = qs.filter(Q(tags=tag) | Q(tags_en=tag))
             else:
                 qs = qs.none()
 
         return qs.order_by("-creation_date")
 
     def get(self, request, *args, **kwargs):
-        lang       = get_language()
-        title_q    = request.GET.get("title", "").strip()
-        tag_q      = request.GET.get("tag", "").strip()
+        lang = get_language()
+        title_q = request.GET.get("title", "").strip()
+        tag_q = request.GET.get("tag", "").strip()
 
         news = self._news_queryset(lang, title_q, tag_q)
         tags = self._tags_cloud(lang)
@@ -101,9 +100,9 @@ class NewsView(View):
         )
 
     def post(self, request, *args, **kwargs):
-        lang       = get_language()
-        title_q    = request.POST.get("title", "").strip()
-        tag_q      = request.POST.get("tags", "").strip()
+        lang = get_language()
+        title_q = request.POST.get("title", "").strip()
+        tag_q = request.POST.get("tags", "").strip()
 
         news = self._news_queryset(lang, title_q, tag_q)
         tags = self._tags_cloud(lang)
@@ -120,12 +119,13 @@ class NewsView(View):
             },
         )
 
+
 class NewsItemView(View):
     template_name = "pages/news_item_page.html"
 
     def get(self, request, id):
         news_item = get_object_or_404(NewsItem, pk=id)
-        if request.LANGUAGE_CODE == 'en':
+        if request.LANGUAGE_CODE == "en":
             page_title = news_item.title_en or _("Untitled")
         else:
             page_title = news_item.title or _("Без названия")
@@ -179,7 +179,7 @@ def directions(request, id):
     profile_data["note"] = (
         profile_object.full_time_details.note
         if profile_object.full_time_details and profile_object.full_time_details.note
-        else ''
+        else ""
     )
     return render(
         request,
@@ -262,6 +262,7 @@ def science_events(request):
         },
     )
 
+
 def science_seminars(request):
     return render(
         request,
@@ -270,6 +271,7 @@ def science_seminars(request):
             "title": _("Научные семинары"),
         },
     )
+
 
 def science_cits(request):
     return render(
@@ -280,12 +282,15 @@ def science_cits(request):
         },
     )
 
+
 def science_scitechforum(request):
     return render(
         request,
         "pages/science/scitechforum.html",
         {
-            "title": _("Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам"),
+            "title": _(
+                "Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам"
+            ),
         },
     )
 
@@ -380,6 +385,7 @@ def open_days(request):
         },
     )
 
+
 def additional_education(request):
     return render(
         request,
@@ -389,16 +395,15 @@ def additional_education(request):
         },
     )
 
+
 def translator_module(request):
     program = get_object_or_404(AdditionalEducation)
     return render(
         request,
         "pages/applicants/additional_education/translator_module.html",
-        {
-            "title": _("Модуль переводчика"),
-            "program": program
-        },
+        {"title": _("Модуль переводчика"), "program": program},
     )
+
 
 def additional_professional_education(request):
     programs = AdditionalEducationItem.objects.all()
@@ -411,6 +416,7 @@ def additional_professional_education(request):
         },
     )
 
+
 def ae_item(request, pk):
     item = get_object_or_404(AdditionalEducationItem, pk=pk)
     return render(
@@ -422,90 +428,99 @@ def ae_item(request, pk):
         },
     )
 
+
 TITLE_MAP = {
-    'bachelor': {
-        'ru': _('Бакалавриат'),
-        'en': _('Bachelor'),
+    "bachelor": {
+        "ru": _("Бакалавриат"),
+        "en": _("Bachelor"),
     },
-    'specialists': {
-        'ru': _('Специалитет'),
-        'en': _('Specialist'),
+    "specialists": {
+        "ru": _("Специалитет"),
+        "en": _("Specialist"),
     },
-    'masters': {
-        'ru': _('Магистратура'),
-        'en': _('Master'),
+    "masters": {
+        "ru": _("Магистратура"),
+        "en": _("Master"),
     },
-    'postgraduates': {
-        'ru': _('Аспирантура'),
-        'en': _('PhD'),
+    "postgraduates": {
+        "ru": _("Аспирантура"),
+        "en": _("PhD"),
     },
 }
 
 DESC_MAP = {
-    'bachelor': {
-        'ru': _('Открытие новых горизонтов знаний!'),
-        'en': _('Discover new frontiers of knowledge!'),
+    "bachelor": {
+        "ru": _("Открытие новых горизонтов знаний!"),
+        "en": _("Discover new frontiers of knowledge!"),
     },
-    'specialists': {
-        'ru': _('Превратите свои увлечения в профессию!'),
-        'en': _('Turn your passions into a profession!'),
+    "specialists": {
+        "ru": _("Превратите свои увлечения в профессию!"),
+        "en": _("Turn your passions into a profession!"),
     },
-    'masters': {
-        'ru': _('Углублённое изучение вашей специализации!'),
-        'en': _('Deepen your specialization studies!'),
+    "masters": {
+        "ru": _("Углублённое изучение вашей специализации!"),
+        "en": _("Deepen your specialization studies!"),
     },
-    'postgraduates': {
-        'ru': _('Станьте экспертом в своей области!'),
-        'en': _('Become an expert in your field!'),
+    "postgraduates": {
+        "ru": _("Станьте экспертом в своей области!"),
+        "en": _("Become an expert in your field!"),
     },
 }
 
 DB_LEVELS = {
-    'bachelor':    'Бакалавриат',
-    'specialists': 'Специалитет',
-    'masters':     'Магистратура',
-    'postgraduates': 'Аспирантура',
+    "bachelor": "Бакалавриат",
+    "specialists": "Специалитет",
+    "masters": "Магистратура",
+    "postgraduates": "Аспирантура",
 }
 
-LANG_MAP = {'ru': 'Русский', 'en': 'Английский'}
+LANG_MAP = {"ru": "Русский", "en": "Английский"}
+
 
 def study_directions(request):
-    site_lang    = request.LANGUAGE_CODE
-    filter_lang  = request.GET.get('prog_lang', 'ru')
+    site_lang = request.LANGUAGE_CODE
+    filter_lang = request.GET.get("prog_lang", "ru")
     filter_value = LANG_MAP[filter_lang]
 
     sections = []
-    for slug in ['bachelor','specialists','masters','postgraduates']:
+    for slug in ["bachelor", "specialists", "masters", "postgraduates"]:
         has_en = Profile.objects.filter(
             study_level=DB_LEVELS[slug],
-            language_fields__contains=[filter_value if filter_lang=='ru' else 'Английский']
+            language_fields__contains=[
+                filter_value if filter_lang == "ru" else "Английский"
+            ],
         ).exists()
-        sections.append({
-            'slug':    slug,
-            'title':   TITLE_MAP[slug][site_lang],
-            'desc':    DESC_MAP[slug][site_lang],
-            'has_en':  has_en,
-        })
+        sections.append(
+            {
+                "slug": slug,
+                "title": TITLE_MAP[slug][site_lang],
+                "desc": DESC_MAP[slug][site_lang],
+                "has_en": has_en,
+            }
+        )
 
-    if filter_lang == 'en':
-        sections = [s for s in sections if s['has_en']]
+    if filter_lang == "en":
+        sections = [s for s in sections if s["has_en"]]
 
-    sections.sort(key=lambda s: not s['has_en'])
+    sections.sort(key=lambda s: not s["has_en"])
 
-    return render(request,
-                  'pages/applicants/study_directions.html',
-                  {
-                    'sections':     sections,
-                    'current_lang': filter_lang,
-                    'title':        _('Программы подготовки'),
-                  })
+    return render(
+        request,
+        "pages/applicants/study_directions.html",
+        {
+            "sections": sections,
+            "current_lang": filter_lang,
+            "title": _("Программы подготовки"),
+        },
+    )
+
 
 def levels_of_study(request, level: str):
     LEVELS = {
-        "bachelor":      ("Бакалавриат",   "Bachelor’s Degree"),
-        "masters":       ("Магистратура",  "Master’s Degree"),
-        "postgraduates": ("Аспирантура",   "Post-graduate Studies"),
-        "specialists":   ("Специалитет",   "Specialist Degree"),
+        "bachelor": ("Бакалавриат", "Bachelor’s Degree"),
+        "masters": ("Магистратура", "Master’s Degree"),
+        "postgraduates": ("Аспирантура", "Post-graduate Studies"),
+        "specialists": ("Специалитет", "Specialist Degree"),
     }
 
     if level not in LEVELS:
@@ -514,8 +529,8 @@ def levels_of_study(request, level: str):
     ru_level, en_level = LEVELS[level]
     page_lang = get_language()
 
-    filter_lang  = request.GET.get('prog_lang', 'ru')
-    LANG_MAP     = {"ru": "Русский", "en": "Английский"}
+    filter_lang = request.GET.get("prog_lang", "ru")
+    LANG_MAP = {"ru": "Русский", "en": "Английский"}
     filter_value = LANG_MAP.get(filter_lang, "Русский")
 
     if level == "bachelor":
@@ -525,9 +540,9 @@ def levels_of_study(request, level: str):
     else:
         ru_levels = [ru_level]
 
-    qs = StudyDirection.objects.filter(
-        study_level__in=ru_levels
-    ).prefetch_related("profiles")
+    qs = StudyDirection.objects.filter(study_level__in=ru_levels).prefetch_related(
+        "profiles"
+    )
 
     def natural_key(obj):
         return [
@@ -538,7 +553,7 @@ def levels_of_study(request, level: str):
     all_dirs = list(qs)
     if level == "bachelor":
         bachelor_dirs = [d for d in all_dirs if d.study_level == ru_bachelor]
-        spec_dirs     = [d for d in all_dirs if d.study_level == ru_specialist]
+        spec_dirs = [d for d in all_dirs if d.study_level == ru_specialist]
         bachelor_dirs.sort(key=natural_key)
         spec_dirs.sort(key=natural_key)
         directions = bachelor_dirs + spec_dirs
@@ -547,9 +562,7 @@ def levels_of_study(request, level: str):
 
     filtered = []
     for direction in directions:
-        prof_qs = direction.profiles.filter(
-            language_fields__overlap=[filter_value]
-        )
+        prof_qs = direction.profiles.filter(language_fields__overlap=[filter_value])
         if not prof_qs.exists():
             continue
         direction.sorted_profiles = sorted(prof_qs, key=natural_key)
@@ -567,8 +580,8 @@ def levels_of_study(request, level: str):
         request,
         f"pages/applicants/levels/{level}.html",
         {
-            "title":        page_title,
-            "directions":   filtered,
+            "title": page_title,
+            "directions": filtered,
             "current_lang": filter_lang,
         },
     )
@@ -615,8 +628,6 @@ def scientific_center_item(request, name):
         page_title = center.name_en
     else:
         page_title = center.name
-    
-
 
     alias = aliases.scientific_center_name_to_page.get(
         " ".join(word.strip() for word in center.name.split())
@@ -662,6 +673,7 @@ def departments(request):
 
 def department_item(request, name):
     abb = aliases.department_abbreviation_to_name.get(name)
+
     if abb is None:
         raise Http404
 

@@ -542,10 +542,8 @@ msgstr ""
 msgid "Завершение подачи документов<br>на направление «Архитектура»"
 msgstr ""
 
-#: pages/templates/pages/applicants/committee.html:377
-#: pages/templates/pages/applicants/committee.html:462
-#: pages/templates/pages/applicants/committee.html:469
-msgid "15 июля 2025 г."
+#: pages/templates/pages/applicants/committee.html:397
+msgid "10 июля 2025 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:382

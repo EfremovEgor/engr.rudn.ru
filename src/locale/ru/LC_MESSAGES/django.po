@@ -535,7 +535,7 @@ msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:369
 #: pages/templates/pages/applicants/committee.html:563
-msgid "Начало приёма документов — 20 июня 2025 г."
+msgid "Начало приёма документов — 20 июня 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:376
@@ -543,7 +543,7 @@ msgid "Завершение подачи документов<br>на напра
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:397
-msgid "10 июля 2025 г."
+msgid "10 июля 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:382
@@ -552,7 +552,7 @@ msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:383
 #: pages/templates/pages/applicants/committee.html:476
-msgid "25 июля 2025 г."
+msgid "25 июля 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:388
@@ -561,7 +561,7 @@ msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:389
 #: pages/templates/pages/applicants/committee.html:490
-msgid "27 июля 2025 г."
+msgid "27 июля 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:394
@@ -570,7 +570,7 @@ msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:395
 #: pages/templates/pages/applicants/committee.html:477
-msgid "25 августа 2025 г."
+msgid "25 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:402
@@ -714,12 +714,12 @@ msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:463
 #: pages/templates/pages/applicants/committee.html:470
-msgid "20 августа 2025 г."
+msgid "20 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:464
 #: pages/templates/pages/applicants/committee.html:471
-msgid "20 сентября 2025 г."
+msgid "20 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:468
@@ -731,7 +731,7 @@ msgid "Для поступающих по ЕГЭ, БВИ"
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:478
-msgid "25 сентября 2025 г."
+msgid "25 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:482
@@ -739,15 +739,15 @@ msgid "Сроки проведения вступительных испытан
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:483
-msgid "16 июля - 25 июля 2025 г."
+msgid "16 июля - 25 июля 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:484
-msgid "16 июля - 25 августа 2025 г."
+msgid "16 июля - 25 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:485
-msgid "16 июля - 25 сентября 2025 г."
+msgid "16 июля - 25 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:489
@@ -756,11 +756,11 @@ msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:491
 #: pages/templates/pages/applicants/committee.html:583
-msgid "26 августа 2025 г."
+msgid "26 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:492
-msgid "26 сентября 2025 г."
+msgid "26 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:497
@@ -770,7 +770,7 @@ msgid ""
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:503
-msgid "1 августа 2025 г."
+msgid "1 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:508
@@ -779,7 +779,7 @@ msgid "Для зачисления в рамках основного этапа
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:510
-msgid "5 августа 2025 г."
+msgid "5 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:515
@@ -787,11 +787,11 @@ msgid "Завершение заключения договоров"
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:518
-msgid "27 августа 2025 г."
+msgid "27 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:519
-msgid "27 сентября 2025 г."
+msgid "27 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:524
@@ -804,19 +804,19 @@ msgid "Для зачисления в рамках приоритетного э
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:527
-msgid "2-3 августа 2025 г."
+msgid "2-3 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:532
-msgid "6-7 августа 2025 г."
+msgid "6-7 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:533
-msgid "30 августа 2025 г."
+msgid "30 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:534
-msgid "30 сентября 2025 г."
+msgid "30 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:539
@@ -837,15 +837,15 @@ msgid "Сроки начала учебного года"
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:546
-msgid "1 сентября 2025 г."
+msgid "1 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:547
-msgid "1 октября 2025 г."
+msgid "1 октября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:548
-msgid "1 декабря 2025 г."
+msgid "1 декабря 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:570
@@ -854,7 +854,7 @@ msgid "Окончание приема документов на бюджетн�
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:571
-msgid "12 августа 2025 г."
+msgid "12 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:576
@@ -862,7 +862,7 @@ msgid "Начало вступительных испытаний на бюдж�
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:577
-msgid "13 августа 2025 г."
+msgid "13 августа 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:582
@@ -1060,15 +1060,15 @@ msgid "1 декабря"
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:732
-msgid "Начало приёма документов — 1 марта 2025 г."
+msgid "Начало приёма документов — 1 марта 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:740
-msgid "22 июля 2025 г."
+msgid "22 июля 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:746
-msgid "2 марта - 31 июля 2025 г."
+msgid "2 марта - 31 июля 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:751
@@ -1076,7 +1076,7 @@ msgid "Сроки зачисления (издание приказов) на п
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:752
-msgid "29 сентября 2025 г."
+msgid "29 сентября 2026 г."
 msgstr ""
 
 #: pages/templates/pages/applicants/committee.html:768

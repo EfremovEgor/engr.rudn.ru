@@ -854,9 +854,9 @@ msgstr "Cost"
 
 #: pages/templates/pages/applicants/additional_education/translator_module.html:273
 msgid ""
-"Стоимость обучения составляет 92 000 рублей в год (46 000 рублей в семестр)."
+"Стоимость обучения составляет 97 000 рублей в год (48 500 рублей в семестр)."
 msgstr ""
-"The tuition fee is 92,000 rubles per year (46,000 rubles per semester)."
+"The tuition fee is 97,000 rubles per year (48,500 rubles per semester)."
 
 #: pages/templates/pages/applicants/additional_education/translator_module.html:275
 msgid "Возможна также ежемесячная оплата по индивидуальному графику."
@@ -865,13 +865,13 @@ msgstr "Monthly payments on an individual schedule are also possible."
 #: pages/templates/pages/applicants/additional_education/translator_module.html:277
 #, python-format
 msgid ""
-"Для поступающих в РУДН в 2025/2026 учебному году установлена скидка 5%% на 1-"
-"ый год обучения по программе «Переводчик», стоимость обучения составляет 87 "
-"400 рублей (43 700 рублей в семестр)."
+"Для поступающих в РУДН в 2026/2027 учебному году установлена скидка 5%% на 1-"
+"ый год обучения по программе «Переводчик», стоимость обучения составляет 92 "
+"500 рублей (46 250 рублей в семестр)."
 msgstr ""
-"For applicants to RUDN in the 2025/2026 academic year, a 5%% discount is "
+"For applicants to RUDN in the 2026/2027 academic year, a 5%% discount is "
 "offered for the 1st year of study in the 'Translator' program, with the "
-"tuition fee amounting to 87,400 rubles (43,700 rubles per semester)."
+"tuition fee amounting to 92,500 rubles (46,250 rubles per semester)."
 
 #: pages/templates/pages/applicants/additional_education/translator_module.html:281
 #: pages/templates/pages/applicants/committee.html:430
@@ -883,46 +883,41 @@ msgstr "Discounts"
 #: pages/templates/pages/applicants/additional_education/translator_module.html:285
 #, python-format
 msgid ""
-"Студенты получают 50%% скидку на обучение по программе «Переводчик» в первом "
-"семестре, в случае если набрали по результатам трех ЕГЭ (математика, "
-"русский, физика/информатика/химия/география) 245 баллов и более (с учётом "
-"баллов за индивидуальные достижения)."
+"Скидка 5%% - для всех первокурсников 92 500 рублей в год (46 250 рублей в "
+"семестр) на первый год обучения по программе;"
 msgstr ""
-"Students receive a 50%% discount on tuition for the 'Translator' program in "
-"the first semester if they have scored 245 points or more on three Unified "
-"State Exams (mathematics, Russian, physics/informatics/chemistry/geography), "
-"including points for individual achievements."
-
-#: pages/templates/pages/applicants/additional_education/translator_module.html:287
-#, python-format
-msgid ""
-"Студены получают 50%% скидку на обучение по программе «Переводчик» в первом "
-"семестре, в случае если набрали по результатам двух ЕГЭ (математика, "
-"русский) и 2-х творческих экзаменов 360 баллов и более (с учётом баллов за "
-"индивидуальные достижения."
-msgstr ""
-"Students receive a 50%% discount on tuition for the 'Translator' program in "
-"the first semester if they have scored 360 points or more on two Unified "
-"State Exams (mathematics, Russian) and 2 creative exams, including points "
-"for individual achievements."
-
-#: pages/templates/pages/applicants/additional_education/translator_module.html:289
-msgid ""
-"Победители и призёры олимпиад школьников, зачисленные без экзаменов, "
-"обучаются В ПЕРВОМ СЕМЕСТРЕ по программе «Переводчик» БЕСПЛАТНО*."
-msgstr ""
-"Winners and prize-winners of school olympiads, admitted without exams, study "
-"FOR FREE* in the FIRST SEMESTER of the 'Translator' program."
+"5%% discount for all first-year students: 92,500 rubles per year (46,250 "
+"rubles per semester) for the first year of study in the program;"
 
 #: pages/templates/pages/applicants/additional_education/translator_module.html:291
+#, python-format
 msgid ""
-"*Скидка сохраняется на второй и последующие семестры при условии прохождения "
-"студентом промежуточных аттестаций за первый и последующий семестры на "
-"«отлично» или «хорошо»."
+"Скидка 50%% - для студентов, которые набрали 245 баллов и более по "
+"результатам 3-х ЕГЭ (без учета индивидуальных достижений);"
 msgstr ""
-"*The discount is maintained for the second and subsequent semesters, "
-"provided that the student passes the mid-term assessments for the first and "
-"subsequent semesters with 'excellent' or 'good' grades."
+"50%% discount for students who scored 245 points or more on 3 Unified State "
+"Exams (excluding individual achievements);"
+
+#: pages/templates/pages/applicants/additional_education/translator_module.html:292
+msgid ""
+"360 баллов и более - для направления «Архитектура» (скидка сохраняется в "
+"последующих семестрах при условии сдачи зачетов и экзаменов на «хорошо» и "
+"«отлично»)"
+msgstr ""
+"360 points or more for the 'Architecture' program (the discount is "
+"maintained in subsequent semesters provided that tests and exams are passed "
+"with 'good' and 'excellent' grades)"
+
+#: pages/templates/pages/applicants/additional_education/translator_module.html:293
+msgid ""
+"БЕСПЛАТНО обучаются победители и призёры Всероссийских олимпиад школьников "
+"(ВСОШ), зачисленные без экзаменов (скидка сохраняется в последующих семестрах "
+"при условии сдачи зачетов и экзаменов на «хорошо» и «отлично»)."
+msgstr ""
+"Winners and prize-winners of the All-Russian School Olympiad (VsOSh) "
+"admitted without exams study FOR FREE (the discount is maintained in "
+"subsequent semesters provided that tests and exams are passed with 'good' "
+"and 'excellent' grades)."
 
 #: pages/templates/pages/applicants/committee.html:364
 #: pages/templates/pages/applicants/reference.html:16

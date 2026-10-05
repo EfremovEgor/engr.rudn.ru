@@ -1,29 +1,16 @@
-version: "3.8"
-
+# Продакшен: сайт в контейнере, PostgreSQL и nginx остаются на хосте.
+# network_mode: host — контейнер ходит в Postgres на localhost хоста и слушает 127.0.0.1:8000,
+# куда проксирует nginx (см. nginx/engr). Медиафайлы и переводы — на хосте (bind mount).
 services:
-    prometheus:
-        image: prom/prometheus
-        restart: "always"
-        volumes:
-            - prometheus_data:/prometheus
-            - ./prometheus.yml:/etc/prometheus/prometheus.yml
-        ports:
-            - 9090:9090
-        network_mode: host
-
-    grafana:
-        image: grafana/grafana
-        environment:
-            GF_INSTALL_PLUGINS: "grafana-clock-panel,grafana-simple-json-datasource"
-        restart: "always"
-        volumes:
-            - grafana_data:/var/lib/grafana
-        ports:
-            - 3000:3000
-        depends_on:
-            - prometheus
-        network_mode: host
-
-volumes:
-    prometheus_data: {}
-    grafana_data: {}
+  web:
+    build: .
+    image: academy-site:latest
+    restart: unless-stopped
+    network_mode: host
+    env_file: .env
+    environment:
+      GUNICORN_BIND: 127.0.0.1:8000
+      RELOAD_WORKERS_ON_TRANSLATION: "1"
+    volumes:
+      - ./src/uploads:/app/src/uploads
+      - ./src/locale:/app/src/locale

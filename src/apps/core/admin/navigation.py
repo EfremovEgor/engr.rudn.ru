@@ -1,21 +1,17 @@
 """Боковое меню админки, сгруппированное по задачам редактора."""
 
-from django.urls import NoReverseMatch, reverse
+from django.urls import reverse
+
+# Ссылки — готовые строки, а не функции: по строке unfold определяет активный пункт
+# и не сворачивает группу меню при переходе внутрь раздела.
 
 
 def _model(title, icon, label, permission="view"):
     app_label, model_name = label.split(".")
-
-    def link(request):
-        try:
-            return reverse(f"admin:{app_label}_{model_name}_changelist")
-        except NoReverseMatch:
-            return "#"
-
     return {
         "title": title,
         "icon": icon,
-        "link": link,
+        "link": reverse(f"admin:{app_label}_{model_name}_changelist"),
         "permission": lambda request: request.user.has_perm(f"{app_label}.{permission}_{model_name}"),
     }
 
@@ -24,7 +20,7 @@ def _link(title, icon, url_name, permission=None, kwargs=None):
     return {
         "title": title,
         "icon": icon,
-        "link": lambda request: reverse(url_name, kwargs=kwargs),
+        "link": reverse(url_name, kwargs=kwargs),
         "permission": permission or (lambda request: request.user.is_staff),
     }
 

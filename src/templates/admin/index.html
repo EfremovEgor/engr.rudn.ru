@@ -1,0 +1,107 @@
+{% extends 'admin/base.html' %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {{ site_title }}{% endblock %}
+
+{% block branding %}
+    {% include "unfold/helpers/site_branding.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="academy-dashboard">
+    <div class="academy-grid academy-grid--4">
+        {% for stat in stats %}
+            <a class="academy-card academy-stat" href="{{ stat.url }}">
+                <span class="material-symbols-outlined academy-stat__icon">{{ stat.icon }}</span>
+                <span class="academy-stat__value">{{ stat.value }}</span>
+                <span class="academy-stat__title">{{ stat.title }}</span>
+            </a>
+        {% endfor %}
+    </div>
+
+    {% if quick_actions %}
+        <section class="academy-card">
+            <h2 class="academy-card__title">Добавить</h2>
+            <div class="academy-actions">
+                {% for action in quick_actions %}
+                    <a class="academy-action" href="{{ action.url }}">
+                        <span class="material-symbols-outlined">{{ action.icon }}</span>{{ action.title }}
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
+    <div class="academy-grid academy-grid--2">
+        <section class="academy-card">
+            <div class="academy-card__head">
+                <h2 class="academy-card__title">Перевод на английский</h2>
+                <a href="{% url 'admin:translations_overview' %}">Все разделы →</a>
+            </div>
+            <div class="academy-progress" title="{{ translation_percent }}%">
+                <div class="academy-progress__bar" style="width: {{ translation_percent }}%"></div>
+            </div>
+            <p class="academy-muted">Переведено {{ translation_percent }}% материалов.</p>
+            {% if translation_rows %}
+                <table class="academy-table">
+                    <tbody>
+                        {% for row in translation_rows %}
+                            <tr>
+                                <td><a href="{{ row.url }}">{{ row.name|capfirst }}</a></td>
+                                <td class="academy-table__num">
+                                    {% if row.missing %}<a class="academy-badge academy-badge--danger" href="{{ row.missing_url }}">нет: {{ row.missing }}</a>{% endif %}
+                                    {% if row.partial %}<a class="academy-badge academy-badge--warning" href="{{ row.partial_url }}">частично: {{ row.partial }}</a>{% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="academy-muted">Все материалы переведены.</p>
+            {% endif %}
+        </section>
+
+        <section class="academy-card">
+            <h2 class="academy-card__title">Последние новости</h2>
+            <table class="academy-table">
+                <tbody>
+                    {% for item in recent_news %}
+                        <tr>
+                            <td><a href="{% url 'admin:news_newsitem_change' item.pk %}">{{ item }}</a></td>
+                            <td class="academy-table__num academy-muted">{{ item.creation_date|date:"d.m.Y" }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr><td class="academy-muted">Новостей пока нет.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <section class="academy-card">
+        <h2 class="academy-card__title">Последние изменения</h2>
+        <table class="academy-table">
+            <tbody>
+                {% for entry in recent_actions %}
+                    <tr>
+                        <td>
+                            {% if entry.is_addition %}<span class="academy-badge academy-badge--success">добавлено</span>
+                            {% elif entry.is_change %}<span class="academy-badge">изменено</span>
+                            {% else %}<span class="academy-badge academy-badge--danger">удалено</span>{% endif %}
+                        </td>
+                        <td>
+                            {% if entry.is_deletion or not entry.get_admin_url %}{{ entry.object_repr }}
+                            {% else %}<a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>{% endif %}
+                            <span class="academy-muted">· {% if entry.content_type %}{{ entry.content_type.name|capfirst }}{% endif %}</span>
+                        </td>
+                        <td class="academy-muted">{{ entry.user.get_full_name|default:entry.user.username }}</td>
+                        <td class="academy-table__num academy-muted">{{ entry.action_time|date:"d.m.Y H:i" }}</td>
+                    </tr>
+                {% empty %}
+                    <tr><td class="academy-muted">Изменений пока нет.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock %}

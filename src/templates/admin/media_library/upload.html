@@ -1,0 +1,32 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}{{ title }} | {{ site_title }}{% endblock %}
+
+{% block content %}
+<div class="academy-dashboard">
+    <section class="academy-card">
+        <div class="academy-card__head">
+            <h2 class="academy-card__title">Загрузка файлов в медиатеку</h2>
+            <a href="{{ changelist_url }}">← К списку файлов</a>
+        </div>
+        <p class="academy-muted" style="margin-bottom:1rem">
+            Перетащите файлы сюда или нажмите, чтобы выбрать. Можно загружать изображения, видео, документы и архивы.
+            После загрузки ссылку на файл можно скопировать в списке или вставить файл в текст через кнопку «Медиатека» под редактором.
+        </p>
+        <label style="display:flex;gap:.5rem;align-items:center;margin-bottom:1rem">
+            Папка:
+            <select id="media-folder" class="border border-base-200 rounded-default px-3 py-2 dark:border-base-700 bg-white dark:bg-base-900">
+                <option value="">— без папки —</option>
+                {% for folder in folders %}<option value="{{ folder.pk }}">{{ folder }}</option>{% endfor %}
+            </select>
+        </label>
+        <div id="media-dropzone" class="media-dropzone" data-upload-url="{{ upload_url }}">
+            <span class="material-symbols-outlined" style="font-size:48px">cloud_upload</span>
+            <div>Перетащите файлы или нажмите для выбора</div>
+            <input id="media-input" type="file" multiple hidden>
+        </div>
+        <div id="media-upload-list" class="media-upload-list"></div>
+    </section>
+</div>
+{% csrf_token %}
+{% endblock %}

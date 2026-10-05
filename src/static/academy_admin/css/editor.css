@@ -1,0 +1,6 @@
+/* Стили содержимого внутри CKEditor 5 в админке */
+.ck-content { font-size: 15px; line-height: 1.6; }
+.ck-content img { max-width: 100%; height: auto; }
+.ck-content table { border-collapse: collapse; }
+.ck-content table td, .ck-content table th { border: 1px solid #d1d5db; padding: 4px 8px; }
+.ck.ck-editor { width: 100%; }

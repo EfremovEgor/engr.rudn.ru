@@ -1,0 +1,91 @@
+/* Дополнения к теме Unfold: панель управления, переводы, медиатека */
+
+.academy-dashboard { display: flex; flex-direction: column; gap: 1.5rem; }
+.academy-grid { display: grid; gap: 1.5rem; }
+.academy-grid--2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.academy-grid--4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+.academy-card {
+  background: #fff;
+  border: 1px solid var(--color-base-200);
+  border-radius: var(--border-radius, 6px);
+  padding: 1.25rem 1.5rem;
+  display: block;
+}
+.dark .academy-card { background: var(--color-base-900); border-color: var(--color-base-800); }
+.academy-card__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; }
+.academy-card__title { font-weight: 600; font-size: 15px; color: var(--color-font-important-light); margin: 0 0 .75rem; }
+.dark .academy-card__title { color: var(--color-font-important-dark); }
+.academy-card__head .academy-card__title { margin: 0; }
+.academy-card a:not(.academy-badge):not(.academy-action) { color: var(--color-primary-600); }
+
+.academy-stat { display: flex; flex-direction: column; gap: .25rem; transition: box-shadow .15s, border-color .15s; }
+.academy-stat:hover { border-color: var(--color-primary-300); box-shadow: 0 4px 14px rgb(0 0 0 / .06); }
+.academy-stat__icon { color: var(--color-primary-600); font-size: 28px !important; }
+.academy-stat__value { font-size: 28px; font-weight: 700; color: var(--color-font-important-light); line-height: 1.1; }
+.dark .academy-stat__value { color: var(--color-font-important-dark); }
+.academy-stat__title { color: var(--color-base-500); }
+
+.academy-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.academy-action {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .45rem .85rem; border-radius: var(--border-radius, 6px);
+  background: var(--color-primary-600); color: #fff !important; font-weight: 500;
+}
+.academy-action:hover { background: var(--color-primary-700); }
+.academy-action .material-symbols-outlined { font-size: 18px; }
+
+.academy-muted { color: var(--color-base-500); }
+.academy-steps { margin: 0; padding-left: 1.25rem; list-style: decimal; display: flex; flex-direction: column; gap: .35rem; }
+
+.academy-table { width: 100%; border-collapse: collapse; }
+.academy-table th { text-align: left; font-weight: 600; color: var(--color-base-500); padding: .5rem .5rem; border-bottom: 1px solid var(--color-base-200); }
+.academy-table td { padding: .5rem .5rem; border-bottom: 1px solid var(--color-base-100); vertical-align: middle; }
+.dark .academy-table td, .dark .academy-table th { border-color: var(--color-base-800); }
+.academy-table tr:last-child td { border-bottom: 0; }
+.academy-table__num { text-align: right; white-space: nowrap; }
+
+.academy-badge {
+  display: inline-block; padding: .1rem .5rem; border-radius: 9999px; font-size: 12px; font-weight: 600;
+  background: var(--color-base-100); color: var(--color-base-700); margin-left: .25rem;
+}
+.academy-badge--success { background: #dcfce7; color: #166534; }
+.academy-badge--warning { background: #fef3c7; color: #92400e; }
+.academy-badge--danger { background: #fee2e2; color: #991b1b; }
+.dark .academy-badge { background: var(--color-base-800); color: var(--color-base-200); }
+
+.academy-progress { height: 8px; background: var(--color-base-100); border-radius: 9999px; overflow: hidden; margin: .5rem 0; }
+.dark .academy-progress { background: var(--color-base-800); }
+.academy-progress--small { height: 6px; margin: 0; }
+.academy-progress__bar { height: 100%; background: var(--color-primary-600); border-radius: 9999px; }
+
+/* Медиатека */
+.media-picker-btn { margin: .5rem 0; }
+.media-dropzone {
+  border: 2px dashed var(--color-base-300); border-radius: 8px; padding: 2.5rem 1rem; text-align: center;
+  color: var(--color-base-500); cursor: pointer; transition: border-color .15s, background .15s;
+}
+.media-dropzone.is-over { border-color: var(--color-primary-600); background: var(--color-primary-50); }
+.media-upload-list { margin-top: 1rem; display: flex; flex-direction: column; gap: .4rem; }
+.media-upload-item { display: flex; gap: .75rem; align-items: center; }
+.media-upload-item progress { flex: 1; }
+.media-copy { cursor: pointer; }
+
+.media-modal { position: fixed; inset: 0; background: rgb(0 0 0 / .45); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+.media-modal__box { background: #fff; width: min(1000px, 94vw); max-height: 86vh; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
+.dark .media-modal__box { background: var(--color-base-900); }
+.media-modal__head { display: flex; gap: .5rem; padding: .75rem 1rem; border-bottom: 1px solid var(--color-base-200); align-items: center; }
+.media-modal__head input, .media-modal__head select { border: 1px solid var(--color-base-300); border-radius: 6px; padding: .35rem .6rem; background: transparent; }
+.media-modal__head input { flex: 1; }
+.media-modal__grid { padding: 1rem; overflow: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: .75rem; }
+.media-tile { border: 1px solid var(--color-base-200); border-radius: 8px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; background: transparent; padding: 0; text-align: left; }
+.media-tile:hover { border-color: var(--color-primary-600); }
+.media-tile__thumb { height: 100px; display: flex; align-items: center; justify-content: center; background: var(--color-base-50); }
+.media-tile__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.media-tile__thumb .material-symbols-outlined { font-size: 40px; color: var(--color-base-400); }
+.media-tile__name { font-size: 12px; padding: .35rem .5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.media-modal__foot { padding: .6rem 1rem; border-top: 1px solid var(--color-base-200); display: flex; justify-content: space-between; align-items: center; }
+
+/* Редактор */
+.ck-editor-container { width: 100%; }
+.ck.ck-editor__editable_inline { min-height: 260px; }

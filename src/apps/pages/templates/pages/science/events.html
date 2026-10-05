@@ -1,0 +1,48 @@
+{% extends 'components/base.html' %}
+{% load static i18n %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/science/events.css' %}">
+
+<div class="uk-container">
+  <div class="page-name">{% trans "Научные мероприятия" %}</div>
+</div>
+
+<div class="parallax-container uk-visible@s">
+  <p class="text-on-image">
+    {% trans "Расширяй границы научных познаний и делись опытом" %}
+  </p>
+</div>
+
+<div class="uk-container" style="margin-bottom:50px;margin-top:60px">
+  <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="{% url 'seminars:seminars_list' %}">
+            {% trans "Научные семинары и симпозиумы" %}
+          </a>
+        </h3>
+        <p>{% trans "Совместно с мировыми учеными" %}</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small back-c uk-link-toggle"
+           style="border-radius:var(--base-border-radius);">
+        <h3 class="uk-card-title">
+          <a class="uk-link-heading" href="{% url 'pages:science_scitechforum' %}">
+            {% trans "5-й Международный научно-технический форум по механике космического полета и космическим конструкциям и материалам" %}
+          </a>
+        </h3>
+        <p>{% trans "Совместно с Российской академией наук и университетами стран БРИКС" %}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

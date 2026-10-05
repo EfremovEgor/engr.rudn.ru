@@ -1,18 +1,36 @@
+COMPOSE = docker compose
+
+# Обновление продакшена: свежий код, сборка образа, перезапуск (миграции применяются при старте)
 update:
-	 git pull https://github.com/EfremovEgor/engr.rudn.ru.git
-	 python3 src/manage.py collectstatic --no-input 
-	 python3 src/manage.py migrate 
-	 python3 src/manage.py compilemessages
-	 sudo systemctl restart gunicorn
-	 docker compose restart
+	git pull
+	$(COMPOSE) build
+	$(COMPOSE) up -d
+	$(COMPOSE) logs --tail=50 web
 
-create_env:
-	echo "DJANGO_DATABASE_HOST= \nDJANGO_DATABASE_PORT= \nDJANGO_DATABASE_NAME= \nDJANGO_DATABASE_USER= \nDJANGO_DATABASE_PASSWORD= \nPROMETHEUS_URL_SUFFIX= \nDJANGO_DATABASE_PASSWORD= \nDJANGO_ADMIN_URL_SUFFIX=" >> .env
+logs:
+	$(COMPOSE) logs -f web
 
-run_tests:
-	cd src && coverage run manage.py test 
+shell:
+	$(COMPOSE) exec web python manage.py shell
 
-push:
-	git add *
-	git commit -m "push"
-	git push origin main
+createsuperuser:
+	$(COMPOSE) exec web python manage.py createsuperuser
+
+# Резервная копия БД перед обновлением (рядом с проектом, в backups/)
+backup:
+	mkdir -p backups
+	pg_dump -Fc -h $${DJANGO_DATABASE_HOST:-localhost} -U $${DJANGO_DATABASE_USER:-postgres} $${DJANGO_DATABASE_NAME:-engr.rudn.ru} > backups/db-$$(date +%Y%m%d-%H%M%S).dump
+
+# Проверить, что миграции применятся к текущей БД (без изменений)
+migrate-plan:
+	$(COMPOSE) run --rm -e RUN_MIGRATIONS=0 web python manage.py migrate --plan
+
+# Обновить .po после изменения шаблонов
+messages:
+	cd src && python manage.py makemessages -l en -l ru --ignore=.venv
+
+dev:
+	$(COMPOSE) -f docker-compose.dev.yml up --build
+
+test:
+	$(COMPOSE) -f docker-compose.dev.yml run --rm web python manage.py test

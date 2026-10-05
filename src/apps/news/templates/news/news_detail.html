@@ -1,0 +1,34 @@
+{% extends 'components/base.html' %}
+{% load static i18n %}
+
+{% block ogimage %}{% if content.preview_image %}{{ content.preview_image.url }}{% else %}{% static '/images/favicon.png' %}{% endif %}{% endblock %}
+
+{% block content %}
+
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
+  <link rel="stylesheet" href="{% static 'css/global.css' %}">
+  <script src="{% static 'js/news.js' %}"></script>
+
+  <div class="uk-container" style="margin-bottom:40px">
+    <div class="news-items-date">{{ content.creation_date|date:"d.m.Y" }}</div>
+    <div class="page-name" style="margin-top: 0px !important;">{{ title }}</div>
+  </div>
+
+  <div class="uk-container" style="margin-bottom:50px">
+    {% if tags %}
+      <div class="hashtags uk-flex uk-margin" style="gap:12px;flex-wrap:wrap">
+        {% for tag in tags %}
+          <a href="{% url 'news:news_list' %}?tag={{ tag.name|urlencode }}" class="uk-button-link" style="font-size:18px">#{{ tag.name }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if content.preview_image %}
+      <img src="{{ content.preview_image.url }}" alt="" class="news-item-image">
+    {% endif %}
+
+    <div class="news_content uk-margin">
+      {{ content.content|default_if_none:""|safe }}
+    </div>
+  </div>
+{% endblock %}

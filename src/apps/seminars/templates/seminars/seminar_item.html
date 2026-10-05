@@ -1,0 +1,253 @@
+{% extends "components/base.html" %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+
+<script src="{% static 'js/seminars.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/academy/departments.css' %}">
+<link rel="stylesheet" href="{% static 'css/seminars.css' %}">
+<link rel="stylesheet" href="{% static 'css/direction.css' %}" />
+
+<div class="uk-container">
+  <div class="btn-row">
+    <a href="{% url 'pages:science_events' %}" class="return-button">
+      {% trans "Научные мероприятия" %}
+    </a>
+    <a href="{% url 'seminars:seminars_list' %}" class="return-button">
+      {% trans "Научные семинары" %}
+    </a>
+  </div>
+</div>
+
+<div class="uk-container" style="margin-top:20px;margin-bottom:50px">
+  <div class="page-name">
+    {% if LANGUAGE_CODE == 'en' and seminar.name_en %}
+    {{ seminar.name_en }}
+    {% else %}
+    {{ seminar.name }}
+    {% endif %}
+  </div>
+  <div class="seminar-description uk-margin" style="margin-top:-10px;">
+    {% trans "Семинар проводится в рамках" %}
+
+    <a href="{% if seminar.department.slug %}/academy/departments/{{ seminar.department.slug }}{% endif %}">
+      {% if LANGUAGE_CODE == 'en' and seminar.department.name_en %}
+      {{ seminar.department.name_en|slice:"8:80" }}
+      {% else %}
+      кафедры {{ seminar.department.name|slice:"8:80" }}
+      {% endif %}
+    </a>
+
+    <span style="margin-top:-20px;text-align:justify;">
+      {% if LANGUAGE_CODE == 'en' and seminar.description_en %}
+      {{ seminar.description_en|safe }}
+      {% else %}
+      {{ seminar.description|safe }}
+      {% endif %}
+    </span>
+  </div>
+
+  {% with has_organizer=seminar.organizer %}
+
+  <div
+    class="uk-grid uk-grid-small uk-child-width-1-1@s{% if has_organizer %} uk-child-width-1-2@m uk-flex-center{% endif %}"
+    uk-grid
+  >
+
+    <div class="employee-card-wrapper">
+      <h2 class="sub-heading uk-margin-small-bottom">{% trans "Председатель" %}</h2>
+
+      <article class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card" role="comment">
+        <header class="uk-comment-header" style="padding-bottom:15px;border-bottom:1px solid #e5e5e5">
+          <div class="uk-grid-medium uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+              <img class="uk-border-circle" src="{{ seminar.chair.image.url }}" width="80" height="80">
+            </div>
+            <div class="uk-width-expand">
+              <h3 class="uk-margin-remove">
+                <a class="uk-link-reset" href="/profile/{{ seminar.chair.id }}">{{ seminar.chair.full_name }}</a>
+              </h3>
+              <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
+                <li>
+                  <span>{{ seminar.chair.job_title.0 }}</span><br>
+                  <span>{{ seminar.chair.job_title.1 }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <div class="uk-comment-body">
+          <ul class="uk-list">
+            {% if seminar.chair.department_office %}
+              <li>
+                <h5 class="uk-link-heading card-link">
+                  <span uk-icon="icon: location; ratio: 1"></span>
+                  <span>{{ seminar.chair.department_office }}</span>
+                </h5>
+              </li>
+            {% endif %}
+
+            {% if seminar.chair.phone_numbers %}
+              <li>
+                <h5>
+                  {% for phone in seminar.chair.phone_numbers %}
+                    <span uk-icon="icon: receiver; ratio: 1"></span>
+                    <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone|format_phone_number }}</a><br>
+                  {% endfor %}
+                </h5>
+              </li>
+            {% endif %}
+
+            {% if seminar.chair.emails %}
+              <li>
+                <h5>
+                  {% for email in seminar.chair.emails %}
+                    <span uk-icon="icon: mail; ratio: 1"></span>
+                    <a href="mailto:{{ email }}" class="uk-link-heading card-link">{{ email }}</a>
+                  {% endfor %}
+                </h5>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    {% if has_organizer %}
+      <div class="employee-card-wrapper">
+        <h2 class="sub-heading uk-margin-small-bottom">{% trans "Организатор" %}</h2>
+
+        <article class="uk-card-hover uk-card-default uk-comment uk-comment-primary uk-grid-match employee-card" role="comment">
+          <header class="uk-comment-header" style="padding-bottom:15px;border-bottom:1px solid #e5e5e5">
+            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img class="uk-border-circle" src="{{ seminar.organizer.image.url }}" width="80" height="80">
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-margin-remove">
+                  <a class="uk-link-reset" href="/profile/{{ seminar.organizer.id }}">{{ seminar.organizer.full_name }}</a>
+                </h3>
+                <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
+                  <li>
+                    <span>{{ seminar.organizer.job_title.0 }}</span><br>
+                    <span>{{ seminar.organizer.job_title.1 }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </header>
+
+          <div class="uk-comment-body">
+            <ul class="uk-list">
+              {% if seminar.organizer.department_office %}
+                <li>
+                  <h5 class="uk-link-heading card-link">
+                    <span uk-icon="icon: location; ratio: 1"></span>
+                    <span>{{ seminar.organizer.department_office }}</span>
+                  </h5>
+                </li>
+              {% endif %}
+
+              {% if seminar.organizer.phone_numbers %}
+                <li>
+                  <h5>
+                    {% for phone in seminar.organizer.phone_numbers %}
+                      <span uk-icon="icon: receiver; ratio: 1"></span>
+                      <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone|format_phone_number }}</a><br>
+                    {% endfor %}
+                  </h5>
+                </li>
+              {% endif %}
+
+              {% if seminar.organizer.emails %}
+                <li>
+                  <h5>
+                    {% for email in seminar.organizer.emails %}
+                      <span uk-icon="icon: mail; ratio: 1"></span>
+                      <a href="mailto:{{ email }}" class="uk-link-heading card-link">{{ email }}</a>
+                    {% endfor %}
+                  </h5>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </article>
+      </div>
+    {% endif %}
+  </div>
+  {% endwith %}
+
+  <h2 class="sub-heading">{% trans "Доклады" %}</h2>
+
+  <div style="margin-left:20px">
+    <ul uk-accordion>
+      <li class="uk-open">
+        <a class="uk-accordion-title" href>Предстоящие</a>
+        <div style="margin-left: 20px; margin-top: 10px; display:flex; flex-direction: column;gap:5px"
+          class="uk-accordion-content">
+          {% if upcoming_reports|length == 0 %}
+          {% trans "Предстоящие доклады не запланированы" %}
+          {% endif %}
+
+          {% for report in upcoming_reports %}
+          {% if not report.is_past_due %}
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+              <div class="uk-card-badge uk-label">{{ report.date_start|date:"j/m/o" }} {{ report.time_start|date:"H:i" }}</div>
+              <h3 class="uk-card-title uk-margin-remove">
+                <a class="uk-link-reset" href="/science/seminars/{{ seminar.id }}/reports/{{ report.uuid }}"
+                  style="font-weight: 500">
+                  {{ report }}
+                </a>
+              </h3>
+              <h4 class="uk-margin-remove">
+                {{ report.speaker.last_name }} {{ report.speaker.first_name }} {{ report.speaker.middle_name }}
+              </h4>
+              <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
+                {% for title in report.speaker.job_title %}
+                <li><span>{{ title }}</span></li>
+                {% endfor %}
+                {% if report.speaker.academic_degree %}
+                <li><span>{{ report.speaker.academic_degree }}</span></li>
+                {% endif %}
+                {% if report.speaker.academic_title %}
+                <li><span>{{ report.speaker.academic_title }}</span></li>
+                {% endif %}
+              </ul>
+              <div class="link-hover-underline red-link-hover-underline" style="margin-top:10px">
+                <a href="/science/seminars/{{ seminar.id }}/reports/{{ report.uuid }}">
+                  <span class="show-uni-department__link-text">{% trans "Подробнее" %}</span>
+                  <i class="icon-ic_arrow"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
+      <li>
+        <a class="uk-accordion-title" href>{% trans "Прошедшие" %}</a>
+        <div class="uk-accordion-content"
+          style="margin-left:20px;margin-top:10px;display:flex;flex-direction:column;gap:5px">
+          {% if past_reports|length == 0 %}
+          {% trans "Прошедшие доклады отсутствуют" %}
+          {% endif %}
+
+          {% for report in past_reports %}
+          {% if report.is_past_due %}
+          <div>
+            <a class="uk-link-muted" href="/science/seminars/{{ seminar.id }}/reports/{{ report.uuid }}">
+              {{ report.date_start|date:"o.m.d" }} «{% if LANGUAGE_CODE == 'en' and report.name_en %}{{ report.name_en }}{% else %}{{ report }}{% endif %}» ({{ report.speaker.last_name }} {{ report.speaker.first_name.0 }}.{% if report.speaker.middle_name %}{{report.speaker.middle_name.0 }}.{% endif %})
+            </a>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

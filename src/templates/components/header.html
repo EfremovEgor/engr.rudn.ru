@@ -1,0 +1,445 @@
+{% load i18n %}
+{% load static %}
+
+<header class="header uk-visible@l">
+  <div class="upper-header-wrapper">
+    <div class="upper-header">
+      <div class="uk-container first_part-container" style="justify-content: center; align-items: center;">
+        <!--
+        <a target="_blank" href="https://forms.yandex.ru/cloud/67af053f5056908c85430947"
+           class="open_days_main-header-text">
+          ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ В ИНЖЕНЕРНОЙ АКАДЕМИИ 22.02.2025 Регистрация открыта
+        </a>
+        -->
+      </div>
+      <div class="upper-header-second_part">
+        <div class="uk-container second_part-container">
+          <div class="second_part-image-container">
+
+            {% if LANGUAGE_CODE == "ru" %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="en">
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button type="submit" style="
+                border: 0px solid #ffffff; 
+                border-radius: 10px;
+                background-color: rgb(210, 232, 255);
+                padding: 20px 25px; 
+                cursor: pointer;
+                font-size: large;
+                ">ENG</button>
+              </form>
+            {% elif LANGUAGE_CODE == "en" %}
+              <form action="{% url 'set_language' %}" method="POST" style="position: absolute; right: 80px;">
+                {% csrf_token %}
+                <input type="hidden" name="language" value="ru">
+                <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+                <button type="submit" style="
+                border: 0px solid #ffffff; 
+                border-radius: 10px;
+                background-color: rgb(210, 232, 255);
+                padding: 20px 25px; 
+                cursor: pointer;
+                font-size: large;
+                ">RUS</button>              
+              </form>
+            {% endif %}
+
+            {% if LANGUAGE_CODE == "ru" %}
+              <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/header/rudn_logo_color.png' %}"
+                  width="60vw"
+                  alt="Логотип RUDN"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}" class="uk-link-reset">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/header/engr_logo.jpg' %}"
+                  width="60vw"
+                  alt="Логотип Инженерной Академии"
+                />
+              </a>
+            {% elif LANGUAGE_CODE == "en" %}
+              <a href="https://www.rudn.ru/" class="uk-link-reset" target="_blank">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/logo_RUDN_eng.png' %}"
+                  width="60vw"
+                  alt="RUDN Logo"
+                />
+              </a>
+              <a href="{% url 'pages:index' %}" class="uk-link-reset">
+                <img
+                  class="second_part-image"
+                  src="{% static 'images/header/ACADEMY_OF_ENGINEERING.png' %}"
+                  width="60vw"
+                  alt="Engineering Academy Logo"
+                />
+              </a>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uk-section-secondary uk-visible@l" style="background-color: transparent;">
+    <nav class="uk-navbar-container uk-navbar-transparent"
+         style="background-color: var(--primary-color) !important; margin-left: var(--base-margin) !important; margin-right: var(--base-margin) !important;"
+         uk-sticky>
+      <div class="uk-container">
+        <div uk-navbar>
+          {% comment %}
+          <div class="uk-navbar-left uk-flex uk-flex-middle" style="margin: 0; padding: 0; gap: 0; margin-right: 30px">
+            <ul class="uk-thumbnav uk-thumbnav-vertical" style="margin: auto" uk-margin>
+              <li>
+                <a class="header-image uk-link-reset" target="_blank">
+                  <img src="{% static 'images/header/logo_2_imgs.png' %}" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          {% endcomment %}
+
+          <div class="uk-navbar-center" style="width: 100%">
+            <ul class="uk-navbar-nav" style="display: flex; width: 100%; justify-content: space-between">
+              <li>
+                <a class="header-text header-text-main" href="{% url 'pages:index' %}">
+                  {% trans "Главная" %}
+                </a>
+              </li>
+              <li>
+                <a class="header-text header-text-main" href="{% url 'news:news_list' %}">
+                  {% trans "Новости" %}
+                </a>
+              </li>
+              <li>
+                <a uk-icon="chevron-down"
+                   class="header-text header-text-main navbar-main-link"
+                   href="#">
+                  {% trans "Академия" %}
+                </a>
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'academy:administration' %}">
+                        {% trans "Дирекция" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'academy:departments' %}">
+                        {% trans "Кафедры" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:history' %}">
+                        {% trans "История" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:contacts' %}">
+                        {% trans "Контакты" %}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a uk-icon="chevron-down"
+                   class="header-text header-text-main navbar-main-link"
+                   href="#">
+                  {% trans "Наука" %}
+                </a>
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:science_events' %}">
+                        {% trans "Научные мероприятия" %}
+                      </a>
+                    </li>
+              
+                    <li>
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'science:centers' %}">
+                        {% trans "Научные центры" %}
+                      </a>
+                    </li>
+              
+                    <li>
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:science_directions' %}">
+                        {% trans "Научные направления" %}
+                      </a>
+                    </li>
+              
+                    <li>
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'pages:science_journals' %}">
+                        {% trans "Научные журналы" %}
+                      </a>
+                    </li>
+              
+                    <li>
+                      <a class="header-text navbar-sub-link"
+                         href="{% url 'science:dissertation_committees' %}">
+                        {% trans "Диссертационные советы" %}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a uk-icon="chevron-down"
+                   class="header-text header-text-main navbar-main-link"
+                   href="#">
+                  {% trans "Абитуриентам" %}
+                </a>
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'education:study_directions' %}">
+                        {% trans "Направления подготовки" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:committee' %}">
+                        {% trans "Приемная комиссия" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'documents:reference' %}">
+                        {% trans "Справочная информация" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:additional_education' %}">
+                        {% trans "Дополнительное образование" %}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a uk-icon="chevron-down"
+                   class="header-text header-text-main navbar-main-link"
+                   href="#">
+                  {% trans "Студентам и Аспирантам" %}
+                </a>
+                <div class="uk-navbar-dropdown dropdown-black">
+                  <ul class="uk-nav">
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:students_schedule' %}">
+                        {% trans "Расписание занятий" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:scientific_student_society' %}">
+                        {% trans "Научное студенческое общество" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'profiles:student_committee' %}">
+                        {% trans "Студенческий комитет" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'pages:digital_library' %}">
+                        {% trans "Электронная библиотека" %}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="header-text navbar-sub-link" href="{% url 'documents:student_applications' %}">
+                        {% trans "Образцы заявлений" %}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<header uk-sticky class="header uk-hidden@l" style="background-color: transparent;">
+  <nav class="uk-navbar-container"
+       style="background-color: var(--primary-color); margin-left: var(--base-margin) !important; margin-right: var(--base-margin) !important;">
+    <div class="uk-container">
+      <div uk-navbar="dropbar: true; dropbar-anchor: !.uk-navbar-container; target-y: !.uk-navbar-container;">
+        <div class="logo-container">
+
+          <a href="/" class="logo-link">
+            <img src="{% static 'images/header/logo_2_imgs.png' %}" alt="Логотип" class="logo-image" />
+          </a>
+
+          <form action="{% url 'set_language' %}" method="POST" class="language-switcher">
+              {% csrf_token %}
+              {% if LANGUAGE_CODE == "ru" %}
+                  <input type="hidden" name="language" value="en">
+                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                  <button type="submit">ENG</button>
+              {% else %}
+                  <input type="hidden" name="language" value="ru">
+                  <input type="hidden" name="next" value="{{ request.path|slice:'3:' }}">
+                  <button type="submit">RUS</button>
+              {% endif %}
+          </form>
+
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li>
+              <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+              <div class="uk-navbar-dropdown" bg-scroll="false">
+                <div style="height: 70vh" class="uk-drop-grid uk-child-width-1-2 uk-overflow-auto" uk-grid>
+                  <div>
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li class="uk-nav-header">
+                        <a class="header-text" href="{% url 'pages:index' %}">
+                          {% trans "Главная" %}
+                        </a>
+                      </li>
+                      <li class="uk-nav-header">
+                        <a class="header-text" href="{% url 'news:news_list' %}">
+                          {% trans "Новости" %}
+                        </a>
+                      </li>
+                      <li class="uk-nav-header header-text uk-disabled">
+                        {% trans "Академия" %}
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'academy:administration' %}">
+                          {% trans "Дирекция" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'academy:departments' %}">
+                          {% trans "Кафедры" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'pages:history' %}">
+                          {% trans "История" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'pages:contacts' %}">
+                          {% trans "Контакты" %}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li class="uk-nav-header header-text">
+                        <a class="header-text uk-disabled" href="">
+                          {% trans "Наука" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="/science/events">
+                          {% trans "Научные мероприятия" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'science:centers' %}">
+                          {% trans "Научные центры" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="/science/directions">
+                          {% trans "Научные направления" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="/science/journals">
+                          {% trans "Научные журналы" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'science:dissertation_committees' %}">
+                          {% trans "Диссертационные советы" %}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li class="uk-nav-header header-text">
+                        <a class="header-text uk-disabled" href="">
+                          {% trans "Абитуриентам" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'education:study_directions' %}">
+                          {% trans "Направления подготовки" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'pages:committee' %}">
+                          {% trans "Приемная комиссия" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'documents:reference' %}">
+                          {% trans "Справочная информация" %}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li class="uk-nav-header header-text">
+                        <a class="header-text uk-disabled" href="">
+                          {% trans "Студентам и Аспирантам" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'pages:students_schedule' %}">
+                          {% trans "Расписание занятий" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'pages:scientific_student_society' %}">
+                          {% trans "Научное студенческое общество" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'profiles:student_committee' %}">
+                          {% trans "Студенческий комитет" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'pages:digital_library' %}">
+                          {% trans "Электронная библиотека" %}
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header-text" href="{% url 'documents:student_applications' %}">
+                          {% trans "Образцы заявлений" %}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

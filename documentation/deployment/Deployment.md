@@ -1,365 +1,144 @@
-# Развертывание сайта
-
-## Содержание
-
-- [Подготовка системы](#подготовка-системы)
-  - [Требования](#требования)
-  - [Установка SSH-сервера](#установка-ssh-сервера)
-  - [Настройка SSH-сервера](#настройка-ssh-сервера)
-  - [Установка SSH на Windows 10/11](#установка-ssh-на-windows-1011)
-- [Установка зависимостей](#установка-зависимостей)
-  - [Nginx](#nginx)
-  - [PostgreSQL](#postgresql)
-  - [Python](#python)
-- [Начальная установка сайта](#начальная-установка-сайта)
-- [Настройка сайта](#настройка-сайта)
-  - [Переменные среды](#переменные-среды)
-  - [Миграции базы данных](#миграции-базы-данных)
-  - [Статика](#статика)
-- [Настройка и запуск Gunicorn](#настройка-и-запуск-Gunicorn)
-  - [Создание gunicorn.service](#создание-gunicornservice)
-  - [Создание gunicorn.socket](#создание-gunicornsocket)
-  - [Запуск Gunicorn](#запуск-gunicorn)
-- [Настройка и запуск Nginx](#настройка-и-запуск-nginx)
-  - [sites-available и sites-enabled](#sites-available-и-sites-enabled)
-  - [Запуск Nginx](#запуск-nginx)
-
-## Подготовка системы
-
-### Требования
-
-- Удаленный сервер под Ubuntu 22.04 LTS
-
-### Установка SSH-сервера
-
-Обновить репозиторий:
+# Развёртывание и обновление
 
-```
-$ sudo apt update
-```
-
-Установить SSH:
-
-```
-$ sudo apt-get install ssh
-```
-
-Установить SSH-сервер:
-
-```
-$ sudo apt install openssh-server
-```
-
-Добавить SSH-сервер в автозагрузку:
-
-```
-$ sudo systemctl enable sshd
-```
-
-Проверить работу SSH:
-
-```
-$ systemctl status sshd
-```
-
-Результат выполнения команды должен быть таким:
-
-![alt text](./images/sshd_status.png)
-
-### Настройка SSH-сервера
-
-Открыть файл конфигурации SSH-сервера:
-
-```
-$ sudo nano /etc/ssh/sshd_config
-```
-
-![alt text](./images/sshd_config_default.png)
-
-Раскомментировать строчку:
-
-```
-#Port 22
-```
-
-Желательно изменить порт на любой другой:
-
-![alt text](./images/ssh_config_edited.png)
-
-Перезапустить SSH-сервер:
-
-```
-systemctl restart sshd
-```
-
-### Установка SSH на Windows 10/11
-
-Открыть Windows PowerShell от имени администратора
-
-Установить SSH-клиент:
-
-```
-Add-WindowsCapability -Online -Name OpenSSH Client~~~~0.0.1.0
-```
-
-Проверить установку:
-
-```
-Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'
-```
-
-![alt text](./images/windows_ssh_installed.png)
-
-## Установка зависимостей
-
-Обновить доступных пакетов:
-
-```
-$ apt-get update
-```
-
-### Nginx
-
-```
-$ apt-get install nginx
-```
-
-### Python
-
-```
-$ sudo apt install python3-pip
-```
-
-### PostgreSQL
-
-[Ссылка на гайд по установке на Ubuntu](https://www.postgresql.org/download/linux/ubuntu/)
-
-## Начальная установка сайта
-
-Создать папку с сайтом:
-
-```
-$ mkdir /var/www/engr.rudn.ru
-```
-
-Перейти в папку:
-
-```
-$ cd /var/www/engr.rudn.ru
-```
+Схема продакшена:
 
 ```
-$ git init
+интернет → nginx (хост, :80/:443) → контейнер web (gunicorn, 127.0.0.1:8000) → PostgreSQL (хост)
+                    └── /media/ отдаёт nginx напрямую из src/uploads
 ```
 
-```
-$ git pull https://github.com/EfremovEgor/engr.rudn.ru
-```
-
-Установить зависимости:
-
-```
-$ pip install -r requirements.txt
-```
-
-## Настройка сайта
-
-### Переменные среды
-
-Создать .env файл и заполнить его:
-
-```
-$ make create_env
-```
-
-или создать самому:
-
-```
-$ nano .env
-```
-
-Пример:
-
-```
-DJANGO_DATABASE_HOST= localhost
-DJANGO_DATABASE_PORT= 5432
-DJANGO_DATABASE_NAME= engr.rudn.ru
-DJANGO_DATABASE_USER= postgres
-DJANGO_DATABASE_PASSWORD= postgres
-PROMETHEUS_URL_SUFFIX= random_base64_string_url_safe
-```
-
-### Миграции базы данных
-
-```
-$ cd src
-```
-
-```
-$ python3 manage.py migrate
-```
-
-### Статика
-
-```
-$ cd src
-```
-
-```
-$ python3 manage.py collectstatic
-```
-
-## Настройка и запуск Gunicorn
+Сайт работает в Docker (`docker-compose.yml`, `network_mode: host`), PostgreSQL и nginx остаются
+на хосте как раньше. Статику отдаёт приложение (whitenoise, со сжатием), загруженные файлы — nginx.
+Миграции применяются автоматически при каждом старте контейнера.
 
-```
-$ cd /etc/systemd/system/
-```
-
-### Создание gunicorn.service
-
-Создать gunicorn.service:
+## Требования
 
-```
-$ nano gunicorn.service
-```
+- Ubuntu 22.04+ с Docker Engine и плагином `docker compose`
+- PostgreSQL (существующая база сайта)
+- nginx
 
-Заполнить файл:
-
-```
-[Unit]
-Description=gunicorn daemon
-Requires=gunicorn.socket
-After=network.target
-
-[Service]
-User=root
-Group=www-data
-WorkingDirectory=/var/www/engr.rudn.ru/src
-ExecStart=gunicorn \
-          --access-logfile - \
-          --workers 3 \
-          --bind unix:/run/gunicorn.sock \
-          engr_rudn.wsgi:application
-
-[Install]
-WantedBy=multi-user.target
-```
+## Первый переход на новую версию (с systemd/gunicorn на Docker)
 
-### Создание gunicorn.socket
+> Обязательно сделайте резервную копию базы — миграции меняют структуру таблиц.
 
-Создать gunicorn.socket:
+1. **Резервная копия БД и файлов**
 
-```
-$ nano gunicorn.socket
-```
+   ```bash
+   cd /var/www/site
+   pg_dump -Fc -h localhost -U postgres engr.rudn.ru > ~/backup-before-docker.dump
+   tar czf ~/uploads-before-docker.tgz src/uploads
+   ```
 
-Заполнить файл:
+2. **Проверьте, что в базе применены все старые миграции.** На старой версии кода:
 
-```
-[Unit]
-Description=gunicorn socket
+   ```bash
+   cd src && python3 manage.py showmigrations | grep "\[ \]"
+   ```
 
-[Socket]
-ListenStream=/run/gunicorn.sock
+   Вывод должен быть пустым. Если на сервере были свои миграции, которых нет в репозитории
+   (раньше `settings.py` был в `.gitignore`, и прод мог отличаться), сначала разберитесь с ними.
 
-[Install]
-WantedBy=sockets.target
-```
+3. **Получите новую версию и создайте `.env`**
 
-### Запуск Gunicorn
+   ```bash
+   git fetch && git checkout <ветка или тег новой версии>
+   cp .env.example .env
+   nano .env
+   ```
 
-Проверить gunicorn.service на наличие ошибок(если все хорошо, ничего не выводит в консоль):
+   Перенесите параметры БД и `DJANGO_ADMIN_URL_SUFFIX` из старого `.env`, задайте новый
+   `DJANGO_SECRET_KEY` (раньше ключ был в репозитории — его нужно сменить):
 
-```
-$ systemd-analyze verify gunicorn.service
-```
+   ```bash
+   python3 -c "import secrets; print(secrets.token_urlsafe(50))"
+   ```
 
-Запустить gunicorn:
+4. **Права на каталоги** (контейнер работает от пользователя с uid 1000):
 
-```
-$ sudo systemctl enable gunicorn
-```
+   ```bash
+   sudo chown -R 1000:1000 src/uploads src/locale
+   ```
 
-```
-$ sudo systemctl start gunicorn
-```
+5. **Остановите старый gunicorn и сервисы мониторинга**
 
-Проверить работоспособность guicorn
+   ```bash
+   sudo systemctl disable --now gunicorn.socket gunicorn.service
+   docker compose down --remove-orphans    # остановит prometheus и grafana
+   ```
 
-```
-$ sudo systemctl status gunicorn
-```
+6. **Проверьте план миграций (ничего не меняет в БД):**
 
-## Настройка и запуск Nginx
+   ```bash
+   docker compose build
+   docker compose run --rm -e RUN_MIGRATIONS=0 web python manage.py migrate --plan
+   ```
 
-### sites-available и sites-enabled
+7. **Запустите сайт** — миграции применятся при старте:
 
-```
-$ cd /etc/nginx/sites-available/
-```
+   ```bash
+   docker compose up -d
+   docker compose logs -f web
+   ```
 
-Создать файл:
+   В логе миграций могут быть строки с «!» — это не ошибки, а отчёт о данных, которые были
+   преобразованы особым образом (профиль в нескольких направлениях, доклад в нескольких
+   семинарах, непривязанные условия приёма). Их стоит проверить в админке.
 
-```
-$ nano engr
-```
+8. **Обновите конфигурацию nginx** (`nginx/engr` из репозитория — проксирование на 127.0.0.1:8000):
 
-Заполнить файл:
+   ```bash
+   sudo cp nginx/engr /etc/nginx/sites-available/engr
+   sudo nginx -t && sudo systemctl reload nginx
+   ```
 
-```
-server {
-    listen 80;
-    server_name site_name;
-
-    location /favicon.ico {
-        access_log off; log_not_found off;
-    }
-    location /static/ {
-        alias /var/www/site/src/staticfiles/;
-    }
-    location /media/ {
-        alias /var/www/site/src/uploads/;
-    }
-
-    location / {
-        proxy_pass http://unix:/run/gunicorn.sock;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $server_name;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
-```
+9. **После запуска**
+   - зайдите в админку, проверьте разделы «Образовательные программы», «Научные семинары»;
+   - «Медиатека» → «Найти файлы на диске» — добавит в медиатеку уже загруженные ранее файлы;
+   - при желании удалите тома мониторинга: `docker volume ls | grep -E "prometheus|grafana"`.
 
-Создать символическую ссылку на файл в каталоге
+### Откат
 
+```bash
+docker compose down
+pg_restore --clean --if-exists -d engr.rudn.ru ~/backup-before-docker.dump
+git checkout <предыдущий коммит>
+sudo systemctl enable --now gunicorn.socket gunicorn.service
 ```
-$ sudo ln -s /etc/nginx/sites-available/engr /etc/nginx/sites-enabled/
-```
 
-Проверить конфигурацию:
+## Обычное обновление
 
-```
-$ sudo nginx -t
+```bash
+make backup     # резервная копия БД в backups/
+make update     # git pull, сборка образа, перезапуск (миграции применятся сами)
 ```
 
-### Запуск Nginx
+## Полезные команды
 
-Открыть порт:
-
-```
-$ sudo ufw allow 80
-```
+| Команда | Что делает |
+| --- | --- |
+| `make logs` | логи сайта |
+| `make createsuperuser` | создать администратора |
+| `make shell` | Django shell в контейнере |
+| `make migrate-plan` | какие миграции будут применены |
 
-Запустить Nginx:
+## Переменные окружения
 
-```
-sudo service nginx start
-```
+См. `.env.example`. Основные:
 
-Перезапустить Nginx:
+| Переменная | Назначение |
+| --- | --- |
+| `DJANGO_SECRET_KEY` | секретный ключ (обязателен, если `DJANGO_DEBUG=0`) |
+| `DJANGO_DEBUG` | `1` — режим разработки |
+| `DJANGO_ALLOWED_HOSTS` | домены через запятую |
+| `DJANGO_ADMIN_URL_SUFFIX` | админка доступна по `/admin-<суффикс>/` |
+| `DJANGO_DATABASE_*` | подключение к PostgreSQL |
+| `DJANGO_SECURE_COOKIES` | cookie только по HTTPS |
+| `RUN_MIGRATIONS` | `0` — не применять миграции при старте |
+| `GUNICORN_WORKERS` | число воркеров |
+| `MEDIA_LIBRARY_MAX_UPLOAD_MB` | лимит размера файла в медиатеке |
 
-```
-sudo service nginx restart
-```
+## Переводы интерфейса на сервере
 
-Теперь сайт доступен по внешнему IP вашего сервера
+Каталог `src/locale` смонтирован в контейнер, поэтому правки из Rosetta сохраняются в файлах
+на хосте (их можно закоммитить в репозиторий). После сохранения перевода воркеры gunicorn
+перезапускаются автоматически.

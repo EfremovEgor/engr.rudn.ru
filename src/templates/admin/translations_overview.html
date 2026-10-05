@@ -1,0 +1,62 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}{{ title }} | {{ site_title }}{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div class="academy-dashboard">
+    <section class="academy-card">
+        <h2 class="academy-card__title">Как переводить</h2>
+        <ol class="academy-steps">
+            <li>Нажмите на число в колонке «нет перевода» или «частично» — откроется список непереведённых записей.</li>
+            <li>Откройте запись и перейдите на вкладку <b>🇬🇧 English</b>. Под каждым полем подсказкой показан русский оригинал.</li>
+            <li>Если английское поле оставить пустым, на английской версии сайта будет показан русский текст.</li>
+            <li>Подписи кнопок, меню и других элементов оформления переводятся в разделе
+                <a href="{{ rosetta_url }}">«Строки интерфейса»</a>.</li>
+        </ol>
+    </section>
+
+    <section class="academy-card">
+        <div class="academy-card__head">
+            <h2 class="academy-card__title">Готовность английской версии: {{ percent }}%</h2>
+            <span class="academy-muted">{{ done }} из {{ total }} записей</span>
+        </div>
+        <div class="academy-progress"><div class="academy-progress__bar" style="width: {{ percent }}%"></div></div>
+        <table class="academy-table academy-table--striped">
+            <thead>
+                <tr>
+                    <th>Раздел</th>
+                    <th>Материалы</th>
+                    <th class="academy-table__num">Всего</th>
+                    <th class="academy-table__num">Готово</th>
+                    <th class="academy-table__num">Частично</th>
+                    <th class="academy-table__num">Нет перевода</th>
+                    <th style="width: 20%">Прогресс</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td class="academy-muted">{{ row.app }}</td>
+                        <td><a href="{{ row.url }}">{{ row.name|capfirst }}</a></td>
+                        <td class="academy-table__num">{{ row.total }}</td>
+                        <td class="academy-table__num">{{ row.done }}</td>
+                        <td class="academy-table__num">
+                            {% if row.partial %}<a class="academy-badge academy-badge--warning" href="{{ row.partial_url }}">{{ row.partial }}</a>{% else %}—{% endif %}
+                        </td>
+                        <td class="academy-table__num">
+                            {% if row.missing %}<a class="academy-badge academy-badge--danger" href="{{ row.missing_url }}">{{ row.missing }}</a>{% else %}—{% endif %}
+                        </td>
+                        <td>
+                            <div class="academy-progress academy-progress--small" title="{{ row.percent }}%">
+                                <div class="academy-progress__bar" style="width: {{ row.percent }}%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock %}

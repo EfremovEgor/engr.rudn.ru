@@ -1,23 +1,29 @@
-
-
+# Сайт работает в Docker (docker-compose.yml) и слушает 127.0.0.1:8000.
+# Статика отдаётся самим приложением (whitenoise, со сжатием), медиа — nginx'ом с диска.
 server {
     listen 80;
+    server_name academy.rudn.ru;
 
-    location /favicon.ico {
-        access_log off; log_not_found off;
+    client_max_body_size 200M;
+
+    location = /favicon.ico {
+        access_log off;
+        log_not_found off;
+        alias /var/www/site/src/static/images/favicon.png;
     }
-    location /static/ {
-        alias /var/www/site/src/staticfiles/;
-    }
+
     location /media/ {
         alias /var/www/site/src/uploads/;
+        expires 7d;
+        add_header X-Content-Type-Options nosniff;
     }
 
     location / {
-        proxy_pass http://unix:/run/gunicorn.sock;
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $server_name;
+        proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Real-IP $remote_addr;
+        proxy_read_timeout 120s;
     }
 }
-

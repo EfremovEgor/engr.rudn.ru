@@ -180,6 +180,8 @@ ROSETTA_ENABLE_TRANSLATION_SUGGESTIONS = False
 ROSETTA_EXCLUDED_APPLICATIONS = ("unfold", "rosetta", "modeltranslation")
 ROSETTA_WSGI_AUTO_RELOAD = False
 ROSETTA_UWSGI_AUTO_RELOAD = False
+# В Docker (gunicorn) после сохранения перевода воркеры перезапускаются, чтобы подхватить .mo
+RELOAD_WORKERS_ON_TRANSLATION = env_bool("RELOAD_WORKERS_ON_TRANSLATION", False)
 
 # --- Статика и медиа --------------------------------------------------------------------
 
@@ -238,7 +240,7 @@ CKEDITOR_5_UPLOAD_FILE_TYPES = [
     "jpeg", "jpg", "png", "gif", "webp", "svg", "pdf", "doc", "docx", "xls", "xlsx",
     "ppt", "pptx", "zip", "mp4", "webm",
 ]
-CKEDITOR_5_CUSTOM_CSS = "admin/css/editor.css"
+CKEDITOR_5_CUSTOM_CSS = "academy_admin/css/editor.css"
 CKEDITOR_5_CONFIGS = {
     "default": {
         "language": "ru",
@@ -304,8 +306,11 @@ UNFOLD = {
     "SHOW_BACK_BUTTON": True,
     "ENVIRONMENT": "apps.core.admin.dashboard.environment_callback",
     "DASHBOARD_CALLBACK": "apps.core.admin.dashboard.dashboard_callback",
-    "STYLES": [lambda request: STATIC_URL + "admin/css/admin.css"],
-    "SCRIPTS": [lambda request: STATIC_URL + "admin/js/admin.js"],
+    "SITE_VIEWS": [
+        ("translations/", "translations_overview", "apps.core.admin.dashboard.TranslationsOverviewView"),
+    ],
+    "STYLES": [lambda request: STATIC_URL + "academy_admin/css/admin.css"],
+    "SCRIPTS": [lambda request: STATIC_URL + "academy_admin/js/admin.js"],
     "COLORS": {
         "primary": {
             "50": "oklch(97.1% .013 17.38)",

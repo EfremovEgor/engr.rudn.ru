@@ -23,7 +23,7 @@
         <div class="uk-card uk-card-default uk-card-body uk-card-hover" style="border-radius: var(--base-border-radius);">
           
           <h3 class="uk-card-title">
-            <a class="uk-link-reset" href="{% url 'pages:ae_item' program.pk %}">
+            <a class="uk-link-reset" href="{% url 'education:additional_program_detail' program.pk %}">
               {% if LANGUAGE_CODE == 'en' and program.title_en %}
                 <b>{{ program.title }}</b>
               {% else %}
@@ -35,7 +35,7 @@
           <p style="text-align: justify;">{{ program.description|safe|truncatewords:30 }}</p>
 
           <div class="link-hover-underline red-link-hover-underline">
-            <a href="{% url 'pages:ae_item' program.pk %}">
+            <a href="{% url 'education:additional_program_detail' program.pk %}">
               <span class="show-uni-department__link-text" style="color:#0079c1;">{% trans "Подробнее" %}</span>
               <i class="icon-ic_arrow"></i>
             </a>

@@ -1,6 +1,7 @@
 """Работа с файлами медиатеки: загрузка, индексация существующих файлов, поиск использований."""
 
 from pathlib import Path
+from urllib.parse import quote
 
 from django.apps import apps
 from django.conf import settings
@@ -95,7 +96,8 @@ def find_usages(media: MediaFile, limit: int = 50) -> list[dict]:
             q |= Q(**{field.name: name})
         for field in _text_fields(model):
             if isinstance(field, models.TextField):
-                q |= Q(**{f"{field.name}__contains": name})
+                for variant in {name, quote(name)}:
+                    q |= Q(**{f"{field.name}__contains": variant})
         if not q:
             continue
         for obj in model._base_manager.filter(q)[:limit]:

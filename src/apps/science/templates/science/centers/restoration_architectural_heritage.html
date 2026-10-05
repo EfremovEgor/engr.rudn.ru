@@ -1,8 +1,6 @@
 {% extends 'components/base.html' %} {% block content %} {% load static %}
-{% load compress %}
-{% compress css %}
+
 <link rel="stylesheet" href="{% static 'css/science/scientific_center_item.css' %}" />
-{% endcompress %}
 <div class="uk-container">
   <a href="/science/scientific_centers" class="return-button" style="margin-top: 50px">Научные центры</a>
   <div class="page-name"> Международный научно-исследовательский центр реставрации и сохранения архитектурного наследия

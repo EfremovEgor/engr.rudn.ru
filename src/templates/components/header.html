@@ -114,7 +114,7 @@
                 </a>
               </li>
               <li>
-                <a class="header-text header-text-main" href="{% url 'pages:news' %}">
+                <a class="header-text header-text-main" href="{% url 'news:news_list' %}">
                   {% trans "Новости" %}
                 </a>
               </li>
@@ -127,12 +127,12 @@
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:administration' %}">
+                      <a class="header-text navbar-sub-link" href="{% url 'academy:administration' %}">
                         {% trans "Дирекция" %}
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:departments' %}">
+                      <a class="header-text navbar-sub-link" href="{% url 'academy:departments' %}">
                         {% trans "Кафедры" %}
                       </a>
                     </li>
@@ -166,7 +166,7 @@
               
                     <li>
                       <a class="header-text navbar-sub-link"
-                         href="{% url 'pages:scientific_centers' %}">
+                         href="{% url 'science:centers' %}">
                         {% trans "Научные центры" %}
                       </a>
                     </li>
@@ -187,7 +187,7 @@
               
                     <li>
                       <a class="header-text navbar-sub-link"
-                         href="{% url 'pages:dissertation_committees' %}">
+                         href="{% url 'science:dissertation_committees' %}">
                         {% trans "Диссертационные советы" %}
                       </a>
                     </li>
@@ -203,7 +203,7 @@
                 <div class="uk-navbar-dropdown dropdown-black">
                   <ul class="uk-nav">
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:applicants_study_directions' %}">
+                      <a class="header-text navbar-sub-link" href="{% url 'education:study_directions' %}">
                         {% trans "Направления подготовки" %}
                       </a>
                     </li>
@@ -213,7 +213,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:applicants_reference' %}">
+                      <a class="header-text navbar-sub-link" href="{% url 'documents:reference' %}">
                         {% trans "Справочная информация" %}
                       </a>
                     </li>
@@ -244,7 +244,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:students_student_committee' %}">
+                      <a class="header-text navbar-sub-link" href="{% url 'profiles:student_committee' %}">
                         {% trans "Студенческий комитет" %}
                       </a>
                     </li>
@@ -254,7 +254,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="header-text navbar-sub-link" href="{% url 'pages:students_applications' %}">
+                      <a class="header-text navbar-sub-link" href="{% url 'documents:student_applications' %}">
                         {% trans "Образцы заявлений" %}
                       </a>
                     </li>
@@ -308,7 +308,7 @@
                         </a>
                       </li>
                       <li class="uk-nav-header">
-                        <a class="header-text" href="{% url 'pages:news' %}">
+                        <a class="header-text" href="{% url 'news:news_list' %}">
                           {% trans "Новости" %}
                         </a>
                       </li>
@@ -316,12 +316,12 @@
                         {% trans "Академия" %}
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:administration' %}">
+                        <a class="header-text" href="{% url 'academy:administration' %}">
                           {% trans "Дирекция" %}
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:departments' %}">
+                        <a class="header-text" href="{% url 'academy:departments' %}">
                           {% trans "Кафедры" %}
                         </a>
                       </li>
@@ -351,7 +351,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:scientific_centers' %}">
+                        <a class="header-text" href="{% url 'science:centers' %}">
                           {% trans "Научные центры" %}
                         </a>
                       </li>
@@ -366,7 +366,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:dissertation_committees' %}">
+                        <a class="header-text" href="{% url 'science:dissertation_committees' %}">
                           {% trans "Диссертационные советы" %}
                         </a>
                       </li>
@@ -381,7 +381,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:applicants_study_directions' %}">
+                        <a class="header-text" href="{% url 'education:study_directions' %}">
                           {% trans "Направления подготовки" %}
                         </a>
                       </li>
@@ -391,7 +391,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:applicants_reference' %}">
+                        <a class="header-text" href="{% url 'documents:reference' %}">
                           {% trans "Справочная информация" %}
                         </a>
                       </li>
@@ -416,7 +416,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:students_student_committee' %}">
+                        <a class="header-text" href="{% url 'profiles:student_committee' %}">
                           {% trans "Студенческий комитет" %}
                         </a>
                       </li>
@@ -426,7 +426,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="header-text" href="{% url 'pages:students_applications' %}">
+                        <a class="header-text" href="{% url 'documents:student_applications' %}">
                           {% trans "Образцы заявлений" %}
                         </a>
                       </li>

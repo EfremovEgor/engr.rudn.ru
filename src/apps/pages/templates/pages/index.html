@@ -1,13 +1,11 @@
 {% extends 'components/base.html' %}
 {% block content %}
 {% load static %}
-{% load compress %}
+
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-{% compress css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
-{% endcompress %}
 
 {% comment %}
 <div class="parallax-image" uk-height-viewport>
@@ -28,17 +26,10 @@
 >
   <ul class="uk-slider-items uk-child-width-1-1">
     {% for image in slider_images %}
-      {% if LANGUAGE_CODE == "en" and image.image_full_en %}
-        <li onclick="window.open('{{image.url}}', '_blank').focus()">
-          <img class="uk-visible@m main-slider-image" src="{{image.image_full_en.url}}" alt="">
-          <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile_en.url}}" alt="">
-        </li>
-      {% else %}
-        <li onclick="window.open('{{image.url}}', '_blank').focus()">
-          <img class="uk-visible@m main-slider-image" src="{{image.image_full.url}}" alt="">
-          <img class="uk-hidden@m main-slider-image" src="{{image.image_mobile.url}}" alt="">
-        </li>
-      {% endif %}
+      <li{% if image.url %} onclick="window.open('{{ image.url }}', '_blank').focus()"{% endif %}>
+        {% if image.image_full %}<img class="uk-visible@m main-slider-image" src="{{ image.image_full.url }}" alt="{{ image.name }}">{% endif %}
+        {% if image.image_mobile %}<img class="uk-hidden@m main-slider-image" src="{{ image.image_mobile.url }}" alt="{{ image.name }}">{% endif %}
+      </li>
     {% endfor %}
   </ul>
 
@@ -216,7 +207,7 @@
             {% for item in news %}
               {% if item.preview_image %}
                 <li class="news-card-container">
-                  <a href="{% url 'pages:news_item' item.id %}" class="uk-link-toggle">
+                  <a href="{% url 'news:news_detail' item.id %}" class="uk-link-toggle">
                     <div class="uk-card uk-card-default uk-card-hover uk-card-small news-card">
                       <div class="uk-card-media-top">
                         <img
@@ -295,7 +286,7 @@
     </div>
 
     <div class="show-uni-news__wrap">
-      <a href="{% url 'pages:news' %}" class="show-uni-news__link" target="_self">
+      <a href="{% url 'news:news_list' %}" class="show-uni-news__link" target="_self">
         <span class="show-uni-news__link-text">{% trans "ВСЕ НОВОСТИ" %}</span>
         <i class="icon-ic_arrow"></i>
       </a>

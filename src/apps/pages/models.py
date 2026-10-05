@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.core.validators import RegexValidator
 from django.db import models
+from django.utils.translation import get_language
 from phonenumber_field.modelfields import PhoneNumberField
 
 from apps.core.fields import RichTextField
@@ -102,4 +104,6 @@ class Page(PublishableModel):
         return self.title_ru or self.title or self.path
 
     def get_absolute_url(self):
-        return f"/{self.path}"
+        lang = get_language() or settings.LANGUAGE_CODE
+        prefix = "" if lang == settings.LANGUAGE_CODE else f"/{lang}"
+        return f"{prefix}/{self.path}"

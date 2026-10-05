@@ -1,6 +1,7 @@
 {% extends 'components/base.html' %}
 {% load static i18n %}
-{% get_current_language as LANGUAGE_CODE %}
+
+{% block ogimage %}{% if content.preview_image %}{{ content.preview_image.url }}{% else %}{% static '/images/favicon.png' %}{% endif %}{% endblock %}
 
 {% block content %}
 
@@ -10,51 +11,16 @@
 
   <div class="uk-container" style="margin-bottom:40px">
     <div class="news-items-date">{{ content.creation_date|date:"d.m.Y" }}</div>
-
-    {% if LANGUAGE_CODE == "en" and content.title_en %}
-    <div class="page-name" style="margin-top: 0px !important;">{{ content.title_en }}</div>
-    {% else %}
-    <div class="page-name" style="margin-top: 0px !important;">{{ content.title }}</div>
-    {% endif %}
+    <div class="page-name" style="margin-top: 0px !important;">{{ title }}</div>
   </div>
 
   <div class="uk-container" style="margin-bottom:50px">
-    {% if LANGUAGE_CODE == "en" %}
-        {% with tag_list=content.tags_en.all %}
-            {% if tag_list %}
-              <div class="hashtags uk-flex">
-                <form action="{% url 'pages:news' %}" method="get" class="uk-margin">
-                  <input type="hidden" name="tag">
-                  {% for tag in tag_list %}
-                    <button
-                      type="submit"
-                      onclick="this.form.tag.value='{{ tag.name }}'"
-                      class="uk-button-link"
-                      style="border:0;cursor:pointer;font-size:18px"
-                    >#{{ tag.name }}</button>
-                  {% endfor %}
-                </form>
-              </div>
-            {% endif %}
-        {% endwith %}
-    {% else %}
-        {% with tag_list=content.tags.all %}
-            {% if tag_list %}
-              <div class="hashtags uk-flex">
-                <form action="{% url 'pages:news' %}" method="get" class="uk-margin">
-                  <input type="hidden" name="tag">
-                  {% for tag in tag_list %}
-                    <button
-                      type="submit"
-                      onclick="this.form.tag.value='{{ tag.name }}'"
-                      class="uk-button-link"
-                      style="border:0;cursor:pointer;font-size:18px"
-                    >#{{ tag.name }}</button>
-                  {% endfor %}
-                </form>
-              </div>
-            {% endif %}
-        {% endwith %}
+    {% if tags %}
+      <div class="hashtags uk-flex uk-margin" style="gap:12px;flex-wrap:wrap">
+        {% for tag in tags %}
+          <a href="{% url 'news:news_list' %}?tag={{ tag.name|urlencode }}" class="uk-button-link" style="font-size:18px">#{{ tag.name }}</a>
+        {% endfor %}
+      </div>
     {% endif %}
 
     {% if content.preview_image %}
@@ -62,11 +28,7 @@
     {% endif %}
 
     <div class="news_content uk-margin">
-      {% if LANGUAGE_CODE == "en" and content.content_en %}
-        {{ content.content_en|safe }}
-      {% else %}
-        {{ content.content|safe }}
-      {% endif %}
+      {{ content.content|default_if_none:""|safe }}
     </div>
   </div>
 {% endblock %}

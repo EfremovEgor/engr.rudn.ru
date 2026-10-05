@@ -172,7 +172,7 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Профиль:" %}</b> {{profile.name}}
                     </a>
@@ -194,7 +194,7 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Профиль:" %}</b> {{profile.name}}
                     </a>
@@ -223,7 +223,7 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Специальность:" %}</b> {{profile.name}}
                     </a>
@@ -245,7 +245,7 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Специальность:" %}</b> {{profile.name}}
                     </a>
@@ -274,14 +274,10 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Профиль:" %}</b> {{profile.name}}
-                      {% if profile.language_fields|length == 2 %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
-                      {% else %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
-                      {% endif %}
+                      {{ profile.languages|langs_phrase }}
                     </a>
                     <br />
                     {% endfor %}
@@ -301,14 +297,10 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Профиль:" %}</b> {{profile.name}}
-                      {% if profile.language_fields|length == 2 %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
-                      {% else %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
-                      {% endif %}
+                      {{ profile.languages|langs_phrase }}
                     </a>
                     <br />
                     {% endfor %}
@@ -335,14 +327,10 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Специальность:" %}</b> {{profile.cipher}} «{{profile.name|replace_quotes}}»
-                      {% if profile.language_fields|length == 2 %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
-                      {% else %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
-                      {% endif %}
+                      {{ profile.languages|langs_phrase }}
                     </a>
                     <br />
                     {% endfor %}
@@ -362,14 +350,10 @@
                 <li>
                   <a class="uk-accordion-title" href="">{{direction.cipher}} «{{direction.name}}»</a>
                   <div class="uk-accordion-content" style="margin-left: 20px">
-                    {% for profile in direction.profiles.all %}
+                    {% for profile in direction.department_programs %}
                     <a class="uk-link-text" href="/applicants/study_directions/{{profile.id}}">
                       <b>{% trans "Специальность:" %}</b> {{profile.cipher}} «{{profile.name|replace_quotes}}»
-                      {% if profile.language_fields|length == 2 %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "и" %} {{profile.language_fields.1|get_alias_lang}} {% trans "языках" %})
-                      {% else %}
-                        ({% trans "на" %} {{profile.language_fields.0|get_alias_lang}} {% trans "языке" %})
-                      {% endif %}
+                      {{ profile.languages|langs_phrase }}
                     </a>
                     <br />
                     {% endfor %}
@@ -395,7 +379,7 @@
             {{center.brief_description}}
           </div>
 
-          <a style="margin-top:20px" class="link-hover-underline red-link-hover-underline" href="{% url 'pages:scientific_center_item' center.page_url %}">
+          <a style="margin-top:20px" class="link-hover-underline red-link-hover-underline" href="{% url 'science:center_detail' center.slug %}">
             {% trans "Подробнее" %}
           </a>
         </div>

@@ -13,7 +13,7 @@
   <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
 
     {% for item in centers %}
-      {% if item.display %}
+      {% if item.is_published %}
         <div class="card-wrapper">
           <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
 
@@ -33,7 +33,7 @@
               {% endif %}
 
               <div style="margin-top:10px">
-                <a href="{% url 'pages:scientific_center_item' item.page_url %}">
+                <a href="{% if item.slug %}{% url 'science:center_detail' item.slug %}{% endif %}">
                   <span class="show-uni-department__link-text" style="color:#0079c1;">{% trans "Подробнее" %}</span>
                   <i class="icon-ic_arrow"></i>
                 </a>

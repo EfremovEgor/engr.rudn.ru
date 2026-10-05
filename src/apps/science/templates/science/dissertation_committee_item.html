@@ -1,12 +1,10 @@
 {% extends "components/base.html" %}
-{% load static i18n compress %}
+{% load static i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block extra_css %}
-  {% compress css %}
     <link rel="stylesheet" href="{% static 'css/applicants/open_days.css' %}">
     <link rel="stylesheet" href="{% static 'css/students/dissertation_committees.css' %}">
-  {% endcompress %}
 {% endblock %}
 
 {% block content %}

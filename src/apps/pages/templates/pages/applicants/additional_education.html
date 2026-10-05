@@ -1,10 +1,8 @@
 {% extends 'components/base.html' %}
-{% load static i18n compress %}
+{% load static i18n %}
 {% block content %}
 
-{% compress css %}
 <link rel="stylesheet" href="{% static 'css/applicants/additional_education.css' %}">
-{% endcompress %}
 
 <div class="uk-container">
   <div class="page-name">
@@ -25,7 +23,7 @@
       <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-link-toggle"
            style="border-radius:var(--base-border-radius);">
         <h3 class="uk-card-title">
-          <a class="uk-link-heading" href="{% url 'pages:translator_module' %}">
+          <a class="uk-link-heading" href="{% url 'education:translator_module' %}">
             {% trans "Модуль переводчика" %}
           </a>
         </h3>
@@ -36,7 +34,7 @@
       <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card-small back-c uk-link-toggle"
            style="border-radius:var(--base-border-radius);">
         <h3 class="uk-card-title">
-          <a class="uk-link-heading" href="{% url 'pages:additional_professional_education' %}">
+          <a class="uk-link-heading" href="{% url 'education:additional_programs' %}">
             {% trans "Дополнительное профессиональное образование" %}
           </a>
         </h3>

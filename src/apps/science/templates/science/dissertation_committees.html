@@ -37,7 +37,7 @@
           {% for item in committees %}
           <tr>
             <td>
-              <a href="{% url 'pages:dissertation_committee_item' id=item.id %}"
+              <a href="{% url 'science:dissertation_committee_detail' pk=item.id %}"
                  style="text-decoration:1px underline black;text-underline-offset:2px;">
                 {{ item.cipher }}
               </a>

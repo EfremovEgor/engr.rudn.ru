@@ -30,7 +30,7 @@
   <div class="seminar-description uk-margin" style="margin-top:-10px;">
     {% trans "Семинар проводится в рамках" %}
 
-    <a href="/academy/departments/{{ seminar.department.abbreviation|get_url_department_abbreviation }}">
+    <a href="{% if seminar.department.slug %}/academy/departments/{{ seminar.department.slug }}{% endif %}">
       {% if LANGUAGE_CODE == 'en' and seminar.department.name_en %}
       {{ seminar.department.name_en|slice:"8:80" }}
       {% else %}
@@ -47,7 +47,7 @@
     </span>
   </div>
 
-  {% with has_organizer=seminar.organizer1 %}
+  {% with has_organizer=seminar.organizer %}
 
   <div
     class="uk-grid uk-grid-small uk-child-width-1-1@s{% if has_organizer %} uk-child-width-1-2@m uk-flex-center{% endif %}"
@@ -61,16 +61,16 @@
         <header class="uk-comment-header" style="padding-bottom:15px;border-bottom:1px solid #e5e5e5">
           <div class="uk-grid-medium uk-flex-middle" uk-grid>
             <div class="uk-width-auto">
-              <img class="uk-border-circle" src="{{ seminar.chair1.image.url }}" width="80" height="80">
+              <img class="uk-border-circle" src="{{ seminar.chair.image.url }}" width="80" height="80">
             </div>
             <div class="uk-width-expand">
               <h3 class="uk-margin-remove">
-                <a class="uk-link-reset" href="/profile/{{ seminar.chair1.id }}">{{ seminar.chair1.full_name }}</a>
+                <a class="uk-link-reset" href="/profile/{{ seminar.chair.id }}">{{ seminar.chair.full_name }}</a>
               </h3>
               <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
                 <li>
-                  <span>{{ seminar.chair1.job_title.0 }}</span><br>
-                  <span>{{ seminar.chair1.job_title.1 }}</span>
+                  <span>{{ seminar.chair.job_title.0 }}</span><br>
+                  <span>{{ seminar.chair.job_title.1 }}</span>
                 </li>
               </ul>
             </div>
@@ -79,19 +79,19 @@
 
         <div class="uk-comment-body">
           <ul class="uk-list">
-            {% if seminar.chair1.department_office %}
+            {% if seminar.chair.department_office %}
               <li>
                 <h5 class="uk-link-heading card-link">
                   <span uk-icon="icon: location; ratio: 1"></span>
-                  <span>{{ seminar.chair1.department_office }}</span>
+                  <span>{{ seminar.chair.department_office }}</span>
                 </h5>
               </li>
             {% endif %}
 
-            {% if seminar.chair1.phone_numbers %}
+            {% if seminar.chair.phone_numbers %}
               <li>
                 <h5>
-                  {% for phone in seminar.chair1.phone_numbers %}
+                  {% for phone in seminar.chair.phone_numbers %}
                     <span uk-icon="icon: receiver; ratio: 1"></span>
                     <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone|format_phone_number }}</a><br>
                   {% endfor %}
@@ -99,10 +99,10 @@
               </li>
             {% endif %}
 
-            {% if seminar.chair1.emails %}
+            {% if seminar.chair.emails %}
               <li>
                 <h5>
-                  {% for email in seminar.chair1.emails %}
+                  {% for email in seminar.chair.emails %}
                     <span uk-icon="icon: mail; ratio: 1"></span>
                     <a href="mailto:{{ email }}" class="uk-link-heading card-link">{{ email }}</a>
                   {% endfor %}
@@ -122,16 +122,16 @@
           <header class="uk-comment-header" style="padding-bottom:15px;border-bottom:1px solid #e5e5e5">
             <div class="uk-grid-medium uk-flex-middle" uk-grid>
               <div class="uk-width-auto">
-                <img class="uk-border-circle" src="{{ seminar.organizer1.image.url }}" width="80" height="80">
+                <img class="uk-border-circle" src="{{ seminar.organizer.image.url }}" width="80" height="80">
               </div>
               <div class="uk-width-expand">
                 <h3 class="uk-margin-remove">
-                  <a class="uk-link-reset" href="/profile/{{ seminar.organizer1.id }}">{{ seminar.organizer1.full_name }}</a>
+                  <a class="uk-link-reset" href="/profile/{{ seminar.organizer.id }}">{{ seminar.organizer.full_name }}</a>
                 </h3>
                 <ul class="uk-comment-meta uk-list-collapse uk-list uk-margin-remove-top">
                   <li>
-                    <span>{{ seminar.organizer1.job_title.0 }}</span><br>
-                    <span>{{ seminar.organizer1.job_title.1 }}</span>
+                    <span>{{ seminar.organizer.job_title.0 }}</span><br>
+                    <span>{{ seminar.organizer.job_title.1 }}</span>
                   </li>
                 </ul>
               </div>
@@ -140,19 +140,19 @@
 
           <div class="uk-comment-body">
             <ul class="uk-list">
-              {% if seminar.organizer1.department_office %}
+              {% if seminar.organizer.department_office %}
                 <li>
                   <h5 class="uk-link-heading card-link">
                     <span uk-icon="icon: location; ratio: 1"></span>
-                    <span>{{ seminar.organizer1.department_office }}</span>
+                    <span>{{ seminar.organizer.department_office }}</span>
                   </h5>
                 </li>
               {% endif %}
 
-              {% if seminar.organizer1.phone_numbers %}
+              {% if seminar.organizer.phone_numbers %}
                 <li>
                   <h5>
-                    {% for phone in seminar.organizer1.phone_numbers %}
+                    {% for phone in seminar.organizer.phone_numbers %}
                       <span uk-icon="icon: receiver; ratio: 1"></span>
                       <a href="tel:{{ phone }}" class="uk-link-heading card-link">{{ phone|format_phone_number }}</a><br>
                     {% endfor %}
@@ -160,10 +160,10 @@
                 </li>
               {% endif %}
 
-              {% if seminar.organizer1.emails %}
+              {% if seminar.organizer.emails %}
                 <li>
                   <h5>
-                    {% for email in seminar.organizer1.emails %}
+                    {% for email in seminar.organizer.emails %}
                       <span uk-icon="icon: mail; ratio: 1"></span>
                       <a href="mailto:{{ email }}" class="uk-link-heading card-link">{{ email }}</a>
                     {% endfor %}

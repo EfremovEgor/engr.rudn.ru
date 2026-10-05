@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
-{% load i18n static compress %}
+{% load i18n static %}
 
 <head>
   <link rel="icon" href="{% static '/images/favicon.png' %}" type="image/png" />
@@ -9,11 +9,9 @@
   <meta name="description" content="Инженерная академия РУДН">
   <link rel="shortcut icon" href="{% static '/images/favicon.png' %}" />
 
-  {% compress css %}
   <link rel="stylesheet" type="text/css" charset="utf-8" href="{% static 'css/header.css' %}" />
   <link rel="stylesheet" type="text/css" charset="utf-8" href="{% static 'css/footer.css' %}" />
   <link rel="stylesheet" type="text/css" charset="utf-8" href="{% static 'css/global.css' %}" />
-  {% endcompress %}
 
   <meta name="google-site-verification" content="AZK_NYw5WA9klohyExnxhwWjlP5M-1ogTE7-P_ITWMA" />
 
@@ -58,17 +56,10 @@
       trackLinks: true,
       accurateTrackBounce: true
     });
-    ym(YYYYYY, "init", {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true,
-      webvisor: true
-    });
   </script>
   <noscript>
     <div>
       <img src="https://mc.yandex.ru/watch/98619707" style="position:absolute; left:-9999px;" alt="" />
-      <img src="https://mc.yandex.ru/watch/YYYYYY" style="position:absolute; left:-9999px;" alt="" />
     </div>
   </noscript>
   <!-- /Yandex.Metrika #2 -->

@@ -1,21 +1,17 @@
-from django.forms import model_to_dict
 from django.shortcuts import get_object_or_404, render
-from .models import EmployeeProfile
-from django.utils.translation import get_language
-...
-def profiles(request, id):
-    profile_object = get_object_or_404(EmployeeProfile, pk=id)
+from django.utils.translation import gettext_lazy as _
 
-    if get_language() == 'en' and profile_object.full_name_en:
-        page_title = profile_object.full_name_en
-    else:
-        page_title = profile_object.full_name
+from .models import EmployeeProfile, StudentCommitteeProfile
 
+
+def profile(request, pk):
+    employee = get_object_or_404(EmployeeProfile, pk=pk)
+    return render(request, "profiles/profile.html", {"title": employee.full_name, "employee": employee})
+
+
+def student_committee(request):
     return render(
         request,
-        "profile.html",
-        {
-            "title": page_title,
-            "employee": model_to_dict(profile_object),
-        },
+        "profiles/student_committee.html",
+        {"title": _("Студенческий комитет"), "profiles": StudentCommitteeProfile.objects.order_by("position")},
     )

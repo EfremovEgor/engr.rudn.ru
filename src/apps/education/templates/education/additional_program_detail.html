@@ -5,7 +5,7 @@
 
 <div class="uk-container" style="margin-top:40px;margin-bottom:50px">
 
-  <a class="return-button" href="{% url 'pages:additional_professional_education' %}">
+  <a class="return-button" href="{% url 'education:additional_programs' %}">
     {% trans "Программы дополнительного профессионального образования" %}
   </a>
 
@@ -16,7 +16,7 @@
   {% if item.department %}
     <h4 class="department_name">
       <a class="link-hover-underline red-link-hover-underline"
-          href="{% url 'pages:department_item' item.department.abbreviation|get_url_department_abbreviation %}">
+          href="{% if item.department.slug %}{% url 'academy:department_detail' item.department.slug %}{% endif %}">
         {% if LANGUAGE_CODE == 'en' and item.department.name_en %}
               {{ item.department.name_en }}
         {% else %}

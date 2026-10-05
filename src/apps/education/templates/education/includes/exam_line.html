@@ -1,0 +1,1 @@
+{% load i18n %}{% if budget %}{% if exam.score_budget %}<p>{{ exam.subject.name }} – {{ exam.score_budget }}{% if exam.contract_differs %} ({{ exam.score_contract }} – {% trans "на контракт" %}){% endif %}</p>{% endif %}{% else %}<p>{{ exam.subject.name }} – {{ exam.score_contract }}</p>{% endif %}

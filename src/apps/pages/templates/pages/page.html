@@ -1,0 +1,11 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+<div class="uk-container" style="margin-bottom:40px">
+  <div class="page-name">{{ page.title }}</div>
+</div>
+<div class="uk-container news_content" style="margin-bottom:50px">
+  {{ page.content|safe }}
+</div>
+{% endblock %}

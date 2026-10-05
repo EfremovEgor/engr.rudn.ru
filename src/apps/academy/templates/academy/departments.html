@@ -34,7 +34,7 @@
             </br>
             
             <div class="link-hover-underline red-link-hover-underline" style="margin-top:10px">
-              <a href="{% url 'pages:department_item' department.abbreviation|get_url_department_abbreviation %}">
+              <a href="{% if department.slug %}{% url 'academy:department_detail' department.slug %}{% endif %}">
                 <span class="show-uni-department__link-text" style="color:#0079c1;">{% trans "Подробнее" %}</span>
                 <i class="icon-ic_arrow"></i>
               </a>

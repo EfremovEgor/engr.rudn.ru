@@ -148,6 +148,9 @@ CACHES = {
     }
 }
 
+LOGIN_URL = reverse_lazy("admin:login")
+LOGIN_REDIRECT_URL = reverse_lazy("admin:index")
+
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},

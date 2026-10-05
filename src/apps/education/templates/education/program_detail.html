@@ -1,18 +1,10 @@
 {% extends 'components/base.html' %}
-{% load static i18n custom_tags%}
-{% get_current_language as LANGUAGE_CODE %}
+{% load static i18n %}
 {% block content %}
 
 <style>
-  .red-star {
-      color: #dc3545;
-  }
-
-  .red-box {
-      color: #666;
-      display: inline-block;
-      font-weight: bolder;
-  }
+  .red-star { color: #dc3545; }
+  .red-box { color: #666; display: inline-block; font-weight: bolder; }
 </style>
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
@@ -22,282 +14,126 @@
 
   <div class="profile_heading-container">
     <div class="heading-button-container">
-      <a href="{% url 'pages:applicants_study_directions' %}"
-        class="study_level-badge">
+      <a href="{% url 'education:study_directions' %}" class="study_level-badge">
         {% trans "Направления подготовки" %}
       </a>
-      {% with slug=profile_data.study_level|study_level_to_page_name %}
-        {% if slug == 'bachelor' or slug == 'specialists' %}
-          <a href="{% url 'pages:study_direction_level' 'bachelor' %}"
-            class="study_level-badge">
-            {% trans "Бакалавриат/Специалитет" %}
-          </a>
-        {% else %}
-          <a href="{% url 'pages:study_direction_level' slug %}"
-            class="study_level-badge">
-            {{ slug|level_slug_to_label }}
-          </a>
-        {% endif %}
-      {% endwith %}
+      {% if level_slug == 'bachelor' %}
+        <a href="{% url 'education:level' 'bachelor' %}" class="study_level-badge">{% trans "Бакалавриат/Специалитет" %}</a>
+      {% elif level_slug %}
+        <a href="{% url 'education:level' level_slug %}" class="study_level-badge">{{ program.get_study_level_display }}</a>
+      {% endif %}
     </div>
 
-    <h4 class="direction_name">
-      {{ profile_data.direction.cipher }}&nbsp;«{% if LANGUAGE_CODE == 'en' and profile_data.direction.name_en %}{{ profile_data.direction.name_en }}{% else %}{{ profile_data.direction.name }}{% endif %}»
-    </h4>
+    {% if program.direction %}
+      <h4 class="direction_name">{{ program.direction.cipher }}&nbsp;«{{ program.direction.name }}»</h4>
+    {% endif %}
 
-    <h2 class="profile_name">
-      {% if LANGUAGE_CODE == 'en' and profile_data.name_en %}
-           {{ profile_data.name_en }}
-      {% else %}
-           {{ profile_data.name }}
-      {% endif %}
-    </h2>
+    <h2 class="profile_name">{{ program.name }}</h2>
 
-    {% if profile_data.faculty %}
+    {% if program.department %}
       <h4 class="department_name">
-        <a class="link-hover-underline red-link-hover-underline"
-           href="{% url 'pages:department_item'
-                    profile_data.faculty.abbreviation|get_url_department_abbreviation %}">
-          {% if LANGUAGE_CODE == 'en' and profile_data.faculty.name_en %}
-               {{ profile_data.faculty.name_en }}
-          {% else %}
-               {{ profile_data.faculty.name }}
-          {% endif %}
-        </a>
+        {% if program.department.slug %}
+          <a class="link-hover-underline red-link-hover-underline" href="{% url 'academy:department_detail' program.department.slug %}">{{ program.department.name }}</a>
+        {% else %}
+          {{ program.department.name }}
+        {% endif %}
       </h4>
     {% endif %}
 
     <div class="study_profile_details-container">
-      <div class="study_duration_badge">
-        <object type="image/svg+xml"
-                data="{% static 'icons/calendar.svg' %}" width="48" height="48">
-          {{ profile_data.study_duration }}
-        </object>
-        <p style="margin:0">
-          {{ profile_data|create_study_duration_badge_text }}        
-        </p>
-      </div>
+      {% if duration %}
+        <div class="study_duration_badge">
+          <object type="image/svg+xml" data="{% static 'icons/calendar.svg' %}" width="48" height="48">{{ duration }}</object>
+          <p style="margin:0">{{ duration|duration_text }}</p>
+        </div>
+      {% endif %}
 
-      {% for code in profile_data.language_fields %}
+      {% for code in program.languages %}
         <div class="lang_ru_badge">
           <div class="lang_badge">
-            <object type="image/svg+xml"
-                    data="{% static 'icons/language.svg' %}" width="48" height="48">
-              {{ code|lang_code_to_label }}
-            </object>
+            <object type="image/svg+xml" data="{% static 'icons/language.svg' %}" width="48" height="48">{{ code|lang_code_to_label }}</object>
             {{ code|lang_code_to_label }}
           </div>
         </div>
       {% endfor %}
-      
-    
     </div>
   </div>
 
   <div class="uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid>
-
-    {% if profile_data.full_time_details %}
+    {% for offer in offers %}
       <div class="card-wrapper">
         <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
-
           <div>
-            <h2>{% trans "Очная форма" %}</h2>
-            {% if profile_data.full_time_details.budget_places %}
+            <h2>
+              {% if offer.study_form == "full_time" %}{% trans "Очная форма" %}
+              {% elif offer.study_form == "part_time" %}{% trans "Очно-заочная форма" %}
+              {% else %}{% trans "Заочная форма" %}{% endif %}
+              {% if not forloop.first and offer.study_duration %}({{ offer.study_duration|duration_text }}){% endif %}
+            </h2>
 
-              {% if profile_data.note %}
-                <h4 style="margin-top:-10px">
-                  <b>{% trans 'Бюджетные места' %} – 
-                    {{ profile_data.full_time_details.budget_places }}<sup class="red-star">*</sup></b>
-                </h4>
-              {% else %}
-                <h4 style="margin-top:-10px">
-                  <b>{% trans 'Бюджетные места –' %} 
-                    {{ profile_data.full_time_details.budget_places }}</b>
-                </h4>
-              {% endif %}
-
+            {% if offer.budget_places %}
+              <h4 style="margin-top:-10px">
+                <b>{% trans 'Бюджетные места' %} – {{ offer.budget_places }}{% if offer.note %}<sup class="red-star">*</sup>{% endif %}</b>
+              </h4>
             {% else %}
-            <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
+              <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
             {% endif %}
 
-            <h4 style="margin-top: -5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
-            {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура" %}
-            <p><b>Вступительные испытания</b></p>
-            {% for line in profile_data.full_time_details|format_scores:"Обязательные предметы"%} 
-            <p >{{line}}</p> 
-            {% endfor %} 
-            {% else %} 
-            <p><b>{% trans "Обязательные предметы" %}</b></p>
-            {% for line in profile_data.full_time_details|format_scores:"Обязательные предметы"%} 
-            <p>{{line}}</p> 
-            {% endfor %} 
-            {% if profile_data.full_time_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-            <p><b>{% trans "Дополнительные предметы (один на выбор)" %}</b></p>
-            {% for line in profile_data.full_time_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
-            <p>{{line}}</p> 
-            {% endfor %}
-            {% else %} 
-            <p><b>{% trans "Дополнительные предметы не предусмотрены" %}</p></b>
-            {% endif %}
-            {% endif %}
-            {% if profile_data.full_time_details|format_prices %}
+            {% with required=offer.required_exams optional=offer.optional_exams budget=offer.has_budget_scores %}
+              {% if required or optional %}
+                <h4 style="margin-top: -5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
+                <p><b>{% if exams_only %}{% trans "Вступительные испытания" %}{% else %}{% trans "Обязательные предметы" %}{% endif %}</b></p>
+                {% for exam in required %}
+                  {% include "education/includes/exam_line.html" %}
+                {% endfor %}
+                {% if not exams_only %}
+                  {% if optional %}
+                    <p><b>{% trans "Дополнительные предметы (один на выбор)" %}</b></p>
+                    {% for exam in optional %}
+                      {% include "education/includes/exam_line.html" %}
+                    {% endfor %}
+                  {% else %}
+                    <p><b>{% trans "Дополнительные предметы не предусмотрены" %}</b></p>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endwith %}
+
+            {% if offer.price_rows %}
               <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения" %}</b></h4>
-              {% for price_info in profile_data.full_time_details|format_prices %}
-                <p>{{ price_info }}</p>
+              {% for row in offer.price_rows %}
+                <p>
+                  {% if row.last %}
+                    {% blocktrans with n=row.year p=row.price %}{{ n }}‑й год и далее – {{ p }} ₽{% endblocktrans %}
+                  {% else %}
+                    {% blocktrans with n=row.year p=row.price %}{{ n }}‑й год – {{ p }} ₽{% endblocktrans %}
+                  {% endif %}
+                </p>
               {% endfor %}
             {% endif %}
           </div>
-          {% if profile_data.note %}
+
+          {% if offer.note %}
             <span class="red-box" style="display: flex; flex-direction: column;">
               <span class="red-star">*</span>
-              <span>{{ profile_data.note|safe }}</span>
+              <span>{{ offer.note|safe }}</span>
             </span>
           {% endif %}
-          <div style="margin-top:50px">
-            <a href="{{ profile_data.full_time_details.admission_url }}" target="_blank"
-               class="link-hover-underline red-link-hover-underline">
-              {% trans "Подать документы" %}
-            </a>
-          </div>
 
+          {% if offer.admission_url %}
+            <div style="margin-top:50px">
+              <a href="{{ offer.admission_url }}" target="_blank" rel="noopener" class="link-hover-underline red-link-hover-underline">
+                {% trans "Подать документы" %}
+              </a>
+            </div>
+          {% endif %}
         </div>
       </div>
-    {% endif %}
-
-    {% if profile_data.part_time_details %}
-      <div class="card-wrapper">
-        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
-
-          <div>
-            <h2>{% trans "Очно-заочная форма" %} {{ profile_data|create_heading_with_duration:"part_time_details" }}</h2>
-
-            {% if profile_data.part_time_details.budget_places %}
-
-              {% if profile_data.note %}
-                <h4 style="margin-top:-10px">
-                  <b>{% trans 'Бюджетные места' %}<sup class="red-star">*</sup> – 
-                    {{ profile_data.part_time_details.budget_places }}</b>
-                </h4>
-              {% else %}
-                <h4 style="margin-top:-10px">
-                  <b>{% trans 'Бюджетные места –' %} 
-                    {{ profile_data.part_time_details.budget_places }}</b>
-                </h4>
-              {% endif %}
-
-            {% else %}
-            <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
-            {% endif %}
-
-            <h4 style="margin-top: -5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
-            {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"%}
-            <p><b>Вступительные испытания</b></p>
-            {% for line in profile_data.part_time_details|format_scores:"Обязательные предметы"%} 
-            <p >{{line}}</p> 
-            {% endfor %} 
-            {% else %} 
-            <p><b>{% trans "Обязательные предметы" %}</b></p>
-            {% for line in profile_data.part_time_details|format_scores:"Обязательные предметы"%} 
-            <p>{{line}}</p> 
-            {% endfor %} 
-            {% if profile_data.part_time_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-            <p><b>{% trans "Дополнительные предметы (один на выбор)" %}</b></p>
-            {% for line in profile_data.part_time_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
-            <p>{{line}}</p> 
-            {% endfor %}
-            {% else %} 
-            <p><b>{% trans "Дополнительные предметы не предусмотрены" %}</p></b>
-            {% endif %}
-            {% endif %}
-            {% if profile_data.part_time_details|format_prices %}
-              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения" %}</b></h4>
-              {% for price_info in profile_data.part_time_details|format_prices %}
-                <p>{{ price_info }}</p>
-              {% endfor %}
-            {% endif %}
-          </div>
-          <div style="margin-top:50px">
-            <a href="{{ profile_data.part_time_details.admission_url }}" target="_blank"
-               class="link-hover-underline red-link-hover-underline">
-              {% trans "Подать документы" %}
-            </a>
-          </div>
-
-        </div>
-      </div>
-    {% endif %}
-
-    {% if profile_data.extramural_details %}
-      <div class="card-wrapper">
-        <div class="direction_info-card uk-card uk-card-default uk-card-body uk-card-hover">
-
-          <div>
-            <h2>{% trans "Заочная форма" %} {{ profile_data|create_heading_with_duration:"extramural_details" }}</h2>
-
-            {% if profile_data.extramural_details.budget_places %}
-        
-              {% if profile_data.note %}
-                <h4 style="margin-top:-10px">
-                  <b>{% trans 'Бюджетные места' %}<sup class="red-star">*</sup> – 
-                    {{ profile_data.part_time_details.budget_places }}</b>
-                </h4>
-              {% else %}
-                <h4 style="margin-top:-10px">
-                  <b>{% trans 'Бюджетные места –' %} 
-                    {{ profile_data.part_time_details.budget_places }}</b>
-                </h4>
-              {% endif %}
-
-            {% else %}
-            <h4 style="margin-top:-10px"><b>{% trans "Бюджетные места – нет" %}</b></h4>
-            {% endif %}
-
-            <h4 style="margin-top: -5px"><b>{% trans "Минимальные проходные баллы" %}</b></h4>
-            {% if profile_data.study_level == "Аспирантура" or profile_data.study_level == "Магистратура"  %}
-            <p><b>Вступительные испытания</b></p>
-            {% for line in profile_data.extramural_details|format_scores:"Обязательные предметы"%} 
-            <p >{{line}}</p> 
-            {% endfor %} 
-            {% else %} 
-            <p><b>{% trans "Обязательные предметы" %}</b></p>
-            {% for line in profile_data.extramural_details|format_scores:"Обязательные предметы"%} 
-            <p>{{line}}</p> 
-            {% endfor %} 
-            {% if profile_data.extramural_details|format_scores:"Дополнительные предметы (один на выбор)" %}
-            <p><b>{% trans "Дополнительные предметы (один на выбор)" %}</b></p>
-            {% for line in profile_data.extramural_details|format_scores:"Дополнительные предметы (один на выбор)"%} 
-            <p>{{line}}</p> 
-            {% endfor %}
-            {% else %} 
-            <p><b>{% trans "Дополнительные предметы не предусмотрены" %}</p></b>
-            {% endif %}
-            {% endif %}
-            {% if profile_data.extramural_details|format_prices %}
-              <h4 style="margin-top:-10px"><b>{% trans "Стоимость обучения" %}</b></h4>
-              {% for price_info in profile_data.extramural_details|format_prices %}
-                <p>{{ price_info }}</p>
-              {% endfor %}
-            {% endif %}
-          </div>
-          <div style="margin-top:50px">
-            <a href="{{ profile_data.extramural_details.admission_url }}" target="_blank"
-               class="link-hover-underline red-link-hover-underline">
-              {% trans "Подать документы" %}
-            </a>
-          </div>
-
-        </div>
-      </div>
-    {% endif %}
-
+    {% endfor %}
   </div>
 
   <div class="profile_content">
-    {% if LANGUAGE_CODE == "en" %}
-      {{ profile_data.content_en|safe }}
-    {% else %}
-      {{ profile_data.content|safe }}
-    {% endif %}
+    {{ program.content|safe }}
   </div>
 </div>
 

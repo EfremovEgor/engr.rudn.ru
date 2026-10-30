@@ -2,9 +2,11 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.test import TestCase, override_settings
 from django.urls import reverse
+from django.utils import translation
 
 from apps.core.i18n import instance_translation_status, translation_status_q
 from apps.news.models import NewsItem
+from apps.seminars.models import SeminarSpeaker
 
 from .factories import create_site_content
 
@@ -131,6 +133,17 @@ class AdminTests(TestCase):
         news = NewsItem.objects.first()
         content = self.client.get(reverse("admin:news_newsitem_change", args=[news.pk])).content.decode()
         self.assertIn("RU: Новость", content)
+
+    def test_empty_translated_array_saves_as_null(self):
+        url = reverse("admin:seminars_seminarspeaker_add")
+        data = {"last_name_ru": "Иванов", "first_name_ru": "Иван", "job_title_ru": ["Профессор", ""], "job_title_en": [""]}
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, 302, response.content.decode()[:2000])
+        speaker = SeminarSpeaker.objects.get(last_name_ru="Иванов")
+        self.assertEqual(speaker.job_title_ru, ["Профессор"])
+        self.assertIsNone(speaker.job_title_en)
+        with translation.override("en"):
+            self.assertEqual(speaker.job_title, ["Профессор"])
 
 
 class TranslationStatusTests(TestCase):

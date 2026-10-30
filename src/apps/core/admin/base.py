@@ -8,8 +8,10 @@
 
 from copy import deepcopy
 
+from django import forms
 from django.contrib import admin
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.postgres.forms import SimpleArrayField
 from django.utils.html import format_html, strip_tags
 from django.utils.text import Truncator
 from django_ckeditor_5.widgets import CKEditor5Widget
@@ -35,9 +37,30 @@ STATUS_LABELS = {
     "missing": "Нет перевода",
 }
 
+
+class ArrayFormField(SimpleArrayField):
+    """Список, который может быть пустым (None).
+
+    modeltranslation хранит пустой перевод как NULL (тогда на английской версии
+    показывается русский текст), а стандартное поле Django на None падает.
+    """
+
+    def validate(self, value):
+        super().validate([] if value is None else value)
+
+    def run_validators(self, value):
+        super().run_validators([] if value is None else value)
+
+    def clean(self, value):
+        value = forms.CharField.clean(self, value)
+        if value is None:
+            return None
+        return [self.base_field.clean(item) for item in value]
+
+
 FORMFIELD_OVERRIDES = {
     RichTextField: {"widget": CKEditor5Widget},
-    ArrayField: {"widget": ArrayWidget},
+    ArrayField: {"widget": ArrayWidget, "form_class": ArrayFormField},
 }
 
 

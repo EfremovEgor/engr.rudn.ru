@@ -23,6 +23,11 @@ class EmployeeProfileAdmin(BaseAdmin):
     fieldsets = ((None, {"fields": ("image", "emails", "phone_numbers", "staff_support")}),)
     inlines = [DepartmentCardInline]
 
+    def formfield_for_dbfield(self, db_field, request, **kwargs):
+        if db_field.name == "staff_support":
+            return db_field.formfield(**kwargs)
+        return super().formfield_for_dbfield(db_field, request, **kwargs)
+
     @display(description="")
     def photo(self, obj):
         return thumbnail(file_url(obj.image), 40, rounded=True)

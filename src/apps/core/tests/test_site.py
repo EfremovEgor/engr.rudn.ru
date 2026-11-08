@@ -6,6 +6,7 @@ from django.utils import translation
 
 from apps.core.i18n import instance_translation_status, translation_status_q
 from apps.news.models import NewsItem
+from apps.profiles.models import EmployeeProfile
 from apps.seminars.models import SeminarSpeaker
 
 from .factories import create_site_content
@@ -144,6 +145,23 @@ class AdminTests(TestCase):
         self.assertIsNone(speaker.job_title_en)
         with translation.override("en"):
             self.assertEqual(speaker.job_title, ["Профессор"])
+
+    def test_employee_save_with_assistant(self):
+        employee = EmployeeProfile.objects.first()
+        response = self.client.post(reverse("admin:profiles_employeeprofile_change", args=[employee.pk]), {
+            "full_name_ru": "Иванов Иван",
+            "staff_support": '{"full_name":"Помощник","email":"assistant@example.com","office":"1","working_hours":"9–18","phone_number":"123"}',
+            "department_card-TOTAL_FORMS": "1",
+            "department_card-INITIAL_FORMS": "1",
+            "department_card-MIN_NUM_FORMS": "0",
+            "department_card-MAX_NUM_FORMS": "1",
+            "department_card-0-id": str(employee.department_card.pk),
+            "department_card-0-related_profile": str(employee.pk),
+            "department_card-0-position": "0",
+        })
+        self.assertEqual(response.status_code, 302, response.content.decode()[:4000])
+        employee.refresh_from_db()
+        self.assertEqual(employee.staff_support["full_name"], "Помощник")
 
 
 class TranslationStatusTests(TestCase):
